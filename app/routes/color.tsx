@@ -573,17 +573,13 @@ export default function ColorPage() {
   };
 
   // Filter products based on active tab
-  const filteredProducts =
-    activeTab === "see-all"
-      ? allProducts
-      : allProducts.filter((p) => {
-          const categories = categorizeProduct(p);
-          return categories.includes(activeTab);
-        });
+  const filteredProducts = allProducts.filter((p) => {
+    const categories = categorizeProduct(p);
+    return categories.includes(activeTab);
+  });
 
   // Tab categories
   const tabs = [
-    { id: "see-all", label: "See All" },
     { id: "Mini Colours", label: "Mini Colours" },
     { id: "Mini Colours Collection", label: "Collections" },
     { id: "Base Coat", label: "Base Coat" },
@@ -596,12 +592,6 @@ export default function ColorPage() {
   // Dynamic title and description based on active tab
   const getTitleAndDescription = () => {
     switch (activeTab) {
-      case "see-all":
-        return {
-          title: "Nail Make-Up",
-          description:
-            "Since 1962, MAVALA MINI COLOR nail polishes, in a handy and economical small format, have been your companion at all times. Their respectful formula offers easy application, perfect adhesion, shine and long-lasting hold! Nail polishes which also let the nails breathe and pass water vapour!",
-        };
       case "Mini Colours":
         return {
           title: "MINI COLOR'S NAIL POLISHES",
