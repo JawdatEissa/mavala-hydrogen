@@ -382,7 +382,7 @@ function ColorProductCard({
       className="group flex flex-col text-left"
     >
       {/* Image Container - Standardized grey background with 4:5 aspect ratio */}
-      <div className="relative overflow-hidden mb-4 w-full bg-[#f5f5f5] aspect-[4/5] flex items-center justify-center p-6 border-none outline-none shadow-none">
+      <div className="relative overflow-hidden mb-4 w-full bg-[#f5f5f5] aspect-[4/5] flex items-center justify-center p-3 border-none outline-none shadow-none">
         {image && (
           <img
             src={image}
