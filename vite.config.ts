@@ -26,24 +26,5 @@ export default defineConfig({
   css: {
     postcss: './postcss.config.js',
   },
-  build: {
-    // Optimize for large number of assets
-    chunkSizeWarningLimit: 1000,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          // Split vendor chunks for better caching
-          'react-vendor': ['react', 'react-dom'],
-          'remix-vendor': ['@remix-run/react', '@remix-run/node'],
-        },
-      },
-    },
-    // Increase asset inline limit to reduce HTTP requests
-    assetsInlineLimit: 4096,
-  },
-  // Optimize dependencies
-  optimizeDeps: {
-    include: ['react', 'react-dom', '@remix-run/react'],
-  },
 });
 
