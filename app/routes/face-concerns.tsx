@@ -33,7 +33,7 @@ export default function FaceConcernsPage() {
       {/* Main Title */}
       <div className="py-8 md:py-8 px-2 sm:px-4 md:px-8">
         <div className="max-w-[1800px] mx-auto text-center">
-          <h1 className="font-['Archivo'] text-[40px] md:text-[36px] font-bold text-[#ae1932] uppercase tracking-[1px]">
+          <h1 className="font-['Archivo'] text-[46px] md:text-[42px] font-bold text-[#ae1932] uppercase tracking-[1px]">
             FACE CONCERNS
           </h1>
         </div>
@@ -59,7 +59,7 @@ export default function FaceConcernsPage() {
                 </div>
                 
                 {/* Label */}
-                <p className="font-['Archivo'] text-[14px] sm:text-[11px] md:text-[12px] font-semibold uppercase text-center text-[#1a1a2e] leading-tight group-hover:text-[#ae1932] transition-colors">
+                <p className="font-['Archivo'] text-[16px] sm:text-[13px] md:text-[14px] font-semibold uppercase text-center text-[#1a1a2e] leading-tight group-hover:text-[#ae1932] transition-colors">
                   {concern.label}
                 </p>
               </a>

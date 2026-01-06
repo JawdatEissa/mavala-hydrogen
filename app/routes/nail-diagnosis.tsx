@@ -113,7 +113,7 @@ export default function NailDiagnosisPage() {
       <section className="py-8 md:py-16 px-2 sm:px-4 md:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Title */}
-          <h1 className="font-['Archivo'] text-[40px] md:text-[36px] font-bold text-[#ae1932] uppercase text-center tracking-[1px] mb-8 md:mb-12">
+          <h1 className="font-['Archivo'] text-[46px] md:text-[42px] font-bold text-[#ae1932] uppercase text-center tracking-[1px] mb-8 md:mb-12">
             NAIL CONCERNS
           </h1>
 
@@ -132,7 +132,7 @@ export default function NailDiagnosisPage() {
                     className="w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-200"
                   />
                 </div>
-                <p className="font-['Archivo'] text-[13px] sm:text-[11px] md:text-[10px] uppercase text-gray-800 leading-tight font-semibold">
+                <p className="font-['Archivo'] text-[15px] sm:text-[13px] md:text-[12px] uppercase text-gray-800 leading-tight font-semibold">
                   {condition.name}
                 </p>
               </a>
