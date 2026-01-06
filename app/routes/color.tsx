@@ -651,7 +651,7 @@ export default function ColorPage() {
   return (
     <div className="min-h-screen bg-white pt-[90px] scroll-smooth">
       {/* Hero Section - Reduced height for better mobile/desktop balance */}
-      <section className="relative w-full h-[40vh] md:h-[45vh] overflow-hidden">
+      <section className="relative w-full h-[32vh] md:h-[36vh] overflow-hidden">
         <img
           src="/Gemini_Generated_Image_6ifo0k6ifo0k6ifo.png"
           alt="Mavala Mini Color Nail Polishes"
@@ -664,7 +664,7 @@ export default function ColorPage() {
       <section className="pt-4 md:pt-6 lg:pt-8 pb-12 md:pb-20 lg:pb-24 px-4 md:px-8 bg-gradient-to-b from-white to-[#fafafa]">
         <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
           {/* Title - Dynamic based on active tab */}
-          <h1 className="font-['Archivo'] text-[26px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-semibold text-[#ae1932] uppercase tracking-wide mb-6 md:mb-8 px-2">
+          <h1 className="font-['Archivo'] text-[26px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-semibold text-[#ae1932] uppercase tracking-wide mb-3 md:mb-4 px-2">
             {title}
           </h1>
 
@@ -686,10 +686,10 @@ export default function ColorPage() {
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
                     className={`
-                      flex-1 px-3 py-2.5 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-all duration-200 whitespace-nowrap text-center
+                      flex-1 px-3 py-2.5 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
                       ${
                         activeTab === tab.id
-                          ? "bg-[#ae1932] text-white shadow-lg"
+                          ? "bg-[#ae1932] text-white"
                           : "bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300"
                       }
                     `}
@@ -705,10 +705,10 @@ export default function ColorPage() {
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
                     className={`
-                      flex-1 px-2 py-2.5 rounded-full font-['Archivo'] text-[10px] font-semibold uppercase tracking-wider transition-all duration-200 whitespace-nowrap text-center
+                      flex-1 px-2 py-2.5 rounded-full font-['Archivo'] text-[10px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
                       ${
                         activeTab === tab.id
-                          ? "bg-[#ae1932] text-white shadow-lg"
+                          ? "bg-[#ae1932] text-white"
                           : "bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300"
                       }
                     `}
@@ -726,10 +726,10 @@ export default function ColorPage() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`
-                    px-5 py-3 rounded-lg font-['Archivo'] text-[13px] font-medium uppercase tracking-wide transition-all duration-200 whitespace-nowrap
+                    px-5 py-3 rounded-lg font-['Archivo'] text-[13px] font-medium uppercase tracking-wide transition-colors duration-150 whitespace-nowrap
                     ${
                       activeTab === tab.id
-                        ? "bg-[#ae1932] text-white shadow-md"
+                        ? "bg-[#ae1932] text-white"
                         : "bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]"
                     }
                   `}
