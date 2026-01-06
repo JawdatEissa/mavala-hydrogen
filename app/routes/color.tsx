@@ -742,11 +742,11 @@ export default function ColorPage() {
         </div>
       </section>
 
-      {/* Products Grid - Single unified grid */}
-      <section className="py-0 md:py-4 px-6 md:px-10 lg:px-16 bg-white">
+      {/* Products Grid - Single unified grid with tighter spacing */}
+      <section className="py-0 md:py-4 px-4 md:px-8 lg:px-12 bg-white">
         <div className="w-full">
           {filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 mb-16">
               {filteredProducts.map((product) => {
                 // Safety check - ensure product has required fields
                 if (!product?.slug || !product?.title) return null;
