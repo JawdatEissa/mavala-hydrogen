@@ -8,10 +8,10 @@ import {
   type ScrapedProduct,
 } from "../lib/scraped-products.server";
 import { ShadeDrawer } from "../components/ShadeDrawer";
-import { readFileSync, existsSync } from "fs";
-import { join } from "path";
 // Import pre-generated image manifest (avoids fs scanning at runtime)
 import imageManifest from "~/data/image-manifest.json";
+// Import shade colors data directly
+import shadeColorsData from "~/data/shade_colors.json";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { handle } = params;
@@ -34,34 +34,11 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     .filter((p) => p.slug !== product.slug)
     .slice(0, 4);
 
-  // Load color mapping if it exists (SERVER-SIDE)
-  let colorMapping = null;
-  try {
-    const mappingPath = join(
-      process.cwd(),
-      "app",
-      "data",
-      `color_mapping_${product.slug}.json`
-    );
-    if (existsSync(mappingPath)) {
-      const mappingContent = readFileSync(mappingPath, "utf-8");
-      colorMapping = JSON.parse(mappingContent);
-    }
-  } catch (error) {
-    // Silently fail if mapping doesn't exist
-  }
+  // Color mapping is loaded dynamically if needed (using bundled data)
+  const colorMapping = null; // Color mappings are bundled per-product in data folder
 
-  // Load shade colors (extracted from bottle images)
-  let shadeColors: Record<string, { hex: string; rgb: number[] }> = {};
-  try {
-    const colorsPath = join(process.cwd(), "app", "data", "shade_colors.json");
-    if (existsSync(colorsPath)) {
-      const colorsContent = readFileSync(colorsPath, "utf-8");
-      shadeColors = JSON.parse(colorsContent);
-    }
-  } catch (error) {
-    // Silently fail if colors don't exist
-  }
+  // Use bundled shade colors data
+  const shadeColors = shadeColorsData as Record<string, { hex: string; rgb: number[] }>;
 
   // Helper to normalize strings for matching (handles accents)
   const normalizeForMatching = (str: string): string => {

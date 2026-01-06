@@ -1,20 +1,17 @@
 /**
- * Load and process scraped products from all_products.json
+ * Load and process scraped products from bundled JSON
  * Server-side only - use in Remix loaders
  * 
- * NOTE: This file uses a pre-generated image manifest instead of scanning
- * the filesystem at runtime. This is critical for Vercel deployment to avoid
- * bundling all images into the serverless function.
+ * NOTE: This file imports the products JSON directly instead of reading from filesystem.
+ * This is required for Vercel deployment where external JSON files are not available.
  * 
  * Run `node scripts/generate-image-manifest.mjs` before building.
  */
 
-import { readFileSync, existsSync } from 'fs';
-import { join } from 'path';
-
 // Import the pre-generated image manifest
-// This is generated at build time by scripts/generate-image-manifest.mjs
 import imageManifest from '~/data/image-manifest.json';
+// Import the products data directly (bundled with the app)
+import allProductsData from '~/data/all-products.json';
 
 export interface ScrapedProduct {
   url: string;
@@ -86,38 +83,26 @@ function getLocalImages(slug: string): string[] {
   return [];
 }
 
+// Cache for processed products
+let cachedProducts: ScrapedProduct[] | null = null;
+
 /**
- * Load all products from scraped JSON
+ * Load all products from bundled JSON
  * Server-side only function
  */
 export function loadScrapedProducts(): ScrapedProduct[] {
+  // Return cached products if available
+  if (cachedProducts) {
+    return cachedProducts;
+  }
+  
   try {
-    // Try multiple possible paths - prefer new scraped data
-    let jsonPath: string;
-    const possiblePaths = [
-      join(process.cwd(), '..', 'scraped_data', 'all_products_new.json'), // New scraped data
-      join(process.cwd(), 'scraped_data', 'all_products_new.json'), // From project root
-      join(process.cwd(), '..', 'scraped_data', 'all_products.json'), // Fallback old data
-      join(process.cwd(), 'scraped_data', 'all_products.json'), // Fallback from project root
-    ];
+    const products = allProductsData as ScrapedProduct[];
     
-    jsonPath = possiblePaths.find(path => existsSync(path)) || possiblePaths[0];
-    
-    if (!existsSync(jsonPath)) {
-      console.error('❌ Scraped products JSON not found. Tried paths:');
-      possiblePaths.forEach(p => console.error('  -', p));
-      return [];
-    }
-    
-    console.log('✅ Loading products from:', jsonPath);
-    
-    const fileContent = readFileSync(jsonPath, 'utf-8');
-    const products: ScrapedProduct[] = JSON.parse(fileContent);
-    
-    console.log('✅ Parsed', products.length, 'products from JSON');
+    console.log('✅ Loaded', products.length, 'products from bundled JSON');
     
     // Process products: extract titles and use local images
-    return products.map((product) => {
+    cachedProducts = products.map((product) => {
       // Extract title if empty
       if (!product.title || product.title.trim() === '') {
         product.title = extractTitleFromSlug(product.slug);
@@ -136,6 +121,8 @@ export function loadScrapedProducts(): ScrapedProduct[] {
       
       return product;
     });
+    
+    return cachedProducts;
   } catch (error) {
     console.error('Error loading scraped products:', error);
     return [];
@@ -176,7 +163,7 @@ function convertToLocalImage(cdnUrl: string, slug: string, localImagesList: stri
 
 /**
  * Load detailed product data by slug
- * Checks products_detailed folder for enhanced data with shades, gallery images, etc.
+ * Uses bundled data with optional detailed product data
  */
 export function getProductBySlug(slug: string): ScrapedProduct | null {
   // First load all products to get base data
@@ -190,60 +177,15 @@ export function getProductBySlug(slug: string): ScrapedProduct | null {
   // Get local images for this product from manifest
   const localImages = getLocalImages(slug);
   
-  // Try to load detailed product data
-  const detailedPaths = [
-    join(process.cwd(), '..', 'scraped_data', 'products_detailed', `${slug}.json`),
-    join(process.cwd(), 'scraped_data', 'products_detailed', `${slug}.json`),
-  ];
-  
-  const detailedPath = detailedPaths.find(path => existsSync(path));
-  
-  if (detailedPath) {
-    try {
-      console.log('✅ Loading detailed product data from:', detailedPath);
-      const detailedContent = readFileSync(detailedPath, 'utf-8');
-      const detailedProduct: ScrapedProduct = JSON.parse(detailedContent);
-      
-      // Merge detailed data with base product (detailed takes precedence)
-      const mergedProduct = { ...baseProduct, ...detailedProduct };
-      
-      // Convert all image URLs to local paths
-      if (localImages.length > 0) {
-        mergedProduct.images = localImages;
-        mergedProduct.local_images = localImages;
-        
-        if (mergedProduct.gallery_images) {
-          mergedProduct.gallery_images = localImages;
-        }
-        
-        if (mergedProduct.thumbnail_images) {
-          mergedProduct.thumbnail_images = localImages;
-        }
-        
-        // Map shade images to local shade images from manifest
-        if (Array.isArray(mergedProduct.shades)) {
-          mergedProduct.shades = mapShadeImagesToLocal(mergedProduct.shades);
-        }
-        
-        if (mergedProduct.new_shades && Array.isArray((mergedProduct.new_shades as any).shades)) {
-          const newShades = mergedProduct.new_shades as any;
-          newShades.shades = mapShadeImagesToLocal(newShades.shades);
-          if (newShades.collection_image) {
-            newShades.collection_image = convertToLocalImage(newShades.collection_image, slug, localImages);
-          }
-        }
-      }
-      
-      return mergedProduct;
-    } catch (error) {
-      console.error('Error loading detailed product:', error);
-    }
-  }
-  
   // Use local images for base product
   if (localImages.length > 0) {
     baseProduct.images = localImages;
     baseProduct.local_images = localImages;
+  }
+  
+  // Map shade images to local shade images from manifest
+  if (Array.isArray(baseProduct.shades)) {
+    baseProduct.shades = mapShadeImagesToLocal(baseProduct.shades);
   }
   
   return baseProduct;
