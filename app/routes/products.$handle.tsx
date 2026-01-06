@@ -13,6 +13,102 @@ import imageManifest from "~/data/image-manifest.json";
 // Import shade colors data directly
 import shadeColorsData from "~/data/shade_colors.json";
 
+// Import color mappings for shade data
+import colorMappingTheBasics from "../data/color_mapping_the-basics.json";
+import colorMappingCreamColors from "../data/color_mapping_cream-colors.json";
+import colorMappingPearlColors from "../data/color_mapping_pearl-colors.json";
+import colorMappingPopWave from "../data/color_mapping_pop-wave.json";
+import colorMappingNeoNudes from "../data/color_mapping_neo-nudes.json";
+import colorMappingTerraTopia from "../data/color_mapping_terra-topia.json";
+import colorMappingYummy from "../data/color_mapping_yummy.json";
+import colorMappingWhisper from "../data/color_mapping_whisper.json";
+import colorMappingTimeless from "../data/color_mapping_timeless.json";
+import colorMappingColorBlock from "../data/color_mapping_color-block.json";
+import colorMappingDigitalArt from "../data/color_mapping_digital-art.json";
+import colorMappingBioColors from "../data/color_mapping_bio-colors.json";
+import colorMappingTandem from "../data/color_mapping_tandem.json";
+import colorMappingDelight from "../data/color_mapping_delight.json";
+import colorMappingSofuture from "../data/color_mapping_sofuture.json";
+import colorMappingPrismatic from "../data/color_mapping_prismatic.json";
+import colorMappingColorVibe from "../data/color_mapping_color-vibe.json";
+import colorMappingIconic from "../data/color_mapping_iconic.json";
+import colorMappingBubbleGum from "../data/color_mapping_bubble-gum.json";
+import colorMappingCyberChic from "../data/color_mapping_cyber-chic.json";
+import colorMappingBlushColors from "../data/color_mapping_blush-colors.json";
+import colorMappingNewLook from "../data/color_mapping_new-look.json";
+import colorMappingCosmic from "../data/color_mapping_cosmic.json";
+import colorMappingChillRelax from "../data/color_mapping_chill-relax.json";
+import colorMappingHeritage from "../data/color_mapping_heritage.json";
+import colorMappingPastelFiesta from "../data/color_mapping_pastel-fiesta.json";
+import colorMappingSolaris from "../data/color_mapping_solaris.json";
+import colorMappingWhiteShades from "../data/color_mapping_white-shades.json";
+import colorMappingNudeShades from "../data/color_mapping_nude-shades.json";
+import colorMappingPinkShades from "../data/color_mapping_pink-shades.json";
+import colorMappingRedShades from "../data/color_mapping_red-shades.json";
+import colorMappingCoralShades from "../data/color_mapping_coral-shades.json";
+import colorMappingOrangeShades from "../data/color_mapping_orange-shades.json";
+import colorMappingPurpleShades from "../data/color_mapping_purple-shades.json";
+import colorMappingBurgundyShades from "../data/color_mapping_burgundy-shades.json";
+import colorMappingBlueShades from "../data/color_mapping_blue-shades.json";
+import colorMappingGreenShades from "../data/color_mapping_green-shades.json";
+import colorMappingYellowShades from "../data/color_mapping_yellow-shades.json";
+import colorMappingGoldShades from "../data/color_mapping_gold-shades.json";
+import colorMappingBrownShades from "../data/color_mapping_brown-shades.json";
+import colorMappingGreyShades from "../data/color_mapping_grey-shades.json";
+import colorMappingBlackShades from "../data/color_mapping_black-shades.json";
+
+// Map of slug to color mapping data
+const COLOR_MAPPINGS: Record<
+  string,
+  { 
+    shade_details?: Array<{ name: string; image: string; color?: string }>;
+    color_groups?: Record<string, string[]>;
+  }
+> = {
+  "the-basics": colorMappingTheBasics,
+  "cream-colors": colorMappingCreamColors,
+  "pearl-colors": colorMappingPearlColors,
+  "pop-wave": colorMappingPopWave,
+  "neo-nudes": colorMappingNeoNudes,
+  "terra-topia": colorMappingTerraTopia,
+  yummy: colorMappingYummy,
+  whisper: colorMappingWhisper,
+  timeless: colorMappingTimeless,
+  "color-block": colorMappingColorBlock,
+  "digital-art": colorMappingDigitalArt,
+  "bio-colors": colorMappingBioColors,
+  tandem: colorMappingTandem,
+  delight: colorMappingDelight,
+  sofuture: colorMappingSofuture,
+  prismatic: colorMappingPrismatic,
+  "color-vibe": colorMappingColorVibe,
+  iconic: colorMappingIconic,
+  "bubble-gum": colorMappingBubbleGum,
+  "cyber-chic": colorMappingCyberChic,
+  "blush-colors": colorMappingBlushColors,
+  "new-look": colorMappingNewLook,
+  cosmic: colorMappingCosmic,
+  "chill-relax": colorMappingChillRelax,
+  heritage: colorMappingHeritage,
+  "pastel-fiesta": colorMappingPastelFiesta,
+  solaris: colorMappingSolaris,
+  "white-shades": colorMappingWhiteShades,
+  "nude-shades": colorMappingNudeShades,
+  "pink-shades": colorMappingPinkShades,
+  "red-shades": colorMappingRedShades,
+  "coral-shades": colorMappingCoralShades,
+  "orange-shades": colorMappingOrangeShades,
+  "purple-shades": colorMappingPurpleShades,
+  "burgundy-shades": colorMappingBurgundyShades,
+  "blue-shades": colorMappingBlueShades,
+  "green-shades": colorMappingGreenShades,
+  "yellow-shades": colorMappingYellowShades,
+  "gold-shades": colorMappingGoldShades,
+  "brown-shades": colorMappingBrownShades,
+  "grey-shades": colorMappingGreyShades,
+  "black-shades": colorMappingBlackShades,
+};
+
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { handle } = params;
 
@@ -34,8 +130,16 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     .filter((p) => p.slug !== product.slug)
     .slice(0, 4);
 
-  // Color mapping is loaded dynamically if needed (using bundled data)
-  const colorMapping = null; // Color mappings are bundled per-product in data folder
+  // Load color mapping for this product (contains shades and color groups)
+  const colorMapping = COLOR_MAPPINGS[handle] || null;
+  
+  // Add shades from color mapping if product doesn't have them
+  if (colorMapping?.shade_details && (!product.shades || product.shades.length === 0)) {
+    product.shades = colorMapping.shade_details.map((s) => ({
+      name: s.name,
+      image: s.image,
+    }));
+  }
 
   // Use bundled shade colors data
   const shadeColors = shadeColorsData as Record<string, { hex: string; rgb: number[] }>;
