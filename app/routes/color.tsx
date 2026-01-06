@@ -8,15 +8,105 @@ import {
 } from "../lib/scraped-products.server";
 import shadeColorsData from "../data/shade_colors.json";
 
+// Import color mappings to get shade counts for each product
+import colorMappingTheBasics from "../data/color_mapping_the-basics.json";
+import colorMappingCreamColors from "../data/color_mapping_cream-colors.json";
+import colorMappingPearlColors from "../data/color_mapping_pearl-colors.json";
+import colorMappingPopWave from "../data/color_mapping_pop-wave.json";
+import colorMappingNeoNudes from "../data/color_mapping_neo-nudes.json";
+import colorMappingTerraTopia from "../data/color_mapping_terra-topia.json";
+import colorMappingYummy from "../data/color_mapping_yummy.json";
+import colorMappingWhisper from "../data/color_mapping_whisper.json";
+import colorMappingTimeless from "../data/color_mapping_timeless.json";
+import colorMappingColorBlock from "../data/color_mapping_color-block.json";
+import colorMappingDigitalArt from "../data/color_mapping_digital-art.json";
+import colorMappingBioColors from "../data/color_mapping_bio-colors.json";
+import colorMappingTandem from "../data/color_mapping_tandem.json";
+import colorMappingDelight from "../data/color_mapping_delight.json";
+import colorMappingSofuture from "../data/color_mapping_sofuture.json";
+import colorMappingPrismatic from "../data/color_mapping_prismatic.json";
+import colorMappingColorVibe from "../data/color_mapping_color-vibe.json";
+import colorMappingIconic from "../data/color_mapping_iconic.json";
+import colorMappingBubbleGum from "../data/color_mapping_bubble-gum.json";
+import colorMappingCyberChic from "../data/color_mapping_cyber-chic.json";
+import colorMappingBlushColors from "../data/color_mapping_blush-colors.json";
+import colorMappingNewLook from "../data/color_mapping_new-look.json";
+import colorMappingCosmic from "../data/color_mapping_cosmic.json";
+import colorMappingChillRelax from "../data/color_mapping_chill-relax.json";
+import colorMappingHeritage from "../data/color_mapping_heritage.json";
+import colorMappingPastelFiesta from "../data/color_mapping_pastel-fiesta.json";
+import colorMappingSolaris from "../data/color_mapping_solaris.json";
+import colorMappingWhiteShades from "../data/color_mapping_white-shades.json";
+import colorMappingNudeShades from "../data/color_mapping_nude-shades.json";
+import colorMappingPinkShades from "../data/color_mapping_pink-shades.json";
+import colorMappingRedShades from "../data/color_mapping_red-shades.json";
+import colorMappingCoralShades from "../data/color_mapping_coral-shades.json";
+import colorMappingOrangeShades from "../data/color_mapping_orange-shades.json";
+import colorMappingPurpleShades from "../data/color_mapping_purple-shades.json";
+import colorMappingBurgundyShades from "../data/color_mapping_burgundy-shades.json";
+import colorMappingBlueShades from "../data/color_mapping_blue-shades.json";
+import colorMappingGreenShades from "../data/color_mapping_green-shades.json";
+import colorMappingYellowShades from "../data/color_mapping_yellow-shades.json";
+import colorMappingGoldShades from "../data/color_mapping_gold-shades.json";
+import colorMappingBrownShades from "../data/color_mapping_brown-shades.json";
+import colorMappingGreyShades from "../data/color_mapping_grey-shades.json";
+import colorMappingBlackShades from "../data/color_mapping_black-shades.json";
+
+// Map of slug to color mapping data
+const COLOR_MAPPINGS: Record<string, { shade_details?: Array<{ name: string; image: string }> }> = {
+  "the-basics": colorMappingTheBasics,
+  "cream-colors": colorMappingCreamColors,
+  "pearl-colors": colorMappingPearlColors,
+  "pop-wave": colorMappingPopWave,
+  "neo-nudes": colorMappingNeoNudes,
+  "terra-topia": colorMappingTerraTopia,
+  "yummy": colorMappingYummy,
+  "whisper": colorMappingWhisper,
+  "timeless": colorMappingTimeless,
+  "color-block": colorMappingColorBlock,
+  "digital-art": colorMappingDigitalArt,
+  "bio-colors": colorMappingBioColors,
+  "tandem": colorMappingTandem,
+  "delight": colorMappingDelight,
+  "sofuture": colorMappingSofuture,
+  "prismatic": colorMappingPrismatic,
+  "color-vibe": colorMappingColorVibe,
+  "iconic": colorMappingIconic,
+  "bubble-gum": colorMappingBubbleGum,
+  "cyber-chic": colorMappingCyberChic,
+  "blush-colors": colorMappingBlushColors,
+  "new-look": colorMappingNewLook,
+  "cosmic": colorMappingCosmic,
+  "chill-relax": colorMappingChillRelax,
+  "heritage": colorMappingHeritage,
+  "pastel-fiesta": colorMappingPastelFiesta,
+  "solaris": colorMappingSolaris,
+  "white-shades": colorMappingWhiteShades,
+  "nude-shades": colorMappingNudeShades,
+  "pink-shades": colorMappingPinkShades,
+  "red-shades": colorMappingRedShades,
+  "coral-shades": colorMappingCoralShades,
+  "orange-shades": colorMappingOrangeShades,
+  "purple-shades": colorMappingPurpleShades,
+  "burgundy-shades": colorMappingBurgundyShades,
+  "blue-shades": colorMappingBlueShades,
+  "green-shades": colorMappingGreenShades,
+  "yellow-shades": colorMappingYellowShades,
+  "gold-shades": colorMappingGoldShades,
+  "brown-shades": colorMappingBrownShades,
+  "grey-shades": colorMappingGreyShades,
+  "black-shades": colorMappingBlackShades,
+};
+
 // Define the product categories for each section
+// NOTE: Removed "10ml-bottles" (B2B only) and "french-manicure-kit" (single SKU, not needed)
 const CLASSICS_SLUGS = [
   "the-basics",
   "cream-colors",
   "pearl-colors",
-  "10ml-bottles",
-  "french-manicure-kit",
 ];
 
+// Mini Colours Collections - themed collections with multiple shades
 const COLLECTIONS_SLUGS = [
   "pop-wave",
   "neo-nudes",
@@ -38,6 +128,10 @@ const COLLECTIONS_SLUGS = [
   "blush-colors",
   "new-look",
   "cosmic",
+  "chill-relax",
+  "heritage",
+  "pastel-fiesta",
+  "solaris",
 ];
 
 const SHADES_SLUGS = [
@@ -63,8 +157,6 @@ const PRODUCT_TAGLINES: Record<string, string> = {
   "the-basics": "Your every day base, top and clear coats.",
   "cream-colors": "60 creamy shades.",
   "pearl-colors": "30 pearl shades.",
-  "10ml-bottles": "Our best selling shades in a larger format.",
-  "french-manicure-kit": "The easy solution for an impeccable French manicure.",
   "pop-wave": "A wave of freshness and colourful energy",
   "neo-nudes": "Affirm your natural beauty",
   "terra-topia": "The utopia of a sublime and reassuring earth",
@@ -85,6 +177,10 @@ const PRODUCT_TAGLINES: Record<string, string> = {
   "blush-colors": "An imaginary voyage between dream and reality.",
   "new-look": "Give yourself a vibrant distinction of trendy modernity!",
   cosmic: "For a powdered, precious dust look.",
+  "chill-relax": "Breathe in, breathe out… it's time to take your time 💕",
+  heritage: "A masterful ode to autumnal nature.",
+  "pastel-fiesta": "A sweet celebration of beauty and lightness!",
+  solaris: "Celebrate life and energy with a palette of sunshine shades.",
   "white-shades": "All shades of white, off white and pearly white.",
   "nude-shades": "All skin tone shades.",
   "pink-shades": "All shades of rose, pink and fuchsia.",
@@ -114,11 +210,24 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     "Cache-Control": "public, max-age=300, stale-while-revalidate=600",
   };
 
+  // Helper function to add shades data from color mappings to a product
+  const addShadesToProduct = (product: ScrapedProduct): ScrapedProduct => {
+    const mapping = COLOR_MAPPINGS[product.slug];
+    if (mapping?.shade_details) {
+      return {
+        ...product,
+        shades: mapping.shade_details.map(s => ({ name: s.name, image: s.image })),
+      };
+    }
+    return product;
+  };
+
   // OPTIMIZED: Get products by slugs without calling getProductBySlug (which reloads JSON each time!)
   const getProductsBySlug = (slugs: string[]) => {
     return slugs
       .map((slug) => productMap.get(slug))
-      .filter(Boolean) as ScrapedProduct[];
+      .filter(Boolean)
+      .map(addShadesToProduct) as ScrapedProduct[];
   };
 
   // Load products directly from the map - NO additional file reads!
@@ -382,19 +491,25 @@ export default function ColorPage() {
     const isBio = (titleLower.includes('bio') && titleLower.includes('color')) || slugLower.includes('bio-color');
     if (isBio) {
       categories.push('Mini Bio');
-      // Bio products can also be Mini Colours
+      // Bio products can also be in Collections
     }
 
-    // Mini Colours - for products in classics, collections, shades arrays OR nail polishes
-    const isInPredefinedArrays = CLASSICS_SLUGS.includes(product.slug) || 
-                                  COLLECTIONS_SLUGS.includes(product.slug) || 
+    // Mini Colours Collection - themed collections (pop-wave, neo-nudes, etc.)
+    const isCollection = COLLECTIONS_SLUGS.includes(product.slug);
+    if (isCollection) {
+      categories.push('Mini Colours Collection');
+      return categories; // Collections ONLY in Collections tab, not in Mini Colours
+    }
+
+    // Mini Colours - for products in classics, shades arrays OR nail polishes (NOT collections)
+    const isInClassicsOrShades = CLASSICS_SLUGS.includes(product.slug) || 
                                   SHADES_SLUGS.includes(product.slug);
     const isNailPolish = titleLower.includes('mini') || 
                          (titleLower.includes('color') && !isBaseCoat && !isTopCoat) ||
                          titleLower.includes('polish') ||
                          titleLower.includes('shade');
     
-    if (isInPredefinedArrays || isNailPolish) {
+    if (isInClassicsOrShades || isNailPolish) {
       categories.push('Mini Colours');
     }
 
@@ -411,8 +526,9 @@ export default function ColorPage() {
 
   // Tab categories
   const tabs = [
-    { id: "see-all", label: "See all" },
+    { id: "see-all", label: "See All" },
     { id: "Mini Colours", label: "Mini Colours" },
+    { id: "Mini Colours Collection", label: "Collections" },
     { id: "Base Coat", label: "Base Coat" },
     { id: "Top Coat", label: "Top Coat" },
     { id: "Polish Dryer", label: "Polish Dryer" },
@@ -432,6 +548,11 @@ export default function ColorPage() {
         return {
           title: "MINI COLOR'S NAIL POLISHES",
           description: "All Mavala nail polishes, base coats and top coats allow nails to breathe. They contain a resin extracted from wood which adheres to the nail surface in the form of a flexible and resistant film which remains porous, allowing oxygen and water vapour to pass through the nail polish, to the nail plate. They are developed with rigorously selected ingredients and are free from ingredients of animal origin, thus suitable for vegans. Their convenient and economical 5ml MINI format helps reduce waste, and allows you to choose a few shades from the 300+ available!"
+        };
+      case "Mini Colours Collection":
+        return {
+          title: "MINI COLOR'S COLLECTIONS",
+          description: "Discover our curated themed collections, each featuring a harmonious selection of shades designed to complement each other. From the fresh energy of Pop Wave to the natural elegance of Neo Nudes, find your perfect palette."
         };
       case "Base Coat":
         return {
