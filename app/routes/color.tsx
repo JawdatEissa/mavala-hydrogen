@@ -674,9 +674,9 @@ export default function ColorPage() {
           </p>
 
           {/* Horizontal Tab Navigation Bar - 2 rows on mobile, single row on desktop */}
-          <div className="w-full flex justify-center px-4">
-            {/* Mobile: 2-row layout */}
-            <div className="md:hidden flex flex-col gap-2 bg-white border border-gray-200 rounded-xl p-3 shadow-sm w-full max-w-lg">
+          <div className="w-full flex justify-center px-2">
+            {/* Mobile: 2-row pill-style layout */}
+            <div className="md:hidden flex flex-col gap-3 w-full max-w-md">
               {/* First row: Mini Colours, Collections, Mini Bio */}
               <div className="flex items-center justify-center gap-2">
                 {topRowTabs.map((tab) => (
@@ -684,11 +684,11 @@ export default function ColorPage() {
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
                     className={`
-                      flex-1 px-2 py-2 rounded-lg font-['Archivo'] text-[10px] font-medium uppercase tracking-wide transition-all duration-200 whitespace-nowrap
+                      flex-1 px-3 py-2.5 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-all duration-200 whitespace-nowrap text-center
                       ${
                         activeTab === tab.id
-                          ? "bg-[#ae1932] text-white shadow-md"
-                          : "bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]"
+                          ? "bg-[#ae1932] text-white shadow-lg"
+                          : "bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300"
                       }
                     `}
                   >
@@ -703,11 +703,11 @@ export default function ColorPage() {
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
                     className={`
-                      flex-1 px-2 py-2 rounded-lg font-['Archivo'] text-[10px] font-medium uppercase tracking-wide transition-all duration-200 whitespace-nowrap
+                      flex-1 px-2 py-2.5 rounded-full font-['Archivo'] text-[10px] font-semibold uppercase tracking-wider transition-all duration-200 whitespace-nowrap text-center
                       ${
                         activeTab === tab.id
-                          ? "bg-[#ae1932] text-white shadow-md"
-                          : "bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]"
+                          ? "bg-[#ae1932] text-white shadow-lg"
+                          : "bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300"
                       }
                     `}
                   >
@@ -718,17 +718,17 @@ export default function ColorPage() {
             </div>
 
             {/* Desktop: Single row */}
-            <div className="hidden md:flex items-center justify-center gap-3 bg-white border border-gray-200 rounded-xl p-3 shadow-sm max-w-5xl">
+            <div className="hidden md:flex items-center justify-center gap-3 bg-white border border-gray-200 rounded-2xl p-3 shadow-sm max-w-5xl">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`
-                    px-5 py-3 rounded-lg font-['Archivo'] text-[13px] font-medium uppercase tracking-wide transition-all duration-200 whitespace-nowrap
+                    px-5 py-3 rounded-full font-['Archivo'] text-[13px] font-semibold uppercase tracking-wide transition-all duration-200 whitespace-nowrap
                     ${
                       activeTab === tab.id
-                        ? "bg-[#ae1932] text-white shadow-md"
-                        : "bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]"
+                        ? "bg-[#ae1932] text-white shadow-lg"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                     }
                   `}
                 >
