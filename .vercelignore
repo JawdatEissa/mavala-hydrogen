@@ -37,10 +37,9 @@ analysis-output.txt
 all-data-content.txt
 definitely-unused.txt
 
-# Test images at root level
-double_lash.png
-nail_fungus_image.png
-shop-eye-beauty.png
+# Test images at root level (not in public folder)
+/double_lash.png
+/nail_fungus_image.png
 
 # Development outputs
 .DS_Store
