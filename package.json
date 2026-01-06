@@ -6,9 +6,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
+    "build": "remix vite:build",
     "preview": "vite preview",
+    "start": "remix-serve ./build/server/index.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "@remix-run/node": "^2.12.1",
