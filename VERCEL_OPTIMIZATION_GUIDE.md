@@ -11,13 +11,14 @@ Your application has 4,300+ images which was causing:
 
 ### 1. Vercel Configuration (`vercel.json`)
 
-Created a comprehensive Vercel configuration with:
+Created a Remix-compatible Vercel configuration with:
 
-- **Increased Function Timeout**: Set to 30 seconds for routes that load many products
+- **Increased Function Timeout**: Set to 30 seconds for API functions
 - **Increased Memory**: 1024MB for better performance
-- **Image Caching**: Aggressive caching (1 year) for all images
+- **Image Caching**: Aggressive caching (1 year) for all images via Cache-Control headers
 - **CDN Headers**: Proper cache-control headers for static assets
-- **Image Optimization**: Configured for AVIF and WebP formats
+
+**Note**: Vercel's built-in Image Optimization (`images` config) is Next.js-specific and not used for Remix apps. Instead, we rely on browser-native lazy loading and the custom `OptimizedImage` component.
 
 ### 2. Build Optimization (`vite.config.ts`)
 
