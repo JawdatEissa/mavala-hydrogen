@@ -664,13 +664,13 @@ export default function ColorPage() {
       <section className="pt-4 md:pt-6 lg:pt-8 pb-12 md:pb-20 lg:pb-24 px-4 md:px-8 bg-gradient-to-b from-white to-[#fafafa]">
         <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
           {/* Title - Dynamic based on active tab */}
-          <h1 className="font-['Archivo'] text-[26px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-semibold text-[#ae1932] uppercase tracking-wide mb-3 md:mb-4 px-2">
+          <h1 className="font-['Archivo'] text-[26px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-semibold text-[#ae1932] uppercase tracking-wide px-2 text-center mb-3">
             {title}
           </h1>
 
-          {/* Description - Dynamic based on active tab with min-height for smooth transitions */}
-          <div className="min-h-[80px] sm:min-h-[70px] md:min-h-[80px] flex items-start justify-center mb-10 md:mb-14 max-w-4xl mx-auto px-2">
-            <p className="font-['Archivo'] text-[14px] sm:text-[15px] md:text-[17px] lg:text-[18px] text-gray-600 leading-relaxed">
+          {/* Description - Fixed height to prevent nav bar jumping */}
+          <div className="h-[85px] sm:h-[65px] md:h-[55px] flex items-start justify-center mb-4 max-w-3xl mx-auto px-4">
+            <p className="font-['Archivo'] text-[14px] sm:text-[15px] md:text-[16px] text-gray-600 leading-relaxed">
               {description}
             </p>
           </div>
@@ -678,7 +678,7 @@ export default function ColorPage() {
           {/* Horizontal Tab Navigation Bar - 2 rows on mobile, single row on desktop */}
           <div className="w-full flex justify-center px-2">
             {/* Mobile: 2-row pill-style layout */}
-            <div className="md:hidden flex flex-col gap-3 w-full max-w-md">
+            <div className="md:hidden flex flex-col gap-2 w-full max-w-md">
               {/* First row: Mini Colours, Collections, Mini Bio */}
               <div className="flex items-center justify-center gap-2">
                 {topRowTabs.map((tab) => (
@@ -720,7 +720,7 @@ export default function ColorPage() {
             </div>
 
             {/* Desktop: Single row - Original style */}
-            <div className="hidden md:flex items-center justify-center gap-3 bg-white border border-gray-200 rounded-xl p-3 shadow-sm max-w-5xl">
+            <div className="hidden md:flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-xl p-2 shadow-sm max-w-5xl">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
