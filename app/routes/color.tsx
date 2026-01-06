@@ -606,7 +606,7 @@ export default function ColorPage() {
         return {
           title: "MINI COLOR'S NAIL POLISHES",
           description:
-            "All Mavala nail polishes, base coats and top coats allow nails to breathe. They contain a resin extracted from wood which adheres to the nail surface in the form of a flexible and resistant film which remains porous, allowing oxygen and water vapour to pass through the nail polish, to the nail plate. They are developed with rigorously selected ingredients and are free from ingredients of animal origin, thus suitable for vegans. Their convenient and economical 5ml MINI format helps reduce waste, and allows you to choose a few shades from the 300+ available!",
+            "Since 1962, MAVALA MINI COLOR nail polishes, in a handy and economical small format, have been your companion at all times. Their respectful formula offers easy application, perfect adhesion, shine and long-lasting hold! Nail polishes which also let the nails breathe and pass water vapour!",
         };
       case "Mini Colours Collection":
         return {
