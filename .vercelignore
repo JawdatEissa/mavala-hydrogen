@@ -2,6 +2,7 @@
 node_modules/
 .git/
 .cache/
+.vercel/
 
 # Documentation
 *.md
@@ -11,12 +12,14 @@ SHOP_WEBSITE_DOCUMENTATION.md
 QUICK_START_GUIDE.md
 HERO_IMAGE_SETTINGS_GUIDE.md
 ALL_PRODUCTS_IMPLEMENTATION.md
+VERCEL_OPTIMIZATION_GUIDE.md
 
 # Analysis and scripts
 *.ps1
 *.js
 !postcss.config.js
 !tailwind.config.js
+!vite.config.ts
 find-unused.js
 find-unused-images.js
 analyze-images.js
@@ -34,7 +37,7 @@ analysis-output.txt
 all-data-content.txt
 definitely-unused.txt
 
-# Test images
+# Test images at root level
 double_lash.png
 nail_fungus_image.png
 shop-eye-beauty.png
@@ -42,3 +45,9 @@ shop-eye-beauty.png
 # Development outputs
 .DS_Store
 *.log
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
