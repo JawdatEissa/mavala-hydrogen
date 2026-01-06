@@ -11,6 +11,11 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+  
+  /* Force scroll to stop at each snap point - prevents skipping on mobile */
+  .snap-stop-always {
+    scroll-snap-stop: always;
+  }
 }
 
 /* Mavala Brand Styles - Matching mavala.com */

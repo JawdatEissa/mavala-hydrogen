@@ -230,7 +230,7 @@ export default function Homepage() {
                 {/* Product 1: STOP */}
                 <Link
                   to="/products/mavala-stop"
-                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center active:scale-95 transition-transform"
+                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
                 >
                   <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
                     <img
@@ -247,7 +247,7 @@ export default function Homepage() {
                 {/* Product 2: K+ */}
                 <Link
                   to="/products/mavala-scientifique-k"
-                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center active:scale-95 transition-transform"
+                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
                 >
                   <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
                     <img
@@ -264,7 +264,7 @@ export default function Homepage() {
                 {/* Product 3: Nailactan */}
                 <Link
                   to="/products/nailactan-1"
-                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center active:scale-95 transition-transform"
+                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
                 >
                   <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
                     <img
@@ -281,7 +281,7 @@ export default function Homepage() {
                 {/* Product 4: Double Lash */}
                 <Link
                   to="/products/double-lash"
-                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center active:scale-95 transition-transform"
+                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
                 >
                   <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
                     <img
@@ -298,7 +298,7 @@ export default function Homepage() {
                 {/* Product 5: Nail White Crayon */}
                 <Link
                   to="/products/nail-white-crayon"
-                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center active:scale-95 transition-transform"
+                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
                 >
                   <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
                     <img
@@ -315,7 +315,7 @@ export default function Homepage() {
                 {/* Product 6: Double Brow */}
                 <Link
                   to="/products/double-brow"
-                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center active:scale-95 transition-transform"
+                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
                 >
                   <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
                     <img
