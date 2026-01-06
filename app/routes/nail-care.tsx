@@ -4,7 +4,7 @@ import { useLoaderData, Link } from "@remix-run/react";
 import {
   loadScrapedProducts,
   type ScrapedProduct,
-} from "../lib/scraped-products";
+} from "../lib/scraped-products.server";
 import {
   CategoryHero,
   CategoryProductSection,

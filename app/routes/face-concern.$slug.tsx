@@ -2,7 +2,7 @@ import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData, Link } from "@remix-run/react";
 import faceConcernsData from "../data/face-concerns.json";
-import { loadScrapedProducts } from "../lib/scraped-products";
+import { loadScrapedProducts } from "../lib/scraped-products.server";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { slug } = params;

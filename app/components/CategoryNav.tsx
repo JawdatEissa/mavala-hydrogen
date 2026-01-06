@@ -1,5 +1,5 @@
 import { Link, useSearchParams } from "@remix-run/react";
-import { CATEGORIES } from "../lib/scraped-products";
+import { CATEGORIES } from "../lib/constants";
 
 export function CategoryNav() {
   const [searchParams] = useSearchParams();

@@ -3,7 +3,7 @@ import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { CategoryNav } from '../components/CategoryNav';
 import { ProductGrid } from '../components/ProductCard';
-import { loadScrapedProducts, getProductsByCategory, type ScrapedProduct } from '../lib/scraped-products';
+import { loadScrapedProducts, getProductsByCategory, type ScrapedProduct } from '../lib/scraped-products.server';
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const url = new URL(request.url);

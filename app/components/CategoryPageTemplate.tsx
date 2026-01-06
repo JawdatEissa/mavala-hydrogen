@@ -1,4 +1,4 @@
-import type { ScrapedProduct } from "../lib/scraped-products";
+import type { ScrapedProduct } from "../lib/scraped-products.server";
 
 // Product Card Component for Category Pages - Standardized 4-column layout
 export function CategoryProductCard({ product }: { product: ScrapedProduct }) {

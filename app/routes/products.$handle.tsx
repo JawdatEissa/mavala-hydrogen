@@ -6,7 +6,7 @@ import {
   loadScrapedProducts,
   getProductBySlug,
   type ScrapedProduct,
-} from "../lib/scraped-products";
+} from "../lib/scraped-products.server";
 import { ShadeDrawer } from "../components/ShadeDrawer";
 import { readFileSync, existsSync, readdirSync } from "fs";
 import { join } from "path";

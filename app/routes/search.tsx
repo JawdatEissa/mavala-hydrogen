@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { Link, useLoaderData } from "@remix-run/react";
 import type { MetaFunction, LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { loadScrapedProducts, type ScrapedProduct } from "../lib/scraped-products";
+import { loadScrapedProducts, type ScrapedProduct } from "../lib/scraped-products.server";
 
 export const meta: MetaFunction = () => {
   return [

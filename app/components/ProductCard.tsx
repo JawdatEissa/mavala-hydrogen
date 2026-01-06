@@ -1,6 +1,6 @@
 import { Link } from "@remix-run/react";
 import type { Product } from "../lib/mock-data";
-import type { ScrapedProduct } from "../lib/scraped-products";
+import type { ScrapedProduct } from "../lib/scraped-products.server";
 
 type ProductType = Product | ScrapedProduct;
 

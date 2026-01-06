@@ -5,7 +5,7 @@ import {
   CategoryHero,
   CategoryProductSection,
 } from "../components/CategoryPageTemplate";
-import { loadScrapedProducts } from "../lib/scraped-products";
+import { loadScrapedProducts } from "../lib/scraped-products.server";
 import faceLipsData from "../data/face-lips-page.json";
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {

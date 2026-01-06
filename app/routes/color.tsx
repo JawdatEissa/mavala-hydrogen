@@ -5,7 +5,7 @@ import { useState } from "react";
 import {
   loadScrapedProducts,
   type ScrapedProduct,
-} from "../lib/scraped-products";
+} from "../lib/scraped-products.server";
 import shadeColorsData from "../data/shade_colors.json";
 
 // Define the product categories for each section

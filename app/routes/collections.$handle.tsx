@@ -6,8 +6,8 @@ import { CategoryNav } from "../components/CategoryNav";
 import {
   loadScrapedProducts,
   getProductsByCategory,
-  CATEGORIES,
-} from "../lib/scraped-products";
+} from "../lib/scraped-products.server";
+import { CATEGORIES } from "../lib/constants";
 
 export const loader = async ({ params, request }: LoaderFunctionArgs) => {
   try {

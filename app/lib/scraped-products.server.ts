@@ -418,27 +418,4 @@ export function getProductsByCategory(
   });
 }
 
-/**
- * Category list matching the reference site
- */
-export const CATEGORIES = [
-  'All',
-  'Complexion',
-  'Cuticle Care',
-  'Eye Colour',
-  'Eyebrows & Lashes',
-  'Foot Care',
-  'Gift Sets',
-  'Hair & Body',
-  'Hand care',
-  'Lip balm',
-  'Lip Colour',
-  'Makeup Removers',
-  'Manicure Essentials',
-  'Nail Colour',
-  'Nail Polish Collections',
-  'Nail Polish Removers',
-  'Nail Repair',
-  'Skincare',
-];
-
+// CATEGORIES moved to lib/constants.ts for client/server sharing
