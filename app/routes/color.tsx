@@ -578,16 +578,20 @@ export default function ColorPage() {
     return categories.includes(activeTab);
   });
 
-  // Tab categories
+  // Tab categories - organized for 2-row mobile display
   const tabs = [
     { id: "Mini Colours", label: "Mini Colours" },
     { id: "Mini Colours Collection", label: "Collections" },
+    { id: "Mini Bio", label: "Mini Bio" },
     { id: "Base Coat", label: "Base Coat" },
     { id: "Top Coat", label: "Top Coat" },
     { id: "Polish Dryer", label: "Polish Dryer" },
     { id: "Remover", label: "Remover" },
-    { id: "Mini Bio", label: "Mini Bio" },
   ];
+
+  // Split tabs for 2-row mobile layout
+  const topRowTabs = tabs.slice(0, 3); // Mini Colours, Collections, Mini Bio
+  const bottomRowTabs = tabs.slice(3); // Base Coat, Top Coat, Polish Dryer, Remover
 
   // Dynamic title and description based on active tab
   const getTitleAndDescription = () => {
@@ -669,15 +673,58 @@ export default function ColorPage() {
             {description}
           </p>
 
-          {/* Horizontal Tab Navigation Bar - Wraps on mobile, single row on desktop */}
+          {/* Horizontal Tab Navigation Bar - 2 rows on mobile, single row on desktop */}
           <div className="w-full flex justify-center px-4">
-            <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-2 md:gap-3 bg-white border border-gray-200 rounded-xl p-3 md:p-3 shadow-sm max-w-5xl">
+            {/* Mobile: 2-row layout */}
+            <div className="md:hidden flex flex-col gap-2 bg-white border border-gray-200 rounded-xl p-3 shadow-sm w-full max-w-lg">
+              {/* First row: Mini Colours, Collections, Mini Bio */}
+              <div className="flex items-center justify-center gap-2">
+                {topRowTabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`
+                      flex-1 px-2 py-2 rounded-lg font-['Archivo'] text-[10px] font-medium uppercase tracking-wide transition-all duration-200 whitespace-nowrap
+                      ${
+                        activeTab === tab.id
+                          ? "bg-[#ae1932] text-white shadow-md"
+                          : "bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]"
+                      }
+                    `}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+              {/* Second row: Base Coat, Top Coat, Polish Dryer, Remover */}
+              <div className="flex items-center justify-center gap-2">
+                {bottomRowTabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`
+                      flex-1 px-2 py-2 rounded-lg font-['Archivo'] text-[10px] font-medium uppercase tracking-wide transition-all duration-200 whitespace-nowrap
+                      ${
+                        activeTab === tab.id
+                          ? "bg-[#ae1932] text-white shadow-md"
+                          : "bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]"
+                      }
+                    `}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Desktop: Single row */}
+            <div className="hidden md:flex items-center justify-center gap-3 bg-white border border-gray-200 rounded-xl p-3 shadow-sm max-w-5xl">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`
-                    px-3 md:px-5 py-2 md:py-3 rounded-lg font-['Archivo'] text-[11px] md:text-[13px] font-medium uppercase tracking-wide transition-all duration-200 whitespace-nowrap
+                    px-5 py-3 rounded-lg font-['Archivo'] text-[13px] font-medium uppercase tracking-wide transition-all duration-200 whitespace-nowrap
                     ${
                       activeTab === tab.id
                         ? "bg-[#ae1932] text-white shadow-md"
