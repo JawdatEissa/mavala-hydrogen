@@ -1,28 +1,44 @@
-node_modules
-/.cache
-/build
-.env
-.env.*
-!.env.example
-*.log
+# Development files
+node_modules/
+.git/
+.cache/
+
+# Documentation
+*.md
+!README.md
+SCREENSHOT_ANALYSIS.md
+SHOP_WEBSITE_DOCUMENTATION.md
+QUICK_START_GUIDE.md
+HERO_IMAGE_SETTINGS_GUIDE.md
+ALL_PRODUCTS_IMPLEMENTATION.md
+
+# Analysis and scripts
+*.ps1
+*.js
+!postcss.config.js
+!tailwind.config.js
+find-unused.js
+find-unused-images.js
+analyze-images.js
+check-used-folders.ps1
+identify-unused.ps1
+move-unused-images.ps1
+
+# Backup and temp files
+*-backup/
+images-backup-categories/
+public/images-backup-categories/
+*.txt
+!package-lock.json
+analysis-output.txt
+all-data-content.txt
+definitely-unused.txt
+
+# Test images
+double_lash.png
+nail_fungus_image.png
+shop-eye-beauty.png
+
+# Development outputs
 .DS_Store
-dist
-*.tsbuildinfo
-
-# Exclude large image folders - use external CDN or cloud storage instead
-public/images/**
-public/images-backup-categories/**
-
-# Keep only essential static assets
-!public/images/
-!public/*.jpg
-!public/*.png
-!public/*.webp
-!public/*.mp4
-!public/favicon.ico
-!public/brand/**
-!public/diagnosis/**
-!public/face-concerns/**
-!public/nail-concerns/**
-!public/skin-concerns/**
-!public/quiz/**
+*.log
