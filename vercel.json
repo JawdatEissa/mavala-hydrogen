@@ -2,17 +2,11 @@
   "buildCommand": "npm run build",
   "framework": "remix",
   "functions": {
-    "app/routes/**/*.tsx": {
+    "api/**/*.ts": {
       "maxDuration": 30,
       "memory": 1024
     }
   },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ],
   "headers": [
     {
       "source": "/images/(.*)",
@@ -32,17 +26,6 @@
         }
       ]
     }
-  ],
-  "images": {
-    "domains": ["images.squarespace-cdn.com"],
-    "remotePatterns": [
-      {
-        "protocol": "https",
-        "hostname": "**.squarespace-cdn.com"
-      }
-    ],
-    "formats": ["image/avif", "image/webp"],
-    "minimumCacheTTL": 31536000
-  }
+  ]
 }
 
