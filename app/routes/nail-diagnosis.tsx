@@ -109,53 +109,34 @@ const NAIL_CONDITIONS = [
 export default function NailDiagnosisPage() {
   return (
     <div className="min-h-screen bg-white pt-[90px]">
-      {/* Breadcrumb */}
-      <div className="py-6 px-4 md:px-8 bg-white border-b border-gray-200">
-        <div className="max-w-[1400px] mx-auto">
-          <p className="font-['Archivo'] text-[11px] md:text-[12px] uppercase text-[#ae1932] tracking-wider">
-            <a href="/" className="hover:underline">
-              MAVACADEMY
-            </a>
-            {" > "}
-            <a href="/tips-advice" className="hover:underline">
-              BEAUTY ADVICE
-            </a>
-            {" > "}
-            <span className="text-gray-600">NAIL CONCERNS</span>
-          </p>
-        </div>
-      </div>
-
       {/* Main Content */}
-      <section className="py-12 md:py-16 px-4 md:px-6 lg:px-8">
+      <section className="py-8 md:py-16 px-2 sm:px-4 md:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Title */}
-          <h1 className="font-['Archivo'] text-[28px] md:text-[36px] font-bold text-[#ae1932] uppercase text-center tracking-[1px] mb-8 md:mb-12">
+          <h1 className="font-['Archivo'] text-[40px] md:text-[36px] font-bold text-[#ae1932] uppercase text-center tracking-[1px] mb-8 md:mb-12">
             NAIL CONCERNS
           </h1>
 
-          {/* Nail Conditions Grid - Optimized for mobile centering */}
-          <div className="flex justify-center">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-12 gap-x-6 gap-y-6 md:gap-x-5 md:gap-y-8 xl:gap-6 max-w-fit justify-items-center">
-              {NAIL_CONDITIONS.map((condition, idx) => (
-                <a
-                  key={idx}
-                  href={`/nail-concern/${condition.slug}`}
-                  className="flex flex-col items-center justify-start text-center cursor-pointer hover:opacity-80 transition-opacity duration-200 group w-[85px] sm:w-[90px] md:w-[90px] xl:w-[100px]"
-                >
-                  <div className="w-full aspect-[2/3] flex items-center justify-center mb-2">
-                    <img
-                      src={condition.image}
-                      alt={condition.name}
-                      className="w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-200"
-                    />
-                  </div>
-                  <p className="font-['Archivo'] text-[9px] sm:text-[10px] md:text-[10px] uppercase text-gray-800 leading-tight font-semibold">
-                    {condition.name}
-                  </p>
-                </a>
-              ))}
-            </div>
+          {/* Nail Conditions Grid - Full width on mobile */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-12 gap-x-3 gap-y-5 sm:gap-x-5 md:gap-x-5 md:gap-y-8 xl:gap-6 justify-items-center">
+            {NAIL_CONDITIONS.map((condition, idx) => (
+              <a
+                key={idx}
+                href={`/nail-concern/${condition.slug}`}
+                className="flex flex-col items-center justify-start text-center cursor-pointer hover:opacity-80 transition-opacity duration-200 group w-full max-w-[140px] sm:max-w-[120px] md:max-w-[110px] xl:max-w-[100px]"
+              >
+                <div className="w-full aspect-[2/3] flex items-center justify-center mb-2">
+                  <img
+                    src={condition.image}
+                    alt={condition.name}
+                    className="w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-200"
+                  />
+                </div>
+                <p className="font-['Archivo'] text-[13px] sm:text-[11px] md:text-[10px] uppercase text-gray-800 leading-tight font-semibold">
+                  {condition.name}
+                </p>
+              </a>
+            ))}
           </div>
         </div>
       </section>
