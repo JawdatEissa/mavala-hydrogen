@@ -1,0 +1,36 @@
+{
+  "product_slug": "yellow-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 7,
+  "color_groups": {
+    "Yellow": [
+      "985 PSYCHEDELIC LIME*",
+      "483 YELLOW POP",
+      "416 MELLOW YELLOW",
+      "428 MALAPASCUA"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "985 PSYCHEDELIC LIME*",
+      "color": "Yellow",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1579665115179-4H2PEBV5ONK89TDJQXBF/985+Psychedelic+Lime.jpg?format=500w"
+    },
+    {
+      "name": "483 YELLOW POP",
+      "color": "Yellow",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1764827003986-KMS4925NFBET1OEWBHRX/MAVALA-MINI-COLOR-483-Yellow-Pop.png?format=500w"
+    },
+    {
+      "name": "416 MELLOW YELLOW",
+      "color": "Yellow",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1653529093890-BUOCXQ6O6YZXWYX31KIN/416+Mellow+Yellow.png?format=500w"
+    },
+    {
+      "name": "428 MALAPASCUA",
+      "color": "Yellow",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1670302690672-03ZNTSXRRFKBVAIINOQM/428+Malapascua.png?format=500w"
+    }
+  ]
+}

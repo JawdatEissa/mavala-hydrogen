@@ -1,0 +1,218 @@
+{
+  "product_slug": "pink-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 49,
+  "color_groups": {
+    "Pink": [
+      "56 RIGA",
+      "450 POWER OF PINK PASTEL",
+      "157 BLUSH PINK",
+      "322 HAMPTONS",
+      "459 YUMMY POMELO",
+      "253 PINK ORCHID*",
+      "316 FIJI",
+      "52 TOULOUSE",
+      "225 ROSE NAP",
+      "473 SEDONA",
+      "9 LISBOA*",
+      "367 FEMININE*",
+      "429 SYDNEY",
+      "444 EREVAN",
+      "455 BABYLON",
+      "71 LA PAZ",
+      "168 SOUTH BEACH PINK",
+      "338 MY DARLING",
+      "303 BALI",
+      "172 VEGAS PINK",
+      "431 POWER OF PINK FUCHSIA",
+      "190 HONOLULU",
+      "285 ROSE HILL",
+      "418 PARTY PINK",
+      "481 ROSE POP",
+      "425 BUDVA",
+      "98 MARRAKECH",
+      "65 ADELAIDE*",
+      "55 DAKAR*",
+      "75 MIAMI",
+      "11 HANOI"
+    ],
+    "Purple": [
+      "430 VANCOUVER",
+      "435 PORTLAND",
+      "239 BARCELONA"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "56 RIGA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492402555443-OHDW0AJS5WY7UX11LERN/056+Riga.jpg?format=500w"
+    },
+    {
+      "name": "450 POWER OF PINK PASTEL",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1730433074778-7IB5VI1NPB5WCHFRBE5A/450+MAVALA+Mini+Color+The+Power+of+Pink+pastel+RGB.jpg?format=500w"
+    },
+    {
+      "name": "157 BLUSH PINK",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492403946062-55GZ95O6QK4SR9K2TCZ2/157+Blush+Pink.jpg?format=500w"
+    },
+    {
+      "name": "322 HAMPTONS",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1626063316356-BY5SZTFXD6L0M9MQNJRD/322-Hamptons.jpg?format=500w"
+    },
+    {
+      "name": "459 YUMMY POMELO",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1731910114093-EEOD4BO6H0P4UIL7FKSZ/459+Yummy+Pomelo+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "253 PINK ORCHID*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1503276500469-KCVADPRYK7XE6NJF1WRH/Pink+Orchid.png?format=500w"
+    },
+    {
+      "name": "316 FIJI",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568303911-U9F4PC13KIL8QMMIUJVK/Fiji.png?format=500w"
+    },
+    {
+      "name": "52 TOULOUSE",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492402528283-E1IV1KO7UC447DY0V3QZ/052+Toulouse.jpg?format=500w"
+    },
+    {
+      "name": "225 ROSE NAP",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1595465660306-AOX27E26YO5DAUPZKDGH/225+Rose+Nap.png?format=500w"
+    },
+    {
+      "name": "473 SEDONA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1747812589486-SO8V8YONRPO06H62B78J/473+Sedona+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "9 LISBOA*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492402665253-PDZ7DVH0LJS215YAYDBX/009+Lisboa.jpg?format=500w"
+    },
+    {
+      "name": "367 FEMININE*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492402694196-J6SOUNEW0I7W0J2RCXS9/367+Feminine.jpg?format=500w"
+    },
+    {
+      "name": "429 SYDNEY",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1670302052224-QHJ42OY9C1IALJCMB9XU/429+Sydney.png?format=500w"
+    },
+    {
+      "name": "444 EREVAN",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1701739401985-RURN53DQLU3YC5TVSL8P/444+Erevan.jpg?format=500w"
+    },
+    {
+      "name": "455 BABYLON",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1710305928901-X3ZUDFSPFCP37P7VM29D/455+Babylon+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "71 LA PAZ",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492402415069-ZCQOSLKC8ZTZIIMXDHNC/071+Lapaz.jpg?format=500w"
+    },
+    {
+      "name": "168 SOUTH BEACH PINK",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568427518-QKZMZ8P73I4NWOF515S1/South+Beach+Pink.png?format=500w"
+    },
+    {
+      "name": "338 MY DARLING",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568457330-OC0OYASO25KCQHDLMDLY/My+Darling.png?format=500w"
+    },
+    {
+      "name": "303 BALI",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492403316305-V3LMGZLUKVLOZWO9EQQG/303+Bali.jpg?format=500w"
+    },
+    {
+      "name": "172 VEGAS PINK",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492403644468-3YUS2P8NPUQNLCP0S3GU/172+Vegas+Pink.jpg?format=500w"
+    },
+    {
+      "name": "431 POWER OF PINK FUCHSIA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1730433075126-QLH42XSETZ6MSPKYTYGQ/431+Power+of+Pink.jpg?format=500w"
+    },
+    {
+      "name": "190 HONOLULU",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568487597-0MAXEV7O8T0WORV44HWI/Honolulu.png?format=500w"
+    },
+    {
+      "name": "285 ROSE HILL",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1513921152163-7671DRK6VYWB32TTEU3J/Rose+Hill.jpg?format=500w"
+    },
+    {
+      "name": "418 PARTY PINK",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1653529603337-NQK1G5IJ1PLZKSLUH3RG/418+Party+Pink.png?format=500w"
+    },
+    {
+      "name": "481 ROSE POP",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1764826732356-MR8GV0BZGE5F3YMG9SVM/MAVALA-MINI-COLOR-481-Rose-Pop.png?format=500w"
+    },
+    {
+      "name": "425 BUDVA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1670302034730-3XB2Q48FC0D9UH02KALX/425+Budva.png?format=500w"
+    },
+    {
+      "name": "98 MARRAKECH",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568519675-US5AJNA9AUDFLHZ13QCT/Marrakech.png?format=500w"
+    },
+    {
+      "name": "65 ADELAIDE*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492402606563-6YGMWR3Z3FGYU22HB78R/065+Adelaide.jpg?format=500w"
+    },
+    {
+      "name": "55 DAKAR*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492402581044-NFE9BCJ1EMYRVTTT6TVG/055+Dakar.jpg?format=500w"
+    },
+    {
+      "name": "430 VANCOUVER",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1670302832706-HACVZDJ2E1SCN91J2KJN/430+Vancouver.png?format=500w"
+    },
+    {
+      "name": "75 MIAMI",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492402243920-NOJKZZS8SJ8AV21YMY12/075+Miami.jpg?format=500w"
+    },
+    {
+      "name": "435 PORTLAND",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1679985048309-AR39XWWRCV6EVC5SVVYB/435+Portland.jpg?format=500w"
+    },
+    {
+      "name": "239 BARCELONA",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568574638-ETBSSV23ZX87I4PLSANS/Barcelona.png?format=500w"
+    },
+    {
+      "name": "11 HANOI",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1532763708774-M63HS72HE11M8C15QDD7/Hanoi.jpg?format=500w"
+    }
+  ]
+}

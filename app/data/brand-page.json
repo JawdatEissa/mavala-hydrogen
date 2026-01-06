@@ -1,0 +1,269 @@
+{
+  "hero_title": "MAVALA cherishes time out of love for every moment.",
+  "video_url": "https://cdn.sanity.io/files/yc35qjpq/production/94016ace7513eae8b9daa8b8df46785c8773d95d.mp4",
+  "sections": [
+    {
+      "id": "mission",
+      "title": "Our mission",
+      "subtitle": "We continually contribute to the development of all, both in their beauty and well-being, by developing excellent Swiss products.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "At MAVALA, every product and every gesture is designed to enhance your natural beauty, help you feel good and highlight what makes you unique."
+        },
+        {
+          "type": "paragraph",
+          "text": "For over 65 years, we have been creating innovative skincare and makeup, combining effectiveness, safety, and sensory appeal, with passion, patience, and expertise. What makes our products unique is our expertise and our commitment to taking the time necessary to do things right. The pursuit of excellence is a true journey, requiring patience, hundreds of rigorous tests, and meticulous attention to detail. This approach guarantees safe, effective, and sensorial formulas that meet your expectations and your desire to preserve your health."
+        },
+        {
+          "type": "paragraph",
+          "text": "A Swiss family business and independent since 1959, MAVALA perpetuates its heritage by remaining true to its roots while embracing innovation. Our iconic products transcend time and bridge the gap between the past and the future. Our innovations, regularly recognized with awards worldwide, reflect our commitment to anticipating your needs and desires. To enhance your beauty."
+        }
+      ]
+    },
+    {
+      "id": "expertise",
+      "title": "Our expertise",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Located in the heart of Geneva, our dedicated Research and Development laboratories, integrated into our headquarters, embody the exacting standards and precision of Swiss engineering, recognized worldwide. Our expertise is based on a thoughtful, rigorous, and authentic approach to beauty and well-being. This approach combines in-depth knowledge of the skin and its appendages (nails, eyelashes, eyebrows), cutting-edge dermatological active ingredients, the world of plants, and scientific formulation."
+        },
+        {
+          "type": "paragraph",
+          "text": "This is how we design, develop, and manufacture all our formulas* in Switzerland, with optimal dosages and synergies, controlling every stage of production. This rigorous approach guarantees high-quality compositions, subjected to stringent testing – stability, compatibility, safety, clinical efficacy – which has earned us a reputation in nearly 100 countries across 5 continents."
+        },
+        {
+          "type": "paragraph",
+          "text": "And because respect for animal life is at the heart of our values, none of our products are tested on animals, regardless of the country of sale."
+        },
+        {
+          "type": "bold",
+          "text": "100% Swiss. Zero compromise."
+        },
+        {
+          "type": "note",
+          "text": "*excluding makeup powders, pencils and antifungal products"
+        }
+      ]
+    },
+    {
+      "id": "commitments",
+      "title": "Our commitments",
+      "subsections": [
+        {
+          "id": "planet",
+          "title": "For the planet",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "We take our role in preserving the planet to heart. We are committed to reducing our environmental impact at every stage, from the design of our packaging to the manufacturing and marketing of our products, while remaining true to our values of excellence and innovation."
+            },
+            {
+              "type": "paragraph",
+              "text": "Specifically, here are our actions:"
+            },
+            {
+              "type": "bullets",
+              "items": [
+                "We are eliminating the plastic cellophane around our cardboard boxes to limit unnecessary waste.",
+                "We are reducing the use of paper leaflets.",
+                "We are incorporating more and more recycled plastic into our tubes.",
+                "Our cardboard cases and supports are mostly sourced from sustainably managed forests and are FSC certified.",
+                "We favour local or regional sourcing to limit environmental impact.",
+                "We take care to minimize energy consumption throughout the manufacturing process of our formulas."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "For years, social and environmental responsibility has been at the heart of our strategic and operational decisions. We are moving forward, with sincerity and transparency, to reduce the environmental impact of our activities."
+            },
+            {
+              "type": "bold",
+              "text": "Every step counts."
+            }
+          ]
+        },
+        {
+          "id": "health",
+          "title": "For health",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "We are resolutely committed to the fight against cancer. Year after year, we launch fundraising initiatives through our The Power of Pink campaign to support research and patient support organizations worldwide. In partnership with leading institutions such as the Institut Curie in France, the Swiss Cancer Foundation in Switzerland, the Pink Ribbon Foundation in the UK, the Fondazione Humanitas per la Ricerca in Italy, Alma Zois in Greece, and the National Breast Cancer Foundation in Australia, we join forces to advance the cause and provide better support to those who need it."
+            },
+            {
+              "type": "bold",
+              "text": "Let's join forces against cancer."
+            }
+          ]
+        },
+        {
+          "id": "education",
+          "title": "For education and the community",
+          "content": [
+            {
+              "type": "paragraph",
+              "text": "MAVALA has always been committed to sharing its expertise. As early as 1969, we opened our first school in London to train professionals in the best care practices. Today, MAVALA is a key player in education, offering diploma programmes in dozens of beauty schools in France, as well as tailored certification courses all over the world, ensuring high-quality training to the next generation of beauty specialists."
+            },
+            {
+              "type": "paragraph",
+              "text": "A passion for knowledge-sharing: Our commitment also extends to our local community. In Switzerland, and Geneva in particular, we actively support associations by working with homes for the disabled and disadvantaged. For a fairer, more inclusive future."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "history",
+      "title": "Our history",
+      "quote": {
+        "text": "We were born in 1959, from the vision of a beautician (Madeleine Van Landeghem) and the formulation talent of a chemist. We grew up in Geneva, turned towards the world and today present in 100 countries. Since our origins, we have remained free, inventing mini polishes when the fashion was for large bottles. Remaining an independent family business, facing the industrial giants of beauty. At the heart of trends and defying the dictates of beauty. Our heritage is our strength, the one that helps us balance the timeless and innovation.",
+        "author": "Doris Maute Bobillier, CEO"
+      },
+      "timeline": [
+        {
+          "year": "1959", 
+          "event": "Founding of MAVALA",
+          "description": "Founding of MAVALA and launch of our iconic Mavala Scientifique K+, the first penetrating nail hardener on the market. Our dream was to shake up the beauty market!",
+          "image": "https://cdn.sanity.io/images/m6hh3qbl/production/eb741dba116df243ebe1a4904a72af4b4264468c-1713x2953.jpg?w=800&h=800&fit=crop&crop=center&auto=format"
+        },
+        {
+          "year": "1962", 
+          "event": "Mini Color's Creation",
+          "description": "Shiny, long-lasting formulas for the first time in a mini format, allowing women to use every last drop of their nail polish before it dries out in a bottle that's too big. Now available in over 350 shades, and in bio-sourced or silicon-enriched versions, they're still as popular as ever!",
+          "image": "https://cdn.sanity.io/images/m6hh3qbl/production/b40fd818a82cbd02c24af395089eb16a8c54b152-2523x2772.jpg?w=800&h=800&fit=crop&crop=center&auto=format"
+        },
+        {
+          "year": "1967", 
+          "event": "Double-Lash Launch",
+          "description": "Launch of the legendary Double-Lash, an iconic nourishing serum that visibly densifies and lengthens lashes. Over half a century of false lashes without false lashes!",
+          "image": "https://cdn.sanity.io/images/m6hh3qbl/production/51a947f4e7e05fd88ed5efb7594f601fa64c1a7c-1772x1772.jpg?w=800&h=800&fit=crop&crop=center&auto=format"
+        },
+        {
+          "year": "1971", 
+          "event": "MAVALA Expansion",
+          "description": "MAVALA expands in the heart of Geneva.",
+          "image": "https://cdn.sanity.io/images/m6hh3qbl/production/b866ab063fd18f821013c07cd660ac73579bd6b0-721x488.jpg?w=800&h=800&fit=crop&crop=center&auto=format"
+        },
+        {
+          "year": "1979", 
+          "event": "Curved Mascara Brush Launch",
+          "description": "Launch of a curved mascara brush, designed by MAVALA. Our first mascara was born!",
+          "image": "https://cdn.sanity.io/images/m6hh3qbl/production/ef6efe8175b5248ba9e8222e26025c7ea190262a-2049x4090.jpg?w=800&h=800&fit=crop&crop=center&auto=format"
+        },
+        {
+          "year": "1986", 
+          "event": "Hyaluronic Acid",
+          "description": "It's the first time such an active ingredient has been included in a hand care product. MAVALA did it: the Repairing Night Cream was born.",
+          "image": "https://cdn.sanity.io/images/m6hh3qbl/production/1245ecf41363ec8d808b07ddf8703264a168a44c-3812x3809.jpg?w=800&h=800&fit=crop&crop=center&auto=format"
+        },
+        {
+          "year": "1991", 
+          "event": "Barrier-Base Development",
+          "description": "Development of BARRIER BASE, the first nail polish base formulated with water to carry water-soluble active ingredients beneficial to very dry and delicate nails.",
+          "image": "https://cdn.sanity.io/images/m6hh3qbl/production/59e05896de54877bb0b746ab64ae2d70d87a00e0-3731x3737.jpg?w=800&h=800&fit=crop&crop=center&auto=format"
+        },
+        {
+          "year": "1995", 
+          "event": "Foot Care",
+          "description": "MAVALA extends its expertise to another part of the body and develops a foot care and beauty line.",
+          "image": "https://cdn.sanity.io/images/m6hh3qbl/production/cdacafbd2eb21e60e2029fdccedef1be1a8339b4-2338x3200.jpg?w=800&h=800&fit=crop&crop=center&auto=format"
+        },
+        {
+          "year": "1996", 
+          "event": "Forerunner in skincare make-up",
+          "description": "Launch of Waterproof Fluid Foundation, the precursor to water-based make-up. An avant-garde hybrid formula on the borderline between skincare and make-up.",
+          "image": ""
+        },
+        {
+          "year": "1997", 
+          "event": "Expansion of head office",
+          "description": "To support its expansion, MALAVA expands its head office once again.",
+          "image": "https://cdn.sanity.io/images/m6hh3qbl/production/e0f96ad411cda57bb7858ddb54280ef5a854453b-721x488.jpg?w=800&h=800&fit=crop&crop=center&auto=format"
+        },
+        {
+          "year": "2012", 
+          "event": "Hydro Repairing Care Launch",
+          "description": "25% urea in a foot care product - a first! Welcome to Hydro Repairing Care!",
+          "image": ""
+        },
+        {
+          "year": "2017", 
+          "event": "Swiss Skin Solution Launch",
+          "description": "Launch of Swiss Skin Solution, the other face of MAVALA, a complete line of facial care products combining Alpine botanical treasures and cutting-edge dermatological active ingredients for visible, clinically proven results.",
+          "image": "https://cdn.sanity.io/images/m6hh3qbl/production/bd24924b4f2caa169dd7f94b571d3bb3b7420725-3810x3816.jpg?w=800&h=800&fit=crop&crop=center&auto=format"
+        },
+        {
+          "year": "2020", 
+          "event": "Double-Lash New Formula",
+          "description": "New formula for the iconic Double-Lash, even more effective, with clinical testing to back it up!",
+          "image": "https://cdn.sanity.io/images/m6hh3qbl/production/7ead3230b87d3eaa43b640526f4a593d05c74902-3378x3378.jpg?w=800&h=800&fit=crop&crop=center&auto=format"
+        },
+        {
+          "year": "2021", 
+          "event": "First Prebiotic Hand Cream",
+          "description": "First hand cream with natural prebiotics to help balance the skin's microbiota and strengthen its protective barrier. This year also marks our commitment to the fight against cancer by supporting local associations around the world that work for patients and their carers.",
+          "image": "https://cdn.sanity.io/images/m6hh3qbl/production/f3b9291d46e45f64b5ba7523e73b7a956feb67ec-3568x3566.jpg?w=800&h=800&fit=crop&crop=center&auto=format"
+        },
+        {
+          "year": "2023", 
+          "event": "Creation of a Hybrid Foundation",
+          "description": "Launch of Foundation Serum, a hybrid foundation infused with 83% skincare to improve skin quality every day.",
+          "image": "https://cdn.sanity.io/images/m6hh3qbl/production/e73f0de18538d68fc2f3aac273ab4cbe44c4a2b2-2764x2764.jpg?w=800&h=800&fit=crop&crop=center&auto=format"
+        },
+        {
+          "year": "2025", 
+          "event": "MAVALA Rebranding",
+          "description": "MAVALA reinvents itself: launch of a new identity 'With care. With style' and a new global communication campaign.",
+          "image": "https://cdn.sanity.io/images/m6hh3qbl/production/824443ea2399ad4626cca7aeaa1163f7177b2367-2000x2465.jpg?w=800&h=800&fit=crop&crop=center&auto=format"
+        }
+      ],
+      "facts": [
+        {
+          "question": "Why is MAVALA called MAVALA?",
+          "answer": "Its visionary founder was called Madeleine Van Landeghem."
+        },
+        {
+          "question": "What is the 1st product created by the brand?",
+          "answer": "MAVALA Scientifique, the 1st penetrating nail hardener on the market."
+        },
+        {
+          "question": "Why does the cap of our Mini Color's polishes have this particular faceted design?",
+          "answer": "It is inspired by the shape of the pleated mini-skirt in the 1960s!"
+        },
+        {
+          "question": "Why is the base coat 002 called that?",
+          "answer": "It's the secret weapon of a long-lasting manicure, and it was created the same year as the 1st James Bond!"
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "mission-1",
+      "section": "mission",
+      "description": "Hand with red nail polish",
+      "position": "left"
+    },
+    {
+      "id": "mission-2",
+      "section": "mission",
+      "description": "Applying nail care product",
+      "position": "right"
+    },
+    {
+      "id": "health-1",
+      "section": "health",
+      "description": "Pink ribbon campaign products",
+      "position": "left"
+    },
+    {
+      "id": "health-2",
+      "section": "health",
+      "description": "Breast cancer awareness",
+      "position": "right"
+    }
+  ]
+}
+

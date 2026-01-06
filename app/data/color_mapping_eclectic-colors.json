@@ -1,0 +1,48 @@
+{
+  "product_slug": "eclectic-colors",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Purple": [
+      "237 BASEL",
+      "239 BARCELONA"
+    ],
+    "Blue": [
+      "238 SAO PAULO"
+    ],
+    "Red": [
+      "266 SINGAPORE"
+    ],
+    "Nude": [
+      "268 BUDAPEST"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "237 BASEL",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1490874591438-35OITEKE4T6DFYQ11318/237+Basel.jpg?format=500w"
+    },
+    {
+      "name": "238 SAO PAULO",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1490874606685-ECOKFYC23IP2IMJQTWA9/238+Sao+Paulo.jpg?format=500w"
+    },
+    {
+      "name": "239 BARCELONA",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1490874620849-RXTIFGNTFIENJNMYD7FQ/239+Barcelona.jpg?format=500w"
+    },
+    {
+      "name": "266 SINGAPORE",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1490874634485-9WDZE4XKNH8UTW5O00EU/266+Singapore.jpg?format=500w"
+    },
+    {
+      "name": "268 BUDAPEST",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1490874648796-NK734902K9DL6V9FSO9F/268+Budapest.jpg?format=500w"
+    }
+  ]
+}

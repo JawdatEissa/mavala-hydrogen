@@ -1,0 +1,68 @@
+{
+  "product_slug": "white-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 14,
+  "color_groups": {
+    "White": [
+      "49 WHITE",
+      "22 GENEVE*",
+      "47 IZMIR",
+      "399 LOTUS*",
+      "324 ICEBERG",
+      "465 BLIZZARDVILLE*",
+      "461 YUMMY COCO",
+      "4 ABU DHABI"
+    ],
+    "Nude": [
+      "318 SPITZBERG"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "49 WHITE",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497567603147-KMW1JJRIDY54VFJPNCAA/White.png?format=500w"
+    },
+    {
+      "name": "22 GENEVE*",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492398965327-SESRICJK7OUY1GACQAHQ/022+Geneve.jpg?format=500w"
+    },
+    {
+      "name": "47 IZMIR",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492398859772-GTQX6L0SLMG9XP709PQ4/047+Izmir.jpg?format=500w"
+    },
+    {
+      "name": "399 LOTUS*",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492398932182-7L6MJR1OOLIVHVCXDJ45/399+Lotus.jpg?format=500w"
+    },
+    {
+      "name": "324 ICEBERG",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1631234338049-QIW1O410XANXSFG10J2O/324+Iceberg.jpg?format=500w"
+    },
+    {
+      "name": "465 BLIZZARDVILLE*",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1722842186821-MEGL2SJDZEI8D72JAMWW/465+Blizzardville+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "461 YUMMY COCO",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1731910583622-GT1LF9G32FD873QXHBNU/461+Yummy+Coco+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "4 ABU DHABI",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1585623019648-8NU3YI9P0963GMV471Y3/004+Abu+Dhabi+copy.jpg?format=500w"
+    },
+    {
+      "name": "318 SPITZBERG",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1585623284856-IMBJYQ4KL68WHLABT9HN/318+Spitzberg+copy.jpg?format=500w"
+    }
+  ]
+}

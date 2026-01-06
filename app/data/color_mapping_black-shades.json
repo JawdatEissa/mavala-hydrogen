@@ -1,0 +1,24 @@
+{
+  "product_slug": "black-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 2,
+  "color_groups": {
+    "Black": [
+      "48 BLACK",
+      "163 BLACK OYSTER*"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "48 BLACK",
+      "color": "Black",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497572447706-I452E2AM7I7CAANI8WI7/Black.png?format=500w"
+    },
+    {
+      "name": "163 BLACK OYSTER*",
+      "color": "Black",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497572471518-XQQHE39H4TPXL9BK6G91/Black+Oyster.png?format=500w"
+    }
+  ]
+}

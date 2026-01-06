@@ -1,0 +1,118 @@
+{
+  "product_slug": "cube",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 20,
+  "color_groups": {
+    "Transparent": [
+      "40 SUPER BASE",
+      "42 TOP COAT FIXATOR"
+    ],
+    "Pink": [
+      "215 PINK DIAMOND",
+      "455 BABYLON",
+      "97 WICHITA",
+      "114 SAND ROSE",
+      "317 TAHITI"
+    ],
+    "Nude": [
+      "132 DUCHESS ROSE"
+    ],
+    "Red": [
+      "339 MONAMOUR",
+      "53 LONDON"
+    ],
+    "Green": [
+      "25 COPENHAGEN"
+    ],
+    "White": [
+      "22 GENEVE"
+    ],
+    "Blue": [
+      "59 PHUKET"
+    ],
+    "Yellow": [
+      "428 MALAPASCUA"
+    ],
+    "Brown": [
+      "151 MARRON GLACÉ"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "40 SUPER BASE",
+      "color": "Transparent",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1523171478794-8Y5X7KLE6K9DDL932T5W/040+Super+Base.jpg?format=500w"
+    },
+    {
+      "name": "42 TOP COAT FIXATOR",
+      "color": "Transparent",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1523171496531-B0CLAPZI08QQ9PZS4SNH/042+Top+Coat+Fixator.jpg?format=500w"
+    },
+    {
+      "name": "215 PINK DIAMOND",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1523171579661-WILNLV8VIEK830TOJS74/Pink+Diamond.png?format=500w"
+    },
+    {
+      "name": "132 DUCHESS ROSE",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1523171540124-6ILO39YH7MCSO6S4O5PG/132+Duchess+Rose.jpg?format=500w"
+    },
+    {
+      "name": "455 BABYLON",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1733388162381-VNNQNFK2V84XLWEABZR7/455+Babylon+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "97 WICHITA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1523171790167-ZU0BWGGD9KKJPER62X6X/097+Wichita.jpg?format=500w"
+    },
+    {
+      "name": "339 MONAMOUR",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1523171865706-NG8MOPB929ZA9MUFI48O/Mon+Amour.png?format=500w"
+    },
+    {
+      "name": "53 LONDON",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1728025762696-T83WCXWAM0HKKD38J4GH/053+London.jpg?format=500w"
+    },
+    {
+      "name": "25 COPENHAGEN",
+      "color": "Green",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1728025781588-XTH33AEUS5M151OZV02U/025+Copenhagen.jpg?format=500w"
+    },
+    {
+      "name": "22 GENEVE",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1733388240974-8WKIBPZQF7GF9ZVZ7341/022+Geneve.jpg?format=500w"
+    },
+    {
+      "name": "59 PHUKET",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1739943284470-HLIGRQE9YFVJT23X3NRM/059+Phuket.jpg?format=500w"
+    },
+    {
+      "name": "114 SAND ROSE",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1739943325433-0YGEHWFF75V5ZGJNLRTV/114+Sand+Rose.jpg?format=500w"
+    },
+    {
+      "name": "428 MALAPASCUA",
+      "color": "Yellow",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1739943342507-M12VTIQ8A1F67SR9UXI8/428+Malapascua.jpg?format=500w"
+    },
+    {
+      "name": "317 TAHITI",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1739943304763-ZBJ9S3F98QGRDYNKW33T/317+Tahiti.jpg?format=500w"
+    },
+    {
+      "name": "151 MARRON GLACÉ",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1739943618483-3U0UJ3JLPY2SPKL8ZFOC/151+Marron+Glac%C3%A9.jpg?format=500w"
+    }
+  ]
+}

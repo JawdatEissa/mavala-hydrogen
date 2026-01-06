@@ -1,0 +1,34 @@
+{
+  "product_slug": "new-look",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Green": [
+      "25 COPENHAGEN"
+    ],
+    "Red": [
+      "27 MUNICH"
+    ],
+    "Orange": [
+      "50 TORONTO"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "25 COPENHAGEN",
+      "color": "Green",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1626077787695-BM2FQM3YM6L21SZPVT73/25+Copenhagen.png?format=500w"
+    },
+    {
+      "name": "27 MUNICH",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1626077782981-T66XMEC0NLQHT85YNGMV/27+Munich.png?format=500w"
+    },
+    {
+      "name": "50 TORONTO",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1626077777792-72QPUVSHASSAYBT8SQ4F/50+Toronto.png?format=500w"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "product_slug": "coral-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 18,
+  "color_groups": {
+    "Pink": [
+      "427 FIGUEIRA",
+      "16 BAGHDAD*",
+      "19 HONG KONG*",
+      "14 ST-TROPEZ*",
+      "188 VICTORIA",
+      "317 TAHITI",
+      "283 CORAL BAY"
+    ],
+    "Orange": [
+      "426 TAMARINDO",
+      "458 YUMMY MANGO"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "427 FIGUEIRA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1670302439501-MOWO0RM0PLVI2Z5EG7SL/427+Figueria.png?format=500w"
+    },
+    {
+      "name": "16 BAGHDAD*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570141420-3PZE7FH0KYE1R975ITZE/Baghdad.png?format=500w"
+    },
+    {
+      "name": "19 HONG KONG*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492406226976-I82D2VLWQV2MPBBJWVT4/019+Hong-Kong.jpg?format=500w"
+    },
+    {
+      "name": "14 ST-TROPEZ*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492406274796-M91CP8TD83BBZJNCXKKV/014+St-Tropez.jpg?format=500w"
+    },
+    {
+      "name": "188 VICTORIA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570242044-754AOGB7NBD61ZFQJN5E/Victoria.png?format=500w"
+    },
+    {
+      "name": "426 TAMARINDO",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1670302380400-Y5IBSTEXT2BSV3Q71RNC/426+Tamarindo.png?format=500w"
+    },
+    {
+      "name": "458 YUMMY MANGO",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1731909484180-RNTWUBULJE76RSQIZT6Z/458+Yummy+Mango+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "317 TAHITI",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570264886-BIPH48JXV25MAJ5ZEQC3/Tahiti.png?format=500w"
+    },
+    {
+      "name": "283 CORAL BAY",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1513920783170-E2XK91SRMR2MAQXHLRMP/Coral+Bay.jpg?format=500w"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "product_slug": "terra-topia",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Pink": [
+      "469 LUXOR",
+      "473 SEDONA"
+    ],
+    "Nude": [
+      "471 TBILISI",
+      "474 FEZ"
+    ],
+    "Yellow": [
+      "472 SANTORINI"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "469 LUXOR",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1743475629358-NFZLA2DWM8WS2RDV3M9U/469+Luxor+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "471 TBILISI",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1743475782731-2TU4719V9D125J91DVMI/471+Tbilisi+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "472 SANTORINI",
+      "color": "Yellow",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1743475793414-VZHTQ27W3XV5URIUZ2OO/472+Santorini+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "473 SEDONA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1743475860417-QQ2GIU5NJN0PLK35T8FS/473+Sedona+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "474 FEZ",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1743475865662-2A8TMOGBB5CNL0BTT3VH/474+Fez+-+RVB.jpg?format=500w"
+    }
+  ]
+}

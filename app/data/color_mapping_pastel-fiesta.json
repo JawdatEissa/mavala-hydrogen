@@ -1,0 +1,38 @@
+{
+  "product_slug": "pastel-fiesta",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Purple": [
+      "319 BRIGHTON",
+      "321 GOTLAND",
+      "395 RIMINI"
+    ],
+    "Pink": [
+      "322 HAMPTONS"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "319 BRIGHTON",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1625814927673-KH4PK6T0UCSZNDMOY3YQ/319-Brighton.jpg?format=500w"
+    },
+    {
+      "name": "321 GOTLAND",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1625814927671-3BYFIEA7DDV4J0IXKHBB/321-Gotland.jpg?format=500w"
+    },
+    {
+      "name": "322 HAMPTONS",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1625814930068-95ABWS9MNKGUTZKVNDBZ/322-Hamptons.jpg?format=500w"
+    },
+    {
+      "name": "395 RIMINI",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1626308224567-RE8NRKKPTKGOFQVV14K8/395-Rimini.jpg?format=500w"
+    }
+  ]
+}

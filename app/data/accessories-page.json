@@ -1,0 +1,227 @@
+{
+  "slug": "accessories",
+  "name": "Manicure Tools",
+  "route": "/accessories",
+  "hero_title": "Professional quality accessories for a perfect DIY manicure",
+  "hero_image": null,
+  "sections": [
+    {
+      "title": "MANICURE INSTRUMENTS",
+      "products": [
+        {
+          "name": "MINI EMERY BOARDS EMOJI",
+          "slug": "mini-emery-boards",
+          "price": "A$4.95",
+          "description": "Pocket sized emery boards.",
+          "image": null,
+          "url": "https://mavala.com.au/mini-emery-boards"
+        },
+        {
+          "name": "EMERY BOARDS",
+          "slug": "emery-boards",
+          "price": "from A$4.95",
+          "description": "Made of fine wood.",
+          "image": null,
+          "url": "https://mavala.com.au/emery-boards"
+        },
+        {
+          "name": "MANICURE STICKS",
+          "slug": "manicure-sticks",
+          "price": "from A$11.95",
+          "description": "Made of birch wood.",
+          "image": null,
+          "url": "https://mavala.com.au/manicure-sticks"
+        },
+        {
+          "name": "NAIL WHITE CRAYON",
+          "slug": "nail-white-crayon",
+          "price": "A$14.95",
+          "description": "For a classic \"French Manicure\".",
+          "image": null,
+          "url": "https://mavala.com.au/nail-white-crayon"
+        },
+        {
+          "name": "HOOFSTICK",
+          "slug": "hoofstick",
+          "price": "A$10.95",
+          "description": "Manicure tool for a perfect nail contour",
+          "image": null,
+          "url": "https://mavala.com.au/hoofstick"
+        },
+        {
+          "name": "NAIL BUFFER KIT",
+          "slug": "nail-buffer-kit",
+          "price": "A$39.95",
+          "description": "A smoothing and stimulating beauty kit for nails.",
+          "image": null,
+          "url": "https://mavala.com.au/nail-buffer-kit"
+        },
+        {
+          "name": "MANICURE BOWL",
+          "slug": "manicure-bowl",
+          "price": "A$49.95",
+          "description": "Ergonomic and resistant. ",
+          "image": null,
+          "url": "https://mavala.com.au/manicure-bowl"
+        },
+        {
+          "name": "MANICURE PILL",
+          "slug": "manicure-pill",
+          "price": "from A$9.95",
+          "description": "Eases manicure.",
+          "image": null,
+          "url": "https://mavala.com.au/manicure-pill"
+        },
+        {
+          "name": "NAIL BRUSH",
+          "slug": "nail-brush",
+          "price": "A$11.95",
+          "description": "For neat nails and cuticles.",
+          "image": null,
+          "url": "https://mavala.com.au/nail-brush"
+        },
+        {
+          "name": "FRENCH MANICURE STICKER GUIDES",
+          "slug": "french-manicure-stickers",
+          "price": "A$9.95",
+          "description": "For a perfectly drawn white tip.",
+          "image": null,
+          "url": "https://mavala.com.au/french-manicure-stickers"
+        },
+        {
+          "name": "PEDI-PADS",
+          "slug": "pedi-pads",
+          "price": "A$9.95",
+          "description": "Makes pedicure easy.",
+          "image": null,
+          "url": "https://mavala.com.au/pedi-pads"
+        },
+        {
+          "name": "NAIL SCISSORS",
+          "slug": "scissors",
+          "price": "A$59.95",
+          "description": "Individually hand sharpened blades for a clean cut.",
+          "image": null,
+          "url": "https://mavala.com.au/scissors"
+        },
+        {
+          "name": "CUTICLE SCISSORS",
+          "slug": "straight-cuticle-scissors",
+          "price": "A$59.95",
+          "description": "Individually hand sharpened blades for a clean cut.",
+          "image": null,
+          "url": "https://mavala.com.au/straight-cuticle-scissors"
+        },
+        {
+          "name": "BABY NAIL SCISSORS",
+          "slug": "baby-nail-scissors",
+          "price": "A$59.95",
+          "description": "Individually hand sharpened blades for a clean cut.",
+          "image": null,
+          "url": "https://mavala.com.au/baby-nail-scissors"
+        },
+        {
+          "name": "CUTICLE NIPPERS",
+          "slug": "cuticle-nippers",
+          "price": "A$74.95",
+          "description": "Individually hand sharpened blades for a clean cut.",
+          "image": null,
+          "url": "https://mavala.com.au/cuticle-nippers"
+        },
+        {
+          "name": "NAIL NIPPERS",
+          "slug": "nail-nippers",
+          "price": "A$74.95",
+          "description": "Individually hand sharpened blades for a clean cut.",
+          "image": null,
+          "url": "https://mavala.com.au/nail-nippers"
+        },
+        {
+          "name": "TOENAIL NIPPERS",
+          "slug": "toenail-nippers",
+          "price": "A$89.95",
+          "description": "Individually hand sharpened blades for a clean cut.",
+          "image": null,
+          "url": "https://mavala.com.au/toenail-nippers"
+        },
+        {
+          "name": "NAIL CLIPPERS",
+          "slug": "clippers",
+          "price": "A$17.95",
+          "description": "Small and handy.",
+          "image": null,
+          "url": "https://mavala.com.au/clippers"
+        },
+        {
+          "name": "PROFESSIONAL MANICURE TRAY",
+          "slug": "professional-manicure-tray",
+          "price": "A$399.95",
+          "description": "The complete set to create your own manicure salon!",
+          "image": null,
+          "url": "https://mavala.com.au/professional-manicure-tray"
+        }
+      ]
+    },
+    {
+      "title": "NAIL POLISH REMOVERS",
+      "products": [
+        {
+          "name": "BLUE NAIL POLISH REMOVER",
+          "slug": "blue-nail-polish-remover",
+          "price": "from A$7.95",
+          "description": "Acetone based remover",
+          "image": null,
+          "url": "https://mavala.com.au/blue-nail-polish-remover"
+        },
+        {
+          "name": "PINK NAIL POLISH REMOVER",
+          "slug": "pink-nail-polish-remover",
+          "price": "from A$11.95",
+          "description": "Acetone-Free remover",
+          "image": null,
+          "url": "https://mavala.com.au/pink-nail-polish-remover"
+        },
+        {
+          "name": "CRYSTAL NAIL POLISH REMOVER",
+          "slug": "crystal-nail-polish-remover",
+          "price": "from A$11.95",
+          "description": "Nail and environment friendly remover",
+          "image": null,
+          "url": "https://mavala.com.au/crystal-nail-polish-remover"
+        },
+        {
+          "name": "CORRECTEUR PEN",
+          "slug": "correcteur-pen",
+          "price": "A$25.95",
+          "description": "Instantly corrects manicure errors.",
+          "image": null,
+          "url": "https://mavala.com.au/correcteur-pen"
+        },
+        {
+          "name": "NAIL POLISH REMOVER PADS",
+          "slug": "nail-polish-remover-pads",
+          "price": "A$14.95",
+          "description": "Acetone-free. Practical for travel and make-up kit",
+          "image": null,
+          "url": "https://mavala.com.au/nail-polish-remover-pads"
+        },
+        {
+          "name": "MAKE-UP REMOVER COTTON PADS",
+          "slug": "make-up-remover-cotton-pads",
+          "price": "from A$7.95",
+          "description": "Eases eye make-up and nail polish removal.",
+          "image": null,
+          "url": "https://mavala.com.au/make-up-remover-cotton-pads"
+        },
+        {
+          "name": "THINNER FOR NAIL POLISH",
+          "slug": "thinner-for-nail-polish",
+          "price": "A$18.95",
+          "description": "A few drops will fluidify thickened nail polish",
+          "image": null,
+          "url": "https://mavala.com.au/thinner-for-nail-polish"
+        }
+      ]
+    }
+  ]
+}

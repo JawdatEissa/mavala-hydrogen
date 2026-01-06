@@ -1,0 +1,87 @@
+{
+  "product_slug": "bio-colors",
+  "product_name": "Bio Colors",
+  "source": "Custom Bio Colors Mapping",
+  "version": 1,
+  "total_shades": 12,
+  "color_groups": {
+    "Pink": [
+      "701 RIO GRANDE",
+      "702 MISSISSIPPI",
+      "704 RHÔNE",
+      "706 THAMES",
+      "709 AMAZONAS",
+      "710 MEKONG",
+      "711 SHANNON",
+      "712 INDUS"
+    ],
+    "Red": [
+      "703 NILE",
+      "705 VOLTA",
+      "707 COLORADO",
+      "708 MURRAY"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "701 RIO GRANDE",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1680032219346-VZDQO4EXJYKVRI3F7VHT/701+Rio+Grande.jpg?format=500w"
+    },
+    {
+      "name": "702 MISSISSIPPI",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1680032265220-U6UDGPRLO50K473IP8SW/702+Mississippi.jpg?format=500w"
+    },
+    {
+      "name": "703 NILE",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1680032336253-O2FW6AKFH7N29883FZAL/703+Nile.jpg?format=500w"
+    },
+    {
+      "name": "704 RHÔNE",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1680032383194-O72032DGOFUD5APQDOUL/704+Rh%C3%83%C2%B4ne.jpg?format=500w"
+    },
+    {
+      "name": "705 VOLTA",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1680032493656-2WSXWQQL84860OI8VOEC/705+Volta.jpg?format=500w"
+    },
+    {
+      "name": "706 THAMES",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1680032537118-55ZT28KJORI2NVGA4R0A/706+Thames.jpg?format=500w"
+    },
+    {
+      "name": "707 COLORADO",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1680032575839-JMV3F1DAMQCIZZZD0YI7/707+Colorado.jpg?format=500w"
+    },
+    {
+      "name": "708 MURRAY",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1680032610722-XOL6PWQSFMA9495PGBFF/708+Murray.jpg?format=500w"
+    },
+    {
+      "name": "709 AMAZONAS",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1680032644569-XTKDJ1RKLVIB7LDIDO04/709+Amazonas.jpg?format=500w"
+    },
+    {
+      "name": "710 MEKONG",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1680032924969-K81C76Q6ZMLG4B06S6UY/710+Mekong.jpg?format=500w"
+    },
+    {
+      "name": "711 SHANNON",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1680033036137-R6POCYQ5HS2Y2NPLHYIY/711+Shannon.jpg?format=500w"
+    },
+    {
+      "name": "712 INDUS",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1680033071670-BQEKH24YLRKSZ9CN4JN4/712+Indus.jpg?format=500w"
+    }
+  ]
+}

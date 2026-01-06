@@ -1,0 +1,86 @@
+{
+  "slug": "complexion",
+  "name": "Complexion",
+  "route": "/complexion",
+  "hero_title": "Moisturising and protective makeup for a flawless complexion",
+  "hero_image": null,
+  "sections": [
+    {
+      "title": "COMPLEXION",
+      "products": [
+        {
+          "name": "BB CREAM",
+          "slug": "bb-cream",
+          "price": "A$49.95",
+          "description": "Moisturizing, protecting, unifying, correcting and illuminating tinted cream.",
+          "image": null,
+          "url": "https://mavala.com.au/bb-cream"
+        },
+        {
+          "name": "SERUM FOUNDATION",
+          "slug": "serum-foundation",
+          "price": "A$54.95",
+          "description": "Radiance serum in a second-skin foundation.",
+          "image": null,
+          "url": "https://mavala.com.au/serum-foundation"
+        },
+        {
+          "name": "DREAM FOUNDATION",
+          "slug": "dream-foundation",
+          "price": "A$59.95",
+          "description": "For a flawless complexion.",
+          "image": null,
+          "url": "https://mavala.com.au/dream-foundation"
+        },
+        {
+          "name": "PERFECT CONCEALER",
+          "slug": "mavalia-concealer",
+          "price": "A$34.95",
+          "description": "Anti-dark circles, spots & imperfections.",
+          "image": null,
+          "url": "https://mavala.com.au/mavalia-concealer"
+        },
+        {
+          "name": "WET AND DRY POWDER",
+          "slug": "wet-and-dry-powder",
+          "price": "A$79.95",
+          "description": "Very fine and non-greasy pressed powder.",
+          "image": null,
+          "url": "https://mavala.com.au/wet-and-dry-powder"
+        },
+        {
+          "name": "PRESSED POWDER",
+          "slug": "pressed-powder",
+          "price": "A$69.95",
+          "description": "Fine and light.",
+          "image": null,
+          "url": "https://mavala.com.au/pressed-powder"
+        },
+        {
+          "name": "MAGIC POWDER",
+          "slug": "magic-powder",
+          "price": "A$54.95",
+          "description": "Universal powder with 5 superpowers.",
+          "image": null,
+          "url": "https://mavala.com.au/magic-powder"
+        },
+        {
+          "name": "KABUKI BRUSH",
+          "slug": "kabuki-brush",
+          "price": "A$39.95",
+          "description": "Silky Powder Brush.",
+          "image": null,
+          "url": "https://mavala.com.au/kabuki-brush"
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+
+
+

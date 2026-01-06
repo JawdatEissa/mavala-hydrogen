@@ -1,0 +1,40 @@
+{
+  "product_slug": "iconic",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Grey": [
+      "401 INVERNESS*",
+      "402 DETROIT"
+    ],
+    "Brown": [
+      "403 MANAUS"
+    ],
+    "Nude": [
+      "406 SALAMANCA"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "401 INVERNESS*",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1651567571086-AT82MTSD9SWNY6THSM6B/401+Inverness.png?format=500w"
+    },
+    {
+      "name": "402 DETROIT",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1651567571271-YIGLZHJVAJ1JZWUEP902/402+Detroit.png?format=500w"
+    },
+    {
+      "name": "403 MANAUS",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1651567574420-D373OFQ3Z0GA85BLP0XC/403+Manaus.png?format=500w"
+    },
+    {
+      "name": "406 SALAMANCA",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1651567578969-4SNY0J0NVS1CFB2NC4LY/406+Salamanca.png?format=500w"
+    }
+  ]
+}

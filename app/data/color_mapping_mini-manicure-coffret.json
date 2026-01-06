@@ -1,0 +1,32 @@
+{
+  "product_slug": "mini-manicure-coffret",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 4,
+  "color_groups": {
+    "Pink": [
+      "97 WICHITA",
+      "189 MONTEVIDEO"
+    ],
+    "Red": [
+      "364 CAPE TOWN"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "97 WICHITA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1538378469407-GLI6YB6DCO5GSSDQDAFM/097+Wichita.jpg?format=500w"
+    },
+    {
+      "name": "189 MONTEVIDEO",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1538378579104-T9FURZVMVAC47YQXI5XM/Montevideo.png?format=500w"
+    },
+    {
+      "name": "364 CAPE TOWN",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1538378526577-84E17VGWB61RT27F2V5Z/Cape+Town.png?format=500w"
+    }
+  ]
+}

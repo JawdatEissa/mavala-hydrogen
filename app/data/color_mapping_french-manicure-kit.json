@@ -1,0 +1,64 @@
+{
+  "product_slug": "french-manicure-kit",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 8,
+  "color_groups": {
+    "White": [
+      "49 WHITE",
+      "22 GENEVE",
+      "399 LOTUS",
+      "324 ICEBERG",
+      "49 WHITE"
+    ],
+    "Nude": [
+      "91 RENO",
+      "90 AROSA"
+    ],
+    "Pink": [
+      "56 RIGA"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "49 WHITE",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1539072773924-4F8H7E4NM79TU5R3EJKD/White.png?format=500w"
+    },
+    {
+      "name": "91 RENO",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1539072782862-DM2SV93L8OIDRTLIC3PX/091+Reno.jpg?format=500w"
+    },
+    {
+      "name": "22 GENEVE",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1539072872778-LHAB2R5AWJIWNLYX4MRE/022+Geneve.jpg?format=500w"
+    },
+    {
+      "name": "90 AROSA",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1539072926459-HK2KI4JWRS96L35G63AT/Arosa.png?format=500w"
+    },
+    {
+      "name": "399 LOTUS",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1539073008806-751JCFERK10ZGR5BFGOT/399+Lotus.jpg?format=500w"
+    },
+    {
+      "name": "324 ICEBERG",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1539073038517-NJ0D89Y5GMB0AWDP7N3U/324+Iceberg.png?format=500w"
+    },
+    {
+      "name": "49 WHITE",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1539073108505-OZUU40RTZZVQQA6PLJOT/White.png?format=500w"
+    },
+    {
+      "name": "56 RIGA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1539073116497-O9GBCU6HYX8MWFB3OQ0A/056+Riga.jpg?format=500w"
+    }
+  ]
+}

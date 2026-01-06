@@ -1,0 +1,18 @@
+{
+  "product_slug": "tandem",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Purple": [
+      "435 PORTLAND"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "435 PORTLAND",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1679981093368-TVGGEYAEUT6RMLL4901M/435+Portland.jpg?format=500w"
+    }
+  ]
+}

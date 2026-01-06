@@ -1,0 +1,83 @@
+{
+  "slug": "lips",
+  "name": "Lips",
+  "route": "/lips",
+  "hero_title": "Moisturising lip balms, liners, glosses and lipsticks for dry lips",
+  "hero_image": null,
+  "sections": [
+    {
+      "title": "LIP BEAUTY",
+      "products": [
+        {
+          "name": "LIP GLOSS",
+          "slug": "lip-gloss",
+          "price": "A$25.95",
+          "description": "Caring Lip Oil Perfector.",
+          "image": null,
+          "url": "https://mavala.com.au/lip-gloss"
+        },
+        {
+          "name": "MAVALIP LIPSTICK",
+          "slug": "mavalip-lipstick",
+          "price": "A$25.95",
+          "description": "Long-lasting and protective.",
+          "image": null,
+          "url": "https://mavala.com.au/mavalip-lipstick"
+        },
+        {
+          "name": "MAVALA LIPSTICK",
+          "slug": "mavala-lipstick",
+          "price": "A$35.95",
+          "description": "Moisturising, comfortable satin lipstick.",
+          "image": null,
+          "url": "https://mavala.com.au/mavala-lipstick"
+        },
+        {
+          "name": "LIP-SHINE LIPSTICK",
+          "slug": "lip-shine",
+          "price": "A$35.95",
+          "description": "Hydrating, protective and volumizing lipstick.",
+          "image": null,
+          "url": "https://mavala.com.au/lip-shine"
+        },
+        {
+          "name": "LIP LINER PENCIL",
+          "slug": "lip-liner-pencil",
+          "price": "A$17.95",
+          "description": "Extra-smooth.",
+          "image": null,
+          "url": "https://mavala.com.au/lip-liner-pencil"
+        }
+      ]
+    },
+    {
+      "title": "LIP CARE",
+      "products": [
+        {
+          "name": "LIP BALM",
+          "slug": "lip-balm",
+          "price": "A$19.95",
+          "description": "Protecting and repairing.",
+          "image": null,
+          "url": "https://mavala.com.au/lip-balm"
+        },
+        {
+          "name": "TINTED LIP BALM",
+          "slug": "tinted-lip-balm",
+          "price": "A$17.95",
+          "description": "Moisturising and nourishing.",
+          "image": null,
+          "url": "https://mavala.com.au/tinted-lip-balm"
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+
+
+

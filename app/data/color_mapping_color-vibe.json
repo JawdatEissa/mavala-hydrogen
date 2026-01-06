@@ -1,0 +1,50 @@
+{
+  "product_slug": "color-vibe",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Green": [
+      "414 GRASS GREEN"
+    ],
+    "Purple": [
+      "415 PUSHY PURPLE"
+    ],
+    "Yellow": [
+      "416 MELLOW YELLOW"
+    ],
+    "Blue": [
+      "417 BOLD BLUE*"
+    ],
+    "Pink": [
+      "418 PARTY PINK"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "414 GRASS GREEN",
+      "color": "Green",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1653527417232-WUT75DL085WRIFH36CDN/414+Grass+Green.png?format=500w"
+    },
+    {
+      "name": "415 PUSHY PURPLE",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1653527427058-S1D1IGO90AAQ1NU73XTI/415+Pushy+Purple.png?format=500w"
+    },
+    {
+      "name": "416 MELLOW YELLOW",
+      "color": "Yellow",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1653527434380-4BX3LQ663P7V5RPXXRNQ/416+Mellow+Yellow.png?format=500w"
+    },
+    {
+      "name": "417 BOLD BLUE*",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1653527445253-UV6NRO8S6L30FLUELGI1/417+Bold+Blue.png?format=500w"
+    },
+    {
+      "name": "418 PARTY PINK",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1653527450818-C215CQ684BO2839636GF/418+Party+Pink.png?format=500w"
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "product_slug": "cream-colors",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 60,
+  "color_groups": {
+    "White": [
+      "49 WHITE",
+      "47 IZMIR"
+    ],
+    "Nude": [
+      "90 AROSA",
+      "91 RENO",
+      "132 DUCHESS ROSE",
+      "186 SAPPORO",
+      "396 VELVET"
+    ],
+    "Orange": [
+      "182 FRESH MELON",
+      "302 JAIPUR"
+    ],
+    "Red": [
+      "72 NICE",
+      "3 PARIS",
+      "2 MADRID",
+      "74 LOS ANGELES",
+      "185 MOSCOW",
+      "53 LONDON",
+      "206 FRENCH CANCAN",
+      "187 ROMA",
+      "69 BORDEAUX",
+      "63 ACAPULCO",
+      "33 LAS VEGAS",
+      "92 NEW DELHI",
+      "64 BILBAO",
+      "7 MACAO",
+      "1 ANKARA",
+      "292 ST-GERMAIN",
+      "240 JASPER",
+      "248 BURGUNDY"
+    ],
+    "Pink": [
+      "169 WAIKIKI ORANGE",
+      "188 VICTORIA",
+      "189 MONTEVIDEO",
+      "98 MARRAKECH",
+      "75 MIAMI",
+      "168 SOUTH BEACH PINK",
+      "190 HONOLULU",
+      "71 LA PAZ",
+      "52 TOULOUSE",
+      "56 RIGA",
+      "97 WICHITA",
+      "288 GINZA"
+    ],
+    "Purple": [
+      "62 MILANO",
+      "30 MEXICO",
+      "24 TOKYO",
+      "152 MAUVE CENDRÉ"
+    ],
+    "Brown": [
+      "151 MARRON GLACÉ"
+    ],
+    "Grey": [
+      "12 BERLIN",
+      "217 NEW-YORK",
+      "218 MINSK"
+    ],
+    "Blue": [
+      "181 BLUE MINT",
+      "171 BLUE CURACAO",
+      "59 PHUKET"
+    ],
+    "Green": [
+      "25 COPENHAGEN"
+    ],
+    "Black": [
+      "48 BLACK"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "49 WHITE",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497521735801-LAU25ZHG9CFIDTWX26U6/White.png?format=500w"
+    },
+    {
+      "name": "47 IZMIR",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923043448-3EZMFATVQDRIOEKRZBXI/047+Izmir-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "90 AROSA",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497521764595-JWOSZU8D1XH9XJ5FF15M/Arosa.png?format=500w"
+    },
+    {
+      "name": "91 RENO",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923074492-PPVQZAJGIUAS0PRI1NJA/091+Reno-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "182 FRESH MELON",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497521793449-DPDOL53YKF0JPK931V0O/Fresh+Melon.png?format=500w"
+    },
+    {
+      "name": "302 JAIPUR",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1664413489671-M7AYUJ7KU7NYLPF4326F/302%2BJaipur.jpg?format=500w"
+    },
+    {
+      "name": "72 NICE",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923065914-ST74BD37UHLWUDSKK2RP/072+Nice-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "169 WAIKIKI ORANGE",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1655189748521-1RH5903SX2BUBXLCIZEC/169%2BWaikiki%2BOrange.jpg?format=500w"
+    },
+    {
+      "name": "188 VICTORIA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497521871129-SY0ZQDRJXKWWFI6W08N5/Victoria.png?format=500w"
+    },
+    {
+      "name": "3 PARIS",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923015353-XMU2QO62CTZT351Z4EUY/003+Paris-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "2 MADRID",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497521898107-AO5CJ657OAOJ6NQRM2OY/Madrid.png?format=500w"
+    },
+    {
+      "name": "74 LOS ANGELES",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497521956097-QR3QVR4DPHTU87G4TEBJ/Los+Angeles.png?format=500w"
+    },
+    {
+      "name": "185 MOSCOW",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497521981036-PT90OGX9EPM3SP4Z026G/Moscow.png?format=500w"
+    },
+    {
+      "name": "53 LONDON",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923047500-97W6SX57Z42QSG0D25PL/053+London-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "206 FRENCH CANCAN",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1434770420707-GTLM00QPCOWLI0J8CL0T/206+French+Cancan-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "187 ROMA",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522006551-O0HKS4P30LNR0D6KUERM/Roma.png?format=500w"
+    },
+    {
+      "name": "69 BORDEAUX",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522030738-U05Y9NJLLYR7A7CDJB1Y/Bordeaux.png?format=500w"
+    },
+    {
+      "name": "63 ACAPULCO",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923054418-GAKXTA0IQZQFC1FJDBCP/063+Acapulco-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "33 LAS VEGAS",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923041750-Y2RT4YV3A6SO9Z3MP4EJ/033+Las+Vegas-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "189 MONTEVIDEO",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522088549-81JNTPUUMWXY01G1CXAE/Montevideo.png?format=500w"
+    },
+    {
+      "name": "92 NEW DELHI",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923074439-WQHRR8WXRT7L2EAF3OBB/092+New+Dehli-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "64 BILBAO",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522062445-XYQFI8A3LQSRJWAN000L/Bilbao.png?format=500w"
+    },
+    {
+      "name": "7 MACAO",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923022767-Z6Q8APHSVH2YF5O71B0T/007+Macao-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "98 MARRAKECH",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522114383-1NYEM2BCZNOD1JAHZ2WZ/Marrakech.png?format=500w"
+    },
+    {
+      "name": "1 ANKARA",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923017869-28WKK2W6DJDIZURIYUJ3/001+Ankara-2-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "75 MIAMI",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923070050-K7DGWNN8PI63QK6BG4NL/075+Miami-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "168 SOUTH BEACH PINK",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1651456203798-MFMFZULFKV2G3N4CRLTK/South%2BBeach%2BPink.png?format=500w"
+    },
+    {
+      "name": "190 HONOLULU",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522144671-N9WWOLWPINLQ3MA0OXSE/Honolulu.png?format=500w"
+    },
+    {
+      "name": "71 LA PAZ",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923063392-XX4U2FPUKBTBOW3LCWUQ/071+Lapaz-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "52 TOULOUSE",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923045128-O97DJPKU6U0Z1YD1UKWQ/052+Toulouse-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "56 RIGA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923050905-86JHBZR2LAX6UHEQ3LB9/056+Riga-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "97 WICHITA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923080235-260AI4B1N9HE6QN26RP1/097+Wichita-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "132 DUCHESS ROSE",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1653276534469-9X6P626AHMQT43WPZ04E/132+Duchess+Rose.jpg?format=500w"
+    },
+    {
+      "name": "186 SAPPORO",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522174339-MENOGH9HLGSCZCVZMEB6/Sapporo.png?format=500w"
+    },
+    {
+      "name": "396 VELVET",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923112902-OBOCVB1FJ0TDJI5RUHD4/396+Velvet-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "288 GINZA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522200124-JPZSY4JASCLH1SAL4IWQ/Ginza.png?format=500w"
+    },
+    {
+      "name": "62 MILANO",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522225519-HGBMFWA10UW4QYRLJZMF/Milano.png?format=500w"
+    },
+    {
+      "name": "292 ST-GERMAIN",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522249291-39FS1DEOXIP3WQZ7KKUH/St-Germain.png?format=500w"
+    },
+    {
+      "name": "30 MEXICO",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522274489-MAYGIT1I8QT2SNR1R7YE/Mexico.png?format=500w"
+    },
+    {
+      "name": "24 TOKYO",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923039739-E0Z13QR5M10B79RTIC2S/024+Tokyo-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "152 MAUVE CENDRÉ",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923078543-E4R6WBQIUDWOPSM1XHIK/152+Mauve+Cendr%C3%A9-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "151 MARRON GLACÉ",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522305611-VQ4D77OQET8S328O3D7H/Marron+Glace.png?format=500w"
+    },
+    {
+      "name": "12 BERLIN",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923030605-46WLTJ1J8ACTOH86992S/012+Berlin-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "217 NEW-YORK",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923087594-XBV2J08JQ4HGT5B0YEP0/217+New-York-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "218 MINSK",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433923089305-4VQD5WAIMU6QLGO5KJ5I/218+Minsk-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "181 BLUE MINT",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522330183-IHQ4G8P640RWRM8HPFEA/Blue+Mint.png?format=500w"
+    },
+    {
+      "name": "171 BLUE CURACAO",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1643076461417-52JNL9GFLTWCMO9ECX20/171+Blue+Cura%C3%A7ao.jpg?format=500w"
+    },
+    {
+      "name": "59 PHUKET",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1660021376758-XMM9HZKJZ0E9DAV2UDVZ/059+Phuket.jpg?format=500w"
+    },
+    {
+      "name": "25 COPENHAGEN",
+      "color": "Green",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1725244386580-XVLSPT5TKFSBUUG7EJBX/025+Copenhagen.jpg?format=500w"
+    },
+    {
+      "name": "240 JASPER",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522430158-WP0N7VD6UG20CA0XYSTT/Jasper.png?format=500w"
+    },
+    {
+      "name": "248 BURGUNDY",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522457246-8Y9E1IUVDKO8SC34WXTI/Burgundy.png?format=500w"
+    },
+    {
+      "name": "48 BLACK",
+      "color": "Black",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497522481562-VKFYE633HCPT9Z89WD29/Black.png?format=500w"
+    }
+  ]
+}

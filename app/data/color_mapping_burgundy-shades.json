@@ -1,0 +1,100 @@
+{
+  "product_slug": "burgundy-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 20,
+  "color_groups": {
+    "Red": [
+      "327 MY LOVE",
+      "1 ANKARA",
+      "292 ST-GERMAIN",
+      "452 BOMBAY",
+      "27 MUNICH",
+      "92 NEW DEHLI",
+      "64 BILBAO",
+      "33 LAS VEGAS",
+      "63 ACAPULCO",
+      "326 MY ANGEL",
+      "248 BURGUNDY"
+    ],
+    "Pink": [
+      "13 RIYADH",
+      "189 MONTEVIDEO"
+    ],
+    "Brown": [
+      "403 MANAUS"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "327 MY LOVE",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570651185-27CC8KRM2PUFCSEJYCS1/My+Love.png?format=500w"
+    },
+    {
+      "name": "13 RIYADH",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1532763836258-1BBA9YMDCZ9T4IHXFCA4/Riyadh.jpg?format=500w"
+    },
+    {
+      "name": "1 ANKARA",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570677608-SPZD00VJV3Y91FNJR4AX/Ankara.png?format=500w"
+    },
+    {
+      "name": "292 ST-GERMAIN",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570701267-GNMLOZKB7TIKUG1KRQS1/St-Germain.png?format=500w"
+    },
+    {
+      "name": "452 BOMBAY",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1710305734280-65Q25F296BMXV6GNEJ5K/452+Bombay+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "27 MUNICH",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1626078262010-U0K1B5C558UXFVQ1WI92/27+Munich.png?format=500w"
+    },
+    {
+      "name": "189 MONTEVIDEO",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570723604-KB0QLIPORMBN1WMK1IO0/Montevideo.png?format=500w"
+    },
+    {
+      "name": "92 NEW DEHLI",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492410176329-HLKOW442IS1BWUAF2UYQ/092+New+Dehli.jpg?format=500w"
+    },
+    {
+      "name": "64 BILBAO",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570833249-LXQIHFMFNKJ9JXCERRPV/Bilbao.png?format=500w"
+    },
+    {
+      "name": "33 LAS VEGAS",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492410058017-ZUVS9R4902C8NK4ACVTS/033+Las+Vegas.jpg?format=500w"
+    },
+    {
+      "name": "63 ACAPULCO",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570860605-14U3YQJFFYPTV1APED2J/Acapulco.png?format=500w"
+    },
+    {
+      "name": "326 MY ANGEL",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570886060-TT2WELNMRU7EW7MJX03L/My+Angel.png?format=500w"
+    },
+    {
+      "name": "403 MANAUS",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1651571550197-VUJVJYTWYP03QYZS6GET/403+Manaus.png?format=500w"
+    },
+    {
+      "name": "248 BURGUNDY",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570917333-JPYAD0D8W6R1EB97EI9O/Burgundy.png?format=500w"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "product_slug": "dash-splash",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Green": [
+      "982 NAIVE MINT"
+    ],
+    "Yellow": [
+      "985 PSYCHEDELIC LIME*"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "982 NAIVE MINT",
+      "color": "Green",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1579666510670-PIP6NOOQ1OEUEMGLW7ZE/982+Naive+Mint.jpg?format=500w"
+    },
+    {
+      "name": "985 PSYCHEDELIC LIME*",
+      "color": "Yellow",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1579666535620-U4HT22FUWW4FPSC74CH5/985+Psychedelic+Lime.jpg?format=500w"
+    }
+  ]
+}

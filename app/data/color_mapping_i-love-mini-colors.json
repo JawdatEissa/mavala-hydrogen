@@ -1,0 +1,44 @@
+{
+  "product_slug": "i-love-mini-colors",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Red": [
+      "326 MYANGEL",
+      "327 MYLOVE",
+      "339 MONAMOUR",
+      "372 MYPASSION"
+    ],
+    "Pink": [
+      "338 MYDARLING"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "326 MYANGEL",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1486001960705-CG4VTHWKRRQ8DN1E4PQ7/326+MyAngel.jpg?format=500w"
+    },
+    {
+      "name": "327 MYLOVE",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1486001997695-FN89CXIVWQCQ17AW5VYX/327+MyLove.jpg?format=500w"
+    },
+    {
+      "name": "338 MYDARLING",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1486002021880-W0IR543JRAEJ5M2ZZCKH/338+MyDarling.jpg?format=500w"
+    },
+    {
+      "name": "339 MONAMOUR",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1486002090395-1OH3DDA2LUC8ZKIRU660/339+MonAmour.jpg?format=500w"
+    },
+    {
+      "name": "372 MYPASSION",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1486002121304-0WS8IUHPS244GFZ7Y2V6/372+MyPassion.jpg?format=500w"
+    }
+  ]
+}

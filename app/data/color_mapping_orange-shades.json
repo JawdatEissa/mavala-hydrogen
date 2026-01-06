@@ -1,0 +1,58 @@
+{
+  "product_slug": "orange-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 14,
+  "color_groups": {
+    "Orange": [
+      "345 ORANGE SHERBET",
+      "182 FRESH MELON",
+      "302 JAIPUR",
+      "482 ORANGE POP",
+      "445 MOAB"
+    ],
+    "Pink": [
+      "169 WAIKIKI ORANGE"
+    ],
+    "Red": [
+      "72 NICE"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "345 ORANGE SHERBET",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1545173136598-KASXO1SMP0E6QWWIJS3P/Orange+Sherbert.png?format=500w"
+    },
+    {
+      "name": "182 FRESH MELON",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570343242-KTSR3SEU6NLTK40F5NMQ/Fresh+Melon.png?format=500w"
+    },
+    {
+      "name": "169 WAIKIKI ORANGE",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492407186608-PA7UDFC8SKZDPLLNS1WH/169+Waikiki+Orange.jpg?format=500w"
+    },
+    {
+      "name": "302 JAIPUR",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492407129994-GDJFLCP29VUCT4KWNW5K/302+Jaipur.jpg?format=500w"
+    },
+    {
+      "name": "482 ORANGE POP",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1764826838311-V6WB228N3XMXOEJB7L4C/MAVALA-MINI-COLOR-482-Orange-Pop.png?format=500w"
+    },
+    {
+      "name": "72 NICE",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492406841793-W7VAKBRNZUYFNO8V75NM/072+Nice.jpg?format=500w"
+    },
+    {
+      "name": "445 MOAB",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1701740178839-XS6Y0AHHFPDWJ54G8WRX/445+Moab.jpg?format=500w"
+    }
+  ]
+}

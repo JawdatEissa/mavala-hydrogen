@@ -1,0 +1,458 @@
+[
+  {
+    "slug": "wrinkles",
+    "name": "WRINKLES?",
+    "title": "WRINKLES?",
+    "url": "https://mavala.com.au/wrinkles",
+    "concern": "Your skin follows a very precise biorhythm: it defends itself during daylight, and renews itself at night. Lack of sun exposure or sleep, stress, pollution, or smoking can disrupt the proper functioning of the skin biorhythm and desynchronise its internal clock. During the day, the skin natural defences weaken: the skin is less resistant, it becomes dehydrated, and wrinkles set in. The skin loses its youth and glow.",
+    "solution": "You need an appropriate smooth yet efficient cleanser to best prepare your skin: Caress Cleansing Milk delicately removes make-up, impurities and traces of pollution. Its botanical extracts refresh, smoothe and soothe skin, while maintaining a good moisture balance. Caress Toning Lotion gently completes cleansing of the skin. Its plant extracts have astringent, refreshing, smoothing and lightly purifying properties, while helping keep a perfect moisture level. Without alcohol.\n\nTo respond to the principal need of your skin: apply ANTI-AGE PRO Day Serum every day in the morning to maximise physiological cutaneous daily activities. Its chronopeptides mimic the benefits of daylight on the skin in order to preserve its own protective potential. It's also rich in antioxidants and anti-ageing Alpine Rose stem cells. Follow with a daily application of ANTI-AGE PRO Day Cream, rejuvenating and antioxidant skincare which creates a protective bubble on the surface of your skin lasting until the evening.\n\nAs a night complement, AQUA PLUS Multi-Moisturizing Sleeping Mask is the ideal product. A truly nocturnal moisturizing infusion, it helps the skin restore its water reserves and reinforce the protecting cutaneous barrier.\n\nTo hydrate and replenish your complexion from the first signs of fatigue, spray SKIN VITALITY Alpine Micro-Mist on your face. Enriched with decongesting cornflower water, it leaves your skin feeling quenched, soft and energized. For an even more spectacular effect, you may keep the product in the refrigerator before use.",
+    "products": [
+      {
+        "name": "Toning Lotion",
+        "product_slug": "caress-toning-lotion",
+        "src": "/images/face-concern-products/297b9657b5b8.png",
+        "images": []
+      },
+      {
+        "name": "Cleansing Milk",
+        "product_slug": "cleansing-milk",
+        "src": "/images/face-concern-products/c6ff2f88b11f.png",
+        "images": []
+      },
+      {
+        "name": "Anti-Ageing Cream",
+        "product_slug": "chronobiological-cream",
+        "src": "/images/face-concern-products/d63a18fa48cf.png",
+        "images": []
+      },
+      {
+        "name": "Anti-Ageing Serum",
+        "product_slug": "chronobiological-serum",
+        "src": "/images/face-concern-products/df3b9949efb0.png",
+        "images": []
+      },
+      {
+        "name": "Moisturising Night Mask",
+        "product_slug": "sleeping-mask",
+        "src": "/images/face-concern-products/c73b1959ef29.png",
+        "images": []
+      },
+      {
+        "name": "Anti-Fatigue Spray",
+        "product_slug": "micro-mist",
+        "src": "/images/face-concern-products/897b9c8995eb.png",
+        "images": []
+      }
+    ]
+  },
+  {
+    "slug": "lack-of-radiance",
+    "name": "LACK OF RADIANCE?",
+    "title": "LACK OF RADIANCE?",
+    "url": "https://mavala.com.au/lack-of-radiance",
+    "concern": "Normal skin, even without any apparent problem, starts to lose its natural radiance after the age of 40. The skin follows a regular cell renewal process. Lack of moisture, external aggressions (sun, pollution, wind, unsuitable products,...) or certain internal factors (hepatic or digestive disorder,...) can affect this renewal process and harm the balance or the state of the skin, exacerbating its natural loss of radiance.",
+    "solution": "You need an appropriate smooth yet efficient cleanser to best prepare your skin: Caress Cleansing Milk delicately removes make-up, impurities and traces of pollution. Its botanical extracts refresh, smoothe and soothe skin, while maintaining a good moisture balance. Caress Toning Lotion gently completes cleansing of the skin. Its plant extracts have astringent, refreshing, smoothing and lightly purifying properties, while helping keep a perfect moisture level. Without alcohol.\n\nTo respond to the principal need of your skin: apply ANTI-AGE PRO Day Serum every day in the morning to maximise physiological cutaneous daily activities. Its chronopeptides mimic the benefits of daylight on the skin in order to preserve its own protective potential. It's also rich in antioxidants and anti-ageing Alpine Rose stem cells. Follow with a daily application of SKIN VITALITY Healthy Glow Day Cream, vitamin enriched skincare concentrated in vitalising Swiss Apricot extract, rich in provitamin A, toning and antioxidant.\n\nImprove your skin texture with the SKIN VITALITY Sleeping Mask \"Baby Skin\" Radiance. Apply a thin layer on clean face at night (avoiding the eye and lip contour). Leave it to penetrate and infuse overnight to transform the quality of your skin night after night. This new generation formula detoxifies, unifies and smoothes the skin while providing a healthy glow complexion.\n\nRemember to also eat fruits and vegetables rich in beta-carotene (carrots, pumpkin, spinach, peppers, yellow peaches,\u2026) as these contribute to giving your skin a healthy glow. Moderate physical activity also encourages a good skin micro-circulation and thus, the elimination of toxins.",
+    "products": [
+      {
+        "name": "Cleansing Milk",
+        "product_slug": "cleansing-milk",
+        "src": "/images/face-concern-products/1960510c57ff.png",
+        "images": []
+      },
+      {
+        "name": "Toning Lotion",
+        "product_slug": "caress-toning-lotion",
+        "src": "/images/face-concern-products/1be36adc156a.png",
+        "images": []
+      },
+      {
+        "name": "Anti-Ageing Serum",
+        "product_slug": "chronobiological-serum",
+        "src": "/images/face-concern-products/001d20f56039.png",
+        "images": []
+      },
+      {
+        "name": "Vitalizing Cream",
+        "product_slug": "healthy-glow-cream",
+        "src": "/images/face-concern-products/ba4aaa24a298.png",
+        "images": []
+      },
+      {
+        "name": "Detoxifying Night Mask",
+        "product_slug": "sleeping-mask-radiance",
+        "src": "/images/face-concern-products/f13fce0b8858.png",
+        "images": []
+      }
+    ]
+  },
+  {
+    "slug": "uneven-complexion",
+    "name": "UNEVEN COMPLEXION?",
+    "title": "UNEVEN COMPLEXION?",
+    "url": "https://mavala.com.au/uneven-complexion",
+    "concern": "Stress, lack of sleep, external elements (sun, pollution, wind, misused products,...) or internal factors (hepatic or digestive disorders,...) can damage the skin's balance and condition. The complexion loses its radiance, becomes uneven, and even turns greyish or yellowish depending on your natural skin tone. Dark spots may also appear. Those imperfections caused by skin exhaustion give the impression that the skin is in poor health, that it looks older than it really is.",
+    "solution": "You need an appropriate smooth yet efficient cleanser to best prepare your skin. Remove all make-up, even waterproof make-up, with the Alpine Softness Micellar Water, a dermo-cleanser which perfectly cleanses and dissolves make-up and urban toxins while respecting even the most delicate skins and eyes.\n\nTo respond to the principal need of your skin: apply SKIN VITALITY Healthy Glow Serum every morning to give an immediate radiant glow to your complexion. This moisturized vitamin enriched antioxidant serum preserves the skin from external aggressions, leading to premature ageing and restores radiance to the complexion. Follow with a daily application of SKIN VITALITY Healthy Glow Day Cream, vitamin enriched skincare concentrated in vitalising Swiss Apricot extract, rich in provitamin A, toning and antioxidant.\n\nImprove your skin texture with the SKIN VITALITY Sleeping Mask \"Baby Skin\" Radiance. Apply a thin layer on clean face at night (avoiding the eye and lip contour). Leave it to penetrate and infuse overnight to transform the quality of your skin night after night. This new generation formula detoxifies, unifies and smoothes the skin while providing a healthy glow complexion.\n\nTo complete the benefits of the other face care products used every day: Beauty-Enhancing Micro-Peel is a creamy gum-like scrub that gently liberates the skin from dead cells and stimulates micro-circulation for an immediate radiance. Use once a week to improve the penetration of your day cream or sleeping mask into the skin.\n\nTo hydrate and replenish your complexion from the first signs of fatigue, spray SKIN VITALITY Alpine Micro-Mist on your face. Enriched with decongesting cornflower water, it leaves your skin feeling quenched, soft and energized. For an even more spectacular effect, you may keep the product in the refrigerator before use.",
+    "products": [
+      {
+        "name": "Vitalizing Serum",
+        "product_slug": "healthy-glow-serum",
+        "src": "/images/face-concern-products/406af25ad36c.png",
+        "images": []
+      },
+      {
+        "name": "Micellar Water",
+        "product_slug": "micellar-water",
+        "src": "/images/face-concern-products/abb6466ec60b.png",
+        "images": []
+      },
+      {
+        "name": "Vitalizing Cream",
+        "product_slug": "healthy-glow-cream",
+        "src": "/images/face-concern-products/a4601636820f.png",
+        "images": []
+      },
+      {
+        "name": "Detoxifying Night Mask",
+        "product_slug": "sleeping-mask-radiance",
+        "src": "/images/face-concern-products/98bed93bbe59.png",
+        "images": []
+      },
+      {
+        "name": "Micro-Peel",
+        "product_slug": "micro-peel",
+        "src": "/images/face-concern-products/d72839a9088e.png",
+        "images": []
+      },
+      {
+        "name": "Vitalizing Face Mist",
+        "product_slug": "micro-mist",
+        "src": "/images/face-concern-products/487cb849152f.png",
+        "images": []
+      }
+    ]
+  },
+  {
+    "slug": "dehydrated-skin",
+    "name": "DEHYDRATED SKIN?",
+    "title": "DEHYDRATED SKIN?",
+    "url": "https://mavala.com.au/dehydrated-skin",
+    "concern": "Dehydrated skin lacks moisture. It feels tight and wrinkles appear prematurely. Less protected by a thinner moisture barrier, the skin is more reactive and more likely to redden. It can feel simultaneously dry and oily and show small pimples and blackheads.",
+    "solution": "All skin types can suffer from dehydration. This is the reason why it is difficult to see the difference between a skin which is temporarily dehydrated and a dry skin. Some symptoms are the same, such as tightness and discomfort, skin peeling, or even the feeling of wanting to apply cream. The most notable difference is the production of sebum. If you have slightly oily traces on the forehead, nose or chin, you do not have dry skin, but only a dehydrated skin.\n\nYou need an appropriate smooth yet efficient cleanser to best prepare your skin. Remove all make-up, even waterproof make-up, with the Alpine Softness Micellar Water, a dermo-cleanser which perfectly cleanses and dissolves make-up and urban toxins while respecting even the most delicate skins and eyes. For a gentle cleanse, use the Caress Cleansing Milk which delicately removes make-up and impurities. Its botanical extracts smoothe and soothe skin. Caress Toning Lotion gently completes cleansing of the skin. Its plant extracts have astringent and refreshing properties. Without alcohol.\n\nTo respond to the essential needs of your skin, apply AQUA PLUS Intensive Serum every morning to assure moisture, regeneration and protection, thanks to its high concentration in hyaluronic acids. Follow by AQUA PLUS Multi-Moisturizing Featherlight Cream to provide a 24h non-stop hydration barrier on your skin.\n\nAs a night complement, AQUA PLUS Multi-Moisturizing Sleeping Mask is the ideal product. A truly nocturnal moisturizing infusion, it helps the skin restore its water reserves and reinforce the protecting cutaneous barrier.\n\nTo complete the benefits of the other face care products used every day: Beauty-Enhancing Micro-Peel is a creamy gum-like scrub that gently liberates the skin from dead cells and stimulates micro-circulation for an immediate radiance. Use once a week to improve the penetration of your day cream or sleeping mask into the skin.\n\nTo hydrate and replenish your complexion from the first signs of fatigue, spray SKIN VITALITY Alpine Micro-Mist on your face. Enriched with decongesting cornflower water, it leaves your skin feeling quenched, soft and energized. For an even more spectacular effect, you may keep the product in the refrigerator before use.",
+    "products": [
+      {
+        "name": "Micellar Water",
+        "product_slug": "micellar-water",
+        "src": "/images/face-concern-products/445360127055.png",
+        "images": []
+      },
+      {
+        "name": "Cleansing Milk",
+        "product_slug": "cleansing-milk",
+        "src": "/images/face-concern-products/92373cb923e6.png",
+        "images": []
+      },
+      {
+        "name": "Toning Lotion",
+        "product_slug": "caress-toning-lotion",
+        "src": "/images/face-concern-products/ed330eb17d74.png",
+        "images": []
+      },
+      {
+        "name": "Intensive Moisturizing Serum",
+        "product_slug": "intensive-serum",
+        "src": "/images/face-concern-products/931e03aeae30.png",
+        "images": []
+      },
+      {
+        "name": "24H Moisturising Cream",
+        "product_slug": "featherlight-cream",
+        "src": "/images/face-concern-products/b4075feb6cee.png",
+        "images": []
+      },
+      {
+        "name": "Moisturizing Night Mask",
+        "product_slug": "sleeping-mask",
+        "src": "/images/face-concern-products/08c28b198161.png",
+        "images": []
+      },
+      {
+        "name": "Vitalizing Face Mist",
+        "product_slug": "micro-mist",
+        "src": "/images/face-concern-products/99bdd0da12ce.png",
+        "images": []
+      },
+      {
+        "name": "Micro-Peel",
+        "product_slug": "micro-peel",
+        "src": "/images/face-concern-products/4608ac99fa27.png",
+        "images": []
+      }
+    ]
+  },
+  {
+    "slug": "dry-skin",
+    "name": "DRY SKIN?",
+    "title": "DRY SKIN?",
+    "url": "https://mavala.com.au/dry-skin",
+    "concern": "Very dry, devitalized skin is extremely thin and is characterized by a very fine structure, an insufficient superficial and deep moisture level, a dull complexion, a lack of tonicity and suppleness. Blemishes are often more numerous: roughness, flakiness, lines and wrinkles, redness, skin's loosening, pigmentary blots,...",
+    "solution": "You need an appropriate smooth yet efficient cleanser to best prepare any skin type: Caress Cleansing Milk delicately removes make-up, impurities and traces of pollution. Its botanical extracts refresh, smoothe and soothe skin, while maintaining a good moisture balance. Caress Toning Lotion gently completes cleansing of the skin. Its plant extracts have astringent, refreshing, smoothing and lightly purifying properties, while helping keep a perfect moisture level. Without alcohol.\n\nTo respond to the essential needs of your skin, apply NUTRI ELIXIR Essential Serum every morning to intensely revitalises the driest skin, thanks to its high concentration in Swiss Linseed oil, rich in omega 3, 6 and 9, to replenish the skin with nutri-protective lipids. Follow with a daily application of NUTRI ELIXIR Ultimate Cream, with a patented pro-lipid booster which improves the natural lipid replenishment system of the skin.\n\nAs a night complement, NUTRI ELIXIR Absolute Night Balm is the ideal product. It leaves a silky-soft finish which replenishes your skin with lipids and re-densifies it intensely during the night.\n\nTo hydrate and replenish your complexion from the first signs of fatigue, spray SKIN VITALITY Alpine Micro-Mist on your face. Enriched with decongesting cornflower water, it leaves your skin feeling quenched, soft and energized. For an even more spectacular effect, you may keep the product in the refrigerator before use.",
+    "products": [
+      {
+        "name": "Toning Lotion",
+        "product_slug": "caress-toning-lotion",
+        "src": "/images/face-concern-products/5780334abbe0.png",
+        "images": []
+      },
+      {
+        "name": "Cleansing Milk",
+        "product_slug": "cleansing-milk",
+        "src": "/images/face-concern-products/147e2cb8e428.png",
+        "images": []
+      },
+      {
+        "name": "Nutrition Serum",
+        "product_slug": "nutrition-essential-serum",
+        "src": "/images/face-concern-products/d9796d48a0e8.png",
+        "images": []
+      },
+      {
+        "name": "Nutrition Cream",
+        "product_slug": "nutrition-ultimate-cream",
+        "src": "/images/face-concern-products/b81ad9491585.png",
+        "images": []
+      },
+      {
+        "name": "Nutrition Night Balm",
+        "product_slug": "absolute-night-balm",
+        "src": "/images/face-concern-products/4453e22c2867.png",
+        "images": []
+      },
+      {
+        "name": "Vitalizing Face Mist",
+        "product_slug": "micro-mist",
+        "src": "/images/face-concern-products/b4e6e34b1738.png",
+        "images": []
+      }
+    ]
+  },
+  {
+    "slug": "tired-dull-skin",
+    "name": "TIRED, DULL SKIN?",
+    "title": "TIRED, DULL SKIN?",
+    "url": "",
+    "concern": "Fatigue, stress, lack of sleep, and exposure to environmental factors can leave your skin looking tired and dull. The complexion loses its natural radiance, appearing lackluster and lifeless. Fine lines may appear more pronounced, and the skin may feel dehydrated.",
+    "solution": "To revitalize tired, dull skin, start with a proper cleansing routine using Caress Cleansing Milk and Caress Toning Lotion to remove impurities while maintaining moisture balance.\n\nApply SKIN VITALITY Healthy Glow Serum every morning to restore radiance and protect against environmental aggressions. Follow with SKIN VITALITY Healthy Glow Day Cream, enriched with Swiss Apricot extract and provitamin A for a toning and antioxidant effect.\n\nFor overnight renewal, use SKIN VITALITY Sleeping Mask \"Baby Skin\" Radiance to detoxify, unify, and smooth the skin while providing a healthy glow.\n\nSpray SKIN VITALITY Alpine Micro-Mist throughout the day to hydrate and refresh your complexion. Enriched with decongesting cornflower water, it leaves skin feeling quenched and energized.",
+    "products": [
+      {
+        "name": "Caress Cleansing Milk",
+        "product_slug": "cleansing-milk",
+        "src": "/images/face-concern-products/d86b29d17d95.png",
+        "images": []
+      },
+      {
+        "name": "Caress Toning Lotion",
+        "product_slug": "caress-toning-lotion",
+        "src": "/images/face-concern-products/12be00e823f2.png",
+        "images": []
+      },
+      {
+        "name": "SKIN VITALITY Healthy Glow Serum",
+        "product_slug": "healthy-glow-serum",
+        "src": "/images/face-concern-products/3c1ae20ea963.png",
+        "images": []
+      },
+      {
+        "name": "SKIN VITALITY Healthy Glow Day Cream",
+        "product_slug": "healthy-glow-cream",
+        "src": "/images/face-concern-products/12ac59baed2c.png",
+        "images": []
+      },
+      {
+        "name": "SKIN VITALITY Sleeping Mask",
+        "product_slug": "sleeping-mask-baby-skin",
+        "src": "/images/face-concern-products/702e12be41ff.png",
+        "images": []
+      },
+      {
+        "name": "SKIN VITALITY Alpine Micro-Mist",
+        "product_slug": "micro-mist",
+        "src": "/images/face-concern-products/ce7d8a891f64.png",
+        "images": []
+      }
+    ]
+  },
+  {
+    "slug": "clogged-skin",
+    "name": "CLOGGED SKIN?",
+    "title": "CLOGGED SKIN?",
+    "url": "https://mavala.com.au/clogged-skin",
+    "concern": "Oily skin is quite thick and characterized by excessive sebaceous secretions, forming a shiny film on the epidermis. It might suffer from acne. Its structure is rough and its pores are dilated and often clogged up with blackheads. The complexion is blotchy, yellowish or greyish. Its moisture level is generally insufficient (sebum does not protect the epidermis). An inappropriate or even non-existent treatment worsens these problems.",
+    "solution": "You need an appropriate smooth yet efficient cleanser to best prepare your skin type: PORE DETOX Foaming Cleanser absorbs and instantly eliminates excess sebum and any other impurity. Its physiological pH, soap and paraben free micellar formula, unblocks pores without drying the skin. Follow with PORE DETOX Toning Lotion to complete cleansing of the skin. Its ingredients help balance skin's natural oil and close pores, while toning and purifying.\n\nThis skin type must be moisturized and protected every day: apply AQUA PLUS Intensive Serum every morning to assure moisture, regeneration and protection, thanks to its high concentration in hyaluronic acids. Follow with a daily application of PORE DETOX Hydra Matt Fluid. It regulates excess sebum, refines skin texture and minimizes the appearance of pores. Its \"soft focus\" micro-pigments offer an instant perfecting blur.\n\nTo complete the action of your daily treatment products: once or twice a week, apply a thick layer of PORE DETOX Purifying Mask on clean face. Leave on for 10 minutes. Rinse off with lukewarm water to perfectly eliminate impurities, then cold water to maximize astringent effect. It will give you a beautiful refined skin texture, unblock and tighten pores without drying the skin and remove all shine in just 10 minutes!\n\nBeauty-Enhancing Micro-Peel is a creamy gum-like scrub that gently liberates the skin from dead cells and stimulates micro-circulation for an immediate radiance. Use once a week to improve the penetration of your day cream or mask into the skin.",
+    "products": [
+      {
+        "name": "Purifying Lotion",
+        "product_slug": "toning-lotion-pore-detox",
+        "src": "/images/face-concern-products/a18e17f2c0eb.png",
+        "images": []
+      },
+      {
+        "name": "Foaming Cleanser",
+        "product_slug": "foaming-cleanser",
+        "src": "/images/face-concern-products/3f56fdd4221f.png",
+        "images": []
+      },
+      {
+        "name": "Intensive Moisturizing Serum",
+        "product_slug": "intensive-serum",
+        "src": "/images/face-concern-products/08cf3fcd426a.png",
+        "images": []
+      },
+      {
+        "name": "Mattifying Fluid",
+        "product_slug": "hydra-matt-fluid",
+        "src": "/images/face-concern-products/b14f89e0935a.png",
+        "images": []
+      },
+      {
+        "name": "Purifying Mask",
+        "product_slug": "purifying-mask",
+        "src": "/images/face-concern-products/5b3ae3fe5245.png",
+        "images": []
+      },
+      {
+        "name": "Micro-Peel",
+        "product_slug": "micro-peel",
+        "src": "/images/face-concern-products/be256c8e02ee.png",
+        "images": []
+      }
+    ]
+  },
+  {
+    "slug": "dilated-pores",
+    "name": "DILATED PORES?",
+    "title": "DILATED PORES?",
+    "url": "https://mavala.com.au/dilated-pores",
+    "concern": "Most of the time, not all the face skin is oily, but only its median zone (forehead, nose and chin). It is then called mixed skin, with oily skin characteristics (on the median zone) and normal skin characteristics (on the rest of the face). So one must take into consideration features and needs of both skin types. This skin type often leads to imperfections, shine and dilated pores.",
+    "solution": "You need an appropriate smooth yet efficient cleanser to best prepare your skin type: PORE DETOX Foaming Cleanser absorbs and instantly eliminates excess sebum and any other impurity. Its physiological pH, soap and paraben free micellar formula, unblocks pores without drying the skin. Follow with PORE DETOX Toning Lotion to complete cleansing of the skin. Its ingredients help balance skin's natural oil and close pores, while toning and purifying.\n\nThis skin type must be moisturized and protected every day: apply AQUA PLUS Intensive Serum every morning to assure moisture, regeneration and protection, thanks to its high concentration in hyaluronic acids. Follow with a daily application of PORE DETOX Hydra Matt Fluid. It regulates excess sebum, refines skin texture and minimizes the appearance of pores. Its \"soft focus\" micro-pigments offer an instant perfecting blur.\n\nTo complete the action of your daily treatment products, once or twice a week, apply a thick layer of PORE DETOX Purifying Mask on clean face. Leave on for 10 minutes. Rinse off with lukewarm water to perfectly eliminate impurities, then cold water to maximize astringent effect. It will give you a beautiful refined skin texture, unblock and tighten pores without drying the skin and remove all shine in just 10 minutes!",
+    "products": [
+      {
+        "name": "Foaming Cleanser",
+        "product_slug": "foaming-cleanser",
+        "src": "/images/face-concern-products/be8e7d93077a.png",
+        "images": []
+      },
+      {
+        "name": "Purifying Lotion",
+        "product_slug": "toning-lotion-pore-detox",
+        "src": "/images/face-concern-products/6139684c3db8.png",
+        "images": []
+      },
+      {
+        "name": "Mattifying Fluid",
+        "product_slug": "hydra-matt-fluid",
+        "src": "/images/face-concern-products/11b5d63f1356.png",
+        "images": []
+      },
+      {
+        "name": "Intensive Moisturizing Serum",
+        "product_slug": "intensive-serum",
+        "src": "/images/face-concern-products/c2e829828521.png",
+        "images": []
+      },
+      {
+        "name": "Purifying Mask",
+        "product_slug": "purifying-mask",
+        "src": "/images/face-concern-products/c8361d405241.png",
+        "images": []
+      }
+    ]
+  },
+  {
+    "slug": "clear-complexion",
+    "name": "CLEAR COMPLEXION?",
+    "title": "CLEAR COMPLEXION?",
+    "url": "https://mavala.com.au/clear-complexion",
+    "concern": "The complexion may be pink, pale or tanned, fresh, luminous and generally even. It is the reflexion of a healthy and balanced skin. However, tiredness, neglect in protecting the epidermis of the face, wrong or misused make-up products can all cause a temporary loss of freshness and radiance.",
+    "solution": "To highlight natural beauty, bring out and maintain luminosity and the skin's radiance, MAVALA face beauty range offers different make-up products, to combine care with beauty.\n\nMavala Moisturizing Tinted Cream helps the skin to protect itself against environmental damage, maintain the skin's ideal moisture level and visibly diminishes the appearance of any skin irregularities. It assures a light, uniform and easy application.\n\nMavala Transparent Pressed Powder provides a uniform and matt complexion. Your skin will feel velvety and soft, thanks to different components which react well with the skin, ensuring an excellent coverage while also regulating the skin's hydrolipidic balance. This powder assures a natural make-up.\n\nAll these products come in different shades to adapt to each type of complexion and to respond to every style and taste.\n\nIt is important to take care of your skin by using treatment products which are adapted to your type. MAVALA face care range will give you the solution.",
+    "products": [
+      {
+        "name": "Pressed Powder",
+        "product_slug": "pressed-powder",
+        "src": "/images/face-concern-products/527f79890383.png",
+        "images": []
+      },
+      {
+        "name": "Tinted Cream",
+        "product_slug": "tinted-cream",
+        "src": "/images/face-concern-products/6874e9e08a2b.png",
+        "images": []
+      }
+    ]
+  },
+  {
+    "slug": "dull-complexion",
+    "name": "DULL COMPLEXION?",
+    "title": "DULL COMPLEXION?",
+    "url": "https://mavala.com.au/dull-complexion",
+    "concern": "The complexion is dull when there is a lack of freshness and luminosity. Tiredness, general health condition, different skin problems, a lack of care and protection of the face's epidermis, wrong or misused make-up products can alter the quality and visual appearance of the face's skin, therefore complexion loses its radiance and becomes dull.",
+    "solution": "You can restore brightness to your face by making your complexion fresher and more luminous.\n\nMavala Moisturizing Tinted Cream helps the skin to protect itself against environmental damage, maintain the skin's ideal moisture level and visibly diminishes the appearance of any skin irregularities. It assures a light, uniform and easy application and gives a healthy look.\n\nUsed after or by itself, Mavala Wet and Dry Powder provides a uniform and matt complexion and makes it luminous. It reacts well with the skin and provides complete adherence. It also provides an exceptional comfort, brings to make-up a velvety and long-lasting finish. It allows you to vary the amount of coverage your prefer, with either a dry or wet sponge.\n\nThese products come in different shades to adapt to each type of complexion and to respond to every style and taste.\n\nIt is important to take care of your skin by using treatment products which are adapted to your type. MAVALA face care range will give you the solution.",
+    "products": [
+      {
+        "name": "Tinted Cream",
+        "product_slug": "tinted-cream",
+        "src": "/images/face-concern-products/8ada269bb72f.png",
+        "images": []
+      },
+      {
+        "name": "Wet and Dry Powder",
+        "product_slug": "wet-and-dry-powder",
+        "src": "/images/face-concern-products/db5120da8767.png",
+        "images": []
+      }
+    ]
+  },
+  {
+    "slug": "blotchy-complexion",
+    "name": "BLOTCHY COMPLEXION?",
+    "title": "BLOTCHY COMPLEXION?",
+    "url": "https://mavala.com.au/blotchy-complexion",
+    "concern": "This complexion is characteristic of an oily or mixed skin (with the median area being more oily). The excess of sebaceous secretions which forms a shiny film on the skin and the presence of blackheads makes the skin shiny, yellowish or greyish and the complexion unclear. A lack of skin hygiene, appropriate care or using the wrong make-up products will encourage and maintain this blotchy appearance.",
+    "solution": "It is necessary to make the complexion more even and matt.\n\nNon-greasy Mavala Wet and Dry Powder allows you to vary the amount of coverage you prefer by using either a dry or wet sponge. On a blotchy complexion, an application with a wet sponge is recommended to obtain an impeccable matt and uniform result. It allows an extremely easy application and an excellent coverage. This product comes in different shades to adapt to each type of complexion and to respond to every style and taste.\n\nIt is important to take care of your skin by using treatment products which are adapted to your type. MAVALA face care range will give you the solution.",
+    "products": [
+      {
+        "name": "Wet and Dry Powder",
+        "product_slug": "wet-and-dry-powder",
+        "src": "/images/face-concern-products/165acd335352.png",
+        "images": []
+      }
+    ]
+  },
+  {
+    "slug": "complexion-with-irregularities",
+    "name": "COMPLEXION WITH IRREGULARITIES?",
+    "title": "COMPLEXION WITH IRREGULARITIES?",
+    "url": "https://mavala.com.au/complexion-irregularities",
+    "concern": "Minor skin imperfections (redness, pigmentary blemishes, eye circles, spots, light acne scars,...) form different colourings or irregularites on the skin surface, making the complexion lack regularity and clearness. The appearance of these imperfections can be accentuated by tiredness, general health condition, different skin problems, lack of care and protection of the face's epidermis, or wrongly used make-up products.",
+    "solution": "In terms of make-up, it is necessary to cover up these small imperfections to give the complexion a smoother and clearer appearance.\n\nMavala Dream Foundation has a fine texture which allies micronized pigments to allow a modular coverage without thickness and photo-active powders for a \"soft-focus\" effect (optically smoothed lines and imperfections) and for a luminous finish.\n\nNon-greasy Mavala Wet and Dry Powder allows you to vary the amount of coverage you prefer, by using either a dry or wet sponge. On a blotchy complexion, an application with a wet sponge is recommended to obtain an impeccable matt and uniform result. It allows an extremely easy application and an excellent coverage.\n\nUsed alone or applied after a foundation, Mavala Transparent Pressed Powder provides a uniform and velvety complexion due to its excellent reaction with the skin. It provides a complete adherence and its macademia oil helps regulate the skin's hydrolipidic balance. It assures an excellent coverage.\n\nThese products come in different shades to adapt to each type of complexion and to respond to every style and taste. It is important to take care of your skin by using treatment products which are adapted to your type. MAVALA face care range will give you the solution.",
+    "products": [
+      {
+        "name": "Flawless Foundation",
+        "product_slug": "bb-cream",
+        "src": "/images/face-concern-products/a6d310f7186c.png",
+        "images": []
+      },
+      {
+        "name": "Pressed Powder",
+        "product_slug": "pressed-powder",
+        "src": "/images/face-concern-products/8301b65e8b96.png",
+        "images": []
+      },
+      {
+        "name": "Wet and Dry Powder",
+        "product_slug": "wet-and-dry-powder",
+        "src": "/images/face-concern-products/b5916fa56315.png",
+        "images": []
+      }
+    ]
+  }
+]

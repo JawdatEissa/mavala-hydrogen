@@ -1,0 +1,56 @@
+{
+  "product_slug": "whisper",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Grey": [
+      "463 SIROCCO CITY"
+    ],
+    "Pink": [
+      "464 BREEZEFIELD",
+      "468 ZEPHYROPOLIS"
+    ],
+    "White": [
+      "465 BLIZZARDVILLE"
+    ],
+    "Blue": [
+      "466 VENTOSA SPRINGS"
+    ],
+    "Purple": [
+      "467 WHISPERWOOD"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "463 SIROCCO CITY",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1722837685390-MQHVQ7GUHRC76L5MQB6B/463+Sirocco+City+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "464 BREEZEFIELD",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1722837677380-SS33D3847JN1Z3PTR0CY/464+Breeze+Field+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "465 BLIZZARDVILLE",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1722837683902-AHU8R6D6CAX9G4L7B4D6/465+Blizzardville+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "466 VENTOSA SPRINGS",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1722837682205-R7WC35BD2EENWNWXM139/466+Ventosa+Springs+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "467 WHISPERWOOD",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1722837680652-I3OO9Y4DOQAPGRMVQ60N/467+Whisperwood+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "468 ZEPHYROPOLIS",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1722837678374-GVWK3GSL8C1LOPQN01PK/468+Zephyropolis+-+RVB.jpg?format=500w"
+    }
+  ]
+}

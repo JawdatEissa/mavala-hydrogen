@@ -1,0 +1,48 @@
+{
+  "product_slug": "neo-nudes",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Nude": [
+      "475 OTTAWA",
+      "476 MARBELLA",
+      "477 PANAMA",
+      "478 SAFI",
+      "479 DJIBOUTI",
+      "480 DURBAN"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "475 OTTAWA",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1755235038823-EDJ9JKRA8B91GYPC4MA8/475+Ottawa+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "476 MARBELLA",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1755235080006-P2G6O3IK2RF6C0VPANZX/476+Marbella+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "477 PANAMA",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1755235113946-K6CD3UDKKOIGJUQ1I02J/477+Panama+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "478 SAFI",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1755235186976-LRXBW82G3BJDIR3Q6MO0/478+Safi+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "479 DJIBOUTI",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1755235216689-TBUVX3K97138ARLCMBIU/479+Djibouti+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "480 DURBAN",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1755235246254-K0J7EIMVV9RJPHJ7KNQZ/480+Durban+-+RVB.jpg?format=500w"
+    }
+  ]
+}

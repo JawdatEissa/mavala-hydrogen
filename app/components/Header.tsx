@@ -1,0 +1,294 @@
+import { Link } from "@remix-run/react";
+import { useState, useEffect } from "react";
+import { categories } from "../lib/mock-data";
+
+// Mavala Logo Component - using official logo image from Squarespace CDN
+const LOGO_URL = "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/2145336d-78c4-4158-95e6-60f11fe8a5f8/MAVALA_Switzerland_logotype+Digital.png?format=1500w";
+
+function MavalaLogo({ width = 240 }: { width?: number }) {
+  return (
+    <div
+      id="logoWrapper"
+      className="title-logo-wrapper"
+      style={{
+        display: 'block',
+        textAlign: 'center',
+        width: `${width}px`,
+        height: 'auto',
+        lineHeight: 1,
+      }}
+    >
+      <h1
+        id="logoImage"
+        className="logo-image"
+        style={{
+          margin: 0,
+          fontSize: 0,
+          maxWidth: '100%',
+        }}
+      >
+        <Link to="/">
+          <img
+            src={LOGO_URL}
+            alt="Mavala Switzerland"
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxWidth: '100%',
+              border: 0,
+              display: 'block',
+            }}
+          />
+        </Link>
+      </h1>
+    </div>
+  );
+}
+
+// Navigation link style classes - match reference header styling
+const navLinkClasses =
+  "block font-['Archivo'] text-[14px] font-normal leading-[14px] uppercase tracking-[0.92px] text-[rgba(167,24,48,0.996)] px-[14px] py-[10.5px] text-center transition-colors duration-100 ease-in-out";
+
+export function Header() {
+  const [isHidden, setIsHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Hide header when scrolling down, show when scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    // Listen for custom event from ShadeDrawer
+    const handleDrawerOpen = () => setIsHidden(true);
+    const handleDrawerClose = () => setIsHidden(false);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("shadeDrawerOpen", handleDrawerOpen);
+    window.addEventListener("shadeDrawerClose", handleDrawerClose);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("shadeDrawerOpen", handleDrawerOpen);
+      window.removeEventListener("shadeDrawerClose", handleDrawerClose);
+    };
+  }, [lastScrollY]);
+
+  return (
+    <header 
+      className="w-full fixed top-0 left-0 right-0 z-[9999] bg-white shadow-sm"
+      style={{
+        transform: isHidden ? "translateY(-100%)" : "translateY(0)",
+        transition: "transform 0.4s cubic-bezier(0.32, 0.72, 0, 1)",
+      }}
+    >
+      <nav className="h-[90px] relative">
+        {/* Desktop Navigation - Three column layout for perfect centering */}
+        <div className="hidden lg:grid grid-cols-3 items-center h-full px-8">
+          
+          {/* Left Group: SHOP, DIAGNOSIS, BLOG - pushed right towards logo */}
+          <div className="flex flex-row items-center justify-end gap-6">
+            {/* SHOP with CSS-only dropdown - group hover (non-clickable) */}
+            <div className="relative group">
+              <span 
+                className={`${navLinkClasses} relative z-[10001] cursor-default`}
+              >
+                SHOP
+              </span>
+
+              {/* Dropdown Menu - CSS hover, no JavaScript */}
+              <div className="absolute top-full left-0 w-[220px] z-[10000] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                {/* Invisible bridge to prevent hover gap */}
+                <div className="h-2"></div>
+                <div className="bg-white shadow-xl py-4 flex flex-col border border-gray-100">
+                    {categories.map((cat) => (
+                      <a
+                        key={cat.slug}
+                        href={cat.url}
+                      className="font-sans text-[12px] font-semibold text-black hover:text-red-700 hover:bg-gray-50 transition-colors py-3 px-6 uppercase tracking-[0.1em] text-left w-full"
+                      >
+                        {cat.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+            </div>
+
+            {/* DIAGNOSIS with dropdown */}
+            <div className="relative group">
+              <span 
+                className={`${navLinkClasses} relative z-[10001] cursor-pointer`}
+              >
+                DIAGNOSIS
+              </span>
+
+              {/* Dropdown Menu - CSS hover */}
+              <div className="absolute top-full left-0 w-[220px] z-[10000] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                {/* Invisible bridge to prevent hover gap */}
+                <div className="h-2"></div>
+                <div className="bg-white shadow-xl py-4 flex flex-col border border-gray-100">
+                  <Link
+                    to="/nail-diagnosis"
+                    className="font-sans text-[12px] font-semibold text-black hover:text-red-700 hover:bg-gray-50 transition-colors py-3 px-6 uppercase tracking-[0.1em] text-left w-full"
+                  >
+                    NAIL QUIZ
+                  </Link>
+                  <Link
+                    to="/face-concerns"
+                    className="font-sans text-[12px] font-semibold text-black hover:text-red-700 hover:bg-gray-50 transition-colors py-3 px-6 uppercase tracking-[0.1em] text-left w-full"
+                  >
+                    SKIN QUIZ
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <Link to="/blog" className={navLinkClasses}>
+              BLOG
+            </Link>
+          </div>
+
+          {/* Center: Logo - perfectly centered with spacing */}
+          <div className="flex items-center justify-center mx-6">
+            <MavalaLogo width={240} />
+          </div>
+
+          {/* Right Group: THE BRAND, SEARCH, SIGN IN - pushed left towards logo */}
+          <div className="flex flex-row items-center justify-start gap-6">
+            <a href="/the-brand" className={navLinkClasses}>
+              THE BRAND
+            </a>
+
+            <Link 
+              to="/search" 
+              className={navLinkClasses}
+            >
+              SEARCH
+            </Link>
+
+            <Link 
+              to="/account" 
+              className={navLinkClasses}
+            >
+              SIGN IN
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile Header - Using native details/summary for guaranteed functionality */}
+        <div className="lg:hidden h-full">
+          {/* Mobile Logo - centered */}
+          <div className="flex items-center justify-center h-full">
+            <MavalaLogo width={160} />
+          </div>
+
+          {/* Mobile Cart - fixed position */}
+          <a
+            href="/cart"
+            className="fixed top-[25px] right-4 p-3 z-[10001] bg-white rounded-md text-gray-800"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+          </a>
+        </div>
+
+        {/* Mobile Menu using native details/summary - works without JS */}
+        <details 
+          className="lg:hidden group fixed top-[20px] left-4 z-[10001]"
+          onToggle={(e) => {
+            const details = e.currentTarget as HTMLDetailsElement;
+            if (details.open) {
+              window.dispatchEvent(new CustomEvent("shadeDrawerOpen"));
+            } else {
+              window.dispatchEvent(new CustomEvent("shadeDrawerClose"));
+            }
+          }}
+        >
+          <summary className="list-none cursor-pointer p-3 bg-white rounded-md shadow-sm hover:bg-gray-50">
+            {/* Hamburger icon - shown when closed */}
+            <svg className="w-6 h-6 text-gray-800 group-open:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            {/* X icon - shown when open */}
+            <svg className="w-6 h-6 text-gray-800 hidden group-open:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </summary>
+          
+          {/* Menu Content - starts from top when header hides */}
+          <div className="fixed top-[70px] left-0 w-full bg-white border-t border-gray-100 shadow-lg max-h-[calc(100vh-70px)] overflow-y-auto">
+            <div className="flex flex-col p-8 space-y-6 text-center">
+              {/* Shop with sub-menu */}
+              <details className="group/shop">
+                <summary className="list-none cursor-pointer text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 flex items-center justify-center gap-2">
+                  <span className="group-open/shop:hidden">+</span>
+                  <span className="hidden group-open/shop:inline">−</span>
+                  <span>Shop</span>
+                </summary>
+                <div className="space-y-3 mt-4">
+                  {categories.map((cat) => (
+                    <a
+                      key={cat.slug}
+                      href={cat.url}
+                      className="block text-[18px] font-['Archivo'] uppercase tracking-[0.2px] text-gray-800 hover:text-red-700 transition-colors w-full text-center py-2"
+                    >
+                      {cat.name}
+                    </a>
+                  ))}
+                </div>
+              </details>
+
+              {/* Diagnosis with sub-menu */}
+              <details className="group/diagnosis">
+                <summary className="list-none cursor-pointer text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 flex items-center justify-center gap-2">
+                  <span className="group-open/diagnosis:hidden">+</span>
+                  <span className="hidden group-open/diagnosis:inline">−</span>
+                  <span>Diagnosis</span>
+                </summary>
+                <div className="space-y-3 mt-4">
+                  <a
+                    href="/nail-diagnosis"
+                    className="block text-[18px] font-['Archivo'] uppercase tracking-[0.2px] text-gray-800 hover:text-red-700 transition-colors w-full text-center py-2"
+                  >
+                    NAIL QUIZ
+                  </a>
+                  <a
+                    href="/face-concerns"
+                    className="block text-[18px] font-['Archivo'] uppercase tracking-[0.2px] text-gray-800 hover:text-red-700 transition-colors w-full text-center py-2"
+                  >
+                    SKIN QUIZ
+                  </a>
+                </div>
+              </details>
+
+              <a href="/blog" className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors">
+                Blog
+              </a>
+
+              <a href="/the-brand" className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors">
+                The Brand
+              </a>
+
+              <a href="/search" className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors">
+                Search
+              </a>
+
+              <a href="/account" className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors">
+                Sign In
+              </a>
+            </div>
+          </div>
+        </details>
+      </nav>
+    </header>
+  );
+}

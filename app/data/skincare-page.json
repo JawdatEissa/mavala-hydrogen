@@ -1,0 +1,212 @@
+{
+  "slug": "skincare",
+  "name": "Skin Care",
+  "route": "/skincare",
+  "hero_title": "Swiss Skin Solution, Skin care for delicate and sensitive skin",
+  "sections": [
+    {
+      "title": "ANTI-AGE PRO",
+      "subtitle": "Exceptional Chronobiological Skincare to efficiently correct all signs of ageing.",
+      "products": [
+        {
+          "name": "CHRONOBIOLOGICAL DAY SERUM",
+          "slug": "chronobiological-serum",
+          "price": "A$79.95",
+          "description": "Visibly reduces the appearance of wrinkles.",
+          "url": "https://mavala.com.au/chronobiological-serum"
+        },
+        {
+          "name": "CHRONOBIOLOGICAL DAY CREAM",
+          "slug": "chronobiological-cream",
+          "price": "A$74.95",
+          "description": "Youth and protection for a fresh and radiant skin.",
+          "url": "https://mavala.com.au/chronobiological-cream"
+        },
+        {
+          "name": "TIME RELEASE SYSTEM NIGHT CARE",
+          "slug": "time-release-system",
+          "price": "A$84.95",
+          "description": "Reactivates the youth mechanism of your skin.",
+          "url": "https://mavala.com.au/time-release-system"
+        }
+      ]
+    },
+    {
+      "title": "NUTRI-ELIXIR",
+      "subtitle": "Lipid Replenishing Skincare to reduce Skin discomfort, sensitivity, lack of elasticity, lines and wrinkles.",
+      "products": [
+        {
+          "name": "ANTI-AGE NUTRITION ESSENTIAL SERUM",
+          "slug": "nutrition-essential-serum",
+          "price": "A$71.95",
+          "description": "Improves skin density, glow and elasticity.",
+          "url": "https://mavala.com.au/nutrition-essential-serum"
+        },
+        {
+          "name": "ANTI-AGE NUTRITION ULTIMATE CREAM",
+          "slug": "nutrition-ultimate-cream",
+          "price": "A$64.95",
+          "description": "Provides silkiness, glow and elasticity to the skin.",
+          "url": "https://mavala.com.au/nutrition-ultimate-cream"
+        },
+        {
+          "name": "ANTI-AGE NUTRITION ABSOLUTE NIGHT BALM",
+          "slug": "nutrition-absolute-night-balm",
+          "price": "A$69.95",
+          "description": "Provides bounce, comfort and elasticity to the skin.",
+          "url": "https://mavala.com.au/nutrition-absolute-night-balm"
+        }
+      ]
+    },
+    {
+      "title": "AQUA-PLUS",
+      "subtitle": "Multi-Moisturizing Soothing Skincare to intensely replenish skin with moisture.",
+      "products": [
+        {
+          "name": "MULTI-MOISTURIZING INTENSIVE SERUM",
+          "slug": "multi-moisturizing-serum",
+          "price": "A$69.95",
+          "description": "Intensely moisturizes, replenishes and comforts.",
+          "url": "https://mavala.com.au/multi-moisturizing-serum"
+        },
+        {
+          "name": "MULTI-MOISTURIZING FEATHERLIGHT CREAM",
+          "slug": "featherlight-cream",
+          "price": "A$59.95",
+          "description": "24 hour non-stop hydration.",
+          "url": "https://mavala.com.au/featherlight-cream"
+        },
+        {
+          "name": "MULTI-MOISTURIZING SLEEPING MASK",
+          "slug": "sleeping-mask",
+          "price": "A$69.95",
+          "description": "Overnight moisturizing infusion.",
+          "url": "https://mavala.com.au/sleeping-mask"
+        },
+        {
+          "name": "MULTI-MOISTURIZING SNOW MASK",
+          "slug": "snow-mask",
+          "price": "from A$49.95",
+          "description": "Soothes, moisturises and refreshes skin in 10 minutes.",
+          "url": "https://mavala.com.au/snow-mask"
+        },
+        {
+          "name": "THE ESSENTIALS MULTI-MOISTURIZING KIT",
+          "slug": "multi-moisturizing-kit",
+          "price": "A$69.95",
+          "description": "The complete skin routine for dehydrated skin.",
+          "url": "https://mavala.com.au/multi-moisturizing-kit"
+        }
+      ]
+    },
+    {
+      "title": "SKIN VITALITY",
+      "subtitle": "Vitalizing Healthy Glow Skincare to restore radiant healthy glow to tired skin",
+      "products": [
+        {
+          "name": "VITALIZING HEALTHY GLOW SERUM",
+          "slug": "healthy-glow-serum",
+          "price": "A$71.95",
+          "description": "Hydrates and energizes skin. Boosts skin radiance.",
+          "url": "https://mavala.com.au/healthy-glow-serum"
+        },
+        {
+          "name": "VITALIZING HEALTHY GLOW DAY CREAM",
+          "slug": "healthy-glow-cream",
+          "price": "A$64.95",
+          "description": "Hydrates, energizes and illuminates the skin.",
+          "url": "https://mavala.com.au/healthy-glow-cream"
+        },
+        {
+          "name": "SLEEPING MASK \"BABY SKIN\" RADIANCE",
+          "slug": "sleeping-mask-baby-skin",
+          "price": "A$67.95",
+          "description": "Restores radiant glow overnight.",
+          "url": "https://mavala.com.au/sleeping-mask-baby-skin"
+        },
+        {
+          "name": "VITALIZING ALPINE MICRO-MIST",
+          "slug": "micro-mist",
+          "price": "from A$21.95",
+          "description": "Hydrates and energizes skin.",
+          "url": "https://mavala.com.au/micro-mist"
+        },
+        {
+          "name": "BEAUTY ENHANCING MICRO-PEEL",
+          "slug": "micro-peel",
+          "price": "A$34.95",
+          "description": "Liberates skin from dead cells and reveals its radiance.",
+          "url": "https://mavala.com.au/micro-peel"
+        },
+        {
+          "name": "THE ESSENTIALS HEALTHY GLOW KIT",
+          "slug": "healthy-glow-kit",
+          "price": "A$71.95",
+          "description": "The complete skin routine for tired, dull skin.",
+          "url": "https://mavala.com.au/healthy-glow-kit"
+        }
+      ]
+    },
+    {
+      "title": "PORE DETOX",
+      "subtitle": "Purifying Perfecting Skincare to target imperfections and shine",
+      "products": [
+        {
+          "name": "PERFECTING HYDRA-MATT FLUID",
+          "slug": "hydra-matt-fluid",
+          "price": "A$49.95",
+          "description": "Hydrates and purifies the skin.",
+          "url": "https://mavala.com.au/hydra-matt-fluid"
+        },
+        {
+          "name": "PERFECTING PURIFYING MASK",
+          "slug": "purifying-mask",
+          "price": "A$39.95",
+          "description": "Unblocks and tightens pores without drying the skin.",
+          "url": "https://mavala.com.au/purifying-mask"
+        },
+        {
+          "name": "PERFECTING FOAMING CLEANSER",
+          "slug": "foaming-cleanser",
+          "price": "from A$22.95",
+          "description": "Removes make-up, toxins and impurities without drying the skin.",
+          "url": "https://mavala.com.au/foaming-cleanser"
+        },
+        {
+          "name": "PERFECTING TONING LOTION",
+          "slug": "perfecting-toning-lotion",
+          "price": "from A$19.95",
+          "description": "Cleanses and purifies the skin.",
+          "url": "https://mavala.com.au/perfecting-toning-lotion"
+        }
+      ]
+    },
+    {
+      "title": "CLEAN & COMFORT",
+      "subtitle": "Physiological Dermo-Cleansers to cleanse the skin while continuing to preserve cutaneous barrier.",
+      "products": [
+        {
+          "name": "ALPINE SOFTNESS MICELLAR WATER",
+          "slug": "micellar-water",
+          "price": "from A$19.95",
+          "description": "Cleanses, removes make-up, soothes.",
+          "url": "https://mavala.com.au/micellar-water"
+        },
+        {
+          "name": "CARESS CLEANSING MILK",
+          "slug": "cleansing-milk",
+          "price": "A$30.95",
+          "description": "Removes make-up, hydrates and soothes.",
+          "url": "https://mavala.com.au/cleansing-milk"
+        },
+        {
+          "name": "CARESS TONING LOTION",
+          "slug": "caress-toning-lotion",
+          "price": "from A$19.95",
+          "description": "Cleanses, hydrates and soothes.",
+          "url": "https://mavala.com.au/caress-toning-lotion"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "product_slug": "yummy",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Blue": [
+      "457 YUMMY BERRY"
+    ],
+    "Orange": [
+      "458 YUMMY MANGO"
+    ],
+    "Pink": [
+      "459 YUMMY POMELO"
+    ],
+    "White": [
+      "461 YUMMY COCO"
+    ],
+    "Red": [
+      "462 YUMMY DIABOLO"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "457 YUMMY BERRY",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1731630095889-ZLA3A2KTBBIZIOGH6Z3D/457+Yummy+Berry+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "458 YUMMY MANGO",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1731630958832-8AOKBC6DO8LVSUBGDI5F/458+Yummy+Mango+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "459 YUMMY POMELO",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1731631011786-E87WQTQGRO5WRD4LZ4N2/459+Yummy+Pomelo+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "461 YUMMY COCO",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1731631115919-WWN8VP8SURI6APHPQEZZ/461+Yummy+Coco+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "462 YUMMY DIABOLO",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1731631165081-N4EWK1IPKEZXSTUVHA6H/462+Yummy+Diabolo+-+RVB.jpg?format=500w"
+    }
+  ]
+}

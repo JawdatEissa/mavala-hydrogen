@@ -1,0 +1,158 @@
+{
+  "product_slug": "pearl-colors",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 30,
+  "color_groups": {
+    "White": [
+      "399 LOTUS",
+      "22 GENEVE"
+    ],
+    "Orange": [
+      "20 CAIRO"
+    ],
+    "Pink": [
+      "16 BAGHDAD",
+      "19 HONG KONG",
+      "14 ST-TROPEZ",
+      "55 DAKAR",
+      "65 ADELAIDE",
+      "9 LISBOA",
+      "328 ROSE",
+      "17 ATHENS",
+      "114 SAND ROSE",
+      "367 FEMININE"
+    ],
+    "Red": [
+      "46 CADIZ",
+      "78 TOBAGO"
+    ],
+    "Nude": [
+      "6 OSAKA",
+      "366 GLAMOUR"
+    ],
+    "Brown": [
+      "34 NICOSIA",
+      "370 ELEGANCE",
+      "32 BANGKOK"
+    ],
+    "Purple": [
+      "29 GLASGOW"
+    ],
+    "Blue": [
+      "269 DEEP BLUE"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "399 LOTUS",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1482531354598-H50TQ10TZAFHXV39O9FI/399+Lotus.jpg?format=500w"
+    },
+    {
+      "name": "22 GENEVE",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1482528626981-KUUDWEVNJF48SD1HQ0AF/022+Geneve.jpg?format=500w"
+    },
+    {
+      "name": "20 CAIRO",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497567254463-JOOOU47KAV4ZY5D719O8/Cairo.png?format=500w"
+    },
+    {
+      "name": "16 BAGHDAD",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497567282007-C0SSP1ZTVNY1VU4J49EV/Baghdad.png?format=500w"
+    },
+    {
+      "name": "19 HONG KONG",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1482528526504-5XO3RRXODSIAV1MAT2L8/019+Hong-Kong.jpg?format=500w"
+    },
+    {
+      "name": "14 ST-TROPEZ",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1482528524173-3KLJC2NKKEMGDARZLOE6/014+St-Tropez.jpg?format=500w"
+    },
+    {
+      "name": "46 CADIZ",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497567317325-W7OCLS85Y0E83P7FV4Y8/Cadiz.png?format=500w"
+    },
+    {
+      "name": "78 TOBAGO",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1482530923533-JEZF9CTOWYQWJFSB63GS/078+Tobago.jpg?format=500w"
+    },
+    {
+      "name": "55 DAKAR",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1482530677976-B445VH7YJUY3KYVAV4K7/055+Dakar.jpg?format=500w"
+    },
+    {
+      "name": "65 ADELAIDE",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1482530836065-2ODR0WVVYDGVF71YOX5Y/065+Adelaide.jpg?format=500w"
+    },
+    {
+      "name": "9 LISBOA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1482528519272-JO0VXPOGRXWD971EQUMQ/009+Lisboa.jpg?format=500w"
+    },
+    {
+      "name": "6 OSAKA",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1482528514606-KRBERBO5WRJTLZBEVI3W/006+Osaka.jpg?format=500w"
+    },
+    {
+      "name": "328 ROSE",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1482531203585-WY0CFDLTQRGZ3LLXQLU0/328+Rose.jpg?format=500w"
+    },
+    {
+      "name": "17 ATHENS",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1699441302331-1I9TQSGMZ44TX51RAKMD/017+Athens.jpg?format=500w"
+    },
+    {
+      "name": "114 SAND ROSE",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1646373679503-2Z5ASK54TG8MG4PUCKHT/114+Sand+Rose.jpg?format=500w"
+    },
+    {
+      "name": "34 NICOSIA",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497567354422-7AGYME013CX8U9ZOCJ5S/Nicosia.png?format=500w"
+    },
+    {
+      "name": "366 GLAMOUR",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497567382578-6NGTNYQA19GZYO1QDHR2/Glamour.png?format=500w"
+    },
+    {
+      "name": "29 GLASGOW",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497567407902-NX762508KD05Q9I40JLP/Glasgow.png?format=500w"
+    },
+    {
+      "name": "370 ELEGANCE",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497567489358-D8DHMASC4ZIRG0A6Z9AZ/Elegance.png?format=500w"
+    },
+    {
+      "name": "367 FEMININE",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1482531288664-1R0S7H6689NXJ28U9LYK/367+Feminine.jpg?format=500w"
+    },
+    {
+      "name": "32 BANGKOK",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1482530477992-LZ17M825Q6ZFIR3ATUHT/032+Bangkok.jpg?format=500w"
+    },
+    {
+      "name": "269 DEEP BLUE",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497567433351-ZKZR6MC4FD14AGH7VR58/Deep+Blue.png?format=500w"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "product_slug": "the-basics",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 1,
+  "color_groups": {
+    "Transparent": [
+      "43 INCOLORE"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "43 INCOLORE",
+      "color": "Transparent",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497521266603-M74TUKOXX37ZUHLVOE0Q/Incolore.png?format=500w"
+    }
+  ]
+}

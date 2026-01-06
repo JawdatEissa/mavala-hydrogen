@@ -1,0 +1,208 @@
+{
+  "product_slug": "10ml-bottles",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 36,
+  "color_groups": {
+    "Transparent": [
+      "43 INCOLORE"
+    ],
+    "White": [
+      "49 WHITE",
+      "22 GENEVE*"
+    ],
+    "Nude": [
+      "91 RENO",
+      "90 AROSA"
+    ],
+    "Pink": [
+      "16 BAGHDAD*",
+      "19 HONG KONG*",
+      "14 ST-TROPEZ*",
+      "65 ADELAIDE*",
+      "75 MIAMI"
+    ],
+    "Orange": [
+      "20 CAIRO*"
+    ],
+    "Red": [
+      "46 CADIZ*",
+      "72 NICE",
+      "74 LOS ANGELES",
+      "2 MADRID",
+      "69 BORDEAUX",
+      "64 BILBAO",
+      "7 MACAO",
+      "78 TOBAGO*",
+      "1 ANKARA",
+      "92 NEW DELHI",
+      "63 ACAPULCO",
+      "33 LAS VEGAS"
+    ],
+    "Brown": [
+      "32 BANGKOK*",
+      "370 ELEGANCE*"
+    ],
+    "Purple": [
+      "29 GLASGOW*",
+      "62 MILANO",
+      "30 MEXICO",
+      "24 TOKYO"
+    ],
+    "Black": [
+      "48 BLACK"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "43 INCOLORE",
+      "color": "Transparent",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717560762516-CB52J3JIX61SSHKNDWPE/Incolore+nail+shade.png?format=500w"
+    },
+    {
+      "name": "49 WHITE",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717563116452-W0C2V0VD3QRFGTGSC6YK/White+nail+plate.png?format=500w"
+    },
+    {
+      "name": "22 GENEVE*",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717560497169-21EB467JG56BQC8ME5V5/Geneve+nail+shade.png?format=500w"
+    },
+    {
+      "name": "91 RENO",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717561478490-OKN3Z2G3YG66IIKMCZX9/Reno+nail+shade.png?format=500w"
+    },
+    {
+      "name": "90 AROSA",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717561401157-UK57B8U7F7QLBQUQW0FU/Arosa+nail+shade.png?format=500w"
+    },
+    {
+      "name": "16 BAGHDAD*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717560384886-GN5ZR9KGHG0EZ5MHCIQS/Baghdad+nail+shade.png?format=500w"
+    },
+    {
+      "name": "19 HONG KONG*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717560423310-8M7AYIH6YTQQ9NMWO7EB/Hong+Kong+nail+shade.png?format=500w"
+    },
+    {
+      "name": "20 CAIRO*",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717560458587-RX9Z7EFDSMV65NIAPCVL/Cairo+nail+shade.png?format=500w"
+    },
+    {
+      "name": "46 CADIZ*",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717560863912-2RYAYMV47VV1H1F7A9F5/Cadiz+nail+shade.png?format=500w"
+    },
+    {
+      "name": "14 ST-TROPEZ*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717560284210-ZAPF44CAS09Z64KYV4GG/St-Tropez+nail+shade.png?format=500w"
+    },
+    {
+      "name": "72 NICE",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717561289077-2HMQFVKN465XV3M1NAMH/Nice+nail+shade.png?format=500w"
+    },
+    {
+      "name": "74 LOS ANGELES",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717561318989-W6ADBTS4J83W9FUYLWI9/Los+Angeles+nail+shade.png?format=500w"
+    },
+    {
+      "name": "2 MADRID",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717560041040-G78RREDOQTHGL7PTAPTO/Madrid+nail+shade.png?format=500w"
+    },
+    {
+      "name": "69 BORDEAUX",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717561200040-HWHOZOFAW1NULJ061AZC/Bordeaux+nail+shade.png?format=500w"
+    },
+    {
+      "name": "64 BILBAO",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717561137265-DGGKBZ8SPJFJNU5JCA4U/Bilbao+nail+shade.png?format=500w"
+    },
+    {
+      "name": "7 MACAO",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717560187052-5IHGTWY4OD8R2R8TJ41E/Macao+nail+shade.png?format=500w"
+    },
+    {
+      "name": "65 ADELAIDE*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717561168178-WGQKIWVGOWXBDWIQ0FSD/Adelaide+nail+shade.png?format=500w"
+    },
+    {
+      "name": "78 TOBAGO*",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717561390623-PAL84C6RY4UHZLX9MA4Z/Tobago+nail+shade.png?format=500w"
+    },
+    {
+      "name": "1 ANKARA",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717559958652-FD571HC9LVVQU06TIT3A/Ankara+nail+shade.png?format=500w"
+    },
+    {
+      "name": "92 NEW DELHI",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717561491213-5AWRHCVL6K08QGCT4HMN/New+Dehli+nail+shade.png?format=500w"
+    },
+    {
+      "name": "63 ACAPULCO",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717561079114-XQS99FXKN37526TTR7VS/Acapulco+nail+shade.png?format=500w"
+    },
+    {
+      "name": "33 LAS VEGAS",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717560728798-CA85O6WJ6AOF4WVDI89W/Las+Vegas+nail+shade.png?format=500w"
+    },
+    {
+      "name": "32 BANGKOK*",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717560672006-R64EMKDEPP4DN5T43LZF/Bangkok+nail+shade.png?format=500w"
+    },
+    {
+      "name": "370 ELEGANCE*",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717561715290-R9RPL8KMZBOD3JDEQU09/Elegance+nail+shade.png?format=500w"
+    },
+    {
+      "name": "29 GLASGOW*",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717560607020-A470LU466QWTC8YICDL2/Glasgow+nail+shade.png?format=500w"
+    },
+    {
+      "name": "75 MIAMI",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717561374261-W80FP6J6DBN53H1UUENG/Miami+nail+shade.png?format=500w"
+    },
+    {
+      "name": "62 MILANO",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717561047722-O6UZ2RP15LLSFK0OJOU4/Milano+nail+shade.png?format=500w"
+    },
+    {
+      "name": "30 MEXICO",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717560642174-2HY4Y0CBP7KCGLB2ZJDT/Mexico+nail+shade.png?format=500w"
+    },
+    {
+      "name": "24 TOKYO",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717560557680-HLKNFX11LAL2HUD1P7P6/Tokyo+nail+shade.png?format=500w"
+    },
+    {
+      "name": "48 BLACK",
+      "color": "Black",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1717563122033-IFFHLDS68KNN5V1NA451/Black+nail+plate.png?format=500w"
+    }
+  ]
+}

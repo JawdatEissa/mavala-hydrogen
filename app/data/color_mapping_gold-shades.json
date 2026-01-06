@@ -1,0 +1,40 @@
+{
+  "product_slug": "gold-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 12,
+  "color_groups": {
+    "Brown": [
+      "991 QUEBEC*",
+      "32 BANGKOK*"
+    ],
+    "Orange": [
+      "454 CONSTANTINOPLE"
+    ],
+    "Pink": [
+      "468 ZEPHYROPOLIS*"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "991 QUEBEC*",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1553582007621-077RIVEV0UWM2IT8VZ30/991-Quebec.jpg?format=500w"
+    },
+    {
+      "name": "32 BANGKOK*",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492412949664-37GG9AAOOLN2C65SXIH7/032+Bangkok.jpg?format=500w"
+    },
+    {
+      "name": "454 CONSTANTINOPLE",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1710305851352-741ZNV8G6PLK3PCHC3SA/454+Constantinople+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "468 ZEPHYROPOLIS*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1722842788917-4TWWIVK7DB92HGMRPOJ6/468+Zephyropolis+-+RVB.jpg?format=500w"
+    }
+  ]
+}

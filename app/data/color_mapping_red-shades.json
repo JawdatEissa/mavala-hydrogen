@@ -1,0 +1,140 @@
+{
+  "product_slug": "red-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 36,
+  "color_groups": {
+    "Red": [
+      "7 MACAO",
+      "462 YUMMY DIABOLO",
+      "3 PARIS",
+      "2 MADRID",
+      "46 CADIZ*",
+      "78 TOBAGO*",
+      "74 LOS ANGELES",
+      "286 RED RIVER",
+      "306 CUZCO",
+      "364 CAPE TOWN",
+      "185 MOSCOW",
+      "339 MON AMOUR",
+      "449 VERONA",
+      "206 FRENCH CANCAN",
+      "156 ROCOCO RED",
+      "372 MY PASSION",
+      "53 LONDON",
+      "187 ROMA",
+      "69 BORDEAUX",
+      "266 SINGAPORE"
+    ],
+    "Orange": [
+      "50 TORONTO"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "7 MACAO",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492404950143-N85N05PW4XBTWKX2L57H/007+Macao.jpg?format=500w"
+    },
+    {
+      "name": "462 YUMMY DIABOLO",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1731910699823-YRITZ6UCWQMC240GYQA9/462+Yummy+Diabolo+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "3 PARIS",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492404593527-PBG5EWPWBEBU10MIP842/003+Paris.jpg?format=500w"
+    },
+    {
+      "name": "2 MADRID",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568665777-28WUKOI5YB43IF6S0F0K/Madrid.png?format=500w"
+    },
+    {
+      "name": "46 CADIZ*",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568738167-2IV1R9V66SATGT4NYGUU/Cadiz.png?format=500w"
+    },
+    {
+      "name": "78 TOBAGO*",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492405125665-0DS4NR052UMSOSX2UOAZ/078+Tobago.jpg?format=500w"
+    },
+    {
+      "name": "74 LOS ANGELES",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568769999-W703FZJVB7KUEP0G4A0C/Los+Angeles.png?format=500w"
+    },
+    {
+      "name": "50 TORONTO",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1626078528131-VK7MBTXDWSDR4CW6Y6HV/50+Toronto.png?format=500w"
+    },
+    {
+      "name": "286 RED RIVER",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1513921444275-U8PTHUK8N1HBUHUPOIQK/Red+River.jpg?format=500w"
+    },
+    {
+      "name": "306 CUZCO",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492405675541-2HSR0Q9K9F1TX3F6GWN9/306+Cuzco.jpg?format=500w"
+    },
+    {
+      "name": "364 CAPE TOWN",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568796144-AP4SHJNKD54EI1XZ00IP/Cape+Town.png?format=500w"
+    },
+    {
+      "name": "185 MOSCOW",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568824313-PAKTNU2CL56XXXQ6RVG5/Moscow.png?format=500w"
+    },
+    {
+      "name": "339 MON AMOUR",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568851175-KILYS0FDNKCXVRD4DXWW/Mon+Amour.png?format=500w"
+    },
+    {
+      "name": "449 VERONA",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1701740717203-ZL0ZLWQ9G2BTMT81P5Y7/449+Verona.jpg?format=500w"
+    },
+    {
+      "name": "206 FRENCH CANCAN",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492404793523-CHKKH288YQFVAITCP9NI/206+French+Cancan.jpg?format=500w"
+    },
+    {
+      "name": "156 ROCOCO RED",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568908785-4Y55NAQ54VIJQNOWMW45/Rococo+Red.png?format=500w"
+    },
+    {
+      "name": "372 MY PASSION",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568936446-NH6E9XI0RVQ3AAHX1G8M/MyPassion.png?format=500w"
+    },
+    {
+      "name": "53 LONDON",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568963410-GXYANNV317KE9FPQIY0A/London.png?format=500w"
+    },
+    {
+      "name": "187 ROMA",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568989420-4C1X26AWWJLUOBGSKRCZ/Roma.png?format=500w"
+    },
+    {
+      "name": "69 BORDEAUX",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497569055671-BGJG46ITCCTUPFL43DBA/Bordeaux.png?format=500w"
+    },
+    {
+      "name": "266 SINGAPORE",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497569607349-HKQ75SSEGPQ2JWHKFY14/Singapore.png?format=500w"
+    }
+  ]
+}

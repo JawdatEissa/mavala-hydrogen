@@ -1,0 +1,30 @@
+{
+  "product_slug": "blush-colors",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Pink": [
+      "11 HANOI",
+      "13 RIYADH",
+      "17 ATHENS*"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "11 HANOI",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1532760677894-IWDBWBRV67KMFDHD1SIA/Hanoi.jpg?format=500w"
+    },
+    {
+      "name": "13 RIYADH",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1532760683369-K8AX0CQF3S8U9VHSD2VL/Riyadh.jpg?format=500w"
+    },
+    {
+      "name": "17 ATHENS*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1532760702763-IO4LQNICXVHVFIBIDT90/Athens.jpg?format=500w"
+    }
+  ]
+}

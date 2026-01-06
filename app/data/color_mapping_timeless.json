@@ -1,0 +1,50 @@
+{
+  "product_slug": "timeless",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Brown": [
+      "451 SAIGON"
+    ],
+    "Red": [
+      "452 BOMBAY"
+    ],
+    "Grey": [
+      "453 CHRISTIANIA"
+    ],
+    "Orange": [
+      "454 CONSTANTINOPLE"
+    ],
+    "Pink": [
+      "455 BABYLON"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "451 SAIGON",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1710304027126-UMSEK10603TWKVIR4JEB/451+Saigon+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "452 BOMBAY",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1710304035264-0Z4YVR0JS5S3FM4GSO59/452+Bombay+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "453 CHRISTIANIA",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1710304033405-ME6OKVXVAAXQDHJWUJWI/453+Christiania+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "454 CONSTANTINOPLE",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1710304031733-YX8QW45JCWDXLHPST53V/454+Constantinople+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "455 BABYLON",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1710304030377-2ZJBYCOQCQW1LLBCHBO1/455+Babylon+-+RVB.jpg?format=500w"
+    }
+  ]
+}

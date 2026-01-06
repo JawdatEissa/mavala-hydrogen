@@ -1,0 +1,34 @@
+{
+  "product_slug": "brown-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 19,
+  "color_groups": {
+    "Nude": [
+      "474 FEZ"
+    ],
+    "Red": [
+      "240 JASPER"
+    ],
+    "Brown": [
+      "81 BUENOS AIRES"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "474 FEZ",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1747812790950-T28U2NTG1TMRD6O1YPYY/474+Fez+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "240 JASPER",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497572204870-66WTY4A8SYY9IL1DXDQV/Jasper.png?format=500w"
+    },
+    {
+      "name": "81 BUENOS AIRES",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497572230327-ZU0ENV9KO6ESCF7VAIO4/Buenos+Aires.png?format=500w"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "product_slug": "heritage",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Brown": [
+      "991 QUEBEC*"
+    ],
+    "Nude": [
+      "993 WINDSOR"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "991 QUEBEC*",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1553581069352-NSAQWK826GJFZ0CDYF1J/991-Quebec.jpg?format=500w"
+    },
+    {
+      "name": "993 WINDSOR",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1553581084335-7TFSK4O6YERS0VKY4EHN/993-Windsor.jpg?format=500w"
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "product_slug": "nude-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 44,
+  "color_groups": {
+    "Yellow": [
+      "472 SANTORINI"
+    ],
+    "Nude": [
+      "165 VANILLA",
+      "91 RENO",
+      "406 SALAMANCA",
+      "366 GLAMOUR*",
+      "90 AROSA",
+      "132 DUCHESS ROSE",
+      "475 OTTAWA",
+      "6 OSAKA*",
+      "993 WINDSOR",
+      "186 SAPPORO",
+      "448 JERASH",
+      "477 PANAMA",
+      "396 VELVET",
+      "476 MARBELLA",
+      "479 DJIBOUTI",
+      "268 BUDAPEST",
+      "478 SAFI",
+      "480 DURBAN"
+    ],
+    "Pink": [
+      "464 BREEZEFIELD*",
+      "162 ROSE SHELL",
+      "469 LUXOR",
+      "97 WICHITA",
+      "17 ATHENS*",
+      "328 ROSE*",
+      "114 SAND ROSE*",
+      "164 ROSE DUST",
+      "83 DUBLIN",
+      "84 TALLINN"
+    ],
+    "Brown": [
+      "34 NICOSIA*",
+      "370 ELEGANCE*"
+    ],
+    "Orange": [
+      "20 CAIRO*"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "472 SANTORINI",
+      "color": "Yellow",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1747812353183-OWF32R7SVFOY1UPNBZ26/472+Santorini+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "165 VANILLA",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497567804962-RZQD2U5SUSJ1DIFWSC0Q/Vanilla.png?format=500w"
+    },
+    {
+      "name": "91 RENO",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492399332992-8FOR1NTBWV0KSA18D2H5/091+Reno.jpg?format=500w"
+    },
+    {
+      "name": "406 SALAMANCA",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1651571903720-JTU700TKCP77D29EAL5I/406+Salamanca.png?format=500w"
+    },
+    {
+      "name": "366 GLAMOUR*",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497567840911-OUK1GJPQ68SGMBSLJEHU/Glamour.png?format=500w"
+    },
+    {
+      "name": "464 BREEZEFIELD*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1722841809345-4C3XIL5JVUXWIREM1NSF/464+Breeze+Field+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "34 NICOSIA*",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497567870304-QB0RV81R19BYFOWRBQPB/Nicosia.png?format=500w"
+    },
+    {
+      "name": "90 AROSA",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497567930669-BAWQM0N5M46BQ5EHUZ1Y/Arosa.png?format=500w"
+    },
+    {
+      "name": "132 DUCHESS ROSE",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492401560095-PA17W1B8PKUBUCQM47TS/132+Duchess+Rose.jpg?format=500w"
+    },
+    {
+      "name": "475 OTTAWA",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1755240344113-UH7HYTI9QRU2LNYBJZ0R/475+Ottawa+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "162 ROSE SHELL",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568004134-4LPTVGA3FWW21MR8OOSR/Rose+Shell.png?format=500w"
+    },
+    {
+      "name": "469 LUXOR",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1747811792137-Z22JIGOKX9OLUIJ4RZFK/469+Luxor+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "97 WICHITA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492399403715-CCX14UNTMSTDLEB1VJXV/097+Wichita.jpg?format=500w"
+    },
+    {
+      "name": "17 ATHENS*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1532764294738-I8R0MMMN9IBAF7K28TRO/Athens.jpg?format=500w"
+    },
+    {
+      "name": "6 OSAKA*",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492399768216-Y7GVID2M4XM5G5TK6C4I/006+Osaka.jpg?format=500w"
+    },
+    {
+      "name": "328 ROSE*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492399798597-114X4NKFYTZFGFT9OMWU/328+Rose.jpg?format=500w"
+    },
+    {
+      "name": "993 WINDSOR",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1553583213913-ZWA534SJ1WVDUQYSMS9I/993-Windsor.jpg?format=500w"
+    },
+    {
+      "name": "114 SAND ROSE*",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492401650185-PCIGV1AB5KY460OMWH1B/114+Sand+Rose.jpg?format=500w"
+    },
+    {
+      "name": "186 SAPPORO",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568031083-770J7A7M3USPJRKTLMQ2/Sapporo.png?format=500w"
+    },
+    {
+      "name": "448 JERASH",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1701740581067-27ZU2HV4TZ5N4JD56WHI/448+Jerash.jpg?format=500w"
+    },
+    {
+      "name": "477 PANAMA",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1755240352693-ZD2YCXKNN7APZ9YJ5MZR/477+Panama+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "164 ROSE DUST",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568057201-3H72B69S7XVEQOZ2J0UC/Rose+Dust.png?format=500w"
+    },
+    {
+      "name": "396 VELVET",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492399694586-4XUQ2CK22T4FU06LE6LZ/396+Velvet.jpg?format=500w"
+    },
+    {
+      "name": "370 ELEGANCE*",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568090441-C3UL8TRPNI8A0QO5L1Z4/Elegance.png?format=500w"
+    },
+    {
+      "name": "476 MARBELLA",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1755240354236-1DHRYLRT9KYRNFIB6BJH/476+Marbella+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "20 CAIRO*",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568118785-RWL2OEZJOWKCQVMMOMZX/Cairo.png?format=500w"
+    },
+    {
+      "name": "479 DJIBOUTI",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1755240348689-EBYGHEQDAYVD3POYSFVF/479+Djibouti+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "268 BUDAPEST",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568148271-RWD32XH5Y6S6423SNCR4/Budapest.png?format=500w"
+    },
+    {
+      "name": "83 DUBLIN",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568174460-Z0GO3D17X634CQBXUFWU/Dublin.png?format=500w"
+    },
+    {
+      "name": "84 TALLINN",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497568198682-PSQYG2ATHITU768FSTZ3/Tallin.png?format=500w"
+    },
+    {
+      "name": "478 SAFI",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1755240349203-XBTB3E7NZ43NRTT41T8M/478+Safi+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "480 DURBAN",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1755240344275-4QPXXTJ7L3ESCPX548UL/480+Durban+-+RVB.jpg?format=500w"
+    }
+  ]
+}

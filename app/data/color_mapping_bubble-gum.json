@@ -1,0 +1,26 @@
+{
+  "product_slug": "bubble-gum",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Blue": [
+      "343 BLUEBERRY"
+    ],
+    "Orange": [
+      "345 ORANGE SHERBET"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "343 BLUEBERRY",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1544859492733-BRN75MV5V4D1LGWX2W9P/Blueberry.png?format=500w"
+    },
+    {
+      "name": "345 ORANGE SHERBET",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1544859607563-NS1L3ZMML6JFCDXA64J4/Orange+Sherbert.png?format=500w"
+    }
+  ]
+}

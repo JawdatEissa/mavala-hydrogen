@@ -1,0 +1,231 @@
+{
+  "slug": "eye-beauty",
+  "name": "Eye Beauty",
+  "route": "/eye-beauty",
+  "hero_title": "Ophthalmologically tested eye makeup and care for sensitive eyes",
+  "hero_image": null,
+  "sections": [
+    {
+      "title": "EYE CARE",
+      "products": [
+        {
+          "name": "DOUBLE-LASH",
+          "slug": "double-lash",
+          "price": "A$39.95",
+          "description": "A nutritive serum for longer, denser lashes and brows.",
+          "image": null,
+          "url": "https://mavala.com.au/double-lash"
+        },
+        {
+          "name": "DOUBLE-BROW",
+          "slug": "double-brow",
+          "price": "A$39.95",
+          "description": "Strength & Density Eyebrow Serum.",
+          "image": null,
+          "url": "https://mavala.com.au/double-brow"
+        },
+        {
+          "name": "EYE CONTOUR GEL",
+          "slug": "eye-contour-gel",
+          "price": "A$39.95",
+          "description": "Moisturizing eye make-up base. Light and refreshing gel for daytime.",
+          "image": null,
+          "url": "https://mavala.com.au/eye-contour-gel"
+        },
+        {
+          "name": "EYE CONTOUR DOUBLE CREAM",
+          "slug": "eye-contour-double-cream",
+          "price": "A$42.95",
+          "description": "Active, moisturizing and revitalizing cream for eye contour.",
+          "image": null,
+          "url": "https://mavala.com.au/eye-contour-double-cream"
+        }
+      ]
+    },
+    {
+      "title": "EYE CONTOUR",
+      "products": [
+        {
+          "name": "KHOL-KAJAL EYE CONTOUR PENCIL",
+          "slug": "khol-kajal-eye-contour-pencil",
+          "price": "A$19.95",
+          "description": "Extra-mild, ideal for sensitive eyelids.",
+          "image": null,
+          "url": "https://mavala.com.au/khol-kajal-eye-contour-pencil"
+        },
+        {
+          "name": "SOFT KHOL EYE CONTOUR PENCIL",
+          "slug": "soft-khol-pencil",
+          "price": "A$19.95",
+          "description": "Soft and easy application for an intense colour.",
+          "image": null,
+          "url": "https://mavala.com.au/soft-khol-pencil"
+        },
+        {
+          "name": "LIQUID EYE LINER",
+          "slug": "liquid-eye-liner",
+          "price": "A$29.95",
+          "description": "High tech brush for a fine and precise line.",
+          "image": null,
+          "url": "https://mavala.com.au/liquid-eye-liner"
+        }
+      ]
+    },
+    {
+      "title": "EYE LASHES",
+      "products": [
+        {
+          "name": "VL MASCARA WATERPROOF",
+          "slug": "vl-mascara-waterproof",
+          "price": "A$33.95",
+          "description": "Volume and length. Care and beauty of lashes.",
+          "image": null,
+          "url": "https://mavala.com.au/vl-mascara-waterproof"
+        },
+        {
+          "name": "WATERPROOF MASCARA",
+          "slug": "waterproof-mascara",
+          "price": "A$29.95",
+          "description": "Eye Lash Care Make-up enriched with silk proteins.",
+          "image": null,
+          "url": "https://mavala.com.au/waterproof-mascara"
+        },
+        {
+          "name": "CREAMY MASCARA",
+          "slug": "creamy-mascara",
+          "price": "A$29.95",
+          "description": "Eye Lash Care Make-up enriched with silk proteins.",
+          "image": null,
+          "url": "https://mavala.com.au/creamy-mascara"
+        }
+      ]
+    },
+    {
+      "title": "EYEBROWS",
+      "products": [
+        {
+          "name": "EYEBROW PENCIL",
+          "slug": "eyebrow-pencil",
+          "price": "A$23.95",
+          "description": "Gentle, firm and non-greasy, ideal for all skin types.",
+          "image": null,
+          "url": "https://mavala.com.au/eyebrow-pencil"
+        },
+        {
+          "name": "GOLD TIP TWEEZERS",
+          "slug": "straight-tweezers",
+          "price": "A$29.95",
+          "description": "Precisely removes unwanted hair.",
+          "image": null,
+          "url": "https://mavala.com.au/straight-tweezers"
+        }
+      ]
+    },
+    {
+      "title": "EYE LIDS",
+      "products": [
+        {
+          "name": "EYE SHADOW CRAYON",
+          "slug": "eye-shadow-crayon",
+          "price": "A$26.95",
+          "description": "Eye shadow pencil totally water resistant.",
+          "image": null,
+          "url": "https://mavala.com.au/eye-shadow-crayon"
+        },
+        {
+          "name": "SILKY EYE SHADOW WATERPROOF",
+          "slug": "silky-eye-shadow-waterproof",
+          "price": "A$29.95",
+          "description": "Moisturizing Eye shadows with foam applicator.",
+          "image": null,
+          "url": "https://mavala.com.au/silky-eye-shadow-waterproof"
+        },
+        {
+          "name": "SATIN EYELID POWDER",
+          "slug": "satin-eyelid-powder",
+          "price": "A$29.95",
+          "description": "Eye shadows, compact powder, with a silky finish",
+          "image": null,
+          "url": "https://mavala.com.au/satin-eyelid-powder"
+        },
+        {
+          "name": "DUO SATIN EYELID POWDER",
+          "slug": "duo-satin-eye-shadow-powder",
+          "price": "A$36.95",
+          "description": "Two contrasting shades, with a silky finish.",
+          "image": null,
+          "url": "https://mavala.com.au/duo-satin-eye-shadow-powder"
+        }
+      ]
+    },
+    {
+      "title": "EYE MAKE-UP COMPANIONS",
+      "products": [
+        {
+          "name": "MAKE-UP REMOVER COTTON PADS",
+          "slug": "make-up-remover-cotton-pads",
+          "price": "from A$7.95",
+          "description": "Eases eye make-up and nail polish removal.",
+          "image": null,
+          "url": "https://mavala.com.au/make-up-remover-cotton-pads"
+        },
+        {
+          "name": "EYE BASE",
+          "slug": "eye-base",
+          "price": "A$25.95",
+          "description": "Base for eye make-up.",
+          "image": null,
+          "url": "https://mavala.com.au/eye-base"
+        },
+        {
+          "name": "REMOVER LOTION",
+          "slug": "eye-make-up-remover-lotion",
+          "price": "A$25.95",
+          "description": "Gentle make-up remover.",
+          "image": null,
+          "url": "https://mavala.com.au/eye-make-up-remover-lotion"
+        },
+        {
+          "name": "TOTAL BI-PHASE MAKEUP REMOVER",
+          "slug": "bi-phase-make-up-remover",
+          "price": "A$25.95",
+          "description": "Oil-in-water formula to get rid of all types of make-up.",
+          "image": null,
+          "url": "https://mavala.com.au/bi-phase-make-up-remover"
+        },
+        {
+          "name": "REMOVER GEL",
+          "slug": "remover-gel",
+          "price": "A$19.95",
+          "description": "Special waterproof.",
+          "image": null,
+          "url": "https://mavala.com.au/remover-gel"
+        },
+        {
+          "name": "EYE MAKEUP REMOVER PADS",
+          "slug": "remover-pads",
+          "price": "A$29.95",
+          "description": "Gentle make-up remover. Convenient for travel and make-up kits.",
+          "image": null,
+          "url": "https://mavala.com.au/remover-pads"
+        },
+        {
+          "name": "MAKEUP CORRECTOR PEN",
+          "slug": "makeup-corrector",
+          "price": "A$29.95",
+          "description": "Correct makeup errors in one stroke.",
+          "image": null,
+          "url": "https://mavala.com.au/makeup-corrector"
+        },
+        {
+          "name": "COSMETIC PENCIL SHARPENER",
+          "slug": "cosmetic-pencil-sharpener",
+          "price": "A$19.95",
+          "description": "Double blade.",
+          "image": null,
+          "url": "https://mavala.com.au/cosmetic-pencil-sharpener"
+    }
+  ]
+}
+  ]
+}

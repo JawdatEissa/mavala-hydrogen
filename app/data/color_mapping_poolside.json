@@ -1,0 +1,24 @@
+{
+  "product_slug": "poolside",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Blue": [
+      "975 SANTA MONICA",
+      "59 PHUKET"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "975 SANTA MONICA",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1608202832098-1N1444F655KSO6NQX6MC/975+Santa+Monica.jpg?format=500w"
+    },
+    {
+      "name": "59 PHUKET",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1608202844751-4PDCFS9ADA8I7SDHDFH8/059+Phuket.jpg?format=500w"
+    }
+  ]
+}

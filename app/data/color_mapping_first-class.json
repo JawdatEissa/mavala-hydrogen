@@ -1,0 +1,40 @@
+{
+  "product_slug": "first-class",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Pink": [
+      "316 FIJI",
+      "317 TAHITI"
+    ],
+    "Nude": [
+      "318 SPITZBERG"
+    ],
+    "Red": [
+      "364 CAPE TOWN"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "316 FIJI",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1486001706360-0TOZNW3R139DR45FOYIN/316+Fiji.jpg?format=500w"
+    },
+    {
+      "name": "317 TAHITI",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1486001744168-CQC1CW9DX1U1MLIX0GSJ/317+Tahiti.jpg?format=500w"
+    },
+    {
+      "name": "318 SPITZBERG",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1486001774924-JVHYGJUCFU0RLFTYWN33/318+Spitzberg.jpg?format=500w"
+    },
+    {
+      "name": "364 CAPE TOWN",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1486001851322-6EUE3YBLUEVRVOG0Q8Q7/364+Cape+Town.jpg?format=500w"
+    }
+  ]
+}

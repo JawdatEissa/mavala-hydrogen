@@ -1,0 +1,26 @@
+{
+  "product_slug": "chill-relax",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 7,
+  "color_groups": {
+    "Blue": [
+      "219 BLUE SIESTA"
+    ],
+    "Pink": [
+      "225 ROSE NAP"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "219 BLUE SIESTA",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1595462193429-XUFYLFCWWSFOZM9DKCCB/219+Blue+Siesta.png?format=500w"
+    },
+    {
+      "name": "225 ROSE NAP",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1595462176215-4ZI6DKZWGP6TTUPRQHK9/225+Rose+Nap.png?format=500w"
+    }
+  ]
+}

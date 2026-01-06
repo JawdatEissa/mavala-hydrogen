@@ -1,0 +1,26 @@
+{
+  "product_slug": "sparkly-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 18,
+  "color_groups": {
+    "Silver": [
+      "213 PURE DIAMOND"
+    ],
+    "Pink": [
+      "215 PINK DIAMOND"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "213 PURE DIAMOND",
+      "color": "Silver",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1508976110452-SI0UIIZ71R4XU2TN6CO3/Pure+Diamond.png?format=500w"
+    },
+    {
+      "name": "215 PINK DIAMOND",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1508976158499-UT614OK27EMUNWE08E2V/Pink+Diamond.png?format=500w"
+    }
+  ]
+}

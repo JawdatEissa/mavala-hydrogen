@@ -1,0 +1,130 @@
+{
+  "product_slug": "blue-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 26,
+  "color_groups": {
+    "Blue": [
+      "181 BLUE MINT",
+      "219 BLUE SIESTA",
+      "466 VENTOSA SPRINGS*",
+      "115 SKY BLUE",
+      "171 BLUE CURACAO",
+      "447 MOOREA",
+      "287 BLUE MOUNTAINS",
+      "167 CYCLADES BLUE",
+      "457 YUMMY BERRY",
+      "975 SANTA MONICA",
+      "486 BLUE POP",
+      "301 TRINIDAD",
+      "343 BLUEBERRY",
+      "417 BOLD BLUE*",
+      "269 DEEP BLUE*",
+      "158 SMOKY BLUE",
+      "238 SAO PAULO"
+    ],
+    "Purple": [
+      "321 GOTLAND"
+    ],
+    "Grey": [
+      "402 DETROIT"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "181 BLUE MINT",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497571725806-0YAFSUL9T84UUKWCIOL8/Blue+Mint.png?format=500w"
+    },
+    {
+      "name": "219 BLUE SIESTA",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1595466465899-0DICV0HGZ5EBGYDPQ6QE/219+Blue+Siesta.png?format=500w"
+    },
+    {
+      "name": "321 GOTLAND",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1626063761136-7Z4G35IL0M08W4QTXQTN/321-Gotland.jpg?format=500w"
+    },
+    {
+      "name": "466 VENTOSA SPRINGS*",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1722842321730-QPF9ZU95XHY9LG9P4JWQ/466+Ventosa+Springs+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "115 SKY BLUE",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492411197534-UCEOLGHCN9ZM4J7LEBNM/115+Sky+Blue.jpg?format=500w"
+    },
+    {
+      "name": "171 BLUE CURACAO",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492411624081-A0MY0SCU8GJU30SN6YOM/171+Blue+Cura%C3%A7ao.jpg?format=500w"
+    },
+    {
+      "name": "447 MOOREA",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1701740448994-QV2QTFTO5YQ2T6DJFQOA/447+Moorea.jpg?format=500w"
+    },
+    {
+      "name": "287 BLUE MOUNTAINS",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1513921595428-6DJI5LLMBWI8CGZ52DQC/Blue+Mountain.jpg?format=500w"
+    },
+    {
+      "name": "167 CYCLADES BLUE",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492411547089-M93F2DPNIBGZ8XH5FU4Z/167+Cyclades+Blue.jpg?format=500w"
+    },
+    {
+      "name": "457 YUMMY BERRY",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1731909089292-RKDYL0JW137VPEGJXW89/457+Yummy+Berry+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "975 SANTA MONICA",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1608254522340-ADXJX8HGB2106PHBTWTT/image-asset.jpeg?format=500w"
+    },
+    {
+      "name": "486 BLUE POP",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1764827245816-IG09WTDRO7DNU1L472TU/MAVALA-MINI-COLOR-486-Blue-Pop.png?format=500w"
+    },
+    {
+      "name": "301 TRINIDAD",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492411463041-7SB7K506YW1U3SANGU4K/301+Trinidad.jpg?format=500w"
+    },
+    {
+      "name": "343 BLUEBERRY",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1545172669593-6171I5QO396VI8CDEAJS/Blueberry.png?format=500w"
+    },
+    {
+      "name": "417 BOLD BLUE*",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1653529274756-Q7O7F8UOSCN0CFJ15762/417+Bold+Blue.png?format=500w"
+    },
+    {
+      "name": "269 DEEP BLUE*",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497571791843-H7F4T5RQTSCD3MXP34GP/Deep+Blue.png?format=500w"
+    },
+    {
+      "name": "158 SMOKY BLUE",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492411717812-QP5LC0P7JMT2ZJRFAPEY/158+Smoky+Blue.jpg?format=500w"
+    },
+    {
+      "name": "402 DETROIT",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1651571103515-ZSYHWPSH88P0P9O8HQTC/402+Detroit.png?format=500w"
+    },
+    {
+      "name": "238 SAO PAULO",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497571837686-UO52530C610JC0880SAY/Sao+Paulo.png?format=500w"
+    }
+  ]
+}

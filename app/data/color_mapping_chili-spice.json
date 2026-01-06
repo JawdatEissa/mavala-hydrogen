@@ -1,0 +1,58 @@
+{
+  "product_slug": "chili-spice",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Blue": [
+      "301 TRINIDAD"
+    ],
+    "Orange": [
+      "302 JAIPUR"
+    ],
+    "Pink": [
+      "303 BALI"
+    ],
+    "Green": [
+      "304 BAMAKO"
+    ],
+    "Purple": [
+      "305 SAMARKAND"
+    ],
+    "Red": [
+      "306 CUZCO"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "301 TRINIDAD",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433838580147-IRRI2J2FMPIR8XZQPN3L/301+Trinidad-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "302 JAIPUR",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433838569605-7XQCUNC4R9IHH3VZPWZ8/302+Jaipur-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "303 BALI",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433838910594-4KDIPN9VPVDAHFBFDYOK/303+Bali-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "304 BAMAKO",
+      "color": "Green",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433838608127-78E09JP71FCNR7GKNXBX/304+Bamako-sRGB.jpg?format=500w"
+    },
+    {
+      "name": "305 SAMARKAND",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1526187637166-J99VH1QPQ7RQ9IB8S62T/Samarkand+Winner.jpg?format=500w"
+    },
+    {
+      "name": "306 CUZCO",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1433838927839-PHVKPXSH2DZ8URCBWF3Q/306+Cuzco-sRGB.jpg?format=500w"
+    }
+  ]
+}

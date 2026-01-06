@@ -1,0 +1,18 @@
+{
+  "product_slug": "charming",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 7,
+  "color_groups": {
+    "Green": [
+      "123 EDINBURGH"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "123 EDINBURGH",
+      "color": "Green",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1615867852681-050LUTD49IGZ5TP9KC6X/123+Edinburgh.png?format=500w"
+    }
+  ]
+}

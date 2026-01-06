@@ -1,0 +1,84 @@
+{
+  "product_slug": "grey-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 18,
+  "color_groups": {
+    "Grey": [
+      "463 SIROCCO CITY*",
+      "12 BERLIN",
+      "39 BRUXELLES",
+      "453 CHRISTIANIA",
+      "217 NEW YORK",
+      "401 INVERNESS*",
+      "218 MINSK"
+    ],
+    "Nude": [
+      "471 TBILISI"
+    ],
+    "Purple": [
+      "237 BASEL"
+    ],
+    "Brown": [
+      "451 SAIGON",
+      "151 MARRON GLACE"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "463 SIROCCO CITY*",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1722841498337-3ETVP2JANE0CSV0HLE2T/463+Sirocco+City+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "12 BERLIN",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492414360836-Y9237N4NJQ0F68C6FTZE/012+Berlin.jpg?format=500w"
+    },
+    {
+      "name": "39 BRUXELLES",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1585625144381-44KEXG7FN6KPKMULN893/039+Bruxelles+copy.jpg?format=500w"
+    },
+    {
+      "name": "453 CHRISTIANIA",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1710305374379-PCNHA0050HSRXJMLD41Z/453+Christiania+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "217 NEW YORK",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492414419018-K6IOBLCHYH1A4HK7Q4YQ/217+New+York.jpg?format=500w"
+    },
+    {
+      "name": "401 INVERNESS*",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1651570887708-A7DIVMLRICRYSBC07CKY/401+Inverness.png?format=500w"
+    },
+    {
+      "name": "471 TBILISI",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1747812119282-7YGC4XMZ3CHUMWJEHM8Y/471+Tbilisi+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "237 BASEL",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497572376400-EHC323LJ83P28DT8FMHL/Basel.png?format=500w"
+    },
+    {
+      "name": "451 SAIGON",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1710305374316-P6ZAL0FJK1U3M5QT4SAL/451+Saigon+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "151 MARRON GLACE",
+      "color": "Brown",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497572399908-EOLVOVD8PRNKUCEJAU0N/Marron+Glace.png?format=500w"
+    },
+    {
+      "name": "218 MINSK",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492414461858-KCDLLYT9VLA52UBYDI65/218+Minsk.jpg?format=500w"
+    }
+  ]
+}

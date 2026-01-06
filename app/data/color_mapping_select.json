@@ -1,0 +1,48 @@
+{
+  "product_slug": "select",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 7,
+  "color_groups": {
+    "Pink": [
+      "162 ROSE SHELL",
+      "164 ROSE DUST"
+    ],
+    "Black": [
+      "163 BLACK OYSTER"
+    ],
+    "Nude": [
+      "165 VANILLA"
+    ],
+    "Green": [
+      "166 KHAKI VINTAGE"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "162 ROSE SHELL",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1444696206032-C3KOP1VBP41RA9MYHMAT/162+Rose+Shell.jpg?format=500w"
+    },
+    {
+      "name": "163 BLACK OYSTER",
+      "color": "Black",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1444696206495-OVXAYL5DUOCZAU9PQ4OV/163+Black+Oyster.jpg?format=500w"
+    },
+    {
+      "name": "164 ROSE DUST",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1444696207034-JKI5WKAL4MJJV0EAC7EY/164+Rose+Dust.jpg?format=500w"
+    },
+    {
+      "name": "165 VANILLA",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1444696207188-UW6IZ6RCCCFI3JF1FYI6/165+Vanilla.jpg?format=500w"
+    },
+    {
+      "name": "166 KHAKI VINTAGE",
+      "color": "Green",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1444696207744-M69WT2PGZHF0B58S597W/166+Khaki+Vintage.jpg?format=500w"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "product_slug": "retro",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "White": [
+      "4 ABU DHABI"
+    ],
+    "Grey": [
+      "39 BRUXELLES"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "4 ABU DHABI",
+      "color": "White",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1585618804171-V8N8HBQJ4USTPM46EX2Y/004+Abu+Dhabi+copy.jpg?format=500w"
+    },
+    {
+      "name": "39 BRUXELLES",
+      "color": "Grey",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1585618901705-CESA787E8MVGHSXZUHPB/039+Bruxelles+copy.jpg?format=500w"
+    }
+  ]
+}

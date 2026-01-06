@@ -1,0 +1,295 @@
+{
+  "slug": "face-lips",
+  "name": "Face & Lips",
+  "route": "/face-lips",
+  "hero_title": "Swiss skincare and lip beauty for radiant, healthy skin",
+  "hero_image": null,
+  "sections": [
+    {
+      "title": "LIP BEAUTY",
+      "products": [
+        {
+          "name": "LIP GLOSS",
+          "slug": "lip-gloss",
+          "price": "A$25.95",
+          "description": "Caring Lip Oil Perfector."
+        },
+        {
+          "name": "MAVALIP LIPSTICK",
+          "slug": "mavalip-lipstick",
+          "price": "A$25.95",
+          "description": "Long-lasting and protective."
+        },
+        {
+          "name": "MAVALA LIPSTICK",
+          "slug": "mavala-lipstick",
+          "price": "A$35.95",
+          "description": "Moisturising, comfortable satin lipstick."
+        },
+        {
+          "name": "LIP-SHINE LIPSTICK",
+          "slug": "lip-shine",
+          "price": "A$35.95",
+          "description": "Hydrating, protective and volumizing lipstick."
+        },
+        {
+          "name": "LIP LINER PENCIL",
+          "slug": "lip-liner-pencil",
+          "price": "A$17.95",
+          "description": "Extra-smooth."
+        }
+      ]
+    },
+    {
+      "title": "LIP CARE",
+      "products": [
+        {
+          "name": "LIP BALM",
+          "slug": "lip-balm",
+          "price": "A$19.95",
+          "description": "Protecting and repairing."
+        },
+        {
+          "name": "TINTED LIP BALM",
+          "slug": "tinted-lip-balm",
+          "price": "A$17.95",
+          "description": "Moisturising and nourishing."
+        }
+      ]
+    },
+    {
+      "title": "COMPLEXION",
+      "products": [
+        {
+          "name": "BB CREAM",
+          "slug": "bb-cream",
+          "price": "A$49.95",
+          "description": "Moisturizing, protecting, unifying, correcting and illuminating tinted cream."
+        },
+        {
+          "name": "SERUM FOUNDATION",
+          "slug": "serum-foundation",
+          "price": "A$54.95",
+          "description": "Radiance serum in a second-skin foundation."
+        },
+        {
+          "name": "DREAM FOUNDATION",
+          "slug": "dream-foundation",
+          "price": "A$59.95",
+          "description": "For a flawless complexion."
+        },
+        {
+          "name": "PERFECT CONCEALER",
+          "slug": "mavalia-concealer",
+          "price": "A$34.95",
+          "description": "Anti-dark circles, spots & imperfections."
+        },
+        {
+          "name": "WET AND DRY POWDER",
+          "slug": "wet-and-dry-powder",
+          "price": "A$79.95",
+          "description": "Very fine and non-greasy pressed powder."
+        },
+        {
+          "name": "PRESSED POWDER",
+          "slug": "pressed-powder",
+          "price": "A$69.95",
+          "description": "Fine and light."
+        },
+        {
+          "name": "MAGIC POWDER",
+          "slug": "magic-powder",
+          "price": "A$54.95",
+          "description": "Universal powder with 5 superpowers."
+        },
+        {
+          "name": "KABUKI BRUSH",
+          "slug": "kabuki-brush",
+          "price": "A$39.95",
+          "description": "Silky Powder Brush."
+        }
+      ]
+    },
+    {
+      "title": "ANTI-AGE PRO",
+      "subtitle": "Exceptional Chronobiological Skincare to efficiently correct all signs of ageing.",
+      "products": [
+        {
+          "name": "CHRONOBIOLOGICAL DAY SERUM",
+          "slug": "chronobiological-serum",
+          "price": "A$79.95",
+          "description": "Visibly reduces the appearance of wrinkles."
+        },
+        {
+          "name": "CHRONOBIOLOGICAL DAY CREAM",
+          "slug": "chronobiological-cream",
+          "price": "A$74.95",
+          "description": "Youth and protection for a fresh and radiant skin."
+        },
+        {
+          "name": "TIME RELEASE SYSTEM NIGHT CARE",
+          "slug": "time-release-system",
+          "price": "A$84.95",
+          "description": "Reactivates the youth mechanism of your skin."
+        }
+      ]
+    },
+    {
+      "title": "NUTRI-ELIXIR",
+      "subtitle": "Lipid Replenishing Skincare to reduce Skin discomfort, sensitivity, lack of elasticity, lines and wrinkles.",
+      "products": [
+        {
+          "name": "ANTI-AGE NUTRITION ESSENTIAL SERUM",
+          "slug": "nutrition-essential-serum",
+          "price": "A$71.95",
+          "description": "Improves skin density, glow and elasticity."
+        },
+        {
+          "name": "ANTI-AGE NUTRITION ULTIMATE CREAM",
+          "slug": "nutrition-ultimate-cream",
+          "price": "A$64.95",
+          "description": "Provides silkiness, glow and elasticity to the skin."
+        },
+        {
+          "name": "ANTI-AGE NUTRITION ABSOLUTE NIGHT BALM",
+          "slug": "nutrition-absolute-night-balm",
+          "price": "A$69.95",
+          "description": "Provides bounce, comfort and elasticity to the skin."
+        }
+      ]
+    },
+    {
+      "title": "AQUA-PLUS",
+      "subtitle": "Multi-Moisturizing Soothing Skincare to intensely replenish skin with moisture.",
+      "products": [
+        {
+          "name": "MULTI-MOISTURIZING INTENSIVE SERUM",
+          "slug": "multi-moisturizing-serum",
+          "price": "A$69.95",
+          "description": "Intensely moisturizes, replenishes and comforts."
+        },
+        {
+          "name": "MULTI-MOISTURIZING FEATHERLIGHT CREAM",
+          "slug": "featherlight-cream",
+          "price": "A$59.95",
+          "description": "24 hour non-stop hydration."
+        },
+        {
+          "name": "MULTI-MOISTURIZING SLEEPING MASK",
+          "slug": "sleeping-mask",
+          "price": "A$69.95",
+          "description": "Overnight moisturizing infusion."
+        },
+        {
+          "name": "MULTI-MOISTURIZING SNOW MASK",
+          "slug": "snow-mask",
+          "price": "from A$49.95",
+          "description": "Soothes, moisturises and refreshes skin in 10 minutes."
+        },
+        {
+          "name": "THE ESSENTIALS MULTI-MOISTURIZING KIT",
+          "slug": "multi-moisturizing-kit",
+          "price": "A$69.95",
+          "description": "The complete skin routine for dehydrated skin."
+        }
+      ]
+    },
+    {
+      "title": "SKIN VITALITY",
+      "subtitle": "Vitalizing Healthy Glow Skincare to restore radiant healthy glow to tired skin",
+      "products": [
+        {
+          "name": "VITALIZING HEALTHY GLOW SERUM",
+          "slug": "healthy-glow-serum",
+          "price": "A$71.95",
+          "description": "Hydrates and energizes skin. Boosts skin radiance."
+        },
+        {
+          "name": "VITALIZING HEALTHY GLOW DAY CREAM",
+          "slug": "healthy-glow-cream",
+          "price": "A$64.95",
+          "description": "Hydrates, energizes and illuminates the skin."
+        },
+        {
+          "name": "SLEEPING MASK \"BABY SKIN\" RADIANCE",
+          "slug": "sleeping-mask-baby-skin",
+          "price": "A$67.95",
+          "description": "Restores radiant glow overnight."
+        },
+        {
+          "name": "VITALIZING ALPINE MICRO-MIST",
+          "slug": "micro-mist",
+          "price": "from A$21.95",
+          "description": "Hydrates and energizes skin."
+        },
+        {
+          "name": "BEAUTY ENHANCING MICRO-PEEL",
+          "slug": "micro-peel",
+          "price": "A$34.95",
+          "description": "Liberates skin from dead cells and reveals its radiance."
+        },
+        {
+          "name": "THE ESSENTIALS HEALTHY GLOW KIT",
+          "slug": "healthy-glow-kit",
+          "price": "A$71.95",
+          "description": "The complete skin routine for tired, dull skin."
+        }
+      ]
+    },
+    {
+      "title": "PORE DETOX",
+      "subtitle": "Purifying Perfecting Skincare to target imperfections and shine",
+      "products": [
+        {
+          "name": "PERFECTING HYDRA-MATT FLUID",
+          "slug": "hydra-matt-fluid",
+          "price": "A$49.95",
+          "description": "Hydrates and purifies the skin."
+        },
+        {
+          "name": "PERFECTING PURIFYING MASK",
+          "slug": "purifying-mask",
+          "price": "A$39.95",
+          "description": "Unblocks and tightens pores without drying the skin."
+        },
+        {
+          "name": "PERFECTING FOAMING CLEANSER",
+          "slug": "foaming-cleanser",
+          "price": "from A$22.95",
+          "description": "Removes make-up, toxins and impurities without drying the skin."
+        },
+        {
+          "name": "PERFECTING TONING LOTION",
+          "slug": "perfecting-toning-lotion",
+          "price": "from A$19.95",
+          "description": "Cleanses and purifies the skin."
+        }
+      ]
+    },
+    {
+      "title": "CLEAN & COMFORT",
+      "subtitle": "Physiological Dermo-Cleansers to cleanse the skin while continuing to preserve cutaneous barrier.",
+      "products": [
+        {
+          "name": "ALPINE SOFTNESS MICELLAR WATER",
+          "slug": "micellar-water",
+          "price": "from A$19.95",
+          "description": "Cleanses, removes make-up, soothes."
+        },
+        {
+          "name": "CARESS CLEANSING MILK",
+          "slug": "cleansing-milk",
+          "price": "A$30.95",
+          "description": "Removes make-up, hydrates and soothes."
+        },
+        {
+          "name": "CARESS TONING LOTION",
+          "slug": "caress-toning-lotion",
+          "price": "from A$19.95",
+          "description": "Cleanses, hydrates and soothes."
+        }
+      ]
+    }
+  ]
+}
+

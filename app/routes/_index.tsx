@@ -1,0 +1,490 @@
+import type { MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
+import { HeroVideo } from "../components/HeroVideo";
+import { useState, useEffect, useRef } from "react";
+
+export const meta: MetaFunction = () => {
+  return [
+    {
+      title:
+        "Mavala | Dedicated to care & beauty | Natural treatment cosmetics",
+    },
+    {
+      name: "description",
+      content:
+        "Shop MAVALA Switzerland's high performing care and beauty products.",
+    },
+  ];
+};
+
+export default function Homepage() {
+  // Best Sellers scroll tracking
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const totalProducts = 6;
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft;
+      const itemWidth = container.scrollWidth / totalProducts;
+      const index = Math.round(scrollLeft / itemWidth);
+      setCurrentSlide(index);
+    };
+
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const blogPosts = [
+    {
+      title: "The Power Of Pink Campaign… let’s join forces",
+      date: "OCT 21, 2025",
+      image: "/blog-power-of-pink.jpg",
+      to: "/blog/power-of-pink",
+    },
+    {
+      title: "Breaking Up with Synthetic Nails!",
+      date: "OCT 3, 2025",
+      image: "/blog-breaking-up-with-synthetics.jpg",
+      to: "/blog/breaking-up-with-synthetics",
+    },
+    {
+      title: "The Art of Polka Dot Nails",
+      date: "SEP 25, 2025",
+      image: "/blog-polka-dots.jpg",
+      to: "/blog/polka-dot-nails",
+    },
+    {
+      title: "New season nail trends",
+      date: "AUG 19, 2025",
+      image: "/blog-nail-trends.jpg",
+      to: "/blog/new-season-nail-trends",
+    },
+    {
+      title: "Old-school beauty rules",
+      date: "AUG 7, 2025",
+      image: "/blog-beauty-myths.jpg",
+      to: "/blog/old-school-beauty-rules",
+    },
+    {
+      title: "More than a manicure, it’s a moment for me",
+      date: "JUL 3, 2025",
+      image: "/blog-manicure-for-me.jpg",
+      to: "/blog/more-than-a-manicure",
+    },
+  ];
+
+  return (
+    <div className="pt-[90px]">
+      {/* Hero Video Section */}
+      <HeroVideo />
+
+      {/* Mission Statement - Visible below hero on all screens */}
+      <section className="mt-8 md:mt-0 py-10 md:py-20 text-center bg-white px-6">
+        <div className="mx-auto max-w-4xl">
+          {/* Main Tagline - Archivo font matching reference */}
+          <h2 className="font-['Archivo'] text-[30px] md:text-[34px] font-semibold text-[rgb(174,25,50)] uppercase text-center tracking-[2px] leading-[36px] md:leading-[40px]">
+            YOUR CARE. YOUR STYLE. SINCE 1959.
+          </h2>
+
+          {/* Mission Text - Archivo font matching reference */}
+          <p className="font-['Archivo'] text-[#1C1C1C] text-[17px] md:text-[19px] font-normal tracking-[0.2px] leading-[24px] md:leading-[27px] text-center mt-[24px] mb-0 mx-[20px]">
+            Our Mission: We continually contribute to the fulfilment of both
+            beauty and wellbeing by crafting exceptional Swiss products.
+          </p>
+
+          {/* NEW PRODUCTS Text Label */}
+          <p className="block font-['Archivo'] text-[17px] md:text-[19px] font-semibold uppercase tracking-[1px] leading-[21px] md:leading-[23px] text-[rgb(92,102,111)] text-center mt-[24px] mb-0">
+            NEW PRODUCTS
+          </p>
+        </div>
+      </section>
+
+      {/* Promotional Banners - Pop Wave & Double-Brow */}
+      <section className="mt-4 md:-mt-12 pb-8 md:pb-12 bg-white">
+        <div className="mx-auto px-4 md:px-8 lg:px-12 max-w-[1800px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+            {/* Pop Wave Banner */}
+            <div className="flex flex-col items-center">
+              <div
+                className="w-full relative"
+                style={{ aspectRatio: "1080/720" }}
+              >
+                <img
+                  src="/Pop_Wave_Colors_Card_Banner.jpg"
+                  alt="Pop Wave Colors"
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                />
+              </div>
+              <Link
+                to="/products/pop-wave"
+                className="inline-block mt-6 px-[32px] py-[16px] border-2 border-[#ae1932] bg-transparent text-[#ae1932] font-['Archivo'] text-[14px] font-light uppercase tracking-[1.01px] hover:bg-[#ae1932] hover:text-white transition-colors duration-100 ease-linear"
+              >
+                VIEW POP WAVE COLORS
+              </Link>
+            </div>
+
+            {/* Double-Brow Banner */}
+            <div className="flex flex-col items-center">
+              <div
+                className="w-full relative"
+                style={{ aspectRatio: "1080/720" }}
+              >
+                <img
+                  src="/Double-Brow_Card_Banner.png"
+                  alt="Double-Brow Eyebrow Serum"
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                />
+              </div>
+              <Link
+                to="/products/double-brow"
+                className="inline-block mt-6 px-[32px] py-[16px] border-2 border-[#ae1932] bg-transparent text-[#ae1932] font-['Archivo'] text-[14px] font-light uppercase tracking-[1.01px] hover:bg-[#ae1932] hover:text-white transition-colors duration-100 ease-linear"
+              >
+                VIEW DOUBLE-BROW
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Best Sellers Section */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="w-full">
+          {/* Section Header */}
+          <h2 className="font-['Archivo'] text-[15px] font-semibold uppercase tracking-[1px] leading-[18.2px] text-[rgb(92,102,111)] text-center mb-10 md:mb-14">
+            BEST SELLERS
+          </h2>
+
+          {/* Products Scroll Container - Horizontal scroll on all screens */}
+          <div className="relative group/nav rounded-2xl overflow-hidden">
+            {/* Left edge fade - Mobile only */}
+            <div className="md:hidden absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+
+            {/* Right edge fade - Mobile only */}
+            <div className="md:hidden absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+            {/* Left Scroll Button - Desktop only - appears on section hover */}
+            <button
+              onClick={(e) => {
+                const container =
+                  e.currentTarget.parentElement?.querySelector(
+                    ".scroll-container"
+                  );
+                if (container)
+                  container.scrollBy({ left: -300, behavior: "smooth" });
+              }}
+              className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center rounded-full bg-black shadow-xl text-white opacity-0 group-hover/nav:opacity-100 transition-all hover:scale-110"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+
+            {/* Right Scroll Button - Desktop only - appears on section hover */}
+            <button
+              onClick={(e) => {
+                const container =
+                  e.currentTarget.parentElement?.querySelector(
+                    ".scroll-container"
+                  );
+                if (container)
+                  container.scrollBy({ left: 300, behavior: "smooth" });
+              }}
+              className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center rounded-full bg-black shadow-xl text-white opacity-0 group-hover/nav:opacity-100 transition-all hover:scale-110"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+
+            <div
+              ref={scrollContainerRef}
+              className="overflow-x-auto scrollbar-hide scroll-container snap-x snap-mandatory scroll-smooth"
+            >
+              <div
+                className="flex gap-3 md:gap-6 px-4 md:px-6"
+                style={{ WebkitOverflowScrolling: "touch" }}
+              >
+                {/* Product 1: STOP */}
+                <Link
+                  to="/products/mavala-stop"
+                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center active:scale-95 transition-transform"
+                >
+                  <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
+                    <img
+                      src="/bestseller-stop.png"
+                      alt="Mavala Stop"
+                      className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+                  <p className="mt-4 font-['Archivo'] text-[13px] font-normal uppercase tracking-[1px] text-[#5c666f] text-center group-hover:text-[#ae1932] transition-colors">
+                    MAVALA STOP
+                  </p>
+                </Link>
+
+                {/* Product 2: K+ */}
+                <Link
+                  to="/products/mavala-scientifique-k"
+                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center active:scale-95 transition-transform"
+                >
+                  <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
+                    <img
+                      src="/bestseller-k-plus.png"
+                      alt="Scientifique K+"
+                      className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+                  <p className="mt-4 font-['Archivo'] text-[13px] font-normal uppercase tracking-[1px] text-[#5c666f] text-center group-hover:text-[#ae1932] transition-colors">
+                    SCIENTIFIQUE K+ NAIL HARDENER
+                  </p>
+                </Link>
+
+                {/* Product 3: Nailactan */}
+                <Link
+                  to="/products/nailactan-1"
+                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center active:scale-95 transition-transform"
+                >
+                  <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
+                    <img
+                      src="/bestseller-nailactan.png"
+                      alt="Nailactan"
+                      className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+                  <p className="mt-4 font-['Archivo'] text-[13px] font-normal uppercase tracking-[1px] text-[#5c666f] text-center group-hover:text-[#ae1932] transition-colors">
+                    NAILACTAN NUTRITIVE NAIL CREAM
+                  </p>
+                </Link>
+
+                {/* Product 4: Double Lash */}
+                <Link
+                  to="/products/double-lash"
+                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center active:scale-95 transition-transform"
+                >
+                  <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
+                    <img
+                      src="/bestseller-double-lash.png"
+                      alt="Double Lash"
+                      className="w-full h-full object-contain scale-[1.7] -translate-y-12 transition-transform duration-300 group-hover:scale-[1.87]"
+                    />
+                  </div>
+                  <p className="mt-4 font-['Archivo'] text-[13px] font-normal uppercase tracking-[1px] text-[#5c666f] text-center group-hover:text-[#ae1932] transition-colors">
+                    DOUBLE LASH EYELASH SERUM
+                  </p>
+                </Link>
+
+                {/* Product 5: Nail White Crayon */}
+                <Link
+                  to="/products/nail-white-crayon"
+                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center active:scale-95 transition-transform"
+                >
+                  <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
+                    <img
+                      src="/bestseller-nail-white-crayon.png"
+                      alt="Nail White Crayon"
+                      className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+                  <p className="mt-4 font-['Archivo'] text-[13px] font-normal uppercase tracking-[1px] text-[#5c666f] text-center group-hover:text-[#ae1932] transition-colors">
+                    NAIL WHITE CRAYON
+                  </p>
+                </Link>
+
+                {/* Product 6: Double Brow */}
+                <Link
+                  to="/products/double-brow"
+                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center active:scale-95 transition-transform"
+                >
+                  <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
+                    <img
+                      src="/images/double-brow/01_Double-Brow.png"
+                      alt="Double Brow"
+                      className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+                  <p className="mt-4 font-['Archivo'] text-[13px] font-normal uppercase tracking-[1px] text-[#5c666f] text-center group-hover:text-[#ae1932] transition-colors">
+                    DOUBLE-BROW EYEBROW SERUM
+                  </p>
+                </Link>
+              </div>
+            </div>
+
+            {/* Dot Indicators - Mobile only */}
+            <div className="flex md:hidden justify-center items-center gap-2 mt-6">
+              {Array.from({ length: totalProducts }).map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    const container = scrollContainerRef.current;
+                    if (container) {
+                      const itemWidth = container.scrollWidth / totalProducts;
+                      container.scrollTo({
+                        left: itemWidth * idx,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
+                  className={`transition-all duration-300 rounded-full ${
+                    idx === currentSlide
+                      ? "w-8 h-2 bg-[#ae1932]"
+                      : "w-2 h-2 bg-gray-300 hover:bg-gray-400"
+                  }`}
+                  aria-label={`Go to product ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Shop by Category Section - Consolidated to 6 categories */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="w-full">
+          {/* Section Header */}
+          <h2 className="font-['Archivo'] text-[25px] font-semibold text-[rgb(174,25,50)] uppercase text-center tracking-[2px] leading-[30px] mb-10 md:mb-14 px-4">
+            SHOP BY CATEGORY
+          </h2>
+
+          {/* Categories Grid - 3 columns x 2 rows (6 categories) */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-[7px]">
+            {/* Row 1 */}
+            <a
+              href="/nail-care"
+              className="relative aspect-square overflow-hidden group"
+            >
+              <img
+                src="/shop-nail-care.png"
+                alt="Nail Care"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </a>
+
+            <a
+              href="/color"
+              className="relative aspect-square overflow-hidden group"
+            >
+              <img
+                src="/shop-nail-polish.png"
+                alt="Nail Polish"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </a>
+
+            <a
+              href="/eye-beauty"
+              className="relative aspect-square overflow-hidden group"
+            >
+              <img
+                src="/shop-eye-beauty.png"
+                alt="Eye Beauty"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </a>
+
+            {/* Row 2 */}
+            <a
+              href="/face-lips"
+              className="relative aspect-square overflow-hidden group"
+            >
+              <img
+                src="/shop-face-lips.png"
+                alt="Face & Lips"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </a>
+
+            <a
+              href="/hand-care"
+              className="relative aspect-square overflow-hidden group"
+            >
+              <img
+                src="/shop-hand-care.png"
+                alt="Hand Care"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </a>
+
+            <a
+              href="/foot-care"
+              className="relative aspect-square overflow-hidden group"
+            >
+              <img
+                src="/shop-foot-care.png"
+                alt="Foot Care"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Latest Blog Posts */}
+      <section className="py-14 md:py-16 bg-white">
+        <div className="w-full px-4 md:px-8 lg:px-12">
+          <h2 className="font-['Archivo'] text-[21px] md:text-[24px] font-semibold uppercase tracking-[1px] leading-tight text-[#ae1932] text-center mb-10 md:mb-14">
+            OUR LATEST BLOG POSTS
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+            {blogPosts.map((post) => (
+              <Link
+                key={post.to}
+                to={post.to}
+                className="group flex flex-col gap-4"
+              >
+                <div className="w-full overflow-hidden">
+                  <div className="aspect-[4/3] w-full">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <p className="font-['Archivo'] text-[15px] font-semibold text-[#1c1c1c] leading-snug">
+                    {post.title}
+                  </p>
+                  <p className="font-['Archivo'] text-[13px] font-normal tracking-[0.5px] text-[#6b6b6b] uppercase">
+                    {post.date}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="flex justify-center mt-12 md:mt-16">
+            <Link
+              to="/blog"
+              className="inline-block px-8 py-3 border-2 border-[#ae1932] bg-transparent text-[#ae1932] font-['Archivo'] text-xs font-normal uppercase tracking-widest hover:bg-[#ae1932] hover:text-white transition-colors duration-150"
+            >
+              VISIT THE BLOG
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

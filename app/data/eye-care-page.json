@@ -1,0 +1,116 @@
+{
+  "slug": "eye-care",
+  "name": "Eye Care",
+  "route": "/eye-care",
+  "hero_title": "Eyelash Growth Serum, Eye Contour Gel and Cream for delicate skin",
+  "hero_image": null,
+  "sections": [
+    {
+      "title": "EYE CARE",
+      "products": [
+        {
+          "name": "DOUBLE-LASH",
+          "slug": "double-lash",
+          "price": "A$39.95",
+          "description": "A nutritive serum for longer, denser lashes and brows.",
+          "image": null,
+          "url": "https://mavala.com.au/double-lash"
+        },
+        {
+          "name": "DOUBLE-BROW",
+          "slug": "double-brow",
+          "price": "A$39.95",
+          "description": "Strength & Density Eyebrow Serum.",
+          "image": null,
+          "url": "https://mavala.com.au/double-brow"
+        },
+        {
+          "name": "EYE CONTOUR GEL",
+          "slug": "eye-contour-gel",
+          "price": "A$39.95",
+          "description": "Moisturizing eye make-up base. Light and refreshing gel for daytime.",
+          "image": null,
+          "url": "https://mavala.com.au/eye-contour-gel"
+        },
+        {
+          "name": "EYE CONTOUR DOUBLE CREAM",
+          "slug": "eye-contour-double-cream",
+          "price": "A$42.95",
+          "description": "Active, moisturizing and revitalizing cream for eye contour.",
+          "image": null,
+          "url": "https://mavala.com.au/eye-contour-double-cream"
+        }
+      ]
+    },
+    {
+      "title": "EYE MAKE-UP COMPANIONS",
+      "products": [
+        {
+          "name": "MAKE-UP REMOVER COTTON PADS",
+          "slug": "make-up-remover-cotton-pads",
+          "price": "from A$7.95",
+          "description": "Eases eye make-up and nail polish removal.",
+          "image": null,
+          "url": "https://mavala.com.au/make-up-remover-cotton-pads"
+        },
+        {
+          "name": "EYE BASE",
+          "slug": "eye-base",
+          "price": "A$25.95",
+          "description": "Base for eye make-up.",
+          "image": null,
+          "url": "https://mavala.com.au/eye-base"
+        },
+        {
+          "name": "REMOVER LOTION",
+          "slug": "eye-make-up-remover-lotion",
+          "price": "A$25.95",
+          "description": "Gentle make-up remover.",
+          "image": null,
+          "url": "https://mavala.com.au/eye-make-up-remover-lotion"
+        },
+        {
+          "name": "TOTAL BI-PHASE MAKEUP REMOVER",
+          "slug": "bi-phase-make-up-remover",
+          "price": "A$25.95",
+          "description": "Oil-in-water formula to get rid of all types of make-up.",
+          "image": null,
+          "url": "https://mavala.com.au/bi-phase-make-up-remover"
+        },
+        {
+          "name": "REMOVER GEL",
+          "slug": "remover-gel",
+          "price": "A$19.95",
+          "description": "Special waterproof.",
+          "image": null,
+          "url": "https://mavala.com.au/remover-gel"
+        },
+        {
+          "name": "EYE MAKEUP REMOVER PADS",
+          "slug": "remover-pads",
+          "price": "A$29.95",
+          "description": "Gentle make-up remover. Convenient for travel and make-up kits.",
+          "image": null,
+          "url": "https://mavala.com.au/remover-pads"
+        },
+        {
+          "name": "MAKEUP CORRECTOR PEN",
+          "slug": "makeup-corrector",
+          "price": "A$29.95",
+          "description": "Correct makeup errors in one stroke.",
+          "image": null,
+          "url": "https://mavala.com.au/makeup-corrector"
+        },
+        {
+          "name": "COSMETIC PENCIL SHARPENER",
+          "slug": "cosmetic-pencil-sharpener",
+          "price": "A$19.95",
+          "description": "Double blade.",
+          "image": null,
+          "url": "https://mavala.com.au/cosmetic-pencil-sharpener"
+        }
+      ]
+    }
+  ]
+}
+

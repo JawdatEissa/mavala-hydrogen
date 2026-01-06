@@ -1,0 +1,84 @@
+{
+  "slug": "hand-care",
+  "name": "Hand Care",
+  "route": "/hand-care",
+  "hero_title": "Swiss Hand Care Program to repair and protect hands",
+  "hero_image": null,
+  "sections": [
+    {
+      "title": "DAILY HAND CARE",
+      "products": [
+        {
+          "name": "MAVA-CLEAR",
+          "slug": "mava-clear",
+          "price": "from A$9.95",
+          "description": "Anti-Drying Lemon Scented Hand Sanitiser.",
+          "image": null,
+          "url": "https://mavala.com.au/mava-clear"
+        },
+        {
+          "name": "HAND CREAM",
+          "slug": "hand-cream",
+          "price": "A$28.95",
+          "description": "A daily care that moisturises and protects your hands.",
+          "image": null,
+          "url": "https://mavala.com.au/hand-cream"
+        },
+        {
+          "name": "PREBIOTIC HAND CREAM",
+          "slug": "prebiotic-hand-cream",
+          "price": "A$30.95",
+          "description": "The concentrate of efficiency for a strengthened skin barrier.",
+          "image": null,
+          "url": "https://mavala.com.au/prebiotic-hand-cream"
+        },
+        {
+          "name": "MAVA+ HAND CREAM",
+          "slug": "mava-hand-cream-1",
+          "price": "A$33.95",
+          "description": "Extreme hand care for very dry, very stressed hands.",
+          "image": null,
+          "url": "https://mavala.com.au/mava-hand-cream-1"
+        }
+      ]
+    },
+    {
+      "title": "SPECIFIC HAND CARE",
+      "products": [
+        {
+          "name": "ANTI-SPOT CREAM FOR HANDS",
+          "slug": "anti-spot-cream-for-hands",
+          "price": "A$39.95",
+          "description": "For smooth, young looking hands.",
+          "image": null,
+          "url": "https://mavala.com.au/anti-spot-cream-for-hands"
+        },
+        {
+          "name": "REJUVENATING MASK",
+          "slug": "rejuvinating-mask",
+          "price": "A$59.95",
+          "description": "Exfoliating and moisturising care.",
+          "image": null,
+          "url": "https://mavala.com.au/rejuvinating-mask"
+        },
+        {
+          "name": "REPAIRING NIGHT CREAM",
+          "slug": "repairing-night-cream",
+          "price": "A$79.95",
+          "description": "Intensive 30-day cure for damaged hands.",
+          "image": null,
+          "url": "https://mavala.com.au/repairing-night-cream"
+        },
+        {
+          "name": "COTTON GLOVES",
+          "slug": "cotton-gloves",
+          "price": "A$19.95",
+          "description": "For cosmetic use.",
+          "image": null,
+          "url": "https://mavala.com.au/cotton-gloves"
+        }
+      ]
+    }
+  ]
+}
+

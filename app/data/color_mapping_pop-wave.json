@@ -1,0 +1,42 @@
+{
+  "product_slug": "pop-wave",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Pink": [
+      "481 ROSE POP"
+    ],
+    "Orange": [
+      "482 ORANGE POP"
+    ],
+    "Yellow": [
+      "483 YELLOW POP"
+    ],
+    "Blue": [
+      "486 BLUE POP"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "481 ROSE POP",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1764825384257-KLQOHIJPFDU8T1LNAVWF/MAVALA-MINI-COLOR-481-Rose-Pop.png?format=750w"
+    },
+    {
+      "name": "482 ORANGE POP",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1764825384930-PX666JC2OMGWJ92JKHUU/MAVALA-MINI-COLOR-482-Orange-Pop.png?format=750w"
+    },
+    {
+      "name": "483 YELLOW POP",
+      "color": "Yellow",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1764825388596-3SL05YEP2MTEDR3SHO88/MAVALA-MINI-COLOR-483-Yellow-Pop.png?format=750w"
+    },
+    {
+      "name": "486 BLUE POP",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1764825396364-L70TBHLIBU9EPV455QI6/MAVALA-MINI-COLOR-486-Blue-Pop.png?format=750w"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "product_slug": "purple-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 22,
+  "color_groups": {
+    "Purple": [
+      "29 GLASGOW*",
+      "395 RIMINI",
+      "319 BRIGHTON",
+      "152 MAUVE CENDRE",
+      "62 MILANO",
+      "305 SAMARKAND",
+      "467 WHISPERWOOD*",
+      "415 PUSHY PURPLE",
+      "30 MEXICO",
+      "24 TOKYO"
+    ],
+    "Pink": [
+      "288 GINZA"
+    ],
+    "Nude": [
+      "446 BIKANER"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "29 GLASGOW*",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570453641-N2B3TEZ1LC3EBIYV1B8D/Glasgow.png?format=500w"
+    },
+    {
+      "name": "395 RIMINI",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1626308278953-Y8CSMWSPX23GX0EHS452/395-Rimini.jpg?format=500w"
+    },
+    {
+      "name": "319 BRIGHTON",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1626063020583-39CGZR7DIPA3CFOUJ7RO/319-Brighton.jpg?format=500w"
+    },
+    {
+      "name": "152 MAUVE CENDRE",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492407572528-66AIV79OGKE0EZPTH9Z8/152+Mauve+Cendr%C3%A9.jpg?format=500w"
+    },
+    {
+      "name": "288 GINZA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570526251-B43RX9ATIO77ZABTAF0P/Ginza.png?format=500w"
+    },
+    {
+      "name": "446 BIKANER",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1701740345301-4B5RIO62Z2Q7BYBPTZYS/446+Bikaner.jpg?format=500w"
+    },
+    {
+      "name": "62 MILANO",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570549073-VSHP5D7TDODROTIGO50E/Milano.png?format=500w"
+    },
+    {
+      "name": "305 SAMARKAND",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1526187702882-R9I12V97LEBWWIVJ2R4A/Samarkand+Winner.jpg?format=500w"
+    },
+    {
+      "name": "467 WHISPERWOOD*",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1722842540110-GFLLGLJZASFUJLE87GVN/467+Whisperwood+-+RVB.jpg?format=500w"
+    },
+    {
+      "name": "415 PUSHY PURPLE",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1653528842041-DR6JSGKFEA5DU6DROVBA/415+Pushy+Purple.png?format=500w"
+    },
+    {
+      "name": "30 MEXICO",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497570593356-LWTM2M9F9S0LBJGLIAEC/Mexico.png?format=500w"
+    },
+    {
+      "name": "24 TOKYO",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492407510934-ON1GBZV6DY3KAN6DUOUS/024+Tokyo.jpg?format=500w"
+    }
+  ]
+}

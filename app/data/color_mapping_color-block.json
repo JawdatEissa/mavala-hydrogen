@@ -1,0 +1,56 @@
+{
+  "product_slug": "color-block",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 6,
+  "color_groups": {
+    "Pink": [
+      "444 EREVAN"
+    ],
+    "Orange": [
+      "445 MOAB"
+    ],
+    "Nude": [
+      "446 BIKANER",
+      "448 JERASH"
+    ],
+    "Blue": [
+      "447 MOOREA"
+    ],
+    "Red": [
+      "449 VERONA"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "444 EREVAN",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1701738785974-HLTJN978WA7YGJE59ICR/444+Erevan.jpg?format=500w"
+    },
+    {
+      "name": "445 MOAB",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1701738792013-BOL6911O6PZ2HZ2HGMIP/445+Moab.jpg?format=500w"
+    },
+    {
+      "name": "446 BIKANER",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1701738798517-5ZP3KG21MRIF9GZ7LKNX/446+Bikaner.jpg?format=500w"
+    },
+    {
+      "name": "447 MOOREA",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1701738804707-7KIQRIDRFJAZH92RD5RM/447+Moorea.jpg?format=500w"
+    },
+    {
+      "name": "448 JERASH",
+      "color": "Nude",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1701738809849-7C7R339I4D1IKS4UYV8K/448+Jerash.jpg?format=500w"
+    },
+    {
+      "name": "449 VERONA",
+      "color": "Red",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1701738816177-XO9PQKCR4PNZL6VCDW7L/449+Verona.jpg?format=500w"
+    }
+  ]
+}

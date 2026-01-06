@@ -1,0 +1,54 @@
+{
+  "product_slug": "delight",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 8,
+  "color_groups": {
+    "Pink": [
+      "425 BUDVA",
+      "427 FIGUEIRA",
+      "429 SYDNEY"
+    ],
+    "Orange": [
+      "426 TAMARINDO"
+    ],
+    "Yellow": [
+      "428 MALAPASCUA"
+    ],
+    "Purple": [
+      "430 VANCOUVER"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "425 BUDVA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1670296297390-LW6JQLX5XKL04BVAUTKK/425+Budva.png?format=500w"
+    },
+    {
+      "name": "426 TAMARINDO",
+      "color": "Orange",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1670296304282-0TO2786M7M8H1W3K2KL6/426+Tamarindo.png?format=500w"
+    },
+    {
+      "name": "427 FIGUEIRA",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1670296394889-2C9IZASGFA31Z2MRD1I5/427+Figueria.png?format=500w"
+    },
+    {
+      "name": "429 SYDNEY",
+      "color": "Pink",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1670296473295-0UEAL1V8DHJFZIBAG1AJ/429+Sydney.png?format=500w"
+    },
+    {
+      "name": "428 MALAPASCUA",
+      "color": "Yellow",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1670296401541-8LN3RWSC9TZSE3N3YGDJ/428+Malapascua.png?format=500w"
+    },
+    {
+      "name": "430 VANCOUVER",
+      "color": "Purple",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1670296479035-TL4PBRPYZDT2XI9OPLM9/430+Vancouver.png?format=500w"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "product_slug": "green-shades",
+  "source": "Official Mavala Color Categorization by Shade Number",
+  "version": 2,
+  "total_shades": 14,
+  "color_groups": {
+    "Green": [
+      "123 EDINBURGH",
+      "166 KHAKI VINTAGE",
+      "982 NAIVE MINT",
+      "304 BAMAKO",
+      "414 GRASS GREEN",
+      "25 COPENHAGEN"
+    ],
+    "Blue": [
+      "59 PHUKET"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "123 EDINBURGH",
+      "color": "Green",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1615873659605-QAVFYOPOWXFCBJ7FVGQC/123+Edinburgh.png?format=500w"
+    },
+    {
+      "name": "166 KHAKI VINTAGE",
+      "color": "Green",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1497571876730-ZI8MDNMOP3BYH9AM87NY/Khaki+Vintage.png?format=500w"
+    },
+    {
+      "name": "982 NAIVE MINT",
+      "color": "Green",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1579664407476-QG4JXW495AM7Y9JY36C2/982+Naive+Mint.jpg?format=500w"
+    },
+    {
+      "name": "59 PHUKET",
+      "color": "Blue",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1608255190072-DJ5398W5XOGV5II8FWVC/059+Phuket.jpg?format=500w"
+    },
+    {
+      "name": "304 BAMAKO",
+      "color": "Green",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1492412222679-A76JD22W9664UAM15OG3/304+Bamako.jpg?format=500w"
+    },
+    {
+      "name": "414 GRASS GREEN",
+      "color": "Green",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1653528530162-ZV2CUN0KE881OBNIYI27/414+Grass+Green.png?format=500w"
+    },
+    {
+      "name": "25 COPENHAGEN",
+      "color": "Green",
+      "image": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1626078052657-BXNHIO48ELYNNE2HJ8LM/25+Copenhagen.png?format=500w"
+    }
+  ]
+}

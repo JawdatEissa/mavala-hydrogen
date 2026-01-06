@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Utility to hide scrollbar while keeping scroll functionality */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Mavala Brand Styles - Matching mavala.com */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-gray-800 antialiased;
+    font-family: 'Avenir', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Avenir', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+  }
+}
+
+@layer components {
+  /* Section Titles - Pink/Red color */
+  .section-title {
+    @apply text-center uppercase tracking-[0.3em] text-lg md:text-xl font-light mb-8;
+    color: #E31837;
+  }
+
+  /* Buttons - Pink outline style */
+  .btn {
+    @apply inline-flex items-center justify-center px-8 py-3 text-xs font-normal uppercase tracking-[0.2em] transition-all duration-300 border;
+  }
+  
+  .btn-primary {
+    @apply btn border-[#E31837] text-[#E31837] bg-transparent hover:bg-[#E31837] hover:text-white;
+  }
+  
+  .btn-secondary {
+    @apply btn border-gray-800 text-gray-800 bg-transparent hover:bg-gray-800 hover:text-white;
+  }
+  
+  .btn-white {
+    @apply btn border-white text-white bg-transparent hover:bg-white hover:text-gray-800;
+  }
+
+  /* Product Card */
+  .product-card {
+    @apply relative text-center;
+  }
+  
+  .product-card-image {
+    @apply relative overflow-hidden bg-[#f5f5f5] mb-4 border-none outline-none shadow-none;
+  }
+  
+  .product-card-image img {
+    @apply w-full h-auto object-contain border-none outline-none;
+  }
+  
+  .product-card-title {
+    @apply text-xs uppercase tracking-wider text-gray-800 font-normal;
+  }
+  
+  .product-card-price {
+    @apply text-xs text-gray-500 mt-1;
+  }
+
+  /* Navigation Links */
+  .nav-link {
+    @apply text-xs font-normal uppercase tracking-[0.15em] text-gray-800 hover:text-[#E31837] transition-colors;
+  }
+
+  /* Category Card */
+  .category-card {
+    @apply relative overflow-hidden cursor-pointer;
+  }
+  
+  .category-card-title {
+    @apply absolute inset-0 flex items-center justify-center text-white text-xl md:text-2xl font-light uppercase tracking-[0.15em];
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+}
+
+@layer utilities {
+  .text-mavala-pink {
+    color: #E31837;
+  }
+  
+  .bg-mavala-pink {
+    background-color: #E31837;
+  }
+  
+  .border-mavala-pink {
+    border-color: #E31837;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
+  }
+}
+
+/* Mobile Menu - Native details/summary styling */
+details summary {
+  list-style: none;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::marker {
+  display: none;
+}
+
+/* Premium Product Page Styles - Matching mavala.com.au */
+@layer components {
+  /* Product Gallery - Clean, spacious layout */
+  .product-gallery-main {
+    position: relative;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 32px;
+    min-height: 600px;
+  }
+
+  .product-gallery-main img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    max-height: 600px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  /* Hide thumbnail gallery by default for clean look */
+  .product-thumbnails-hidden {
+    display: none !important;
+  }
+
+  /* Squarespace Override Styles (if needed for Squarespace sites) */
+  .product-item-gallery-thumbnails,
+  .sqs-product-quick-view-thumbnails {
+    display: none !important;
+  }
+
+  .product-item-gallery-slides,
+  .product-item-gallery {
+    width: 100% !important;
+    padding: 40px 32px !important;
+  }
+
+  .product-item-gallery .product-image,
+  .product-item-gallery .intrinsic {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    padding-bottom: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .product-item-gallery img {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 600px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    image-rendering: -webkit-optimize-contrast !important;
+  }
+
+  /* Product overlay alignment */
+  .product-overlay {
+    position: relative !important;
+    width: 100% !important;
+    margin-top: auto !important;
+    text-align: center !important;
+    padding: 0.5rem 0 !important;
+  }
+}

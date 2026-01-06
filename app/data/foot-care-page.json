@@ -1,0 +1,108 @@
+{
+  "slug": "foot-care",
+  "name": "Foot Care",
+  "route": "/foot-care",
+  "hero_title": "Foot Care - Comfort for feet as smooth as waterlily petals",
+  "hero_image": null,
+  "sections": [
+    {
+      "title": "COMFORT",
+      "subtitle": "for feet as smooth as waterlily petals",
+      "products": [
+        {
+          "name": "SMOOTHING SCRUB CREAM FOR FEET",
+          "slug": "smoothing-foot-scrub",
+          "price": "from A$34.95",
+          "description": "Eliminates callouses and softens skin.",
+          "image": null,
+          "url": "https://mavala.com.au/smoothing-foot-scrub"
+        },
+        {
+          "name": "CONDITIONING MOISTURISER FOR FEET",
+          "slug": "conditioning-foot-moisturiser",
+          "price": "from A$34.95",
+          "description": "Softens, moisturises and protects.",
+          "image": null,
+          "url": "https://mavala.com.au/conditioning-foot-moisturiser"
+        },
+        {
+          "name": "HYDRO-REPAIRING FOOT CARE",
+          "slug": "hydro-repairing-foot-care",
+          "price": "A$34.95",
+          "description": "For very dry, cracked heels.",
+          "image": null,
+          "url": "https://mavala.com.au/hydro-repairing-foot-care"
+        },
+        {
+          "name": "EXTRA SOFT FOOT CARE DUO PACK",
+          "slug": "extra-soft-foot-care",
+          "price": "A$49.95",
+          "description": "Two must have products for smooth and soft feet.",
+          "image": null,
+          "url": "https://mavala.com.au/extra-soft-foot-care"
+        }
+      ]
+    },
+    {
+      "title": "VITALITY",
+      "subtitle": "for feet as light as feathers",
+      "products": [
+        {
+          "name": "SOOTHING FOOT BATH SALTS",
+          "slug": "foot-bath-salts",
+          "price": "A$42.95",
+          "description": "Refreshing and relaxing.",
+          "image": null,
+          "url": "https://mavala.com.au/foot-bath-salts"
+        },
+        {
+          "name": "REFRESHING FOOT GEL",
+          "slug": "refreshing-foot-gel",
+          "price": "from A$31.95",
+          "description": "Cools and relaxes.",
+          "image": null,
+          "url": "https://mavala.com.au/refreshing-foot-gel"
+        },
+        {
+          "name": "REVITALISING EMULSION FOR LEGS",
+          "slug": "revitalising-leg-emulsion",
+          "price": "from A$34.95",
+          "description": "Refreshes and relieves tired legs.",
+          "image": null,
+          "url": "https://mavala.com.au/revitalising-leg-emulsion"
+        }
+      ]
+    },
+    {
+      "title": "FRESHNESS",
+      "subtitle": "for feet as fresh as the morning dew",
+      "products": [
+        {
+          "name": "CONCENTRATED FOOT BATH",
+          "slug": "concentrated-foot-bath",
+          "price": "from A$31.95",
+          "description": "Deodorising and toning pedicure preparation.",
+          "image": null,
+          "url": "https://mavala.com.au/concentrated-foot-bath"
+        },
+        {
+          "name": "FOOT TALCUM POWDER",
+          "slug": "talcum-powder",
+          "price": "from A$34.95",
+          "description": "Absorbs moisture.",
+          "image": null,
+          "url": "https://mavala.com.au/talcum-powder"
+        },
+        {
+          "name": "DEODORISING FOOT GEL",
+          "slug": "deodorising-foot-gel",
+          "price": "from A$31.95",
+          "description": "Provides long-lasting freshness and prevents foot odour.",
+          "image": null,
+          "url": "https://mavala.com.au/deodorising-foot-gel"
+        }
+      ]
+    }
+  ]
+}
+
