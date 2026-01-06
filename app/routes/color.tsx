@@ -660,77 +660,42 @@ export default function ColorPage() {
         />
       </section>
 
-      {/* Intro Section with Description */}
-      <section className="pt-4 md:pt-6 lg:pt-8 pb-12 md:pb-20 lg:pb-24 px-4 md:px-8 bg-gradient-to-b from-white to-[#fafafa]">
-        <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
-          {/* Title - Dynamic based on active tab */}
-          <h1 className="font-['Archivo'] text-[26px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-semibold text-[#ae1932] uppercase tracking-wide px-2 text-center mb-3">
-            {title}
-          </h1>
-
-          {/* Description - Fixed height to prevent nav bar jumping */}
-          <div className="h-[85px] sm:h-[65px] md:h-[55px] flex items-start justify-center mb-4 max-w-3xl mx-auto px-4">
-            <p className="font-['Archivo'] text-[14px] sm:text-[15px] md:text-[16px] text-gray-600 leading-relaxed">
-              {description}
-            </p>
-          </div>
-
-          {/* Horizontal Tab Navigation Bar - 2 rows on mobile, single row on desktop */}
-          <div className="w-full flex justify-center px-2">
-            {/* Mobile: 2-row pill-style layout */}
-            <div className="md:hidden flex flex-col gap-2 w-full max-w-md">
-              {/* First row: Mini Colours, Collections, Mini Bio */}
-              <div className="flex items-center justify-center gap-2">
-                {topRowTabs.map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`
-                      flex-1 px-3 py-2.5 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
-                      ${
-                        activeTab === tab.id
-                          ? "bg-[#ae1932] text-white"
-                          : "bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300"
-                      }
-                    `}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
-              </div>
-              {/* Second row: Base Coat, Top Coat, Polish Dryer, Remover */}
-              <div className="flex items-center justify-center gap-2">
-                {bottomRowTabs.map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`
-                      flex-1 px-2 py-2.5 rounded-full font-['Archivo'] text-[10px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
-                      ${
-                        activeTab === tab.id
-                          ? "bg-[#ae1932] text-white"
-                          : "bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300"
-                      }
-                    `}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Desktop: Single row - Original style */}
-            <div className="hidden md:flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-xl p-2 shadow-sm max-w-5xl">
-              {tabs.map((tab) => (
+      {/* Navigation Bar Section - Always stable, above title/description */}
+      <section className="py-5 md:py-6 px-4 md:px-8 bg-white">
+        <div className="max-w-5xl mx-auto flex justify-center">
+          {/* Mobile: 2-row pill-style layout */}
+          <div className="md:hidden flex flex-col gap-2 w-full max-w-md">
+            {/* First row: Mini Colours, Collections, Mini Bio */}
+            <div className="flex items-center justify-center gap-2">
+              {topRowTabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`
-                    px-5 py-3 rounded-lg font-['Archivo'] text-[13px] font-medium uppercase tracking-wide transition-colors duration-150 whitespace-nowrap
+                    flex-1 px-3 py-2.5 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
                     ${
                       activeTab === tab.id
                         ? "bg-[#ae1932] text-white"
-                        : "bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300"
+                    }
+                  `}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+            {/* Second row: Base Coat, Top Coat, Polish Dryer, Remover */}
+            <div className="flex items-center justify-center gap-2">
+              {bottomRowTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`
+                    flex-1 px-2 py-2.5 rounded-full font-['Archivo'] text-[10px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    ${
+                      activeTab === tab.id
+                        ? "bg-[#ae1932] text-white"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300"
                     }
                   `}
                 >
@@ -739,6 +704,41 @@ export default function ColorPage() {
               ))}
             </div>
           </div>
+
+          {/* Desktop: Single row */}
+          <div className="hidden md:flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-xl p-2 shadow-sm max-w-5xl">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`
+                  px-5 py-3 rounded-lg font-['Archivo'] text-[13px] font-medium uppercase tracking-wide transition-colors duration-150 whitespace-nowrap
+                  ${
+                    activeTab === tab.id
+                      ? "bg-[#ae1932] text-white"
+                      : "bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]"
+                  }
+                `}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Title and Description Section - Content changes here, below nav bar */}
+      <section className="pt-4 md:pt-6 pb-6 md:pb-10 px-4 md:px-8 bg-gradient-to-b from-white to-[#fafafa]">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Title - Dynamic based on active tab */}
+          <h1 className="font-['Archivo'] text-[26px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-semibold text-[#ae1932] uppercase tracking-wide px-2 mb-4">
+            {title}
+          </h1>
+
+          {/* Description - Dynamic based on active tab */}
+          <p className="font-['Archivo'] text-[14px] sm:text-[15px] md:text-[16px] text-gray-600 leading-relaxed max-w-3xl mx-auto px-4">
+            {description}
+          </p>
         </div>
       </section>
 
