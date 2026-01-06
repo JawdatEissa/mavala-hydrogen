@@ -53,34 +53,37 @@ import colorMappingGreyShades from "../data/color_mapping_grey-shades.json";
 import colorMappingBlackShades from "../data/color_mapping_black-shades.json";
 
 // Map of slug to color mapping data
-const COLOR_MAPPINGS: Record<string, { shade_details?: Array<{ name: string; image: string }> }> = {
+const COLOR_MAPPINGS: Record<
+  string,
+  { shade_details?: Array<{ name: string; image: string }> }
+> = {
   "the-basics": colorMappingTheBasics,
   "cream-colors": colorMappingCreamColors,
   "pearl-colors": colorMappingPearlColors,
   "pop-wave": colorMappingPopWave,
   "neo-nudes": colorMappingNeoNudes,
   "terra-topia": colorMappingTerraTopia,
-  "yummy": colorMappingYummy,
-  "whisper": colorMappingWhisper,
-  "timeless": colorMappingTimeless,
+  yummy: colorMappingYummy,
+  whisper: colorMappingWhisper,
+  timeless: colorMappingTimeless,
   "color-block": colorMappingColorBlock,
   "digital-art": colorMappingDigitalArt,
   "bio-colors": colorMappingBioColors,
-  "tandem": colorMappingTandem,
-  "delight": colorMappingDelight,
-  "sofuture": colorMappingSofuture,
-  "prismatic": colorMappingPrismatic,
+  tandem: colorMappingTandem,
+  delight: colorMappingDelight,
+  sofuture: colorMappingSofuture,
+  prismatic: colorMappingPrismatic,
   "color-vibe": colorMappingColorVibe,
-  "iconic": colorMappingIconic,
+  iconic: colorMappingIconic,
   "bubble-gum": colorMappingBubbleGum,
   "cyber-chic": colorMappingCyberChic,
   "blush-colors": colorMappingBlushColors,
   "new-look": colorMappingNewLook,
-  "cosmic": colorMappingCosmic,
+  cosmic: colorMappingCosmic,
   "chill-relax": colorMappingChillRelax,
-  "heritage": colorMappingHeritage,
+  heritage: colorMappingHeritage,
   "pastel-fiesta": colorMappingPastelFiesta,
-  "solaris": colorMappingSolaris,
+  solaris: colorMappingSolaris,
   "white-shades": colorMappingWhiteShades,
   "nude-shades": colorMappingNudeShades,
   "pink-shades": colorMappingPinkShades,
@@ -100,11 +103,7 @@ const COLOR_MAPPINGS: Record<string, { shade_details?: Array<{ name: string; ima
 
 // Define the product categories for each section
 // NOTE: Removed "10ml-bottles" (B2B only) and "french-manicure-kit" (single SKU, not needed)
-const CLASSICS_SLUGS = [
-  "the-basics",
-  "cream-colors",
-  "pearl-colors",
-];
+const CLASSICS_SLUGS = ["the-basics", "cream-colors", "pearl-colors"];
 
 // Mini Colours Collections - themed collections with multiple shades
 const COLLECTIONS_SLUGS = [
@@ -201,10 +200,10 @@ const PRODUCT_TAGLINES: Record<string, string> = {
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   // Load products ONCE - this is the only expensive operation
   const allProducts = loadScrapedProducts();
-  
+
   // Create a product map for O(1) lookups
-  const productMap = new Map(allProducts.map(p => [p.slug, p]));
-  
+  const productMap = new Map(allProducts.map((p) => [p.slug, p]));
+
   // Add cache headers for better performance
   const headers = {
     "Cache-Control": "public, max-age=300, stale-while-revalidate=600",
@@ -216,7 +215,10 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     if (mapping?.shade_details) {
       return {
         ...product,
-        shades: mapping.shade_details.map(s => ({ name: s.name, image: s.image })),
+        shades: mapping.shade_details.map((s) => ({
+          name: s.name,
+          image: s.image,
+        })),
       };
     }
     return product;
@@ -236,34 +238,54 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   const shades = getProductsBySlug(SHADES_SLUGS);
 
   // Get other products (base coats, top coats, etc.)
-  const predefinedSlugs = new Set([...CLASSICS_SLUGS, ...COLLECTIONS_SLUGS, ...SHADES_SLUGS]);
-  const otherProducts = allProducts
-    .filter(p => {
-      if (predefinedSlugs.has(p.slug)) return false;
-      
-      const titleLower = p.title?.toLowerCase() || '';
-      
-      // Only include specific categories
-      const isBaseCoat = titleLower.includes('base') && titleLower.includes('coat');
-      const isTopCoat = titleLower.includes('top') && titleLower.includes('coat');
-      const isPolishDryer = titleLower.includes('dryer') || titleLower.includes('mavadry');
-      const isRemover = titleLower.includes('remover');
-      const isBioColor = titleLower.includes('bio') && (titleLower.includes('color') || titleLower.includes('nail'));
-      const is002Base = titleLower.includes('002') && titleLower.includes('base');
-      
-      return isBaseCoat || isTopCoat || isPolishDryer || isRemover || isBioColor || is002Base;
-    });
+  const predefinedSlugs = new Set([
+    ...CLASSICS_SLUGS,
+    ...COLLECTIONS_SLUGS,
+    ...SHADES_SLUGS,
+  ]);
+  const otherProducts = allProducts.filter((p) => {
+    if (predefinedSlugs.has(p.slug)) return false;
+
+    const titleLower = p.title?.toLowerCase() || "";
+
+    // Only include specific categories
+    const isBaseCoat =
+      titleLower.includes("base") && titleLower.includes("coat");
+    const isTopCoat = titleLower.includes("top") && titleLower.includes("coat");
+    const isPolishDryer =
+      titleLower.includes("dryer") || titleLower.includes("mavadry");
+    const isRemover = titleLower.includes("remover");
+    const isBioColor =
+      titleLower.includes("bio") &&
+      (titleLower.includes("color") || titleLower.includes("nail"));
+    const is002Base = titleLower.includes("002") && titleLower.includes("base");
+
+    return (
+      isBaseCoat ||
+      isTopCoat ||
+      isPolishDryer ||
+      isRemover ||
+      isBioColor ||
+      is002Base
+    );
+  });
 
   // Pass shade colors data
-  const shadeColors = shadeColorsData as Record<string, { hex: string; rgb: number[] }>;
+  const shadeColors = shadeColorsData as Record<
+    string,
+    { hex: string; rgb: number[] }
+  >;
 
-  return json({
-    classics,
-    collections,
-    shades,
-    otherProducts,
-    shadeColors,
-  }, { headers });
+  return json(
+    {
+      classics,
+      collections,
+      shades,
+      otherProducts,
+      shadeColors,
+    },
+    { headers }
+  );
 };
 
 export const meta: MetaFunction = () => {
@@ -278,29 +300,38 @@ export const meta: MetaFunction = () => {
 };
 
 // Helper to get shade color from shade name
-function getShadeColor(shadeName: string, shadeColors: Record<string, { hex: string; rgb: number[] }>): string {
+function getShadeColor(
+  shadeName: string,
+  shadeColors: Record<string, { hex: string; rgb: number[] }>
+): string {
   // Try exact match first
   if (shadeColors[shadeName]) {
     return shadeColors[shadeName].hex;
   }
-  
+
   // Try normalized match (handle "49 WHITE" vs "49. WHITE" etc)
-  const normalizedName = shadeName.replace(/\./g, '').toUpperCase().trim();
+  const normalizedName = shadeName.replace(/\./g, "").toUpperCase().trim();
   for (const [key, value] of Object.entries(shadeColors)) {
-    const normalizedKey = key.replace(/\./g, '').toUpperCase().trim();
+    const normalizedKey = key.replace(/\./g, "").toUpperCase().trim();
     if (normalizedKey === normalizedName) {
       return value.hex;
     }
   }
-  
+
   // Fallback color
-  return '#ae1932';
+  return "#ae1932";
 }
 
 // Shade Count Indicator Component - Overlapping circles with count
-function ShadeCountIndicator({ count, colors = ['#ae1932', '#f5cdb6', '#5c666f'] }: { count: number; colors?: string[] }) {
+function ShadeCountIndicator({
+  count,
+  colors = ["#ae1932", "#f5cdb6", "#5c666f"],
+}: {
+  count: number;
+  colors?: string[];
+}) {
   if (count <= 0) return null;
-  
+
   return (
     <div className="flex items-center gap-2">
       {/* Overlapping circles */}
@@ -315,25 +346,35 @@ function ShadeCountIndicator({ count, colors = ['#ae1932', '#f5cdb6', '#5c666f']
       </div>
       {/* Shade count text */}
       <span className="font-['Archivo'] text-[12px] font-medium text-gray-600 uppercase tracking-wide">
-        {count} {count === 1 ? 'SHADE' : 'SHADES'}
+        {count} {count === 1 ? "SHADE" : "SHADES"}
       </span>
     </div>
   );
 }
 
 // Product Card Component for Color Page - With grey background for product images
-function ColorProductCard({ product, shadeColors }: { product: ScrapedProduct; shadeColors: Record<string, { hex: string; rgb: number[] }> }) {
+function ColorProductCard({
+  product,
+  shadeColors,
+}: {
+  product: ScrapedProduct;
+  shadeColors: Record<string, { hex: string; rgb: number[] }>;
+}) {
   const tagline = PRODUCT_TAGLINES[product.slug] || product.tagline || "";
   const displayPrice = product.price_from || product.price || "A$11.95";
   const image = product.images?.[0] || "";
-  
+
   // Get shade count from product data
   const shadeCount = product.shades?.length || 0;
-  
+
   // Get actual colors from first 3 shades
-  const sampleColors = product.shades?.slice(0, 3).map(shade => 
-    getShadeColor(shade.name, shadeColors)
-  ) || ['#ae1932', '#f5cdb6', '#5c666f'];
+  const sampleColors = product.shades
+    ?.slice(0, 3)
+    .map((shade) => getShadeColor(shade.name, shadeColors)) || [
+    "#ae1932",
+    "#f5cdb6",
+    "#5c666f",
+  ];
 
   return (
     <Link
@@ -361,9 +402,7 @@ function ColorProductCard({ product, shadeColors }: { product: ScrapedProduct; s
       <h3 className="font-['Archivo'] text-[15px] font-medium text-[#272724] mb-1">
         {product.title}
       </h3>
-      <p className="font-['Archivo'] text-[13px] text-gray-500 mb-1">
-        Make-Up
-      </p>
+      <p className="font-['Archivo'] text-[13px] text-gray-500 mb-1">Make-Up</p>
       <p className="font-['Archivo'] text-[13px] text-gray-400">
         {displayPrice.startsWith("from") ? displayPrice : `A${displayPrice}`}
       </p>
@@ -372,18 +411,28 @@ function ColorProductCard({ product, shadeColors }: { product: ScrapedProduct; s
 }
 
 // Collection Card Component - No grey background, promotional images displayed larger
-function CollectionCard({ product, shadeColors }: { product: ScrapedProduct; shadeColors: Record<string, { hex: string; rgb: number[] }> }) {
+function CollectionCard({
+  product,
+  shadeColors,
+}: {
+  product: ScrapedProduct;
+  shadeColors: Record<string, { hex: string; rgb: number[] }>;
+}) {
   const tagline = PRODUCT_TAGLINES[product.slug] || product.tagline || "";
   const displayPrice = product.price_from || product.price || "A$11.95";
   const image = product.images?.[0] || "";
-  
+
   // Get shade count from product data
   const shadeCount = product.shades?.length || 0;
-  
+
   // Get actual colors from first 3 shades
-  const sampleColors = product.shades?.slice(0, 3).map(shade => 
-    getShadeColor(shade.name, shadeColors)
-  ) || ['#ae1932', '#f5cdb6', '#5c666f'];
+  const sampleColors = product.shades
+    ?.slice(0, 3)
+    .map((shade) => getShadeColor(shade.name, shadeColors)) || [
+    "#ae1932",
+    "#f5cdb6",
+    "#5c666f",
+  ];
 
   return (
     <Link
@@ -436,14 +485,15 @@ function SectionHeader({ title, id }: { title: string; id: string }) {
 }
 
 export default function ColorPage() {
-  const { classics, collections, shades, otherProducts, shadeColors} = useLoaderData<typeof loader>();
-  const [activeTab, setActiveTab] = useState<string>("see-all");
+  const { classics, collections, shades, otherProducts, shadeColors } =
+    useLoaderData<typeof loader>();
+  const [activeTab, setActiveTab] = useState<string>("Mini Colours");
 
   // Combine all products and DEDUPLICATE by slug to prevent duplicates
   const allProducts = (() => {
     const seen = new Set<string>();
     const combined = [...classics, ...collections, ...shades, ...otherProducts];
-    return combined.filter(product => {
+    return combined.filter((product) => {
       if (!product?.slug || seen.has(product.slug)) {
         return false;
       }
@@ -454,75 +504,82 @@ export default function ColorPage() {
 
   // Smart categorization function - matches products to categories by title/slug
   const categorizeProduct = (product: ScrapedProduct): string[] => {
-    const titleLower = product.title?.toLowerCase() || '';
-    const slugLower = product.slug?.toLowerCase() || '';
+    const titleLower = product.title?.toLowerCase() || "";
+    const slugLower = product.slug?.toLowerCase() || "";
     const categories: string[] = [];
 
     // Base Coat - must have both "base" AND "coat" (or be 002)
-    const isBaseCoat = (titleLower.includes('base') && titleLower.includes('coat')) || 
-                       (titleLower.includes('002') && titleLower.includes('base'));
+    const isBaseCoat =
+      (titleLower.includes("base") && titleLower.includes("coat")) ||
+      (titleLower.includes("002") && titleLower.includes("base"));
     if (isBaseCoat) {
-      categories.push('Base Coat');
+      categories.push("Base Coat");
       return categories; // Base coat products are ONLY base coats
     }
 
     // Top Coat - must have both "top" AND "coat"
-    const isTopCoat = titleLower.includes('top') && titleLower.includes('coat');
+    const isTopCoat = titleLower.includes("top") && titleLower.includes("coat");
     if (isTopCoat) {
-      categories.push('Top Coat');
+      categories.push("Top Coat");
       return categories; // Top coat products are ONLY top coats
     }
 
     // Polish Dryer - specific products
-    const isPolishDryer = titleLower.includes('dryer') || titleLower.includes('mavadry');
+    const isPolishDryer =
+      titleLower.includes("dryer") || titleLower.includes("mavadry");
     if (isPolishDryer) {
-      categories.push('Polish Dryer');
+      categories.push("Polish Dryer");
       return categories;
     }
 
     // Remover - must have "remover"
-    const isRemover = titleLower.includes('remover');
+    const isRemover = titleLower.includes("remover");
     if (isRemover) {
-      categories.push('Remover');
+      categories.push("Remover");
       return categories;
     }
 
     // Mini Bio - must have "bio" and be nail-related
-    const isBio = (titleLower.includes('bio') && titleLower.includes('color')) || slugLower.includes('bio-color');
+    const isBio =
+      (titleLower.includes("bio") && titleLower.includes("color")) ||
+      slugLower.includes("bio-color");
     if (isBio) {
-      categories.push('Mini Bio');
+      categories.push("Mini Bio");
       // Bio products can also be in Collections
     }
 
     // Mini Colours Collection - themed collections (pop-wave, neo-nudes, etc.)
     const isCollection = COLLECTIONS_SLUGS.includes(product.slug);
     if (isCollection) {
-      categories.push('Mini Colours Collection');
+      categories.push("Mini Colours Collection");
       return categories; // Collections ONLY in Collections tab, not in Mini Colours
     }
 
     // Mini Colours - for products in classics, shades arrays OR nail polishes (NOT collections)
-    const isInClassicsOrShades = CLASSICS_SLUGS.includes(product.slug) || 
-                                  SHADES_SLUGS.includes(product.slug);
-    const isNailPolish = titleLower.includes('mini') || 
-                         (titleLower.includes('color') && !isBaseCoat && !isTopCoat) ||
-                         titleLower.includes('polish') ||
-                         titleLower.includes('shade');
-    
+    const isInClassicsOrShades =
+      CLASSICS_SLUGS.includes(product.slug) ||
+      SHADES_SLUGS.includes(product.slug);
+    const isNailPolish =
+      titleLower.includes("mini") ||
+      (titleLower.includes("color") && !isBaseCoat && !isTopCoat) ||
+      titleLower.includes("polish") ||
+      titleLower.includes("shade");
+
     if (isInClassicsOrShades || isNailPolish) {
-      categories.push('Mini Colours');
+      categories.push("Mini Colours");
     }
 
     return categories;
   };
 
   // Filter products based on active tab
-  const filteredProducts = activeTab === "see-all"
-    ? allProducts
-    : allProducts.filter(p => {
-        const categories = categorizeProduct(p);
-        return categories.includes(activeTab);
-      });
+  const filteredProducts =
+    activeTab === "see-all"
+      ? allProducts
+      : allProducts.filter((p) => {
+          const categories = categorizeProduct(p);
+          return categories.includes(activeTab);
+        });
 
   // Tab categories
   const tabs = [
@@ -542,47 +599,55 @@ export default function ColorPage() {
       case "see-all":
         return {
           title: "Nail Make-Up",
-          description: "Since 1962, MAVALA MINI COLOR nail polishes, in a handy and economical small format, have been your companion at all times. Their respectful formula offers easy application, perfect adhesion, shine and long-lasting hold! Nail polishes which also let the nails breathe and pass water vapour!"
+          description:
+            "Since 1962, MAVALA MINI COLOR nail polishes, in a handy and economical small format, have been your companion at all times. Their respectful formula offers easy application, perfect adhesion, shine and long-lasting hold! Nail polishes which also let the nails breathe and pass water vapour!",
         };
       case "Mini Colours":
         return {
           title: "MINI COLOR'S NAIL POLISHES",
-          description: "All Mavala nail polishes, base coats and top coats allow nails to breathe. They contain a resin extracted from wood which adheres to the nail surface in the form of a flexible and resistant film which remains porous, allowing oxygen and water vapour to pass through the nail polish, to the nail plate. They are developed with rigorously selected ingredients and are free from ingredients of animal origin, thus suitable for vegans. Their convenient and economical 5ml MINI format helps reduce waste, and allows you to choose a few shades from the 300+ available!"
+          description:
+            "All Mavala nail polishes, base coats and top coats allow nails to breathe. They contain a resin extracted from wood which adheres to the nail surface in the form of a flexible and resistant film which remains porous, allowing oxygen and water vapour to pass through the nail polish, to the nail plate. They are developed with rigorously selected ingredients and are free from ingredients of animal origin, thus suitable for vegans. Their convenient and economical 5ml MINI format helps reduce waste, and allows you to choose a few shades from the 300+ available!",
         };
       case "Mini Colours Collection":
         return {
           title: "MINI COLOR'S COLLECTIONS",
-          description: "Discover our curated themed collections, each featuring a harmonious selection of shades designed to complement each other. From the fresh energy of Pop Wave to the natural elegance of Neo Nudes, find your perfect palette."
+          description:
+            "Discover our curated themed collections, each featuring a harmonious selection of shades designed to complement each other. From the fresh energy of Pop Wave to the natural elegance of Neo Nudes, find your perfect palette.",
         };
       case "Base Coat":
         return {
           title: "Base Coat",
-          description: "MAVALA, nail care expert, offers nail polish base coats suitable for each type of nail to prevent yellowing and ensure perfect adhesion and long-lasting of the manicure. It's up to you to choose a long-lasting, moisturzing or fortifying base coat."
+          description:
+            "MAVALA, nail care expert, offers nail polish base coats suitable for each type of nail to prevent yellowing and ensure perfect adhesion and long-lasting of the manicure. It's up to you to choose a long-lasting, moisturzing or fortifying base coat.",
         };
       case "Top Coat":
         return {
           title: "Top Coat",
-          description: "MAVALA, nail care expert, offers top coats, depending on the desired result (shiny, matt, fast-drying, volumizing or even with a glitter effect) this essential coat prevents nail polish from flaking and allows it to resist shocks."
+          description:
+            "MAVALA, nail care expert, offers top coats, depending on the desired result (shiny, matt, fast-drying, volumizing or even with a glitter effect) this essential coat prevents nail polish from flaking and allows it to resist shocks.",
         };
       case "Mini Bio":
         return {
           title: "Mini Bio Color's",
-          description: "Make up your nails with ingredients of natural origin."
+          description: "Make up your nails with ingredients of natural origin.",
         };
       case "Polish Dryer":
         return {
           title: "Nail Polish Dryer",
-          description: "The active and busy woman does not have time to wait ... However, a nail polish dries completely in 24 hours! MAVALA offers drying accelerators which make nail polish touch-dry in a few seconds."
+          description:
+            "The active and busy woman does not have time to wait ... However, a nail polish dries completely in 24 hours! MAVALA offers drying accelerators which make nail polish touch-dry in a few seconds.",
         };
       case "Remover":
         return {
           title: "Nail Polish Remover",
-          description: "MAVALA offers gentle yet effective nail polish removers that respect your nails and surrounding skin."
+          description:
+            "MAVALA offers gentle yet effective nail polish removers that respect your nails and surrounding skin.",
         };
       default:
         return {
           title: "Nail Make-Up",
-          description: "Since 1962, MAVALA MINI COLOR nail polishes, in a handy and economical small format, have been your companion at all times."
+          description:
+            "Since 1962, MAVALA MINI COLOR nail polishes, in a handy and economical small format, have been your companion at all times.",
         };
     }
   };
@@ -591,18 +656,18 @@ export default function ColorPage() {
 
   return (
     <div className="min-h-screen bg-white pt-[90px] scroll-smooth">
-      {/* Hero Section - Reduced height from 95vh to 60vh */}
-      <section className="relative w-full h-[60vh] overflow-hidden">
+      {/* Hero Section - Reduced height for better mobile/desktop balance */}
+      <section className="relative w-full h-[40vh] md:h-[45vh] overflow-hidden">
         <img
           src="/Gemini_Generated_Image_6ifo0k6ifo0k6ifo.png"
           alt="Mavala Mini Color Nail Polishes"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "50% 50%" }}
+          style={{ objectPosition: "50% 40%" }}
         />
       </section>
 
       {/* Intro Section with Description */}
-      <section className="py-12 md:py-20 lg:py-24 px-4 md:px-8 bg-gradient-to-b from-white to-[#fafafa]">
+      <section className="pt-4 md:pt-6 lg:pt-8 pb-12 md:pb-20 lg:pb-24 px-4 md:px-8 bg-gradient-to-b from-white to-[#fafafa]">
         <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
           {/* Title - Dynamic based on active tab */}
           <h1 className="font-['Archivo'] text-[26px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-semibold text-[#ae1932] uppercase tracking-wide mb-6 md:mb-8 px-2">
@@ -614,18 +679,19 @@ export default function ColorPage() {
             {description}
           </p>
 
-          {/* Horizontal Tab Navigation Bar - Scrollable on mobile */}
-          <div className="w-full overflow-x-auto scrollbar-hide -mx-4 px-4">
-            <div className="inline-flex items-center gap-2 md:gap-3 bg-white border border-gray-200 rounded-xl p-2 md:p-3 shadow-sm min-w-max mx-auto">
+          {/* Horizontal Tab Navigation Bar - Wraps on mobile, single row on desktop */}
+          <div className="w-full flex justify-center px-4">
+            <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-2 md:gap-3 bg-white border border-gray-200 rounded-xl p-3 md:p-3 shadow-sm max-w-5xl">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`
-                    px-4 md:px-5 py-2.5 md:py-3 rounded-lg font-['Archivo'] text-[12px] md:text-[13px] font-medium uppercase tracking-wide transition-all duration-200 whitespace-nowrap
-                    ${activeTab === tab.id
-                      ? 'bg-[#ae1932] text-white shadow-md'
-                      : 'bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]'
+                    px-3 md:px-5 py-2 md:py-3 rounded-lg font-['Archivo'] text-[11px] md:text-[13px] font-medium uppercase tracking-wide transition-all duration-200 whitespace-nowrap
+                    ${
+                      activeTab === tab.id
+                        ? "bg-[#ae1932] text-white shadow-md"
+                        : "bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]"
                     }
                   `}
                 >
@@ -645,13 +711,26 @@ export default function ColorPage() {
               {filteredProducts.map((product) => {
                 // Safety check - ensure product has required fields
                 if (!product?.slug || !product?.title) return null;
-                
+
                 try {
-                  return COLLECTIONS_SLUGS.includes(product.slug)
-                    ? <CollectionCard key={product.slug} product={product} shadeColors={shadeColors} />
-                    : <ColorProductCard key={product.slug} product={product} shadeColors={shadeColors} />;
+                  return COLLECTIONS_SLUGS.includes(product.slug) ? (
+                    <CollectionCard
+                      key={product.slug}
+                      product={product}
+                      shadeColors={shadeColors}
+                    />
+                  ) : (
+                    <ColorProductCard
+                      key={product.slug}
+                      product={product}
+                      shadeColors={shadeColors}
+                    />
+                  );
                 } catch (error) {
-                  console.error(`Error rendering product ${product.slug}:`, error);
+                  console.error(
+                    `Error rendering product ${product.slug}:`,
+                    error
+                  );
                   return null;
                 }
               })}
