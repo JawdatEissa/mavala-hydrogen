@@ -668,10 +668,12 @@ export default function ColorPage() {
             {title}
           </h1>
 
-          {/* Description - Dynamic based on active tab */}
-          <p className="font-['Archivo'] text-[14px] sm:text-[15px] md:text-[17px] lg:text-[18px] text-gray-600 leading-relaxed mb-10 md:mb-14 max-w-4xl mx-auto px-2">
-            {description}
-          </p>
+          {/* Description - Dynamic based on active tab with min-height for smooth transitions */}
+          <div className="min-h-[80px] sm:min-h-[70px] md:min-h-[80px] flex items-start justify-center mb-10 md:mb-14 max-w-4xl mx-auto px-2">
+            <p className="font-['Archivo'] text-[14px] sm:text-[15px] md:text-[17px] lg:text-[18px] text-gray-600 leading-relaxed">
+              {description}
+            </p>
+          </div>
 
           {/* Horizontal Tab Navigation Bar - 2 rows on mobile, single row on desktop */}
           <div className="w-full flex justify-center px-2">
