@@ -1,0 +1,28 @@
+node_modules
+/.cache
+/build
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+dist
+*.tsbuildinfo
+
+# Exclude large image folders - use external CDN or cloud storage instead
+public/images/**
+public/images-backup-categories/**
+
+# Keep only essential static assets
+!public/images/
+!public/*.jpg
+!public/*.png
+!public/*.webp
+!public/*.mp4
+!public/favicon.ico
+!public/brand/**
+!public/diagnosis/**
+!public/face-concerns/**
+!public/nail-concerns/**
+!public/skin-concerns/**
+!public/quiz/**

@@ -1,8 +1,12 @@
 {
-  "buildCommand": "npx remix vite:build",
-  "outputDirectory": "build/client",
+  "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "installCommand": "npm install && chmod -R +x node_modules/.bin",
+  "installCommand": "npm install",
   "framework": null,
-  "regions": ["iad1"]
+  "regions": ["iad1"],
+  "functions": {
+    "app/server.js": {
+      "maxDuration": 10
+    }
+  }
 }
