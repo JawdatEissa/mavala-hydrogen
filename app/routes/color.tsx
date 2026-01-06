@@ -352,7 +352,7 @@ function ShadeCountIndicator({
   );
 }
 
-// Product Card Component for Color Page - With grey background for product images
+// Unified Product Card Component - Used for ALL products on color page
 function ColorProductCard({
   product,
   shadeColors,
@@ -360,7 +360,6 @@ function ColorProductCard({
   product: ScrapedProduct;
   shadeColors: Record<string, { hex: string; rgb: number[] }>;
 }) {
-  const tagline = PRODUCT_TAGLINES[product.slug] || product.tagline || "";
   const displayPrice = product.price_from || product.price || "A$11.95";
   const image = product.images?.[0] || "";
 
@@ -377,17 +376,14 @@ function ColorProductCard({
   ];
 
   return (
-    <Link
-      to={`/products/${product.slug}`}
-      className="group flex flex-col text-left"
-    >
-      {/* Image Container - Standardized grey background with 4:5 aspect ratio */}
-      <div className="relative overflow-hidden mb-4 w-full bg-[#f5f5f5] aspect-[4/5] flex items-center justify-center p-2 md:p-3 border-none outline-none shadow-none">
+    <Link to={`/products/${product.slug}`} className="group block">
+      {/* Image Container - Fixed aspect ratio */}
+      <div className="relative w-full bg-[#f5f5f5] aspect-[4/5] overflow-hidden mb-1.5">
         {image && (
           <img
             src={image}
             alt={product.title}
-            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 border-none outline-none"
+            className="absolute inset-0 w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
         )}
@@ -398,11 +394,10 @@ function ColorProductCard({
           </div>
         )}
       </div>
-      {/* Text aligned with left edge of image container */}
-      <h3 className="font-['Archivo'] text-[15px] font-medium text-[#272724] mb-1">
+      {/* Product info */}
+      <h3 className="font-['Archivo'] text-[14px] font-medium text-[#272724] mb-1 line-clamp-2">
         {product.title}
       </h3>
-      <p className="font-['Archivo'] text-[13px] text-gray-500 mb-1">Make-Up</p>
       <p className="font-['Archivo'] text-[13px] text-gray-400">
         {displayPrice.startsWith("from") ? displayPrice : `A${displayPrice}`}
       </p>
@@ -410,7 +405,7 @@ function ColorProductCard({
   );
 }
 
-// Collection Card Component - No grey background, promotional images displayed larger
+// Collection Card - Same structure, different image handling for promotional images
 function CollectionCard({
   product,
   shadeColors,
@@ -418,7 +413,6 @@ function CollectionCard({
   product: ScrapedProduct;
   shadeColors: Record<string, { hex: string; rgb: number[] }>;
 }) {
-  const tagline = PRODUCT_TAGLINES[product.slug] || product.tagline || "";
   const displayPrice = product.price_from || product.price || "A$11.95";
   const image = product.images?.[0] || "";
 
@@ -435,39 +429,31 @@ function CollectionCard({
   ];
 
   return (
-    <Link
-      to={`/products/${product.slug}`}
-      className="group flex flex-col text-left"
-    >
-      {/* Image Container - No background, promotional images */}
-      <div className="relative overflow-hidden mb-4 w-full aspect-[4/5] flex items-center justify-center">
+    <Link to={`/products/${product.slug}`} className="group block">
+      {/* Image Container - Fixed aspect ratio, same as ColorProductCard */}
+      <div className="relative w-full bg-[#f5f5f5] aspect-[4/5] overflow-hidden mb-1.5">
         {image && (
           <img
             src={image}
             alt={product.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
         )}
-        {/* Shade count indicator - bottom left with white background for visibility */}
+        {/* Shade count indicator */}
         {shadeCount > 0 && (
           <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-md">
             <ShadeCountIndicator count={shadeCount} colors={sampleColors} />
           </div>
         )}
       </div>
-      {/* Text aligned with left edge of image container */}
-      <h3 className="font-['Archivo'] text-[14px] font-semibold uppercase tracking-wide text-gray-900 mb-1">
+      {/* Product info */}
+      <h3 className="font-['Archivo'] text-[14px] font-medium text-[#272724] mb-1 line-clamp-2">
         {product.title}
       </h3>
-      <p className="font-['Archivo'] text-[14px] text-gray-600 mb-2">
+      <p className="font-['Archivo'] text-[13px] text-gray-400">
         {displayPrice.startsWith("from") ? displayPrice : `A${displayPrice}`}
       </p>
-      {tagline && (
-        <p className="font-['Archivo'] text-[13px] text-gray-500 leading-relaxed">
-          {tagline}
-        </p>
-      )}
     </Link>
   );
 }

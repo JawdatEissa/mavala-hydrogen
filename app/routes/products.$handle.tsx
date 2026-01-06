@@ -60,7 +60,7 @@ import colorMappingBlackShades from "../data/color_mapping_black-shades.json";
 // Map of slug to color mapping data
 const COLOR_MAPPINGS: Record<
   string,
-  { 
+  {
     shade_details?: Array<{ name: string; image: string; color?: string }>;
     color_groups?: Record<string, string[]>;
   }
@@ -132,9 +132,12 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
   // Load color mapping for this product (contains shades and color groups)
   const colorMapping = COLOR_MAPPINGS[handle] || null;
-  
+
   // Add shades from color mapping if product doesn't have them
-  if (colorMapping?.shade_details && (!product.shades || product.shades.length === 0)) {
+  if (
+    colorMapping?.shade_details &&
+    (!product.shades || product.shades.length === 0)
+  ) {
     product.shades = colorMapping.shade_details.map((s) => ({
       name: s.name,
       image: s.image,
@@ -142,7 +145,10 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   }
 
   // Use bundled shade colors data
-  const shadeColors = shadeColorsData as Record<string, { hex: string; rgb: number[] }>;
+  const shadeColors = shadeColorsData as Record<
+    string,
+    { hex: string; rgb: number[] }
+  >;
 
   // Helper to normalize strings for matching (handles accents)
   const normalizeForMatching = (str: string): string => {
@@ -158,9 +164,12 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
   // Load all shade images from pre-generated manifest (avoids fs scanning at runtime)
   const shadeImagesMap: Record<string, string[]> = {};
-  const manifest = imageManifest as { products: Record<string, string[]>; shades: Record<string, string[]> };
+  const manifest = imageManifest as {
+    products: Record<string, string[]>;
+    shades: Record<string, string[]>;
+  };
   const shadeFolderNames = Object.keys(manifest.shades);
-  
+
   if (Array.isArray(product.shades) && shadeFolderNames.length > 0) {
     product.shades.forEach((shade: { name: string }) => {
       const shadeName = normalizeForMatching(shade.name);
@@ -314,14 +323,27 @@ function ImageGallery({
   additionalImages,
   alt,
   isCollectionProduct = false,
+  isBioColors = false,
+  productSlug = "",
 }: {
   mainImage: string;
   additionalImages: string[];
   alt: string;
   isCollectionProduct?: boolean;
+  isBioColors?: boolean;
+  productSlug?: string;
 }) {
   // Background color: white for collection products, grey for others
   const bgColor = isCollectionProduct ? "bg-white" : "bg-[#f5f5f5]";
+
+  // Products with lifestyle images that should use object-cover for secondary images
+  const lifestyleImageProducts = [
+    "cream-colors",
+    "pearl-colors",
+    "nude-shades",
+  ];
+
+  const useObjectCover = lifestyleImageProducts.includes(productSlug);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isClosing, setIsClosing] = useState(false);
@@ -514,7 +536,9 @@ function ImageGallery({
               <img
                 src={img}
                 alt={`${alt} - ${idx + 2}`}
-                className="w-full aspect-square object-cover border-none outline-none"
+                className={`w-full aspect-square border-none outline-none ${
+                  useObjectCover ? "object-cover" : "object-contain"
+                }`}
                 loading="lazy"
               />
             </div>
@@ -1330,6 +1354,7 @@ export default function ProductPage() {
                 mainImage={images[0]}
                 additionalImages={images.slice(1)}
                 alt={product.title}
+                productSlug={product.slug}
                 isCollectionProduct={
                   product.slug.includes("pop-wave") ||
                   product.slug.includes("neo-nudes") ||
@@ -1352,6 +1377,7 @@ export default function ProductPage() {
                   product.slug.includes("new-look") ||
                   product.slug.includes("cosmic")
                 }
+                isBioColors={product.slug.includes("bio-colors")}
               />
             ) : (
               /* Single image product - still clickable with lightbox */
