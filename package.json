@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "remix vite:build",
+    "build": "npx remix vite:build",
     "preview": "vite preview",
     "start": "remix-serve ./build/server/index.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ."

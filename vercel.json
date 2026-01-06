@@ -1,8 +1,8 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npx remix vite:build",
   "outputDirectory": "build/client",
   "devCommand": "npm run dev",
-  "installCommand": "npm install",
+  "installCommand": "npm install && chmod -R +x node_modules/.bin",
   "framework": null,
   "regions": ["iad1"]
 }
