@@ -717,18 +717,18 @@ export default function ColorPage() {
               </div>
             </div>
 
-            {/* Desktop: Single row */}
-            <div className="hidden md:flex items-center justify-center gap-3 bg-white border border-gray-200 rounded-2xl p-3 shadow-sm max-w-5xl">
+            {/* Desktop: Single row - Original style */}
+            <div className="hidden md:flex items-center justify-center gap-3 bg-white border border-gray-200 rounded-xl p-3 shadow-sm max-w-5xl">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`
-                    px-5 py-3 rounded-full font-['Archivo'] text-[13px] font-semibold uppercase tracking-wide transition-all duration-200 whitespace-nowrap
+                    px-5 py-3 rounded-lg font-['Archivo'] text-[13px] font-medium uppercase tracking-wide transition-all duration-200 whitespace-nowrap
                     ${
                       activeTab === tab.id
-                        ? "bg-[#ae1932] text-white shadow-lg"
-                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                        ? "bg-[#ae1932] text-white shadow-md"
+                        : "bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]"
                     }
                   `}
                 >
