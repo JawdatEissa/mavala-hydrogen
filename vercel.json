@@ -9,7 +9,7 @@
   },
   "headers": [
     {
-      "source": "/images/(.*)",
+      "source": "/images/:path*",
       "headers": [
         {
           "key": "Cache-Control",
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "source": "/(.*\\.(jpg|jpeg|png|webp|gif|ico))",
+      "source": "/:path*.(jpg|jpeg|png|webp|gif|ico|svg)",
       "headers": [
         {
           "key": "Cache-Control",
