@@ -8,8 +8,10 @@ import {
   type ScrapedProduct,
 } from "../lib/scraped-products.server";
 import { ShadeDrawer } from "../components/ShadeDrawer";
-import { readFileSync, existsSync, readdirSync } from "fs";
+import { readFileSync, existsSync } from "fs";
 import { join } from "path";
+// Import pre-generated image manifest (avoids fs scanning at runtime)
+import imageManifest from "~/data/image-manifest.json";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { handle } = params;
@@ -73,63 +75,31 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
       .trim();
   };
 
-  // Load all shade images from scraped folders (SERVER-SIDE)
+  // Load all shade images from pre-generated manifest (avoids fs scanning at runtime)
   const shadeImagesMap: Record<string, string[]> = {};
-  try {
-    const shadesDir = join(process.cwd(), "public", "images", "shades");
-    if (existsSync(shadesDir) && Array.isArray(product.shades)) {
-      const shadeFolders = readdirSync(shadesDir, { withFileTypes: true })
-        .filter((dirent) => dirent.isDirectory())
-        .map((dirent) => dirent.name);
-
-      product.shades.forEach((shade: { name: string }) => {
-        const shadeName = normalizeForMatching(shade.name);
-        const matchingFolder = shadeFolders.find((folder) => {
-          const folderName = normalizeForMatching(folder);
-          if (folderName === shadeName) return true;
-          if (folderName.includes(shadeName) || shadeName.includes(folderName))
-            return true;
-          const shadeWords = shadeName.split(/\s+/);
-          return shadeWords.every((word) => word && folderName.includes(word));
-        });
-
-        if (matchingFolder) {
-          const folderPath = join(shadesDir, matchingFolder);
-          const allFiles = readdirSync(folderPath).filter((f) =>
-            /\.(jpg|jpeg|png|webp)$/i.test(f)
-          );
-
-          // Group files by base name and prefer PNG over JPG
-          const baseNames = new Map<string, string>();
-          for (const file of allFiles) {
-            const baseName = file.replace(/\.(jpg|jpeg|png|webp)$/i, "");
-            const ext = file.split(".").pop()?.toLowerCase() || "";
-
-            // If we don't have this base yet, or if current is PNG and existing isn't
-            if (
-              !baseNames.has(baseName) ||
-              (ext === "png" && !baseNames.get(baseName)?.endsWith(".png"))
-            ) {
-              baseNames.set(baseName, file);
-            }
-          }
-
-          // Get unique images sorted by base name, limit to 3
-          const uniqueImages = Array.from(baseNames.entries())
-            .sort((a, b) => a[0].localeCompare(b[0]))
-            .map(([_, filename]) => filename)
-            .slice(0, 3);
-
-          if (uniqueImages.length > 0) {
-            shadeImagesMap[shade.name] = uniqueImages.map(
-              (img) => `/images/shades/${matchingFolder}/${img}`
-            );
-          }
-        }
+  const manifest = imageManifest as { products: Record<string, string[]>; shades: Record<string, string[]> };
+  const shadeFolderNames = Object.keys(manifest.shades);
+  
+  if (Array.isArray(product.shades) && shadeFolderNames.length > 0) {
+    product.shades.forEach((shade: { name: string }) => {
+      const shadeName = normalizeForMatching(shade.name);
+      const matchingFolder = shadeFolderNames.find((folder) => {
+        const folderName = normalizeForMatching(folder);
+        if (folderName === shadeName) return true;
+        if (folderName.includes(shadeName) || shadeName.includes(folderName))
+          return true;
+        const shadeWords = shadeName.split(/\s+/);
+        return shadeWords.every((word) => word && folderName.includes(word));
       });
-    }
-  } catch (error) {
-    console.error("Error loading shade images:", error);
+
+      if (matchingFolder) {
+        const folderImages = manifest.shades[matchingFolder];
+        if (folderImages && folderImages.length > 0) {
+          // Limit to first 3 images
+          shadeImagesMap[shade.name] = folderImages.slice(0, 3);
+        }
+      }
+    });
   }
 
   return json({

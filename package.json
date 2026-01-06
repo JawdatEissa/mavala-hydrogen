@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
+    "prebuild": "node scripts/generate-image-manifest.mjs",
     "build": "npx remix vite:build",
     "preview": "vite preview",
     "start": "remix-serve ./build/server/index.js",

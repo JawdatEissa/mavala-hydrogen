@@ -1,10 +1,20 @@
 /**
  * Load and process scraped products from all_products.json
  * Server-side only - use in Remix loaders
+ * 
+ * NOTE: This file uses a pre-generated image manifest instead of scanning
+ * the filesystem at runtime. This is critical for Vercel deployment to avoid
+ * bundling all images into the serverless function.
+ * 
+ * Run `node scripts/generate-image-manifest.mjs` before building.
  */
 
-import { readFileSync, existsSync, readdirSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
+
+// Import the pre-generated image manifest
+// This is generated at build time by scripts/generate-image-manifest.mjs
+import imageManifest from '~/data/image-manifest.json';
 
 export interface ScrapedProduct {
   url: string;
@@ -30,6 +40,15 @@ export interface ScrapedProduct {
   [key: string]: any;
 }
 
+// Type for the image manifest
+interface ImageManifest {
+  products: Record<string, string[]>;
+  shades: Record<string, string[]>;
+  generated: string;
+}
+
+const manifest = imageManifest as ImageManifest;
+
 /**
  * Extract product title from slug if title is empty
  */
@@ -47,56 +66,24 @@ function extractTitleFromSlug(slug: string): string {
 }
 
 /**
- * Get ALL local image paths for a product
- * Checks public/images/{slug}/ folder
+ * Get ALL local image paths for a product from the pre-generated manifest
  * Returns array of paths relative to public folder
  */
 function getLocalImages(slug: string): string[] {
-  try {
-    // Try multiple possible folder names
-    const folderVariants = [
-      slug,
-      `all-products_${slug}`,
-    ];
-    
-    for (const folder of folderVariants) {
-      // Check in public/images folder (where images were copied)
-      const imageDirPath = join(process.cwd(), 'public', 'images', folder);
-      
-      if (existsSync(imageDirPath)) {
-        const files = readdirSync(imageDirPath);
-        const imageFiles = files
-          .filter((f: string) => /\.(jpg|jpeg|png|webp)$/i.test(f))
-          .sort();
-        
-        // Group by base name and prefer PNG over JPG
-        const baseNames = new Map<string, string>();
-        for (const file of imageFiles) {
-          const baseName = file.replace(/\.(jpg|jpeg|png|webp)$/i, '');
-          const ext = file.split('.').pop()?.toLowerCase() || '';
-          
-          // If we don't have this base yet, or if current is PNG and existing isn't
-          if (!baseNames.has(baseName) || (ext === 'png' && !baseNames.get(baseName)?.endsWith('.png'))) {
-            baseNames.set(baseName, file);
-          }
-        }
-        
-        // Get unique images sorted by base name
-        const uniqueImages = Array.from(baseNames.entries())
-          .sort((a, b) => a[0].localeCompare(b[0]))
-          .map(([_, filename]) => filename);
-        
-        if (uniqueImages.length > 0) {
-          // Return all image paths relative to public folder
-          return uniqueImages.map(f => `/images/${folder}/${f}`);
-        }
-      }
+  // Try multiple possible folder names
+  const folderVariants = [
+    slug,
+    `all-products_${slug}`,
+  ];
+  
+  for (const folder of folderVariants) {
+    const images = manifest.products[folder];
+    if (images && images.length > 0) {
+      return images;
     }
-    
-    return [];
-  } catch {
-    return [];
   }
+  
+  return [];
 }
 
 /**
@@ -136,7 +123,7 @@ export function loadScrapedProducts(): ScrapedProduct[] {
         product.title = extractTitleFromSlug(product.slug);
       }
       
-      // Get local images for this product
+      // Get local images for this product from manifest
       const localImages = getLocalImages(product.slug);
       
       // Use local images if available, otherwise keep original
@@ -164,17 +151,13 @@ function convertToLocalImage(cdnUrl: string, slug: string, localImagesList: stri
   }
   
   // Extract filename from CDN URL
-  // Example: .../1501470975844-SV3GXW4NHOQA7RP4I9WB/Cream.jpg?format=1500w
   try {
     const url = new URL(cdnUrl);
     const pathParts = url.pathname.split('/');
     let filename = pathParts[pathParts.length - 1];
-    // Remove query params
     filename = filename.split('?')[0];
-    // Decode URL encoding (e.g., %2B -> +)
     filename = decodeURIComponent(filename);
     
-    // Find matching local image by filename (case-insensitive, partial match)
     const filenameClean = filename.toLowerCase().replace(/[^a-z0-9]/g, '');
     const matchingLocal = localImagesList.find(localPath => {
       const localFilename = localPath.split('/').pop()?.toLowerCase().replace(/[^a-z0-9]/g, '') || '';
@@ -204,7 +187,7 @@ export function getProductBySlug(slug: string): ScrapedProduct | null {
     return null;
   }
   
-  // Get local images for this product
+  // Get local images for this product from manifest
   const localImages = getLocalImages(slug);
   
   // Try to load detailed product data
@@ -226,26 +209,22 @@ export function getProductBySlug(slug: string): ScrapedProduct | null {
       
       // Convert all image URLs to local paths
       if (localImages.length > 0) {
-        // Replace main images
         mergedProduct.images = localImages;
         mergedProduct.local_images = localImages;
         
-        // Replace gallery_images with local images
         if (mergedProduct.gallery_images) {
           mergedProduct.gallery_images = localImages;
         }
         
-        // Replace thumbnail_images with local images  
         if (mergedProduct.thumbnail_images) {
           mergedProduct.thumbnail_images = localImages;
         }
         
-        // Map shade images to scraped local shade images
+        // Map shade images to local shade images from manifest
         if (Array.isArray(mergedProduct.shades)) {
           mergedProduct.shades = mapShadeImagesToLocal(mergedProduct.shades);
         }
         
-        // Map new_shades images if present
         if (mergedProduct.new_shades && Array.isArray((mergedProduct.new_shades as any).shades)) {
           const newShades = mergedProduct.new_shades as any;
           newShades.shades = mapShadeImagesToLocal(newShades.shades);
@@ -285,82 +264,42 @@ function normalizeForMatching(str: string): string {
 }
 
 /**
- * Map shade images to scraped local images from public/images/shades/
+ * Map shade images to local images from the pre-generated manifest
  * Matches shade names to folder names like "9 LISBOA"
- * ONLY returns shades that have local images (filters out "Special" category shades from mavala.au)
+ * ONLY returns shades that have local images
  */
 function mapShadeImagesToLocal(shades: Array<{ name: string; image: string }>): Array<{ name: string; image: string }> {
-  try {
-    const shadesDir = join(process.cwd(), 'public', 'images', 'shades');
-    
-    if (!existsSync(shadesDir)) {
-      return []; // No scraped shades folder, return empty (we only want local images)
-    }
-    
-    // Get all shade folders
-    const shadeFolders = readdirSync(shadesDir, { withFileTypes: true })
-      .filter(dirent => dirent.isDirectory())
-      .map(dirent => dirent.name);
-    
-    // Map each shade to its local images and filter out those without local images
-    const mappedShades: Array<{ name: string; image: string }> = [];
-    
-    for (const shade of shades) {
-      // Try to find matching folder
-      // Shade name might be "9. LISBOA" or "LISBOA" or "22 GENEVE"
-      // Folder name might be "9 LISBOA" or "22 GENÈVE" (with accents)
-      const shadeName = normalizeForMatching(shade.name);
-      
-      const matchingFolder = shadeFolders.find(folder => {
-        const folderName = normalizeForMatching(folder);
-        // Try exact match first
-        if (folderName === shadeName) return true;
-        // Try partial match (e.g., "9 LISBOA" contains "LISBOA")
-        if (folderName.includes(shadeName) || shadeName.includes(folderName)) return true;
-        // Try matching just the shade number and city name
-        const shadeWords = shadeName.split(/\s+/);
-        return shadeWords.every(word => word && folderName.includes(word));
-      });
-      
-      if (matchingFolder) {
-        // Get first image from this folder, preferring PNG over JPG
-        const folderPath = join(shadesDir, matchingFolder);
-        const allFiles = readdirSync(folderPath)
-          .filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f));
-        
-        // Group files by base name and prefer PNG over JPG
-        const baseNames = new Map<string, string>();
-        for (const file of allFiles) {
-          const baseName = file.replace(/\.(jpg|jpeg|png|webp)$/i, '');
-          const ext = file.split('.').pop()?.toLowerCase() || '';
-          
-          // If we don't have this base yet, or if current is PNG and existing isn't
-          if (!baseNames.has(baseName) || (ext === 'png' && !baseNames.get(baseName)?.endsWith('.png'))) {
-            baseNames.set(baseName, file);
-          }
-        }
-        
-        // Get the first image (sorted by base name)
-        const sortedImages = Array.from(baseNames.entries())
-          .sort((a, b) => a[0].localeCompare(b[0]))
-          .map(([_, filename]) => filename);
-        
-        if (sortedImages.length > 0) {
-          // Return path to first image - only include shades with local images
-          mappedShades.push({
-            ...shade,
-            image: `/images/shades/${matchingFolder}/${sortedImages[0]}`
-          });
-        }
-      }
-      // If no matching folder found, shade is filtered out (not included in result)
-    }
-    
-    return mappedShades;
-  } catch (error) {
-    console.error('Error mapping shade images:', error);
-    return []; // Return empty on error - only want local images
+  const shadeFolderNames = Object.keys(manifest.shades);
+  
+  if (shadeFolderNames.length === 0) {
+    return []; // No shades in manifest
   }
+  
+  const mappedShades: Array<{ name: string; image: string }> = [];
+  
+  for (const shade of shades) {
+    const shadeName = normalizeForMatching(shade.name);
+    
+    const matchingFolder = shadeFolderNames.find(folder => {
+      const folderName = normalizeForMatching(folder);
+      if (folderName === shadeName) return true;
+      if (folderName.includes(shadeName) || shadeName.includes(folderName)) return true;
+      const shadeWords = shadeName.split(/\s+/);
+      return shadeWords.every(word => word && folderName.includes(word));
+    });
+    
+    if (matchingFolder) {
+      const folderImages = manifest.shades[matchingFolder];
+      if (folderImages && folderImages.length > 0) {
+        mappedShades.push({
+          ...shade,
+          image: folderImages[0] // First image in the folder
+        });
+      }
+    }
+  }
+  
+  return mappedShades;
 }
 
 /**
@@ -384,7 +323,6 @@ export function getProductsByCategory(
     return false;
   });
   
-  // If we found products by category, return them
   if (matchedByCategory.length > 0) {
     return matchedByCategory;
   }
