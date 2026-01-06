@@ -651,7 +651,7 @@ export default function ColorPage() {
   return (
     <div className="min-h-screen bg-white pt-[90px] scroll-smooth">
       {/* Hero Section - Reduced height for better mobile/desktop balance */}
-      <section className="relative w-full h-[32vh] md:h-[36vh] overflow-hidden">
+      <section className="relative w-full h-[22vh] md:h-[36vh] overflow-hidden">
         <img
           src="/Gemini_Generated_Image_6ifo0k6ifo0k6ifo.png"
           alt="Mavala Mini Color Nail Polishes"
@@ -661,7 +661,7 @@ export default function ColorPage() {
       </section>
 
       {/* Navigation Bar Section - Always stable, above title/description */}
-      <section className="py-5 md:py-6 px-4 md:px-8 bg-white">
+      <section className="py-3 md:py-5 px-4 md:px-8 bg-white">
         <div className="max-w-5xl mx-auto flex justify-center">
           {/* Mobile: 2-row pill-style layout */}
           <div className="md:hidden flex flex-col gap-2 w-full max-w-md">
@@ -728,7 +728,7 @@ export default function ColorPage() {
       </section>
 
       {/* Title and Description Section - Content changes here, below nav bar */}
-      <section className="pt-4 md:pt-6 pb-6 md:pb-10 px-4 md:px-8 bg-gradient-to-b from-white to-[#fafafa]">
+      <section className="pt-2 md:pt-4 pb-6 md:pb-10 px-4 md:px-8 bg-gradient-to-b from-white to-[#fafafa]">
         <div className="max-w-4xl mx-auto text-center">
           {/* Title - Dynamic based on active tab */}
           <h1 className="font-['Archivo'] text-[26px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-semibold text-[#ae1932] uppercase tracking-wide px-2 mb-4">
