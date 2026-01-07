@@ -7,7 +7,12 @@ interface Shade {
 
 interface ColorMapping {
   color_groups?: Record<string, string[]>;
-  shade_details?: Record<string, { main_color: string }>;
+  shade_details?: Array<{
+    name: string;
+    image: string;
+    color?: string;
+    main_color?: string;
+  }>;
 }
 
 interface ShadeDrawerProps {
@@ -65,9 +70,12 @@ export function ShadeDrawer({
   useEffect(() => {
     if (isOpen && selectedShade && colorMapping?.shade_details) {
       // Find the main color of the selected shade
-      const shadeDetail = colorMapping.shade_details[selectedShade];
-      if (shadeDetail?.main_color) {
-        setSelectedColorFilter(shadeDetail.main_color);
+      const shadeDetail = Array.isArray(colorMapping.shade_details)
+        ? colorMapping.shade_details.find((s) => s.name === selectedShade)
+        : undefined;
+      const mainColor = shadeDetail?.main_color || shadeDetail?.color;
+      if (mainColor) {
+        setSelectedColorFilter(mainColor);
       }
     }
   }, [isOpen, selectedShade, colorMapping]);

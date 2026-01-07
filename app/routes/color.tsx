@@ -228,8 +228,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   const getProductsBySlug = (slugs: string[]) => {
     return slugs
       .map((slug) => productMap.get(slug))
-      .filter(Boolean)
-      .map(addShadesToProduct) as ScrapedProduct[];
+      .filter((product): product is ScrapedProduct => Boolean(product))
+      .map(addShadesToProduct);
   };
 
   // Load products directly from the map - NO additional file reads!
@@ -369,11 +369,9 @@ function ColorProductCard({
   // Get actual colors from first 3 shades
   const sampleColors = product.shades
     ?.slice(0, 3)
-    .map((shade) => getShadeColor(shade.name, shadeColors)) || [
-    "#ae1932",
-    "#f5cdb6",
-    "#5c666f",
-  ];
+    .map((shade: { name: string }) =>
+      getShadeColor(shade.name, shadeColors)
+    ) || ["#ae1932", "#f5cdb6", "#5c666f"];
 
   return (
     <Link to={`/products/${product.slug}`} className="group block">
@@ -422,11 +420,9 @@ function CollectionCard({
   // Get actual colors from first 3 shades
   const sampleColors = product.shades
     ?.slice(0, 3)
-    .map((shade) => getShadeColor(shade.name, shadeColors)) || [
-    "#ae1932",
-    "#f5cdb6",
-    "#5c666f",
-  ];
+    .map((shade: { name: string }) =>
+      getShadeColor(shade.name, shadeColors)
+    ) || ["#ae1932", "#f5cdb6", "#5c666f"];
 
   return (
     <Link to={`/products/${product.slug}`} className="group block">

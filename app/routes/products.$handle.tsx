@@ -344,6 +344,17 @@ function ImageGallery({
   ];
 
   const useObjectCover = lifestyleImageProducts.includes(productSlug);
+  const bioGridRowsClass = isBioColors ? "md:grid-rows-2 md:items-stretch" : "";
+  const bioFillHeightClass = isBioColors ? "h-full" : "";
+  const mainImageClass = isBioColors
+    ? "w-full h-full object-cover border-none outline-none"
+    : "w-full h-full object-contain border-none outline-none";
+  const additionalImageClass = isBioColors
+    ? "w-full h-full object-cover border-none outline-none"
+    : `w-full aspect-square border-none outline-none ${
+        useObjectCover ? "object-cover" : "object-contain"
+      }`;
+  const bioGridStyle = isBioColors ? { aspectRatio: "4/3" } : undefined;
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isClosing, setIsClosing] = useState(false);
@@ -512,16 +523,19 @@ function ImageGallery({
       {/* DESKTOP LAYOUT - Grid with main image left, additional images right (if multiple) */}
       {showThumbnails && additionalImages.length >= 2 ? (
         /* 2+ additional images: Standard grid layout */
-        <div className="hidden md:grid md:grid-cols-[60%_40%] gap-2">
+        <div
+          className={`hidden md:grid md:grid-cols-[60%_40%] gap-2 ${bioGridRowsClass}`}
+          style={bioGridStyle}
+        >
           {/* Main Large Image - Left - Clickable */}
           <div
-            className={`${bgColor} border-none outline-none shadow-none row-span-2 cursor-pointer hover:opacity-95 transition-opacity`}
+            className={`${bgColor} border-none outline-none shadow-none row-span-2 cursor-pointer hover:opacity-95 transition-opacity ${bioFillHeightClass}`}
             onClick={() => openLightbox(0)}
           >
             <img
               src={mainImage}
               alt={alt}
-              className="w-full h-full object-contain border-none outline-none"
+              className={mainImageClass}
               style={{ imageRendering: "-webkit-optimize-contrast" }}
             />
           </div>
@@ -530,15 +544,13 @@ function ImageGallery({
           {additionalImages.slice(0, 2).map((img, idx) => (
             <div
               key={idx}
-              className={`${bgColor} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity`}
+              className={`${bgColor} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity ${bioFillHeightClass}`}
               onClick={() => openLightbox(idx + 1)}
             >
               <img
                 src={img}
                 alt={`${alt} - ${idx + 2}`}
-                className={`w-full aspect-square border-none outline-none ${
-                  useObjectCover ? "object-cover" : "object-contain"
-                }`}
+                className={additionalImageClass}
                 loading="lazy"
               />
             </div>
@@ -555,7 +567,11 @@ function ImageGallery({
             <img
               src={mainImage}
               alt={alt}
-              className="w-full object-contain border-none outline-none"
+              className={
+                isBioColors
+                  ? "w-full h-full object-cover border-none outline-none"
+                  : "w-full object-contain border-none outline-none"
+              }
               style={{
                 imageRendering: "-webkit-optimize-contrast",
                 aspectRatio: "4/5",
@@ -571,8 +587,12 @@ function ImageGallery({
             <img
               src={additionalImages[0]}
               alt={`${alt} - 2`}
-              className="w-full object-cover border-none outline-none"
-              style={{ aspectRatio: "4/5" }}
+              className={
+                isBioColors
+                  ? "w-full h-full object-cover border-none outline-none"
+                  : "w-full object-cover border-none outline-none"
+              }
+              style={isBioColors ? undefined : { aspectRatio: "4/5" }}
               loading="lazy"
             />
           </div>
@@ -586,7 +606,11 @@ function ImageGallery({
           <img
             src={mainImage}
             alt={alt}
-            className="w-full aspect-square object-contain border-none outline-none"
+            className={
+              isBioColors
+                ? "w-full aspect-square object-cover border-none outline-none"
+                : "w-full aspect-square object-contain border-none outline-none"
+            }
             style={{ imageRendering: "-webkit-optimize-contrast" }}
           />
         </div>
@@ -815,10 +839,11 @@ export default function ProductPage() {
   let shadesByColor: Record<string, typeof shades> = {};
   let availableMainColors: Array<{ name: string }> = [];
 
-  if (colorMapping && colorMapping.color_groups) {
+  const colorGroups = colorMapping?.color_groups;
+  if (colorGroups) {
     // Use official color groups from mapping
-    Object.keys(colorMapping.color_groups).forEach((colorName) => {
-      const shadeNames = colorMapping.color_groups[colorName];
+    Object.keys(colorGroups).forEach((colorName) => {
+      const shadeNames = colorGroups[colorName];
       shadesByColor[colorName] = shades.filter((shade) =>
         shadeNames.includes(shade.name)
       );
