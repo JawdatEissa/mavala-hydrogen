@@ -224,15 +224,20 @@ export default function Homepage() {
               className="overflow-x-auto scrollbar-hide scroll-container snap-x snap-mandatory scroll-smooth"
             >
               <div
-                className="flex gap-3 md:gap-6 px-4 md:px-6"
+                className="flex gap-2 md:gap-4 px-4 md:px-6"
                 style={{ WebkitOverflowScrolling: "touch" }}
               >
                 {/* Product 1: STOP */}
                 <Link
                   to="/products/mavala-stop"
-                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
+                  className="flex flex-col group flex-shrink-0 w-[65%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
                 >
-                  <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
+                  <div className="relative w-full bg-[#f5f5f5] p-4 md:p-10 flex justify-center items-center aspect-[4/5] overflow-hidden">
+                    <div className="absolute top-3 left-3 z-10 bg-white border border-gray-200 rounded-sm px-3 py-1 shadow-sm">
+                      <span className="font-['Archivo'] text-[10px] font-medium uppercase tracking-[0.14em] text-[#272724]">
+                        BESTSELLERS
+                      </span>
+                    </div>
                     <img
                       src="/bestseller-stop.png"
                       alt="Mavala Stop"
@@ -247,9 +252,14 @@ export default function Homepage() {
                 {/* Product 2: K+ */}
                 <Link
                   to="/products/mavala-scientifique-k"
-                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
+                  className="flex flex-col group flex-shrink-0 w-[65%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
                 >
-                  <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
+                  <div className="relative w-full bg-[#f5f5f5] p-4 md:p-10 flex justify-center items-center aspect-[4/5] overflow-hidden">
+                    <div className="absolute top-3 left-3 z-10 bg-white border border-gray-200 rounded-sm px-3 py-1 shadow-sm">
+                      <span className="font-['Archivo'] text-[10px] font-medium uppercase tracking-[0.14em] text-[#272724]">
+                        BESTSELLERS
+                      </span>
+                    </div>
                     <img
                       src="/bestseller-k-plus.png"
                       alt="Scientifique K+"
@@ -264,9 +274,14 @@ export default function Homepage() {
                 {/* Product 3: Nailactan */}
                 <Link
                   to="/products/nailactan-1"
-                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
+                  className="flex flex-col group flex-shrink-0 w-[65%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
                 >
-                  <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
+                  <div className="relative w-full bg-[#f5f5f5] p-4 md:p-10 flex justify-center items-center aspect-[4/5] overflow-hidden">
+                    <div className="absolute top-3 left-3 z-10 bg-white border border-gray-200 rounded-sm px-3 py-1 shadow-sm">
+                      <span className="font-['Archivo'] text-[10px] font-medium uppercase tracking-[0.14em] text-[#272724]">
+                        BESTSELLERS
+                      </span>
+                    </div>
                     <img
                       src="/bestseller-nailactan.png"
                       alt="Nailactan"
@@ -281,9 +296,14 @@ export default function Homepage() {
                 {/* Product 4: Double Lash */}
                 <Link
                   to="/products/double-lash"
-                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
+                  className="flex flex-col group flex-shrink-0 w-[65%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
                 >
-                  <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
+                  <div className="relative w-full bg-[#f5f5f5] p-4 md:p-10 flex justify-center items-center aspect-[4/5] overflow-hidden">
+                    <div className="absolute top-3 left-3 z-10 bg-white border border-gray-200 rounded-sm px-3 py-1 shadow-sm">
+                      <span className="font-['Archivo'] text-[10px] font-medium uppercase tracking-[0.14em] text-[#272724]">
+                        BESTSELLERS
+                      </span>
+                    </div>
                     <img
                       src="/bestseller-double-lash.png"
                       alt="Double Lash"
@@ -298,9 +318,14 @@ export default function Homepage() {
                 {/* Product 5: Nail White Crayon */}
                 <Link
                   to="/products/nail-white-crayon"
-                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
+                  className="flex flex-col group flex-shrink-0 w-[65%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
                 >
-                  <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
+                  <div className="relative w-full bg-[#f5f5f5] p-4 md:p-10 flex justify-center items-center aspect-[4/5] overflow-hidden">
+                    <div className="absolute top-3 left-3 z-10 bg-white border border-gray-200 rounded-sm px-3 py-1 shadow-sm">
+                      <span className="font-['Archivo'] text-[10px] font-medium uppercase tracking-[0.14em] text-[#272724]">
+                        BESTSELLERS
+                      </span>
+                    </div>
                     <img
                       src="/bestseller-nail-white-crayon.png"
                       alt="Nail White Crayon"
@@ -315,9 +340,14 @@ export default function Homepage() {
                 {/* Product 6: Double Brow */}
                 <Link
                   to="/products/double-brow"
-                  className="flex flex-col group flex-shrink-0 w-[85%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
+                  className="flex flex-col group flex-shrink-0 w-[65%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
                 >
-                  <div className="w-full bg-[#f5f5f5] p-6 md:p-10 flex justify-center items-center aspect-[5/6] overflow-hidden">
+                  <div className="relative w-full bg-[#f5f5f5] p-4 md:p-10 flex justify-center items-center aspect-[4/5] overflow-hidden">
+                    <div className="absolute top-3 left-3 z-10 bg-white border border-gray-200 rounded-sm px-3 py-1 shadow-sm">
+                      <span className="font-['Archivo'] text-[10px] font-medium uppercase tracking-[0.14em] text-[#272724]">
+                        BESTSELLERS
+                      </span>
+                    </div>
                     <img
                       src="/images/double-brow/01_Double-Brow.png"
                       alt="Double Brow"
