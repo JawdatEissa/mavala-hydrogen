@@ -66,35 +66,20 @@ export function Footer() {
       {/* Contact line */}
       <div className="max-w-6xl mx-auto px-4 md:px-8 mt-6 text-center text-[15px] font-['Archivo']">
         Need help? Contact us on{" "}
-        <a href="tel:+61396451933" className="text-[#ae1932] hover:underline">
-          (03) 9645 1933
+        <a href="tel:+12362466090" className="text-[#ae1932] hover:underline">
+          +1 236 246 6090
         </a>{" "}
         or by email at{" "}
         <a
-          href="mailto:info@mavala.com.au"
+          href="mailto:info@mavala.ca"
           className="text-[#ae1932] hover:underline"
         >
-          info@mavala.com.au
+          info@mavala.ca
         </a>
       </div>
 
-      {/* Social + newsletter */}
+      {/* Newsletter */}
       <div className="max-w-6xl mx-auto px-4 md:px-8 mt-6 flex flex-col items-center gap-4">
-        <div className="flex flex-wrap justify-center gap-4 text-gray-800">
-          {["#", "#", "#", "#", "#", "#"].map((href, idx) => (
-              <a
-              key={idx}
-              href={href}
-              className="w-6 h-6 text-gray-800 hover:text-[#ae1932] transition-colors"
-              >
-              <span className="sr-only">social</span>
-                <svg fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
-                </svg>
-              </a>
-          ))}
-        </div>
-
         <div className="w-full flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8">
           <div className="flex w-full max-w-xl md:max-w-md">
             <input
@@ -132,25 +117,25 @@ export function Footer() {
       {/* Address & distributor */}
       <div className="max-w-6xl mx-auto px-4 md:px-8 mt-10 pb-10 text-center text-[14px] font-['Archivo'] tracking-[0.2px]">
         <div className="flex flex-wrap justify-center gap-2 md:gap-4">
-          <span>Mavala Canada, 11/56 Wirraway Drive, Port Melbourne, VIC, 3207, Canada</span>
+          <span>Mavala Canada, 7802 Express St, Burnaby BC, V5A 1T4, Canada</span>
           <span className="text-gray-400">|</span>
-          <a href="tel:+61396451933" className="text-[#ae1932] hover:underline">
-            (03) 9645 1933
+          <a href="tel:+12362466090" className="text-[#ae1932] hover:underline">
+            (+1) 236 246 6090
           </a>
           <span className="text-gray-400">|</span>
-          <a href="mailto:info@mavala.com.au" className="text-[#ae1932] hover:underline">
-            info@mavala.com.au
+          <a href="mailto:info@mavala.ca" className="text-[#ae1932] hover:underline">
+            info@mavala.ca
             </a>
         </div>
         <div className="mt-3">
           Distributed by{" "}
           <a
-            href="http://www.cosimer.com.au"
+            href="https://www.vanirmerchants.com"
             target="_blank"
             rel="noreferrer"
             className="text-[#ae1932] hover:underline"
           >
-            Cosimer Pty Ltd
+            Vanir Merchants Incorporated
           </a>
           , authorised distributor of{" "}
           <a

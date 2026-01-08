@@ -319,7 +319,7 @@ export default function NailCarePage() {
           </div>
 
           {/* Desktop: Single row (same as /color) */}
-          <div className="hidden md:flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-2xl p-[10.5px] shadow-sm w-full">
+          <div className="hidden md:flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-2xl p-[10.5px] shadow-sm w-fit max-w-full">
             {categories.map((tab) => (
               <button
                 key={tab.id}

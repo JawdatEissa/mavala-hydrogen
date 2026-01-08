@@ -175,10 +175,3 @@ export default function EyeBeautyPage() {
     </div>
   );
 }
-
-
-
-
-
-
-
