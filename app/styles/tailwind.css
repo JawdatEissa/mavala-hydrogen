@@ -62,6 +62,9 @@
   /* Product Card */
   .product-card {
     @apply relative text-center;
+    font-family: var(--font-family-default, "Archivo", sans-serif);
+    font-weight: 300;
+    color: var(--color-dark, #272724);
   }
   
   .product-card-image {
@@ -73,7 +76,38 @@
   }
   
   .product-card-title {
-    @apply text-xs uppercase tracking-wider text-gray-800 font-normal;
+    font-family: var(--font-family-default, "Archivo", system-ui, serif);
+    font-weight: 300;
+    color: var(--color-dark, #272724);
+    letter-spacing: 0;
+    font-size: var(--font-size-md, 1.6rem);
+    line-height: 1.2;
+    text-transform: none;
+  }
+
+  .product-card-subtitle {
+    font-family: var(--font-family-default, "Archivo", system-ui, serif);
+    font-weight: 300;
+    color: var(--color-gray-medium, #9ca3af);
+    font-size: var(--font-size-sm, 1.3rem);
+    line-height: 1.2;
+  }
+
+  .product-card-price-current {
+    font-family: var(--font-family-default, "Archivo", system-ui, serif);
+    font-weight: 400;
+    color: var(--color-dark-red, #a22034);
+    font-size: var(--font-size-sm, 1.4rem);
+    line-height: 1.2;
+  }
+
+  .product-card-price-compare {
+    font-family: var(--font-family-default, "Archivo", system-ui, serif);
+    font-weight: 300;
+    color: var(--color-gray-medium, #9ca3af);
+    font-size: var(--font-size-sm, 1.4rem);
+    line-height: 1.2;
+    text-decoration: line-through;
   }
   
   .product-card-price {
@@ -93,6 +127,17 @@
   .category-card-title {
     @apply absolute inset-0 flex items-center justify-center text-white text-xl md:text-2xl font-light uppercase tracking-[0.15em];
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+}
+
+@layer components {
+  /* Product Page Title (H1) - Design System */
+  .product-page-title {
+    font-family: var(--font-family-default, "Archivo", system-ui, serif);
+    font-weight: 300;
+    color: var(--color-dark, #272724);
+    letter-spacing: 0;
+    font-size: var(--font-size-xl, 2.4rem);
   }
 }
 

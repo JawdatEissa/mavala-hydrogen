@@ -362,6 +362,10 @@ function ColorProductCard({
 }) {
   const displayPrice = product.price_from || product.price || "A$11.95";
   const image = product.images?.[0] || "";
+  const displaySubtitle =
+    Array.isArray(product.categories) && product.categories.length > 0
+      ? String(product.categories[0])
+      : "";
 
   // Get shade count from product data
   const shadeCount = product.shades?.length || 0;
@@ -374,7 +378,7 @@ function ColorProductCard({
     ) || ["#ae1932", "#f5cdb6", "#5c666f"];
 
   return (
-    <Link to={`/products/${product.slug}`} className="group block">
+    <Link to={`/products/${product.slug}`} className="product-card group block">
       {/* Image Container - Fixed aspect ratio */}
       <div className="relative w-full bg-[#f5f5f5] aspect-[4/5] overflow-hidden mb-1.5">
         {image && (
@@ -393,12 +397,13 @@ function ColorProductCard({
         )}
       </div>
       {/* Product info */}
-      <h3 className="font-['Archivo'] text-[14px] font-medium text-[#272724] mb-1 line-clamp-2">
-        {product.title}
-      </h3>
-      <p className="font-['Archivo'] text-[13px] text-gray-400">
+      <h3 className="product-card-title mb-1 line-clamp-2">{product.title}</h3>
+      {displaySubtitle && (
+        <p className="product-card-subtitle mb-1">{displaySubtitle}</p>
+      )}
+      <span className="product-card-price-current">
         {displayPrice.startsWith("from") ? displayPrice : `A${displayPrice}`}
-      </p>
+      </span>
     </Link>
   );
 }
@@ -413,6 +418,10 @@ function CollectionCard({
 }) {
   const displayPrice = product.price_from || product.price || "A$11.95";
   const image = product.images?.[0] || "";
+  const displaySubtitle =
+    Array.isArray(product.categories) && product.categories.length > 0
+      ? String(product.categories[0])
+      : "";
 
   // Get shade count from product data
   const shadeCount = product.shades?.length || 0;
@@ -425,7 +434,7 @@ function CollectionCard({
     ) || ["#ae1932", "#f5cdb6", "#5c666f"];
 
   return (
-    <Link to={`/products/${product.slug}`} className="group block">
+    <Link to={`/products/${product.slug}`} className="product-card group block">
       {/* Image Container - Fixed aspect ratio, same as ColorProductCard */}
       <div className="relative w-full bg-[#f5f5f5] aspect-[4/5] overflow-hidden mb-1.5">
         {image && (
@@ -444,12 +453,13 @@ function CollectionCard({
         )}
       </div>
       {/* Product info */}
-      <h3 className="font-['Archivo'] text-[14px] font-medium text-[#272724] mb-1 line-clamp-2">
-        {product.title}
-      </h3>
-      <p className="font-['Archivo'] text-[13px] text-gray-400">
+      <h3 className="product-card-title mb-1 line-clamp-2">{product.title}</h3>
+      {displaySubtitle && (
+        <p className="product-card-subtitle mb-1">{displaySubtitle}</p>
+      )}
+      <span className="product-card-price-current">
         {displayPrice.startsWith("from") ? displayPrice : `A${displayPrice}`}
-      </p>
+      </span>
     </Link>
   );
 }

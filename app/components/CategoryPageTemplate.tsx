@@ -4,11 +4,15 @@ import type { ScrapedProduct } from "../lib/scraped-products.server";
 export function CategoryProductCard({ product }: { product: ScrapedProduct }) {
   const displayPrice = product.price_from || product.price || "";
   const image = product.images?.[0] || "";
+  const displaySubtitle =
+    Array.isArray(product.categories) && product.categories.length > 0
+      ? String(product.categories[0])
+      : "Make-Up";
 
   return (
     <a
       href={`/products/${product.slug}`}
-      className="group flex flex-col text-left w-full"
+      className="product-card group flex flex-col text-left w-full"
     >
       {/* Standardized grey background container with consistent aspect ratio */}
       <div className="overflow-hidden mb-1.5 aspect-[4/5] flex items-center justify-center bg-[#f5f5f5] p-2">
@@ -21,16 +25,12 @@ export function CategoryProductCard({ product }: { product: ScrapedProduct }) {
           />
         )}
       </div>
-      <h3 className="font-['Archivo'] text-[15px] font-medium text-[#272724] leading-tight mb-1">
+      <h3 className="product-card-title mb-1">
         {product.title}
       </h3>
-      <p className="font-['Archivo'] text-[13px] text-gray-500 mb-1">
-        Make-Up
-      </p>
+      <p className="product-card-subtitle mb-1">{displaySubtitle}</p>
       {displayPrice && (
-        <p className="font-['Archivo'] text-[13px] text-gray-400">
-          {displayPrice}
-        </p>
+        <span className="product-card-price-current">{displayPrice}</span>
       )}
     </a>
   );

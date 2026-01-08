@@ -164,7 +164,7 @@ export default function Search() {
                     <Link
                       key={product.slug}
                       to={`/products/${product.slug}`}
-                      className="group"
+                      className="product-card group"
                     >
                       <div className="bg-white border border-gray-200 hover:border-[#A71830] transition-all duration-300 overflow-hidden">
                         {/* Product Image */}
@@ -182,9 +182,16 @@ export default function Search() {
 
                         {/* Product Info */}
                         <div className="p-4">
-                          <h3 className="font-['Archivo'] text-[14px] font-semibold uppercase tracking-[0.5px] text-gray-900 mb-2 line-clamp-2 group-hover:text-[#A71830] transition-colors">
+                          <h3 className="product-card-title mb-2 line-clamp-2">
                             {getDisplayTitle(product)}
                           </h3>
+
+                          {Array.isArray((product as any).categories) &&
+                            (product as any).categories.length > 0 && (
+                              <p className="product-card-subtitle mb-2">
+                                {(product as any).categories[0]}
+                              </p>
+                            )}
                           
                           {product.tagline && (
                             <p className="font-['Archivo'] text-[12px] text-gray-600 mb-3 line-clamp-2">
@@ -193,7 +200,7 @@ export default function Search() {
                           )}
 
                           {getDisplayPrice(product) && (
-                            <p className="font-['Archivo'] text-[14px] font-semibold text-[#A71830]">
+                            <p className="product-card-price-current">
                               {getDisplayPrice(product)}
                             </p>
                           )}

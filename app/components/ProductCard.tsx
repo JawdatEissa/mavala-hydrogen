@@ -82,6 +82,20 @@ export function ProductCard({
 
   const displayPrice = getDisplayPrice();
   const displayTitle = getDisplayTitle();
+  const displaySubtitle =
+    Array.isArray((product as ScrapedProduct).categories) &&
+    (product as ScrapedProduct).categories.length > 0
+      ? String((product as ScrapedProduct).categories[0])
+      : "";
+
+  const compareAtPrice =
+    String((product as any).compare_at_price ?? (product as any).compareAtPrice ?? (product as any).original_price ?? "")
+      .trim();
+  const showCompareAt = Boolean(
+    compareAtPrice &&
+      compareAtPrice !== displayPrice &&
+      compareAtPrice !== (product as any).price
+  );
 
   return (
     <div className="product-card group relative flex flex-col w-full">
@@ -101,13 +115,21 @@ export function ProductCard({
 
         {/* Product Info - Left aligned like mavala.com */}
         <div className="space-y-1 text-left">
-          <h3 className="font-['Archivo'] text-[15px] font-medium text-[#272724] leading-tight">
+          <h3 className="product-card-title">
             {displayTitle}
           </h3>
+          {displaySubtitle && (
+            <p className="product-card-subtitle">{displaySubtitle}</p>
+          )}
           {displayPrice && (
-            <p className="font-['Archivo'] text-[13px] text-gray-400 font-normal">
-              {displayPrice}
-            </p>
+            <div className="flex items-baseline gap-2">
+              <span className="product-card-price-current">{displayPrice}</span>
+              {showCompareAt && (
+                <span className="product-card-price-compare">
+                  {compareAtPrice}
+                </span>
+              )}
+            </div>
           )}
         </div>
       </Link>

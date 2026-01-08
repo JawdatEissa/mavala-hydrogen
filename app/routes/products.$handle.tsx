@@ -994,7 +994,7 @@ export default function ProductPage() {
         <div className="md:hidden">
           {/* Mobile Product Title & Reviews - Above Image */}
           <div className="px-4 py-3 bg-white">
-            <h1 className="font-['Archivo'] text-2xl font-normal text-[#272724] mb-1">
+            <h1 className="product-page-title mb-1">
               {product.title}
             </h1>
             <div className="flex items-center justify-between">
@@ -1452,7 +1452,7 @@ export default function ProductPage() {
                 )}
 
               {/* Title - Title case, black, not bold */}
-              <h1 className="font-['Archivo'] text-[2rem] md:text-[2.4rem] font-normal text-[#272724] mb-2">
+              <h1 className="product-page-title mb-2">
                 {product.title}
               </h1>
 
