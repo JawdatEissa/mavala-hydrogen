@@ -1,6 +1,7 @@
 import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import { useMemo, useState } from "react";
 import {
   CategoryHero,
   CategoryProductSection,
@@ -62,13 +63,98 @@ const SKIN_CONCERNS = [
 export default function FaceLipsPage() {
   const { sections } = useLoaderData<typeof loader>();
 
+  // Normalize sections into the desired categories (including combining Lip Care + Lip Beauty)
+  const normalizedSections = useMemo(() => {
+    const byTitle = new Map(sections.map((s) => [s.title, s]));
+
+    const lipsBeauty = byTitle.get("LIP BEAUTY");
+    const lipsCare = byTitle.get("LIP CARE");
+
+    const lipsProducts = [
+      ...(lipsBeauty?.products ?? []),
+      ...(lipsCare?.products ?? []),
+    ];
+
+    const ordered = [
+      {
+        id: "lips",
+        label: "Lips",
+        title: "LIPS",
+        subtitle: undefined as string | undefined,
+        products: lipsProducts,
+      },
+      {
+        id: "complexion",
+        label: "Complexion",
+        title: "COMPLEXION",
+        subtitle: byTitle.get("COMPLEXION")?.subtitle,
+        products: byTitle.get("COMPLEXION")?.products ?? [],
+      },
+      {
+        id: "wrinkles",
+        label: "Wrinkles",
+        title: "WRINKLES",
+        subtitle: byTitle.get("ANTI-AGE PRO")?.subtitle,
+        products: byTitle.get("ANTI-AGE PRO")?.products ?? [],
+      },
+      {
+        id: "anti-age-nutrition",
+        label: "Anti Age Nutrition",
+        title: "ANTI AGE NUTRITION",
+        subtitle: byTitle.get("NUTRI-ELIXIR")?.subtitle,
+        products: byTitle.get("NUTRI-ELIXIR")?.products ?? [],
+      },
+      {
+        id: "hydration",
+        label: "Hydration",
+        title: "HYDRATION",
+        subtitle: byTitle.get("AQUA-PLUS")?.subtitle,
+        products: byTitle.get("AQUA-PLUS")?.products ?? [],
+      },
+      {
+        id: "skin-vitality",
+        label: "Skin Vitality",
+        title: "SKIN VITALITY",
+        subtitle: byTitle.get("SKIN VITALITY")?.subtitle,
+        products: byTitle.get("SKIN VITALITY")?.products ?? [],
+      },
+      {
+        id: "pores",
+        label: "Pores",
+        title: "PORES",
+        subtitle: byTitle.get("PORE DETOX")?.subtitle,
+        products: byTitle.get("PORE DETOX")?.products ?? [],
+      },
+      {
+        id: "clean-comfort",
+        label: "Clean & Comfort",
+        title: "CLEAN & COMFORT",
+        subtitle: byTitle.get("CLEAN & COMFORT")?.subtitle,
+        products: byTitle.get("CLEAN & COMFORT")?.products ?? [],
+      },
+    ];
+
+    // Remove empty sections (in case any source title is missing)
+    return ordered.filter((s) => (s.products?.length ?? 0) > 0);
+  }, [sections]);
+
+  const [activeTabId, setActiveTabId] = useState<string>(
+    normalizedSections[0]?.id ?? "lips"
+  );
+
+  const activeSection = normalizedSections.find((s) => s.id === activeTabId);
+
+  // Mobile: split into 2 rows (like Color page), 4 + 4 by default
+  const topRowTabs = normalizedSections.slice(0, 4);
+  const bottomRowTabs = normalizedSections.slice(4);
+
   return (
     <div className="min-h-screen bg-white pt-[90px]">
       {/* Hero Section - Uses skincare hero for Face & Lips category */}
       <CategoryHero
         imageSrc="/skincare-hero.jpg"
         alt="Swiss skincare and lip beauty for radiant, healthy skin"
-        height="90vh"
+        heightClassName="h-[22vh] md:h-[36vh]"
         objectPosition="50% 50%"
       />
 
@@ -118,15 +204,82 @@ export default function FaceLipsPage() {
         </div>
       </section>
 
-      {/* Product Sections */}
-      {sections.map((section, idx) => (
+      {/* Filtering Bar (match Color page styling/values) */}
+      <section className="pt-0 pb-8 md:pb-10 px-4 md:px-8 bg-white">
+        <div className="max-w-5xl mx-auto flex justify-center">
+          {/* Mobile: 2-row pill-style layout */}
+          <div className="md:hidden flex flex-col gap-2 w-full max-w-md">
+            <div className="flex items-center justify-center gap-2">
+              {topRowTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveTabId(tab.id)}
+                  className={`
+                    flex-1 px-4 py-3 rounded-full font-['Archivo'] text-[12px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    ${
+                      activeTabId === tab.id
+                        ? "bg-[#ae1932] text-white"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300"
+                    }
+                  `}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              {bottomRowTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveTabId(tab.id)}
+                  className={`
+                    flex-1 px-3 py-3 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    ${
+                      activeTabId === tab.id
+                        ? "bg-[#ae1932] text-white"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300"
+                    }
+                  `}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: Single row (same values as Color page) */}
+          <div className="hidden md:flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-2xl p-2.5 shadow-sm max-w-5xl">
+            {normalizedSections.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveTabId(tab.id)}
+                className={`
+                  px-6 py-3.5 rounded-xl font-['Archivo'] text-[14px] font-medium uppercase tracking-wide transition-colors duration-150 whitespace-nowrap
+                  ${
+                    activeTabId === tab.id
+                      ? "bg-[#ae1932] text-white"
+                      : "bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]"
+                  }
+                `}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Filtered Products (only the active category is shown) */}
+      {activeSection && (
         <CategoryProductSection
-          key={idx}
-          title={section.title}
-          subtitle={section.subtitle}
-          products={section.products}
+          title={activeSection.title}
+          subtitle={activeSection.subtitle}
+          products={activeSection.products}
         />
-      ))}
+      )}
 
       {/* Bottom Spacing */}
       <div className="pb-16"></div>

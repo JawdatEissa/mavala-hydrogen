@@ -643,7 +643,7 @@ export default function ColorPage() {
       </section>
 
       {/* Navigation Bar Section - Always stable, above title/description */}
-      <section className="py-3 md:py-5 px-4 md:px-8 bg-white">
+      <section className="pt-4 pb-2 md:pt-6 md:pb-3 px-4 md:px-8 bg-white">
         <div className="max-w-5xl mx-auto flex justify-center">
           {/* Mobile: 2-row pill-style layout */}
           <div className="md:hidden flex flex-col gap-2 w-full max-w-md">
@@ -654,7 +654,7 @@ export default function ColorPage() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`
-                    flex-1 px-3 py-2.5 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    flex-1 px-4 py-3 rounded-full font-['Archivo'] text-[12px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
                     ${
                       activeTab === tab.id
                         ? "bg-[#ae1932] text-white"
@@ -673,7 +673,7 @@ export default function ColorPage() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`
-                    flex-1 px-2 py-2.5 rounded-full font-['Archivo'] text-[10px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    flex-1 px-3 py-3 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
                     ${
                       activeTab === tab.id
                         ? "bg-[#ae1932] text-white"
@@ -688,13 +688,13 @@ export default function ColorPage() {
           </div>
 
           {/* Desktop: Single row */}
-          <div className="hidden md:flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-xl p-2 shadow-sm max-w-5xl">
+          <div className="hidden md:flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-2xl p-2.5 shadow-sm max-w-5xl">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`
-                  px-5 py-3 rounded-lg font-['Archivo'] text-[13px] font-medium uppercase tracking-wide transition-colors duration-150 whitespace-nowrap
+                  px-6 py-3.5 rounded-xl font-['Archivo'] text-[14px] font-medium uppercase tracking-wide transition-colors duration-150 whitespace-nowrap
                   ${
                     activeTab === tab.id
                       ? "bg-[#ae1932] text-white"
@@ -710,7 +710,7 @@ export default function ColorPage() {
       </section>
 
       {/* Title and Description Section - Content changes here, below nav bar */}
-      <section className="pt-2 md:pt-4 pb-6 md:pb-10 px-4 md:px-8 bg-gradient-to-b from-white to-[#fafafa]">
+      <section className="pt-1 md:pt-2 pb-6 md:pb-10 px-4 md:px-8 bg-gradient-to-b from-white to-[#fafafa]">
         <div className="max-w-4xl mx-auto text-center">
           {/* Title - Dynamic based on active tab */}
           <h1 className="font-['Archivo'] text-[26px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-semibold text-[#ae1932] uppercase tracking-wide px-2 mb-4">

@@ -63,15 +63,20 @@ export function CategoryHero({
   imageSrc,
   alt,
   height = "95vh",
+  heightClassName,
   objectPosition = "50% 20%",
 }: {
   imageSrc: string;
   alt: string;
   height?: string;
+  heightClassName?: string;
   objectPosition?: string;
 }) {
   return (
-    <section className="relative w-full overflow-hidden" style={{ height }}>
+    <section
+      className={`relative w-full overflow-hidden ${heightClassName ?? ""}`}
+      style={heightClassName ? undefined : { height }}
+    >
       <img
         src={imageSrc}
         alt={alt}
@@ -95,7 +100,10 @@ export function CategoryProductSection({
   id?: string;
 }) {
   return (
-    <section id={id} className="py-12 md:py-16 px-6 md:px-10 lg:px-16 bg-white">
+    <section
+      id={id}
+      className="py-12 md:py-16 px-6 md:px-10 lg:px-16 bg-white scroll-mt-[120px]"
+    >
       <div className="w-full">
         <CategorySectionHeader title={title} subtitle={subtitle} />
         {/* 4-column grid on desktop, 2 on mobile - full width */}

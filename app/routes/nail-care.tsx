@@ -1,6 +1,7 @@
 import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData, Link } from "@remix-run/react";
+import { useMemo, useState } from "react";
 import {
   loadScrapedProducts,
   type ScrapedProduct,
@@ -13,8 +14,8 @@ import {
 // Preview nail concerns - just 4 representative images for the teaser
 const NAIL_CONCERN_PREVIEWS = [
   { name: "DRY NAIL?", image: "/nail-concerns/dry-nail.png" },
-  { name: "DAMAGED NAIL?", image: "/nail-concerns/damaged-nail.png" },
-  { name: "RIDGED NAIL?", image: "/nail-concerns/ridged-nail.png" },
+  { name: "DAMAGED, BRITTLE NAIL?", image: "/nail-concerns/damaged-nail.png" },
+  { name: "LIGHTLY RIDGED NAIL?", image: "/nail-concerns/ridged-nail.png" },
   { name: "BITTEN NAIL?", image: "/nail-concerns/bitten-nail.png" },
 ];
 
@@ -130,8 +131,72 @@ export const meta: MetaFunction = () => {
 };
 
 export default function NailCarePage() {
-  const { penetratingCare, cuticleCare, nailCamouflage, nailBeauty, manicureInstruments, nailPolishRemovers } =
-    useLoaderData<typeof loader>();
+  const {
+    penetratingCare,
+    cuticleCare,
+    nailCamouflage,
+    nailBeauty,
+    manicureInstruments,
+    nailPolishRemovers,
+  } = useLoaderData<typeof loader>();
+
+  const categories = useMemo(() => {
+    const items = [
+      {
+        id: "penetrating-care",
+        label: "Penetrating Nail Care",
+        title: "PENETRATING NAIL CARE",
+        products: penetratingCare,
+      },
+      {
+        id: "cuticle-care",
+        label: "Cuticle Care",
+        title: "CUTICLE CARE",
+        products: cuticleCare,
+      },
+      {
+        id: "nail-camouflage",
+        label: "Nail Camouflage",
+        title: "NAIL CAMOUFLAGE",
+        products: nailCamouflage,
+      },
+      {
+        id: "nail-beauty",
+        label: "Nail Beauty",
+        title: "NAIL BEAUTY",
+        products: nailBeauty,
+      },
+      {
+        id: "manicure-instruments",
+        label: "Manicure Instruments",
+        title: "MANICURE INSTRUMENTS",
+        products: manicureInstruments,
+      },
+      {
+        id: "nail-polish-removers",
+        label: "Nail Polish Removers",
+        title: "NAIL POLISH REMOVERS",
+        products: nailPolishRemovers,
+      },
+    ];
+
+    return items;
+  }, [
+    penetratingCare,
+    cuticleCare,
+    nailCamouflage,
+    nailBeauty,
+    manicureInstruments,
+    nailPolishRemovers,
+  ]);
+
+  const topRowTabs = categories.slice(0, 3);
+  const bottomRowTabs = categories.slice(3);
+  const [activeCategoryId, setActiveCategoryId] = useState<string>(
+    categories[0]?.id ?? "penetrating-care"
+  );
+
+  const activeCategory = categories.find((c) => c.id === activeCategoryId);
 
   return (
     <div className="min-h-screen bg-white pt-[90px]">
@@ -139,95 +204,150 @@ export default function NailCarePage() {
       <CategoryHero
         imageSrc="/nail-care-hero.jpg"
         alt="Swiss Quality Nail Care for damaged nails"
-        height="90vh"
+        heightClassName="h-[22vh] md:h-[36vh]"
         objectPosition="50% 49%"
       />
 
-      {/* Nail Concern Survey Section - Simplified Preview */}
-      <section className="py-16 md:py-20 px-4 md:px-8 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Title */}
-          <h2 className="font-['Archivo'] text-[22px] md:text-[28px] font-bold text-[#ae1932] uppercase tracking-[1px] mb-4">
-            WHAT IS YOUR NAIL CONCERN?
-          </h2>
+      {/* Nail Quiz + Filtering Bar (quiz first, filter bar below) */}
+      <section className="pt-5 pb-6 md:pt-7 md:pb-7 px-4 md:px-8 bg-gradient-to-b from-white to-[#fafafa]">
+        <div className="max-w-5xl mx-auto">
+          {/* Nail Concern Survey Section */}
+          <div className="bg-white border border-gray-200 rounded-2xl shadow-sm px-4 py-6 md:px-8 md:py-9">
+            <div className="text-center max-w-3xl mx-auto">
+              <h2 className="font-['Archivo'] text-[20px] md:text-[26px] font-bold text-[#ae1932] uppercase tracking-[1px] mb-3">
+                WHAT IS YOUR NAIL CONCERN?
+              </h2>
+              <p className="font-['Archivo'] text-[15px] md:text-[15px] text-gray-600 mb-5 md:mb-7 leading-relaxed">
+                Let us help you choose the products adapted to your nails.
+              </p>
 
-          {/* Subtitle */}
-          <p className="font-['Archivo'] text-[14px] md:text-[16px] text-gray-600 mb-10 md:mb-12">
-            Let us help you choose the products adapted to your nails.
-          </p>
-
-          {/* Preview Grid - 4 images in a row, no labels */}
-          <a 
-            href="/nail-diagnosis"
-            className="flex justify-center items-start gap-6 md:gap-10 mb-10 md:mb-12 group cursor-pointer"
-          >
-            {NAIL_CONCERN_PREVIEWS.map((concern, idx) => (
-              <div
-                key={idx}
-                className="flex-shrink-0"
+              <Link
+                to="/nail-diagnosis"
+                className="group block mb-6"
+                aria-label="Take the nail quiz"
               >
-                <div className="w-[70px] h-[105px] md:w-[100px] md:h-[150px] lg:w-[120px] lg:h-[180px] flex items-center justify-center">
-                  <img
-                    src={concern.image}
-                    alt={concern.name}
-                    className="w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-200"
-                  />
+                {/* Mobile: show only first row (2 items) */}
+                <div className="sm:hidden grid grid-cols-2 gap-x-8 gap-y-6 justify-items-center max-w-[280px] mx-auto">
+                  {NAIL_CONCERN_PREVIEWS.slice(0, 2).map((concern, idx) => (
+                    <div key={idx} className="flex flex-col items-center">
+                      <div className="w-[86px] h-[74px] overflow-hidden flex items-start justify-center">
+                        <img
+                          src={concern.image}
+                          alt={concern.name}
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-200"
+                          loading="lazy"
+                        />
+                      </div>
+                      <p className="mt-2 font-['Archivo'] text-[10px] font-semibold uppercase tracking-widest text-gray-900 leading-[1.15] text-center max-w-[7.5rem] line-clamp-2 min-h-[24px]">
+                        {concern.name}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              </div>
-            ))}
-          </a>
 
-          {/* CTA Button */}
-          <a
-            href="/nail-diagnosis"
-            className="inline-block px-8 md:px-10 py-3 border border-[#ae1932] bg-transparent text-[#ae1932] font-['Archivo'] text-[12px] md:text-[13px] font-semibold uppercase tracking-wider hover:bg-[#ae1932] hover:text-white transition-colors duration-200"
-          >
-            TAKE THE NAIL QUIZ →
-          </a>
+                {/* Tablet/Desktop: keep all 4 items exactly as before */}
+                <div className="hidden sm:grid grid-cols-4 gap-5 justify-items-center mx-auto">
+                  {NAIL_CONCERN_PREVIEWS.map((concern, idx) => (
+                    <div key={idx} className="flex items-center justify-center">
+                      <div className="w-[92px] h-[130px] md:w-[110px] md:h-[160px] flex items-center justify-center">
+                        <img
+                          src={concern.image}
+                          alt={concern.name}
+                          className="w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-200"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </Link>
+
+              <Link
+                to="/nail-diagnosis"
+                className="inline-block px-8 md:px-10 py-3 border border-[#ae1932] bg-transparent text-[#ae1932] font-['Archivo'] text-[12px] md:text-[13px] font-semibold uppercase tracking-wider hover:bg-[#ae1932] hover:text-white transition-colors duration-200"
+              >
+                TAKE THE NAIL QUIZ →
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* PENETRATING NAIL CARE Section */}
-      <CategoryProductSection
-        title="PENETRATING NAIL CARE"
-        products={penetratingCare}
-        id="penetrating-care"
-      />
+      {/* Filtering Bar (same sizing/values as /color) */}
+      <section className="pt-4 pb-2 md:pt-6 md:pb-3 px-4 md:px-8 bg-white">
+        <div className="max-w-5xl md:max-w-[80rem] mx-auto flex justify-center">
+          {/* Mobile: 2-row pill-style layout (same as /color) */}
+          <div className="md:hidden flex flex-col gap-2 w-full max-w-md">
+            <div className="flex items-center justify-center gap-2">
+              {topRowTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveCategoryId(tab.id)}
+                  className={`
+                    flex-1 px-4 py-3 rounded-full font-['Archivo'] text-[12px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    ${
+                      activeCategoryId === tab.id
+                        ? "bg-[#ae1932] text-white"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300"
+                    }
+                  `}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+            <div className="flex items-center justify-center gap-2">
+              {bottomRowTabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveCategoryId(tab.id)}
+                  className={`
+                    flex-1 px-3 py-3 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    ${
+                      activeCategoryId === tab.id
+                        ? "bg-[#ae1932] text-white"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300"
+                    }
+                  `}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+          </div>
 
-      {/* CUTICLE CARE Section */}
-      <CategoryProductSection
-        title="CUTICLE CARE"
-        products={cuticleCare}
-        id="cuticle-care"
-      />
+          {/* Desktop: Single row (same as /color) */}
+          <div className="hidden md:flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-2xl p-[10.5px] shadow-sm w-full">
+            {categories.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveCategoryId(tab.id)}
+                className={`
+                  px-6 py-[14.7px] rounded-xl font-['Archivo'] text-[14px] font-medium uppercase tracking-wide transition-colors duration-150 whitespace-nowrap
+                  ${
+                    activeCategoryId === tab.id
+                      ? "bg-[#ae1932] text-white"
+                      : "bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]"
+                  }
+                `}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* NAIL CAMOUFLAGE Section */}
-      <CategoryProductSection
-        title="NAIL CAMOUFLAGE"
-        products={nailCamouflage}
-        id="nail-camouflage"
-      />
-
-      {/* NAIL BEAUTY Section */}
-      <CategoryProductSection
-        title="NAIL BEAUTY"
-        products={nailBeauty}
-        id="nail-beauty"
-      />
-
-      {/* MANICURE INSTRUMENTS Section (merged from Accessories) */}
-      <CategoryProductSection
-        title="MANICURE INSTRUMENTS"
-        products={manicureInstruments}
-        id="manicure-instruments"
-      />
-
-      {/* NAIL POLISH REMOVERS Section (merged from Accessories) */}
-      <CategoryProductSection
-        title="NAIL POLISH REMOVERS"
-        products={nailPolishRemovers}
-        id="nail-polish-removers"
-      />
+      {/* Filtered Products (only the active category is shown) */}
+      {activeCategory && (
+        <CategoryProductSection
+          title={activeCategory.title}
+          products={activeCategory.products}
+        />
+      )}
     </div>
   );
 }
