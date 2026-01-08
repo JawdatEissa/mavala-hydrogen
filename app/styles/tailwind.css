@@ -80,10 +80,18 @@
     font-family: var(--font-family-default, "Archivo", sans-serif);
     font-weight: 400;
     color: var(--color-dark, #272724);
-    letter-spacing: 0.02em;
-    font-size: var(--font-size-md, 1.6rem);
-    line-height: 1.2;
+    letter-spacing: 0.015em;
+    font-size: 1.35rem;
+    line-height: 1.25;
     text-transform: none; /* ensure not uppercase */
+  }
+
+  /* Scale product titles back up on medium+ screens */
+  @media (min-width: 768px) {
+    .product-card-title {
+      font-size: var(--font-size-md, 1.6rem);
+      line-height: 1.25;
+    }
   }
 
   /* Product card info container (opt-in): left aligned, flush with image edge */
