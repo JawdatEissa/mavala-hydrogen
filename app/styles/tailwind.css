@@ -25,12 +25,13 @@
   }
   
   body {
-    @apply font-sans text-gray-800 antialiased;
-    font-family: 'Avenir', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* Let Tailwind's `font-sans` (Archivo) win globally */
+    @apply antialiased font-sans font-light;
+    color: var(--color-dark, #272724);
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Avenir', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: inherit;
     font-weight: 300;
   }
 }
@@ -76,13 +77,23 @@
   }
   
   .product-card-title {
-    font-family: var(--font-family-default, "Archivo", system-ui, serif);
+    font-family: var(--font-family-default, "Archivo", sans-serif);
     font-weight: 300;
     color: var(--color-dark, #272724);
-    letter-spacing: 0;
+    letter-spacing: 0.02em;
     font-size: var(--font-size-md, 1.6rem);
     line-height: 1.2;
-    text-transform: none;
+    text-transform: none; /* ensure not uppercase */
+  }
+
+  /* Product card info container (opt-in): left aligned, flush with image edge */
+  .product-card-info {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .product-card-subtitle {

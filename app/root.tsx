@@ -21,7 +21,7 @@ export const links: LinksFunction = () => [
   },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;600&family=Raleway:wght@400;500;600;700&family=Tenor+Sans&family=Marcellus&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Raleway:wght@400;500;600;700&family=Tenor+Sans&family=Marcellus&display=swap",
   },
 ];
 
@@ -39,7 +39,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         )}
         */}
       </head>
-      <body className="antialiased">
+      <body className="antialiased font-sans font-light text-[#272724]">
         <Header />
         <main>{children}</main>
         <Footer />

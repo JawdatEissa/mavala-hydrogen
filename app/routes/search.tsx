@@ -90,7 +90,9 @@ export default function Search() {
   const getDisplayTitle = (product: ScrapedProduct) => {
     // Use title if it exists and is not too long (not scraped HTML)
     if (product.title && product.title.length < 200) {
-      return product.title;
+      const t = product.title.trim();
+      if (t === "THE BASICS") return "The Basics";
+      return t;
     }
     // Otherwise extract from slug
     return extractTitleFromSlug(product.slug);

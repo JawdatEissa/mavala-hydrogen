@@ -8,6 +8,7 @@ export function CategoryProductCard({ product }: { product: ScrapedProduct }) {
     Array.isArray(product.categories) && product.categories.length > 0
       ? String(product.categories[0])
       : "Make-Up";
+  const displayTitle = product.title?.trim() === "THE BASICS" ? "The Basics" : product.title;
 
   return (
     <a
@@ -19,14 +20,14 @@ export function CategoryProductCard({ product }: { product: ScrapedProduct }) {
         {image && (
           <img
             src={image}
-            alt={product.title}
+            alt={displayTitle}
             className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
         )}
       </div>
       <h3 className="product-card-title mb-1">
-        {product.title}
+        {displayTitle}
       </h3>
       <p className="product-card-subtitle mb-1">{displaySubtitle}</p>
       {displayPrice && (

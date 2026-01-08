@@ -366,6 +366,8 @@ function ColorProductCard({
     Array.isArray(product.categories) && product.categories.length > 0
       ? String(product.categories[0])
       : "";
+  const displayTitle =
+    product.title?.trim() === "THE BASICS" ? "The Basics" : product.title;
 
   // Get shade count from product data
   const shadeCount = product.shades?.length || 0;
@@ -384,7 +386,7 @@ function ColorProductCard({
         {image && (
           <img
             src={image}
-            alt={product.title}
+            alt={displayTitle}
             className="absolute inset-0 w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
@@ -397,13 +399,17 @@ function ColorProductCard({
         )}
       </div>
       {/* Product info */}
-      <h3 className="product-card-title mb-1 line-clamp-2">{product.title}</h3>
-      {displaySubtitle && (
-        <p className="product-card-subtitle mb-1">{displaySubtitle}</p>
-      )}
-      <span className="product-card-price-current">
-        {displayPrice.startsWith("from") ? displayPrice : `A${displayPrice}`}
-      </span>
+      <div className="product-card-info">
+        <h3 className="product-card-title mb-1 line-clamp-2">
+          {displayTitle}
+        </h3>
+        {displaySubtitle && (
+          <p className="product-card-subtitle mb-1">{displaySubtitle}</p>
+        )}
+        <span className="product-card-price-current">
+          {displayPrice.startsWith("from") ? displayPrice : `A${displayPrice}`}
+        </span>
+      </div>
     </Link>
   );
 }
@@ -422,6 +428,8 @@ function CollectionCard({
     Array.isArray(product.categories) && product.categories.length > 0
       ? String(product.categories[0])
       : "";
+  const displayTitle =
+    product.title?.trim() === "THE BASICS" ? "The Basics" : product.title;
 
   // Get shade count from product data
   const shadeCount = product.shades?.length || 0;
@@ -440,7 +448,7 @@ function CollectionCard({
         {image && (
           <img
             src={image}
-            alt={product.title}
+            alt={displayTitle}
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
@@ -453,13 +461,17 @@ function CollectionCard({
         )}
       </div>
       {/* Product info */}
-      <h3 className="product-card-title mb-1 line-clamp-2">{product.title}</h3>
-      {displaySubtitle && (
-        <p className="product-card-subtitle mb-1">{displaySubtitle}</p>
-      )}
-      <span className="product-card-price-current">
-        {displayPrice.startsWith("from") ? displayPrice : `A${displayPrice}`}
-      </span>
+      <div className="product-card-info">
+        <h3 className="product-card-title mb-1 line-clamp-2">
+          {displayTitle}
+        </h3>
+        {displaySubtitle && (
+          <p className="product-card-subtitle mb-1">{displaySubtitle}</p>
+        )}
+        <span className="product-card-price-current">
+          {displayPrice.startsWith("from") ? displayPrice : `A${displayPrice}`}
+        </span>
+      </div>
     </Link>
   );
 }

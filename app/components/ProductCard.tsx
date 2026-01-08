@@ -27,7 +27,10 @@ export function ProductCard({
       !product.title.includes("function") &&
       !product.title.includes("window.")
     ) {
-      return product.title;
+      const t = product.title.trim();
+      // Fix known ugly all-caps title rendering while keeping other brand titles intact
+      if (t === "THE BASICS") return "The Basics";
+      return t;
     }
     // Extract from slug as fallback
     const cleanSlug = slug.replace(/^all-products_/, "").replace(/^[^_]+_/, "");
