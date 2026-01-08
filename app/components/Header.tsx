@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { categories } from "../lib/mock-data";
 
 // Mavala Logo Component - using official logo image from Squarespace CDN
@@ -51,25 +51,35 @@ const navLinkClasses =
 
 export function Header() {
   const [isHidden, setIsHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const lastScrollYRef = useRef(0);
+  const isMobileMenuOpenRef = useRef(false);
 
   useEffect(() => {
+    isMobileMenuOpenRef.current = isMobileMenuOpen;
+  }, [isMobileMenuOpen]);
+
+  // Scroll-hide header (disabled while mobile menu is open)
+  useEffect(() => {
     const handleScroll = () => {
+      if (isMobileMenuOpenRef.current) return;
       const currentScrollY = window.scrollY;
-      
+
       // Hide header when scrolling down, show when scrolling up
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      if (currentScrollY > lastScrollYRef.current && currentScrollY > 100) {
         setIsHidden(true);
       } else {
         setIsHidden(false);
       }
-      
-      setLastScrollY(currentScrollY);
+
+      lastScrollYRef.current = currentScrollY;
     };
 
     // Listen for custom event from ShadeDrawer
     const handleDrawerOpen = () => setIsHidden(true);
-    const handleDrawerClose = () => setIsHidden(false);
+    const handleDrawerClose = () => {
+      if (!isMobileMenuOpenRef.current) setIsHidden(false);
+    };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("shadeDrawerOpen", handleDrawerOpen);
@@ -80,14 +90,63 @@ export function Header() {
       window.removeEventListener("shadeDrawerOpen", handleDrawerOpen);
       window.removeEventListener("shadeDrawerClose", handleDrawerClose);
     };
-  }, [lastScrollY]);
+  }, []);
+
+  // Mobile menu: push history state so Android back button closes it
+  useEffect(() => {
+    const handlePopState = () => {
+      if (isMobileMenuOpenRef.current) {
+        setIsMobileMenuOpen(false);
+        setIsHidden(false);
+        lastScrollYRef.current = window.scrollY;
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      document.body.style.overflow = "";
+      return;
+    }
+
+    document.body.style.overflow = "hidden";
+    // Hide header while menu is open (requested behavior)
+    setIsHidden(true);
+    lastScrollYRef.current = window.scrollY;
+
+    // Push a history entry so the native back button closes the menu
+    const currentState =
+      typeof window !== "undefined" ? window.history.state : null;
+    window.history.pushState(
+      { ...(currentState ?? {}), mobileMenuOpen: true },
+      ""
+    );
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        // close via back to remove the pushed state
+        if (window.history.state?.mobileMenuOpen) window.history.back();
+        else setIsMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <header 
       className="w-full fixed top-0 left-0 right-0 z-[9999] bg-white shadow-sm"
       style={{
-        transform: isHidden ? "translateY(-100%)" : "translateY(0)",
-        transition: "transform 0.4s cubic-bezier(0.32, 0.72, 0, 1)",
+        top: isHidden ? "-90px" : "0px",
+        transition: "top 0.4s cubic-bezier(0.32, 0.72, 0, 1)",
       }}
     >
       <nav className="h-[90px] relative">
@@ -190,10 +249,10 @@ export function Header() {
             <MavalaLogo width={160} />
           </div>
 
-          {/* Mobile Cart - fixed position */}
+          {/* Mobile Cart */}
           <a
             href="/cart"
-            className="fixed top-[25px] right-4 p-3 z-[10001] bg-white rounded-md text-gray-800"
+            className="absolute top-[25px] right-4 p-3 z-[10001] bg-white rounded-md text-gray-800"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -201,31 +260,60 @@ export function Header() {
           </a>
         </div>
 
-        {/* Mobile Menu using native details/summary - works without JS */}
-        <details 
-          className="lg:hidden group fixed top-[20px] left-4 z-[10001]"
-          onToggle={(e) => {
-            const details = e.currentTarget as HTMLDetailsElement;
-            if (details.open) {
-              window.dispatchEvent(new CustomEvent("shadeDrawerOpen"));
-            } else {
-              window.dispatchEvent(new CustomEvent("shadeDrawerClose"));
-            }
-          }}
+        {/* Mobile Menu Button */}
+        <button
+          type="button"
+          className="lg:hidden absolute top-[20px] left-4 z-[10001] p-3 bg-white rounded-md shadow-sm hover:bg-gray-50"
+          aria-label="Open menu"
+          aria-expanded={isMobileMenuOpen}
+          onClick={() => setIsMobileMenuOpen(true)}
         >
-          <summary className="list-none cursor-pointer p-3 bg-white rounded-md shadow-sm hover:bg-gray-50">
-            {/* Hamburger icon - shown when closed */}
-            <svg className="w-6 h-6 text-gray-800 group-open:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          <svg
+            className="w-6 h-6 text-gray-800"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </nav>
+
+      {/* Mobile Menu Overlay (renders outside header flow; closes on back button) */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 z-[10010] bg-white">
+          {/* Close button (X) */}
+          <button
+            type="button"
+            aria-label="Close menu"
+            className="absolute top-5 left-4 p-3 bg-white rounded-md shadow-sm hover:bg-gray-50"
+            onClick={() => {
+              // Prefer history.back so the Android back button stack stays clean
+              if (window.history.state?.mobileMenuOpen) window.history.back();
+              else setIsMobileMenuOpen(false);
+            }}
+          >
+            <svg
+              className="w-6 h-6 text-gray-800"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
-            {/* X icon - shown when open */}
-            <svg className="w-6 h-6 text-gray-800 hidden group-open:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </summary>
-          
-          {/* Menu Content - starts from top when header hides */}
-          <div className="fixed top-[70px] left-0 w-full bg-white border-t border-gray-100 shadow-lg max-h-[calc(100vh-70px)] overflow-y-auto">
+          </button>
+
+          <div className="pt-[90px] max-h-screen overflow-y-auto">
             <div className="flex flex-col p-8 space-y-6 text-center">
               {/* Shop with sub-menu */}
               <details className="group/shop">
@@ -240,6 +328,15 @@ export function Header() {
                       key={cat.slug}
                       href={cat.url}
                       className="block text-[18px] font-['Archivo'] uppercase tracking-[0.2px] text-gray-800 hover:text-red-700 transition-colors w-full text-center py-2"
+                      onClick={() => {
+                        // Prevent returning to an intermediate "menu open" state on back
+                        if (window.history.state?.mobileMenuOpen) {
+                          window.history.replaceState(
+                            { ...window.history.state, mobileMenuOpen: false },
+                            ""
+                          );
+                        }
+                      }}
                     >
                       {cat.name}
                     </a>
@@ -258,37 +355,97 @@ export function Header() {
                   <a
                     href="/nail-diagnosis"
                     className="block text-[18px] font-['Archivo'] uppercase tracking-[0.2px] text-gray-800 hover:text-red-700 transition-colors w-full text-center py-2"
+                    onClick={() => {
+                      if (window.history.state?.mobileMenuOpen) {
+                        window.history.replaceState(
+                          { ...window.history.state, mobileMenuOpen: false },
+                          ""
+                        );
+                      }
+                    }}
                   >
                     NAIL QUIZ
                   </a>
                   <a
                     href="/face-concerns"
                     className="block text-[18px] font-['Archivo'] uppercase tracking-[0.2px] text-gray-800 hover:text-red-700 transition-colors w-full text-center py-2"
+                    onClick={() => {
+                      if (window.history.state?.mobileMenuOpen) {
+                        window.history.replaceState(
+                          { ...window.history.state, mobileMenuOpen: false },
+                          ""
+                        );
+                      }
+                    }}
                   >
                     SKIN QUIZ
                   </a>
                 </div>
               </details>
 
-              <a href="/blog" className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors">
+              <a
+                href="/blog"
+                className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors"
+                onClick={() => {
+                  if (window.history.state?.mobileMenuOpen) {
+                    window.history.replaceState(
+                      { ...window.history.state, mobileMenuOpen: false },
+                      ""
+                    );
+                  }
+                }}
+              >
                 Blog
               </a>
 
-              <a href="/the-brand" className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors">
+              <a
+                href="/the-brand"
+                className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors"
+                onClick={() => {
+                  if (window.history.state?.mobileMenuOpen) {
+                    window.history.replaceState(
+                      { ...window.history.state, mobileMenuOpen: false },
+                      ""
+                    );
+                  }
+                }}
+              >
                 The Brand
               </a>
 
-              <a href="/search" className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors">
+              <a
+                href="/search"
+                className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors"
+                onClick={() => {
+                  if (window.history.state?.mobileMenuOpen) {
+                    window.history.replaceState(
+                      { ...window.history.state, mobileMenuOpen: false },
+                      ""
+                    );
+                  }
+                }}
+              >
                 Search
               </a>
 
-              <a href="/account" className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors">
+              <a
+                href="/account"
+                className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors"
+                onClick={() => {
+                  if (window.history.state?.mobileMenuOpen) {
+                    window.history.replaceState(
+                      { ...window.history.state, mobileMenuOpen: false },
+                      ""
+                    );
+                  }
+                }}
+              >
                 Sign In
               </a>
             </div>
           </div>
-        </details>
-      </nav>
+        </div>
+      )}
     </header>
   );
 }
