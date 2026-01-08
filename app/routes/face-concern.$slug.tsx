@@ -60,15 +60,6 @@ export default function FaceConcernPage() {
 
   return (
     <div className="min-h-screen bg-white pt-[90px]">
-      {/* Breadcrumb */}
-      <div className="py-6 px-4 md:px-8">
-        <div className="max-w-[1400px] mx-auto">
-          <p className="font-['Archivo'] text-[11px] uppercase tracking-wider text-[#ae1932]">
-            MAVACADEMY &gt; BEAUTY ADVICE &gt; FACE CONCERNS &gt; {concern.name}
-          </p>
-        </div>
-      </div>
-
       {/* Main Title with Icon */}
       <div className="py-8 px-4 md:px-8">
         <div className="max-w-[1400px] mx-auto text-center">

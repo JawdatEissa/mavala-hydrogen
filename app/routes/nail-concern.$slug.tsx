@@ -35,23 +35,6 @@ export default function NailConcernPage() {
   
   return (
     <div className="min-h-screen bg-white pt-[90px]">
-      {/* Breadcrumb */}
-      <div className="py-6 px-4 md:px-8 bg-white border-b border-gray-200">
-        <div className="max-w-[1200px] mx-auto">
-          <p className="font-['Archivo'] text-[11px] md:text-[12px] uppercase text-[#ae1932] tracking-wider">
-            <a href="/" className="hover:underline">
-              MAVACADEMY
-            </a>
-            {" > "}
-            <a href="/nail-diagnosis" className="hover:underline">
-              NAIL CONCERNS
-            </a>
-            {" > "}
-            <span className="text-gray-600">{concern.name}</span>
-          </p>
-        </div>
-      </div>
-
       {/* Main Content */}
       <section className="py-12 md:py-16 px-4 md:px-8">
         <div className="max-w-[1000px] mx-auto">

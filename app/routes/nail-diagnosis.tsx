@@ -11,20 +11,15 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-// All nail concerns - exactly 19 unique conditions with correct slugs
+// All nail concerns - 18 unique conditions with correct slugs
 const NAIL_CONDITIONS = [
-  // Top row (12 items)
+  // Top row (11 items)
   {
     name: "HEALTHY NAIL?",
     image: "/diagnosis/healthy-nail.png",
     slug: "healthy-nail",
   },
   { name: "DRY NAIL?", image: "/diagnosis/dry-nail.png", slug: "dry-nail" },
-  {
-    name: "DELICATE, FRAGILE NAIL?",
-    image: "/diagnosis/delicate-fragile-nail.png",
-    slug: "delicate-fragile-nail",
-  },
   { name: "SOFT NAIL?", image: "/diagnosis/soft-nail.png", slug: "soft-nail" },
   { name: "THIN NAIL?", image: "/diagnosis/thin-nail.png", slug: "thin-nail" },
   {

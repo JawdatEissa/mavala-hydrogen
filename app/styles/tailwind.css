@@ -81,7 +81,8 @@
     font-weight: 400;
     color: var(--color-dark, #272724);
     letter-spacing: 0.015em;
-    font-size: 1.35rem;
+    /* Clamp keeps mobile text smaller and scales up smoothly */
+    font-size: clamp(1.05rem, 4vw, 1.35rem);
     line-height: 1.25;
     text-transform: none; /* ensure not uppercase */
   }
@@ -108,7 +109,7 @@
     font-family: var(--font-family-default, "Archivo", system-ui, serif);
     font-weight: 300;
     color: var(--color-gray-medium, #9ca3af);
-    font-size: var(--font-size-sm, 1.3rem);
+    font-size: clamp(1.05rem, 3.8vw, var(--font-size-sm, 1.3rem));
     line-height: 1.2;
   }
 
@@ -116,7 +117,7 @@
     font-family: var(--font-family-default, "Archivo", system-ui, serif);
     font-weight: 400;
     color: var(--color-dark-red, #a22034);
-    font-size: var(--font-size-sm, 1.4rem);
+    font-size: clamp(1.1rem, 4.2vw, var(--font-size-sm, 1.4rem));
     line-height: 1.2;
   }
 
