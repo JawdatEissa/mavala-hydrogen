@@ -11,7 +11,7 @@ export function CategoryProductCard({ product }: { product: ScrapedProduct }) {
       className="group flex flex-col text-left w-full"
     >
       {/* Standardized grey background container with consistent aspect ratio */}
-      <div className="overflow-hidden mb-4 aspect-[4/5] flex items-center justify-center bg-[#f5f5f5] p-6">
+      <div className="overflow-hidden mb-1.5 aspect-[4/5] flex items-center justify-center bg-[#f5f5f5] p-2">
         {image && (
           <img
             src={image}
@@ -107,7 +107,7 @@ export function CategoryProductSection({
       <div className="w-full">
         <CategorySectionHeader title={title} subtitle={subtitle} />
         {/* 4-column grid on desktop, 2 on mobile - full width */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
           {products.map((product) => (
             <CategoryProductCard key={product.slug} product={product} />
           ))}

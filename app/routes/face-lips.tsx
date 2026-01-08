@@ -50,14 +50,46 @@ export const meta: MetaFunction = () => {
 
 // Skin concerns for the survey section
 const SKIN_CONCERNS = [
-  { id: 'wrinkles', label: 'WRINKLES?', image: '/skin-concerns/wrinkles.png' },
-  { id: 'lack-of-radiance', label: 'LACK OF RADIANCE?', image: '/skin-concerns/lack-of-radiance.png' },
-  { id: 'uneven-complexion', label: 'UNEVEN COMPLEXION?', image: '/skin-concerns/uneven-complexion.png' },
-  { id: 'dehydrated-skin', label: 'DEHYDRATED SKIN?', image: '/skin-concerns/dehydrated-skin.png' },
-  { id: 'dry-skin', label: 'DRY SKIN?', image: '/skin-concerns/dry-skin.png' },
-  { id: 'tired-dull-skin', label: 'TIRED, DULL SKIN?', image: '/skin-concerns/tired-dull-skin.png' },
-  { id: 'clogged-skin', label: 'CLOGGED SKIN?', image: '/skin-concerns/clogged-skin.png' },
-  { id: 'dilated-pores', label: 'DILATED PORES?', image: '/skin-concerns/dilated-pores.png' },
+  { id: "wrinkles", label: "WRINKLES?", image: "/skin-concerns/wrinkles.png" },
+  {
+    id: "lack-of-radiance",
+    label: "LACK OF RADIANCE?",
+    image: "/skin-concerns/lack-of-radiance.png",
+  },
+  {
+    id: "uneven-complexion",
+    label: "UNEVEN COMPLEXION?",
+    image: "/skin-concerns/uneven-complexion.png",
+  },
+  {
+    id: "dehydrated-skin",
+    label: "DEHYDRATED SKIN?",
+    image: "/skin-concerns/dehydrated-skin.png",
+  },
+  { id: "dry-skin", label: "DRY SKIN?", image: "/skin-concerns/dry-skin.png" },
+  {
+    id: "tired-dull-skin",
+    label: "TIRED, DULL SKIN?",
+    image: "/skin-concerns/tired-dull-skin.png",
+  },
+  {
+    id: "clogged-skin",
+    label: "CLOGGED SKIN?",
+    image: "/skin-concerns/clogged-skin.png",
+  },
+  {
+    id: "dilated-pores",
+    label: "DILATED PORES?",
+    image: "/skin-concerns/dilated-pores.png",
+  },
+];
+
+// Preview (mobile-friendly) - 4 representative concerns, consistent with Nail Care page teaser
+const SKIN_CONCERN_PREVIEWS = [
+  SKIN_CONCERNS[0], // wrinkles
+  SKIN_CONCERNS[2], // uneven complexion
+  SKIN_CONCERNS[3], // dehydrated skin
+  SKIN_CONCERNS[7], // dilated pores
 ];
 
 export default function FaceLipsPage() {
@@ -158,55 +190,58 @@ export default function FaceLipsPage() {
         objectPosition="50% 50%"
       />
 
-      {/* Skin Concern Survey Section */}
-      <section className="py-12 md:py-16 px-4 md:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          {/* Title */}
-          <h2 className="font-['Archivo'] text-[18px] md:text-[24px] font-bold text-[#ae1932] uppercase tracking-[1px] text-center mb-6 md:mb-8">
-            WHAT IS YOUR SKIN CONCERN?
-          </h2>
+      {/* Skin Concern Survey Section (mobile-first card) */}
+      <section className="pt-5 pb-6 md:pt-10 md:pb-10 px-4 md:px-8 bg-gradient-to-b from-white to-[#fafafa]">
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-white border border-gray-200 rounded-2xl shadow-sm px-4 py-6 md:px-8 md:py-9">
+            <div className="text-center max-w-3xl mx-auto">
+              <h2 className="font-['Archivo'] text-[20px] md:text-[26px] font-bold text-[#ae1932] uppercase tracking-[1px] mb-3">
+                WHAT IS YOUR SKIN CONCERN?
+              </h2>
+              <p className="font-['Archivo'] text-[15px] md:text-[15px] text-gray-600 mb-5 md:mb-7 leading-relaxed">
+                Let us help you choose a skincare routine adapted to your skin.
+              </p>
 
-          {/* Grid of Skin Concern Images */}
-          <div className="flex justify-center mb-6 md:mb-8">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-6 gap-y-6 md:gap-x-8 md:gap-y-8 justify-items-center max-w-fit">
-              {SKIN_CONCERNS.map((concern) => (
+              <a
+                href="/face-concerns"
+                className="group block mb-6"
+                aria-label="Choose your routine"
+              >
+                <div className="grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4 sm:gap-5 justify-items-center max-w-[320px] sm:max-w-none mx-auto">
+                  {SKIN_CONCERN_PREVIEWS.map((concern) => (
+                    <div
+                      key={concern.id}
+                      className="flex items-center justify-center"
+                    >
+                      <div className="w-[120px] h-[140px] sm:w-[110px] sm:h-[130px] md:w-[140px] md:h-[160px] flex items-center justify-center">
+                        <img
+                          src={concern.image}
+                          alt={concern.label}
+                          className="w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-200"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </a>
+
+              <div className="flex justify-center">
                 <a
-                  key={concern.id}
                   href="/face-concerns"
-                  className="flex flex-col items-center group cursor-pointer w-[90px] sm:w-[110px] md:w-[140px]"
+                  className="inline-block px-8 md:px-10 py-3 border border-[#ae1932] bg-transparent text-[#ae1932] font-['Archivo'] text-[12px] md:text-[13px] font-semibold uppercase tracking-wider hover:bg-[#ae1932] hover:text-white transition-colors duration-200"
                 >
-                  <div className="w-full aspect-square mb-2">
-                    <img
-                      src={concern.image}
-                      alt={concern.label}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
+                  CHOOSE YOUR ROUTINE →
                 </a>
-              ))}
+              </div>
             </div>
-          </div>
-
-          {/* Tagline */}
-          <p className="font-['Archivo'] text-[12px] md:text-[14px] text-gray-600 text-center mb-5 md:mb-6 px-4">
-            Let us help you choose a skincare routine adapted to your skin.
-          </p>
-
-          {/* Choose Products Button */}
-          <div className="flex justify-center">
-            <a
-              href="/face-concerns"
-              className="font-['Archivo'] text-[12px] md:text-[14px] font-semibold text-[#ae1932] uppercase tracking-[0.5px] px-6 md:px-8 py-2.5 md:py-3 border border-[#ae1932] hover:bg-[#ae1932] hover:text-white transition-colors duration-300"
-            >
-              Choose your routine →
-            </a>
           </div>
         </div>
       </section>
 
       {/* Filtering Bar (match Color page styling/values) */}
-      <section className="pt-0 pb-8 md:pb-10 px-4 md:px-8 bg-white">
-        <div className="max-w-5xl mx-auto flex justify-center">
+      <section className="pt-4 pb-2 md:pt-6 md:pb-3 px-4 md:px-8 bg-white">
+        <div className="max-w-5xl md:max-w-[74.22rem] mx-auto flex justify-center">
           {/* Mobile: 2-row pill-style layout */}
           <div className="md:hidden flex flex-col gap-2 w-full max-w-md">
             <div className="flex items-center justify-center gap-2">
@@ -250,7 +285,7 @@ export default function FaceLipsPage() {
           </div>
 
           {/* Desktop: Single row (same values as Color page) */}
-          <div className="hidden md:flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-2xl p-2.5 shadow-sm max-w-5xl">
+          <div className="hidden md:flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-2xl p-2.5 shadow-sm w-full">
             {normalizedSections.map((tab) => (
               <button
                 key={tab.id}
@@ -286,4 +321,3 @@ export default function FaceLipsPage() {
     </div>
   );
 }
-

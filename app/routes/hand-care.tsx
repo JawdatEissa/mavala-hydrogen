@@ -1,6 +1,7 @@
 import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import { useMemo, useState } from "react";
 import {
   CategoryHero,
   CategoryProductSection,
@@ -49,24 +50,116 @@ export const meta: MetaFunction = () => {
 export default function HandCarePage() {
   const { sections } = useLoaderData<typeof loader>();
 
+  const normalizedSections = useMemo(() => {
+    return sections.map((s) => {
+      const raw = (s.title || "").toUpperCase().trim();
+
+      if (raw === "DAILY HAND CARE") {
+        return {
+          id: "daily-hydration",
+          label: "Daily Hydration",
+          title: "DAILY HYDRATION",
+          products: s.products,
+        };
+      }
+
+      if (raw === "SPECIFIC HAND CARE") {
+        return {
+          id: "targeted-care",
+          label: "Targeted Care",
+          title: "TARGETED CARE",
+          products: s.products,
+        };
+      }
+
+      // Fallback for any unexpected titles
+      const id = (s.title || "section")
+        .toLowerCase()
+        .replace(/&/g, "and")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "");
+
+      const label = (s.title || "Section")
+        .toLowerCase()
+        .split(/[\s-]+/)
+        .filter(Boolean)
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" ");
+
+      return { id, label, title: s.title, products: s.products };
+    });
+  }, [sections]);
+
+  const [activeTabId, setActiveTabId] = useState<string>(
+    normalizedSections[0]?.id ?? "daily-hydration"
+  );
+
+  const activeSection = normalizedSections.find((s) => s.id === activeTabId);
+
   return (
     <div className="min-h-screen bg-white pt-[90px]">
       {/* Hero Section */}
       <CategoryHero
         imageSrc="/hand-care-hero.jpg"
         alt="Swiss Hand Care Program to repair and protect hands"
-        height="90vh"
+        heightClassName="h-[22vh] md:h-[36vh]"
         objectPosition="50% 50%"
       />
 
-      {/* Product Sections */}
-      {sections.map((section, idx) => (
+      {/* Filtering Bar (match /color styling/values) */}
+      <section className="pt-4 pb-2 md:pt-6 md:pb-3 px-4 md:px-8 bg-white">
+        <div className="max-w-5xl mx-auto flex justify-center">
+          {/* Mobile: single row pills (same pill styling as /color) */}
+          <div className="md:hidden flex items-center justify-center gap-2 w-full max-w-md">
+            {normalizedSections.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveTabId(tab.id)}
+                className={`
+                  flex-1 px-4 py-3 rounded-full font-['Archivo'] text-[12px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                  ${
+                    activeTabId === tab.id
+                      ? "bg-[#ae1932] text-white"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200 active:bg-gray-300"
+                  }
+                `}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Desktop: Single row */}
+          <div className="hidden md:flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-2xl p-2.5 shadow-sm max-w-5xl">
+            {normalizedSections.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveTabId(tab.id)}
+                className={`
+                  px-6 py-3.5 rounded-xl font-['Archivo'] text-[14px] font-medium uppercase tracking-wide transition-colors duration-150 whitespace-nowrap
+                  ${
+                    activeTabId === tab.id
+                      ? "bg-[#ae1932] text-white"
+                      : "bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]"
+                  }
+                `}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Filtered Products (only the active category is shown) */}
+      {activeSection && (
         <CategoryProductSection
-          key={idx}
-          title={section.title}
-          products={section.products}
+          title={activeSection.title}
+          products={activeSection.products}
         />
-      ))}
+      )}
 
       {/* Bottom Spacing */}
       <div className="pb-16"></div>
