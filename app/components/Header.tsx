@@ -54,38 +54,109 @@ export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const lastScrollYRef = useRef(0);
   const isMobileMenuOpenRef = useRef(false);
+  const isHiddenRef = useRef(false);
+  const scrollTimeoutRef = useRef<number | null>(null);
+  const lastDirectionRef = useRef<"up" | "down" | null>(null);
+  const directionStartYRef = useRef(0);
 
   useEffect(() => {
     isMobileMenuOpenRef.current = isMobileMenuOpen;
   }, [isMobileMenuOpen]);
 
+  useEffect(() => {
+    isHiddenRef.current = isHidden;
+  }, [isHidden]);
+
   // Scroll-hide header (disabled while mobile menu is open)
   useEffect(() => {
+    // Tunables to reduce jitter while keeping the header feeling responsive
+    const HIDE_AFTER_PX = 100; // don't hide until user is past the hero/top area
+    const SHOW_NEAR_TOP_PX = 40; // always show when near the very top
+    const MIN_DIRECTION_TRAVEL_PX = 14; // hysteresis: ignore tiny direction changes
+    const RESPONSE_DELAY_MS = 140; // debounce: wait a bit before applying show/hide
+
+    const clearPending = () => {
+      if (scrollTimeoutRef.current != null) {
+        window.clearTimeout(scrollTimeoutRef.current);
+        scrollTimeoutRef.current = null;
+      }
+    };
+
     const handleScroll = () => {
       if (isMobileMenuOpenRef.current) return;
       const currentScrollY = window.scrollY;
 
-      // Hide header when scrolling down, show when scrolling up
-      if (currentScrollY > lastScrollYRef.current && currentScrollY > 100) {
-        setIsHidden(true);
-      } else {
-        setIsHidden(false);
+      // Always show near top (prevents odd "hidden at top" states)
+      if (currentScrollY <= SHOW_NEAR_TOP_PX) {
+        clearPending();
+        if (isHiddenRef.current) setIsHidden(false);
+        lastScrollYRef.current = currentScrollY;
+        lastDirectionRef.current = null;
+        directionStartYRef.current = currentScrollY;
+        return;
       }
+
+      const delta = currentScrollY - lastScrollYRef.current;
+      // Ignore tiny scroll noise (trackpads / momentum)
+      if (Math.abs(delta) < 2) {
+        lastScrollYRef.current = currentScrollY;
+        return;
+      }
+
+      const direction: "up" | "down" = delta > 0 ? "down" : "up";
+
+      // On direction change, reset hysteresis window and cancel pending toggle
+      if (lastDirectionRef.current !== direction) {
+        lastDirectionRef.current = direction;
+        directionStartYRef.current = currentScrollY;
+        clearPending();
+      }
+
+      // Require a minimum distance traveled in the new direction before reacting
+      const traveled = Math.abs(currentScrollY - directionStartYRef.current);
+      if (traveled < MIN_DIRECTION_TRAVEL_PX) {
+        lastScrollYRef.current = currentScrollY;
+        return;
+      }
+
+      const nextHidden =
+        direction === "down" ? currentScrollY > HIDE_AFTER_PX : false;
+
+      if (nextHidden === isHiddenRef.current) {
+        lastScrollYRef.current = currentScrollY;
+        return;
+      }
+
+      // Debounce applying show/hide so it doesn't jitter during small up/down motions
+      clearPending();
+      scrollTimeoutRef.current = window.setTimeout(() => {
+        if (isMobileMenuOpenRef.current) return;
+        if (nextHidden !== isHiddenRef.current) setIsHidden(nextHidden);
+      }, RESPONSE_DELAY_MS);
 
       lastScrollYRef.current = currentScrollY;
     };
 
     // Listen for custom event from ShadeDrawer
-    const handleDrawerOpen = () => setIsHidden(true);
+    const handleDrawerOpen = () => {
+      clearPending();
+      setIsHidden(true);
+    };
     const handleDrawerClose = () => {
+      clearPending();
       if (!isMobileMenuOpenRef.current) setIsHidden(false);
     };
+
+    // Initialize refs to avoid incorrect first-scroll direction detection
+    lastScrollYRef.current = window.scrollY;
+    directionStartYRef.current = window.scrollY;
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("shadeDrawerOpen", handleDrawerOpen);
     window.addEventListener("shadeDrawerClose", handleDrawerClose);
 
     return () => {
+      clearPending();
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("shadeDrawerOpen", handleDrawerOpen);
       window.removeEventListener("shadeDrawerClose", handleDrawerClose);
@@ -99,6 +170,8 @@ export function Header() {
         setIsMobileMenuOpen(false);
         setIsHidden(false);
         lastScrollYRef.current = window.scrollY;
+        lastDirectionRef.current = null;
+        directionStartYRef.current = window.scrollY;
       }
     };
 
