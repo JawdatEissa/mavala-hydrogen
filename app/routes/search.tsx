@@ -73,6 +73,18 @@ export default function Search() {
     });
   }, [searchQuery, products]);
 
+  const formatTitle = (rawTitle?: string): string => {
+    if (!rawTitle) return "";
+    const trimmed = rawTitle.trim();
+    if (trimmed === "THE BASICS") return "The Basics";
+    const isAllCaps = trimmed === trimmed.toUpperCase() && /[A-Z]/.test(trimmed);
+    if (isAllCaps) {
+      const lower = trimmed.toLowerCase();
+      return lower.replace(/\b([a-z])/g, (match) => match.toUpperCase());
+    }
+    return trimmed;
+  };
+
   // Get display price
   const getDisplayPrice = (product: ScrapedProduct) => {
     return product.price_from || product.price || "";
@@ -90,12 +102,10 @@ export default function Search() {
   const getDisplayTitle = (product: ScrapedProduct) => {
     // Use title if it exists and is not too long (not scraped HTML)
     if (product.title && product.title.length < 200) {
-      const t = product.title.trim();
-      if (t === "THE BASICS") return "The Basics";
-      return t;
+      return formatTitle(product.title);
     }
     // Otherwise extract from slug
-    return extractTitleFromSlug(product.slug);
+    return formatTitle(extractTitleFromSlug(product.slug));
   };
 
   return (
@@ -184,7 +194,7 @@ export default function Search() {
 
                         {/* Product Info */}
                         <div className="p-4">
-                          <h3 className="product-card-title mb-2 line-clamp-2">
+                          <h3 className="product-card-title mb-2 line-clamp-2 capitalize text-left">
                             {getDisplayTitle(product)}
                           </h3>
 

@@ -1,5 +1,17 @@
 import type { ScrapedProduct } from "../lib/scraped-products.server";
 
+const formatTitle = (rawTitle?: string): string => {
+  if (!rawTitle) return "";
+  const trimmed = rawTitle.trim();
+  if (trimmed === "THE BASICS") return "The Basics";
+  const isAllCaps = trimmed === trimmed.toUpperCase() && /[A-Z]/.test(trimmed);
+  if (isAllCaps) {
+    const lower = trimmed.toLowerCase();
+    return lower.replace(/\b([a-z])/g, (match) => match.toUpperCase());
+  }
+  return trimmed;
+};
+
 // Product Card Component for Category Pages - Standardized 4-column layout
 export function CategoryProductCard({ product }: { product: ScrapedProduct }) {
   const displayPrice = product.price_from || product.price || "";
@@ -8,7 +20,7 @@ export function CategoryProductCard({ product }: { product: ScrapedProduct }) {
     Array.isArray(product.categories) && product.categories.length > 0
       ? String(product.categories[0])
       : "Make-Up";
-  const displayTitle = product.title?.trim() === "THE BASICS" ? "The Basics" : product.title;
+  const displayTitle = formatTitle(product.title);
 
   return (
     <a
@@ -26,7 +38,7 @@ export function CategoryProductCard({ product }: { product: ScrapedProduct }) {
           />
         )}
       </div>
-      <h3 className="product-card-title mb-1">
+      <h3 className="product-card-title mb-1 capitalize text-left">
         {displayTitle}
       </h3>
       <p className="product-card-subtitle mb-1">{displaySubtitle}</p>

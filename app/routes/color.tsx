@@ -352,6 +352,18 @@ function ShadeCountIndicator({
   );
 }
 
+const formatTitle = (rawTitle?: string): string => {
+  if (!rawTitle) return "";
+  const trimmed = rawTitle.trim();
+  if (trimmed === "THE BASICS") return "The Basics";
+  const isAllCaps = trimmed === trimmed.toUpperCase() && /[A-Z]/.test(trimmed);
+  if (isAllCaps) {
+    const lower = trimmed.toLowerCase();
+    return lower.replace(/\b([a-z])/g, (match) => match.toUpperCase());
+  }
+  return trimmed;
+};
+
 // Unified Product Card Component - Used for ALL products on color page
 function ColorProductCard({
   product,
@@ -366,8 +378,7 @@ function ColorProductCard({
     Array.isArray(product.categories) && product.categories.length > 0
       ? String(product.categories[0])
       : "";
-  const displayTitle =
-    product.title?.trim() === "THE BASICS" ? "The Basics" : product.title;
+  const displayTitle = formatTitle(product.title);
 
   // Get shade count from product data
   const shadeCount = product.shades?.length || 0;
@@ -400,7 +411,7 @@ function ColorProductCard({
       </div>
       {/* Product info */}
       <div className="product-card-info">
-        <h3 className="product-card-title mb-1 line-clamp-2">
+        <h3 className="product-card-title mb-1 line-clamp-2 capitalize text-left">
           {displayTitle}
         </h3>
         {displaySubtitle && (
@@ -428,8 +439,7 @@ function CollectionCard({
     Array.isArray(product.categories) && product.categories.length > 0
       ? String(product.categories[0])
       : "";
-  const displayTitle =
-    product.title?.trim() === "THE BASICS" ? "The Basics" : product.title;
+  const displayTitle = formatTitle(product.title);
 
   // Get shade count from product data
   const shadeCount = product.shades?.length || 0;
@@ -462,7 +472,7 @@ function CollectionCard({
       </div>
       {/* Product info */}
       <div className="product-card-info">
-        <h3 className="product-card-title mb-1 line-clamp-2">
+        <h3 className="product-card-title mb-1 line-clamp-2 capitalize text-left">
           {displayTitle}
         </h3>
         {displaySubtitle && (

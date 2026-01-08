@@ -57,6 +57,18 @@ import colorMappingBrownShades from "../data/color_mapping_brown-shades.json";
 import colorMappingGreyShades from "../data/color_mapping_grey-shades.json";
 import colorMappingBlackShades from "../data/color_mapping_black-shades.json";
 
+const formatTitle = (rawTitle?: string): string => {
+  if (!rawTitle) return "";
+  const trimmed = rawTitle.trim();
+  if (trimmed === "THE BASICS") return "The Basics";
+  const isAllCaps = trimmed === trimmed.toUpperCase() && /[A-Z]/.test(trimmed);
+  if (isAllCaps) {
+    const lower = trimmed.toLowerCase();
+    return lower.replace(/\b([a-z])/g, (match) => match.toUpperCase());
+  }
+  return trimmed;
+};
+
 // Map of slug to color mapping data
 const COLOR_MAPPINGS: Record<
   string,
@@ -995,7 +1007,7 @@ export default function ProductPage() {
           {/* Mobile Product Title & Reviews - Above Image */}
           <div className="px-4 py-3 bg-white">
             <h1 className="product-page-title mb-1">
-              {product.title}
+              {formatTitle(product.title)}
             </h1>
             <div className="flex items-center justify-between">
               <span className="text-sm text-[#5c666f]">
@@ -1130,7 +1142,7 @@ export default function ProductPage() {
             {/* Mobile Product Description */}
             <div className="mt-6 pt-6 border-t border-gray-200">
               {product.main_description && (
-                <p className="font-['Archivo'] text-base text-[#272724] leading-relaxed mb-6">
+                <p className="font-['Archivo'] text-[1.05rem] font-normal text-[#272724] leading-[1.5] mb-6">
                   {product.main_description}
                 </p>
               )}
@@ -1146,7 +1158,7 @@ export default function ProductPage() {
                         : "#272724",
                     }}
                   />
-                  <span className="font-['Archivo'] text-base text-[#272724]">
+                  <span className="font-['Archivo'] text-[1.05rem] font-medium text-[#272724]">
                     Vegan formula
                   </span>
                 </div>
@@ -1159,7 +1171,7 @@ export default function ProductPage() {
                         : "#272724",
                     }}
                   />
-                  <span className="font-['Archivo'] text-base text-[#272724]">
+                  <span className="font-['Archivo'] text-[1.05rem] font-medium text-[#272724]">
                     Long-lasting hold and shine
                   </span>
                 </div>
@@ -1172,7 +1184,7 @@ export default function ProductPage() {
                         : "#272724",
                     }}
                   />
-                  <span className="font-['Archivo'] text-base text-[#272724]">
+                  <span className="font-['Archivo'] text-[1.05rem] font-medium text-[#272724]">
                     Enriched with protective silicium
                   </span>
                 </div>
@@ -1453,17 +1465,17 @@ export default function ProductPage() {
 
               {/* Title - Title case, black, not bold */}
               <h1 className="product-page-title mb-2">
-                {product.title}
+                {formatTitle(product.title)}
               </h1>
 
               {/* Size - Mavala uses 1.4rem */}
-              <p className="font-['Archivo'] text-[1.4rem] text-[#272724] font-light mb-6">
+              <p className="font-['Archivo'] text-[1.15rem] text-[#272724] font-normal mb-6 leading-[1.4]">
                 5ml
               </p>
 
               {/* Description - Mavala uses 1.6rem, font-weight 300, line-height 1.4 */}
               {product.main_description && (
-                <div className="font-['Archivo'] text-[1.6rem] text-[#272724] font-light leading-[1.4] mb-8 max-w-[53ch]">
+                <div className="font-['Archivo'] text-[1.25rem] text-[#272724] font-normal leading-[1.5] mb-8 max-w-[53ch]">
                   {product.main_description
                     .split("\n")
                     .filter((p) => p.trim())
@@ -1486,7 +1498,7 @@ export default function ProductPage() {
                         : "#272724",
                     }}
                   />
-                  <span className="font-['Archivo'] text-[1.6rem] text-[#272724] font-medium">
+                  <span className="font-['Archivo'] text-[1.25rem] text-[#272724] font-medium leading-[1.4]">
                     Vegan formula
                   </span>
                 </div>
@@ -1499,7 +1511,7 @@ export default function ProductPage() {
                         : "#272724",
                     }}
                   />
-                  <span className="font-['Archivo'] text-[1.6rem] text-[#272724] font-medium">
+                  <span className="font-['Archivo'] text-[1.25rem] text-[#272724] font-medium leading-[1.4]">
                     Long-lasting hold and shine
                   </span>
                 </div>

@@ -11,7 +11,7 @@ export default {
       },
       fontFamily: {
         // Default sans: Archivo (loaded via Google Fonts in app/root.tsx)
-        sans: ['Archivo', 'Raleway', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        sans: ['Archivo', 'sans-serif'],
         marcellus: ['Marcellus', 'serif'],
       },
       container: {

@@ -78,7 +78,7 @@
   
   .product-card-title {
     font-family: var(--font-family-default, "Archivo", sans-serif);
-    font-weight: 300;
+    font-weight: 400;
     color: var(--color-dark, #272724);
     letter-spacing: 0.02em;
     font-size: var(--font-size-md, 1.6rem);
@@ -145,10 +145,11 @@
   /* Product Page Title (H1) - Design System */
   .product-page-title {
     font-family: var(--font-family-default, "Archivo", system-ui, serif);
-    font-weight: 300;
+    font-weight: 400;
     color: var(--color-dark, #272724);
     letter-spacing: 0;
-    font-size: var(--font-size-xl, 2.4rem);
+    font-size: var(--font-size-xl, 3rem);
+    line-height: 1.15;
   }
 }
 

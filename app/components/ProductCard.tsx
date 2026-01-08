@@ -9,6 +9,18 @@ interface ProductCardProps {
   showQuickAdd?: boolean;
 }
 
+const formatTitle = (rawTitle?: string): string => {
+  if (!rawTitle) return "";
+  const trimmed = rawTitle.trim();
+  if (trimmed === "THE BASICS") return "The Basics";
+  const isAllCaps = trimmed === trimmed.toUpperCase() && /[A-Z]/.test(trimmed);
+  if (isAllCaps) {
+    const lower = trimmed.toLowerCase();
+    return lower.replace(/\b([a-z])/g, (match) => match.toUpperCase());
+  }
+  return trimmed;
+};
+
 export function ProductCard({
   product,
   showQuickAdd = false,
@@ -27,17 +39,16 @@ export function ProductCard({
       !product.title.includes("function") &&
       !product.title.includes("window.")
     ) {
-      const t = product.title.trim();
-      // Fix known ugly all-caps title rendering while keeping other brand titles intact
-      if (t === "THE BASICS") return "The Basics";
-      return t;
+      return formatTitle(product.title);
     }
     // Extract from slug as fallback
     const cleanSlug = slug.replace(/^all-products_/, "").replace(/^[^_]+_/, "");
-    return cleanSlug
+    return formatTitle(
+      cleanSlug
       .split("-")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
+      .join(" ")
+    );
   };
 
   // Get product image - images array now contains local paths from scraped-products.ts
@@ -118,7 +129,7 @@ export function ProductCard({
 
         {/* Product Info - Left aligned like mavala.com */}
         <div className="space-y-1 text-left">
-          <h3 className="product-card-title">
+          <h3 className="product-card-title capitalize text-left">
             {displayTitle}
           </h3>
           {displaySubtitle && (
