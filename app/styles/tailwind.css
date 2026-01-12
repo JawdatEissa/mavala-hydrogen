@@ -34,6 +34,11 @@
     font-family: inherit;
     font-weight: 300;
   }
+
+  /* Global scale for product listing typography (non-bestseller cards) */
+  :root {
+    --product-card-scale: 1.09; /* ~9% larger */
+  }
 }
 
 @layer components {
@@ -62,7 +67,7 @@
 
   /* Product Card */
   .product-card {
-    @apply relative text-center;
+    @apply relative text-left;
     font-family: var(--font-family-default, "Archivo", sans-serif);
     font-weight: 300;
     color: var(--color-dark, #272724);
@@ -80,18 +85,17 @@
     font-family: var(--font-family-default, "Archivo", sans-serif);
     font-weight: 400;
     color: var(--color-dark, #272724);
-    letter-spacing: 0.015em;
-    /* Clamp keeps mobile text smaller and scales up smoothly */
-    font-size: clamp(1.05rem, 4vw, 1.35rem);
-    line-height: 1.25;
-    text-transform: none; /* ensure not uppercase */
+    letter-spacing: 0;
+    font-size: calc(16px * var(--product-card-scale));
+    line-height: calc(20px * var(--product-card-scale));
+    text-transform: none;
   }
 
-  /* Scale product titles back up on medium+ screens */
+  /* Keep sizing consistent with the mavala.fr-like listing cards */
   @media (min-width: 768px) {
     .product-card-title {
-      font-size: var(--font-size-md, 1.6rem);
-      line-height: 1.25;
+      font-size: calc(16px * var(--product-card-scale));
+      line-height: calc(20px * var(--product-card-scale));
     }
   }
 
@@ -109,25 +113,33 @@
     font-family: var(--font-family-default, "Archivo", system-ui, serif);
     font-weight: 300;
     color: var(--color-gray-medium, #9ca3af);
-    font-size: clamp(1.05rem, 3.8vw, var(--font-size-sm, 1.3rem));
-    line-height: 1.2;
+    font-size: calc(12px * var(--product-card-scale));
+    line-height: calc(14px * var(--product-card-scale));
   }
 
   .product-card-price-current {
     font-family: var(--font-family-default, "Archivo", system-ui, serif);
     font-weight: 400;
     color: var(--color-dark-red, #a22034);
-    font-size: clamp(1.1rem, 4.2vw, var(--font-size-sm, 1.4rem));
-    line-height: 1.2;
+    font-size: calc(13px * var(--product-card-scale));
+    line-height: calc(16px * var(--product-card-scale));
   }
 
   .product-card-price-compare {
     font-family: var(--font-family-default, "Archivo", system-ui, serif);
     font-weight: 300;
-    color: var(--color-gray-medium, #9ca3af);
-    font-size: var(--font-size-sm, 1.4rem);
-    line-height: 1.2;
+    color: #b8b8b8;
+    font-size: calc(13px * var(--product-card-scale));
+    line-height: calc(16px * var(--product-card-scale));
     text-decoration: line-through;
+  }
+
+  .product-card-meta {
+    font-family: var(--font-family-default, "Archivo", system-ui, serif);
+    font-weight: 300;
+    color: var(--color-gray-medium, #9ca3af);
+    font-size: calc(12px * var(--product-card-scale));
+    line-height: calc(14px * var(--product-card-scale));
   }
   
   .product-card-price {

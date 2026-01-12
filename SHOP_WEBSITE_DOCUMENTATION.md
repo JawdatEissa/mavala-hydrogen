@@ -138,6 +138,36 @@ The Mavala shop website is built with **Remix** (React Router) and **Tailwind CS
 **Section 1: Best Sellers**
 - **Location**: Below mission statement
 - **Grid**: 6 products in a row (responsive)
+
+---
+
+## Bestsellers Badge (Reusable)
+
+The site has a **reusable “BESTSELLERS” badge** that can appear on product cards anywhere in the app (not just on the homepage carousel).
+
+### How it works
+- **Source of truth**: `app/lib/bestsellers.ts`
+  - `BESTSELLER_SLUGS`: set of product slugs considered bestsellers
+  - `isBestsellerSlug(slug)`: helper used across the UI
+- **Exact badge UI**: `app/components/BestsellerBadge.tsx`
+  - Keeps the badge styling identical everywhere (top-left white label)
+
+### Where it is already used
+- **Homepage Best Sellers carousel**: `app/components/BestsellerCard.tsx`
+- **All product cards across the store**: `app/components/ProductCard.tsx`
+  - This covers most grids/lists (collections pages, category pages, search, related products, etc.)
+- **Color page custom cards**: `app/routes/color.tsx`
+
+### Add the badge to another product
+1. Open `app/lib/bestsellers.ts`
+2. Add the product’s **slug** to `BESTSELLER_SLUGS`
+3. The badge will automatically appear anywhere that product is rendered using `ProductCard` (and in the color page cards).
+
+### Add the badge to a new UI card
+If you build a new product card component that doesn’t use `ProductCard`, you can show the badge like this:
+- Import `isBestsellerSlug` from `app/lib/bestsellers.ts`
+- Import `BestsellerBadge` from `app/components/BestsellerBadge.tsx`
+- Render `<BestsellerBadge />` inside the **image container** when `isBestsellerSlug(slug)` is true.
 - **Button**: "VIEW ALL PRODUCTS" → Links to `/collections/all`
 - **File**: `app/routes/_index.tsx` (around line 150-250)
 

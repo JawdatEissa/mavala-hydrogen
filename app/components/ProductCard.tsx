@@ -1,6 +1,10 @@
 import { Link } from "@remix-run/react";
 import type { Product } from "../lib/mock-data";
 import type { ScrapedProduct } from "../lib/scraped-products.server";
+import { formatPriceToCad } from "../lib/currency";
+import { getListingMeta } from "../lib/product-meta";
+import { isBestsellerSlug } from "../lib/bestsellers";
+import { BestsellerBadge } from "./BestsellerBadge";
 
 type ProductType = Product | ScrapedProduct;
 
@@ -27,6 +31,7 @@ export function ProductCard({
 }: ProductCardProps) {
   // Extract slug from product
   const slug = product.slug || product.url.split("/").pop() || "";
+  const showBestsellerBadge = isBestsellerSlug(slug);
 
   // Helper to extract title from slug if title is empty or corrupted
   const getDisplayTitle = (): string => {
@@ -111,11 +116,19 @@ export function ProductCard({
       compareAtPrice !== (product as any).price
   );
 
+  const displayPriceCad = displayPrice ? formatPriceToCad(displayPrice) : "";
+  const compareAtCad = showCompareAt ? formatPriceToCad(compareAtPrice) : "";
+  const listingMeta =
+    typeof (product as any).sizes !== "undefined"
+      ? getListingMeta(product as ScrapedProduct)
+      : "";
+
   return (
     <div className="product-card group relative flex flex-col w-full">
       <Link to={`/products/${slug}`} className="block flex flex-col h-full">
         {/* Image Container - Standardized grey background with 4:5 aspect ratio */}
-        <div className="relative overflow-hidden mb-4 bg-[#f5f5f5] aspect-[4/5] flex items-center justify-center p-6 border-none outline-none shadow-none">
+        <div className="relative overflow-hidden mb-3 bg-[#f5f5f5] aspect-[4/5] flex items-center justify-center p-6 border-none outline-none shadow-none">
+          {showBestsellerBadge ? <BestsellerBadge /> : null}
           <img
             src={productImage}
             alt={displayTitle}
@@ -127,24 +140,24 @@ export function ProductCard({
           />
         </div>
 
-        {/* Product Info - Left aligned like mavala.com */}
-        <div className="space-y-1 text-left">
-          <h3 className="product-card-title capitalize text-left">
-            {displayTitle}
-          </h3>
-          {displaySubtitle && (
-            <p className="product-card-subtitle">{displaySubtitle}</p>
-          )}
-          {displayPrice && (
-            <div className="flex items-baseline gap-2">
-              <span className="product-card-price-current">{displayPrice}</span>
-              {showCompareAt && (
-                <span className="product-card-price-compare">
-                  {compareAtPrice}
-                </span>
-              )}
+        {/* Product Info - Match Bestseller hierarchy (name / category / price row) */}
+        <div className="text-left">
+          <h3 className="product-card-title">{displayTitle}</h3>
+          {displaySubtitle ? (
+            <p className="product-card-subtitle mt-1">{displaySubtitle}</p>
+          ) : null}
+
+          {displayPriceCad ? (
+            <div className="mt-[10px] flex flex-wrap items-baseline gap-x-2 gap-y-1">
+              {compareAtCad ? (
+                <span className="product-card-price-compare">{compareAtCad}</span>
+              ) : null}
+              <span className="product-card-price-current">{displayPriceCad}</span>
+              {listingMeta ? (
+                <span className="product-card-meta">{listingMeta}</span>
+              ) : null}
             </div>
-          )}
+          ) : null}
         </div>
       </Link>
     </div>

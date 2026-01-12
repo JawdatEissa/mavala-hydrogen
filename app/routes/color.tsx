@@ -6,6 +6,9 @@ import {
   loadScrapedProducts,
   type ScrapedProduct,
 } from "../lib/scraped-products.server";
+import { formatPriceToCad } from "../lib/currency";
+import { isBestsellerSlug } from "../lib/bestsellers";
+import { BestsellerBadge } from "../components/BestsellerBadge";
 import shadeColorsData from "../data/shade_colors.json";
 
 // Import color mappings to get shade counts for each product
@@ -372,7 +375,7 @@ function ColorProductCard({
   product: ScrapedProduct;
   shadeColors: Record<string, { hex: string; rgb: number[] }>;
 }) {
-  const displayPrice = product.price_from || product.price || "A$11.95";
+  const displayPrice = product.price_from || product.price || "";
   const image = product.images?.[0] || "";
   const displaySubtitle =
     Array.isArray(product.categories) && product.categories.length > 0
@@ -394,6 +397,7 @@ function ColorProductCard({
     <Link to={`/products/${product.slug}`} className="product-card group block">
       {/* Image Container - Fixed aspect ratio */}
       <div className="relative w-full bg-[#f5f5f5] aspect-[4/5] overflow-hidden mb-1.5">
+        {isBestsellerSlug(product.slug) ? <BestsellerBadge /> : null}
         {image && (
           <img
             src={image}
@@ -410,16 +414,21 @@ function ColorProductCard({
         )}
       </div>
       {/* Product info */}
-      <div className="product-card-info">
-        <h3 className="product-card-title mb-1 line-clamp-2 capitalize text-left">
-          {displayTitle}
-        </h3>
-        {displaySubtitle && (
-          <p className="product-card-subtitle mb-1">{displaySubtitle}</p>
-        )}
-        <span className="product-card-price-current">
-          {displayPrice.startsWith("from") ? displayPrice : `A${displayPrice}`}
-        </span>
+      <div className="mt-4 text-left">
+        <h3 className="product-card-title">{displayTitle}</h3>
+        {displaySubtitle ? (
+          <p className="product-card-subtitle mt-1">{displaySubtitle}</p>
+        ) : null}
+        {displayPrice ? (
+          <div className="mt-[10px] flex flex-wrap items-baseline gap-x-2 gap-y-1">
+            <span className="product-card-price-current">
+              {formatPriceToCad(displayPrice)}
+            </span>
+            {shadeCount > 0 ? (
+              <span className="product-card-meta">{shadeCount} shades</span>
+            ) : null}
+          </div>
+        ) : null}
       </div>
     </Link>
   );
@@ -433,7 +442,7 @@ function CollectionCard({
   product: ScrapedProduct;
   shadeColors: Record<string, { hex: string; rgb: number[] }>;
 }) {
-  const displayPrice = product.price_from || product.price || "A$11.95";
+  const displayPrice = product.price_from || product.price || "";
   const image = product.images?.[0] || "";
   const displaySubtitle =
     Array.isArray(product.categories) && product.categories.length > 0
@@ -455,6 +464,7 @@ function CollectionCard({
     <Link to={`/products/${product.slug}`} className="product-card group block">
       {/* Image Container - Fixed aspect ratio, same as ColorProductCard */}
       <div className="relative w-full bg-[#f5f5f5] aspect-[4/5] overflow-hidden mb-1.5">
+        {isBestsellerSlug(product.slug) ? <BestsellerBadge /> : null}
         {image && (
           <img
             src={image}
@@ -471,16 +481,21 @@ function CollectionCard({
         )}
       </div>
       {/* Product info */}
-      <div className="product-card-info">
-        <h3 className="product-card-title mb-1 line-clamp-2 capitalize text-left">
-          {displayTitle}
-        </h3>
-        {displaySubtitle && (
-          <p className="product-card-subtitle mb-1">{displaySubtitle}</p>
-        )}
-        <span className="product-card-price-current">
-          {displayPrice.startsWith("from") ? displayPrice : `A${displayPrice}`}
-        </span>
+      <div className="mt-4 text-left">
+        <h3 className="product-card-title">{displayTitle}</h3>
+        {displaySubtitle ? (
+          <p className="product-card-subtitle mt-1">{displaySubtitle}</p>
+        ) : null}
+        {displayPrice ? (
+          <div className="mt-[10px] flex flex-wrap items-baseline gap-x-2 gap-y-1">
+            <span className="product-card-price-current">
+              {formatPriceToCad(displayPrice)}
+            </span>
+            {shadeCount > 0 ? (
+              <span className="product-card-meta">{shadeCount} shades</span>
+            ) : null}
+          </div>
+        ) : null}
       </div>
     </Link>
   );

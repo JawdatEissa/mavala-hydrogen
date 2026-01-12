@@ -1,8 +1,9 @@
 import { useState, useMemo } from "react";
-import { Link, useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import type { MetaFunction, LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { loadScrapedProducts, type ScrapedProduct } from "../lib/scraped-products.server";
+import { ProductCard } from "../components/ProductCard";
 
 export const meta: MetaFunction = () => {
   return [
@@ -73,41 +74,6 @@ export default function Search() {
     });
   }, [searchQuery, products]);
 
-  const formatTitle = (rawTitle?: string): string => {
-    if (!rawTitle) return "";
-    const trimmed = rawTitle.trim();
-    if (trimmed === "THE BASICS") return "The Basics";
-    const isAllCaps = trimmed === trimmed.toUpperCase() && /[A-Z]/.test(trimmed);
-    if (isAllCaps) {
-      const lower = trimmed.toLowerCase();
-      return lower.replace(/\b([a-z])/g, (match) => match.toUpperCase());
-    }
-    return trimmed;
-  };
-
-  // Get display price
-  const getDisplayPrice = (product: ScrapedProduct) => {
-    return product.price_from || product.price || "";
-  };
-
-  // Get first image
-  const getProductImage = (product: ScrapedProduct) => {
-    if (product.images && product.images.length > 0) {
-      return product.images[0];
-    }
-    return "/placeholder-product.jpg";
-  };
-
-  // Get display title
-  const getDisplayTitle = (product: ScrapedProduct) => {
-    // Use title if it exists and is not too long (not scraped HTML)
-    if (product.title && product.title.length < 200) {
-      return formatTitle(product.title);
-    }
-    // Otherwise extract from slug
-    return formatTitle(extractTitleFromSlug(product.slug));
-  };
-
   return (
     <div className="min-h-screen bg-white pt-[90px]">
       {/* Main Container */}
@@ -173,52 +139,7 @@ export default function Search() {
               {searchResults.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
                   {searchResults.map((product) => (
-                    <Link
-                      key={product.slug}
-                      to={`/products/${product.slug}`}
-                      className="product-card group"
-                    >
-                      <div className="bg-white border border-gray-200 hover:border-[#A71830] transition-all duration-300 overflow-hidden">
-                        {/* Product Image */}
-                        <div className="aspect-square bg-gray-100 overflow-hidden">
-                          <img
-                            src={getProductImage(product)}
-                            alt={product.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            onError={(e) => {
-                              const target = e.target as HTMLImageElement;
-                              target.src = "/placeholder-product.jpg";
-                            }}
-                          />
-                        </div>
-
-                        {/* Product Info */}
-                        <div className="p-4">
-                          <h3 className="product-card-title mb-2 line-clamp-2 capitalize text-left">
-                            {getDisplayTitle(product)}
-                          </h3>
-
-                          {Array.isArray((product as any).categories) &&
-                            (product as any).categories.length > 0 && (
-                              <p className="product-card-subtitle mb-2">
-                                {(product as any).categories[0]}
-                              </p>
-                            )}
-                          
-                          {product.tagline && (
-                            <p className="font-['Archivo'] text-[12px] text-gray-600 mb-3 line-clamp-2">
-                              {product.tagline}
-                            </p>
-                          )}
-
-                          {getDisplayPrice(product) && (
-                            <p className="product-card-price-current">
-                              {getDisplayPrice(product)}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                    </Link>
+                    <ProductCard key={product.slug} product={product} />
                   ))}
                 </div>
               ) : (

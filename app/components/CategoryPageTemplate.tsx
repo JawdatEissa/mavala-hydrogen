@@ -1,52 +1,9 @@
 import type { ScrapedProduct } from "../lib/scraped-products.server";
-
-const formatTitle = (rawTitle?: string): string => {
-  if (!rawTitle) return "";
-  const trimmed = rawTitle.trim();
-  if (trimmed === "THE BASICS") return "The Basics";
-  const isAllCaps = trimmed === trimmed.toUpperCase() && /[A-Z]/.test(trimmed);
-  if (isAllCaps) {
-    const lower = trimmed.toLowerCase();
-    return lower.replace(/\b([a-z])/g, (match) => match.toUpperCase());
-  }
-  return trimmed;
-};
+import { ProductCard } from "./ProductCard";
 
 // Product Card Component for Category Pages - Standardized 4-column layout
 export function CategoryProductCard({ product }: { product: ScrapedProduct }) {
-  const displayPrice = product.price_from || product.price || "";
-  const image = product.images?.[0] || "";
-  const displaySubtitle =
-    Array.isArray(product.categories) && product.categories.length > 0
-      ? String(product.categories[0])
-      : "Make-Up";
-  const displayTitle = formatTitle(product.title);
-
-  return (
-    <a
-      href={`/products/${product.slug}`}
-      className="product-card group flex flex-col text-left w-full"
-    >
-      {/* Standardized grey background container with consistent aspect ratio */}
-      <div className="overflow-hidden mb-1.5 aspect-[4/5] flex items-center justify-center bg-[#f5f5f5] p-2">
-        {image && (
-          <img
-            src={image}
-            alt={displayTitle}
-            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-            loading="lazy"
-          />
-        )}
-      </div>
-      <h3 className="product-card-title mb-1 capitalize text-left">
-        {displayTitle}
-      </h3>
-      <p className="product-card-subtitle mb-1">{displaySubtitle}</p>
-      {displayPrice && (
-        <span className="product-card-price-current">{displayPrice}</span>
-      )}
-    </a>
-  );
+  return <ProductCard product={product} />;
 }
 
 // Section Header Component

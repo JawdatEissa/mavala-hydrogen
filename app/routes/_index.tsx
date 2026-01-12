@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { HeroVideo } from "../components/HeroVideo";
+import { BestsellerCard } from "../components/BestsellerCard";
 import { useState, useEffect, useRef } from "react";
 
 export const meta: MetaFunction = () => {
@@ -21,7 +22,77 @@ export default function Homepage() {
   // Best Sellers scroll tracking
   const [currentSlide, setCurrentSlide] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const totalProducts = 6;
+  const bestSellers = [
+    {
+      to: "/products/mavala-stop",
+      imageSrc: "/bestseller-stop.png",
+      imageAlt: "Mavala Stop",
+      name: "Mavala Stop",
+      category: "Nail care",
+      priceCompare: "€23.00",
+      priceCurrent: "€21.00",
+      meta: "10ml",
+      // Some packshots read visually smaller; boost ~15% inside the grey box
+      imageClassName:
+        "!max-w-full !max-h-full !scale-[1.15] group-hover:!scale-[1.265]",
+    },
+    {
+      to: "/products/mavala-scientifique-k",
+      imageSrc: "/bestseller-k-plus.png",
+      imageAlt: "Scientifique K+",
+      name: "Scientifique K+ Nail Hardener",
+      category: "Nail care",
+      priceCompare: "€23.00",
+      priceCurrent: "€21.00",
+      meta: "5ml",
+    },
+    {
+      to: "/products/nailactan-1",
+      imageSrc: "/bestseller-nailactan.png",
+      imageAlt: "Nailactan",
+      name: "Nailactan Nutritive Nail Cream",
+      category: "Nail care",
+      priceCompare: "€19.50",
+      priceCurrent: "€17.90",
+      meta: "15ml",
+      // Some packshots read visually smaller; boost ~15% inside the grey box
+      imageClassName:
+        "!max-w-full !max-h-full !scale-[1.15] group-hover:!scale-[1.265]",
+    },
+    {
+      to: "/products/double-lash",
+      imageSrc: "/bestseller-double-lash.png",
+      imageAlt: "Double Lash",
+      name: "Double Lash Eyelash Serum",
+      category: "Eye care",
+      priceCompare: "€23.00",
+      priceCurrent: "€21.00",
+      meta: "10ml",
+      imageClassName: "scale-[1.7] -translate-y-12 group-hover:scale-[1.87]",
+    },
+    {
+      to: "/products/nail-white-crayon",
+      imageSrc: "/bestseller-nail-white-crayon.png",
+      imageAlt: "Nail White Crayon",
+      name: "Nail White Crayon",
+      category: "Makeup",
+      priceCompare: "€14.20",
+      priceCurrent: "€12.10",
+      meta: "1.6g",
+    },
+    {
+      to: "/products/double-brow",
+      imageSrc: "/images/double-brow/01_Double-Brow.png",
+      imageAlt: "Double Brow",
+      name: "Double-Brow Serum",
+      category: "Eye care",
+      priceCompare: "€23.00",
+      priceCurrent: "€21.00",
+      meta: "4.5ml",
+    },
+  ];
+
+  const totalProducts = bestSellers.length;
 
   useEffect(() => {
     const container = scrollContainerRef.current;
@@ -227,137 +298,20 @@ export default function Homepage() {
                 className="flex gap-2 md:gap-4 px-4 md:px-6"
                 style={{ WebkitOverflowScrolling: "touch" }}
               >
-                {/* Product 1: STOP */}
-                <Link
-                  to="/products/mavala-stop"
-                  className="flex flex-col group flex-shrink-0 w-[65%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
-                >
-                  <div className="relative w-full bg-[#f5f5f5] p-4 md:p-10 flex justify-center items-center aspect-[4/5] overflow-hidden">
-                    <div className="absolute top-3 left-3 z-10 bg-white border border-gray-200 rounded-sm px-3 py-1 shadow-sm">
-                      <span className="font-['Archivo'] text-[10px] font-medium uppercase tracking-[0.14em] text-[#272724]">
-                        BESTSELLERS
-                      </span>
-                    </div>
-                    <img
-                      src="/bestseller-stop.png"
-                      alt="Mavala Stop"
-                      className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
-                    />
-                  </div>
-                  <p className="mt-4 font-['Archivo'] text-[13px] font-normal uppercase tracking-[1px] text-[#5c666f] text-center group-hover:text-[#ae1932] transition-colors">
-                    MAVALA STOP
-                  </p>
-                </Link>
-
-                {/* Product 2: K+ */}
-                <Link
-                  to="/products/mavala-scientifique-k"
-                  className="flex flex-col group flex-shrink-0 w-[65%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
-                >
-                  <div className="relative w-full bg-[#f5f5f5] p-4 md:p-10 flex justify-center items-center aspect-[4/5] overflow-hidden">
-                    <div className="absolute top-3 left-3 z-10 bg-white border border-gray-200 rounded-sm px-3 py-1 shadow-sm">
-                      <span className="font-['Archivo'] text-[10px] font-medium uppercase tracking-[0.14em] text-[#272724]">
-                        BESTSELLERS
-                      </span>
-                    </div>
-                    <img
-                      src="/bestseller-k-plus.png"
-                      alt="Scientifique K+"
-                      className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
-                    />
-                  </div>
-                  <p className="mt-4 font-['Archivo'] text-[13px] font-normal uppercase tracking-[1px] text-[#5c666f] text-center group-hover:text-[#ae1932] transition-colors">
-                    SCIENTIFIQUE K+ NAIL HARDENER
-                  </p>
-                </Link>
-
-                {/* Product 3: Nailactan */}
-                <Link
-                  to="/products/nailactan-1"
-                  className="flex flex-col group flex-shrink-0 w-[65%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
-                >
-                  <div className="relative w-full bg-[#f5f5f5] p-4 md:p-10 flex justify-center items-center aspect-[4/5] overflow-hidden">
-                    <div className="absolute top-3 left-3 z-10 bg-white border border-gray-200 rounded-sm px-3 py-1 shadow-sm">
-                      <span className="font-['Archivo'] text-[10px] font-medium uppercase tracking-[0.14em] text-[#272724]">
-                        BESTSELLERS
-                      </span>
-                    </div>
-                    <img
-                      src="/bestseller-nailactan.png"
-                      alt="Nailactan"
-                      className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
-                    />
-                  </div>
-                  <p className="mt-4 font-['Archivo'] text-[13px] font-normal uppercase tracking-[1px] text-[#5c666f] text-center group-hover:text-[#ae1932] transition-colors">
-                    NAILACTAN NUTRITIVE NAIL CREAM
-                  </p>
-                </Link>
-
-                {/* Product 4: Double Lash */}
-                <Link
-                  to="/products/double-lash"
-                  className="flex flex-col group flex-shrink-0 w-[65%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
-                >
-                  <div className="relative w-full bg-[#f5f5f5] p-4 md:p-10 flex justify-center items-center aspect-[4/5] overflow-hidden">
-                    <div className="absolute top-3 left-3 z-10 bg-white border border-gray-200 rounded-sm px-3 py-1 shadow-sm">
-                      <span className="font-['Archivo'] text-[10px] font-medium uppercase tracking-[0.14em] text-[#272724]">
-                        BESTSELLERS
-                      </span>
-                    </div>
-                    <img
-                      src="/bestseller-double-lash.png"
-                      alt="Double Lash"
-                      className="w-full h-full object-contain scale-[1.7] -translate-y-12 transition-transform duration-300 group-hover:scale-[1.87]"
-                    />
-                  </div>
-                  <p className="mt-4 font-['Archivo'] text-[13px] font-normal uppercase tracking-[1px] text-[#5c666f] text-center group-hover:text-[#ae1932] transition-colors">
-                    DOUBLE LASH EYELASH SERUM
-                  </p>
-                </Link>
-
-                {/* Product 5: Nail White Crayon */}
-                <Link
-                  to="/products/nail-white-crayon"
-                  className="flex flex-col group flex-shrink-0 w-[65%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
-                >
-                  <div className="relative w-full bg-[#f5f5f5] p-4 md:p-10 flex justify-center items-center aspect-[4/5] overflow-hidden">
-                    <div className="absolute top-3 left-3 z-10 bg-white border border-gray-200 rounded-sm px-3 py-1 shadow-sm">
-                      <span className="font-['Archivo'] text-[10px] font-medium uppercase tracking-[0.14em] text-[#272724]">
-                        BESTSELLERS
-                      </span>
-                    </div>
-                    <img
-                      src="/bestseller-nail-white-crayon.png"
-                      alt="Nail White Crayon"
-                      className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
-                    />
-                  </div>
-                  <p className="mt-4 font-['Archivo'] text-[13px] font-normal uppercase tracking-[1px] text-[#5c666f] text-center group-hover:text-[#ae1932] transition-colors">
-                    NAIL WHITE CRAYON
-                  </p>
-                </Link>
-
-                {/* Product 6: Double Brow */}
-                <Link
-                  to="/products/double-brow"
-                  className="flex flex-col group flex-shrink-0 w-[65%] sm:w-[30%] md:w-[22%] lg:w-[18%] snap-center snap-stop-always active:scale-95 transition-transform"
-                >
-                  <div className="relative w-full bg-[#f5f5f5] p-4 md:p-10 flex justify-center items-center aspect-[4/5] overflow-hidden">
-                    <div className="absolute top-3 left-3 z-10 bg-white border border-gray-200 rounded-sm px-3 py-1 shadow-sm">
-                      <span className="font-['Archivo'] text-[10px] font-medium uppercase tracking-[0.14em] text-[#272724]">
-                        BESTSELLERS
-                      </span>
-                    </div>
-                    <img
-                      src="/images/double-brow/01_Double-Brow.png"
-                      alt="Double Brow"
-                      className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
-                    />
-                  </div>
-                  <p className="mt-4 font-['Archivo'] text-[13px] font-normal uppercase tracking-[1px] text-[#5c666f] text-center group-hover:text-[#ae1932] transition-colors">
-                    DOUBLE-BROW EYEBROW SERUM
-                  </p>
-                </Link>
+                {bestSellers.map((p) => (
+                  <BestsellerCard
+                    key={p.to}
+                    to={p.to}
+                    imageSrc={p.imageSrc}
+                    imageAlt={p.imageAlt}
+                    name={p.name}
+                    category={p.category}
+                    priceCompare={p.priceCompare}
+                    priceCurrent={p.priceCurrent}
+                    meta={p.meta}
+                    imageClassName={p.imageClassName}
+                  />
+                ))}
               </div>
             </div>
 

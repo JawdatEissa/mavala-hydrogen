@@ -8,6 +8,7 @@ import {
   type ScrapedProduct,
 } from "../lib/scraped-products.server";
 import { ShadeDrawer } from "../components/ShadeDrawer";
+import { ProductCard } from "../components/ProductCard";
 // Import pre-generated image manifest (avoids fs scanning at runtime)
 import imageManifest from "~/data/image-manifest.json";
 // Import shade colors data directly
@@ -1917,27 +1918,7 @@ export default function ProductPage() {
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-10">
                 {relatedProducts.map((p) => (
-                  <Link
-                    key={p.slug}
-                    to={`/products/${p.slug}`}
-                    className="group text-center"
-                  >
-                    <div className="bg-gray-100 mb-4 overflow-hidden flex items-center justify-center aspect-square">
-                      {p.images && p.images[0] && (
-                        <img
-                          src={p.images[0]}
-                          alt={p.title}
-                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                        />
-                      )}
-                    </div>
-                    <h3 className="font-['Archivo'] text-sm uppercase tracking-wide text-[#333]">
-                      {p.title}
-                    </h3>
-                    <p className="font-['Archivo'] text-[#5c666f] text-sm">
-                      {p.price_from || p.price}
-                    </p>
-                  </Link>
+                  <ProductCard key={p.slug} product={p as unknown as ScrapedProduct} />
                 ))}
               </div>
             </div>
