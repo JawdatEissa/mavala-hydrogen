@@ -190,6 +190,7 @@ export default function EyeBeautyPage() {
         <CategoryProductSection
           title={activeSection.title}
           products={activeSection.products}
+          hideHeader
         />
       )}
 

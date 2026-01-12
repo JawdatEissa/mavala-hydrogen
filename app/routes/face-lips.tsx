@@ -326,6 +326,7 @@ export default function FaceLipsPage() {
           title={activeSection.title}
           subtitle={activeSection.subtitle}
           products={activeSection.products}
+          hideHeader
         />
       )}
 

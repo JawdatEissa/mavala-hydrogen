@@ -95,11 +95,42 @@ const NAIL_POLISH_REMOVERS_SLUGS = [
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const allProducts = loadScrapedProducts();
 
-  // Helper to get products by slugs
-  const getProductsBySlug = (slugs: string[]) => {
-    return slugs
-      .map((slug) => allProducts.find((p) => p.slug.includes(slug)))
-      .filter(Boolean) as ScrapedProduct[];
+  /**
+   * Helper to get products by slug patterns.
+   *
+   * Old behavior used `find()` which can:
+   * - return the same product multiple times (e.g. "scissors" + "baby-nail-scissors")
+   * - return unstable results depending on array order
+   *
+   * New behavior:
+   * - if the pattern matches an exact slug, include that product
+   * - otherwise include *all* products whose slug includes the pattern
+   * - dedupe by slug
+   * - keep deterministic ordering (pattern order, then slug sort within a pattern)
+   */
+  const getProductsBySlug = (patterns: string[]) => {
+    const bySlug = new Map(allProducts.map((p) => [p.slug, p]));
+    const seen = new Set<string>();
+    const out: ScrapedProduct[] = [];
+
+    for (const pattern of patterns) {
+      const direct = bySlug.get(pattern);
+      const matches = direct
+        ? [direct]
+        : allProducts.filter((p) => p.slug.includes(pattern));
+
+      matches
+        .slice()
+        .sort((a, b) => a.slug.localeCompare(b.slug))
+        .forEach((p) => {
+          if (!seen.has(p.slug)) {
+            seen.add(p.slug);
+            out.push(p);
+          }
+        });
+    }
+
+    return out;
   };
 
   const penetratingCare = getProductsBySlug(PENETRATING_CARE_SLUGS);
@@ -352,6 +383,7 @@ export default function NailCarePage() {
         <CategoryProductSection
           title={activeCategory.title}
           products={activeCategory.products}
+          hideHeader
         />
       )}
     </div>
