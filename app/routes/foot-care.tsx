@@ -176,6 +176,7 @@ export default function FootCarePage() {
           title={activeSection.title}
           subtitle={activeSection.subtitle}
           products={activeSection.products}
+          hideHeader
         />
       )}
 

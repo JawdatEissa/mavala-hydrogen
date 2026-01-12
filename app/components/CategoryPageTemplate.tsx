@@ -63,11 +63,13 @@ export function CategoryProductSection({
   subtitle,
   products,
   id,
+  hideHeader = false,
 }: {
   title: string;
   subtitle?: string;
   products: ScrapedProduct[];
   id?: string;
+  hideHeader?: boolean;
 }) {
   return (
     <section
@@ -75,7 +77,9 @@ export function CategoryProductSection({
       className="py-12 md:py-16 px-6 md:px-10 lg:px-16 bg-white scroll-mt-[120px]"
     >
       <div className="w-full">
-        <CategorySectionHeader title={title} subtitle={subtitle} />
+        {!hideHeader ? (
+          <CategorySectionHeader title={title} subtitle={subtitle} />
+        ) : null}
         {/* 4-column grid on desktop, 2 on mobile - full width */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
           {products.map((product) => (

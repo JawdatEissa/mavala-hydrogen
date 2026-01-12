@@ -123,7 +123,7 @@ export default function FaceLipsPage() {
     const ordered = [
       {
         id: "lips",
-        label: "Lips",
+        label: "LIPS",
         title: "LIPS",
         subtitle: undefined as string | undefined,
         products: lipsProducts,
@@ -144,7 +144,7 @@ export default function FaceLipsPage() {
       },
       {
         id: "anti-age-nutrition",
-        label: "Anti Age Nutrition",
+        label: "Anti Age",
         title: "ANTI AGE NUTRITION",
         subtitle: byTitle.get("NUTRI-ELIXIR")?.subtitle,
         products: byTitle.get("NUTRI-ELIXIR")?.products ?? [],
@@ -158,7 +158,7 @@ export default function FaceLipsPage() {
       },
       {
         id: "skin-vitality",
-        label: "Skin Vitality",
+        label: "Vitality",
         title: "SKIN VITALITY",
         subtitle: byTitle.get("SKIN VITALITY")?.subtitle,
         products: byTitle.get("SKIN VITALITY")?.products ?? [],
@@ -172,7 +172,7 @@ export default function FaceLipsPage() {
       },
       {
         id: "clean-comfort",
-        label: "Clean & Comfort",
+        label: "Clean",
         title: "CLEAN & COMFORT",
         subtitle: byTitle.get("CLEAN & COMFORT")?.subtitle,
         products: byTitle.get("CLEAN & COMFORT")?.products ?? [],
@@ -264,7 +264,7 @@ export default function FaceLipsPage() {
                   type="button"
                   onClick={() => setActiveTabId(tab.id)}
                   className={`
-                    flex-1 min-w-0 px-4 py-3 rounded-full font-['Archivo'] text-[12px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    flex-1 min-w-0 px-3 py-3 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
                     ${
                       activeTabId === tab.id
                         ? "bg-[#ae1932] text-white"

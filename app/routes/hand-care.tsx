@@ -168,6 +168,7 @@ export default function HandCarePage() {
         <CategoryProductSection
           title={activeSection.title}
           products={activeSection.products}
+          hideHeader
         />
       )}
 

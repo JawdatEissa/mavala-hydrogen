@@ -145,36 +145,42 @@ export default function NailCarePage() {
       {
         id: "penetrating-care",
         label: "Penetrating Nail Care",
+        mobileLabel: "CARE",
         title: "PENETRATING NAIL CARE",
         products: penetratingCare,
       },
       {
         id: "cuticle-care",
         label: "Cuticle Care",
+        mobileLabel: "CUTICLE",
         title: "CUTICLE CARE",
         products: cuticleCare,
       },
       {
         id: "nail-camouflage",
         label: "Nail Camouflage",
+        mobileLabel: "CAMOFLAUGE",
         title: "NAIL CAMOUFLAGE",
         products: nailCamouflage,
       },
       {
         id: "nail-beauty",
         label: "Nail Beauty",
+        mobileLabel: "BEAUTY",
         title: "NAIL BEAUTY",
         products: nailBeauty,
       },
       {
         id: "manicure-instruments",
         label: "Manicure Instruments",
+        mobileLabel: "MANICURE",
         title: "MANICURE INSTRUMENTS",
         products: manicureInstruments,
       },
       {
         id: "nail-polish-removers",
         label: "Nail Polish Removers",
+        mobileLabel: "REMOVER",
         title: "NAIL POLISH REMOVERS",
         products: nailPolishRemovers,
       },
@@ -285,7 +291,7 @@ export default function NailCarePage() {
                   type="button"
                   onClick={() => setActiveCategoryId(tab.id)}
                   className={`
-                    flex-1 min-w-0 px-4 py-3 rounded-full font-['Archivo'] text-[12px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    flex-1 min-w-0 px-3 py-3 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
                     ${
                       activeCategoryId === tab.id
                         ? "bg-[#ae1932] text-white"
@@ -293,7 +299,7 @@ export default function NailCarePage() {
                     }
                   `}
                 >
-                  <span className="block truncate">{tab.label}</span>
+                  <span className="block truncate">{tab.mobileLabel ?? tab.label}</span>
                 </button>
               ))}
             </div>
@@ -312,7 +318,7 @@ export default function NailCarePage() {
                     }
                   `}
                 >
-                  <span className="block truncate">{tab.label}</span>
+                  <span className="block truncate">{tab.mobileLabel ?? tab.label}</span>
                 </button>
               ))}
             </div>

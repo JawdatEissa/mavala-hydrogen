@@ -62,18 +62,31 @@ export default function EyeBeautyPage() {
 
   const normalizedSections = useMemo(() => {
     return sections.map((s) => {
+      const rawTitle = (s.title || "").toUpperCase().trim();
       const id = (s.title || "section")
         .toLowerCase()
         .replace(/&/g, "and")
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/(^-|-$)/g, "");
 
-      const label = s.title
-        .toLowerCase()
-        .split(/[\s-]+/)
-        .filter(Boolean)
-        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-        .join(" ");
+      // Keep labels short so they fit cleanly in mobile pills (incl. large phones)
+      const labelMap: Record<string, string> = {
+        "EYE CARE": "EYE CARE",
+        "EYE CONTOUR": "EYE CONTOUR",
+        "EYE LASHES": "EYE LASHES",
+        EYEBROWS: "EYEBROWS",
+        "EYE LIDS": "EYELIDS",
+        "EYE MAKE-UP COMPANIONS": "ACCESSORIES",
+      };
+
+      const label =
+        labelMap[rawTitle] ??
+        s.title
+          .toLowerCase()
+          .split(/[\s-]+/)
+          .filter(Boolean)
+          .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+          .join(" ");
 
       return {
         id,
@@ -116,7 +129,7 @@ export default function EyeBeautyPage() {
                   type="button"
                   onClick={() => setActiveTabId(tab.id)}
                   className={`
-                    flex-1 min-w-0 px-4 py-3 rounded-full font-['Archivo'] text-[12px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    flex-1 min-w-0 px-3 py-3 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
                     ${
                       activeTabId === tab.id
                         ? "bg-[#ae1932] text-white"

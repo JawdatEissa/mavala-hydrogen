@@ -348,6 +348,10 @@ function ImageGallery({
 }) {
   // Background color: white for collection products, grey for others
   const bgColor = isCollectionProduct ? "bg-white" : "bg-[#f5f5f5]";
+  const isScientifique1 = productSlug === "mavala-scientifique-1";
+  // For this product: image 01 should sit on grey (we convert it), but images 02/03
+  // should NOT be on the grey background container.
+  const secondaryBgColor = isScientifique1 ? "bg-white" : bgColor;
 
   // Products with lifestyle images that should use object-cover for secondary images
   const lifestyleImageProducts = [
@@ -356,17 +360,19 @@ function ImageGallery({
     "nude-shades",
   ];
 
-  const useObjectCover = lifestyleImageProducts.includes(productSlug);
+  const useObjectCover = lifestyleImageProducts.includes(productSlug) || isScientifique1;
   const bioGridRowsClass = isBioColors ? "md:grid-rows-2 md:items-stretch" : "";
   const bioFillHeightClass = isBioColors ? "h-full" : "";
   const mainImageClass = isBioColors
-    ? "w-full h-full object-cover border-none outline-none"
-    : "w-full h-full object-contain border-none outline-none";
+    ? "block w-full h-full object-cover border-none outline-none"
+    : "block w-full h-full object-contain border-none outline-none";
   const additionalImageClass = isBioColors
-    ? "w-full h-full object-cover border-none outline-none"
-    : `w-full aspect-square border-none outline-none ${
-        useObjectCover ? "object-cover" : "object-contain"
-      }`;
+    ? "block w-full h-full object-cover border-none outline-none"
+    : isScientifique1
+      ? "block w-full h-full object-cover border-none outline-none"
+      : `block w-full aspect-square border-none outline-none ${
+          useObjectCover ? "object-cover" : "object-contain"
+        }`;
   const bioGridStyle = isBioColors ? { aspectRatio: "4/3" } : undefined;
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -504,7 +510,7 @@ function ImageGallery({
           <img
             src={mainImage}
             alt={alt}
-            className="w-full aspect-square object-contain border-none outline-none"
+            className="block w-full aspect-square object-contain border-none outline-none"
             style={{ imageRendering: "-webkit-optimize-contrast" }}
           />
         </div>
@@ -518,13 +524,15 @@ function ImageGallery({
             {allImages.map((img, idx) => (
               <div
                 key={idx}
-                className={`flex-1 min-w-0 aspect-square ${bgColor} cursor-pointer active:opacity-80 transition-opacity`}
+                className={`flex-1 min-w-0 aspect-square ${
+                  idx === 0 ? bgColor : secondaryBgColor
+                } cursor-pointer active:opacity-80 transition-opacity`}
                 onClick={() => openLightbox(idx)}
               >
                 <img
                   src={img}
                   alt={`${alt} - ${idx + 1}`}
-                  className="w-full h-full object-cover"
+                  className="block w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
@@ -557,7 +565,7 @@ function ImageGallery({
           {additionalImages.slice(0, 2).map((img, idx) => (
             <div
               key={idx}
-              className={`${bgColor} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity ${bioFillHeightClass}`}
+              className={`${secondaryBgColor} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity ${bioFillHeightClass}`}
               onClick={() => openLightbox(idx + 1)}
             >
               <img
@@ -594,7 +602,7 @@ function ImageGallery({
 
           {/* Single Additional Image - Right - Clickable - Square */}
           <div
-            className={`${bgColor} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity`}
+            className={`${secondaryBgColor} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity`}
             onClick={() => openLightbox(1)}
           >
             <img
@@ -602,8 +610,8 @@ function ImageGallery({
               alt={`${alt} - 2`}
               className={
                 isBioColors
-                  ? "w-full h-full object-cover border-none outline-none"
-                  : "w-full object-cover border-none outline-none"
+                ? "block w-full h-full object-cover border-none outline-none"
+                : "block w-full object-cover border-none outline-none"
               }
               style={isBioColors ? undefined : { aspectRatio: "4/5" }}
               loading="lazy"
@@ -621,8 +629,8 @@ function ImageGallery({
             alt={alt}
             className={
               isBioColors
-                ? "w-full aspect-square object-cover border-none outline-none"
-                : "w-full aspect-square object-contain border-none outline-none"
+                ? "block w-full aspect-square object-cover border-none outline-none"
+                : "block w-full aspect-square object-contain border-none outline-none"
             }
             style={{ imageRendering: "-webkit-optimize-contrast" }}
           />

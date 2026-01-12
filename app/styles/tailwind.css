@@ -37,7 +37,10 @@
 
   /* Global scale for product listing typography (non-bestseller cards) */
   :root {
-    --product-card-scale: 1.09; /* ~9% larger */
+    /* Increased again by ~15% vs the previous sizing */
+    --product-card-scale: 1.255; /* ~1.09 * 1.15 */
+    /* Bestseller card uses its own fixed px values; scale those by ~15% too */
+    --bestseller-text-scale: 1.15;
   }
 }
 

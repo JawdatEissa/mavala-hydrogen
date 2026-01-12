@@ -49,12 +49,12 @@ export function BestsellerCard({
 
       {/* Info block under the grey image card (mavala.fr-like hierarchy) */}
       <div className="mt-4 text-left">
-        <p className="font-['Archivo'] text-[16px] leading-[20px] font-normal text-[#272724]">
+        <p className="font-['Archivo'] text-[calc(16px*var(--bestseller-text-scale))] leading-[calc(20px*var(--bestseller-text-scale))] font-normal text-[#272724]">
           {name}
         </p>
 
         {category ? (
-          <p className="mt-1 font-['Archivo'] text-[12px] leading-[14px] font-light text-[#9ca3af]">
+          <p className="mt-1 font-['Archivo'] text-[calc(12px*var(--bestseller-text-scale))] leading-[calc(14px*var(--bestseller-text-scale))] font-light text-[#9ca3af]">
             {category}
           </p>
         ) : null}
@@ -62,17 +62,17 @@ export function BestsellerCard({
         {priceCurrent || priceCompare || meta ? (
           <div className="mt-[10px] flex flex-wrap items-baseline gap-x-2 gap-y-1 font-['Archivo']">
             {priceCompareCad ? (
-              <span className="text-[13px] leading-[16px] font-light text-[#b8b8b8] line-through">
+              <span className="text-[calc(13px*var(--bestseller-text-scale))] leading-[calc(16px*var(--bestseller-text-scale))] font-light text-[#b8b8b8] line-through">
                 {priceCompareCad}
               </span>
             ) : null}
             {priceCurrentCad ? (
-              <span className="text-[13px] leading-[16px] font-normal text-[#ae1932]">
+              <span className="text-[calc(13px*var(--bestseller-text-scale))] leading-[calc(16px*var(--bestseller-text-scale))] font-normal text-[#ae1932]">
                 {priceCurrentCad}
               </span>
             ) : null}
             {meta ? (
-              <span className="text-[12px] leading-[14px] font-light text-[#9ca3af]">
+              <span className="text-[calc(12px*var(--bestseller-text-scale))] leading-[calc(14px*var(--bestseller-text-scale))] font-light text-[#9ca3af]">
                 {meta}
               </span>
             ) : null}
