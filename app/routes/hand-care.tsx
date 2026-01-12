@@ -19,13 +19,23 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       // Find matching product in scraped data
       const scrapedProduct = allProducts.find((p) => p.slug === product.slug);
 
+      if (scrapedProduct) {
+        return {
+          ...scrapedProduct,
+          title: product.name || scrapedProduct.title,
+          tagline: product.description || scrapedProduct.tagline,
+        };
+      }
+
       return {
+        url: `/products/${product.slug}`,
         slug: product.slug,
         title: product.name,
-        price: product.price,
+        price: product.price || "",
+        price_from: "",
         tagline: product.description,
-        images: scrapedProduct?.images || [],
-        url: `/products/${product.slug}`,
+        images: [],
+        categories: [],
       };
     }),
   }));
