@@ -1019,13 +1019,13 @@ export default function ProductPage() {
               {formatTitle(product.title)}
             </h1>
             <div className="flex items-center justify-between">
-              <span className="text-sm text-[#5c666f]">
+              <span className="text-[0.79rem] text-[#5c666f]">
                 {product.volume || "5ml"}
               </span>
               {product.store_reviews &&
                 typeof product.store_reviews === "object" &&
                 product.store_reviews.count && (
-                  <span className="text-sm text-[#5c666f]">
+                  <span className="text-[0.79rem] text-[#5c666f]">
                     ★★★★★ {product.store_reviews.rating || "4.9"} -{" "}
                     {product.store_reviews.count} Reviews
                   </span>
@@ -1122,7 +1122,7 @@ export default function ProductPage() {
             {/* Mobile Add to Cart Section */}
             <div className="mt-6">
               <div className="flex items-center gap-4 mb-4">
-                <span className="font-['Archivo'] text-sm text-[#5c666f]">
+                <span className="font-['Archivo'] text-[0.79rem] text-[#5c666f]">
                   Quantity:
                 </span>
                 <div className="flex items-center border border-gray-300">
@@ -1143,7 +1143,7 @@ export default function ProductPage() {
                   </button>
                 </div>
               </div>
-              <button className="w-full py-4 border-2 border-[#9e1b32] text-[#9e1b32] font-['Archivo'] text-sm uppercase tracking-wider hover:bg-[#9e1b32] hover:text-white transition-colors">
+              <button className="w-full py-4 border-2 border-[#9e1b32] text-[#9e1b32] font-['Archivo'] text-[0.79rem] uppercase tracking-wider hover:bg-[#9e1b32] hover:text-white transition-colors">
                 Add To Cart
               </button>
             </div>
@@ -1151,7 +1151,7 @@ export default function ProductPage() {
             {/* Mobile Product Description */}
             <div className="mt-6 pt-6 border-t border-gray-200">
               {product.main_description && (
-                <p className="font-['Archivo'] text-[1.05rem] font-normal text-[#272724] leading-[1.5] mb-6">
+                <p className="font-['Archivo'] text-[0.945rem] font-normal text-[#272724] leading-[1.5] mb-6">
                   {product.main_description}
                 </p>
               )}
@@ -1167,7 +1167,7 @@ export default function ProductPage() {
                         : "#272724",
                     }}
                   />
-                  <span className="font-['Archivo'] text-[1.05rem] font-medium text-[#272724]">
+                  <span className="font-['Archivo'] text-[0.945rem] font-medium text-[#272724]">
                     Vegan formula
                   </span>
                 </div>
@@ -1180,7 +1180,7 @@ export default function ProductPage() {
                         : "#272724",
                     }}
                   />
-                  <span className="font-['Archivo'] text-[1.05rem] font-medium text-[#272724]">
+                  <span className="font-['Archivo'] text-[0.945rem] font-medium text-[#272724]">
                     Long-lasting hold and shine
                   </span>
                 </div>
@@ -1193,7 +1193,7 @@ export default function ProductPage() {
                         : "#272724",
                     }}
                   />
-                  <span className="font-['Archivo'] text-[1.05rem] font-medium text-[#272724]">
+                  <span className="font-['Archivo'] text-[0.945rem] font-medium text-[#272724]">
                     Enriched with protective silicium
                   </span>
                 </div>
@@ -1204,7 +1204,7 @@ export default function ProductPage() {
                 {/* How To Use */}
                 <details className="group border-b border-gray-200">
                   <summary className="flex items-center justify-between py-4 cursor-pointer list-none">
-                    <h3 className="font-['Archivo'] text-base font-medium text-[#272724]">
+                    <h3 className="font-['Archivo'] text-[0.9rem] font-medium text-[#272724]">
                       How to Use
                     </h3>
                     <span className="text-gray-400 transition-transform group-open:rotate-180">
@@ -1223,7 +1223,7 @@ export default function ProductPage() {
                       </svg>
                     </span>
                   </summary>
-                  <div className="pb-4 font-['Archivo'] text-[#5c666f] text-sm leading-relaxed">
+                  <div className="pb-4 font-['Archivo'] text-[#5c666f] text-[0.79rem] leading-relaxed">
                     {product.how_to_use ? (
                       <p className="whitespace-pre-line">
                         {product.how_to_use}
@@ -1478,13 +1478,13 @@ export default function ProductPage() {
               </h1>
 
               {/* Size - Mavala uses 1.4rem */}
-              <p className="font-['Archivo'] text-[1.15rem] text-[#272724] font-normal mb-6 leading-[1.4]">
+              <p className="font-['Archivo'] text-[1.035rem] text-[#272724] font-normal mb-6 leading-[1.4]">
                 5ml
               </p>
 
               {/* Description - Mavala uses 1.6rem, font-weight 300, line-height 1.4 */}
               {product.main_description && (
-                <div className="font-['Archivo'] text-[1.25rem] text-[#272724] font-normal leading-[1.5] mb-8 max-w-[53ch]">
+                <div className="font-['Archivo'] text-[1.125rem] text-[#272724] font-normal leading-[1.5] mb-8 max-w-[53ch]">
                   {product.main_description
                     .split("\n")
                     .filter((p) => p.trim())
@@ -1507,7 +1507,7 @@ export default function ProductPage() {
                         : "#272724",
                     }}
                   />
-                  <span className="font-['Archivo'] text-[1.25rem] text-[#272724] font-medium leading-[1.4]">
+                  <span className="font-['Archivo'] text-[1.125rem] text-[#272724] font-medium leading-[1.4]">
                     Vegan formula
                   </span>
                 </div>
@@ -1520,7 +1520,7 @@ export default function ProductPage() {
                         : "#272724",
                     }}
                   />
-                  <span className="font-['Archivo'] text-[1.25rem] text-[#272724] font-medium leading-[1.4]">
+                  <span className="font-['Archivo'] text-[1.125rem] text-[#272724] font-medium leading-[1.4]">
                     Long-lasting hold and shine
                   </span>
                 </div>

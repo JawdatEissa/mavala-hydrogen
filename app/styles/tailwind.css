@@ -41,6 +41,7 @@
     --product-card-scale: 1.255; /* ~1.09 * 1.15 */
     /* Bestseller card uses its own fixed px values; scale those by ~15% too */
     --bestseller-text-scale: 1.15;
+    --product-page-title-scale: 0.75; /* -25% for product page H1 */
   }
 }
 
@@ -172,7 +173,7 @@
     font-weight: 400;
     color: var(--color-dark, #272724);
     letter-spacing: 0;
-    font-size: var(--font-size-xl, 3rem);
+    font-size: calc(var(--font-size-xl, 3rem) * var(--product-page-title-scale));
     line-height: 1.15;
   }
 }
