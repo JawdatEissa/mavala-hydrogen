@@ -21,6 +21,8 @@ export const meta: MetaFunction = () => {
 export default function Homepage() {
   // Best Sellers scroll tracking
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const bestSellers = [
     {
@@ -103,11 +105,27 @@ export default function Homepage() {
       const itemWidth = container.scrollWidth / totalProducts;
       const index = Math.round(scrollLeft / itemWidth);
       setCurrentSlide(index);
+
+      // Gate arrow visibility based on actual scroll position.
+      // Use a small epsilon to avoid flicker due to fractional pixels.
+      const epsilon = 2;
+      setCanScrollLeft(scrollLeft > epsilon);
+      setCanScrollRight(
+        scrollLeft + container.clientWidth < container.scrollWidth - epsilon
+      );
     };
 
     container.addEventListener("scroll", handleScroll);
-    return () => container.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("resize", handleScroll);
+
+    // Initialize state after layout.
+    requestAnimationFrame(handleScroll);
+
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [totalProducts]);
 
   const blogPosts = [
     {
@@ -239,14 +257,19 @@ export default function Homepage() {
             {/* Left Scroll Button - Desktop only - appears on section hover */}
             <button
               onClick={(e) => {
-                const container =
-                  e.currentTarget.parentElement?.querySelector(
-                    ".scroll-container"
-                  );
-                if (container)
+                e.preventDefault();
+                const container = scrollContainerRef.current;
+                if (container) {
                   container.scrollBy({ left: -300, behavior: "smooth" });
+                }
               }}
-              className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center rounded-full bg-black shadow-xl text-white opacity-0 group-hover/nav:opacity-100 transition-all hover:scale-110"
+              className={`hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center rounded-full bg-black shadow-xl text-white transition-all hover:scale-110 ${
+                canScrollLeft
+                  ? "opacity-0 -translate-x-2 group-hover/nav:opacity-100 group-hover/nav:translate-x-0"
+                  : "opacity-0 -translate-x-2 pointer-events-none"
+              }`}
+              aria-hidden={!canScrollLeft}
+              tabIndex={canScrollLeft ? 0 : -1}
             >
               <svg
                 className="w-6 h-6"
@@ -266,14 +289,17 @@ export default function Homepage() {
             {/* Right Scroll Button - Desktop only - appears on section hover */}
             <button
               onClick={(e) => {
-                const container =
-                  e.currentTarget.parentElement?.querySelector(
-                    ".scroll-container"
-                  );
-                if (container)
+                e.preventDefault();
+                const container = scrollContainerRef.current;
+                if (container) {
                   container.scrollBy({ left: 300, behavior: "smooth" });
+                }
               }}
-              className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center rounded-full bg-black shadow-xl text-white opacity-0 group-hover/nav:opacity-100 transition-all hover:scale-110"
+              className={`hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center rounded-full bg-black shadow-xl text-white opacity-0 group-hover/nav:opacity-100 transition-all hover:scale-110 ${
+                canScrollRight ? "" : "pointer-events-none"
+              }`}
+              aria-hidden={!canScrollRight}
+              tabIndex={canScrollRight ? 0 : -1}
             >
               <svg
                 className="w-6 h-6"
@@ -295,7 +321,10 @@ export default function Homepage() {
               className="overflow-x-auto scrollbar-hide scroll-container snap-x snap-mandatory scroll-smooth"
             >
               <div
-                className="flex gap-2 md:gap-4 px-4 md:px-6"
+                // Match desired gallery layout:
+                // - Larger left inset before the first card
+                // - Smaller gaps between cards
+                className="flex gap-2 md:gap-3 pl-10 pr-4 md:pl-16 md:pr-6"
                 style={{ WebkitOverflowScrolling: "touch" }}
               >
                 {bestSellers.map((p) => (
