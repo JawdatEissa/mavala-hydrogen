@@ -383,7 +383,7 @@ export default function Homepage() {
               <img
                 src="/shop-eye-beauty.png"
                 alt="Eye Beauty"
-                className="w-full h-full object-cover origin-center scale-[1.12] -translate-y-8 transition-transform duration-500 group-hover:scale-[1.18]"
+                className="w-full h-full object-cover origin-center scale-[1.05] -translate-y-2 md:scale-[1.12] md:-translate-y-8 transition-transform duration-500 group-hover:scale-110 md:group-hover:scale-[1.18]"
               />
             </a>
 
