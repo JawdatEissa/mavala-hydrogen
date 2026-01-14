@@ -35,7 +35,7 @@ export function BestsellerCard({
       to={to}
       className="flex flex-col group flex-shrink-0 w-[65%] sm:w-[40%] md:w-[24%] lg:w-[23.5%] snap-center snap-stop-always active:scale-95 transition-transform"
     >
-      <div className="relative w-[98%] mx-auto bg-[#f5f5f5] p-4 md:p-10 flex justify-center items-center aspect-[4/5] md:aspect-square overflow-hidden">
+      <div className="relative w-[98%] mx-auto bg-[#f5f5f5] rounded-lg p-4 md:p-10 flex justify-center items-center aspect-[4/5] md:aspect-square overflow-hidden">
         {badgeText ? <BestsellerBadge text={badgeText} /> : null}
         <img
           src={imageSrc}

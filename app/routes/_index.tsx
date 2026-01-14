@@ -324,7 +324,7 @@ export default function Homepage() {
                 // Match desired gallery layout:
                 // - Larger left inset before the first card
                 // - Smaller gaps between cards
-                className="flex gap-2 md:gap-3 pl-10 pr-4 md:pl-16 md:pr-6"
+                className="flex gap-1.5 md:gap-2 pl-10 pr-4 md:pl-16 md:pr-6"
                 style={{ WebkitOverflowScrolling: "touch" }}
               >
                 {bestSellers.map((p) => (
