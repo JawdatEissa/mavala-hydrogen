@@ -43,32 +43,46 @@
     --bestseller-text-scale: 1.15;
     --product-page-title-scale: 0.75; /* -25% for product page H1 */
 
-    /* ===== Bestseller Typography Tokens (Inter-based, mavala.fr match) ===== */
-    --bs-font-family: "Inter", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    /* ===== Bestseller Typography Tokens (Mavala exact match) ===== */
+    --bs-font-family: 'Archivo', sans-serif;
     
-    /* Product titles */
+    /* Product title - BLACK color, strongly aligned with gray box */
     --bs-title-size: 16px;
-    --bs-title-weight: 500;
-    --bs-title-line-height: 1.35;
-    --bs-title-letter-spacing: -0.01em;
-    --bs-title-color: #111;
+    --bs-title-weight: 400;
+    --bs-title-line-height: 1.3;
+    --bs-title-letter-spacing: 0;
+    --bs-title-color: #1A1A1A;
+    --bs-title-margin-bottom: 2px;
+    --bs-title-margin-left: 0px;
     
-    /* Category labels */
+    /* Category/subtitle labels - Light gray, same alignment as title */
     --bs-category-size: 13px;
     --bs-category-weight: 400;
-    --bs-category-color: #7a7a7a;
+    --bs-category-color: #B8B8B8;
+    --bs-category-line-height: 1.4;
+    --bs-category-margin-bottom: 10px;
+    --bs-category-margin-left: 0px;
     
-    /* Prices */
-    --bs-price-size: 14px;
-    --bs-price-regular-weight: 400;
-    --bs-price-regular-color: #9a9a9a;
-    --bs-price-discount-weight: 500;
-    --bs-price-discount-color: #d32f2f;
+    /* Prices - Refined sizing, same alignment as title and category */
+    --bs-price-compare-size: 14px;
+    --bs-price-compare-weight: 400;
+    --bs-price-compare-color: #D4D4D4;
+    --bs-price-compare-margin-right: 8px;
+    --bs-price-compare-margin-left: 0px;
     
-    /* Meta (volume, shades) */
+    --bs-price-sale-size: 18px;
+    --bs-price-sale-weight: 500;
+    --bs-price-sale-color: #C71E3A;
+    --bs-price-sale-margin-right: 6px;
+    
+    --bs-price-regular-size: 18px;
+    --bs-price-regular-weight: 500;
+    --bs-price-regular-color: #C71E3A;
+    
+    /* Meta (volume, shades) - Light gray */
     --bs-meta-size: 13px;
     --bs-meta-weight: 400;
-    --bs-meta-color: #9a9a9a;
+    --bs-meta-color: #B8B8B8;
   }
 }
 
