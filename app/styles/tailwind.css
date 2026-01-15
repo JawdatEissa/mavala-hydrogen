@@ -42,6 +42,33 @@
     /* Bestseller card uses its own fixed px values; scale those by ~15% too */
     --bestseller-text-scale: 1.15;
     --product-page-title-scale: 0.75; /* -25% for product page H1 */
+
+    /* ===== Bestseller Typography Tokens (Inter-based, mavala.fr match) ===== */
+    --bs-font-family: "Inter", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    
+    /* Product titles */
+    --bs-title-size: 16px;
+    --bs-title-weight: 500;
+    --bs-title-line-height: 1.35;
+    --bs-title-letter-spacing: -0.01em;
+    --bs-title-color: #111;
+    
+    /* Category labels */
+    --bs-category-size: 13px;
+    --bs-category-weight: 400;
+    --bs-category-color: #7a7a7a;
+    
+    /* Prices */
+    --bs-price-size: 14px;
+    --bs-price-regular-weight: 400;
+    --bs-price-regular-color: #9a9a9a;
+    --bs-price-discount-weight: 500;
+    --bs-price-discount-color: #d32f2f;
+    
+    /* Meta (volume, shades) */
+    --bs-meta-size: 13px;
+    --bs-meta-weight: 400;
+    --bs-meta-color: #9a9a9a;
   }
 }
 
