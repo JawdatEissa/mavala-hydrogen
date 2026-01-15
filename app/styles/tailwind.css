@@ -53,7 +53,7 @@
     --bs-title-letter-spacing: 0;
     --bs-title-color: #1A1A1A;
     --bs-title-margin-bottom: 2px;
-    --bs-title-margin-left: 0px;
+    --bs-title-margin-left: 1px;
     
     /* Category/subtitle labels - Light gray, same alignment as title */
     --bs-category-size: 13px;
@@ -61,14 +61,14 @@
     --bs-category-color: #B8B8B8;
     --bs-category-line-height: 1.4;
     --bs-category-margin-bottom: 10px;
-    --bs-category-margin-left: 0px;
+    --bs-category-margin-left: 1px;
     
     /* Prices - Refined sizing, same alignment as title and category */
     --bs-price-compare-size: 14px;
     --bs-price-compare-weight: 400;
     --bs-price-compare-color: #D4D4D4;
     --bs-price-compare-margin-right: 8px;
-    --bs-price-compare-margin-left: 0px;
+    --bs-price-compare-margin-left: 1px;
     
     --bs-price-sale-size: 18px;
     --bs-price-sale-weight: 500;
