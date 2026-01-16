@@ -35,7 +35,7 @@ export function BestsellerCard({
       to={to}
       className="flex flex-col group flex-shrink-0 w-[65%] sm:w-[40%] md:w-[24%] lg:w-[23.5%] snap-center snap-stop-always transition-all duration-300 ease-in-out"
     >
-      <div className="relative w-[98%] mx-auto bg-[#f5f5f5] rounded-lg p-4 md:p-10 flex justify-center items-center aspect-[4/5] md:aspect-square overflow-hidden transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
+      <div className="relative w-[98%] mx-auto bg-[#f5f5f5] rounded-[3px] p-4 md:p-10 flex justify-center items-center aspect-[4/5] md:aspect-square overflow-hidden transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
         {badgeText ? <BestsellerBadge text={badgeText} /> : null}
         <img
           src={imageSrc}
@@ -49,7 +49,7 @@ export function BestsellerCard({
 
       {/* Info block under the grey image card (Mavala exact typography) */}
       <div
-        className="mt-4 text-left w-[98%] mx-auto"
+        className="mt-3 text-left w-[98%] mx-auto"
         style={{ fontFamily: "var(--bs-font-family)", paddingLeft: 0 }}
       >
         {/* Product Title - 16px, BLACK, aligned with gray box edge */}
