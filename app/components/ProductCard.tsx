@@ -126,8 +126,8 @@ export function ProductCard({
   return (
     <div className="product-card group relative flex flex-col w-full">
       <Link to={`/products/${slug}`} className="block flex flex-col h-full">
-        {/* Image Container - Standardized grey background with 4:5 aspect ratio */}
-        <div className="relative overflow-hidden mb-3 bg-[#f5f5f5] aspect-[4/5] flex items-center justify-center p-6 border-none outline-none shadow-none">
+        {/* Image Container - EXACT MATCH to Bestseller: rounded-[3px], grey bg, 4:5 aspect */}
+        <div className="relative overflow-hidden bg-[#f5f5f5] rounded-[3px] aspect-[4/5] flex items-center justify-center p-6 border-none outline-none shadow-none transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
           {showBestsellerBadge ? <BestsellerBadge /> : null}
           <img
             src={productImage}
@@ -140,15 +140,18 @@ export function ProductCard({
           />
         </div>
 
-        {/* Product Info - Match Bestseller hierarchy (name / category / price row) */}
-        <div className="text-left">
+        {/* Product Info - EXACT MATCH to Bestseller spacing and typography */}
+        <div className="mt-3 text-left" style={{ paddingLeft: 0 }}>
           <h3 className="product-card-title">{displayTitle}</h3>
           {displaySubtitle ? (
-            <p className="product-card-subtitle mt-1">{displaySubtitle}</p>
+            <p className="product-card-subtitle">{displaySubtitle}</p>
           ) : null}
 
           {displayPriceCad ? (
-            <div className="mt-[10px] flex flex-wrap items-baseline gap-x-2 gap-y-1">
+            <div
+              className="flex items-baseline"
+              style={{ marginLeft: "var(--bs-price-compare-margin-left)" }}
+            >
               {compareAtCad ? (
                 <span className="product-card-price-compare">{compareAtCad}</span>
               ) : null}

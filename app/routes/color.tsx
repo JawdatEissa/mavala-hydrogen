@@ -395,8 +395,8 @@ function ColorProductCard({
 
   return (
     <Link to={`/products/${product.slug}`} className="product-card group block">
-      {/* Image Container - Fixed aspect ratio */}
-      <div className="relative w-full bg-[#f5f5f5] aspect-[4/5] overflow-hidden mb-1.5">
+      {/* Image Container - EXACT MATCH to Bestseller: rounded-[3px] */}
+      <div className="relative w-full bg-[#f5f5f5] rounded-[3px] aspect-[4/5] overflow-hidden transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
         {isBestsellerSlug(product.slug) ? <BestsellerBadge /> : null}
         {image && (
           <img
@@ -413,14 +413,17 @@ function ColorProductCard({
           </div>
         )}
       </div>
-      {/* Product info */}
-      <div className="mt-4 text-left">
+      {/* Product info - EXACT MATCH to Bestseller spacing */}
+      <div className="mt-3 text-left" style={{ paddingLeft: 0 }}>
         <h3 className="product-card-title">{displayTitle}</h3>
         {displaySubtitle ? (
-          <p className="product-card-subtitle mt-1">{displaySubtitle}</p>
+          <p className="product-card-subtitle">{displaySubtitle}</p>
         ) : null}
         {displayPrice ? (
-          <div className="mt-[10px] flex flex-wrap items-baseline gap-x-2 gap-y-1">
+          <div
+            className="flex items-baseline"
+            style={{ marginLeft: "var(--bs-price-compare-margin-left)" }}
+          >
             <span className="product-card-price-current">
               {formatPriceToCad(displayPrice)}
             </span>
@@ -462,8 +465,8 @@ function CollectionCard({
 
   return (
     <Link to={`/products/${product.slug}`} className="product-card group block">
-      {/* Image Container - Fixed aspect ratio, same as ColorProductCard */}
-      <div className="relative w-full bg-[#f5f5f5] aspect-[4/5] overflow-hidden mb-1.5">
+      {/* Image Container - EXACT MATCH to Bestseller: rounded-[3px] */}
+      <div className="relative w-full bg-[#f5f5f5] rounded-[3px] aspect-[4/5] overflow-hidden transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
         {isBestsellerSlug(product.slug) ? <BestsellerBadge /> : null}
         {image && (
           <img
@@ -480,14 +483,17 @@ function CollectionCard({
           </div>
         )}
       </div>
-      {/* Product info */}
-      <div className="mt-4 text-left">
+      {/* Product info - EXACT MATCH to Bestseller spacing */}
+      <div className="mt-3 text-left" style={{ paddingLeft: 0 }}>
         <h3 className="product-card-title">{displayTitle}</h3>
         {displaySubtitle ? (
-          <p className="product-card-subtitle mt-1">{displaySubtitle}</p>
+          <p className="product-card-subtitle">{displaySubtitle}</p>
         ) : null}
         {displayPrice ? (
-          <div className="mt-[10px] flex flex-wrap items-baseline gap-x-2 gap-y-1">
+          <div
+            className="flex items-baseline"
+            style={{ marginLeft: "var(--bs-price-compare-margin-left)" }}
+          >
             <span className="product-card-price-current">
               {formatPriceToCad(displayPrice)}
             </span>

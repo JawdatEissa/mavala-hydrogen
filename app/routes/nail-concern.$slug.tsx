@@ -80,7 +80,7 @@ export default function NailConcernPage() {
                       href={`/products/${product.product_slug}`}
                       className="flex flex-col items-center group hover:opacity-80 transition-opacity duration-200"
                     >
-                      <div className="w-[260px] h-[260px] md:w-[300px] md:h-[300px] bg-[#f5f5f5] flex items-center justify-center mb-4 p-6">
+                      <div className="w-[260px] h-[260px] md:w-[300px] md:h-[300px] bg-[#f5f5f5] rounded-[3px] flex items-center justify-center mb-4 p-6 transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
                         <img
                           src={product.src}
                           alt={product.name}
@@ -93,7 +93,7 @@ export default function NailConcernPage() {
                     </a>
                   ) : (
                     <div key={idx} className="flex flex-col items-center">
-                      <div className="w-[260px] h-[260px] md:w-[300px] md:h-[300px] bg-[#f5f5f5] flex items-center justify-center mb-4 p-6">
+                      <div className="w-[260px] h-[260px] md:w-[300px] md:h-[300px] bg-[#f5f5f5] rounded-[3px] flex items-center justify-center mb-4 p-6">
                         <img
                           src={product.src}
                           alt={product.name}

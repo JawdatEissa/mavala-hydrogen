@@ -119,7 +119,7 @@ export default function FaceConcernPage() {
                     to={`/products/${product.product_slug || product.slug}`}
                     className="flex flex-col items-center group"
                   >
-                    <div className="w-full aspect-square mb-3 bg-[#f5f5f5] flex items-center justify-center p-4">
+                    <div className="w-full aspect-square mb-3 bg-[#f5f5f5] rounded-[3px] flex items-center justify-center p-4 transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
                       {product.images && product.images[0] ? (
                         <img
                           src={product.images[0]}
@@ -127,7 +127,7 @@ export default function FaceConcernPage() {
                           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                         />
                       ) : (
-                        <div className="w-full h-full bg-[#f5f5f5] flex items-center justify-center">
+                        <div className="w-full h-full bg-[#f5f5f5] rounded-[3px] flex items-center justify-center">
                           <span className="text-gray-400 text-xs">No image</span>
                         </div>
                       )}
