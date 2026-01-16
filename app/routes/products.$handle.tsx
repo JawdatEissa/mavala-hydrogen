@@ -360,7 +360,8 @@ function ImageGallery({
     "nude-shades",
   ];
 
-  const useObjectCover = lifestyleImageProducts.includes(productSlug) || isScientifique1;
+  const useObjectCover =
+    lifestyleImageProducts.includes(productSlug) || isScientifique1;
   const bioGridRowsClass = isBioColors ? "md:grid-rows-2 md:items-stretch" : "";
   const bioFillHeightClass = isBioColors ? "h-full" : "";
   const mainImageClass = isBioColors
@@ -369,10 +370,10 @@ function ImageGallery({
   const additionalImageClass = isBioColors
     ? "block w-full h-full object-cover border-none outline-none"
     : isScientifique1
-      ? "block w-full h-full object-cover border-none outline-none"
-      : `block w-full aspect-square border-none outline-none ${
-          useObjectCover ? "object-cover" : "object-contain"
-        }`;
+    ? "block w-full h-full object-cover border-none outline-none"
+    : `block w-full aspect-square border-none outline-none ${
+        useObjectCover ? "object-cover" : "object-contain"
+      }`;
   const bioGridStyle = isBioColors ? { aspectRatio: "4/3" } : undefined;
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -610,8 +611,8 @@ function ImageGallery({
               alt={`${alt} - 2`}
               className={
                 isBioColors
-                ? "block w-full h-full object-cover border-none outline-none"
-                : "block w-full object-cover border-none outline-none"
+                  ? "block w-full h-full object-cover border-none outline-none"
+                  : "block w-full object-cover border-none outline-none"
               }
               style={isBioColors ? undefined : { aspectRatio: "4/5" }}
               loading="lazy"
@@ -1156,43 +1157,20 @@ export default function ProductPage() {
                 </p>
               )}
 
-              {/* Key Features with vertical bar bullets */}
+              {/* Key Features with vertical bar bullets - Mavala.fr style */}
               <div className="mb-6 space-y-4">
-                <div className="flex items-start gap-3">
-                  <span
-                    className="w-1 h-5 flex-shrink-0 mt-0.5"
-                    style={{
-                      backgroundColor: selectedShade
-                        ? getShadeColor(selectedShade) || "#272724"
-                        : "#272724",
-                    }}
-                  />
-                  <span className="product-page-feature">
-                    Vegan formula
-                  </span>
+                <div className="flex items-start gap-1">
+                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-0 bg-black rounded-full" />
+                  <span className="product-page-feature">Vegan formula</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span
-                    className="w-1 h-5 flex-shrink-0 mt-0.5"
-                    style={{
-                      backgroundColor: selectedShade
-                        ? getShadeColor(selectedShade) || "#272724"
-                        : "#272724",
-                    }}
-                  />
+                <div className="flex items-start gap-1">
+                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-0.5 bg-black rounded-full" />
                   <span className="product-page-feature">
                     Long-lasting hold and shine
                   </span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span
-                    className="w-1 h-5 flex-shrink-0 mt-0.5"
-                    style={{
-                      backgroundColor: selectedShade
-                        ? getShadeColor(selectedShade) || "#272724"
-                        : "#272724",
-                    }}
-                  />
+                <div className="flex items-start gap-1">
+                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-0.5 bg-black rounded-full" />
                   <span className="product-page-feature">
                     Enriched with protective silicium
                   </span>
@@ -1204,9 +1182,7 @@ export default function ProductPage() {
                 {/* How To Use */}
                 <details className="group border-b border-gray-200">
                   <summary className="flex items-center justify-between py-4 cursor-pointer list-none">
-                    <h3 className="product-page-heading">
-                      How to Use
-                    </h3>
+                    <h3 className="product-page-heading">How to Use</h3>
                     <span className="text-gray-400 transition-transform group-open:rotate-180">
                       <svg
                         className="w-5 h-5"
@@ -1240,9 +1216,7 @@ export default function ProductPage() {
                 {/* Key Ingredients */}
                 <details className="group border-b border-gray-200">
                   <summary className="flex items-center justify-between py-4 cursor-pointer list-none">
-                    <h3 className="product-page-heading">
-                      Key Ingredients
-                    </h3>
+                    <h3 className="product-page-heading">Key Ingredients</h3>
                     <span className="text-gray-400 transition-transform group-open:rotate-180">
                       <svg
                         className="w-5 h-5"
@@ -1273,9 +1247,7 @@ export default function ProductPage() {
                 {/* Safety Directions */}
                 <details className="group border-b border-gray-200">
                   <summary className="flex items-center justify-between py-4 cursor-pointer list-none">
-                    <h3 className="product-page-heading">
-                      Safety Directions
-                    </h3>
+                    <h3 className="product-page-heading">Safety Directions</h3>
                     <span className="text-gray-400 transition-transform group-open:rotate-180">
                       <svg
                         className="w-5 h-5"
@@ -1309,9 +1281,7 @@ export default function ProductPage() {
                 {/* Ingredients (Full List) */}
                 <details className="group border-b border-gray-200">
                   <summary className="flex items-center justify-between py-4 cursor-pointer list-none">
-                    <h3 className="product-page-heading">
-                      Ingredients
-                    </h3>
+                    <h3 className="product-page-heading">Ingredients</h3>
                     <span className="text-gray-400 transition-transform group-open:rotate-180">
                       <svg
                         className="w-5 h-5"
@@ -1478,9 +1448,7 @@ export default function ProductPage() {
               </h1>
 
               {/* Size - Uses CSS variable */}
-              <p className="product-page-volume mb-6">
-                5ml
-              </p>
+              <p className="product-page-volume mb-6">5ml</p>
 
               {/* Description - Uses CSS variable */}
               {product.main_description && (
@@ -1496,30 +1464,14 @@ export default function ProductPage() {
                 </div>
               )}
 
-              {/* Key Features with thick vertical bar bullets */}
+              {/* Key Features with thick vertical bar bullets - Mavala.fr style */}
               <div className="mb-8 space-y-4">
-                <div className="flex items-start gap-3">
-                  <span
-                    className="w-1 h-6 flex-shrink-0 mt-1"
-                    style={{
-                      backgroundColor: selectedShade
-                        ? getShadeColor(selectedShade) || "#272724"
-                        : "#272724",
-                    }}
-                  />
-                  <span className="product-page-feature">
-                    Vegan formula
-                  </span>
+                <div className="flex items-start gap-4">
+                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-0.5 bg-black rounded-full" />
+                  <span className="product-page-feature">Vegan formula</span>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span
-                    className="w-1 h-6 flex-shrink-0 mt-1"
-                    style={{
-                      backgroundColor: selectedShade
-                        ? getShadeColor(selectedShade) || "#272724"
-                        : "#272724",
-                    }}
-                  />
+                <div className="flex items-start gap-4">
+                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-0.5 bg-black rounded-full" />
                   <span className="product-page-feature">
                     Long-lasting hold and shine
                   </span>
@@ -1926,7 +1878,10 @@ export default function ProductPage() {
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-10">
                 {relatedProducts.map((p) => (
-                  <ProductCard key={p.slug} product={p as unknown as ScrapedProduct} />
+                  <ProductCard
+                    key={p.slug}
+                    product={p as unknown as ScrapedProduct}
+                  />
                 ))}
               </div>
             </div>
