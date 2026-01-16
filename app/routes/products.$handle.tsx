@@ -1159,18 +1159,18 @@ export default function ProductPage() {
 
               {/* Key Features with vertical bar bullets - Mavala.fr style */}
               <div className="mb-6 space-y-4">
-                <div className="flex items-start gap-1">
-                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-0 bg-black rounded-full" />
+                <div className="flex items-start">
+                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
                   <span className="product-page-feature">Vegan formula</span>
                 </div>
-                <div className="flex items-start gap-1">
-                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-0.5 bg-black rounded-full" />
+                <div className="flex items-start">
+                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
                   <span className="product-page-feature">
                     Long-lasting hold and shine
                   </span>
                 </div>
-                <div className="flex items-start gap-1">
-                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-0.5 bg-black rounded-full" />
+                <div className="flex items-start">
+                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
                   <span className="product-page-feature">
                     Enriched with protective silicium
                   </span>
@@ -1466,12 +1466,12 @@ export default function ProductPage() {
 
               {/* Key Features with thick vertical bar bullets - Mavala.fr style */}
               <div className="mb-8 space-y-4">
-                <div className="flex items-start gap-4">
-                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-0.5 bg-black rounded-full" />
+                <div className="flex items-start">
+                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
                   <span className="product-page-feature">Vegan formula</span>
                 </div>
-                <div className="flex items-start gap-4">
-                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-0.5 bg-black rounded-full" />
+                <div className="flex items-start">
+                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
                   <span className="product-page-feature">
                     Long-lasting hold and shine
                   </span>
