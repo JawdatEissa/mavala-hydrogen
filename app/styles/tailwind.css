@@ -103,8 +103,8 @@
     --pp-description-line-height: 1.6;
     
     /* Feature/bullet text - BOLD, CLEAR */
-    --pp-feature-size: 16px;
-    --pp-feature-weight: 200;
+    --pp-feature-size: 18px;
+    --pp-feature-weight: 500;
     --pp-feature-color: #000000;
     
     /* Section headings (How to Use, Ingredients, etc.) */

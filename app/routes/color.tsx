@@ -628,61 +628,6 @@ export default function ColorPage() {
   const topRowTabs = tabs.slice(0, 3); // Mini Colours, Collections, Mini Bio
   const bottomRowTabs = tabs.slice(3); // Base Coat, Top Coat, Polish Dryer, Remover
 
-  // Dynamic title and description based on active tab
-  const getTitleAndDescription = () => {
-    switch (activeTab) {
-      case "Mini Colours":
-        return {
-          title: "MINI COLOR'S NAIL POLISHES",
-          description:
-            "Since 1962, MAVALA MINI COLOR nail polishes, in a handy and economical small format, have been your companion at all times. Their respectful formula offers easy application, perfect adhesion, shine and long-lasting hold! Nail polishes which also let the nails breathe and pass water vapour!",
-        };
-      case "Mini Colours Collection":
-        return {
-          title: "MINI COLOR'S COLLECTIONS",
-          description:
-            "Discover our curated themed collections, each featuring a harmonious selection of shades designed to complement each other. From the fresh energy of Pop Wave to the natural elegance of Neo Nudes, find your perfect palette.",
-        };
-      case "Base Coat":
-        return {
-          title: "Base Coat",
-          description:
-            "MAVALA, nail care expert, offers nail polish base coats suitable for each type of nail to prevent yellowing and ensure perfect adhesion and long-lasting of the manicure. It's up to you to choose a long-lasting, moisturzing or fortifying base coat.",
-        };
-      case "Top Coat":
-        return {
-          title: "Top Coat",
-          description:
-            "MAVALA, nail care expert, offers top coats, depending on the desired result (shiny, matt, fast-drying, volumizing or even with a glitter effect) this essential coat prevents nail polish from flaking and allows it to resist shocks.",
-        };
-      case "Mini Bio":
-        return {
-          title: "Mini Bio Color's",
-          description: "Make up your nails with ingredients of natural origin.",
-        };
-      case "Polish Dryer":
-        return {
-          title: "Nail Polish Dryer",
-          description:
-            "The active and busy woman does not have time to wait ... However, a nail polish dries completely in 24 hours! MAVALA offers drying accelerators which make nail polish touch-dry in a few seconds.",
-        };
-      case "Remover":
-        return {
-          title: "Nail Polish Remover",
-          description:
-            "MAVALA offers gentle yet effective nail polish removers that respect your nails and surrounding skin.",
-        };
-      default:
-        return {
-          title: "Nail Make-Up",
-          description:
-            "Since 1962, MAVALA MINI COLOR nail polishes, in a handy and economical small format, have been your companion at all times.",
-        };
-    }
-  };
-
-  const { title, description } = getTitleAndDescription();
-
   return (
     <div className="min-h-screen bg-white pt-[90px] scroll-smooth">
       {/* Hero Section - Reduced height for better mobile/desktop balance */}
@@ -759,21 +704,6 @@ export default function ColorPage() {
               </button>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Title and Description Section - Content changes here, below nav bar */}
-      <section className="pt-1 md:pt-2 pb-6 md:pb-10 px-4 md:px-8 bg-gradient-to-b from-white to-[#fafafa]">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Title - Dynamic based on active tab */}
-          <h1 className="font-['Archivo'] text-[26px] sm:text-[32px] md:text-[40px] lg:text-[48px] font-semibold text-[#ae1932] uppercase tracking-wide px-2 mb-4">
-            {title}
-          </h1>
-
-          {/* Description - Dynamic based on active tab */}
-          <p className="font-['Archivo'] text-[14px] sm:text-[15px] md:text-[16px] text-gray-600 leading-relaxed max-w-3xl mx-auto px-4">
-            {description}
-          </p>
         </div>
       </section>
 
