@@ -83,6 +83,39 @@
     --bs-meta-size: 13px;
     --bs-meta-weight: 400;
     --bs-meta-color: #B8B8B8;
+
+    /* ===== Product Page Typography (Mavala.fr professional style) ===== */
+    /* Product page H1 - BOLD, LARGE, READABLE */
+    --pp-title-size: 35px;
+    --pp-title-weight: 200;
+    --pp-title-color: #000000;
+    --pp-title-line-height: 1.3;
+    
+    /* Volume/meta text - MATCHING BESTSELLER CATEGORY WEIGHT, DARK RED COLOR */
+    --pp-volume-size: 15px;
+    --pp-volume-weight: 200;
+    --pp-volume-color: #9e1b32;
+    
+    /* Description body text - MATCHING BESTSELLER CATEGORY WEIGHT, DARK RED COLOR */
+    --pp-description-size: 15px;
+    --pp-description-weight: 200;
+    --pp-description-color: #9e1b32;
+    --pp-description-line-height: 1.6;
+    
+    /* Feature/bullet text - BOLD, CLEAR */
+    --pp-feature-size: 16px;
+    --pp-feature-weight: 200;
+    --pp-feature-color: #000000;
+    
+    /* Section headings (How to Use, Ingredients, etc.) */
+    --pp-heading-size: 15px;
+    --pp-heading-weight: 200;
+    --pp-heading-color: #000000;
+    
+    /* Accordion body text - READABLE */
+    --pp-accordion-text-size: 14px;
+    --pp-accordion-text-weight: 200;
+    --pp-accordion-text-color: #333333;
   }
 }
 
@@ -204,14 +237,56 @@
 }
 
 @layer components {
-  /* Product Page Title (H1) - Design System */
+  /* Product Page Title (H1) - EXACT MATCH to Bestseller style */
   .product-page-title {
-    font-family: var(--font-family-default, "Archivo", system-ui, serif);
-    font-weight: 400;
-    color: var(--color-dark, #272724);
+    font-family: var(--bs-font-family);
+    font-size: var(--pp-title-size);
+    font-weight: var(--pp-title-weight);
+    color: var(--pp-title-color);
+    line-height: var(--pp-title-line-height);
     letter-spacing: 0;
-    font-size: calc(var(--font-size-xl, 3rem) * var(--product-page-title-scale));
-    line-height: 1.15;
+  }
+
+  /* Product Page Volume/Meta Text */
+  .product-page-volume {
+    font-family: var(--bs-font-family);
+    font-size: var(--pp-volume-size);
+    font-weight: var(--pp-volume-weight);
+    color: var(--pp-volume-color);
+  }
+
+  /* Product Page Description */
+  .product-page-description {
+    font-family: var(--bs-font-family);
+    font-size: var(--pp-description-size);
+    font-weight: var(--pp-description-weight);
+    color: var(--pp-description-color);
+    line-height: var(--pp-description-line-height);
+  }
+
+  /* Product Page Feature/Bullet Text */
+  .product-page-feature {
+    font-family: var(--bs-font-family);
+    font-size: var(--pp-feature-size);
+    font-weight: var(--pp-feature-weight);
+    color: var(--pp-feature-color);
+  }
+
+  /* Product Page Section Headings */
+  .product-page-heading {
+    font-family: var(--bs-font-family);
+    font-size: var(--pp-heading-size);
+    font-weight: var(--pp-heading-weight);
+    color: var(--pp-heading-color);
+  }
+
+  /* Product Page Accordion Body Text */
+  .product-page-accordion-text {
+    font-family: var(--bs-font-family);
+    font-size: var(--pp-accordion-text-size);
+    font-weight: var(--pp-accordion-text-weight);
+    color: var(--pp-accordion-text-color);
+    line-height: 1.6;
   }
 }
 

@@ -1019,13 +1019,13 @@ export default function ProductPage() {
               {formatTitle(product.title)}
             </h1>
             <div className="flex items-center justify-between">
-              <span className="text-[0.79rem] text-[#5c666f]">
+              <span className="product-page-volume">
                 {product.volume || "5ml"}
               </span>
               {product.store_reviews &&
                 typeof product.store_reviews === "object" &&
                 product.store_reviews.count && (
-                  <span className="text-[0.79rem] text-[#5c666f]">
+                  <span className="product-page-volume">
                     ★★★★★ {product.store_reviews.rating || "4.9"} -{" "}
                     {product.store_reviews.count} Reviews
                   </span>
@@ -1151,7 +1151,7 @@ export default function ProductPage() {
             {/* Mobile Product Description */}
             <div className="mt-6 pt-6 border-t border-gray-200">
               {product.main_description && (
-                <p className="font-['Archivo'] text-[0.945rem] font-normal text-[#272724] leading-[1.5] mb-6">
+                <p className="product-page-description mb-6">
                   {product.main_description}
                 </p>
               )}
@@ -1167,7 +1167,7 @@ export default function ProductPage() {
                         : "#272724",
                     }}
                   />
-                  <span className="font-['Archivo'] text-[0.945rem] font-medium text-[#272724]">
+                  <span className="product-page-feature">
                     Vegan formula
                   </span>
                 </div>
@@ -1180,7 +1180,7 @@ export default function ProductPage() {
                         : "#272724",
                     }}
                   />
-                  <span className="font-['Archivo'] text-[0.945rem] font-medium text-[#272724]">
+                  <span className="product-page-feature">
                     Long-lasting hold and shine
                   </span>
                 </div>
@@ -1193,7 +1193,7 @@ export default function ProductPage() {
                         : "#272724",
                     }}
                   />
-                  <span className="font-['Archivo'] text-[0.945rem] font-medium text-[#272724]">
+                  <span className="product-page-feature">
                     Enriched with protective silicium
                   </span>
                 </div>
@@ -1204,7 +1204,7 @@ export default function ProductPage() {
                 {/* How To Use */}
                 <details className="group border-b border-gray-200">
                   <summary className="flex items-center justify-between py-4 cursor-pointer list-none">
-                    <h3 className="font-['Archivo'] text-[0.9rem] font-medium text-[#272724]">
+                    <h3 className="product-page-heading">
                       How to Use
                     </h3>
                     <span className="text-gray-400 transition-transform group-open:rotate-180">
@@ -1223,7 +1223,7 @@ export default function ProductPage() {
                       </svg>
                     </span>
                   </summary>
-                  <div className="pb-4 font-['Archivo'] text-[#5c666f] text-[0.79rem] leading-relaxed">
+                  <div className="pb-4 product-page-accordion-text">
                     {product.how_to_use ? (
                       <p className="whitespace-pre-line">
                         {product.how_to_use}
@@ -1240,7 +1240,7 @@ export default function ProductPage() {
                 {/* Key Ingredients */}
                 <details className="group border-b border-gray-200">
                   <summary className="flex items-center justify-between py-4 cursor-pointer list-none">
-                    <h3 className="font-['Archivo'] text-base font-medium text-[#272724]">
+                    <h3 className="product-page-heading">
                       Key Ingredients
                     </h3>
                     <span className="text-gray-400 transition-transform group-open:rotate-180">
@@ -1259,7 +1259,7 @@ export default function ProductPage() {
                       </svg>
                     </span>
                   </summary>
-                  <div className="pb-4 font-['Archivo'] text-[#5c666f] text-sm leading-relaxed">
+                  <div className="pb-4 product-page-accordion-text">
                     {product.key_ingredients ? (
                       <p className="whitespace-pre-line">
                         {product.key_ingredients}
@@ -1273,7 +1273,7 @@ export default function ProductPage() {
                 {/* Safety Directions */}
                 <details className="group border-b border-gray-200">
                   <summary className="flex items-center justify-between py-4 cursor-pointer list-none">
-                    <h3 className="font-['Archivo'] text-base font-medium text-[#272724]">
+                    <h3 className="product-page-heading">
                       Safety Directions
                     </h3>
                     <span className="text-gray-400 transition-transform group-open:rotate-180">
@@ -1292,7 +1292,7 @@ export default function ProductPage() {
                       </svg>
                     </span>
                   </summary>
-                  <div className="pb-4 font-['Archivo'] text-[#5c666f] text-sm leading-relaxed">
+                  <div className="pb-4 product-page-accordion-text">
                     {product.safety_directions ? (
                       <p className="whitespace-pre-line">
                         {product.safety_directions}
@@ -1309,7 +1309,7 @@ export default function ProductPage() {
                 {/* Ingredients (Full List) */}
                 <details className="group border-b border-gray-200">
                   <summary className="flex items-center justify-between py-4 cursor-pointer list-none">
-                    <h3 className="font-['Archivo'] text-base font-medium text-[#272724]">
+                    <h3 className="product-page-heading">
                       Ingredients
                     </h3>
                     <span className="text-gray-400 transition-transform group-open:rotate-180">
@@ -1328,7 +1328,7 @@ export default function ProductPage() {
                       </svg>
                     </span>
                   </summary>
-                  <div className="pb-4 font-['Archivo'] text-[#5c666f] text-sm leading-relaxed">
+                  <div className="pb-4 product-page-accordion-text">
                     {product.ingredients ? (
                       <p className="whitespace-pre-line">
                         {product.ingredients}
@@ -1477,14 +1477,14 @@ export default function ProductPage() {
                 {formatTitle(product.title)}
               </h1>
 
-              {/* Size - Mavala uses 1.4rem */}
-              <p className="font-['Archivo'] text-[1.035rem] text-[#272724] font-normal mb-6 leading-[1.4]">
+              {/* Size - Uses CSS variable */}
+              <p className="product-page-volume mb-6">
                 5ml
               </p>
 
-              {/* Description - Mavala uses 1.6rem, font-weight 300, line-height 1.4 */}
+              {/* Description - Uses CSS variable */}
               {product.main_description && (
-                <div className="font-['Archivo'] text-[1.125rem] text-[#272724] font-normal leading-[1.5] mb-8 max-w-[53ch]">
+                <div className="product-page-description mb-8 max-w-[53ch]">
                   {product.main_description
                     .split("\n")
                     .filter((p) => p.trim())
@@ -1507,7 +1507,7 @@ export default function ProductPage() {
                         : "#272724",
                     }}
                   />
-                  <span className="font-['Archivo'] text-[1.125rem] text-[#272724] font-medium leading-[1.4]">
+                  <span className="product-page-feature">
                     Vegan formula
                   </span>
                 </div>
@@ -1520,7 +1520,7 @@ export default function ProductPage() {
                         : "#272724",
                     }}
                   />
-                  <span className="font-['Archivo'] text-[1.125rem] text-[#272724] font-medium leading-[1.4]">
+                  <span className="product-page-feature">
                     Long-lasting hold and shine
                   </span>
                 </div>
