@@ -207,7 +207,7 @@ export default function Homepage() {
                   <p className="font-['Archivo'] text-[#8B1E2B] font-semibold tracking-[0.2px] text-[22px] md:text-[20px] lg:text-[28px] xl:text-[36px] 2xl:text-[40px] leading-[26px] md:leading-[24px] lg:leading-[32px] xl:leading-[40px] 2xl:leading-[44px]">
                     <span className="block whitespace-nowrap">
                       <span className="font-extrabold">Dry</span>{" "}
-                      <span className="font-medium">your polish in</span>
+                      <span className="font-normal">your polish in</span>
                     </span>
                     {/* Adjust the vertical spacing between lines here */}
                     <span className="block font-extrabold whitespace-nowrap mt-[4px] md:mt-[3px] lg:mt-[5px] xl:mt-[7px] 2xl:mt-[8px]">
