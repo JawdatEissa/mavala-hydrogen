@@ -349,9 +349,7 @@ function ImageGallery({
   // Background color: white for collection products, grey for others
   const bgColor = isCollectionProduct ? "bg-white" : "bg-[#f5f5f5]";
   const isScientifique1 = productSlug === "mavala-scientifique-1";
-  // For this product: image 01 should sit on grey (we convert it), but images 02/03
-  // should NOT be on the grey background container.
-  const secondaryBgColor = isScientifique1 ? "bg-white" : bgColor;
+  const isMavadrySpray = productSlug === "mavadry-spray";
 
   // Products with lifestyle images that should use object-cover for secondary images
   const lifestyleImageProducts = [
@@ -367,13 +365,41 @@ function ImageGallery({
   const mainImageClass = isBioColors
     ? "block w-full h-full object-cover border-none outline-none"
     : "block w-full h-full object-contain border-none outline-none";
-  const additionalImageClass = isBioColors
-    ? "block w-full h-full object-cover border-none outline-none"
-    : isScientifique1
-    ? "block w-full h-full object-cover border-none outline-none"
-    : `block w-full aspect-square border-none outline-none ${
-        useObjectCover ? "object-cover" : "object-contain"
-      }`;
+
+  /**
+   * Some products need per-image background/fit tweaks.
+   * - `mavala-scientifique-1`: image 01 on grey, images 02/03 on white.
+   * - `mavadry-spray`: image 02 on grey (product shot), image 03 as cover (no grey showing).
+   */
+  const getContainerBgColor = (imageIndex: number): string => {
+    if (imageIndex === 0) return bgColor;
+    if (isScientifique1) return "bg-white";
+    if (isMavadrySpray && imageIndex === 2) return "bg-white";
+    return bgColor;
+  };
+
+  const getAdditionalImageClass = (imageIndex: number): string => {
+    if (isBioColors) return "block w-full h-full object-cover border-none outline-none";
+    if (isScientifique1)
+      return "block w-full h-full object-cover border-none outline-none";
+    if (isMavadrySpray) {
+      return imageIndex === 2
+        ? "block w-full h-full object-cover border-none outline-none"
+        : "block w-full h-full object-contain border-none outline-none";
+    }
+    return `block w-full aspect-square border-none outline-none ${
+      useObjectCover ? "object-cover" : "object-contain"
+    }`;
+  };
+
+  const getThumbnailImageClass = (imageIndex: number): string => {
+    if (isMavadrySpray) {
+      return imageIndex === 2
+        ? "block w-full h-full object-cover"
+        : "block w-full h-full object-contain";
+    }
+    return "block w-full h-full object-cover";
+  };
   const bioGridStyle = isBioColors ? { aspectRatio: "4/3" } : undefined;
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -526,14 +552,14 @@ function ImageGallery({
               <div
                 key={idx}
                 className={`flex-1 min-w-0 aspect-square ${
-                  idx === 0 ? bgColor : secondaryBgColor
+                  getContainerBgColor(idx)
                 } cursor-pointer active:opacity-80 transition-opacity`}
                 onClick={() => openLightbox(idx)}
               >
                 <img
                   src={img}
                   alt={`${alt} - ${idx + 1}`}
-                  className="block w-full h-full object-cover"
+                  className={getThumbnailImageClass(idx)}
                   loading="lazy"
                 />
               </div>
@@ -566,13 +592,15 @@ function ImageGallery({
           {additionalImages.slice(0, 2).map((img, idx) => (
             <div
               key={idx}
-              className={`${secondaryBgColor} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity ${bioFillHeightClass}`}
+              className={`${getContainerBgColor(
+                idx + 1
+              )} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity ${bioFillHeightClass}`}
               onClick={() => openLightbox(idx + 1)}
             >
               <img
                 src={img}
                 alt={`${alt} - ${idx + 2}`}
-                className={additionalImageClass}
+                className={getAdditionalImageClass(idx + 1)}
                 loading="lazy"
               />
             </div>
@@ -603,17 +631,15 @@ function ImageGallery({
 
           {/* Single Additional Image - Right - Clickable - Square */}
           <div
-            className={`${secondaryBgColor} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity`}
+            className={`${getContainerBgColor(
+              1
+            )} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity`}
             onClick={() => openLightbox(1)}
           >
             <img
               src={additionalImages[0]}
               alt={`${alt} - 2`}
-              className={
-                isBioColors
-                  ? "block w-full h-full object-cover border-none outline-none"
-                  : "block w-full object-cover border-none outline-none"
-              }
+              className={getAdditionalImageClass(1)}
               style={isBioColors ? undefined : { aspectRatio: "4/5" }}
               loading="lazy"
             />
