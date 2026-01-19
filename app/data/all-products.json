@@ -4473,13 +4473,15 @@
     "rating": 4.8,
     "review_count": 15,
     "tagline": "Dries nail polish.",
-    "main_description": "var popupWindow = null; function MakePopup () { if (window.createPopup) { //Internet Explorer if (!popupWindow) { popupWindow = window.createPopup (); var popupBody = popupWindow.document.body; popupBody.style.backgroundColor = \"lightblue\"; popupBody.style.border = \"solid black 1px\"; popupBody.innerHTML = \"Click outside to close.\"; } popupWindow.show (100, 100, 150, 25, document.body); } else { alert (\"Butane, Propane, Isopropyl Myristate, Alcohol Denat., Dicaprylyl Carbonate, Fragrance (Parfum), Linalool, Geraniol, Alpha-Isomethyl Ionone, Citronellol.\"); } }",
+    "main_description": "MAVADRY SPRAY dries nail polish quickly to help prevent smudging and flaking, while enhancing colour and adding shine. A manicure time-saver for a fast, glossy finish.",
     "key_ingredients": "Blend of propelled gas, speeding up drying. Free from CFC, formaldehyde, phthalates, sodium laureth sulfate and paraben.",
     "how_to_use": "Same use as MAVADRY. After final application of nail polish, wait a minute for it to set and then lightly spray on Mavadry on the entire nail surface, holding the container approximately 30 cm from the nails. Wait a few seconds.",
     "note": "Contains no ozone-depleting chlorofluorocarbons (CFCs). Protect jewels as they might turn dull (in case of contact with jewels, wash with soap).",
     "safety_directions": "",
     "first_aid": "",
-    "sizes": [],
+    "sizes": [
+      "150ml"
+    ],
     "images": [
       "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1501218327425-UNHCBZLNUPXI12OQFOPN/Mavadry+Spray.png?format=1500w",
       "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1621480505371-2B7HOQF94DA7P1KY1NKD/JP+Mavadry+Spray.jpg?format=1500w"
@@ -4490,7 +4492,7 @@
     ],
     "local_images": [
       "images\\mavadry-spray\\01_Mavadry+Spray.png",
-      "images\\mavadry-spray\\02_JP+Mavadry+Spray.jpg"
+      "images\\mavadry-spray\\02_JP+Mavadry+Spray.png"
     ],
     "scraped_at": "2025-12-18T16:18:58.132068"
   },

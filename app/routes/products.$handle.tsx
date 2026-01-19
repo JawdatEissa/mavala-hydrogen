@@ -869,6 +869,27 @@ export default function ProductPage() {
   // Get shades array safely
   const shades = Array.isArray(product.shades) ? product.shades : [];
 
+  // Clean up occasional bad scrape artifacts (e.g. popup JS injected into description)
+  const rawMainDescription =
+    typeof product.main_description === "string" ? product.main_description : "";
+  const isPopupScriptDescription =
+    /\bfunction\s+MakePopup\b|window\.createPopup|var\s+popupWindow\s*=/i.test(
+      rawMainDescription
+    );
+  const mainDescription = isPopupScriptDescription
+    ? product.slug === "mavadry-spray"
+      ? "MAVADRY SPRAY dries nail polish quickly to help prevent smudging and flaking, while enhancing colour and adding shine. A manicure time-saver for a fast, glossy finish."
+      : typeof product.tagline === "string"
+      ? product.tagline
+      : ""
+    : rawMainDescription;
+
+  // Prefer explicit volume, else first size; fall back to 5ml for shade products only
+  const volumeLabel =
+    (typeof product.volume === "string" && product.volume.trim()) ||
+    (sizes.length > 0 ? sizes[0] : "") ||
+    (shades.length > 0 ? "5ml" : "");
+
   // Get new_shades (for collections like Oh La La!)
   const newShades = product.new_shades as
     | {
@@ -1047,7 +1068,7 @@ export default function ProductPage() {
             </h1>
             <div className="flex items-center justify-between">
               <span className="product-page-volume">
-                {product.volume || "5ml"}
+                {volumeLabel}
               </span>
               {product.store_reviews &&
                 typeof product.store_reviews === "object" &&
@@ -1177,9 +1198,9 @@ export default function ProductPage() {
 
             {/* Mobile Product Description */}
             <div className="mt-6 pt-6 border-t border-gray-200">
-              {product.main_description && (
+              {mainDescription && (
                 <p className="product-page-description mb-6">
-                  {product.main_description}
+                  {mainDescription}
                 </p>
               )}
 
@@ -1474,12 +1495,14 @@ export default function ProductPage() {
               </h1>
 
               {/* Size - Uses CSS variable */}
-              <p className="product-page-volume mb-6">5ml</p>
+              {volumeLabel ? (
+                <p className="product-page-volume mb-6">{volumeLabel}</p>
+              ) : null}
 
               {/* Description - Uses CSS variable */}
-              {product.main_description && (
+              {mainDescription && (
                 <div className="product-page-description mb-8 max-w-[53ch]">
-                  {product.main_description
+                  {mainDescription
                     .split("\n")
                     .filter((p) => p.trim())
                     .map((paragraph, idx) => (
