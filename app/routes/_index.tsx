@@ -192,27 +192,54 @@ export default function Homepage() {
         </div>
       </section>
 
-      {/* Promotional Banners - Pop Wave & Double-Brow */}
+      {/* Promotional Banners - Mavadry & Double-Brow */}
       <section className="mt-4 md:-mt-12 pb-8 md:pb-12 bg-white">
         <div className="mx-auto px-4 md:px-8 lg:px-12 max-w-[1800px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-            {/* Pop Wave Banner */}
+            {/* Mavadry Banner (replaces Pop Wave) */}
             <div className="flex flex-col items-center">
               <div
-                className="w-full relative"
+                className="w-full relative overflow-hidden bg-[#F7B5C6]"
                 style={{ aspectRatio: "1080/720" }}
               >
-                <img
-                  src="/Pop_Wave_Colors_Card_Banner.jpg"
-                  alt="Pop Wave Colors"
-                  className="absolute top-0 left-0 w-full h-full object-cover"
-                />
+                {/* Text boxes (left side). Responsive positioning and font sizes. */}
+                <div className="absolute left-[48%] top-[23%] z-10 max-w-none">
+                  <p className="font-['Archivo'] text-[#8B1E2B] font-semibold tracking-[0.2px] text-[22px] md:text-[20px] lg:text-[28px] xl:text-[36px] 2xl:text-[40px] leading-[26px] md:leading-[24px] lg:leading-[32px] xl:leading-[40px] 2xl:leading-[44px]">
+                    <span className="block whitespace-nowrap">
+                      <span className="font-extrabold">Dry</span>{" "}
+                      <span className="font-medium">your polish in</span>
+                    </span>
+                    {/* Adjust the vertical spacing between lines here */}
+                    <span className="block font-extrabold whitespace-nowrap mt-[4px] md:mt-[3px] lg:mt-[5px] xl:mt-[7px] 2xl:mt-[8px]">
+                      seconds
+                    </span>
+                  </p>
+                </div>
+
+                <div className="absolute left-[48%] top-[44%] z-10 max-w-[50%]">
+                  <p className="font-['Archivo'] text-[#8B1E2B] tracking-[0.2px] text-[22px] md:text-[20px] lg:text-[28px] xl:text-[36px] 2xl:text-[40px] leading-[26px] md:leading-[24px] lg:leading-[32px] xl:leading-[40px] 2xl:leading-[44px]">
+                    <span className="block font-extrabold whitespace-nowrap">Professional</span>
+                    {/* Adjust the vertical spacing between lines here */}
+                    <span className="block font-normal whitespace-nowrap mt-[3px] md:mt-[2px] lg:mt-[4px] xl:mt-[5px] 2xl:mt-[6px]">
+                      Results
+                    </span>
+                  </p>
+                </div>
+
+                {/* Image (do not change size/position): keep current transform exactly as-is. */}
+                <div className="absolute inset-0 z-0 flex items-center justify-center">
+                  <img
+                    src="/mavadry-promotional.png"
+                    alt="MAVADRY Spray"
+                    className="h-[88%] w-auto object-contain transform-gpu scale-[1.15] translate-y-[10%] -translate-x-[10%]"
+                  />
+                </div>
               </div>
               <Link
-                to="/products/pop-wave"
+                to="/products/mavadry-spray"
                 className="inline-block mt-6 px-[32px] py-[16px] border-2 border-[#ae1932] bg-transparent text-[#ae1932] font-['Archivo'] text-[14px] font-light uppercase tracking-[1.01px] hover:bg-[#ae1932] hover:text-white transition-colors duration-100 ease-linear"
               >
-                VIEW POP WAVE COLORS
+                VIEW MAVADRY SPRAY
               </Link>
             </div>
 

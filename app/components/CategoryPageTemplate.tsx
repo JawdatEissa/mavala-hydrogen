@@ -74,7 +74,7 @@ export function CategoryProductSection({
   return (
     <section
       id={id}
-      className="py-12 md:py-16 px-6 md:px-10 lg:px-16 bg-white scroll-mt-[120px]"
+      className="pt-6 pb-12 md:pt-8 md:pb-16 px-6 md:px-10 lg:px-16 bg-white scroll-mt-[120px]"
     >
       <div className="w-full">
         {!hideHeader ? (

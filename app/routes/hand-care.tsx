@@ -117,7 +117,7 @@ export default function HandCarePage() {
       />
 
       {/* Filtering Bar (match /color styling/values) */}
-      <section className="pt-4 pb-2 md:pt-6 md:pb-3 px-4 md:px-8 bg-white">
+      <section className="pt-4 pb-0 md:pt-6 md:pb-0 px-4 md:px-8 bg-white">
         <div className="max-w-5xl mx-auto flex justify-center">
           {/* Mobile: single row pills (same pill styling as /color) */}
           <div className="md:hidden flex items-center justify-center gap-2 w-full max-w-md">

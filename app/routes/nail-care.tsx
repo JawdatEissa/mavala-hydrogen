@@ -311,7 +311,7 @@ export default function NailCarePage() {
       </section>
 
       {/* Filtering Bar (same sizing/values as /color) */}
-      <section className="pt-4 pb-2 md:pt-6 md:pb-3 px-4 md:px-8 bg-white">
+      <section className="pt-4 pb-0 md:pt-6 md:pb-0 px-4 md:px-8 bg-white">
         <div className="max-w-5xl md:max-w-[80rem] mx-auto flex justify-center">
           {/* Mobile: 2-row pill-style layout (same as /color) */}
           <div className="md:hidden flex flex-col gap-2 w-full max-w-md">
