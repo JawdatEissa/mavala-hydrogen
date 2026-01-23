@@ -203,24 +203,24 @@ export default function Homepage() {
                 style={{ aspectRatio: "1080/720" }}
               >
                 {/* Text boxes (left side). Responsive positioning and font sizes. */}
-                <div className="absolute left-[48%] top-[23%] z-10 max-w-none">
+                <div className="absolute left-[58%] top-[51%] z-10 max-w-none">
                   <p className="font-['Archivo'] text-[#8B1E2B] font-semibold tracking-[0.2px] text-[22px] md:text-[20px] lg:text-[28px] xl:text-[36px] 2xl:text-[40px] leading-[26px] md:leading-[24px] lg:leading-[32px] xl:leading-[40px] 2xl:leading-[44px]">
                     <span className="block whitespace-nowrap">
                       <span className="font-extrabold">Dry</span>{" "}
                       <span className="font-normal">your polish in</span>
                     </span>
                     {/* Adjust the vertical spacing between lines here */}
-                    <span className="block font-extrabold whitespace-nowrap mt-[4px] md:mt-[3px] lg:mt-[5px] xl:mt-[7px] 2xl:mt-[8px]">
+                    <span className="block font-extrabold whitespace-nowrap mt-[2px] md:mt-[2px] lg:mt-[4px] xl:mt-[4px] 2xl:mt-[4px]">
                       seconds
                     </span>
                   </p>
                 </div>
 
-                <div className="absolute left-[48%] top-[44%] z-10 max-w-[50%]">
+                <div className="absolute left-[58%] top-[71%] z-10 max-w-[50%]">
                   <p className="font-['Archivo'] text-[#8B1E2B] tracking-[0.2px] text-[22px] md:text-[20px] lg:text-[28px] xl:text-[36px] 2xl:text-[40px] leading-[26px] md:leading-[24px] lg:leading-[32px] xl:leading-[40px] 2xl:leading-[44px]">
                     <span className="block font-extrabold whitespace-nowrap">Professional</span>
                     {/* Adjust the vertical spacing between lines here */}
-                    <span className="block font-normal whitespace-nowrap mt-[3px] md:mt-[2px] lg:mt-[4px] xl:mt-[5px] 2xl:mt-[6px]">
+                    <span className="block font-normal whitespace-nowrap mt-[2px] md:mt-[2px] lg:mt-[4px] xl:mt-[4px] 2xl:mt-[4px]">
                       Results
                     </span>
                   </p>
@@ -231,9 +231,16 @@ export default function Homepage() {
                   <img
                     src="/mavadry-promotional.png"
                     alt="MAVADRY Spray"
-                    className="h-[88%] w-auto object-contain transform-gpu scale-[1.15] translate-y-[10%] -translate-x-[10%]"
+                    className="h-[100%] w-auto object-contain transform-gpu scale-[1.2] translate-y-[5%] -translate-x-[29%]"
                   />
                 </div>
+                {/* Badge overlay (simple to adjust: top/right for position; w-* for size) */}
+                <img
+                  src="/mavadry-badge.png"
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute top-0 right-0 h-[39%] w-auto object-contain transform-gpu scale-[1.1] -translate-x-[130%] translate-y-[21%] pointer-events-none select-none"
+                />
               </div>
               <Link
                 to="/products/mavadry-spray"
