@@ -349,7 +349,14 @@ function ImageGallery({
   // Background color: white for collection products, grey for others
   const bgColor = isCollectionProduct ? "bg-white" : "bg-[#f5f5f5]";
   const isScientifique1 = productSlug === "mavala-scientifique-1";
+  const isScientifiqueK = productSlug === "mavala-scientifique-k";
   const isMavadrySpray = productSlug === "mavadry-spray";
+  const isMavalaStop = productSlug === "mavala-stop";
+  const isNailactan = productSlug === "nailactan-1";
+  const isNailWhiteCrayon = productSlug === "nail-white-crayon";
+  
+  // Products that use the special 3-image grid layout (like mavala-stop)
+  const useSpecialGridLayout = isMavalaStop || isScientifique1 || isScientifiqueK || isNailactan || isNailWhiteCrayon;
 
   // Products with lifestyle images that should use object-cover for secondary images
   const lifestyleImageProducts = [
@@ -370,17 +377,21 @@ function ImageGallery({
    * Some products need per-image background/fit tweaks.
    * - `mavala-scientifique-1`: image 01 on grey, images 02/03 on white.
    * - `mavadry-spray`: image 02 on grey (product shot), image 03 as cover (no grey showing).
+   * - `mavala-stop`: image 01 on grey, images 02/03 on white with object-cover.
    */
   const getContainerBgColor = (imageIndex: number): string => {
     if (imageIndex === 0) return bgColor;
     if (isScientifique1) return "bg-white";
     if (isMavadrySpray && imageIndex === 2) return "bg-white";
+    if (isMavalaStop) return "bg-white";
     return bgColor;
   };
 
   const getAdditionalImageClass = (imageIndex: number): string => {
     if (isBioColors) return "block w-full h-full object-cover border-none outline-none";
     if (isScientifique1)
+      return "block w-full h-full object-cover border-none outline-none";
+    if (isMavalaStop)
       return "block w-full h-full object-cover border-none outline-none";
     if (isMavadrySpray) {
       return imageIndex === 2
@@ -571,41 +582,78 @@ function ImageGallery({
       {/* DESKTOP LAYOUT - Grid with main image left, additional images right (if multiple) */}
       {showThumbnails && additionalImages.length >= 2 ? (
         /* 2+ additional images: Standard grid layout */
-        <div
-          className={`hidden md:grid md:grid-cols-[60%_40%] gap-2 ${bioGridRowsClass}`}
-          style={bioGridStyle}
-        >
-          {/* Main Large Image - Left - Clickable */}
-          <div
-            className={`${bgColor} border-none outline-none shadow-none row-span-2 cursor-pointer hover:opacity-95 transition-opacity ${bioFillHeightClass}`}
-            onClick={() => openLightbox(0)}
-          >
-            <img
-              src={mainImage}
-              alt={alt}
-              className={mainImageClass}
-              style={{ imageRendering: "-webkit-optimize-contrast" }}
-            />
-          </div>
-
-          {/* Additional Images Stacked - Right - Clickable */}
-          {additionalImages.slice(0, 2).map((img, idx) => (
+        useSpecialGridLayout ? (
+          /* Special 3-image grid layout - main image with two smaller images on right */
+          <div className="hidden md:grid md:grid-cols-[60%_40%] gap-2">
+            {/* Main Large Image - Left - Clickable */}
             <div
-              key={idx}
-              className={`${getContainerBgColor(
-                idx + 1
-              )} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity ${bioFillHeightClass}`}
-              onClick={() => openLightbox(idx + 1)}
+              className="bg-[#f5f5f5] border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden"
+              onClick={() => openLightbox(0)}
             >
               <img
-                src={img}
-                alt={`${alt} - ${idx + 2}`}
-                className={getAdditionalImageClass(idx + 1)}
-                loading="lazy"
+                src={mainImage}
+                alt={alt}
+                className="block w-full object-contain border-none outline-none"
+                style={{ imageRendering: "-webkit-optimize-contrast", maxHeight: '775px' }}
               />
             </div>
-          ))}
-        </div>
+
+            {/* Additional Images Column - Right - Clickable */}
+            <div className="flex flex-col gap-2">
+              {additionalImages.slice(0, 2).map((img, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden"
+                  onClick={() => openLightbox(idx + 1)}
+                >
+                  <img
+                    src={img}
+                    alt={`${alt} - ${idx + 2}`}
+                    className="block w-full object-contain border-none outline-none"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          /* Standard grid layout for other products */
+          <div
+            className={`hidden md:grid md:grid-cols-[60%_40%] gap-2 ${bioGridRowsClass}`}
+            style={bioGridStyle}
+          >
+            {/* Main Large Image - Left - Clickable */}
+            <div
+              className={`${bgColor} border-none outline-none shadow-none row-span-2 cursor-pointer hover:opacity-95 transition-opacity ${bioFillHeightClass}`}
+              onClick={() => openLightbox(0)}
+            >
+              <img
+                src={mainImage}
+                alt={alt}
+                className={mainImageClass}
+                style={{ imageRendering: "-webkit-optimize-contrast" }}
+              />
+            </div>
+
+            {/* Additional Images Stacked - Right - Clickable */}
+            {additionalImages.slice(0, 2).map((img, idx) => (
+              <div
+                key={idx}
+                className={`${getContainerBgColor(
+                  idx + 1
+                )} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity ${bioFillHeightClass}`}
+                onClick={() => openLightbox(idx + 1)}
+              >
+                <img
+                  src={img}
+                  alt={`${alt} - ${idx + 2}`}
+                  className={getAdditionalImageClass(idx + 1)}
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        )
       ) : showThumbnails && additionalImages.length === 1 ? (
         /* 1 additional image: Main image large on left, smaller image on right */
         <div className="hidden md:grid md:grid-cols-[55%_45%] gap-2 items-start">

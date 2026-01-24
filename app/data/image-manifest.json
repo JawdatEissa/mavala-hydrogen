@@ -1558,10 +1558,14 @@
       "/images/mavala-scientifique-1/03.jpg"
     ],
     "mavala-scientifique-k": [
-      "/images/mavala-scientifique-k/MS-Hardener+K+.png"
+      "/images/mavala-scientifique-k/01.png",
+      "/images/mavala-scientifique-k/02.jpg",
+      "/images/mavala-scientifique-k/03.jpg"
     ],
     "mavala-stop": [
-      "/images/mavala-stop/Mavala+Stop+5ml.png"
+      "/images/mavala-stop/01.png",
+      "/images/mavala-stop/02.jpg",
+      "/images/mavala-stop/03.jpg"
     ],
     "mavala-stop-pen": [
       "/images/mavala-stop-pen/Mavala+Stop-Pen+A-F-esp.png"
@@ -1919,7 +1923,8 @@
     ],
     "nail-white-crayon": [
       "/images/nail-white-crayon/01_9090615+Nail+White+Crayon.png",
-      "/images/nail-white-crayon/9090615+Nail+White+Crayon.png"
+      "/images/nail-white-crayon/02.jpg",
+      "/images/nail-white-crayon/03.jpg"
     ],
     "nail-with-longitudinal-grooves": [
       "/images/nail-with-longitudinal-grooves/Longitudinal_grooves.png",
@@ -1947,10 +1952,9 @@
       "/images/nail-with-transversal-grooves/Transversal_grooves.png"
     ],
     "nailactan-1": [
-      "/images/nailactan-1/01_Nailactan.png",
-      "/images/nailactan-1/02_Mavala+cares.png",
-      "/images/nailactan-1/Mavala+cares.png",
-      "/images/nailactan-1/Nailactan.png"
+      "/images/nailactan-1/01.png",
+      "/images/nailactan-1/02.png",
+      "/images/nailactan-1/03.png"
     ],
     "neo-nudes": [
       "/images/neo-nudes/01_2.+Post+Neo+Nude+Collection+-+Post+2.jpg",
