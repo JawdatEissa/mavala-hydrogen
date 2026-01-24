@@ -193,11 +193,11 @@ function TimelineAccordionItem({ item }: { item: any }) {
       {/* Accordion Content */}
       {isOpen && (
         <div className="mt-4 space-y-4 animate-fadeIn">
-          <div className="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
+          <div className="relative flex items-center justify-center">
             <img
               src={item.image}
               alt={item.event}
-              className="w-full h-full object-contain p-4"
+              className="max-w-full h-auto object-contain"
               loading="lazy"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;

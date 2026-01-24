@@ -203,7 +203,7 @@ export default function Homepage() {
                 style={{ aspectRatio: "1080/720" }}
               >
                 {/* Text boxes */}
-                <div className="absolute left-[50%] md:left-[52%] lg:left-[56%] xl:left-[58%] 2xl:left-[58%] top-[51%] z-10">
+                <div className="absolute left-[50%] md:left-[52%] lg:left-[52%] xl:left-[54%] 2xl:left-[54%] top-[51%] z-10">
                   <p className="font-['Archivo'] text-[#8B1E2B] font-semibold tracking-[0.2px] text-[20px] md:text-[17px] lg:text-[22px] xl:text-[30px] 2xl:text-[40px] leading-[24px] md:leading-[21px] lg:leading-[26px] xl:leading-[34px] 2xl:leading-[44px]">
                     <span className="block whitespace-nowrap">
                       <span className="font-extrabold">Dry</span>{" "}
@@ -215,7 +215,7 @@ export default function Homepage() {
                   </p>
                 </div>
 
-                <div className="absolute left-[50%] md:left-[52%] lg:left-[56%] xl:left-[58%] 2xl:left-[58%] top-[72%] md:top-[68%] lg:top-[71%] z-10">
+                <div className="absolute left-[50%] md:left-[52%] lg:left-[52%] xl:left-[54%] 2xl:left-[54%] top-[72%] md:top-[68%] lg:top-[71%] z-10">
                   <p className="font-['Archivo'] text-[#8B1E2B] tracking-[0.2px] text-[20px] md:text-[17px] lg:text-[22px] xl:text-[30px] 2xl:text-[40px] leading-[24px] md:leading-[21px] lg:leading-[26px] xl:leading-[34px] 2xl:leading-[44px]">
                     <span className="block font-extrabold whitespace-nowrap">Professional</span>
                     <span className="block font-normal whitespace-nowrap mt-[2px] lg:mt-[4px]">
