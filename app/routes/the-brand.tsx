@@ -1,7 +1,7 @@
 import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { useLoaderData, Link } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import brandData from "../data/brand-page.json";
 
 export const meta: MetaFunction = () => {
@@ -143,6 +143,191 @@ function TimelineSection({ timeline }: { timeline: any[] }) {
         </div>
       </div>
     </div>
+  );
+}
+
+// Product Range Carousel Component
+function ProductRangeCarousel() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const products = [
+    {
+      image: "/discover-nail-care.avif",
+      label: "Nail Care",
+      to: "/nail-care",
+    },
+    {
+      image: "/discover-nail-polish.avif",
+      label: "Nail Polish",
+      to: "/color",
+    },
+    {
+      image: "/discover-eye-beauty.avif",
+      label: "Eye Beauty",
+      to: "/eye-beauty",
+    },
+    {
+      image: "/discover-face-lips.avif",
+      label: "Face and Lips",
+      to: "/face-lips",
+    },
+    {
+      image: "/discover-hand-care.avif",
+      label: "Hand Care",
+      to: "/hand-care",
+    },
+    {
+      image: "/discover-foot-care.avif",
+      label: "Foot Care",
+      to: "/foot-care",
+    },
+  ];
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft;
+      const epsilon = 2;
+      setCanScrollLeft(scrollLeft > epsilon);
+      setCanScrollRight(
+        scrollLeft + container.clientWidth < container.scrollWidth - epsilon
+      );
+    };
+
+    container.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+
+    // Initialize state after layout
+    requestAnimationFrame(handleScroll);
+
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
+  const scrollLeft = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.scrollBy({ left: -400, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.scrollBy({ left: 400, behavior: "smooth" });
+    }
+  };
+
+  return (
+    <section className="py-12 md:py-16 border-t border-gray-200">
+      {/* Title aligned with max-w-5xl container above */}
+      <div className="max-w-5xl mx-auto px-4 mb-10">
+        <h2 className="text-[32px] md:text-[40px] font-light text-gray-900">
+          Discover our range of products
+        </h2>
+      </div>
+
+      <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] group">
+        {/* Left Scroll Button - Shows on both mobile and desktop when canScrollLeft is true */}
+        <button
+          onClick={scrollLeft}
+          className={`flex absolute left-4 md:left-8 top-1/2 -translate-y-[calc(50%+20px)] z-10 w-10 h-10 md:w-12 md:h-12 items-center justify-center rounded-full bg-[#272724] shadow-xl text-white transition-all hover:scale-110 ${
+            canScrollLeft
+              ? "opacity-100 md:opacity-0 md:group-hover:opacity-100"
+              : "opacity-0 pointer-events-none"
+          }`}
+          aria-hidden={!canScrollLeft}
+          tabIndex={canScrollLeft ? 0 : -1}
+          aria-label="Scroll left"
+        >
+          <svg
+            className="w-5 h-5 md:w-6 md:h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            strokeWidth={2.5}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+
+        {/* Right Scroll Button - Shows on both mobile and desktop when canScrollRight is true */}
+        <button
+          onClick={scrollRight}
+          className={`flex absolute right-4 md:right-8 top-1/2 -translate-y-[calc(50%+20px)] z-10 w-10 h-10 md:w-12 md:h-12 items-center justify-center rounded-full bg-[#272724] shadow-xl text-white transition-all hover:scale-110 ${
+            canScrollRight
+              ? "opacity-100 md:opacity-0 md:group-hover:opacity-100"
+              : "opacity-0 pointer-events-none"
+          }`}
+          aria-hidden={!canScrollRight}
+          tabIndex={canScrollRight ? 0 : -1}
+          aria-label="Scroll right"
+        >
+          <svg
+            className="w-5 h-5 md:w-6 md:h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            strokeWidth={2.5}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+
+        {/* Scrollable Container */}
+        <div
+          ref={scrollContainerRef}
+          className="overflow-x-auto scrollbar-hide scroll-smooth"
+          style={{ WebkitOverflowScrolling: "touch" }}
+        >
+          {/* Gap of ~8px between images, ~3.5 images visible at a time */}
+          {/* Left padding reduced by 45% */}
+          <div className="flex gap-2 pl-[calc((100vw-64rem)/2*0.55+1rem)] pr-4 md:pl-[calc((100vw-64rem)/2*0.55+1rem)] md:pr-8">
+            {products.map((product) => (
+              <Link
+                key={product.to}
+                to={product.to}
+                className="flex-shrink-0 group/card"
+              >
+                {/* Square aspect ratio (1:1), ~37.5vw width on md+, 66.66vw on mobile */}
+                <div 
+                  className="w-[66.66vw] md:w-[37.5vw] 2xl:w-[36.625rem] overflow-hidden rounded-[3px]"
+                >
+                  <div
+                    className="relative w-full overflow-hidden rounded-[3px]"
+                    style={{ aspectRatio: "1 / 1" }}
+                  >
+                    <img
+                      src={product.image}
+                      alt={product.label}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-105 rounded-[3px]"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+                <p className="mt-3 text-[15px] md:text-[17px] font-normal text-[#272724] tracking-[0.2px]">
+                  {product.label}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -350,6 +535,9 @@ export default function TheBrand() {
           </div>
         </section>
       )}
+
+      {/* Discover Our Range of Products Carousel */}
+      <ProductRangeCarousel />
 
       {/* Our Commitments Section */}
       {brandData.sections[2] && (
