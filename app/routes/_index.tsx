@@ -203,8 +203,8 @@ export default function Homepage() {
                 style={{ aspectRatio: "1080/720" }}
               >
                 {/* Text boxes (left side). Responsive positioning and font sizes. */}
-                <div className="absolute left-[50%] md:left-[58%] top-[51%] z-10 max-w-none">
-                  <p className="font-['Archivo'] text-[#8B1E2B] font-semibold tracking-[0.2px] text-[22px] md:text-[20px] lg:text-[28px] xl:text-[36px] 2xl:text-[40px] leading-[26px] md:leading-[24px] lg:leading-[32px] xl:leading-[40px] 2xl:leading-[44px]">
+                <div className="absolute left-[50%] md:left-[54%] lg:left-[58%] top-[51%] z-10 max-w-none">
+                  <p className="font-['Archivo'] text-[#8B1E2B] font-semibold tracking-[0.2px] text-[28px] md:text-[26px] lg:text-[28px] xl:text-[36px] 2xl:text-[40px] leading-[26px] md:leading-[30px] lg:leading-[32px] xl:leading-[40px] 2xl:leading-[44px]">
                     <span className="block whitespace-nowrap">
                       <span className="font-extrabold">Dry</span>{" "}
                       <span className="font-normal">your polish in</span>
@@ -216,8 +216,8 @@ export default function Homepage() {
                   </p>
                 </div>
 
-                <div className="absolute left-[50%] md:left-[58%] top-[70%] md:top-[71%] z-10 max-w-[50%]">
-                  <p className="font-['Archivo'] text-[#8B1E2B] tracking-[0.2px] text-[22px] md:text-[20px] lg:text-[28px] xl:text-[36px] 2xl:text-[40px] leading-[26px] md:leading-[24px] lg:leading-[32px] xl:leading-[40px] 2xl:leading-[44px]">
+                <div className="absolute left-[50%] md:left-[54%] lg:left-[58%] top-[73%] md:top-[71%] z-10 max-w-[50%]">
+                  <p className="font-['Archivo'] text-[#8B1E2B] tracking-[0.2px] text-[28px] md:text-[28px] lg:text-[28px] xl:text-[36px] 2xl:text-[40px] leading-[26px] md:leading-[30px] lg:leading-[32px] xl:leading-[40px] 2xl:leading-[44px]">
                     <span className="block font-extrabold whitespace-nowrap">Professional</span>
                     {/* Adjust the vertical spacing between lines here */}
                     <span className="block font-normal whitespace-nowrap mt-[1px] md:mt-[2px] lg:mt-[4px] xl:mt-[4px] 2xl:mt-[4px]">
