@@ -203,8 +203,8 @@ export default function Homepage() {
                 style={{ aspectRatio: "1080/720" }}
               >
                 {/* Text boxes */}
-                <div className="absolute left-[50%] md:left-[58%] top-[51%] z-10">
-                  <p className="font-['Archivo'] text-[#8B1E2B] font-semibold tracking-[0.2px] text-[20px] md:text-[20px] lg:text-[28px] xl:text-[36px] 2xl:text-[40px] leading-[24px] md:leading-[24px] lg:leading-[32px] xl:leading-[40px] 2xl:leading-[44px]">
+                <div className="absolute left-[50%] md:left-[48%] lg:left-[50%] xl:left-[54%] 2xl:left-[58%] top-[51%] z-10">
+                  <p className="font-['Archivo'] text-[#8B1E2B] font-semibold tracking-[0.2px] text-[20px] md:text-[16px] lg:text-[20px] xl:text-[28px] 2xl:text-[40px] leading-[24px] md:leading-[20px] lg:leading-[24px] xl:leading-[32px] 2xl:leading-[44px]">
                     <span className="block whitespace-nowrap">
                       <span className="font-extrabold">Dry</span>{" "}
                       <span className="font-normal">your polish in</span>
@@ -215,8 +215,8 @@ export default function Homepage() {
                   </p>
                 </div>
 
-                <div className="absolute left-[50%] md:left-[58%] top-[70%] md:top-[71%] z-10">
-                  <p className="font-['Archivo'] text-[#8B1E2B] tracking-[0.2px] text-[20px] md:text-[20px] lg:text-[28px] xl:text-[36px] 2xl:text-[40px] leading-[24px] md:leading-[24px] lg:leading-[32px] xl:leading-[40px] 2xl:leading-[44px]">
+                <div className="absolute left-[50%] md:left-[48%] lg:left-[50%] xl:left-[54%] 2xl:left-[58%] top-[68%] md:top-[68%] lg:top-[71%] z-10">
+                  <p className="font-['Archivo'] text-[#8B1E2B] tracking-[0.2px] text-[20px] md:text-[16px] lg:text-[20px] xl:text-[28px] 2xl:text-[40px] leading-[24px] md:leading-[20px] lg:leading-[24px] xl:leading-[32px] 2xl:leading-[44px]">
                     <span className="block font-extrabold whitespace-nowrap">Professional</span>
                     <span className="block font-normal whitespace-nowrap mt-[2px] lg:mt-[4px]">
                       Results
