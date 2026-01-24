@@ -203,7 +203,7 @@ export default function Homepage() {
                 style={{ aspectRatio: "1080/720" }}
               >
                 {/* Text boxes (left side). Responsive positioning and font sizes. */}
-                <div className="absolute left-[58%] top-[51%] z-10 max-w-none">
+                <div className="absolute left-[50%] md:left-[58%] top-[51%] z-10 max-w-none">
                   <p className="font-['Archivo'] text-[#8B1E2B] font-semibold tracking-[0.2px] text-[22px] md:text-[20px] lg:text-[28px] xl:text-[36px] 2xl:text-[40px] leading-[26px] md:leading-[24px] lg:leading-[32px] xl:leading-[40px] 2xl:leading-[44px]">
                     <span className="block whitespace-nowrap">
                       <span className="font-extrabold">Dry</span>{" "}
@@ -216,7 +216,7 @@ export default function Homepage() {
                   </p>
                 </div>
 
-                <div className="absolute left-[58%] top-[71%] z-10 max-w-[50%]">
+                <div className="absolute left-[50%] md:left-[58%] top-[71%] z-10 max-w-[50%]">
                   <p className="font-['Archivo'] text-[#8B1E2B] tracking-[0.2px] text-[22px] md:text-[20px] lg:text-[28px] xl:text-[36px] 2xl:text-[40px] leading-[26px] md:leading-[24px] lg:leading-[32px] xl:leading-[40px] 2xl:leading-[44px]">
                     <span className="block font-extrabold whitespace-nowrap">Professional</span>
                     {/* Adjust the vertical spacing between lines here */}
@@ -226,12 +226,12 @@ export default function Homepage() {
                   </p>
                 </div>
 
-                {/* Image (do not change size/position): keep current transform exactly as-is. */}
+                {/* Spray image */}
                 <div className="absolute inset-0 z-0 flex items-center justify-center">
                   <img
                     src="/mavadry-promotional.png"
                     alt="MAVADRY Spray"
-                    className="h-[100%] w-auto object-contain transform-gpu scale-[1.2] translate-y-[5%] -translate-x-[29%]"
+                    className="h-[100%] w-auto object-contain transform-gpu scale-[1.2] md:scale-[1.2] translate-y-[5%] -translate-x-[45%] md:-translate-x-[29%]"
                   />
                 </div>
                 {/* Badge overlay (simple to adjust: top/right for position; w-* for size) */}
