@@ -148,7 +148,7 @@ export function Footer() {
             </a>
           </div>
         <div className="mt-2 text-[13px] text-gray-700">
-          © 2025 Mavala Canada. All rights reserved.
+          © 2026 Mavala Canada. All rights reserved.
         </div>
       </div>
     </footer>
