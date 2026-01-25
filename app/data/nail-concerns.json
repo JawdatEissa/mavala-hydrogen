@@ -186,7 +186,26 @@
       "alt": "Bitten nail?",
       "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1600393252413-986IXKSPWAZAS2XD4O3L/Bitten+nail.jpg"
     },
-    "products": []
+    "products": [
+      {
+        "name": "Anti Nail-Biting Solution",
+        "src": "/images/mavala-stop/01.png",
+        "product_slug": "mavala-stop",
+        "product_url": "https://mavala.com.au/all-products/mavala-stop"
+      },
+      {
+        "name": "Nail Shield",
+        "src": "/images/nail-shield/Nail+Shield+2x5ml.png",
+        "product_slug": "nail-shield",
+        "product_url": "https://mavala.com.au/all-products/nail-shield"
+      },
+      {
+        "name": "Nail Hardener K+",
+        "src": "/images/mavala-scientifique-k/01.png",
+        "product_slug": "mavala-scientifique-k",
+        "product_url": "https://mavala.com.au/all-products/mavala-scientifique-k"
+      }
+    ]
   },
   {
     "name": "SLOW GROWING NAIL?",
