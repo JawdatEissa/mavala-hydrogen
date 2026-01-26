@@ -230,10 +230,12 @@ function MobileShadeGallery({
   images,
   alt,
   onImageClick,
+  productSlug = "",
 }: {
   images: string[];
   alt: string;
   onImageClick: (index: number) => void;
+  productSlug?: string;
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
@@ -1198,6 +1200,7 @@ export default function ProductPage() {
             images={mobileShadeImages}
             alt={selectedShade || product.title}
             onImageClick={openMobileLightbox}
+            productSlug={product.slug}
           />
 
           {/* Mobile Shade Selection - Mavala Style */}

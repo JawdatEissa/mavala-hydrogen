@@ -4,7 +4,9 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "@remix-run/react";
+import { useEffect } from "react";
 import type { LinksFunction } from "@remix-run/node";
 
 import "./styles/tailwind.css";
@@ -26,6 +28,16 @@ export const links: LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const location = useLocation();
+
+  // Scroll to top on route change - fixes mobile scroll restoration issues
+  useEffect(() => {
+    // Only scroll to top if there's no hash in the URL
+    if (!location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname]);
+
   return (
     <html lang="en">
       <head>
@@ -43,7 +55,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Header />
         <main>{children}</main>
         <Footer />
-        <ScrollRestoration />
+        <ScrollRestoration
+          getKey={(location) => {
+            // Use pathname as key to reset scroll on navigation
+            return location.pathname;
+          }}
+        />
         <Scripts />
       </body>
     </html>
