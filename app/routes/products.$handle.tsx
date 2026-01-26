@@ -356,7 +356,7 @@ function ImageGallery({
   const isNailWhiteCrayon = productSlug === "nail-white-crayon";
   
   // Products that use the special 3-image grid layout (like mavala-stop)
-  const useSpecialGridLayout = isMavalaStop || isScientifique1 || isScientifiqueK || isNailactan || isNailWhiteCrayon;
+  const useSpecialGridLayout = isMavalaStop || isScientifique1 || isScientifiqueK || isNailactan;
 
   // Products with lifestyle images that should use object-cover for secondary images
   const lifestyleImageProducts = [
@@ -384,6 +384,8 @@ function ImageGallery({
     if (isScientifique1) return "bg-white";
     if (isMavadrySpray && imageIndex === 2) return "bg-white";
     if (isMavalaStop) return "bg-white";
+    if (isNailactan) return "bg-white";
+    if (isNailWhiteCrayon) return "bg-white";
     return bgColor;
   };
 
@@ -392,6 +394,12 @@ function ImageGallery({
     if (isScientifique1)
       return "block w-full h-full object-cover border-none outline-none";
     if (isMavalaStop)
+      return "block w-full h-full object-cover border-none outline-none";
+    if (isNailactan)
+      return "block w-full h-full object-cover border-none outline-none";
+    if (isNailWhiteCrayon)
+      return "block w-full h-full object-cover border-none outline-none";
+    if (productSlug === "double-lash")
       return "block w-full h-full object-cover border-none outline-none";
     if (isMavadrySpray) {
       return imageIndex === 2
@@ -410,6 +418,37 @@ function ImageGallery({
         : "block w-full h-full object-contain";
     }
     return "block w-full h-full object-cover";
+  };
+
+  // Get image positioning for specific products
+  const getImageStyle = (imageIndex: number): React.CSSProperties => {
+    const isDoubleLash = productSlug === "double-lash";
+    
+    // For double-lash, move the second image (index 1) down by 20%
+    if (isDoubleLash && imageIndex === 1) {
+      return {
+        objectPosition: "center 65%",
+        imageRendering: "-webkit-optimize-contrast" as any,
+      };
+    }
+    
+    return {
+      imageRendering: "-webkit-optimize-contrast" as any,
+    };
+  };
+
+  // Get container styling for specific products
+  const getContainerStyle = (imageIndex: number): React.CSSProperties => {
+    const isDoubleLash = productSlug === "double-lash";
+    
+    // For double-lash, add padding to the top of the first additional image container
+    if (isDoubleLash && imageIndex === 1) {
+      return {
+        paddingTop: "20%",
+      };
+    }
+    
+    return {};
   };
   const bioGridStyle = isBioColors ? { aspectRatio: "4/3" } : undefined;
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -642,12 +681,15 @@ function ImageGallery({
                 className={`${getContainerBgColor(
                   idx + 1
                 )} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity ${bioFillHeightClass}`}
+                style={getContainerStyle(idx + 1)}
                 onClick={() => openLightbox(idx + 1)}
               >
                 <img
                   src={img}
                   alt={`${alt} - ${idx + 2}`}
                   className={getAdditionalImageClass(idx + 1)}
+
+                  style={getImageStyle(idx + 1)}
                   loading="lazy"
                 />
               </div>
