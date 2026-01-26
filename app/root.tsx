@@ -5,6 +5,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation,
+  useNavigationType,
 } from "@remix-run/react";
 import { useEffect } from "react";
 import type { LinksFunction } from "@remix-run/node";
@@ -29,14 +30,19 @@ export const links: LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
+  const navigationType = useNavigationType();
 
   // Scroll to top on route change - fixes mobile scroll restoration issues
   useEffect(() => {
-    // Only scroll to top if there's no hash in the URL
-    if (!location.hash) {
+    /**
+     * Important:
+     * - On normal navigations (PUSH/REPLACE) we want to start at top.
+     * - On Back/Forward (POP) we must preserve/restore the previous scroll position.
+     */
+    if (navigationType !== "POP" && !location.hash) {
       window.scrollTo(0, 0);
     }
-  }, [location.pathname]);
+  }, [location.pathname, location.hash, navigationType]);
 
   return (
     <html lang="en">
