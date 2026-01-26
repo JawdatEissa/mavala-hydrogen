@@ -878,7 +878,7 @@
     "double-lash": [
       "/images/double-lash/01_Double-lash.png",
       "/images/double-lash/02_Packaging.png",
-      "/images/double-lash/03_Double-Lash+with+cottons.jpg",
+      "/images/double-lash/03_Double-Lash+with+cottons.png",
       "/images/double-lash/04_Double-Lash+with+tea.png",
       "/images/double-lash/05_Mavala+cares.png"
     ],
@@ -1922,9 +1922,10 @@
       "/images/nail-shield/Nail+Shield+2x5ml.png"
     ],
     "nail-white-crayon": [
-      "/images/nail-white-crayon/01_9090615+Nail+White+Crayon.png",
       "/images/nail-white-crayon/01.jpg",
-      "/images/nail-white-crayon/03.jpg"
+      "/images/nail-white-crayon/01_9090615+Nail+White+Crayon.png",
+      "/images/nail-white-crayon/03.jpg",
+      "/images/nail-white-crayon/9090615+Nail+White+Crayon.png"
     ],
     "nail-with-longitudinal-grooves": [
       "/images/nail-with-longitudinal-grooves/Longitudinal_grooves.png",
@@ -3679,5 +3680,5 @@
       "/images/shades/993 WINDSOR/03.png"
     ]
   },
-  "generated": "2026-01-13T05:27:51.067Z"
+  "generated": "2026-01-26T22:35:36.336Z"
 }

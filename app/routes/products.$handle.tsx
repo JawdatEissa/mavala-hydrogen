@@ -366,10 +366,10 @@ function ImageGallery({
   const useSpecialGridLayout = isMavalaStop || isScientifique1 || isScientifiqueK || isNailactan;
 
   // Products with lifestyle images that should use object-cover for secondary images
+  // Note: shade products (like nude-shades) use object-contain to show full images
   const lifestyleImageProducts = [
     "cream-colors",
     "pearl-colors",
-    "nude-shades",
   ];
 
   const useObjectCover =

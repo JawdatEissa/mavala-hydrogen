@@ -72,7 +72,41 @@ function getImagesFromFolder(folderPath, relativePath) {
       .filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f))
       .sort();
     
-    // Group by base name and prefer PNG over JPG
+    const isShadeFolder = relativePath.startsWith('shades/');
+    
+    // For shade folders, use only clean numbered files (01.png, 02.png, 03.png)
+    if (isShadeFolder) {
+      const numberGroups = new Map(); // number -> file
+      
+      for (const file of imageFiles) {
+        const ext = file.split('.').pop()?.toLowerCase() || '';
+        const baseName = file.replace(/\.(jpg|jpeg|png|webp)$/i, '');
+        
+        // Only accept clean numbered files (e.g., "01", "02", "03")
+        if (!/^\d+$/.test(baseName)) continue;
+        
+        const num = baseName;
+        // Prefer PNG over JPG
+        if (!numberGroups.has(num) || ext === 'png') {
+          numberGroups.set(num, file);
+        }
+      }
+      
+      // Build result array sorted by number
+      const result = [];
+      const sortedNumbers = Array.from(numberGroups.keys()).sort((a, b) => parseInt(a) - parseInt(b));
+      
+      for (const num of sortedNumbers) {
+        const file = numberGroups.get(num);
+        if (file) {
+          result.push(`/images/${relativePath}/${file}`);
+        }
+      }
+      
+      return result;
+    }
+    
+    // For non-shade folders, use original logic
     const baseNames = new Map();
     for (const file of imageFiles) {
       const baseName = file.replace(/\.(jpg|jpeg|png|webp)$/i, '');
@@ -83,7 +117,6 @@ function getImagesFromFolder(folderPath, relativePath) {
       }
     }
     
-    // Return sorted unique images as paths
     return Array.from(baseNames.entries())
       .sort((a, b) => a[0].localeCompare(b[0]))
       .map(([_, filename]) => `/images/${relativePath}/${filename}`);
