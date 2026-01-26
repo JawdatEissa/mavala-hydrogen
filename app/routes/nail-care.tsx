@@ -13,10 +13,10 @@ import {
 
 // Preview nail concerns - just 4 representative images for the teaser
 const NAIL_CONCERN_PREVIEWS = [
-  { name: "DRY NAIL?", image: "/nail-concerns/dry-nail.png" },
-  { name: "DAMAGED, BRITTLE NAIL?", image: "/nail-concerns/damaged-nail.png" },
-  { name: "LIGHTLY RIDGED NAIL?", image: "/nail-concerns/ridged-nail.png" },
-  { name: "BITTEN NAIL?", image: "/nail-concerns/bitten-nail.png" },
+  { name: "DRY NAIL?", image: "/diagnosis/dry-nail.png" },
+  { name: "DAMAGED, BRITTLE NAIL?", image: "/diagnosis/damaged-brittle-nail.png" },
+  { name: "LIGHTLY RIDGED NAIL?", image: "/diagnosis/lightly-ridged-nail.png" },
+  { name: "BITTEN NAIL?", image: "/diagnosis/bitten-nail.png" },
 ];
 
 // Product slugs for each category
@@ -273,6 +273,7 @@ export default function NailCarePage() {
                           alt={concern.name}
                           className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-200"
                           loading="lazy"
+                          decoding="async"
                         />
                       </div>
                       <p className="mt-2 font-['Archivo'] text-[10px] font-semibold uppercase tracking-widest text-gray-900 leading-[1.15] text-center max-w-[7.5rem] line-clamp-2 min-h-[24px]">
@@ -292,6 +293,7 @@ export default function NailCarePage() {
                           alt={concern.name}
                           className="w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-200"
                           loading="lazy"
+                          decoding="async"
                         />
                       </div>
                     </div>

@@ -45,6 +45,8 @@ export default function NailConcernPage() {
                 src={concern.main_image.src}
                 alt={concern.main_image.alt}
                 className="max-w-[200px] object-contain"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           )}

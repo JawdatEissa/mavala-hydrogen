@@ -125,6 +125,8 @@ export default function NailDiagnosisPage() {
                     src={condition.image}
                     alt={condition.name}
                     className="w-full h-full object-contain object-center will-change-transform scale-[1.1] lg:scale-[1.25] xl:scale-[1.35] transition-transform duration-200 group-hover:scale-[1.15] lg:group-hover:scale-[1.3] xl:group-hover:scale-[1.4]"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <p className="font-['Archivo'] text-[15px] sm:text-[13px] md:text-[12px] uppercase text-gray-800 leading-tight font-medium">
