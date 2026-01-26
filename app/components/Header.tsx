@@ -146,20 +146,34 @@ export function Header() {
       clearPending();
       if (!isMobileMenuOpenRef.current) setIsHidden(false);
     };
+    
+    // Listen for tab click event - keep header in current state
+    let tabClickPauseUntil = 0;
+    const handleTabClick = () => {
+      tabClickPauseUntil = Date.now() + 300;
+    };
+    
+    // Wrap the scroll handler to check for tab click pause
+    const wrappedHandleScroll = () => {
+      if (Date.now() < tabClickPauseUntil) return;
+      handleScroll();
+    };
 
     // Initialize refs to avoid incorrect first-scroll direction detection
     lastScrollYRef.current = window.scrollY;
     directionStartYRef.current = window.scrollY;
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", wrappedHandleScroll, { passive: true });
     window.addEventListener("shadeDrawerOpen", handleDrawerOpen);
     window.addEventListener("shadeDrawerClose", handleDrawerClose);
+    window.addEventListener("productTabClick", handleTabClick);
 
     return () => {
       clearPending();
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", wrappedHandleScroll);
       window.removeEventListener("shadeDrawerOpen", handleDrawerOpen);
       window.removeEventListener("shadeDrawerClose", handleDrawerClose);
+      window.removeEventListener("productTabClick", handleTabClick);
     };
   }, []);
 

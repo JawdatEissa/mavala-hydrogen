@@ -1653,7 +1653,10 @@ export default function ProductPage() {
                 {/* Tab Navigation */}
                 <div className="flex gap-8 border-b border-gray-200">
                   <button
-                    onClick={() => setActiveProductTab("details")}
+                    onClick={() => {
+                      window.dispatchEvent(new Event("productTabClick"));
+                      setActiveProductTab("details");
+                    }}
                     className={`pb-4 font-['Archivo'] text-lg transition-colors relative ${
                       activeProductTab === "details"
                         ? "text-[#1a7eb8] font-medium"
@@ -1666,7 +1669,10 @@ export default function ProductPage() {
                     )}
                   </button>
                   <button
-                    onClick={() => setActiveProductTab("ingredients")}
+                    onClick={() => {
+                      window.dispatchEvent(new Event("productTabClick"));
+                      setActiveProductTab("ingredients");
+                    }}
                     className={`pb-4 font-['Archivo'] text-lg transition-colors relative ${
                       activeProductTab === "ingredients"
                         ? "text-[#1a7eb8] font-medium"
@@ -2103,7 +2109,10 @@ export default function ProductPage() {
           {/* Tab Navigation */}
           <div className="flex gap-8 border-b border-gray-200">
             <button
-              onClick={() => setActiveProductTab("details")}
+              onClick={() => {
+                window.dispatchEvent(new Event("productTabClick"));
+                setActiveProductTab("details");
+              }}
               className={`pb-4 font-['Archivo'] text-lg transition-colors relative ${
                 activeProductTab === "details"
                   ? "text-[#1a7eb8] font-medium"
@@ -2116,7 +2125,10 @@ export default function ProductPage() {
               )}
             </button>
             <button
-              onClick={() => setActiveProductTab("ingredients")}
+              onClick={() => {
+                window.dispatchEvent(new Event("productTabClick"));
+                setActiveProductTab("ingredients");
+              }}
               className={`pb-4 font-['Archivo'] text-lg transition-colors relative ${
                 activeProductTab === "ingredients"
                   ? "text-[#1a7eb8] font-medium"
