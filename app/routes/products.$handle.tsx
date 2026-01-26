@@ -1253,24 +1253,41 @@ export default function ProductPage() {
               )}
 
               {/* Key Features with vertical bar bullets - Mavala.fr style */}
-              <div className="mb-6 space-y-4">
-                <div className="flex items-start">
-                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
-                  <span className="product-page-feature">Vegan formula</span>
+              {product.slug === "mavala-stop" ? (
+                <div className="mb-6 space-y-4">
+                  <div className="flex items-start">
+                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                    <span className="product-page-feature">
+                      Bitter nail polish for beautiful nails
+                    </span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                    <span className="product-page-feature">
+                      Dermatologically tested
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-start">
-                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
-                  <span className="product-page-feature">
-                    Long-lasting hold and shine
-                  </span>
+              ) : (
+                <div className="mb-6 space-y-4">
+                  <div className="flex items-start">
+                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                    <span className="product-page-feature">Vegan formula</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                    <span className="product-page-feature">
+                      Long-lasting hold and shine
+                    </span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                    <span className="product-page-feature">
+                      Enriched with protective silicium
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-start">
-                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
-                  <span className="product-page-feature">
-                    Enriched with protective silicium
-                  </span>
-                </div>
-              </div>
+              )}
 
               {/* Mobile Accordion Sections */}
               <div className="border-t border-gray-200">
@@ -1562,18 +1579,35 @@ export default function ProductPage() {
               )}
 
               {/* Key Features with thick vertical bar bullets - Mavala.fr style */}
-              <div className="mb-8 space-y-4">
-                <div className="flex items-start">
-                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
-                  <span className="product-page-feature">Vegan formula</span>
+              {product.slug === "mavala-stop" ? (
+                <div className="mb-8 space-y-4">
+                  <div className="flex items-start">
+                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                    <span className="product-page-feature">
+                      Bitter nail polish for beautiful nails
+                    </span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                    <span className="product-page-feature">
+                      Dermatologically tested
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-start">
-                  <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
-                  <span className="product-page-feature">
-                    Long-lasting hold and shine
-                  </span>
+              ) : (
+                <div className="mb-8 space-y-4">
+                  <div className="flex items-start">
+                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                    <span className="product-page-feature">Vegan formula</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                    <span className="product-page-feature">
+                      Long-lasting hold and shine
+                    </span>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Horizontal Divider */}
               <hr className="border-t border-gray-200 mb-6" />
