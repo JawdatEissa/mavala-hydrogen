@@ -434,7 +434,11 @@ function ImageGallery({
     // For double-lash, move the second image (index 1) down by 20%
     if (isDoubleLash && imageIndex === 1) {
       return {
-        objectPosition: "center 65%",
+        // `objectPosition` can be visually subtle depending on the source image;
+        // use translateY to physically move the image within the fixed grey box.
+        objectPosition: "center 75%",
+        transform: "scale(1.331) translateY(10%)",
+        transformOrigin: "center",
         imageRendering: "-webkit-optimize-contrast" as any,
       };
     }
@@ -704,7 +708,7 @@ function ImageGallery({
                 key={idx}
                 className={`${getContainerBgColor(
                   idx + 1
-                )} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity ${bioFillHeightClass}`}
+                )} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden ${bioFillHeightClass}`}
                 style={getContainerStyle(idx + 1)}
                 onClick={() => openLightbox(idx + 1)}
               >
