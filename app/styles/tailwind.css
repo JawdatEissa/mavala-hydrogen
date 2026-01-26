@@ -317,7 +317,7 @@
   /* Right column stays fixed while left content scrolls */
   .product-info-sticky {
     position: sticky;
-    top: 6.5rem; /* Offset for header height (~104px) */
+    top: 1rem; /* Small offset from top - header scrolls away */
     align-self: flex-start;
     /* NO max-height or overflow - let it be natural height and truly sticky */
   }

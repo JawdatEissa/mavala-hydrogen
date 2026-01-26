@@ -943,6 +943,19 @@ export default function ProductPage() {
   const [isShadeDrawerOpen, setIsShadeDrawerOpen] = useState(false);
   // Tab state for product details section (horizontal tabs like reference site)
   const [activeProductTab, setActiveProductTab] = useState<"details" | "ingredients">("details");
+  // Track if user has scrolled past header (for sticky positioning)
+  const [scrolledPastHeader, setScrolledPastHeader] = useState(false);
+
+  // Listen for scroll to adjust sticky position
+  useEffect(() => {
+    const headerHeight = 100; // Approximate header height in pixels
+    const handleScroll = () => {
+      setScrolledPastHeader(window.scrollY > headerHeight);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Check initial position
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Get display price
   const displayPrice = product.price_from || product.price || "";
@@ -1737,7 +1750,15 @@ export default function ProductPage() {
             {/* ===== END LEFT COLUMN ===== */}
 
             {/* ===== RIGHT COLUMN: Product Info (sticky) ===== */}
-            <div className="product-info-sticky lg:pl-6">
+            <div 
+              className="lg:pl-6"
+              style={{
+                position: 'sticky',
+                top: scrolledPastHeader ? '1rem' : '7rem',
+                alignSelf: 'flex-start',
+                transition: 'top 0.2s ease-out',
+              }}
+            >
               {/* Store Reviews Link - Top */}
               {product.store_reviews &&
                 typeof product.store_reviews === "string" &&
