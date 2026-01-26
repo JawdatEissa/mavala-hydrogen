@@ -1,0 +1,279 @@
+Shade secondary images with BORDER-CONNECTED pure-white pixels (>=250)
+Total failing images: 276
+
+1 ANKARA	03.png	9	/images/shades/1 ANKARA/03.png
+11 HANOI	03.png	18	/images/shades/11 HANOI/03.png
+114 SAND ROSE	02.png	2	/images/shades/114 SAND ROSE/02.png
+114 SAND ROSE	03.png	4	/images/shades/114 SAND ROSE/03.png
+115 SKY BLUE	02.png	18	/images/shades/115 SKY BLUE/02.png
+12 BERLIN	02.png	6	/images/shades/12 BERLIN/02.png
+123 EDINBURGH	02.png	6	/images/shades/123 EDINBURGH/02.png
+132 DUCHESS ROSE	02.png	5	/images/shades/132 DUCHESS ROSE/02.png
+132 DUCHESS ROSE	03.png	15	/images/shades/132 DUCHESS ROSE/03.png
+14 ST TROPEZ	02.png	2	/images/shades/14 ST TROPEZ/02.png
+14 ST TROPEZ	03.png	7	/images/shades/14 ST TROPEZ/03.png
+151 MARRON GLACÉ	02.png	8	/images/shades/151 MARRON GLACÉ/02.png
+152 MAUVE CENDRÉ	03.png	9	/images/shades/152 MAUVE CENDRÉ/03.png
+156 ROCOCO RED	03.png	1	/images/shades/156 ROCOCO RED/03.png
+157 BLUSH PINK	02.png	3	/images/shades/157 BLUSH PINK/02.png
+157 BLUSH PINK	03.png	5	/images/shades/157 BLUSH PINK/03.png
+158 SMOKY BLUE	02.png	9	/images/shades/158 SMOKY BLUE/02.png
+16 BAGHDAD	02.png	2	/images/shades/16 BAGHDAD/02.png
+16 BAGHDAD	03.png	7	/images/shades/16 BAGHDAD/03.png
+162 ROSE SHELL	02.png	15	/images/shades/162 ROSE SHELL/02.png
+162 ROSE SHELL	03.png	5	/images/shades/162 ROSE SHELL/03.png
+163 BLACK OYSTER	02.png	8	/images/shades/163 BLACK OYSTER/02.png
+163 BLACK OYSTER	03.png	5	/images/shades/163 BLACK OYSTER/03.png
+164 ROSE DUST	02.png	8	/images/shades/164 ROSE DUST/02.png
+164 ROSE DUST	03.png	18	/images/shades/164 ROSE DUST/03.png
+165 VANILLA	02.png	5	/images/shades/165 VANILLA/02.png
+165 VANILLA	03.png	3	/images/shades/165 VANILLA/03.png
+166 KHAKI VINTAGE	03.png	6	/images/shades/166 KHAKI VINTAGE/03.png
+167 CYCLADES BLUE	02.png	6	/images/shades/167 CYCLADES BLUE/02.png
+167 CYCLADES BLUE	03.png	18	/images/shades/167 CYCLADES BLUE/03.png
+168 SOUTH BEACH PINK	02.png	6	/images/shades/168 SOUTH BEACH PINK/02.png
+168 SOUTH BEACH PINK	03.png	18	/images/shades/168 SOUTH BEACH PINK/03.png
+169 WAIKIKI ORANGE	02.png	6	/images/shades/169 WAIKIKI ORANGE/02.png
+169 WAIKIKI ORANGE	03.png	18	/images/shades/169 WAIKIKI ORANGE/03.png
+17 ATHENS	02.png	4	/images/shades/17 ATHENS/02.png
+17 ATHENS	03.png	2	/images/shades/17 ATHENS/03.png
+171 BLUE CURACAO	02.png	5	/images/shades/171 BLUE CURACAO/02.png
+171 BLUE CURACAO	03.png	3	/images/shades/171 BLUE CURACAO/03.png
+172 VEGAS PINK	02.png	6	/images/shades/172 VEGAS PINK/02.png
+172 VEGAS PINK	03.png	18	/images/shades/172 VEGAS PINK/03.png
+181 BLUE MINT	02.png	15	/images/shades/181 BLUE MINT/02.png
+182 FRESH MELON	02.png	15	/images/shades/182 FRESH MELON/02.png
+185 MOSCOW	02.png	8	/images/shades/185 MOSCOW/02.png
+186 SAPPORO	02.png	5	/images/shades/186 SAPPORO/02.png
+186 SAPPORO	03.png	15	/images/shades/186 SAPPORO/03.png
+187 ROMA	02.png	6	/images/shades/187 ROMA/02.png
+187 ROMA	03.png	18	/images/shades/187 ROMA/03.png
+188 VICTORIA	02.png	18	/images/shades/188 VICTORIA/02.png
+188 VICTORIA	03.png	6	/images/shades/188 VICTORIA/03.png
+189 MONTEVIDEO	02.png	8	/images/shades/189 MONTEVIDEO/02.png
+19 HONG KONG	02.png	2	/images/shades/19 HONG KONG/02.png
+190 HONOLULU	02.png	6	/images/shades/190 HONOLULU/02.png
+190 HONOLULU	03.png	18	/images/shades/190 HONOLULU/03.png
+2 MADRID	02.png	6	/images/shades/2 MADRID/02.png
+2 MADRID	03.png	18	/images/shades/2 MADRID/03.png
+20 CAIRO	02.png	14	/images/shades/20 CAIRO/02.png
+20 CAIRO	03.png	1	/images/shades/20 CAIRO/03.png
+206 FRENCH CANCAN	02.png	8	/images/shades/206 FRENCH CANCAN/02.png
+213 PURE DIAMOND	02.png	6	/images/shades/213 PURE DIAMOND/02.png
+215 PINK DIAMOND	02.png	3	/images/shades/215 PINK DIAMOND/02.png
+217 NEW YORK	02.png	6	/images/shades/217 NEW YORK/02.png
+218 MINSK	02.png	9	/images/shades/218 MINSK/02.png
+219 BLUE SIESTA	02.png	15	/images/shades/219 BLUE SIESTA/02.png
+219 BLUE SIESTA	03.png	5	/images/shades/219 BLUE SIESTA/03.png
+225 ROSE NAP	02.png	6	/images/shades/225 ROSE NAP/02.png
+225 ROSE NAP	03.png	5	/images/shades/225 ROSE NAP/03.png
+237 BASEL	03.png	7	/images/shades/237 BASEL/03.png
+238 SAO PAULO	03.png	9	/images/shades/238 SAO PAULO/03.png
+239 BARCELONA	02.png	6	/images/shades/239 BARCELONA/02.png
+239 BARCELONA	03.png	18	/images/shades/239 BARCELONA/03.png
+24 TOKYO	03.png	8	/images/shades/24 TOKYO/03.png
+240 JASPER	02.png	6	/images/shades/240 JASPER/02.png
+240 JASPER	03.png	18	/images/shades/240 JASPER/03.png
+248 BURGUNDY	02.png	8	/images/shades/248 BURGUNDY/02.png
+25 COPENHAGEN	03.png	9	/images/shades/25 COPENHAGEN/03.png
+266 SINGAPORE	02.png	8	/images/shades/266 SINGAPORE/02.png
+268 BUDAPEST	02.png	8	/images/shades/268 BUDAPEST/02.png
+268 BUDAPEST	03.png	18	/images/shades/268 BUDAPEST/03.png
+269 DEEP BLUE	02.png	6	/images/shades/269 DEEP BLUE/02.png
+269 DEEP BLUE	03.png	1	/images/shades/269 DEEP BLUE/03.png
+27 MUNICH	02.png	8	/images/shades/27 MUNICH/02.png
+27 MUNICH	03.png	18	/images/shades/27 MUNICH/03.png
+283 CORAL BAY	02.png	6	/images/shades/283 CORAL BAY/02.png
+283 CORAL BAY	03.png	9	/images/shades/283 CORAL BAY/03.png
+285 ROSE HILL	02.png	18	/images/shades/285 ROSE HILL/02.png
+285 ROSE HILL	03.png	6	/images/shades/285 ROSE HILL/03.png
+286 RED RIVER	03.png	1	/images/shades/286 RED RIVER/03.png
+287 BLUE MOUNTAINS	02.png	6	/images/shades/287 BLUE MOUNTAINS/02.png
+287 BLUE MOUNTAINS	03.png	18	/images/shades/287 BLUE MOUNTAINS/03.png
+288 GINZA	02.png	8	/images/shades/288 GINZA/02.png
+29 GLASGOW	03.png	2	/images/shades/29 GLASGOW/03.png
+292 ST GERMAIN	02.png	8	/images/shades/292 ST GERMAIN/02.png
+3 PARIS	02.png	6	/images/shades/3 PARIS/02.png
+3 PARIS	03.png	18	/images/shades/3 PARIS/03.png
+30 MEXICO	03.png	9	/images/shades/30 MEXICO/03.png
+301 TRINIDAD	03.png	9	/images/shades/301 TRINIDAD/03.png
+302 JAIPUR	02.png	6	/images/shades/302 JAIPUR/02.png
+302 JAIPUR	03.png	18	/images/shades/302 JAIPUR/03.png
+303 BALI	02.png	6	/images/shades/303 BALI/02.png
+303 BALI	03.png	18	/images/shades/303 BALI/03.png
+304 BAMAKO	02.png	6	/images/shades/304 BAMAKO/02.png
+304 BAMAKO	03.png	18	/images/shades/304 BAMAKO/03.png
+305 SAMARKAND	03.png	9	/images/shades/305 SAMARKAND/03.png
+306 CUZCO	02.png	10	/images/shades/306 CUZCO/02.png
+316 FIJI	02.png	15	/images/shades/316 FIJI/02.png
+316 FIJI	03.png	5	/images/shades/316 FIJI/03.png
+317 TAHITI	02.png	18	/images/shades/317 TAHITI/02.png
+317 TAHITI	03.png	6	/images/shades/317 TAHITI/03.png
+318 SPITZBERG	02.png	5	/images/shades/318 SPITZBERG/02.png
+318 SPITZBERG	03.png	15	/images/shades/318 SPITZBERG/03.png
+319 BRIGHTON	02.png	3	/images/shades/319 BRIGHTON/02.png
+319 BRIGHTON	03.png	5	/images/shades/319 BRIGHTON/03.png
+32 BANGKOK	02.png	7	/images/shades/32 BANGKOK/02.png
+32 BANGKOK	03.png	2	/images/shades/32 BANGKOK/03.png
+321 GOTLAND	02.png	15	/images/shades/321 GOTLAND/02.png
+321 GOTLAND	03.png	5	/images/shades/321 GOTLAND/03.png
+324 ICEBERG	02.png	1	/images/shades/324 ICEBERG/02.png
+324 ICEBERG	03.png	12	/images/shades/324 ICEBERG/03.png
+326 MYANGEL	02.png	8	/images/shades/326 MYANGEL/02.png
+327 MYLOVE	03.png	9	/images/shades/327 MYLOVE/03.png
+328 ROSE	02.png	2	/images/shades/328 ROSE/02.png
+328 ROSE	03.png	4	/images/shades/328 ROSE/03.png
+33 LAS VEGAS	02.png	8	/images/shades/33 LAS VEGAS/02.png
+34 NICOSIA	02.png	2	/images/shades/34 NICOSIA/02.png
+34 NICOSIA	03.png	4	/images/shades/34 NICOSIA/03.png
+343 BLUEBERRY	02.png	6	/images/shades/343 BLUEBERRY/02.png
+343 BLUEBERRY	03.png	1	/images/shades/343 BLUEBERRY/03.png
+345 ORANGE SHERBET	02.png	6	/images/shades/345 ORANGE SHERBET/02.png
+345 ORANGE SHERBET	03.png	18	/images/shades/345 ORANGE SHERBET/03.png
+364 CAPE TOWN	02.png	18	/images/shades/364 CAPE TOWN/02.png
+367 FEMININE	02.png	2	/images/shades/367 FEMININE/02.png
+367 FEMININE	03.png	4	/images/shades/367 FEMININE/03.png
+370 ELÉGANCE	02.png	2	/images/shades/370 ELÉGANCE/02.png
+370 ELÉGANCE	03.png	7	/images/shades/370 ELÉGANCE/03.png
+372 MYPASSION	02.png	1	/images/shades/372 MYPASSION/02.png
+39 BRUXELLES	02.png	6	/images/shades/39 BRUXELLES/02.png
+395 RIMINI	02.png	1	/images/shades/395 RIMINI/02.png
+395 RIMINI	03.png	12	/images/shades/395 RIMINI/03.png
+396 VELVET	02.png	18	/images/shades/396 VELVET/02.png
+396 VELVET	03.png	8	/images/shades/396 VELVET/03.png
+399 LOTUS	02.png	4	/images/shades/399 LOTUS/02.png
+399 LOTUS	03.png	2	/images/shades/399 LOTUS/03.png
+4 ABU DHABI	02.png	15	/images/shades/4 ABU DHABI/02.png
+4 ABU DHABI	03.png	5	/images/shades/4 ABU DHABI/03.png
+40 SUPER BASE	02.png	1	/images/shades/40 SUPER BASE/02.png
+40 SUPER BASE	03.png	14	/images/shades/40 SUPER BASE/03.png
+402 DETROIT	03.png	6	/images/shades/402 DETROIT/03.png
+403 MANAUS	02.png	7	/images/shades/403 MANAUS/02.png
+403 MANAUS	03.png	2	/images/shades/403 MANAUS/03.png
+406 SALAMANCA	02.png	14	/images/shades/406 SALAMANCA/02.png
+406 SALAMANCA	03.png	1	/images/shades/406 SALAMANCA/03.png
+414 GRASS GREEN	02.png	6	/images/shades/414 GRASS GREEN/02.png
+414 GRASS GREEN	03.png	18	/images/shades/414 GRASS GREEN/03.png
+415 PUSHY PURPLE	03.png	9	/images/shades/415 PUSHY PURPLE/03.png
+416 MELLOW YELLOW	02.png	5	/images/shades/416 MELLOW YELLOW/02.png
+416 MELLOW YELLOW	03.png	15	/images/shades/416 MELLOW YELLOW/03.png
+418 PARTY PINK	02.png	2	/images/shades/418 PARTY PINK/02.png
+418 PARTY PINK	03.png	7	/images/shades/418 PARTY PINK/03.png
+42 TOP FIXATEUR	02.png	1	/images/shades/42 TOP FIXATEUR/02.png
+42 TOP FIXATEUR	03.png	14	/images/shades/42 TOP FIXATEUR/03.png
+427 FIGUEIRA	02.png	15	/images/shades/427 FIGUEIRA/02.png
+427 FIGUEIRA	03.png	5	/images/shades/427 FIGUEIRA/03.png
+428 MALAPASCUA	02.png	5	/images/shades/428 MALAPASCUA/02.png
+428 MALAPASCUA	03.png	15	/images/shades/428 MALAPASCUA/03.png
+43 INCOLORE	02.png	1	/images/shades/43 INCOLORE/02.png
+43 INCOLORE	03.png	14	/images/shades/43 INCOLORE/03.png
+430 VANCOUVER	03.png	9	/images/shades/430 VANCOUVER/03.png
+435 PORTLAND	03.png	9	/images/shades/435 PORTLAND/03.png
+446 BIKANER	02.png	14	/images/shades/446 BIKANER/02.png
+446 BIKANER	03.png	1	/images/shades/446 BIKANER/03.png
+447 MOOREA	02.png	15	/images/shades/447 MOOREA/02.png
+448 JERASH	02.png	1	/images/shades/448 JERASH/02.png
+448 JERASH	03.png	12	/images/shades/448 JERASH/03.png
+450 THE POWER OF PINK - PASTEL	02.png	5	/images/shades/450 THE POWER OF PINK - PASTEL/02.png
+450 THE POWER OF PINK - PASTEL	03.png	8	/images/shades/450 THE POWER OF PINK - PASTEL/03.png
+451 SAIGON	02.png	7	/images/shades/451 SAIGON/02.png
+451 SAIGON	03.png	2	/images/shades/451 SAIGON/03.png
+452 BOMBAY	03.png	7	/images/shades/452 BOMBAY/03.png
+453 CHRISTIANA	02.png	6	/images/shades/453 CHRISTIANA/02.png
+453 CHRISTIANA	03.png	18	/images/shades/453 CHRISTIANA/03.png
+457 YUMMY BERRY	02.png	15	/images/shades/457 YUMMY BERRY/02.png
+459 YUMMY POMELO	02.png	1	/images/shades/459 YUMMY POMELO/02.png
+459 YUMMY POMELO	03.png	12	/images/shades/459 YUMMY POMELO/03.png
+46 CADIZ	02.png	7	/images/shades/46 CADIZ/02.png
+46 CADIZ	03.png	2	/images/shades/46 CADIZ/03.png
+461 YUMMY COCO	02.png	15	/images/shades/461 YUMMY COCO/02.png
+461 YUMMY COCO	03.png	5	/images/shades/461 YUMMY COCO/03.png
+462 YUMMY DIABOLO	02.png	1	/images/shades/462 YUMMY DIABOLO/02.png
+463 SIROCCO CITY	02.png	6	/images/shades/463 SIROCCO CITY/02.png
+464 BREEZE FIELD	02.png	4	/images/shades/464 BREEZE FIELD/02.png
+464 BREEZE FIELD	03.png	2	/images/shades/464 BREEZE FIELD/03.png
+465 BLIZZARDVILLE	02.png	4	/images/shades/465 BLIZZARDVILLE/02.png
+465 BLIZZARDVILLE	03.png	2	/images/shades/465 BLIZZARDVILLE/03.png
+466 VENTOSA SPRINGS	02.png	15	/images/shades/466 VENTOSA SPRINGS/02.png
+467 WHISPERWOOD	02.png	2	/images/shades/467 WHISPERWOOD/02.png
+467 WHISPERWOOD	03.png	11	/images/shades/467 WHISPERWOOD/03.png
+469 LUXOR	02.png	3	/images/shades/469 LUXOR/02.png
+469 LUXOR	03.png	5	/images/shades/469 LUXOR/03.png
+47 IZMIR	02.png	5	/images/shades/47 IZMIR/02.png
+47 IZMIR	03.png	15	/images/shades/47 IZMIR/03.png
+471 TBILISI	03.png	12	/images/shades/471 TBILISI/03.png
+472 SANTORINI	02.png	5	/images/shades/472 SANTORINI/02.png
+472 SANTORINI	03.png	15	/images/shades/472 SANTORINI/03.png
+473 SEDONA	02.png	2	/images/shades/473 SEDONA/02.png
+473 SEDONA	03.png	7	/images/shades/473 SEDONA/03.png
+474 FEZ	02.png	14	/images/shades/474 FEZ/02.png
+474 FEZ	03.png	1	/images/shades/474 FEZ/03.png
+475 OTTAWA	02.png	15	/images/shades/475 OTTAWA/02.png
+475 OTTAWA	03.png	5	/images/shades/475 OTTAWA/03.png
+476 MARBELLA	02.png	5	/images/shades/476 MARBELLA/02.png
+476 MARBELLA	03.png	15	/images/shades/476 MARBELLA/03.png
+477 PANAMA	02.png	18	/images/shades/477 PANAMA/02.png
+477 PANAMA	03.png	8	/images/shades/477 PANAMA/03.png
+478 SAFI	02.png	18	/images/shades/478 SAFI/02.png
+478 SAFI	03.png	6	/images/shades/478 SAFI/03.png
+479 DJIBOUTI	02.png	18	/images/shades/479 DJIBOUTI/02.png
+479 DJIBOUTI	03.png	8	/images/shades/479 DJIBOUTI/03.png
+48 BLACK	02.png	5	/images/shades/48 BLACK/02.png
+480 DURBAN	03.png	8	/images/shades/480 DURBAN/03.png
+481 ROSE POP	02.png	6	/images/shades/481 ROSE POP/02.png
+481 ROSE POP	03.png	18	/images/shades/481 ROSE POP/03.png
+482 ORANGE POP	02.png	6	/images/shades/482 ORANGE POP/02.png
+482 ORANGE POP	03.png	18	/images/shades/482 ORANGE POP/03.png
+483 YELLOW POP	02.png	15	/images/shades/483 YELLOW POP/02.png
+483 YELLOW POP	03.png	5	/images/shades/483 YELLOW POP/03.png
+486 BLUE POP	02.png	18	/images/shades/486 BLUE POP/02.png
+486 BLUE POP	03.png	6	/images/shades/486 BLUE POP/03.png
+49 WHITE	02.png	5	/images/shades/49 WHITE/02.png
+49 WHITE	03.png	15	/images/shades/49 WHITE/03.png
+50 TORONTO	02.png	8	/images/shades/50 TORONTO/02.png
+52 TOULOUSE	02.png	15	/images/shades/52 TOULOUSE/02.png
+52 TOULOUSE	03.png	5	/images/shades/52 TOULOUSE/03.png
+55 DAKAR	02.png	2	/images/shades/55 DAKAR/02.png
+56 RIGA	02.png	3	/images/shades/56 RIGA/02.png
+56 RIGA	03.png	5	/images/shades/56 RIGA/03.png
+59 PHUKET	02.png	15	/images/shades/59 PHUKET/02.png
+6 OSAKA	02.png	14	/images/shades/6 OSAKA/02.png
+6 OSAKA	03.png	1	/images/shades/6 OSAKA/03.png
+62 MILANO	03.png	18	/images/shades/62 MILANO/03.png
+63 ACAPULCO	03.png	1	/images/shades/63 ACAPULCO/03.png
+64 BILBAO	02.png	18	/images/shades/64 BILBAO/02.png
+64 BILBAO	03.png	6	/images/shades/64 BILBAO/03.png
+65 ADELAIDE	02.png	2	/images/shades/65 ADELAIDE/02.png
+65 ADELAIDE	03.png	7	/images/shades/65 ADELAIDE/03.png
+69 BORDEAUX	03.png	18	/images/shades/69 BORDEAUX/03.png
+7 MACAO	02.png	6	/images/shades/7 MACAO/02.png
+7 MACAO	03.png	9	/images/shades/7 MACAO/03.png
+701 RIO GRANDE	02.png	2	/images/shades/701 RIO GRANDE/02.png
+701 RIO GRANDE	03.png	7	/images/shades/701 RIO GRANDE/03.png
+71 LA PAZ	02.png	8	/images/shades/71 LA PAZ/02.png
+72 NICE	02.png	6	/images/shades/72 NICE/02.png
+72 NICE	03.png	18	/images/shades/72 NICE/03.png
+74 LOS ANGELES	03.png	1	/images/shades/74 LOS ANGELES/03.png
+75 MIAMI	02.png	3	/images/shades/75 MIAMI/02.png
+75 MIAMI	03.png	5	/images/shades/75 MIAMI/03.png
+78 TOBAGO	03.png	9	/images/shades/78 TOBAGO/03.png
+81 BUENOS AIRES	02.png	6	/images/shades/81 BUENOS AIRES/02.png
+81 BUENOS AIRES	03.png	18	/images/shades/81 BUENOS AIRES/03.png
+83 DUBLIN	02.png	6	/images/shades/83 DUBLIN/02.png
+83 DUBLIN	03.png	18	/images/shades/83 DUBLIN/03.png
+84 TALLINN	03.png	7	/images/shades/84 TALLINN/03.png
+9 LISBOA	02.png	2	/images/shades/9 LISBOA/02.png
+9 LISBOA	03.png	7	/images/shades/9 LISBOA/03.png
+90 AROSA	02.png	5	/images/shades/90 AROSA/02.png
+90 AROSA	03.png	15	/images/shades/90 AROSA/03.png
+91 RENO	02.png	5	/images/shades/91 RENO/02.png
+91 RENO	03.png	3	/images/shades/91 RENO/03.png
+92 NEW DELHI	02.png	8	/images/shades/92 NEW DELHI/02.png
+97 WICHITA	03.png	2	/images/shades/97 WICHITA/03.png
+975 SANTA MONICA	02.png	6	/images/shades/975 SANTA MONICA/02.png
+975 SANTA MONICA	03.png	18	/images/shades/975 SANTA MONICA/03.png
+98 MARRAKECH	03.png	1	/images/shades/98 MARRAKECH/03.png
+982 NAIVE MINT	02.png	15	/images/shades/982 NAIVE MINT/02.png
+982 NAIVE MINT	03.png	5	/images/shades/982 NAIVE MINT/03.png
+993 WINDSOR	02.png	5	/images/shades/993 WINDSOR/02.png
+993 WINDSOR	03.png	15	/images/shades/993 WINDSOR/03.png

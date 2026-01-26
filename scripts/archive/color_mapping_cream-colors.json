@@ -1,0 +1,1023 @@
+{
+  "product_slug": "cream-colors",
+  "version": 2,
+  "algorithm": "HSV + Center Crop + Saturation Filter",
+  "total_shades": 62,
+  "classified_shades": 62,
+  "color_groups": {
+    "White": [
+      "49 WHITE",
+      "47 IZMIR"
+    ],
+    "Silver": [
+      "90 AROSA",
+      "91 RENO",
+      "363 LONG ISLAND",
+      "56 RIGA",
+      "97 WICHITA",
+      "132 DUCHESS ROSE",
+      "12 BERLIN"
+    ],
+    "Orange": [
+      "182 FRESH MELON",
+      "302 JAIPUR",
+      "186 SAPPORO"
+    ],
+    "Red": [
+      "230 KINGSTON",
+      "72 NICE",
+      "169 WAIKIKI ORANGE",
+      "188 VICTORIA",
+      "3 PARIS",
+      "2 MADRID",
+      "23 BEIRUT",
+      "74 LOS ANGELES",
+      "185 MOSCOW",
+      "53 LONDON",
+      "206 FRENCH CANCAN",
+      "187 ROMA",
+      "69 BORDEAUX",
+      "63 ACAPULCO",
+      "33 LAS VEGAS",
+      "189 MONTEVIDEO",
+      "92 NEW DELHI",
+      "7 MACAO",
+      "98 MARRAKECH",
+      "1 ANKARA",
+      "75 MIAMI",
+      "168 SOUTH BEACH PINK",
+      "190 HONOLULU",
+      "71 LA PAZ",
+      "265 SWEETY",
+      "52 TOULOUSE",
+      "398 PINK",
+      "297 SWEET",
+      "396 VELVET",
+      "288 GINZA",
+      "62 MILANO",
+      "292 ST-GERMAIN",
+      "151 MARRON GLACÉ",
+      "307 MAKORÉ",
+      "54 RIO",
+      "240 JASPER",
+      "248 BURGUNDY",
+      "90927 VERNIS PROF.JPG",
+      "MINI COLOR WITH REFLECTION"
+    ],
+    "Other": [
+      "64 BILBAO"
+    ],
+    "Pink": [
+      "30 MEXICO"
+    ],
+    "Purple": [
+      "24 TOKYO",
+      "218 MINSK"
+    ],
+    "Gray": [
+      "152 MAUVE CENDRÉ",
+      "217 NEW-YORK"
+    ],
+    "Blue": [
+      "181 BLUE MINT",
+      "171 BLUE CURACAO",
+      "59 PHUKET",
+      "25 COPENHAGEN"
+    ],
+    "Black": [
+      "48 BLACK"
+    ]
+  },
+  "shade_details": [
+    {
+      "name": "49 WHITE",
+      "rgb": [
+        223,
+        221,
+        222
+      ],
+      "hsv": [
+        330,
+        0,
+        87
+      ],
+      "color": "White",
+      "image": "scraped_data/images/cream-colors/49_WHITE.png"
+    },
+    {
+      "name": "47 IZMIR",
+      "rgb": [
+        221,
+        220,
+        219
+      ],
+      "hsv": [
+        30,
+        0,
+        86
+      ],
+      "color": "White",
+      "image": "scraped_data/images/cream-colors/47_IZMIR.png"
+    },
+    {
+      "name": "90 AROSA",
+      "rgb": [
+        211,
+        203,
+        201
+      ],
+      "hsv": [
+        11,
+        4,
+        82
+      ],
+      "color": "Silver",
+      "image": "scraped_data/images/cream-colors/90_AROSA.png"
+    },
+    {
+      "name": "91 RENO",
+      "rgb": [
+        217,
+        203,
+        193
+      ],
+      "hsv": [
+        24,
+        11,
+        85
+      ],
+      "color": "Silver",
+      "image": "scraped_data/images/cream-colors/91_RENO.png"
+    },
+    {
+      "name": "182 FRESH MELON",
+      "rgb": [
+        224,
+        148,
+        115
+      ],
+      "hsv": [
+        18,
+        48,
+        87
+      ],
+      "color": "Orange",
+      "image": "scraped_data/images/cream-colors/182_FRESH_MELON.png"
+    },
+    {
+      "name": "302 JAIPUR",
+      "rgb": [
+        213,
+        95,
+        41
+      ],
+      "hsv": [
+        18,
+        80,
+        83
+      ],
+      "color": "Orange",
+      "image": "scraped_data/images/cream-colors/302_JAIPUR.png"
+    },
+    {
+      "name": "230 KINGSTON",
+      "rgb": [
+        227,
+        52,
+        30
+      ],
+      "hsv": [
+        6,
+        86,
+        89
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/230_KINGSTON.png"
+    },
+    {
+      "name": "72 NICE",
+      "rgb": [
+        214,
+        90,
+        73
+      ],
+      "hsv": [
+        7,
+        65,
+        83
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/72_NICE.png"
+    },
+    {
+      "name": "363 LONG ISLAND",
+      "rgb": [
+        167,
+        163,
+        159
+      ],
+      "hsv": [
+        29,
+        4,
+        65
+      ],
+      "color": "Silver",
+      "image": "scraped_data/images/cream-colors/363_LONG_ISLAND.png"
+    },
+    {
+      "name": "169 WAIKIKI ORANGE",
+      "rgb": [
+        202,
+        116,
+        113
+      ],
+      "hsv": [
+        2,
+        44,
+        79
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/169_WAIKIKI_ORANGE.png"
+    },
+    {
+      "name": "188 VICTORIA",
+      "rgb": [
+        217,
+        78,
+        80
+      ],
+      "hsv": [
+        359,
+        64,
+        85
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/188_VICTORIA.png"
+    },
+    {
+      "name": "3 PARIS",
+      "rgb": [
+        218,
+        53,
+        83
+      ],
+      "hsv": [
+        349,
+        75,
+        85
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/3_PARIS.png"
+    },
+    {
+      "name": "2 MADRID",
+      "rgb": [
+        206,
+        29,
+        54
+      ],
+      "hsv": [
+        351,
+        85,
+        80
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/2_MADRID.png"
+    },
+    {
+      "name": "23 BEIRUT",
+      "rgb": [
+        209,
+        56,
+        60
+      ],
+      "hsv": [
+        358,
+        73,
+        81
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/23_BEIRUT.png"
+    },
+    {
+      "name": "74 LOS ANGELES",
+      "rgb": [
+        206,
+        34,
+        45
+      ],
+      "hsv": [
+        356,
+        83,
+        80
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/74_LOS_ANGELES.png"
+    },
+    {
+      "name": "185 MOSCOW",
+      "rgb": [
+        212,
+        31,
+        39
+      ],
+      "hsv": [
+        357,
+        85,
+        83
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/185_MOSCOW.png"
+    },
+    {
+      "name": "53 LONDON",
+      "rgb": [
+        182,
+        44,
+        49
+      ],
+      "hsv": [
+        357,
+        75,
+        71
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/53_LONDON.png"
+    },
+    {
+      "name": "206 FRENCH CANCAN",
+      "rgb": [
+        182,
+        43,
+        60
+      ],
+      "hsv": [
+        352,
+        76,
+        71
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/206_FRENCH_CANCAN.png"
+    },
+    {
+      "name": "187 ROMA",
+      "rgb": [
+        153,
+        17,
+        25
+      ],
+      "hsv": [
+        356,
+        88,
+        60
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/187_ROMA.png"
+    },
+    {
+      "name": "69 BORDEAUX",
+      "rgb": [
+        164,
+        32,
+        50
+      ],
+      "hsv": [
+        351,
+        80,
+        64
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/69_BORDEAUX.png"
+    },
+    {
+      "name": "63 ACAPULCO",
+      "rgb": [
+        130,
+        40,
+        48
+      ],
+      "hsv": [
+        354,
+        69,
+        50
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/63_ACAPULCO.png"
+    },
+    {
+      "name": "33 LAS VEGAS",
+      "rgb": [
+        120,
+        40,
+        57
+      ],
+      "hsv": [
+        347,
+        66,
+        47
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/33_LAS_VEGAS.png"
+    },
+    {
+      "name": "189 MONTEVIDEO",
+      "rgb": [
+        148,
+        43,
+        78
+      ],
+      "hsv": [
+        340,
+        70,
+        58
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/189_MONTEVIDEO.png"
+    },
+    {
+      "name": "92 NEW DELHI",
+      "rgb": [
+        147,
+        44,
+        67
+      ],
+      "hsv": [
+        346,
+        70,
+        57
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/92_NEW_DELHI.png"
+    },
+    {
+      "name": "64 BILBAO",
+      "rgb": [
+        166,
+        37,
+        57
+      ],
+      "hsv": [
+        350,
+        77,
+        65
+      ],
+      "color": "Other",
+      "image": "scraped_data/images/cream-colors/64_BILBAO.png"
+    },
+    {
+      "name": "7 MACAO",
+      "rgb": [
+        200,
+        48,
+        89
+      ],
+      "hsv": [
+        343,
+        76,
+        78
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/7_MACAO.png"
+    },
+    {
+      "name": "98 MARRAKECH",
+      "rgb": [
+        205,
+        71,
+        105
+      ],
+      "hsv": [
+        344,
+        65,
+        80
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/98_MARRAKECH.png"
+    },
+    {
+      "name": "1 ANKARA",
+      "rgb": [
+        175,
+        39,
+        98
+      ],
+      "hsv": [
+        333,
+        77,
+        68
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/1_ANKARA.png"
+    },
+    {
+      "name": "75 MIAMI",
+      "rgb": [
+        216,
+        142,
+        176
+      ],
+      "hsv": [
+        332,
+        34,
+        84
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/75_MIAMI.png"
+    },
+    {
+      "name": "168 SOUTH BEACH PINK",
+      "rgb": [
+        218,
+        120,
+        158
+      ],
+      "hsv": [
+        336,
+        44,
+        85
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/168_SOUTH_BEACH_PINK.png"
+    },
+    {
+      "name": "190 HONOLULU",
+      "rgb": [
+        218,
+        79,
+        137
+      ],
+      "hsv": [
+        334,
+        63,
+        85
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/190_HONOLULU.png"
+    },
+    {
+      "name": "71 LA PAZ",
+      "rgb": [
+        212,
+        88,
+        124
+      ],
+      "hsv": [
+        342,
+        58,
+        83
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/71_LA_PAZ.png"
+    },
+    {
+      "name": "265 SWEETY",
+      "rgb": [
+        217,
+        116,
+        145
+      ],
+      "hsv": [
+        342,
+        46,
+        85
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/265_SWEETY.png"
+    },
+    {
+      "name": "52 TOULOUSE",
+      "rgb": [
+        218,
+        143,
+        157
+      ],
+      "hsv": [
+        348,
+        34,
+        85
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/52_TOULOUSE.png"
+    },
+    {
+      "name": "56 RIGA",
+      "rgb": [
+        211,
+        198,
+        201
+      ],
+      "hsv": [
+        346,
+        6,
+        82
+      ],
+      "color": "Silver",
+      "image": "scraped_data/images/cream-colors/56_RIGA.png"
+    },
+    {
+      "name": "97 WICHITA",
+      "rgb": [
+        214,
+        199,
+        199
+      ],
+      "hsv": [
+        0,
+        7,
+        83
+      ],
+      "color": "Silver",
+      "image": "scraped_data/images/cream-colors/97_WICHITA.png"
+    },
+    {
+      "name": "132 DUCHESS ROSE",
+      "rgb": [
+        216,
+        205,
+        203
+      ],
+      "hsv": [
+        9,
+        6,
+        84
+      ],
+      "color": "Silver",
+      "image": "scraped_data/images/cream-colors/132_DUCHESS_ROSE.png"
+    },
+    {
+      "name": "398 PINK",
+      "rgb": [
+        221,
+        185,
+        183
+      ],
+      "hsv": [
+        3,
+        17,
+        86
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/398_PINK.png"
+    },
+    {
+      "name": "297 SWEET",
+      "rgb": [
+        221,
+        142,
+        148
+      ],
+      "hsv": [
+        355,
+        35,
+        86
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/297_SWEET.png"
+    },
+    {
+      "name": "186 SAPPORO",
+      "rgb": [
+        209,
+        161,
+        147
+      ],
+      "hsv": [
+        13,
+        29,
+        81
+      ],
+      "color": "Orange",
+      "image": "scraped_data/images/cream-colors/186_SAPPORO.png"
+    },
+    {
+      "name": "396 VELVET",
+      "rgb": [
+        187,
+        156,
+        156
+      ],
+      "hsv": [
+        0,
+        16,
+        73
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/396_VELVET.png"
+    },
+    {
+      "name": "288 GINZA",
+      "rgb": [
+        153,
+        99,
+        111
+      ],
+      "hsv": [
+        346,
+        35,
+        60
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/288_GINZA.png"
+    },
+    {
+      "name": "62 MILANO",
+      "rgb": [
+        142,
+        54,
+        98
+      ],
+      "hsv": [
+        330,
+        61,
+        55
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/62_MILANO.png"
+    },
+    {
+      "name": "292 ST-GERMAIN",
+      "rgb": [
+        106,
+        37,
+        77
+      ],
+      "hsv": [
+        325,
+        65,
+        41
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/292_ST-GERMAIN.png"
+    },
+    {
+      "name": "30 MEXICO",
+      "rgb": [
+        97,
+        41,
+        101
+      ],
+      "hsv": [
+        296,
+        59,
+        39
+      ],
+      "color": "Pink",
+      "image": "scraped_data/images/cream-colors/30_MEXICO.png"
+    },
+    {
+      "name": "24 TOKYO",
+      "rgb": [
+        69,
+        54,
+        102
+      ],
+      "hsv": [
+        258,
+        47,
+        40
+      ],
+      "color": "Purple",
+      "image": "scraped_data/images/cream-colors/24_TOKYO.png"
+    },
+    {
+      "name": "152 MAUVE CENDRÉ",
+      "rgb": [
+        134,
+        115,
+        123
+      ],
+      "hsv": [
+        334,
+        14,
+        52
+      ],
+      "color": "Gray",
+      "image": "scraped_data/images/cream-colors/152_MAUVE_CENDRÉ.png"
+    },
+    {
+      "name": "151 MARRON GLACÉ",
+      "rgb": [
+        120,
+        99,
+        99
+      ],
+      "hsv": [
+        0,
+        17,
+        47
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/151_MARRON_GLACÉ.png"
+    },
+    {
+      "name": "12 BERLIN",
+      "rgb": [
+        149,
+        152,
+        160
+      ],
+      "hsv": [
+        223,
+        6,
+        62
+      ],
+      "color": "Silver",
+      "image": "scraped_data/images/cream-colors/12_BERLIN.png"
+    },
+    {
+      "name": "217 NEW-YORK",
+      "rgb": [
+        120,
+        117,
+        123
+      ],
+      "hsv": [
+        270,
+        4,
+        48
+      ],
+      "color": "Gray",
+      "image": "scraped_data/images/cream-colors/217_NEW-YORK.png"
+    },
+    {
+      "name": "218 MINSK",
+      "rgb": [
+        67,
+        84,
+        97
+      ],
+      "hsv": [
+        206,
+        30,
+        38
+      ],
+      "color": "Purple",
+      "image": "scraped_data/images/cream-colors/218_MINSK.png"
+    },
+    {
+      "name": "181 BLUE MINT",
+      "rgb": [
+        147,
+        200,
+        211
+      ],
+      "hsv": [
+        190,
+        30,
+        82
+      ],
+      "color": "Blue",
+      "image": "scraped_data/images/cream-colors/181_BLUE_MINT.png"
+    },
+    {
+      "name": "171 BLUE CURACAO",
+      "rgb": [
+        13,
+        163,
+        182
+      ],
+      "hsv": [
+        186,
+        92,
+        71
+      ],
+      "color": "Blue",
+      "image": "scraped_data/images/cream-colors/171_BLUE_CURACAO.png"
+    },
+    {
+      "name": "59 PHUKET",
+      "rgb": [
+        118,
+        192,
+        172
+      ],
+      "hsv": [
+        163,
+        38,
+        75
+      ],
+      "color": "Blue",
+      "image": "scraped_data/images/cream-colors/59_PHUKET.png"
+    },
+    {
+      "name": "25 COPENHAGEN",
+      "rgb": [
+        54,
+        97,
+        85
+      ],
+      "hsv": [
+        163,
+        44,
+        38
+      ],
+      "color": "Blue",
+      "image": "scraped_data/images/cream-colors/25_COPENHAGEN.png"
+    },
+    {
+      "name": "307 MAKORÉ",
+      "rgb": [
+        121,
+        36,
+        41
+      ],
+      "hsv": [
+        356,
+        70,
+        47
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/307_MAKORÉ.png"
+    },
+    {
+      "name": "54 RIO",
+      "rgb": [
+        102,
+        25,
+        20
+      ],
+      "hsv": [
+        3,
+        80,
+        40
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/54_RIO.png"
+    },
+    {
+      "name": "240 JASPER",
+      "rgb": [
+        96,
+        27,
+        31
+      ],
+      "hsv": [
+        356,
+        71,
+        37
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/240_JASPER.png"
+    },
+    {
+      "name": "248 BURGUNDY",
+      "rgb": [
+        55,
+        13,
+        22
+      ],
+      "hsv": [
+        347,
+        76,
+        21
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/248_BURGUNDY.png"
+    },
+    {
+      "name": "48 BLACK",
+      "rgb": [
+        33,
+        25,
+        22
+      ],
+      "hsv": [
+        16,
+        33,
+        12
+      ],
+      "color": "Black",
+      "image": "scraped_data/images/cream-colors/48_BLACK.png"
+    },
+    {
+      "name": "90927 VERNIS PROF.JPG",
+      "rgb": [
+        159,
+        59,
+        71
+      ],
+      "hsv": [
+        352,
+        62,
+        62
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/90927_VERNIS_PROF.JPG.png"
+    },
+    {
+      "name": "MINI COLOR WITH REFLECTION",
+      "rgb": [
+        106,
+        30,
+        35
+      ],
+      "hsv": [
+        356,
+        71,
+        41
+      ],
+      "color": "Red",
+      "image": "scraped_data/images/cream-colors/MINI_COLOR_WITH_REFLECTION.png"
+    }
+  ]
+}

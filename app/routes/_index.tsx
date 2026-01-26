@@ -196,13 +196,32 @@ export default function Homepage() {
       <section className="mt-4 md:-mt-12 pb-8 md:pb-12 bg-white">
         <div className="mx-auto px-4 md:px-8 lg:px-12 max-w-[1800px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-            {/* Mavadry Banner (replaces Pop Wave) */}
+            {/* Mavadry Banner - Simple Image Approach */}
+            <div className="flex flex-col items-center">
+              <div
+                className="w-full relative"
+                style={{ aspectRatio: "1080/720" }}
+              >
+                <img
+                  src="/Mavadry-Banner.png"
+                  alt="Mavadry Spray - Dry your polish in seconds"
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                />
+              </div>
+              <Link
+                to="/products/mavadry-spray"
+                className="inline-block mt-6 px-[32px] py-[16px] border-2 border-[#ae1932] bg-transparent text-[#ae1932] font-['Archivo'] text-[14px] font-light uppercase tracking-[1.01px] hover:bg-[#ae1932] hover:text-white transition-colors duration-100 ease-linear"
+              >
+                VIEW MAVADRY SPRAY
+              </Link>
+            </div>
+
+            {/* OLD COMPLEX BANNER - COMMENTED OUT - Can be deleted if image approach works well
             <div className="flex flex-col items-center">
               <div
                 className="w-full relative overflow-hidden bg-[#F7B5C6]"
                 style={{ aspectRatio: "1080/720" }}
               >
-                {/* Text boxes */}
                 <div className="absolute left-[50%] md:left-[52%] lg:left-[52%] xl:left-[54%] 2xl:left-[54%] top-[51%] z-10">
                   <p className="font-['Archivo'] text-[#8B1E2B] font-semibold tracking-[0.2px] text-[20px] md:text-[17px] lg:text-[22px] xl:text-[30px] 2xl:text-[40px] leading-[24px] md:leading-[21px] lg:leading-[26px] xl:leading-[34px] 2xl:leading-[44px]">
                     <span className="block whitespace-nowrap">
@@ -225,7 +244,6 @@ export default function Homepage() {
                   </p>
                 </div>
 
-                {/* Spray image */}
                 <div className="absolute inset-0 z-0 flex items-center justify-center">
                   <img
                     src="/mavadry-promotional.png"
@@ -233,7 +251,6 @@ export default function Homepage() {
                     className="h-[100%] w-auto object-contain transform-gpu scale-[1.2] md:scale-[1.2] translate-y-[5%] -translate-x-[45%] md:-translate-x-[29%]"
                   />
                 </div>
-                {/* Badge overlay (simple to adjust: top/right for position; w-* for size) */}
                 <img
                   src="/mavadry-badge.png"
                   alt=""
@@ -248,6 +265,7 @@ export default function Homepage() {
                 VIEW MAVADRY SPRAY
               </Link>
             </div>
+            -->
 
             {/* Double-Brow Banner */}
             <div className="flex flex-col items-center">
