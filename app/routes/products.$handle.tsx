@@ -305,6 +305,11 @@ function MobileShadeGallery({
               key={idx}
               className="flex-shrink-0 w-full aspect-square flex items-center justify-center"
               onClick={() => onImageClick(idx)}
+              style={
+                productSlug === "double-lash" && idx === 1
+                  ? { paddingTop: "20%" }
+                  : undefined
+              }
             >
               <img
                 src={img}
@@ -449,6 +454,23 @@ function ImageGallery({
     }
     
     return {};
+  };
+
+  // Get main image styling for specific products
+  const getMainImageStyle = (): React.CSSProperties => {
+    const isDoubleLash = productSlug === "double-lash";
+    
+    // For double-lash, scale up by 10% and move up by 15%
+    if (isDoubleLash) {
+      return {
+        transform: "scale(1.1) translateY(-15%)",
+        imageRendering: "-webkit-optimize-contrast" as any,
+      };
+    }
+    
+    return {
+      imageRendering: "-webkit-optimize-contrast" as any,
+    };
   };
   const bioGridStyle = isBioColors ? { aspectRatio: "4/3" } : undefined;
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -670,7 +692,7 @@ function ImageGallery({
                 src={mainImage}
                 alt={alt}
                 className={mainImageClass}
-                style={{ imageRendering: "-webkit-optimize-contrast" }}
+                style={getMainImageStyle()}
               />
             </div>
 
