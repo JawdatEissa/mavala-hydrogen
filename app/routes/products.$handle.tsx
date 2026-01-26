@@ -1210,13 +1210,13 @@ export default function ProductPage() {
           />
 
           {/* Mobile Shade Selection - Mavala Style */}
-          <div className="px-4 py-6 bg-white">
-            {/* FAVORITE SHADES */}
-            <div className="mb-6">
-              <h3 className="font-['Archivo'] text-sm font-bold text-[#272724] uppercase tracking-wider mb-4">
+          <div className="px-4 py-5 bg-white">
+            {/* FAVORITE SHADES - Compact */}
+            <div className="mb-5">
+              <h3 className="font-['Archivo'] text-sm font-bold text-[#272724] uppercase tracking-wider mb-3">
                 Favorite Shades
               </h3>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-2.5">
                 {filteredShades.slice(0, 6).map((shade, idx) => {
                   const shadeColor = getShadeColor(shade.name);
                   const shadeNumber = shade.name.match(/^\d+/)?.[0] || "";
@@ -1229,18 +1229,18 @@ export default function ProductPage() {
                       className="flex flex-col items-center"
                     >
                       <div
-                        className={`w-14 h-14 rounded-full flex items-center justify-center transition-all ${
+                        className={`w-11 h-11 rounded-full flex items-center justify-center transition-all ${
                           isSelected
                             ? "border-2 border-black"
                             : "border-2 border-transparent"
                         }`}
                       >
                         <div
-                          className="w-11 h-11 rounded-full"
+                          className="w-8 h-8 rounded-full"
                           style={{ backgroundColor: shadeColor || "#f5f5f5" }}
                         />
                       </div>
-                      <span className="text-xs font-['Archivo'] text-[#5c666f] mt-1">
+                      <span className="text-[10px] font-['Archivo'] text-[#5c666f] mt-0.5">
                         {shadeNumber}
                       </span>
                     </button>
@@ -1540,8 +1540,8 @@ export default function ProductPage() {
       {/* Split-page sticky layout: Left column scrolls (gallery + accordions), Right column stays fixed */}
       <div className={shades.length > 0 ? "hidden md:block" : ""}>
         {/* Product Section */}
-        <div className="max-w-[2000px] mx-auto px-4 md:px-8 py-4 md:py-8">
-          <div className="grid lg:grid-cols-[60%_40%] gap-5 lg:gap-10 items-start">
+        <div className="max-w-[2000px] mx-auto px-4 md:px-8 py-2 md:py-4">
+          <div className="grid lg:grid-cols-[60%_40%] gap-4 lg:gap-8 items-start">
             {/* ===== LEFT COLUMN: Gallery + Accordions (scrollable) ===== */}
             <div className="product-content-scrollable">
             {/* Product Gallery */}
@@ -1737,7 +1737,7 @@ export default function ProductPage() {
             {/* ===== END LEFT COLUMN ===== */}
 
             {/* ===== RIGHT COLUMN: Product Info (sticky) ===== */}
-            <div className="product-info-sticky lg:pl-8 lg:pt-4">
+            <div className="product-info-sticky lg:pl-6">
               {/* Store Reviews Link - Top */}
               {product.store_reviews &&
                 typeof product.store_reviews === "string" &&
@@ -1753,73 +1753,62 @@ export default function ProductPage() {
                 )}
 
               {/* Title - Title case, black, not bold */}
-              <h1 className="product-page-title mb-2">
+              <h1 className="product-page-title mb-1">
                 {formatTitle(product.title)}
               </h1>
 
               {/* Size - Uses CSS variable */}
               {volumeLabel ? (
-                <p className="product-page-volume mb-6">{volumeLabel}</p>
+                <p className="product-page-volume mb-3">{volumeLabel}</p>
               ) : null}
 
-              {/* Description - Uses CSS variable */}
+              {/* Description - Truncated for compact layout */}
               {mainDescription && (
-                <div className="product-page-description mb-8 max-w-[53ch]">
-                  {mainDescription
-                    .split("\n")
-                    .filter((p) => p.trim())
-                    .map((paragraph, idx) => (
-                      <p key={idx} className="mb-0">
-                        {paragraph}
-                      </p>
-                    ))}
+                <div className="product-page-description mb-3 max-w-[53ch]">
+                  <p className="mb-0 line-clamp-3">
+                    {mainDescription.replace(/\n/g, ' ')}
+                  </p>
                 </div>
               )}
 
-              {/* Key Features with thick vertical bar bullets - Mavala.fr style */}
+              {/* Key Features - Inline compact style */}
               {product.slug === "mavala-stop" ? (
-                <div className="mb-8 space-y-4">
-                  <div className="flex items-start">
-                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
-                    <span className="product-page-feature">
-                      Bitter nail polish for beautiful nails
-                    </span>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
-                    <span className="product-page-feature">
-                      Dermatologically tested
-                    </span>
-                  </div>
+                <div className="mb-3 flex flex-wrap gap-x-4 gap-y-1">
+                  <span className="flex items-center text-sm text-[#333]">
+                    <span className="w-[3px] h-[12px] mr-1.5 bg-black rounded-full" />
+                    Bitter nail polish
+                  </span>
+                  <span className="flex items-center text-sm text-[#333]">
+                    <span className="w-[3px] h-[12px] mr-1.5 bg-black rounded-full" />
+                    Dermatologically tested
+                  </span>
                 </div>
               ) : (
-                <div className="mb-8 space-y-4">
-                  <div className="flex items-start">
-                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
-                    <span className="product-page-feature">Vegan formula</span>
-                  </div>
-                  <div className="flex items-start">
-                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
-                    <span className="product-page-feature">
-                      Long-lasting hold and shine
-                    </span>
-                  </div>
+                <div className="mb-3 flex flex-wrap gap-x-4 gap-y-1">
+                  <span className="flex items-center text-sm text-[#333]">
+                    <span className="w-[3px] h-[12px] mr-1.5 bg-black rounded-full" />
+                    Vegan formula
+                  </span>
+                  <span className="flex items-center text-sm text-[#333]">
+                    <span className="w-[3px] h-[12px] mr-1.5 bg-black rounded-full" />
+                    Long-lasting shine
+                  </span>
                 </div>
               )}
 
               {/* Horizontal Divider */}
-              <hr className="border-t border-gray-200 mb-6" />
+              <hr className="border-t border-gray-200 mb-4" />
 
               {/* Shade Selection - Like Mavala */}
               {shades.length > 0 && (
-                <div className="mb-10">
+                <div className="mb-5">
                   {/* MAIN COLOR Selector */}
                   {availableMainColors.length >= 1 && (
-                    <div className="mb-8">
-                      <h3 className="font-['Archivo'] text-[15px] font-semibold text-[#333] uppercase tracking-wider mb-5">
+                    <div className="mb-5">
+                      <h3 className="font-['Archivo'] text-[13px] font-semibold text-[#333] uppercase tracking-wider mb-3">
                         Main Color
                       </h3>
-                      <div className="flex flex-wrap gap-3">
+                      <div className="flex flex-wrap gap-2">
                         {availableMainColors.map((color) => {
                           const colorMap: Record<string, string> = {
                             Nude: "bg-[#f5cdb6]",
@@ -1854,15 +1843,15 @@ export default function ProductPage() {
                                     : color.name
                                 )
                               }
-                              className={`px-4 py-2.5 text-sm font-['Archivo'] transition-all ${
+                              className={`px-3 py-1.5 text-xs font-['Archivo'] transition-all ${
                                 selectedMainColor === color.name
                                   ? "border-2 border-black text-black bg-white"
                                   : "border border-gray-300 text-gray-700 hover:border-gray-500"
                               }`}
                             >
-                              <span className="flex items-center gap-2.5">
+                              <span className="flex items-center gap-2">
                                 <span
-                                  className={`w-3.5 h-3.5 rounded-full flex-shrink-0 ${
+                                  className={`w-3 h-3 rounded-full flex-shrink-0 ${
                                     colorMap[color.name] || "bg-gray-400"
                                   }`}
                                 ></span>
@@ -1876,14 +1865,14 @@ export default function ProductPage() {
                   )}
 
                   {/* Horizontal Divider */}
-                  <hr className="border-t border-gray-200 mb-8" />
+                  <hr className="border-t border-gray-200 mb-5" />
 
-                  {/* FAVORITE SHADES - Large colored circles with numbers */}
-                  <div className="mb-6">
-                    <h3 className="font-['Archivo'] text-[15px] font-semibold text-[#333] uppercase tracking-wider mb-6">
+                  {/* FAVORITE SHADES - Compact colored circles with numbers */}
+                  <div className="mb-3">
+                    <h3 className="font-['Archivo'] text-[13px] font-semibold text-[#333] uppercase tracking-wider mb-3">
                       Favorite Shades
                     </h3>
-                    <div className="flex flex-wrap gap-5 mb-6">
+                    <div className="flex flex-wrap gap-2.5 mb-3">
                       {filteredShades.slice(0, 5).map((shade, idx) => {
                         const shadeColor = getShadeColor(shade.name);
                         const shadeNumber = shade.name.match(/^\d+/)?.[0] || "";
@@ -1896,16 +1885,16 @@ export default function ProductPage() {
                             title={shade.name}
                           >
                             <div
-                              className={`w-16 h-16 rounded-full transition-all mb-2 ${
+                              className={`w-10 h-10 rounded-full transition-all mb-1 ${
                                 selectedShade === shade.name
                                   ? "ring-2 ring-black ring-offset-2 scale-105"
-                                  : "group-hover:ring-1 group-hover:ring-gray-400 group-hover:ring-offset-2"
+                                  : "group-hover:ring-1 group-hover:ring-gray-400 group-hover:ring-offset-1"
                               }`}
                               style={{
                                 backgroundColor: shadeColor || "#f5f5f5",
                               }}
                             />
-                            <span className="text-sm font-['Archivo'] text-[#5c666f]">
+                            <span className="text-[10px] font-['Archivo'] text-[#5c666f]">
                               {shadeNumber}
                             </span>
                           </button>
@@ -1917,13 +1906,13 @@ export default function ProductPage() {
                     {filteredShades.length > 0 && (
                       <button
                         onClick={() => setIsShadeDrawerOpen(true)}
-                        className="inline-flex items-center gap-3 text-base font-['Archivo'] hover:underline cursor-pointer mt-2"
+                        className="inline-flex items-center gap-2 text-sm font-['Archivo'] hover:underline cursor-pointer"
                         style={{
                           color: "#8b7355",
                         }}
                       >
                         <span
-                          className="w-5 h-5 rounded-full flex-shrink-0"
+                          className="w-4 h-4 rounded-full flex-shrink-0"
                           style={{
                             background:
                               "linear-gradient(135deg, #f5cdb6 0%, #e8a87c 25%, #c38d6d 50%, #8b5a3c 75%, #5c3d2e 100%)",
@@ -1933,32 +1922,48 @@ export default function ProductPage() {
                       </button>
                     )}
                   </div>
+
+                  {/* SELECTED SHADE DISPLAY - Inline compact */}
+                  {selectedShade && (
+                    <div className="mt-3 flex items-center gap-2 p-2 bg-gray-50 rounded">
+                      <span className="font-['Archivo'] text-[10px] text-[#5c666f] uppercase">Selected:</span>
+                      <div
+                        className="w-5 h-5 rounded-full border border-black"
+                        style={{
+                          backgroundColor: getShadeColor(selectedShade) || "#f5f5f5",
+                        }}
+                      />
+                      <span className="font-['Archivo'] text-sm font-medium text-[#333]">
+                        {selectedShade}
+                      </span>
+                    </div>
+                  )}
                 </div>
               )}
 
-              {/* Quantity */}
-              <div className="mb-6">
-                <label className="block font-['Archivo'] text-sm text-[#5c666f] mb-2">
-                  Quantity:
-                </label>
-                <input
-                  type="number"
-                  value={quantity}
-                  onChange={(e) =>
-                    setQuantity(Math.max(1, parseInt(e.target.value) || 1))
-                  }
-                  min="1"
-                  className="font-['Archivo'] border border-gray-300 px-3 py-2 w-20 text-center text-sm focus:outline-none focus:border-[#9e1b32]"
-                />
+              {/* Quantity + Add to Cart - Same Line */}
+              <div className="flex items-center gap-4 mb-4">
+                <div className="flex items-center gap-2">
+                  <label className="font-['Archivo'] text-xs text-[#5c666f]">
+                    Qty:
+                  </label>
+                  <input
+                    type="number"
+                    value={quantity}
+                    onChange={(e) =>
+                      setQuantity(Math.max(1, parseInt(e.target.value) || 1))
+                    }
+                    min="1"
+                    className="font-['Archivo'] border border-gray-300 px-2 py-1.5 w-16 text-center text-sm focus:outline-none focus:border-[#9e1b32]"
+                  />
+                </div>
+                <button className="product-page-add-to-cart flex-1">
+                  Add To Cart
+                </button>
               </div>
 
-              {/* Add to Cart Button - Larger, more prominent */}
-              <button className="product-page-add-to-cart w-full md:w-auto mb-6">
-                Add To Cart
-              </button>
-
               {/* Share */}
-              <button className="font-['Archivo'] text-sm text-[#5c666f] hover:text-[#9e1b32] flex items-center gap-2 uppercase tracking-wider">
+              <button className="font-['Archivo'] text-xs text-[#5c666f] hover:text-[#9e1b32] flex items-center gap-1.5 uppercase tracking-wider">
                 <svg
                   className="w-4 h-4"
                   fill="none"

@@ -117,10 +117,10 @@
     --pp-accordion-text-weight: 200;
     --pp-accordion-text-color: #333333;
     
-    /* Add to Cart button - larger, more prominent */
-    --pp-add-to-cart-size: 15px;
-    --pp-add-to-cart-padding-x: 4rem;
-    --pp-add-to-cart-padding-y: 1.1rem;
+    /* Add to Cart button - compact but prominent */
+    --pp-add-to-cart-size: 13px;
+    --pp-add-to-cart-padding-x: 2rem;
+    --pp-add-to-cart-padding-y: 0.75rem;
   }
 }
 
@@ -317,32 +317,11 @@
   /* Right column stays fixed while left content scrolls */
   .product-info-sticky {
     position: sticky;
-    top: 5rem; /* Offset for header height - reduced for tighter layout */
+    top: 6.5rem; /* Offset for header height (~104px) */
     align-self: flex-start;
-    max-height: calc(100vh - 6rem);
-    overflow-y: auto;
-    /* Custom scrollbar for overflow content */
-    scrollbar-width: thin;
-    scrollbar-color: #d1d5db transparent;
+    /* NO max-height or overflow - let it be natural height and truly sticky */
   }
 
-  .product-info-sticky::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  .product-info-sticky::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .product-info-sticky::-webkit-scrollbar-thumb {
-    background-color: #d1d5db;
-    border-radius: 2px;
-  }
-
-  /* Left column containing gallery + accordions */
-  .product-content-scrollable {
-    /* No special styling needed - scrolls naturally */
-  }
 }
 
 @layer utilities {
