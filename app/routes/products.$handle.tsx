@@ -941,6 +941,8 @@ export default function ProductPage() {
   );
   const [selectedShade, setSelectedShade] = useState<string | null>(null);
   const [isShadeDrawerOpen, setIsShadeDrawerOpen] = useState(false);
+  // Tab state for product details section (horizontal tabs like reference site)
+  const [activeProductTab, setActiveProductTab] = useState<"details" | "ingredients">("details");
 
   // Get display price
   const displayPrice = product.price_from || product.price || "";
@@ -1535,11 +1537,14 @@ export default function ProductPage() {
       )}
 
       {/* ============ DESKTOP LAYOUT & NON-SHADE PRODUCTS ============ */}
+      {/* Split-page sticky layout: Left column scrolls (gallery + accordions), Right column stays fixed */}
       <div className={shades.length > 0 ? "hidden md:block" : ""}>
         {/* Product Section */}
         <div className="max-w-[2000px] mx-auto px-4 md:px-8 py-4 md:py-8">
           <div className="grid lg:grid-cols-[60%_40%] gap-5 lg:gap-10 items-start">
-            {/* Product Gallery - Left Side */}
+            {/* ===== LEFT COLUMN: Gallery + Accordions (scrollable) ===== */}
+            <div className="product-content-scrollable">
+            {/* Product Gallery */}
             {additionalImages.length > 0 && selectedShade ? (
               /* Shade selected - Universal gallery with lightbox */
               <ImageGallery
@@ -1609,8 +1614,130 @@ export default function ProductPage() {
               />
             )}
 
-            {/* Product Info - Right Side */}
-            <div className="lg:pl-8 lg:pt-12">
+              {/* ===== HORIZONTAL TABS (like reference site) - DESKTOP ONLY ===== */}
+              <div className="hidden lg:block mt-12">
+                {/* Tab Navigation */}
+                <div className="flex gap-8 border-b border-gray-200">
+                  <button
+                    onClick={() => setActiveProductTab("details")}
+                    className={`pb-4 font-['Archivo'] text-lg transition-colors relative ${
+                      activeProductTab === "details"
+                        ? "text-[#1a7eb8] font-medium"
+                        : "text-gray-500 hover:text-gray-700"
+                    }`}
+                  >
+                    Product details
+                    {activeProductTab === "details" && (
+                      <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1a7eb8]" />
+                    )}
+                  </button>
+                  <button
+                    onClick={() => setActiveProductTab("ingredients")}
+                    className={`pb-4 font-['Archivo'] text-lg transition-colors relative ${
+                      activeProductTab === "ingredients"
+                        ? "text-[#1a7eb8] font-medium"
+                        : "text-gray-500 hover:text-gray-700"
+                    }`}
+                  >
+                    Ingredients
+                    {activeProductTab === "ingredients" && (
+                      <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1a7eb8]" />
+                    )}
+                  </button>
+                </div>
+
+                {/* Tab Content */}
+                <div className="pt-8 pb-12">
+                  {/* Product Details Tab */}
+                  {activeProductTab === "details" && (
+                    <div className="space-y-8">
+                      {/* Description */}
+                      {product.description && (
+                        <div>
+                          <p className="product-page-accordion-text whitespace-pre-line leading-relaxed">
+                            {product.description}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* How to Use */}
+                      {product.how_to_use && (
+                        <div>
+                          <h3 className="font-['Archivo'] text-xl font-medium text-gray-900 mb-4">
+                            How to Use
+                          </h3>
+                          <p className="product-page-accordion-text whitespace-pre-line leading-relaxed">
+                            {product.how_to_use}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Safety Directions */}
+                      {product.safety_directions && (
+                        <div>
+                          <h3 className="font-['Archivo'] text-xl font-medium text-gray-900 mb-4">
+                            Safety Directions
+                          </h3>
+                          <p className="product-page-accordion-text whitespace-pre-line leading-relaxed">
+                            {product.safety_directions}
+                          </p>
+                          {product.first_aid && (
+                            <div className="mt-4">
+                              <h4 className="font-['Archivo'] font-medium text-gray-800 mb-2">
+                                First Aid
+                              </h4>
+                              <p className="product-page-accordion-text whitespace-pre-line">
+                                {product.first_aid}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Ingredients Tab */}
+                  {activeProductTab === "ingredients" && (
+                    <div className="space-y-8">
+                      {/* Key Ingredients */}
+                      {product.key_ingredients && (
+                        <div>
+                          <h3 className="font-['Archivo'] text-xl font-medium text-gray-900 mb-4">
+                            Key Ingredients
+                          </h3>
+                          <p className="product-page-accordion-text whitespace-pre-line leading-relaxed">
+                            {product.key_ingredients}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Full Ingredients List */}
+                      {product.ingredients && (
+                        <div>
+                          <h3 className="font-['Archivo'] text-xl font-medium text-gray-900 mb-4">
+                            Full Ingredients
+                          </h3>
+                          <p className="product-page-accordion-text whitespace-pre-line leading-relaxed">
+                            {product.ingredients}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Fallback if no ingredient data */}
+                      {!product.key_ingredients && !product.ingredients && (
+                        <p className="product-page-accordion-text text-gray-500 italic">
+                          See packaging for full ingredients list.
+                        </p>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+            {/* ===== END LEFT COLUMN ===== */}
+
+            {/* ===== RIGHT COLUMN: Product Info (sticky) ===== */}
+            <div className="product-info-sticky lg:pl-8 lg:pt-4">
               {/* Store Reviews Link - Top */}
               {product.store_reviews &&
                 typeof product.store_reviews === "string" &&
@@ -1825,8 +1952,8 @@ export default function ProductPage() {
                 />
               </div>
 
-              {/* Add to Cart Button - Red outline style like reference */}
-              <button className="font-['Archivo'] w-full md:w-auto px-16 py-4 border-2 border-[#9e1b32] text-[#9e1b32] text-sm uppercase tracking-widest hover:bg-[#9e1b32] hover:text-white transition-colors mb-6">
+              {/* Add to Cart Button - Larger, more prominent */}
+              <button className="product-page-add-to-cart w-full md:w-auto mb-6">
                 Add To Cart
               </button>
 
@@ -1847,119 +1974,119 @@ export default function ProductPage() {
                 </svg>
                 Share
               </button>
+              {/* Accordions moved to left column for split-page sticky layout */}
+            </div>
+            {/* ===== END RIGHT COLUMN (sticky) ===== */}
+          </div>
+        </div>
 
-              {/* Product Information - Vertical Accordion */}
-              <div className="mt-8 border-t border-gray-200">
-                {/* Key Ingredients Section */}
-                <details className="group border-b border-gray-200">
-                  <summary className="flex items-center justify-between py-4 cursor-pointer list-none">
-                    <h3 className="font-['Archivo'] text-base font-semibold text-black group-open:text-[#9e1b32]">
-                      Key Ingredients
-                    </h3>
-                    <span className="text-gray-400 transition-transform group-open:rotate-180">
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </span>
-                  </summary>
-                  <div className="pb-4 font-['Archivo'] text-[#5c666f] text-sm leading-[1.7]">
-                    {product.key_ingredients ? (
-                      <p className="whitespace-pre-line">
-                        {product.key_ingredients}
-                      </p>
-                    ) : (
-                      <p>No ingredient information available.</p>
-                    )}
+        {/* ===== MOBILE ONLY: Horizontal Tabs (shown after product info on mobile) ===== */}
+        <div className="lg:hidden px-4 mt-8">
+          {/* Tab Navigation */}
+          <div className="flex gap-8 border-b border-gray-200">
+            <button
+              onClick={() => setActiveProductTab("details")}
+              className={`pb-4 font-['Archivo'] text-lg transition-colors relative ${
+                activeProductTab === "details"
+                  ? "text-[#1a7eb8] font-medium"
+                  : "text-gray-500 hover:text-gray-700"
+              }`}
+            >
+              Product details
+              {activeProductTab === "details" && (
+                <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1a7eb8]" />
+              )}
+            </button>
+            <button
+              onClick={() => setActiveProductTab("ingredients")}
+              className={`pb-4 font-['Archivo'] text-lg transition-colors relative ${
+                activeProductTab === "ingredients"
+                  ? "text-[#1a7eb8] font-medium"
+                  : "text-gray-500 hover:text-gray-700"
+              }`}
+            >
+              Ingredients
+              {activeProductTab === "ingredients" && (
+                <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1a7eb8]" />
+              )}
+            </button>
+          </div>
+
+          {/* Tab Content */}
+          <div className="pt-8 pb-12">
+            {/* Product Details Tab */}
+            {activeProductTab === "details" && (
+              <div className="space-y-8">
+                {product.description && (
+                  <div>
+                    <p className="product-page-accordion-text whitespace-pre-line leading-relaxed">
+                      {product.description}
+                    </p>
                   </div>
-                </details>
-
-                {/* How To Use Section */}
-                <details className="group border-b border-gray-200">
-                  <summary className="flex items-center justify-between py-4 cursor-pointer list-none">
-                    <h3 className="font-['Archivo'] text-base font-semibold text-black group-open:text-[#9e1b32]">
+                )}
+                {product.how_to_use && (
+                  <div>
+                    <h3 className="font-['Archivo'] text-xl font-medium text-gray-900 mb-4">
                       How to Use
                     </h3>
-                    <span className="text-gray-400 transition-transform group-open:rotate-180">
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </span>
-                  </summary>
-                  <div className="pb-4 font-['Archivo'] text-[#5c666f] text-sm leading-[1.7]">
-                    {product.how_to_use ? (
-                      <p className="whitespace-pre-line">
-                        {product.how_to_use}
-                      </p>
-                    ) : (
-                      <p>No usage instructions available.</p>
-                    )}
+                    <p className="product-page-accordion-text whitespace-pre-line leading-relaxed">
+                      {product.how_to_use}
+                    </p>
                   </div>
-                </details>
-
-                {/* Safety Directions Section */}
-                <details className="group border-b border-gray-200">
-                  <summary className="flex items-center justify-between py-4 cursor-pointer list-none">
-                    <h3 className="font-['Archivo'] text-base font-semibold text-black group-open:text-[#9e1b32]">
+                )}
+                {product.safety_directions && (
+                  <div>
+                    <h3 className="font-['Archivo'] text-xl font-medium text-gray-900 mb-4">
                       Safety Directions
                     </h3>
-                    <span className="text-gray-400 transition-transform group-open:rotate-180">
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </span>
-                  </summary>
-                  <div className="pb-4 font-['Archivo'] text-[#5c666f] text-sm leading-[1.7]">
-                    {product.safety_directions ? (
-                      <p className="whitespace-pre-line">
-                        {product.safety_directions}
-                      </p>
-                    ) : (
-                      <p>No safety information available.</p>
-                    )}
+                    <p className="product-page-accordion-text whitespace-pre-line leading-relaxed">
+                      {product.safety_directions}
+                    </p>
                     {product.first_aid && (
                       <div className="mt-4">
-                        <h4 className="font-medium text-[#333] mb-2">
+                        <h4 className="font-['Archivo'] font-medium text-gray-800 mb-2">
                           First Aid
                         </h4>
-                        <p className="whitespace-pre-line">
+                        <p className="product-page-accordion-text whitespace-pre-line">
                           {product.first_aid}
                         </p>
                       </div>
                     )}
                   </div>
-                </details>
+                )}
               </div>
-            </div>
+            )}
+
+            {/* Ingredients Tab */}
+            {activeProductTab === "ingredients" && (
+              <div className="space-y-8">
+                {product.key_ingredients && (
+                  <div>
+                    <h3 className="font-['Archivo'] text-xl font-medium text-gray-900 mb-4">
+                      Key Ingredients
+                    </h3>
+                    <p className="product-page-accordion-text whitespace-pre-line leading-relaxed">
+                      {product.key_ingredients}
+                    </p>
+                  </div>
+                )}
+                {product.ingredients && (
+                  <div>
+                    <h3 className="font-['Archivo'] text-xl font-medium text-gray-900 mb-4">
+                      Full Ingredients
+                    </h3>
+                    <p className="product-page-accordion-text whitespace-pre-line leading-relaxed">
+                      {product.ingredients}
+                    </p>
+                  </div>
+                )}
+                {!product.key_ingredients && !product.ingredients && (
+                  <p className="product-page-accordion-text text-gray-500 italic">
+                    See packaging for full ingredients list.
+                  </p>
+                )}
+              </div>
+            )}
           </div>
         </div>
 

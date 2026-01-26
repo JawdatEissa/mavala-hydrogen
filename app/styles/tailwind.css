@@ -85,37 +85,42 @@
     --bs-meta-color: #B8B8B8;
 
     /* ===== Product Page Typography (Mavala.fr professional style) ===== */
-    /* Product page H1 - BOLD, LARGE, READABLE */
-    --pp-title-size: 35px;
+    /* Product page H1 - BOLD, LARGE, READABLE (increased ~20%) */
+    --pp-title-size: 42px;
     --pp-title-weight: 200;
     --pp-title-color: #000000;
-    --pp-title-line-height: 1.3;
+    --pp-title-line-height: 1.25;
     
-    /* Volume/meta text - MATCHING BESTSELLER CATEGORY WEIGHT, DARK RED COLOR */
-    --pp-volume-size: 15px;
+    /* Volume/meta text - MATCHING BESTSELLER CATEGORY WEIGHT, DARK RED COLOR (increased ~15%) */
+    --pp-volume-size: 17px;
     --pp-volume-weight: 200;
     --pp-volume-color: #9e1b32;
     
-    /* Description body text - MATCHING BESTSELLER CATEGORY WEIGHT, DARK RED COLOR */
-    --pp-description-size: 15px;
+    /* Description body text - MATCHING BESTSELLER CATEGORY WEIGHT, DARK RED COLOR (increased ~15%) */
+    --pp-description-size: 17px;
     --pp-description-weight: 200;
     --pp-description-color: #9e1b32;
-    --pp-description-line-height: 1.6;
+    --pp-description-line-height: 1.65;
     
-    /* Feature/bullet text - BOLD, CLEAR */
-    --pp-feature-size: 17.1px;
+    /* Feature/bullet text - BOLD, CLEAR (increased ~10%) */
+    --pp-feature-size: 19px;
     --pp-feature-weight: 400;
     --pp-feature-color: #000000;
     
-    /* Section headings (How to Use, Ingredients, etc.) */
-    --pp-heading-size: 15px;
-    --pp-heading-weight: 200;
+    /* Section headings (How to Use, Ingredients, etc.) - increased */
+    --pp-heading-size: 17px;
+    --pp-heading-weight: 400;
     --pp-heading-color: #000000;
     
-    /* Accordion body text - READABLE */
-    --pp-accordion-text-size: 14px;
+    /* Accordion body text - READABLE (increased ~10%) */
+    --pp-accordion-text-size: 15px;
     --pp-accordion-text-weight: 200;
     --pp-accordion-text-color: #333333;
+    
+    /* Add to Cart button - larger, more prominent */
+    --pp-add-to-cart-size: 15px;
+    --pp-add-to-cart-padding-x: 4rem;
+    --pp-add-to-cart-padding-y: 1.1rem;
   }
 }
 
@@ -287,6 +292,56 @@
     font-weight: var(--pp-accordion-text-weight);
     color: var(--pp-accordion-text-color);
     line-height: 1.6;
+  }
+
+  /* Product Page Add to Cart Button - Larger, more prominent */
+  .product-page-add-to-cart {
+    font-family: var(--bs-font-family);
+    font-size: var(--pp-add-to-cart-size);
+    padding: var(--pp-add-to-cart-padding-y) var(--pp-add-to-cart-padding-x);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-width: 2px;
+    border-color: #9e1b32;
+    color: #9e1b32;
+    background: transparent;
+    transition: all 0.2s ease;
+  }
+
+  .product-page-add-to-cart:hover {
+    background-color: #9e1b32;
+    color: white;
+  }
+
+  /* ===== SPLIT-PAGE STICKY LAYOUT ===== */
+  /* Right column stays fixed while left content scrolls */
+  .product-info-sticky {
+    position: sticky;
+    top: 5rem; /* Offset for header height - reduced for tighter layout */
+    align-self: flex-start;
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+    /* Custom scrollbar for overflow content */
+    scrollbar-width: thin;
+    scrollbar-color: #d1d5db transparent;
+  }
+
+  .product-info-sticky::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .product-info-sticky::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .product-info-sticky::-webkit-scrollbar-thumb {
+    background-color: #d1d5db;
+    border-radius: 2px;
+  }
+
+  /* Left column containing gallery + accordions */
+  .product-content-scrollable {
+    /* No special styling needed - scrolls naturally */
   }
 }
 
