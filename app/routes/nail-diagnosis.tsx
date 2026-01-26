@@ -105,31 +105,31 @@ export default function NailDiagnosisPage() {
   return (
     <div className="min-h-screen bg-white pt-[90px] font-sans font-extralight">
       {/* Main Content */}
-      <section className="py-8 md:py-16 px-2 sm:px-4 md:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-8 md:py-16 px-2 sm:px-4 md:px-6 lg:px-6 xl:px-4">
+        <div className="max-w-[1600px] mx-auto">
           {/* Title */}
           <h1 className="font-['Archivo'] text-[46px] md:text-[42px] font-medium text-[#ae1932] uppercase text-center tracking-[1px] mb-8 md:mb-12">
             NAIL CONCERNS
           </h1>
 
-          {/* Nail Conditions Grid - Full width on mobile */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-9 gap-x-3 gap-y-5 sm:gap-x-5 md:gap-x-6 md:gap-y-10 xl:gap-x-8 xl:gap-y-12 justify-items-center">
+          {/* Nail Conditions Grid - Full width, large images */}
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-9 gap-x-1 gap-y-6 sm:gap-x-2 md:gap-x-3 md:gap-y-8">
             {NAIL_CONDITIONS.map((condition, idx) => (
               <a
                 key={idx}
                 href={`/nail-concern/${condition.slug}`}
-                className="flex flex-col items-center justify-start text-center cursor-pointer hover:opacity-80 transition-opacity duration-200 group w-full max-w-[150px] sm:max-w-[140px] md:max-w-[130px] lg:max-w-[120px] xl:max-w-[150px]"
+                className="flex flex-col items-center justify-start text-center cursor-pointer hover:opacity-80 transition-opacity duration-200 group w-full"
               >
-                <div className="w-full aspect-[2/3] flex items-center justify-center mb-2 lg:mb-3">
+                <div className="w-full aspect-[2/3] flex items-center justify-center overflow-hidden">
                   <img
                     src={condition.image}
                     alt={condition.name}
-                    className="w-full h-full object-contain object-center will-change-transform scale-[1.1] lg:scale-[1.25] xl:scale-[1.35] transition-transform duration-200 group-hover:scale-[1.15] lg:group-hover:scale-[1.3] xl:group-hover:scale-[1.4]"
+                    className="w-full h-full object-contain object-center scale-[1.3] sm:scale-[1.4] md:scale-[1.5] lg:scale-[1.6] transition-transform duration-200 group-hover:scale-[1.35] sm:group-hover:scale-[1.45] md:group-hover:scale-[1.55] lg:group-hover:scale-[1.65]"
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
-                <p className="font-['Archivo'] text-[15px] sm:text-[13px] md:text-[12px] uppercase text-gray-800 leading-tight font-medium">
+                <p className="font-['Archivo'] text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] uppercase text-gray-800 leading-tight font-medium mt-3">
                   {condition.name}
                 </p>
               </a>
