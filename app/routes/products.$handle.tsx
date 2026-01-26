@@ -1753,55 +1753,102 @@ export default function ProductPage() {
                 )}
 
               {/* Title - Title case, black, not bold */}
-              <h1 className="product-page-title mb-1">
+              <h1 className={`product-page-title ${shades.length > 0 ? 'mb-1' : 'mb-2'}`}>
                 {formatTitle(product.title)}
               </h1>
 
               {/* Size - Uses CSS variable */}
               {volumeLabel ? (
-                <p className="product-page-volume mb-3">{volumeLabel}</p>
+                <p className={`product-page-volume ${shades.length > 0 ? 'mb-3' : 'mb-6'}`}>{volumeLabel}</p>
               ) : null}
 
-              {/* Description - Truncated for compact layout */}
+              {/* Description - Truncated for shade products, full for others */}
               {mainDescription && (
-                <div className="product-page-description mb-3 max-w-[53ch]">
-                  <p className="mb-0 line-clamp-3">
-                    {mainDescription.replace(/\n/g, ' ')}
-                  </p>
-                </div>
+                shades.length > 0 ? (
+                  <div className="product-page-description mb-3 max-w-[53ch]">
+                    <p className="mb-0 line-clamp-3">
+                      {mainDescription.replace(/\n/g, ' ')}
+                    </p>
+                  </div>
+                ) : (
+                  <div className="product-page-description mb-8 max-w-[53ch]">
+                    {mainDescription
+                      .split("\n")
+                      .filter((p) => p.trim())
+                      .map((paragraph, idx) => (
+                        <p key={idx} className="mb-0">
+                          {paragraph}
+                        </p>
+                      ))}
+                  </div>
+                )
               )}
 
-              {/* Key Features - Inline compact style */}
-              {product.slug === "mavala-stop" ? (
-                <div className="mb-3 flex flex-wrap gap-x-4 gap-y-1">
-                  <span className="flex items-center text-sm text-[#333]">
-                    <span className="w-[3px] h-[12px] mr-1.5 bg-black rounded-full" />
-                    Bitter nail polish
-                  </span>
-                  <span className="flex items-center text-sm text-[#333]">
-                    <span className="w-[3px] h-[12px] mr-1.5 bg-black rounded-full" />
-                    Dermatologically tested
-                  </span>
-                </div>
+              {/* Key Features - Compact for shade products, full for others */}
+              {shades.length > 0 ? (
+                /* Compact inline style for shade products */
+                product.slug === "mavala-stop" ? (
+                  <div className="mb-3 flex flex-wrap gap-x-4 gap-y-1">
+                    <span className="flex items-center text-sm text-[#333]">
+                      <span className="w-[3px] h-[12px] mr-1.5 bg-black rounded-full" />
+                      Bitter nail polish
+                    </span>
+                    <span className="flex items-center text-sm text-[#333]">
+                      <span className="w-[3px] h-[12px] mr-1.5 bg-black rounded-full" />
+                      Dermatologically tested
+                    </span>
+                  </div>
+                ) : (
+                  <div className="mb-3 flex flex-wrap gap-x-4 gap-y-1">
+                    <span className="flex items-center text-sm text-[#333]">
+                      <span className="w-[3px] h-[12px] mr-1.5 bg-black rounded-full" />
+                      Vegan formula
+                    </span>
+                    <span className="flex items-center text-sm text-[#333]">
+                      <span className="w-[3px] h-[12px] mr-1.5 bg-black rounded-full" />
+                      Long-lasting shine
+                    </span>
+                  </div>
+                )
               ) : (
-                <div className="mb-3 flex flex-wrap gap-x-4 gap-y-1">
-                  <span className="flex items-center text-sm text-[#333]">
-                    <span className="w-[3px] h-[12px] mr-1.5 bg-black rounded-full" />
-                    Vegan formula
-                  </span>
-                  <span className="flex items-center text-sm text-[#333]">
-                    <span className="w-[3px] h-[12px] mr-1.5 bg-black rounded-full" />
-                    Long-lasting shine
-                  </span>
-                </div>
+                /* Full vertical style for non-shade products */
+                product.slug === "mavala-stop" ? (
+                  <div className="mb-8 space-y-4">
+                    <div className="flex items-start">
+                      <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                      <span className="product-page-feature">
+                        Bitter nail polish for beautiful nails
+                      </span>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                      <span className="product-page-feature">
+                        Dermatologically tested
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="mb-8 space-y-4">
+                    <div className="flex items-start">
+                      <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                      <span className="product-page-feature">Vegan formula</span>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                      <span className="product-page-feature">
+                        Long-lasting hold and shine
+                      </span>
+                    </div>
+                  </div>
+                )
               )}
 
               {/* Horizontal Divider */}
-              <hr className="border-t border-gray-200 mb-4" />
+              <hr className={`border-t border-gray-200 ${shades.length > 0 ? 'mb-4' : 'mb-6'}`} />
 
-              {/* Shade Selection - Like Mavala */}
+              {/* Shade Selection - Only for shade products (compact layout) */}
               {shades.length > 0 && (
-                <div className="mb-5">
+                <div className="mb-4">
                   {/* MAIN COLOR Selector */}
                   {availableMainColors.length >= 1 && (
                     <div className="mb-5">
@@ -1941,29 +1988,53 @@ export default function ProductPage() {
                 </div>
               )}
 
-              {/* Quantity + Add to Cart - Same Line */}
-              <div className="flex items-center gap-4 mb-4">
-                <div className="flex items-center gap-2">
-                  <label className="font-['Archivo'] text-xs text-[#5c666f]">
-                    Qty:
-                  </label>
-                  <input
-                    type="number"
-                    value={quantity}
-                    onChange={(e) =>
-                      setQuantity(Math.max(1, parseInt(e.target.value) || 1))
-                    }
-                    min="1"
-                    className="font-['Archivo'] border border-gray-300 px-2 py-1.5 w-16 text-center text-sm focus:outline-none focus:border-[#9e1b32]"
-                  />
+              {/* Quantity + Add to Cart - Compact (same line) for shade products, full for others */}
+              {shades.length > 0 ? (
+                /* Compact: Same line for shade products */
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center gap-2">
+                    <label className="font-['Archivo'] text-xs text-[#5c666f]">
+                      Qty:
+                    </label>
+                    <input
+                      type="number"
+                      value={quantity}
+                      onChange={(e) =>
+                        setQuantity(Math.max(1, parseInt(e.target.value) || 1))
+                      }
+                      min="1"
+                      className="font-['Archivo'] border border-gray-300 px-2 py-1.5 w-16 text-center text-sm focus:outline-none focus:border-[#9e1b32]"
+                    />
+                  </div>
+                  <button className="product-page-add-to-cart flex-1">
+                    Add To Cart
+                  </button>
                 </div>
-                <button className="product-page-add-to-cart flex-1">
-                  Add To Cart
-                </button>
-              </div>
+              ) : (
+                /* Full: Separate sections for non-shade products */
+                <>
+                  <div className="mb-6">
+                    <label className="block font-['Archivo'] text-sm text-[#5c666f] mb-2">
+                      Quantity:
+                    </label>
+                    <input
+                      type="number"
+                      value={quantity}
+                      onChange={(e) =>
+                        setQuantity(Math.max(1, parseInt(e.target.value) || 1))
+                      }
+                      min="1"
+                      className="font-['Archivo'] border border-gray-300 px-3 py-2 w-20 text-center text-sm focus:outline-none focus:border-[#9e1b32]"
+                    />
+                  </div>
+                  <button className="font-['Archivo'] w-full md:w-auto px-16 py-4 border-2 border-[#9e1b32] text-[#9e1b32] text-sm uppercase tracking-widest hover:bg-[#9e1b32] hover:text-white transition-colors mb-6">
+                    Add To Cart
+                  </button>
+                </>
+              )}
 
               {/* Share */}
-              <button className="font-['Archivo'] text-xs text-[#5c666f] hover:text-[#9e1b32] flex items-center gap-1.5 uppercase tracking-wider">
+              <button className={`font-['Archivo'] text-[#5c666f] hover:text-[#9e1b32] flex items-center gap-2 uppercase tracking-wider ${shades.length > 0 ? 'text-xs gap-1.5' : 'text-sm'}`}>
                 <svg
                   className="w-4 h-4"
                   fill="none"
