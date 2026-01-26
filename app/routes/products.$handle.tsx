@@ -943,17 +943,38 @@ export default function ProductPage() {
   const [isShadeDrawerOpen, setIsShadeDrawerOpen] = useState(false);
   // Tab state for product details section (horizontal tabs like reference site)
   const [activeProductTab, setActiveProductTab] = useState<"details" | "ingredients">("details");
-  // Track if user has scrolled past header (for sticky positioning)
-  const [scrolledPastHeader, setScrolledPastHeader] = useState(false);
+  // Track header visibility for sticky positioning
+  const [isHeaderHidden, setIsHeaderHidden] = useState(false);
 
-  // Listen for scroll to adjust sticky position
+  // Listen for scroll direction to match header hide/show behavior
   useEffect(() => {
-    const headerHeight = 100; // Approximate header height in pixels
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    
     const handleScroll = () => {
-      setScrolledPastHeader(window.scrollY > headerHeight);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const scrollingDown = currentScrollY > lastScrollY;
+          
+          // Match header's hide logic: hide after 100px when scrolling down
+          // Show when scrolling up or near top
+          if (currentScrollY <= 40) {
+            setIsHeaderHidden(false);
+          } else if (scrollingDown && currentScrollY > 100) {
+            setIsHeaderHidden(true);
+          } else if (!scrollingDown) {
+            setIsHeaderHidden(false);
+          }
+          
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
+    
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Check initial position
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -1754,9 +1775,9 @@ export default function ProductPage() {
               className="lg:pl-6"
               style={{
                 position: 'sticky',
-                top: scrolledPastHeader ? '1rem' : '7rem',
+                top: isHeaderHidden ? '1rem' : '7.5rem',
                 alignSelf: 'flex-start',
-                transition: 'top 0.2s ease-out',
+                transition: 'top 0.15s ease-out',
               }}
             >
               {/* Store Reviews Link - Top */}
