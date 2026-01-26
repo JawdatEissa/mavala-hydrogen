@@ -233,7 +233,7 @@ export function Header() {
       className="w-full fixed top-0 left-0 right-0 z-[9999] bg-white shadow-sm"
       style={{
         top: isHidden ? "-90px" : "0px",
-        transition: "top 0.4s cubic-bezier(0.32, 0.72, 0, 1)",
+        transition: "top 0.36s cubic-bezier(0.32, 0.72, 0, 1)",
       }}
     >
       <nav className="h-[90px] relative">
