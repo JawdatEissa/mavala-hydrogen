@@ -7,6 +7,7 @@ import {
   getProductBySlug,
   type ScrapedProduct,
 } from "../lib/scraped-products.server";
+import { formatPriceToCad } from "../lib/currency";
 import { ShadeDrawer } from "../components/ShadeDrawer";
 import { ProductCard } from "../components/ProductCard";
 // Import pre-generated image manifest (avoids fs scanning at runtime)
@@ -1333,32 +1334,36 @@ export default function ProductPage() {
               </div>
             )}
 
-            {/* Mobile Add to Cart Section */}
+            {/* Mobile Add to Cart Section - French Mavala Premium Style */}
             <div className="mt-6">
               <div className="flex items-center gap-4 mb-4">
                 <span className="font-['Archivo'] text-[0.79rem] text-[#5c666f]">
                   Quantity:
                 </span>
-                <div className="flex items-center border border-gray-300">
+                <div className="flex items-center border border-gray-300 rounded">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="px-3 py-2 text-lg"
+                    className="px-3 py-2 text-lg hover:bg-gray-100 transition-colors"
                   >
                     −
                   </button>
-                  <span className="px-4 py-2 border-x border-gray-300">
+                  <span className="px-4 py-2 border-x border-gray-300 min-w-[3rem] text-center">
                     {quantity}
                   </span>
                   <button
                     onClick={() => setQuantity(quantity + 1)}
-                    className="px-3 py-2 text-lg"
+                    className="px-3 py-2 text-lg hover:bg-gray-100 transition-colors"
                   >
                     +
                   </button>
                 </div>
               </div>
-              <button className="w-full py-4 border-2 border-[#9e1b32] text-[#9e1b32] font-['Archivo'] text-[0.79rem] uppercase tracking-wider hover:bg-[#9e1b32] hover:text-white transition-colors">
-                Add To Cart
+              {/* Premium Add to Cart Button - French Mavala Style */}
+              <button className="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3">
+                <span className="text-white/90 font-extralight">•</span>
+                <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">ADD</span>
+                <span className="text-white/90 font-extralight">•</span>
+                <span className="text-white font-extralight text-[14px]">{displayPrice ? formatPriceToCad(displayPrice) : ''}</span>
               </button>
             </div>
 
@@ -1789,7 +1794,7 @@ export default function ProductPage() {
 
             {/* ===== RIGHT COLUMN: Product Info (sticky) ===== */}
             <div 
-              className="lg:pl-6"
+              className="lg:pl-6 pr-4 lg:pr-8"
               style={{
                 position: 'sticky',
                 top: isHeaderHidden ? '1rem' : '7.5rem',
@@ -2047,7 +2052,7 @@ export default function ProductPage() {
                 </div>
               )}
 
-              {/* Quantity + Add to Cart - Compact (same line) for shade products, full for others */}
+              {/* Quantity + Add to Cart - French Mavala Premium Style */}
               {shades.length > 0 ? (
                 /* Compact: Same line for shade products */
                 <div className="flex items-center gap-4 mb-4">
@@ -2062,32 +2067,48 @@ export default function ProductPage() {
                         setQuantity(Math.max(1, parseInt(e.target.value) || 1))
                       }
                       min="1"
-                      className="font-['Archivo'] border border-gray-300 px-2 py-1.5 w-16 text-center text-sm focus:outline-none focus:border-[#9e1b32]"
+                      className="font-['Archivo'] border border-gray-300 rounded px-2 py-1.5 w-16 text-center text-sm focus:outline-none focus:border-[#272724]"
                     />
                   </div>
-                  <button className="product-page-add-to-cart flex-1">
-                    Add To Cart
+                  {/* Premium Add to Cart Button - French Mavala Style */}
+                  <button className="flex-1 py-3.5 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3">
+                    <span className="text-white/90 font-extralight">•</span>
+                    <span className="text-white font-extralight text-[15px] uppercase tracking-[0.2em]">ADD</span>
+                    <span className="text-white/90 font-extralight">•</span>
+                    <span className="text-white font-extralight text-[13px]">{displayPrice ? formatPriceToCad(displayPrice) : ''}</span>
                   </button>
                 </div>
               ) : (
                 /* Full: Separate sections for non-shade products */
                 <>
-                  <div className="mb-6">
+                  <div className="mb-5">
                     <label className="block font-['Archivo'] text-sm text-[#5c666f] mb-2">
                       Quantity:
                     </label>
-                    <input
-                      type="number"
-                      value={quantity}
-                      onChange={(e) =>
-                        setQuantity(Math.max(1, parseInt(e.target.value) || 1))
-                      }
-                      min="1"
-                      className="font-['Archivo'] border border-gray-300 px-3 py-2 w-20 text-center text-sm focus:outline-none focus:border-[#9e1b32]"
-                    />
+                    <div className="flex items-center border border-gray-300 rounded w-fit">
+                      <button
+                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                        className="px-3 py-2 text-lg hover:bg-gray-100 transition-colors"
+                      >
+                        −
+                      </button>
+                      <span className="px-4 py-2 border-x border-gray-300 min-w-[3rem] text-center font-['Archivo']">
+                        {quantity}
+                      </span>
+                      <button
+                        onClick={() => setQuantity(quantity + 1)}
+                        className="px-3 py-2 text-lg hover:bg-gray-100 transition-colors"
+                      >
+                        +
+                      </button>
+                    </div>
                   </div>
-                  <button className="font-['Archivo'] w-full md:w-auto px-16 py-4 border-2 border-[#9e1b32] text-[#9e1b32] text-sm uppercase tracking-widest hover:bg-[#9e1b32] hover:text-white transition-colors mb-6">
-                    Add To Cart
+                  {/* Premium Add to Cart Button - French Mavala Style */}
+                  <button className="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3 mb-6">
+                    <span className="text-white/90 font-extralight">•</span>
+                    <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">ADD</span>
+                    <span className="text-white/90 font-extralight">•</span>
+                    <span className="text-white font-extralight text-[14px]">{displayPrice ? formatPriceToCad(displayPrice) : ''}</span>
                   </button>
                 </>
               )}
