@@ -353,14 +353,16 @@ function ImageGallery({
   isBioColors?: boolean;
   productSlug?: string;
 }) {
-  // Background color: white for collection products, grey for others
-  const bgColor = isCollectionProduct ? "bg-white" : "bg-[#f5f5f5]";
+  // Product-specific flags
   const isScientifique1 = productSlug === "mavala-scientifique-1";
   const isScientifiqueK = productSlug === "mavala-scientifique-k";
   const isMavadrySpray = productSlug === "mavadry-spray";
   const isMavalaStop = productSlug === "mavala-stop";
   const isNailactan = productSlug === "nailactan-1";
   const isNailWhiteCrayon = productSlug === "nail-white-crayon";
+  
+  // Background color: white for collection products and nail-white-crayon, grey for others
+  const bgColor = (isCollectionProduct || isNailWhiteCrayon) ? "bg-white" : "bg-[#f5f5f5]";
   
   // Products that use the special 3-image grid layout (like mavala-stop)
   const useSpecialGridLayout = isMavalaStop || isScientifique1 || isScientifiqueK || isNailactan;
@@ -374,9 +376,9 @@ function ImageGallery({
 
   const useObjectCover =
     lifestyleImageProducts.includes(productSlug) || isScientifique1;
-  const bioGridRowsClass = isBioColors ? "md:grid-rows-2 md:items-stretch" : "";
-  const bioFillHeightClass = isBioColors ? "h-full" : "";
-  const mainImageClass = isBioColors
+  const bioGridRowsClass = (isBioColors || isNailWhiteCrayon) ? "md:grid-rows-2 md:items-stretch" : "";
+  const bioFillHeightClass = (isBioColors || isNailWhiteCrayon) ? "h-full" : "";
+  const mainImageClass = (isBioColors || isNailWhiteCrayon)
     ? "block w-full h-full object-cover border-none outline-none"
     : "block w-full h-full object-contain border-none outline-none";
 
@@ -479,7 +481,11 @@ function ImageGallery({
       imageRendering: "-webkit-optimize-contrast" as any,
     };
   };
-  const bioGridStyle = isBioColors ? { aspectRatio: "4/3" } : undefined;
+  const bioGridStyle = isBioColors 
+    ? { aspectRatio: "4/3" } 
+    : isNailWhiteCrayon 
+      ? { maxHeight: '700px' } 
+      : undefined;
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isClosing, setIsClosing] = useState(false);
@@ -652,16 +658,16 @@ function ImageGallery({
         /* 2+ additional images: Standard grid layout */
         useSpecialGridLayout ? (
           /* Special 3-image grid layout - main image with two smaller images on right */
-          <div className="hidden md:grid md:grid-cols-[60%_40%] gap-2">
+          <div className="hidden md:grid md:grid-cols-[60%_40%] gap-2 items-start">
             {/* Main Large Image - Left - Clickable - Reduced by 20% for scientifique-k */}
             <div
-              className="bg-[#f5f5f5] border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden flex items-center justify-center"
+              className={`${bgColor} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden`}
               onClick={() => openLightbox(0)}
             >
               <img
                 src={mainImage}
                 alt={alt}
-                className="block max-w-full object-contain border-none outline-none"
+                className="block w-full object-contain border-none outline-none"
                 style={{ 
                   imageRendering: "-webkit-optimize-contrast", 
                   maxHeight: '775px',
