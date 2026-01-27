@@ -10,6 +10,7 @@ import {
 import { formatPriceToCad } from "../lib/currency";
 import { ShadeDrawer } from "../components/ShadeDrawer";
 import { ProductCard } from "../components/ProductCard";
+import { isBestsellerSlug } from "../lib/bestsellers";
 // Import pre-generated image manifest (avoids fs scanning at runtime)
 import imageManifest from "~/data/image-manifest.json";
 // Import shade colors data directly
@@ -138,11 +139,61 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     throw new Response("Not Found", { status: 404 });
   }
 
-  // Get related products from same category or random
+  // Get related products: hybrid approach (same category + best sellers)
   const allProducts = loadScrapedProducts();
-  const relatedProducts = allProducts
-    .filter((p) => p.slug !== product.slug)
-    .slice(0, 4);
+  
+  // Get the current product's categories
+  const productCategories = product.categories || [];
+  
+  // Find products from the same category (excluding current product)
+  const sameCategoryProducts = allProducts.filter((p) => {
+    if (p.slug === product.slug) return false;
+    if (!p.categories || !Array.isArray(p.categories)) return false;
+    return p.categories.some((cat) => 
+      productCategories.some((pCat) => 
+        cat.toLowerCase() === pCat.toLowerCase()
+      )
+    );
+  });
+  
+  // Get best sellers (excluding current product)
+  const bestSellers = allProducts.filter((p) => 
+    p.slug !== product.slug && isBestsellerSlug(p.slug)
+  );
+  
+  // Build hybrid recommendations: 2-3 from same category + 2-3 best sellers
+  const recommendedProducts: ScrapedProduct[] = [];
+  const addedSlugs = new Set<string>();
+  
+  // Add up to 3 from same category first
+  for (const p of sameCategoryProducts.slice(0, 3)) {
+    if (!addedSlugs.has(p.slug)) {
+      recommendedProducts.push(p);
+      addedSlugs.add(p.slug);
+    }
+  }
+  
+  // Fill remaining with best sellers (up to 5 total)
+  for (const p of bestSellers) {
+    if (recommendedProducts.length >= 5) break;
+    if (!addedSlugs.has(p.slug)) {
+      recommendedProducts.push(p);
+      addedSlugs.add(p.slug);
+    }
+  }
+  
+  // If still not enough, add random products to reach 5
+  if (recommendedProducts.length < 5) {
+    for (const p of allProducts) {
+      if (recommendedProducts.length >= 5) break;
+      if (p.slug !== product.slug && !addedSlugs.has(p.slug)) {
+        recommendedProducts.push(p);
+        addedSlugs.add(p.slug);
+      }
+    }
+  }
+  
+  const relatedProducts = recommendedProducts;
 
   // Load color mapping for this product (contains shades and color groups)
   const colorMapping = COLOR_MAPPINGS[handle] || null;
@@ -2360,24 +2411,25 @@ export default function ProductPage() {
               </div>
             </div>
           )}
-
-          {/* Related Products */}
-          {relatedProducts.length > 0 && (
-            <div className="mt-16 border-t border-gray-200 pt-12">
-              <h2 className="font-['Archivo'] text-xl uppercase tracking-wider text-center mb-8">
-                You Might Also Like
-              </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-10">
-                {relatedProducts.map((p) => (
-                  <ProductCard
-                    key={p.slug}
-                    product={p as unknown as ScrapedProduct}
-                  />
-                ))}
-              </div>
-            </div>
-          )}
         </div>
+
+        {/* Related Products - Full Width Section (outside max-w-7xl for wider design) */}
+        {relatedProducts.length > 0 && (
+          <section className="mt-16 pt-14 pb-20 border-t border-gray-200 border-b bg-white px-4 md:px-6 lg:px-8">
+            <h2 className="font-['Archivo'] text-[22px] md:text-[26px] font-bold text-[#ae1932] uppercase tracking-[1px] text-center mb-10 md:mb-14">
+              You Might Also Like
+            </h2>
+            {/* Wide grid: 2 cols mobile, 3 tablet, 5 desktop - smaller gaps, larger cards */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+              {relatedProducts.map((p) => (
+                <ProductCard
+                  key={p.slug}
+                  product={p as unknown as ScrapedProduct}
+                />
+              ))}
+            </div>
+          </section>
+        )}
       </div>
 
       {/* Shade Drawer - Slide out panel */}
