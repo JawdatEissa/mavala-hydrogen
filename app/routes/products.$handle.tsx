@@ -428,48 +428,27 @@ function ImageGallery({
 
   const useObjectCover =
     lifestyleImageProducts.includes(productSlug) || isScientifique1;
-  const bioGridRowsClass = (isBioColors || isNailWhiteCrayon) ? "md:grid-rows-2 md:items-stretch" : "";
-  const bioFillHeightClass = (isBioColors || isNailWhiteCrayon) ? "h-full" : "";
+  // Always use grid-rows-2 for proper secondary image stacking
+  const bioGridRowsClass = "md:grid-rows-2 md:items-stretch";
+  const bioFillHeightClass = "h-full";
   const mainImageClass = (isBioColors || isNailWhiteCrayon)
     ? "block w-full h-full object-cover border-none outline-none"
     : "block w-full h-full object-contain border-none outline-none";
 
   /**
-   * Some products need per-image background/fit tweaks.
-   * - `mavala-scientifique-1`: image 01 on grey, images 02/03 on white.
-   * - `mavadry-spray`: image 02 on grey (product shot), image 03 as cover (no grey showing).
-   * - `mavala-stop`: image 01 on grey, images 02/03 on white with object-cover.
+   * Background colors for images:
+   * - Main image (index 0): grey background
+   * - Secondary images (02, 03): white background (no grey) for all products
    */
   const getContainerBgColor = (imageIndex: number): string => {
     if (imageIndex === 0) return bgColor;
-    if (isScientifique1) return "bg-white";
-    if (isMavadrySpray && imageIndex === 2) return "bg-white";
-    if (isMavalaStop) return "bg-white";
-    if (isNailactan) return "bg-white";
-    if (isNailWhiteCrayon) return "bg-white";
-    return bgColor;
+    // All secondary images get white background (user's lifestyle/product shots)
+    return "bg-white";
   };
 
+  // All secondary images use object-cover to fill container without gaps
   const getAdditionalImageClass = (imageIndex: number): string => {
-    if (isBioColors) return "block w-full h-full object-cover border-none outline-none";
-    if (isScientifique1)
-      return "block w-full h-full object-cover border-none outline-none";
-    if (isMavalaStop)
-      return "block w-full h-full object-cover border-none outline-none";
-    if (isNailactan)
-      return "block w-full h-full object-cover border-none outline-none";
-    if (isNailWhiteCrayon)
-      return "block w-full h-full object-cover border-none outline-none";
-    if (productSlug === "double-lash")
-      return "block w-full h-full object-cover border-none outline-none";
-    if (isMavadrySpray) {
-      return imageIndex === 2
-        ? "block w-full h-full object-cover border-none outline-none"
-        : "block w-full h-full object-contain border-none outline-none";
-    }
-    return `block w-full aspect-square border-none outline-none ${
-      useObjectCover ? "object-cover" : "object-contain"
-    }`;
+    return "block w-full h-full object-cover border-none outline-none";
   };
 
   const getThumbnailImageClass = (imageIndex: number): string => {
