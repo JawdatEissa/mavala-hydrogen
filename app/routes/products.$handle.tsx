@@ -1077,9 +1077,6 @@ export default function ProductPage() {
   // Filter out certification images from main gallery
   const images = filterCertificationImages(rawImages);
 
-  // Keep certification images for display elsewhere
-  const certificationImages = rawImages.filter((img) => !images.includes(img));
-
   // Get sizes array safely
   const sizes = Array.isArray(product.sizes) ? product.sizes : [];
 
@@ -2431,24 +2428,6 @@ export default function ProductPage() {
 
         {/* ALL SHADES Section - Removed, will be handled by "See all shades" button */}
 
-        {/* Continue with max-w-7xl container */}
-        <div className="max-w-7xl mx-auto px-4">
-          {/* Certification Badges */}
-          {certificationImages.length > 0 && (
-            <div className="mt-12 border-t border-gray-200 pt-8">
-              <div className="flex justify-center items-center gap-8 flex-wrap">
-                {certificationImages.map((img, idx) => (
-                  <img
-                    key={idx}
-                    src={img}
-                    alt="Certification badge"
-                    className="h-24 md:h-32 w-auto object-contain"
-                  />
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
 
         {/* Related Products - Full Width Section (outside max-w-7xl for wider design) */}
         {relatedProducts.length > 0 && (
