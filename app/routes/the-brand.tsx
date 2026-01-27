@@ -24,20 +24,42 @@ function useScrollOnMount() {
   const location = useLocation();
   
   useEffect(() => {
-    // Small delay to ensure DOM is ready
-    const timer = setTimeout(() => {
-      if (location.hash === '#products') {
+    let cancelled = false;
+    let timeoutId: ReturnType<typeof setTimeout>;
+    
+    if (location.hash === '#products') {
+      // Retry mechanism for production where hydration may take longer
+      let attempts = 0;
+      const maxAttempts = 20; // Try for up to 2 seconds
+      
+      const tryScroll = () => {
+        if (cancelled) return;
+        
         const productsSection = document.getElementById('products');
         if (productsSection) {
-          productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Use setTimeout to ensure we're past hydration
+          timeoutId = setTimeout(() => {
+            if (!cancelled) {
+              productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }, 100);
+        } else if (attempts < maxAttempts) {
+          attempts++;
+          timeoutId = setTimeout(tryScroll, 100);
         }
-      } else {
-        // No hash - scroll to top
-        window.scrollTo({ top: 0, behavior: 'instant' });
-      }
-    }, 50);
+      };
+      
+      // Start trying after initial render
+      timeoutId = setTimeout(tryScroll, 100);
+    } else {
+      // No hash - scroll to top immediately
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
     
-    return () => clearTimeout(timer);
+    return () => {
+      cancelled = true;
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, [location.hash, location.key]);
 }
 
