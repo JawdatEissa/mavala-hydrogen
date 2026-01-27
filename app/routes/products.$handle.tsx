@@ -990,8 +990,8 @@ export default function ProductPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Get display price
-  const displayPrice = product.price_from || product.price || "";
+  // Get display price - prefer exact price, fallback to price_from but strip "from " prefix
+  const displayPrice = product.price || (product.price_from ? product.price_from.replace(/^from\s+/i, '') : "");
 
   // Get images array safely - prefer gallery_images for detailed products
   // Filter out certification/badge images (they contain words like "cares", "tested", "vegan", "animal")
