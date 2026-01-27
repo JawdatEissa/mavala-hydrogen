@@ -1496,6 +1496,24 @@ export default function ProductPage() {
                         completely between coats.
                       </p>
                     )}
+                    
+                    {/* YouTube Tutorial Video - Mobile */}
+                    {product.youtube_video && (
+                      <div className="mt-6">
+                        <h4 className="font-['Archivo'] text-sm font-medium text-gray-800 mb-3">
+                          Tutorial Video
+                        </h4>
+                        <div className="aspect-video rounded-lg overflow-hidden bg-gray-100">
+                          <iframe
+                            src={product.youtube_video}
+                            title="Product Tutorial Video"
+                            className="w-full h-full"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </details>
 
@@ -1776,6 +1794,24 @@ export default function ProductPage() {
                           <p className="product-page-accordion-text whitespace-pre-line leading-relaxed">
                             {product.how_to_use}
                           </p>
+                        </div>
+                      )}
+
+                      {/* YouTube Tutorial Video - Below How to Use */}
+                      {product.youtube_video && (
+                        <div className="mt-8">
+                          <h3 className="font-['Archivo'] text-xl font-medium text-gray-900 mb-4">
+                            Tutorial Video
+                          </h3>
+                          <div className="aspect-video rounded-lg overflow-hidden bg-gray-100">
+                            <iframe
+                              src={product.youtube_video}
+                              title="Product Tutorial Video"
+                              className="w-full h-full"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                              allowFullScreen
+                            />
+                          </div>
                         </div>
                       )}
 
@@ -2247,6 +2283,25 @@ export default function ProductPage() {
                     </p>
                   </div>
                 )}
+
+                {/* YouTube Tutorial Video - Mobile Tabs */}
+                {product.youtube_video && (
+                  <div>
+                    <h3 className="font-['Archivo'] text-xl font-medium text-gray-900 mb-4">
+                      Tutorial Video
+                    </h3>
+                    <div className="aspect-video rounded-lg overflow-hidden bg-gray-100">
+                      <iframe
+                        src={product.youtube_video}
+                        title="Product Tutorial Video"
+                        className="w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
+                  </div>
+                )}
+
                 {product.safety_directions && (
                   <div>
                     <h3 className="font-['Archivo'] text-xl font-medium text-gray-900 mb-4">
@@ -2378,24 +2433,6 @@ export default function ProductPage() {
 
         {/* Continue with max-w-7xl container */}
         <div className="max-w-7xl mx-auto px-4">
-          {/* YouTube Video - Below product section if available */}
-          {product.youtube_video && (
-            <div className="mt-12 max-w-2xl mx-auto">
-              <h3 className="font-['Archivo'] text-sm font-medium mb-4 uppercase tracking-wider text-center">
-                Video Tutorial
-              </h3>
-              <div className="aspect-video">
-                <iframe
-                  src={product.youtube_video.replace("watch?v=", "embed/")}
-                  title="Product Video"
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-          )}
-
           {/* Certification Badges */}
           {certificationImages.length > 0 && (
             <div className="mt-12 border-t border-gray-200 pt-8">
