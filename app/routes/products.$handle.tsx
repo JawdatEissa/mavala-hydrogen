@@ -512,11 +512,12 @@ function ImageGallery({
       imageRendering: "-webkit-optimize-contrast" as any,
     };
   };
+  // Grid height constraint - reduced by 20% from default tall layout
   const bioGridStyle = isBioColors 
     ? { aspectRatio: "4/3" } 
     : isNailWhiteCrayon 
       ? { maxHeight: '700px' } 
-      : undefined;
+      : { maxHeight: '700px' };  // Default max height for all other products
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isClosing, setIsClosing] = useState(false);
