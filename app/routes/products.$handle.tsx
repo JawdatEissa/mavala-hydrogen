@@ -653,51 +653,39 @@ function ImageGallery({
         useSpecialGridLayout ? (
           /* Special 3-image grid layout - main image with two smaller images on right */
           <div className="hidden md:grid md:grid-cols-[60%_40%] gap-2">
-            {/* Main Large Image - Left - Clickable */}
+            {/* Main Large Image - Left - Clickable - Reduced by 20% for scientifique-k */}
             <div
-              className="bg-[#f5f5f5] border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden"
+              className="bg-[#f5f5f5] border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden flex items-center justify-center"
               onClick={() => openLightbox(0)}
             >
               <img
                 src={mainImage}
                 alt={alt}
-                className="block w-full object-contain border-none outline-none"
-                style={{ imageRendering: "-webkit-optimize-contrast", maxHeight: '775px' }}
+                className="block max-w-full object-contain border-none outline-none"
+                style={{ 
+                  imageRendering: "-webkit-optimize-contrast", 
+                  maxHeight: '775px',
+                  transform: isScientifiqueK ? 'scale(0.8)' : undefined
+                }}
               />
             </div>
 
             {/* Additional Images Column - Right - Clickable */}
             <div className="flex flex-col gap-2">
-              {/* First additional image - normal */}
-              <div
-                className="bg-white border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden"
-                onClick={() => openLightbox(1)}
-              >
-                <img
-                  src={additionalImages[0]}
-                  alt={`${alt} - 2`}
-                  className="block w-full object-contain border-none outline-none"
-                  loading="lazy"
-                />
-              </div>
-              {/* Second additional image - scaled 35% larger and moved left */}
-              {additionalImages[1] && (
+              {additionalImages.slice(0, 2).map((img, idx) => (
                 <div
-                  className="bg-[#f5f5f5] border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden flex items-center justify-center"
-                  style={{ aspectRatio: '1/1' }}
-                  onClick={() => openLightbox(2)}
+                  key={idx}
+                  className="bg-white border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden"
+                  onClick={() => openLightbox(idx + 1)}
                 >
                   <img
-                    src={additionalImages[1]}
-                    alt={`${alt} - 3`}
-                    className="max-w-full max-h-full object-contain border-none outline-none"
-                    style={{ 
-                      transform: 'scale(1.35) translateX(-20%)'
-                    }}
+                    src={img}
+                    alt={`${alt} - ${idx + 2}`}
+                    className="block w-full object-contain border-none outline-none"
                     loading="lazy"
                   />
                 </div>
-              )}
+              ))}
             </div>
           </div>
         ) : (
