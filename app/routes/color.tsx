@@ -708,7 +708,7 @@ export default function ColorPage() {
       </section>
 
       {/* Products Grid - Single unified grid with tighter spacing */}
-      <section className="py-0 md:py-4 px-4 md:px-8 lg:px-12 bg-white">
+      <section className="pt-4 pb-0 md:py-4 px-4 md:px-8 lg:px-12 bg-white">
         <div className="w-full">
           {filteredProducts.length > 0 ? (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 mb-16">

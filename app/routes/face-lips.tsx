@@ -131,6 +131,7 @@ export default function FaceLipsPage() {
       {
         id: "complexion",
         label: "Complexion",
+        mobileLabel: "Complex",
         title: "COMPLEXION",
         subtitle: byTitle.get("COMPLEXION")?.subtitle,
         products: byTitle.get("COMPLEXION")?.products ?? [],
@@ -152,6 +153,7 @@ export default function FaceLipsPage() {
       {
         id: "hydration",
         label: "Hydration",
+        mobileLabel: "Hydrate",
         title: "HYDRATION",
         subtitle: byTitle.get("AQUA-PLUS")?.subtitle,
         products: byTitle.get("AQUA-PLUS")?.products ?? [],
@@ -272,7 +274,7 @@ export default function FaceLipsPage() {
                     }
                   `}
                 >
-                  <span className="block truncate">{tab.label}</span>
+                  <span className="block truncate">{tab.mobileLabel || tab.label}</span>
                 </button>
               ))}
             </div>
@@ -291,7 +293,7 @@ export default function FaceLipsPage() {
                     }
                   `}
                 >
-                  <span className="block truncate">{tab.label}</span>
+                  <span className="block truncate">{tab.mobileLabel || tab.label}</span>
                 </button>
               ))}
             </div>
