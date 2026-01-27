@@ -124,6 +124,12 @@ export function ProductCard({
       ? getListingMeta(product as ScrapedProduct)
       : "";
 
+  // Product-specific vertical position adjustments (negative = move up)
+  const imageOffsetAdjustments: Record<string, string> = {
+    "blue-nail-polish-remover": "-10%", // Move up 15% to align with other bottles
+  };
+  const imageOffset = imageOffsetAdjustments[slug] || null;
+
   return (
     <div className="product-card group relative flex flex-col w-full">
       <Link to={`/products/${slug}`} className="block flex flex-col h-full">
@@ -134,6 +140,7 @@ export function ProductCard({
             src={productImage}
             alt={displayTitle}
             className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105 border-none outline-none"
+            style={imageOffset ? { transform: `translateY(${imageOffset})` } : undefined}
             loading="lazy"
             onError={(e) => {
               (e.target as HTMLImageElement).src = "/category-nail-care.png";
