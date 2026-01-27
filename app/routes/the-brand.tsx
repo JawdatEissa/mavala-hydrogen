@@ -1,5 +1,5 @@
 import { json } from "@remix-run/node";
-import { useLoaderData, Link } from "@remix-run/react";
+import { useLoaderData, Link, useLocation } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
 import { useState, useRef, useEffect } from "react";
 import brandData from "../data/brand-page.json";
@@ -18,6 +18,28 @@ export const meta: MetaFunction = () => {
 export const loader = async () => {
   return json({ brandData });
 };
+
+// Custom hook to handle scroll behavior on navigation
+function useScrollOnMount() {
+  const location = useLocation();
+  
+  useEffect(() => {
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      if (location.hash === '#products') {
+        const productsSection = document.getElementById('products');
+        if (productsSection) {
+          productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } else {
+        // No hash - scroll to top
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+    }, 50);
+    
+    return () => clearTimeout(timer);
+  }, [location.hash, location.key]);
+}
 
 // Timeline Section Component with Carousel (Desktop) and Accordion (Mobile)
 function TimelineSection({ timeline }: { timeline: any[] }) {
@@ -406,6 +428,9 @@ function TimelineAccordionItem({ item }: { item: any }) {
 
 export default function TheBrand() {
   const { brandData } = useLoaderData<typeof loader>();
+  
+  // Handle scroll to products section or top based on URL hash
+  useScrollOnMount();
 
   return (
     <div className="pt-[104px] md:pt-[112px] font-['Archivo'] bg-white">
