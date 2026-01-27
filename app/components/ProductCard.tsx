@@ -136,16 +136,21 @@ export function ProductCard({
         {/* Image Container - EXACT MATCH to Bestseller: rounded-[3px], grey bg, 4:5 aspect */}
         <div className="relative overflow-hidden bg-[#f5f5f5] rounded-[3px] aspect-[4/5] flex items-center justify-center p-6 border-none outline-none shadow-none transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
           {showBestsellerBadge ? <BestsellerBadge /> : null}
-          <img
-            src={productImage}
-            alt={displayTitle}
-            className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105 border-none outline-none"
+          {/* Wrapper div for position offset, so hover animation on img still works */}
+          <div 
+            className="w-full h-full flex items-center justify-center"
             style={imageOffset ? { transform: `translateY(${imageOffset})` } : undefined}
-            loading="lazy"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = "/category-nail-care.png";
-            }}
-          />
+          >
+            <img
+              src={productImage}
+              alt={displayTitle}
+              className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105 border-none outline-none"
+              loading="lazy"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = "/category-nail-care.png";
+              }}
+            />
+          </div>
         </div>
 
         {/* Product Info - EXACT MATCH to Bestseller spacing and typography */}
