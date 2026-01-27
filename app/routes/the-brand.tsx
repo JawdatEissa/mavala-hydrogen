@@ -225,7 +225,7 @@ function ProductRangeCarousel() {
   };
 
   return (
-    <section className="py-12 md:py-16 border-t border-gray-200">
+    <section id="products" className="py-12 md:py-16 border-t border-gray-200">
       {/* Title aligned with max-w-5xl container above */}
       <div className="max-w-5xl mx-auto px-4 mb-10">
         <h2 className="text-[32px] md:text-[40px] font-light text-gray-900">
