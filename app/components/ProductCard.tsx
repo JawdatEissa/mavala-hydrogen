@@ -103,8 +103,9 @@ export function ProductCard({
   const displayTitle = getDisplayTitle();
   const displaySubtitle =
     Array.isArray((product as ScrapedProduct).categories) &&
-    (product as ScrapedProduct).categories.length > 0
-      ? String((product as ScrapedProduct).categories[0])
+    (product as ScrapedProduct).categories &&
+    (product as ScrapedProduct).categories!.length > 0
+      ? String((product as ScrapedProduct).categories![0])
       : "";
 
   const compareAtPrice =

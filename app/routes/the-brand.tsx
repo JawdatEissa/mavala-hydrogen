@@ -444,13 +444,13 @@ export default function TheBrand() {
             <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
               {brandData.sections[0].title}
             </h2>
-            {brandData.sections[0].subtitle && (
+            {(brandData.sections[0] as any).subtitle && (
               <p className="text-lg md:text-xl font-semibold text-gray-900 mb-8 leading-relaxed">
-                {brandData.sections[0].subtitle}
+                {(brandData.sections[0] as any).subtitle}
               </p>
             )}
             <div className="space-y-6">
-              {brandData.sections[0].content.map((item, idx) => (
+              {(brandData.sections[0] as any).content.map((item: any, idx: number) => (
                 <p
                   key={idx}
                   className="text-base md:text-lg text-gray-700 leading-relaxed"
@@ -499,7 +499,7 @@ export default function TheBrand() {
               {brandData.sections[1].title}
             </h2>
             <div className="space-y-6">
-              {brandData.sections[1].content.map((item, idx) => {
+              {(brandData.sections[1] as any).content.map((item: any, idx: number) => {
                 if (item.type === "paragraph") {
                   return (
                     <p
@@ -546,13 +546,13 @@ export default function TheBrand() {
               {brandData.sections[2].title}
             </h2>
 
-            {brandData.sections[2].subsections.map((subsection, subIdx) => (
+            {(brandData.sections[2] as any).subsections.map((subsection: any, subIdx: number) => (
               <div key={subIdx} className="mb-12 last:mb-0">
                 <h3 className="text-2xl md:text-3xl font-light text-gray-900 mb-6">
                   {subsection.title}
                 </h3>
                 <div className="space-y-6">
-                  {subsection.content.map((item, idx) => {
+                  {subsection.content.map((item: any, idx: number) => {
                     // For education section, insert image after first paragraph
                     const isEducation = subsection.id === "education";
 
@@ -569,7 +569,7 @@ export default function TheBrand() {
                       } else if (item.type === "bullets") {
                         return (
                           <ul key={idx} className="space-y-3 ml-6">
-                            {item.items.map((bullet, bIdx) => (
+                            {item.items.map((bullet: string, bIdx: number) => (
                               <li
                                 key={bIdx}
                                 className="text-base md:text-lg text-gray-700 leading-relaxed list-disc"
@@ -628,30 +628,30 @@ export default function TheBrand() {
             </h2>
 
             {/* Quote */}
-            {brandData.sections[3].quote && (
+            {(brandData.sections[3] as any).quote && (
               <div className="mb-12 p-6 md:p-8 border-l-4 border-[#9e1b32]">
                 <p className="text-lg md:text-xl text-gray-700 italic leading-relaxed mb-4">
-                  "{brandData.sections[3].quote.text}"
+                  "{(brandData.sections[3] as any).quote.text}"
                 </p>
                 <p className="text-base text-gray-900 font-semibold">
-                  — {brandData.sections[3].quote.author}
+                  — {(brandData.sections[3] as any).quote.author}
                 </p>
               </div>
             )}
 
             {/* Timeline - Carousel on Desktop, Accordion on Mobile */}
-            {brandData.sections[3].timeline && (
-              <TimelineSection timeline={brandData.sections[3].timeline} />
+            {(brandData.sections[3] as any).timeline && (
+              <TimelineSection timeline={(brandData.sections[3] as any).timeline} />
             )}
 
             {/* Did You Know Facts */}
-            {brandData.sections[3].facts && (
+            {(brandData.sections[3] as any).facts && (
               <div>
                 <h3 className="text-2xl font-light text-gray-900 mb-6">
                   Did you know?
                 </h3>
                 <div className="space-y-6">
-                  {brandData.sections[3].facts.map((fact, idx) => (
+                  {(brandData.sections[3] as any).facts.map((fact: any, idx: number) => (
                     <div
                       key={idx}
                       className="p-6 border border-gray-200 rounded-lg"
