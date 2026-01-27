@@ -410,14 +410,14 @@ export default function TheBrand() {
   return (
     <div className="pt-[104px] md:pt-[112px] font-['Archivo'] bg-white">
       {/* Hero Section */}
-      <section className="max-w-5xl mx-auto px-4 py-12 md:py-16 text-center">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-gray-900 mb-12">
+      <section className="max-w-5xl mx-auto px-4 pt-8 md:pt-12 pb-4 md:pb-6 text-center">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-gray-900 mb-8 md:mb-10">
           {brandData.hero_title}
         </h1>
 
         {/* Video Section */}
         {brandData.video_url && (
-          <div className="max-w-4xl mx-auto mb-12">
+          <div className="max-w-4xl mx-auto">
             <div
               className="relative w-full"
               style={{ paddingBottom: "56.25%" }}
@@ -439,7 +439,7 @@ export default function TheBrand() {
 
       {/* Our Mission Section */}
       {brandData.sections[0] && (
-        <section className="py-12 md:py-16 border-t border-gray-200">
+        <section className="pt-8 md:pt-10 pb-12 md:pb-16 border-t border-gray-200">
           <div className="max-w-5xl mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-light text-gray-900 mb-6">
               {brandData.sections[0].title}
