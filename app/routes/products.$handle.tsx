@@ -658,7 +658,7 @@ function ImageGallery({
         /* 2+ additional images: Standard grid layout */
         useSpecialGridLayout ? (
           /* Special 3-image grid layout - main image with two smaller images on right */
-          <div className="hidden md:grid md:grid-cols-[60%_40%] gap-2 items-start">
+          <div className="hidden md:grid md:grid-cols-[60%_40%] gap-2">
             {/* Main Large Image - Left - Clickable - Reduced by 20% for scientifique-k */}
             <div
               className={`${bgColor} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden`}
