@@ -471,11 +471,11 @@ function ImageGallery({
 
   // Get image positioning for specific products
   const getImageStyle = (imageIndex: number): React.CSSProperties => {
-    // For double-lash secondary images, shift the image down by 30%
+    // For double-lash secondary images, shift the image down
     if (isDoubleLash && imageIndex > 0) {
       return {
         imageRendering: "-webkit-optimize-contrast" as any,
-        objectPosition: "center 5%", // Shifts image down within container
+        objectPosition: "center 5%",
       };
     }
     return {
