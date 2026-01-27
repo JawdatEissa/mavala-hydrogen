@@ -83,7 +83,8 @@ function getLocalImages(slug: string): string[] {
   return [];
 }
 
-// Cache for processed products
+// Cache for processed products - cleared on module reload
+// Last regenerated: 2026-01-27 (manifest updated with 02/03 images)
 let cachedProducts: ScrapedProduct[] | null = null;
 
 /**

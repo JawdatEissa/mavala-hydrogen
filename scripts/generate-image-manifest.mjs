@@ -106,7 +106,7 @@ function getImagesFromFolder(folderPath, relativePath) {
       return result;
     }
     
-    // For non-shade folders, use original logic
+    // For non-shade folders: sort with main image first, then secondary (02, 03, etc.)
     const baseNames = new Map();
     for (const file of imageFiles) {
       const baseName = file.replace(/\.(jpg|jpeg|png|webp)$/i, '');
@@ -117,9 +117,37 @@ function getImagesFromFolder(folderPath, relativePath) {
       }
     }
     
-    return Array.from(baseNames.entries())
-      .sort((a, b) => a[0].localeCompare(b[0]))
-      .map(([_, filename]) => `/images/${relativePath}/${filename}`);
+    // Custom sort: main images first (00, 01, or non-numbered), then secondary (02, 03, etc.)
+    const entries = Array.from(baseNames.entries());
+    
+    // Categorize files
+    const mainImages = []; // 00_, 01_, or files not starting with 02-99
+    const secondaryImages = []; // 02, 03, etc. (secondary images without grey background)
+    
+    for (const [baseName, filename] of entries) {
+      // Check if it's a secondary image (starts with 02, 03, 04, etc. - pure number or number only)
+      const isSecondary = /^0[2-9]$|^[1-9][0-9]?$/.test(baseName) || /^0[2-9]_/.test(baseName);
+      
+      if (isSecondary) {
+        secondaryImages.push([baseName, filename]);
+      } else {
+        mainImages.push([baseName, filename]);
+      }
+    }
+    
+    // Sort each category
+    mainImages.sort((a, b) => a[0].localeCompare(b[0]));
+    secondaryImages.sort((a, b) => {
+      // Extract number for proper numeric sorting
+      const numA = parseInt(a[0].match(/^\d+/)?.[0] || '99');
+      const numB = parseInt(b[0].match(/^\d+/)?.[0] || '99');
+      return numA - numB;
+    });
+    
+    // Combine: main images first, then secondary
+    const sortedEntries = [...mainImages, ...secondaryImages];
+    
+    return sortedEntries.map(([_, filename]) => `/images/${relativePath}/${filename}`);
   } catch {
     return [];
   }

@@ -2,14 +2,6 @@
   "products": {
     "10ml-bottles": [
       "/images/10ml-bottles/01_90927+Vernis+prof.png",
-      "/images/10ml-bottles/02_Incolore+nail+shade.png",
-      "/images/10ml-bottles/03_White+nail+plate.png",
-      "/images/10ml-bottles/04_Geneve+nail+shade.png",
-      "/images/10ml-bottles/05_Platine+nail+shade.png",
-      "/images/10ml-bottles/06_Reno+nail+shade.png",
-      "/images/10ml-bottles/07_Arosa+nail+shade.png",
-      "/images/10ml-bottles/08_Samoa+nail+shade.png",
-      "/images/10ml-bottles/09_Baghdad+nail+shade.png",
       "/images/10ml-bottles/10_Hong+Kong+nail+shade.png",
       "/images/10ml-bottles/11_Cairo+nail+shade.png",
       "/images/10ml-bottles/12_Cadiz+nail+shade.png",
@@ -37,7 +29,15 @@
       "/images/10ml-bottles/34_Mexico+nail+shade.png",
       "/images/10ml-bottles/35_Tokyo+nail+shade.png",
       "/images/10ml-bottles/36_Silver+nail+plate.png",
-      "/images/10ml-bottles/37_Black+nail+plate.png"
+      "/images/10ml-bottles/37_Black+nail+plate.png",
+      "/images/10ml-bottles/02_Incolore+nail+shade.png",
+      "/images/10ml-bottles/03_White+nail+plate.png",
+      "/images/10ml-bottles/04_Geneve+nail+shade.png",
+      "/images/10ml-bottles/05_Platine+nail+shade.png",
+      "/images/10ml-bottles/06_Reno+nail+shade.png",
+      "/images/10ml-bottles/07_Arosa+nail+shade.png",
+      "/images/10ml-bottles/08_Samoa+nail+shade.png",
+      "/images/10ml-bottles/09_Baghdad+nail+shade.png"
     ],
     "a-rose-by-any-other-name": [
       "/images/a-rose-by-any-other-name/01_A+rose+by+any+other+name+gift+set+front.png",
@@ -246,8 +246,8 @@
     ],
     "barrier-base-coat": [
       "/images/barrier-base-coat/01_Barrier-Base.png",
-      "/images/barrier-base-coat/02_Mavala+cares.png",
-      "/images/barrier-base-coat/Mavala+cares.png"
+      "/images/barrier-base-coat/Mavala+cares.png",
+      "/images/barrier-base-coat/02_Mavala+cares.png"
     ],
     "bb-cream": [
       "/images/bb-cream/01_90512A+(with+reflection).png",
@@ -263,18 +263,12 @@
       "/images/beauty/Mavala_Soft_Khol_Pencils_Thumbnail.png"
     ],
     "bi-phase-make-up-remover": [
-      "/images/bi-phase-make-up-remover/01_Total+Bi-Phase.png"
+      "/images/bi-phase-make-up-remover/01_Total+Bi-Phase.png",
+      "/images/bi-phase-make-up-remover/02.webp",
+      "/images/bi-phase-make-up-remover/03.webp"
     ],
     "bio-colors": [
       "/images/bio-colors/01_MINI+Bio-Color+Showcard+A.png",
-      "/images/bio-colors/02_Mini+Bio-Color's.jpg",
-      "/images/bio-colors/03_MINI+Bio-Color+Corporate.png",
-      "/images/bio-colors/04_Mini+Bio-Color's+1.png",
-      "/images/bio-colors/05_Mini+Bio-Color's+3.png",
-      "/images/bio-colors/06_701+Rio+Grande.png",
-      "/images/bio-colors/07_702+Mississippi.png",
-      "/images/bio-colors/08_703+Nile.png",
-      "/images/bio-colors/09_704+RhÃ´ne.png",
       "/images/bio-colors/10_705+Volta.png",
       "/images/bio-colors/11_706+Thames.png",
       "/images/bio-colors/12_707+Colorado.png",
@@ -282,7 +276,15 @@
       "/images/bio-colors/14_709+Amazonas.png",
       "/images/bio-colors/15_710+Mekong.png",
       "/images/bio-colors/16_711+Shannon.png",
-      "/images/bio-colors/17_712+Indus.png"
+      "/images/bio-colors/17_712+Indus.png",
+      "/images/bio-colors/02_Mini+Bio-Color's.jpg",
+      "/images/bio-colors/03_MINI+Bio-Color+Corporate.png",
+      "/images/bio-colors/04_Mini+Bio-Color's+1.png",
+      "/images/bio-colors/05_Mini+Bio-Color's+3.png",
+      "/images/bio-colors/06_701+Rio+Grande.png",
+      "/images/bio-colors/07_702+Mississippi.png",
+      "/images/bio-colors/08_703+Nile.png",
+      "/images/bio-colors/09_704+RhÃ´ne.png"
     ],
     "bitten-nail": [
       "/images/bitten-nail/Bitten_nail.png",
@@ -315,14 +317,6 @@
     ],
     "blue-shades": [
       "/images/blue-shades/01_Blues.png",
-      "/images/blue-shades/02_Blue+Mint.png",
-      "/images/blue-shades/03_219+Blue+Siesta.png",
-      "/images/blue-shades/04_321-Gotland.png",
-      "/images/blue-shades/05_466+Ventosa+Springs+-+RVB.png",
-      "/images/blue-shades/06_115+Sky+Blue.png",
-      "/images/blue-shades/07_031+Mombasa.png",
-      "/images/blue-shades/08_999+Cyber+Blue.png",
-      "/images/blue-shades/09_987+Vibrant+Turquoise.png",
       "/images/blue-shades/10_171+Blue+Curaçao.png",
       "/images/blue-shades/11_447+Moorea.png",
       "/images/blue-shades/12_Blue+Mountain.png",
@@ -340,7 +334,15 @@
       "/images/blue-shades/24_434+MalmÃ¶.png",
       "/images/blue-shades/25_402+Detroit.png",
       "/images/blue-shades/26_Sao+Paulo.png",
-      "/images/blue-shades/27_image-asset.png"
+      "/images/blue-shades/27_image-asset.png",
+      "/images/blue-shades/02_Blue+Mint.png",
+      "/images/blue-shades/03_219+Blue+Siesta.png",
+      "/images/blue-shades/04_321-Gotland.png",
+      "/images/blue-shades/05_466+Ventosa+Springs+-+RVB.png",
+      "/images/blue-shades/06_115+Sky+Blue.png",
+      "/images/blue-shades/07_031+Mombasa.png",
+      "/images/blue-shades/08_999+Cyber+Blue.png",
+      "/images/blue-shades/09_987+Vibrant+Turquoise.png"
     ],
     "blush-colors": [
       "/images/blush-colors/01_Blush+Colors+Glosscar+Awards+Full+Showcard.png",
@@ -354,14 +356,6 @@
     ],
     "brown-shades": [
       "/images/brown-shades/01_Browns.png",
-      "/images/brown-shades/02_474+Fez+-+RVB.png",
-      "/images/brown-shades/03_981+-+Cacao.png",
-      "/images/brown-shades/04_977+-+Venezia.png",
-      "/images/brown-shades/05_223+Brown+Break.png",
-      "/images/brown-shades/06_432+Perth.png",
-      "/images/brown-shades/07_436+Sevilla.png",
-      "/images/brown-shades/08_Amber.png",
-      "/images/brown-shades/09_Makore.png",
       "/images/brown-shades/10_005+Maputo+copy.png",
       "/images/brown-shades/11_MySweetheart.png",
       "/images/brown-shades/12_136+Warm+Cognac.png",
@@ -372,7 +366,15 @@
       "/images/brown-shades/17_371+Bruges.png",
       "/images/brown-shades/18_437+Antwerpen.png",
       "/images/brown-shades/19_992-Walnut-Grove.png",
-      "/images/brown-shades/20_443+Slash.png"
+      "/images/brown-shades/20_443+Slash.png",
+      "/images/brown-shades/02_474+Fez+-+RVB.png",
+      "/images/brown-shades/03_981+-+Cacao.png",
+      "/images/brown-shades/04_977+-+Venezia.png",
+      "/images/brown-shades/05_223+Brown+Break.png",
+      "/images/brown-shades/06_432+Perth.png",
+      "/images/brown-shades/07_436+Sevilla.png",
+      "/images/brown-shades/08_Amber.png",
+      "/images/brown-shades/09_Makore.png"
     ],
     "bubble-gum": [
       "/images/bubble-gum/01_Bubble+Gum.png",
@@ -385,14 +387,6 @@
     ],
     "burgundy-shades": [
       "/images/burgundy-shades/01_Burgundy.png",
-      "/images/burgundy-shades/02_My+Love.png",
-      "/images/burgundy-shades/03_710+Mekong.png",
-      "/images/burgundy-shades/04_Riyadh.png",
-      "/images/burgundy-shades/05_Ankara.png",
-      "/images/burgundy-shades/06_St-Germain.png",
-      "/images/burgundy-shades/07_133+Velvet+Prune.png",
-      "/images/burgundy-shades/08_438+Pixel.png",
-      "/images/burgundy-shades/09_452+Bombay+-+RVB.png",
       "/images/burgundy-shades/10_27+Munich.png",
       "/images/burgundy-shades/11_Montevideo.png",
       "/images/burgundy-shades/12_092+New+Dehli.png",
@@ -404,7 +398,15 @@
       "/images/burgundy-shades/18_My+Angel.png",
       "/images/burgundy-shades/19_403+Manaus.png",
       "/images/burgundy-shades/20_Madras.png",
-      "/images/burgundy-shades/21_Burgundy.png"
+      "/images/burgundy-shades/21_Burgundy.png",
+      "/images/burgundy-shades/02_My+Love.png",
+      "/images/burgundy-shades/03_710+Mekong.png",
+      "/images/burgundy-shades/04_Riyadh.png",
+      "/images/burgundy-shades/05_Ankara.png",
+      "/images/burgundy-shades/06_St-Germain.png",
+      "/images/burgundy-shades/07_133+Velvet+Prune.png",
+      "/images/burgundy-shades/08_438+Pixel.png",
+      "/images/burgundy-shades/09_452+Bombay+-+RVB.png"
     ],
     "care": [
       "/images/care/9093420_Eye_Makeup_Remover_Pads.png",
@@ -530,8 +532,8 @@
     ],
     "colorfix": [
       "/images/colorfix/01_Colorfix.png",
-      "/images/colorfix/02_Colorfix+5ml.png",
-      "/images/colorfix/Colorfix+5ml.png"
+      "/images/colorfix/Colorfix+5ml.png",
+      "/images/colorfix/02_Colorfix+5ml.png"
     ],
     "complexion": [
       "/images/complexion/dream-foundation.png",
@@ -557,14 +559,6 @@
     ],
     "coral-shades": [
       "/images/coral-shades/01_Corals.png",
-      "/images/coral-shades/02_442+Cookies.png",
-      "/images/coral-shades/03_Lima.png",
-      "/images/coral-shades/04_427+Figueria.png",
-      "/images/coral-shades/05_Baghdad.png",
-      "/images/coral-shades/06_Solar+Light.png",
-      "/images/coral-shades/07_147+Pondicherry.png",
-      "/images/coral-shades/08_Long+Island.png",
-      "/images/coral-shades/09_019+Hong-Kong.png",
       "/images/coral-shades/10_014+St-Tropez.png",
       "/images/coral-shades/11_099+Las+Perlas.png",
       "/images/coral-shades/12_441+Pop-up.png",
@@ -574,15 +568,23 @@
       "/images/coral-shades/16_426+Tamarindo.png",
       "/images/coral-shades/17_458+Yummy+Mango+-+RVB.png",
       "/images/coral-shades/18_Tahiti.png",
-      "/images/coral-shades/19_Coral+Bay.png"
+      "/images/coral-shades/19_Coral+Bay.png",
+      "/images/coral-shades/02_442+Cookies.png",
+      "/images/coral-shades/03_Lima.png",
+      "/images/coral-shades/04_427+Figueria.png",
+      "/images/coral-shades/05_Baghdad.png",
+      "/images/coral-shades/06_Solar+Light.png",
+      "/images/coral-shades/07_147+Pondicherry.png",
+      "/images/coral-shades/08_Long+Island.png",
+      "/images/coral-shades/09_019+Hong-Kong.png"
     ],
     "correcteur-pen": [
       "/images/correcteur-pen/01_Correcteur-Pen.png",
-      "/images/correcteur-pen/02_Correcteur+pen+other.png",
-      "/images/correcteur-pen/03_Photo+13-12-2015,+15+50+55.png",
       "/images/correcteur-pen/Correcteur-Pen.png",
       "/images/correcteur-pen/Correcteur+pen+other.png",
-      "/images/correcteur-pen/Photo+13-12-2015,+15+50+55.png"
+      "/images/correcteur-pen/Photo+13-12-2015,+15+50+55.png",
+      "/images/correcteur-pen/02_Correcteur+pen+other.png",
+      "/images/correcteur-pen/03_Photo+13-12-2015,+15+50+55.png"
     ],
     "cosmetic-pencil-sharpener": [
       "/images/cosmetic-pencil-sharpener/01_Crayon.png"
@@ -602,14 +604,6 @@
     ],
     "cream-colors": [
       "/images/cream-colors/01_Cream.png",
-      "/images/cream-colors/02_IMG_5521.jpg",
-      "/images/cream-colors/03_IMG_5788.jpg",
-      "/images/cream-colors/04_IMG_5534.jpg",
-      "/images/cream-colors/05_Paris+3.png",
-      "/images/cream-colors/06_White.png",
-      "/images/cream-colors/07_047+Izmir-sRGB.png",
-      "/images/cream-colors/08_Arosa.png",
-      "/images/cream-colors/09_091+Reno-sRGB.png",
       "/images/cream-colors/1_ANKARA.png",
       "/images/cream-colors/10_Fresh+Melon.png",
       "/images/cream-colors/11_302+Jaipur.png",
@@ -727,7 +721,15 @@
       "/images/cream-colors/92_NEW_DELHI.png",
       "/images/cream-colors/97_WICHITA.png",
       "/images/cream-colors/98_MARRAKECH.png",
-      "/images/cream-colors/MINI_COLOR_WITH_REFLECTION.png"
+      "/images/cream-colors/MINI_COLOR_WITH_REFLECTION.png",
+      "/images/cream-colors/02_IMG_5521.jpg",
+      "/images/cream-colors/03_IMG_5788.jpg",
+      "/images/cream-colors/04_IMG_5534.jpg",
+      "/images/cream-colors/05_Paris+3.png",
+      "/images/cream-colors/06_White.png",
+      "/images/cream-colors/07_047+Izmir-sRGB.png",
+      "/images/cream-colors/08_Arosa.png",
+      "/images/cream-colors/09_091+Reno-sRGB.png"
     ],
     "creamy-mascara": [
       "/images/creamy-mascara/01_Creamy+Mascara+A.png",
@@ -739,20 +741,12 @@
     ],
     "crystal-nail-polish-remover": [
       "/images/crystal-nail-polish-remover/01_90926.20.png",
-      "/images/crystal-nail-polish-remover/02_Nail+Polish+Remover+Crystal+50ml.png",
       "/images/crystal-nail-polish-remover/90926.20.png",
-      "/images/crystal-nail-polish-remover/Nail+Polish+Remover+Crystal+50ml.png"
+      "/images/crystal-nail-polish-remover/Nail+Polish+Remover+Crystal+50ml.png",
+      "/images/crystal-nail-polish-remover/02_Nail+Polish+Remover+Crystal+50ml.png"
     ],
     "cube": [
       "/images/cube/01_Cube+4+Color's+picture+3.png",
-      "/images/cube/02_040+Super+Base.png",
-      "/images/cube/03_042+Top+Coat+Fixator.png",
-      "/images/cube/04_Pink+Diamond.png",
-      "/images/cube/05_132+Duchess+Rose.png",
-      "/images/cube/06_Iris+Orchid.png",
-      "/images/cube/07_455+Babylon+-+RVB.png",
-      "/images/cube/08_097+Wichita.png",
-      "/images/cube/09_Mon+Amour.png",
       "/images/cube/10_053+London.png",
       "/images/cube/11_025+Copenhagen.png",
       "/images/cube/12_022+Geneve.png",
@@ -764,15 +758,23 @@
       "/images/cube/18_434+MalmÃ¶.png",
       "/images/cube/19_331+Blue+Twist.png",
       "/images/cube/20_105+Antarctic.png",
-      "/images/cube/21_151+Marron+Glacé.png"
+      "/images/cube/21_151+Marron+Glacé.png",
+      "/images/cube/02_040+Super+Base.png",
+      "/images/cube/03_042+Top+Coat+Fixator.png",
+      "/images/cube/04_Pink+Diamond.png",
+      "/images/cube/05_132+Duchess+Rose.png",
+      "/images/cube/06_Iris+Orchid.png",
+      "/images/cube/07_455+Babylon+-+RVB.png",
+      "/images/cube/08_097+Wichita.png",
+      "/images/cube/09_Mon+Amour.png"
     ],
     "cuticle-care": [
       "/images/cuticle-care/01_Nail+Care+Kit+Cuticle.png"
     ],
     "cuticle-cream": [
       "/images/cuticle-cream/01_Cuticle+Cream.png",
-      "/images/cuticle-cream/02_Mavala+cares.png",
-      "/images/cuticle-cream/Mavala+cares.png"
+      "/images/cuticle-cream/Mavala+cares.png",
+      "/images/cuticle-cream/02_Mavala+cares.png"
     ],
     "cuticle-nippers": [
       "/images/cuticle-nippers/01_71101+Cuticle+Nippers.png",
@@ -780,8 +782,8 @@
     ],
     "cuticle-oil": [
       "/images/cuticle-oil/01_Cuticle+Oil.png",
-      "/images/cuticle-oil/02_Cuticle+Oil+5ml.png",
-      "/images/cuticle-oil/Cuticle+Oil+5ml.png"
+      "/images/cuticle-oil/Cuticle+Oil+5ml.png",
+      "/images/cuticle-oil/02_Cuticle+Oil+5ml.png"
     ],
     "cuticle-remover": [
       "/images/cuticle-remover/Cuticle-remover-5ml.png",
@@ -921,6 +923,8 @@
     ],
     "eclectic-colors": [
       "/images/eclectic-colors/01_Eclectic+Collection-1.png",
+      "/images/eclectic-colors/10_268+Budapest.png",
+      "/images/eclectic-colors/11_270+Firenze.png",
       "/images/eclectic-colors/02_elegant-fall-nail-colours-fall-nail-art.jpg",
       "/images/eclectic-colors/03_IMG_5786.jpg",
       "/images/eclectic-colors/04_brown-fall-nails-mavala-firenze.jpg",
@@ -928,15 +932,13 @@
       "/images/eclectic-colors/06_237+Basel.png",
       "/images/eclectic-colors/07_238+Sao+Paulo.png",
       "/images/eclectic-colors/08_239+Barcelona.png",
-      "/images/eclectic-colors/09_266+Singapore.png",
-      "/images/eclectic-colors/10_268+Budapest.png",
-      "/images/eclectic-colors/11_270+Firenze.png"
+      "/images/eclectic-colors/09_266+Singapore.png"
     ],
     "emery-boards": [
       "/images/emery-boards/01_9090612+Emery+Boards.png",
-      "/images/emery-boards/02_Mini++Emery+Boards+-+grey.png",
       "/images/emery-boards/9090612+Emery+Boards.png",
-      "/images/emery-boards/Mini++Emery+Boards+-+grey.png"
+      "/images/emery-boards/Mini++Emery+Boards+-+grey.png",
+      "/images/emery-boards/02_Mini++Emery+Boards+-+grey.png"
     ],
     "extra-soft-foot-care": [
       "/images/extra-soft-foot-care/01_Extra+Soft+Foot+Care+Duo.png"
@@ -957,14 +959,6 @@
     ],
     "eye-shadow-crayon": [
       "/images/eye-shadow-crayon/01_crayon-lumiere.png",
-      "/images/eye-shadow-crayon/02_Blanc+Argente.png",
-      "/images/eye-shadow-crayon/03_Beige-Nude.png",
-      "/images/eye-shadow-crayon/04_Beige+Cendre.png",
-      "/images/eye-shadow-crayon/05_Marron-Givre.png",
-      "/images/eye-shadow-crayon/06_Gris+Cosmique.png",
-      "/images/eye-shadow-crayon/07_Gris+Perle.png",
-      "/images/eye-shadow-crayon/08_Perle+Noire.png",
-      "/images/eye-shadow-crayon/09_Bleu+Sapphir.png",
       "/images/eye-shadow-crayon/10_Bleu-Nuit.png",
       "/images/eye-shadow-crayon/11_Bleu+Tempete.png",
       "/images/eye-shadow-crayon/12_clear-blue.png",
@@ -981,7 +975,15 @@
       "/images/eye-shadow-crayon/23_Prune+Flambee.png",
       "/images/eye-shadow-crayon/24_Violet+Cerise.png",
       "/images/eye-shadow-crayon/25_Ultra+Violet.png",
-      "/images/eye-shadow-crayon/26_Mavala+cares.png"
+      "/images/eye-shadow-crayon/26_Mavala+cares.png",
+      "/images/eye-shadow-crayon/02_Blanc+Argente.png",
+      "/images/eye-shadow-crayon/03_Beige-Nude.png",
+      "/images/eye-shadow-crayon/04_Beige+Cendre.png",
+      "/images/eye-shadow-crayon/05_Marron-Givre.png",
+      "/images/eye-shadow-crayon/06_Gris+Cosmique.png",
+      "/images/eye-shadow-crayon/07_Gris+Perle.png",
+      "/images/eye-shadow-crayon/08_Perle+Noire.png",
+      "/images/eye-shadow-crayon/09_Bleu+Sapphir.png"
     ],
     "eyebrow-pencil": [
       "/images/eyebrow-pencil/01_eye-lite.png",
@@ -1058,6 +1060,7 @@
     ],
     "first-class": [
       "/images/first-class/01_First+Class+Collection-1.jpg",
+      "/images/first-class/10_365+Cortina.png",
       "/images/first-class/02_MAVALA+FIRST+CLASS+COLLECTION,+mavala+nail+polish,+FB101.png",
       "/images/first-class/03_IMG_5787.jpg",
       "/images/first-class/04_MAVALA+FIRST+CLASS+COLLECTION,+mavala+nail+polish,+FB102.jpg",
@@ -1065,8 +1068,7 @@
       "/images/first-class/06_317+Tahiti.png",
       "/images/first-class/07_318+Spitzberg.png",
       "/images/first-class/08_363+Long+Island.png",
-      "/images/first-class/09_364+Cape+Town.png",
-      "/images/first-class/10_365+Cortina.png"
+      "/images/first-class/09_364+Cape+Town.png"
     ],
     "flower-magic": [
       "/images/flower-magic/01_Flower+Magic+Color's+Showcard+A.jpg",
@@ -1093,14 +1095,6 @@
     ],
     "french-manicure-kit": [
       "/images/french-manicure-kit/01_French+Manicure+-+White.png",
-      "/images/french-manicure-kit/02_French+Manicure+-+Silver.png",
-      "/images/french-manicure-kit/03_French+Manicure+-+Ice.png",
-      "/images/french-manicure-kit/04_French+Manicure+-+Pink.png",
-      "/images/french-manicure-kit/05_White.png",
-      "/images/french-manicure-kit/06_091+Reno.png",
-      "/images/french-manicure-kit/07_041+Minute+Quick+Finish.png",
-      "/images/french-manicure-kit/08_022+Geneve.png",
-      "/images/french-manicure-kit/09_Arosa.png",
       "/images/french-manicure-kit/10_041+Minute+Quick+Finish.png",
       "/images/french-manicure-kit/11_399+Lotus.png",
       "/images/french-manicure-kit/12_324+Iceberg.png",
@@ -1108,20 +1102,34 @@
       "/images/french-manicure-kit/14_White.png",
       "/images/french-manicure-kit/15_056+Riga.png",
       "/images/french-manicure-kit/16_041+Minute+Quick+Finish.png",
-      "/images/french-manicure-kit/17_image-asset.png"
+      "/images/french-manicure-kit/17_image-asset.png",
+      "/images/french-manicure-kit/02_French+Manicure+-+Silver.png",
+      "/images/french-manicure-kit/03_French+Manicure+-+Ice.png",
+      "/images/french-manicure-kit/04_French+Manicure+-+Pink.png",
+      "/images/french-manicure-kit/05_White.png",
+      "/images/french-manicure-kit/06_091+Reno.png",
+      "/images/french-manicure-kit/07_041+Minute+Quick+Finish.png",
+      "/images/french-manicure-kit/08_022+Geneve.png",
+      "/images/french-manicure-kit/09_Arosa.png"
     ],
     "french-manicure-stickers": [
       "/images/french-manicure-stickers/01_Sticker+guides.png",
       "/images/french-manicure-stickers/Sticker+guides.png"
     ],
     "gel-finish-top-coat": [
-      "/images/gel-finish-top-coat/00.png"
+      "/images/gel-finish-top-coat/00.png",
+      "/images/gel-finish-top-coat/02.jpg",
+      "/images/gel-finish-top-coat/03.jpg"
     ],
     "gift-card": [
       "/images/gift-card/01_Mavala-Gift-Card.png"
     ],
     "gold-shades": [
       "/images/gold-shades/01_Gold.png",
+      "/images/gold-shades/10_032+Bangkok.png",
+      "/images/gold-shades/11_26+Seoul.png",
+      "/images/gold-shades/12_454+Constantinople+-+RVB.png",
+      "/images/gold-shades/13_468+Zephyropolis+-+RVB.png",
       "/images/gold-shades/02_998+Cyber+Gold.png",
       "/images/gold-shades/03_988-Santiago.png",
       "/images/gold-shades/04_990-Versailles.png",
@@ -1129,14 +1137,14 @@
       "/images/gold-shades/06_Gold.png",
       "/images/gold-shades/07_135+Amber+Drop.png",
       "/images/gold-shades/08_991-Quebec.png",
-      "/images/gold-shades/09_405+Rangoon.png",
-      "/images/gold-shades/10_032+Bangkok.png",
-      "/images/gold-shades/11_26+Seoul.png",
-      "/images/gold-shades/12_454+Constantinople+-+RVB.png",
-      "/images/gold-shades/13_468+Zephyropolis+-+RVB.png"
+      "/images/gold-shades/09_405+Rangoon.png"
     ],
     "green-shades": [
       "/images/green-shades/01_set-of-3-Green-minis.png",
+      "/images/green-shades/10_414+Grass+Green.png",
+      "/images/green-shades/11_25+Copenhagen.png",
+      "/images/green-shades/12_460+Yummy+Matcha+-+RVB.png",
+      "/images/green-shades/13_Green+Apple.png",
       "/images/green-shades/02_123+Edinburgh.png",
       "/images/green-shades/03_456+York+-+RVB.png",
       "/images/green-shades/04_470+Perugia+-+RVB.png",
@@ -1144,22 +1152,10 @@
       "/images/green-shades/06_222+Green+Zen.png",
       "/images/green-shades/07_982+Naive+Mint.png",
       "/images/green-shades/08_059+Phuket.png",
-      "/images/green-shades/09_304+Bamako.png",
-      "/images/green-shades/10_414+Grass+Green.png",
-      "/images/green-shades/11_25+Copenhagen.png",
-      "/images/green-shades/12_460+Yummy+Matcha+-+RVB.png",
-      "/images/green-shades/13_Green+Apple.png"
+      "/images/green-shades/09_304+Bamako.png"
     ],
     "grey-shades": [
       "/images/grey-shades/01_Greys.png",
-      "/images/grey-shades/02_Silver.png",
-      "/images/grey-shades/03_463+Sirocco+City+-+RVB.png",
-      "/images/grey-shades/04_996+Cyber+Silver.png",
-      "/images/grey-shades/05_28+Austin.png",
-      "/images/grey-shades/06_012+Berlin.png",
-      "/images/grey-shades/07_039+Bruxelles+copy.png",
-      "/images/grey-shades/08_453+Christiania+-+RVB.png",
-      "/images/grey-shades/09_137+Flannel+Grey.png",
       "/images/grey-shades/10_217+New+York.png",
       "/images/grey-shades/11_401+Inverness.png",
       "/images/grey-shades/12_51+Melbourne.png",
@@ -1169,7 +1165,15 @@
       "/images/grey-shades/16_Basel.png",
       "/images/grey-shades/17_451+Saigon+-+RVB.png",
       "/images/grey-shades/18_Marron+Glace.png",
-      "/images/grey-shades/19_218+Minsk.png"
+      "/images/grey-shades/19_218+Minsk.png",
+      "/images/grey-shades/02_Silver.png",
+      "/images/grey-shades/03_463+Sirocco+City+-+RVB.png",
+      "/images/grey-shades/04_996+Cyber+Silver.png",
+      "/images/grey-shades/05_28+Austin.png",
+      "/images/grey-shades/06_012+Berlin.png",
+      "/images/grey-shades/07_039+Bruxelles+copy.png",
+      "/images/grey-shades/08_453+Christiania+-+RVB.png",
+      "/images/grey-shades/09_137+Flannel+Grey.png"
     ],
     "hand-cream": [
       "/images/hand-cream/01_Mavala-hand-cream.png",
@@ -1241,6 +1245,11 @@
     ],
     "khol-kajal-eye-contour-pencil": [
       "/images/khol-kajal-eye-contour-pencil/01_khol-kajal-crayon.png",
+      "/images/khol-kajal-eye-contour-pencil/10_Vert+Vif.png",
+      "/images/khol-kajal-eye-contour-pencil/11_Bleu+Argent.png",
+      "/images/khol-kajal-eye-contour-pencil/12_Bleu+Orage.png",
+      "/images/khol-kajal-eye-contour-pencil/13_Bleu+Minuit.png",
+      "/images/khol-kajal-eye-contour-pencil/14_Violine.png",
       "/images/khol-kajal-eye-contour-pencil/02_blanc-nacre.png",
       "/images/khol-kajal-eye-contour-pencil/03_Gris+Subtil.png",
       "/images/khol-kajal-eye-contour-pencil/04_Gris+Anthracite.png",
@@ -1248,12 +1257,7 @@
       "/images/khol-kajal-eye-contour-pencil/06_Brun.png",
       "/images/khol-kajal-eye-contour-pencil/07_Or.png",
       "/images/khol-kajal-eye-contour-pencil/08_Bronze+Profond.png",
-      "/images/khol-kajal-eye-contour-pencil/09_Vert+Mordore.png",
-      "/images/khol-kajal-eye-contour-pencil/10_Vert+Vif.png",
-      "/images/khol-kajal-eye-contour-pencil/11_Bleu+Argent.png",
-      "/images/khol-kajal-eye-contour-pencil/12_Bleu+Orage.png",
-      "/images/khol-kajal-eye-contour-pencil/13_Bleu+Minuit.png",
-      "/images/khol-kajal-eye-contour-pencil/14_Violine.png"
+      "/images/khol-kajal-eye-contour-pencil/09_Vert+Mordore.png"
     ],
     "lack-of-radiance": [
       "/images/lack-of-radiance/9053401A.png",
@@ -1286,14 +1290,6 @@
     ],
     "lip-gloss": [
       "/images/lip-gloss/01_90960+Lip+Gloss+Square.png",
-      "/images/lip-gloss/02_Lip+Gloss+1.jpg",
-      "/images/lip-gloss/03_Lip+Gloss+2.jpg",
-      "/images/lip-gloss/04_Lip+Gloss+5.png",
-      "/images/lip-gloss/05_1.+Post+Neo+Lips+-+Post+1.jpg",
-      "/images/lip-gloss/06_3.+Post+Neo+Lips+-+Post+3.jpg",
-      "/images/lip-gloss/07_Margarita.png",
-      "/images/lip-gloss/08_Granita.png",
-      "/images/lip-gloss/09_10+Daiquiri+swatch.png",
       "/images/lip-gloss/10_Mirabelle.png",
       "/images/lip-gloss/11_Nougat.png",
       "/images/lip-gloss/12_Mocha+Mousse.png",
@@ -1312,7 +1308,15 @@
       "/images/lip-gloss/25_Macaroon.png",
       "/images/lip-gloss/26_Goyave.png",
       "/images/lip-gloss/27_Cassis.png",
-      "/images/lip-gloss/28_13+Marshmallow+swatch.png"
+      "/images/lip-gloss/28_13+Marshmallow+swatch.png",
+      "/images/lip-gloss/02_Lip+Gloss+1.jpg",
+      "/images/lip-gloss/03_Lip+Gloss+2.jpg",
+      "/images/lip-gloss/04_Lip+Gloss+5.png",
+      "/images/lip-gloss/05_1.+Post+Neo+Lips+-+Post+1.jpg",
+      "/images/lip-gloss/06_3.+Post+Neo+Lips+-+Post+3.jpg",
+      "/images/lip-gloss/07_Margarita.png",
+      "/images/lip-gloss/08_Granita.png",
+      "/images/lip-gloss/09_10+Daiquiri+swatch.png"
     ],
     "lip-liner-pencil": [
       "/images/lip-liner-pencil/01_Lip-Liner-Pencil.png",
@@ -1327,14 +1331,6 @@
     ],
     "lip-shine": [
       "/images/lip-shine/01_Lip-Shine+with+box.png",
-      "/images/lip-shine/02_Lip-Shine+Corporate.png",
-      "/images/lip-shine/03_Lip-Shine+1.jpg",
-      "/images/lip-shine/04_Lip-Shine+4.jpg",
-      "/images/lip-shine/05_Lip-Shine+Eiffel.jpg",
-      "/images/lip-shine/06_Lip-Shine+2.jpg",
-      "/images/lip-shine/07_318+Acropolis+swatch.png",
-      "/images/lip-shine/08_328+Pampa+swatch.png",
-      "/images/lip-shine/09_304+Colosseum+swatch.png",
       "/images/lip-shine/10_325+Ayers+Rock+swatch.png",
       "/images/lip-shine/11_310+Alhambra+swatch.png",
       "/images/lip-shine/12_327+Boboli+swatch.png",
@@ -1360,7 +1356,15 @@
       "/images/lip-shine/33_312+Big+Ben+swatch.png",
       "/images/lip-shine/34_315+Liberty+swatch.png",
       "/images/lip-shine/35_322+Sigiriya+swatch.png",
-      "/images/lip-shine/36_309+Babylon+swatch.png"
+      "/images/lip-shine/36_309+Babylon+swatch.png",
+      "/images/lip-shine/02_Lip-Shine+Corporate.png",
+      "/images/lip-shine/03_Lip-Shine+1.jpg",
+      "/images/lip-shine/04_Lip-Shine+4.jpg",
+      "/images/lip-shine/05_Lip-Shine+Eiffel.jpg",
+      "/images/lip-shine/06_Lip-Shine+2.jpg",
+      "/images/lip-shine/07_318+Acropolis+swatch.png",
+      "/images/lip-shine/08_328+Pampa+swatch.png",
+      "/images/lip-shine/09_304+Colosseum+swatch.png"
     ],
     "liquid-eye-liner": [
       "/images/liquid-eye-liner/01_Liquid+Eye+Liner+Web.png",
@@ -1394,17 +1398,17 @@
     ],
     "manicure-pill": [
       "/images/manicure-pill/01_Manicure+Pills.png",
-      "/images/manicure-pill/02_9090610+Pilules+Manucure+prof.png",
-      "/images/manicure-pill/03_Manicure+Pill.jpg",
       "/images/manicure-pill/9090610+Pilules+Manucure+prof.png",
       "/images/manicure-pill/Manicure+Pill.jpg",
-      "/images/manicure-pill/Manicure+Pills.png"
+      "/images/manicure-pill/Manicure+Pills.png",
+      "/images/manicure-pill/02_9090610+Pilules+Manucure+prof.png",
+      "/images/manicure-pill/03_Manicure+Pill.jpg"
     ],
     "manicure-sticks": [
       "/images/manicure-sticks/01_9090613+Manicure+sticks.png",
-      "/images/manicure-sticks/02_9090652+BÃ¢tonnets+Manucure+prof.png",
       "/images/manicure-sticks/9090613+Manicure+sticks.png",
-      "/images/manicure-sticks/9090652+BÃ¢tonnets+Manucure+prof.png"
+      "/images/manicure-sticks/9090652+BÃ¢tonnets+Manucure+prof.png",
+      "/images/manicure-sticks/02_9090652+BÃ¢tonnets+Manucure+prof.png"
     ],
     "mava-clear": [
       "/images/mava-clear/01_MAVA-CLEAR+Tube.png",
@@ -1412,54 +1416,53 @@
       "/images/mava-clear/03_Mava+Clear.png"
     ],
     "mava-flex-1": [
-      "/images/mava-flex-1/01_Mavaflex.png"
+      "/images/mava-flex-1/01_Mavaflex.png",
+      "/images/mava-flex-1/02.jpg",
+      "/images/mava-flex-1/03.jpg"
     ],
     "mava-hand-cream-1": [
       "/images/mava-hand-cream-1/01_MAVA+.png"
     ],
     "mava-med": [
       "/images/mava-med/01_mava-med.png",
-      "/images/mava-med/02_mava-med.png"
+      "/images/mava-med/02.jpg",
+      "/images/mava-med/03.jpg"
     ],
     "mava-strong": [
-      "/images/mava-strong/01_Mava-Strong-1.png"
+      "/images/mava-strong/01_Mava-Strong-1.png",
+      "/images/mava-strong/02.jpg",
+      "/images/mava-strong/03.jpg"
     ],
     "mava-white": [
-      "/images/mava-white/00_Mava-White.png"
+      "/images/mava-white/00_Mava-White.png",
+      "/images/mava-white/02.jpg",
+      "/images/mava-white/03.jpg"
     ],
     "mavaderma": [
       "/images/mavaderma/01_Mavaderma.png",
-      "/images/mavaderma/02_Mavaderma+5ml.png",
-      "/images/mavaderma/03_9090150+Mavaderma+prof.png",
       "/images/mavaderma/9090150+Mavaderma+prof.png",
-      "/images/mavaderma/Mavaderma+5ml.png"
+      "/images/mavaderma/Mavaderma+5ml.png",
+      "/images/mavaderma/02_Mavaderma+5ml.png",
+      "/images/mavaderma/03_9090150+Mavaderma+prof.png"
     ],
     "mavadry": [
       "/images/mavadry/01_Mava-Dry.png",
-      "/images/mavadry/02_Mavadry+5ml.png",
-      "/images/mavadry/Mavadry+5ml.png"
+      "/images/mavadry/Mavadry+5ml.png",
+      "/images/mavadry/02_Mavadry+5ml.png"
     ],
     "mavadry-spray": [
       "/images/mavadry-spray/01_Mavadry+Spray.png",
-      "/images/mavadry-spray/02_JP+Mavadry+Spray.png",
-      "/images/mavadry-spray/JP+Mavadry+Spray.jpg"
+      "/images/mavadry-spray/JP+Mavadry+Spray.jpg",
+      "/images/mavadry-spray/02_JP+Mavadry+Spray.png"
     ],
     "mavala-002-protective-base-coat": [
       "/images/mavala-002-protective-base-coat/01_Mavala+002+with+silicium.png",
-      "/images/mavala-002-protective-base-coat/02_9090261+MAVALA+002+protective+base+carded+5ml.png",
       "/images/mavala-002-protective-base-coat/9090261+MAVALA+002+protective+base+carded+5ml.png",
-      "/images/mavala-002-protective-base-coat/Mavala+002+with+silicium.png"
+      "/images/mavala-002-protective-base-coat/Mavala+002+with+silicium.png",
+      "/images/mavala-002-protective-base-coat/02_9090261+MAVALA+002+protective+base+carded+5ml.png"
     ],
     "mavala-lipstick": [
       "/images/mavala-lipstick/01_Wild+Poppy+Award.png",
-      "/images/mavala-lipstick/02_IMG_5752.jpg",
-      "/images/mavala-lipstick/03_IMG_5774.jpg",
-      "/images/mavala-lipstick/04_IMG_5775.png",
-      "/images/mavala-lipstick/05_Oh+la+la+Collection+Card.png",
-      "/images/mavala-lipstick/06_679+Boom-Boom+lipstick.png",
-      "/images/mavala-lipstick/07_680+Zig-Zag+lipstick.png",
-      "/images/mavala-lipstick/08_681+Ding-Dong+lipstick.png",
-      "/images/mavala-lipstick/09_682+Frou-Frou+lipstick.png",
       "/images/mavala-lipstick/10_683+Bye-Bye+lipstick.png",
       "/images/mavala-lipstick/11_684+Bling-Bling+lipstick.png",
       "/images/mavala-lipstick/12_586-Eldorado.png",
@@ -1549,7 +1552,15 @@
       "/images/mavala-lipstick/96_677+Mokka+Delight.png",
       "/images/mavala-lipstick/97_680+Zig-Zag+lipstick.png",
       "/images/mavala-lipstick/98_684+Bling-Bling+lipstick.png",
-      "/images/mavala-lipstick/99_Mavala+cares.png"
+      "/images/mavala-lipstick/99_Mavala+cares.png",
+      "/images/mavala-lipstick/02_IMG_5752.jpg",
+      "/images/mavala-lipstick/03_IMG_5774.jpg",
+      "/images/mavala-lipstick/04_IMG_5775.png",
+      "/images/mavala-lipstick/05_Oh+la+la+Collection+Card.png",
+      "/images/mavala-lipstick/06_679+Boom-Boom+lipstick.png",
+      "/images/mavala-lipstick/07_680+Zig-Zag+lipstick.png",
+      "/images/mavala-lipstick/08_681+Ding-Dong+lipstick.png",
+      "/images/mavala-lipstick/09_682+Frou-Frou+lipstick.png"
     ],
     "mavala-scientifique-1": [
       "/images/mavala-scientifique-1/01.png",
@@ -1567,7 +1578,9 @@
       "/images/mavala-stop/03.jpg"
     ],
     "mavala-stop-pen": [
-      "/images/mavala-stop-pen/Mavala+Stop-Pen+A-F-esp.png"
+      "/images/mavala-stop-pen/Mavala+Stop-Pen+A-F-esp.png",
+      "/images/mavala-stop-pen/02.jpg",
+      "/images/mavala-stop-pen/03.jpg"
     ],
     "mavalia-concealer": [
       "/images/mavalia-concealer/01_Perfect+Concealer.png",
@@ -1577,6 +1590,11 @@
     ],
     "mavalip-lipstick": [
       "/images/mavalip-lipstick/01_Mavalip.png",
+      "/images/mavalip-lipstick/10_102+Sofia.png",
+      "/images/mavalip-lipstick/11__220+Tijuana.png",
+      "/images/mavalip-lipstick/12__223+Bologna.png",
+      "/images/mavalip-lipstick/13_122+Bermuda.png",
+      "/images/mavalip-lipstick/14_Mavala+cares.png",
       "/images/mavalip-lipstick/02__214+Balla+Balla.png",
       "/images/mavalip-lipstick/03__212+Nagoya.png",
       "/images/mavalip-lipstick/04__215+Palma.png",
@@ -1584,20 +1602,16 @@
       "/images/mavalip-lipstick/06_177+Sarasota.png",
       "/images/mavalip-lipstick/07_130+California.png",
       "/images/mavalip-lipstick/08__219+Alexandria.png",
-      "/images/mavalip-lipstick/09_Cordoba.png",
-      "/images/mavalip-lipstick/10_102+Sofia.png",
-      "/images/mavalip-lipstick/11__220+Tijuana.png",
-      "/images/mavalip-lipstick/12__223+Bologna.png",
-      "/images/mavalip-lipstick/13_122+Bermuda.png",
-      "/images/mavalip-lipstick/14_Mavala+cares.png"
+      "/images/mavalip-lipstick/09_Cordoba.png"
     ],
     "mavapen": [
-      "/images/mavapen/Mavapen.png"
+      "/images/mavapen/Mavapen.png",
+      "/images/mavapen/02.jpg",
+      "/images/mavapen/03.jpg"
     ],
     "micellar-water": [
       "/images/micellar-water/01_Clean+&+Comfort+Micellar+Water+200ml.png",
       "/images/micellar-water/02_9052560F-A.png",
-      "/images/micellar-water/03_image-asset.png",
       "/images/micellar-water/04_Micellar+Water+Texture.png"
     ],
     "micro-mist": [
@@ -1688,14 +1702,6 @@
     ],
     "mini-colors-collection-set": [
       "/images/mini-colors-collection-set/01_Coffret+6+vernis+-+So+Future.png",
-      "/images/mini-colors-collection-set/02_T&S-Set-Square.png",
-      "/images/mini-colors-collection-set/03_I+love+Mini's+Gift+Box.png",
-      "/images/mini-colors-collection-set/04_457+Yummy+Berry+-+RVB.png",
-      "/images/mini-colors-collection-set/05_458+Yummy+Mango+-+RVB.png",
-      "/images/mini-colors-collection-set/06_459+Yummy+Pomelo+-+RVB.png",
-      "/images/mini-colors-collection-set/07_460+Yummy+Matcha+-+RVB.png",
-      "/images/mini-colors-collection-set/08_461+Yummy+Coco+-+RVB.png",
-      "/images/mini-colors-collection-set/09_462+Yummy+Diabolo+-+RVB.png",
       "/images/mini-colors-collection-set/10_451+Saigon+-+RVB.png",
       "/images/mini-colors-collection-set/100_982+Naive+Mint.png",
       "/images/mini-colors-collection-set/101_983+Fancy+Pink.png",
@@ -1839,17 +1845,25 @@
       "/images/mini-colors-collection-set/96_222+Green+Zen.png",
       "/images/mini-colors-collection-set/97_223+Brown+Break.png",
       "/images/mini-colors-collection-set/98_224+Pink+Relax.png",
-      "/images/mini-colors-collection-set/99_225+Rose+Nap.png"
+      "/images/mini-colors-collection-set/99_225+Rose+Nap.png",
+      "/images/mini-colors-collection-set/02_T&S-Set-Square.png",
+      "/images/mini-colors-collection-set/03_I+love+Mini's+Gift+Box.png",
+      "/images/mini-colors-collection-set/04_457+Yummy+Berry+-+RVB.png",
+      "/images/mini-colors-collection-set/05_458+Yummy+Mango+-+RVB.png",
+      "/images/mini-colors-collection-set/06_459+Yummy+Pomelo+-+RVB.png",
+      "/images/mini-colors-collection-set/07_460+Yummy+Matcha+-+RVB.png",
+      "/images/mini-colors-collection-set/08_461+Yummy+Coco+-+RVB.png",
+      "/images/mini-colors-collection-set/09_462+Yummy+Diabolo+-+RVB.png"
     ],
     "mini-emery-boards": [
       "/images/mini-emery-boards/01_Mini+Emery+Boards+Happy.png",
-      "/images/mini-emery-boards/02_Mini+Emery+Boards+Lovely.png",
-      "/images/mini-emery-boards/03_Mini+Emery+Boards+Magic.png",
-      "/images/mini-emery-boards/04_Mini+Emery+Boards+Blessed.png",
       "/images/mini-emery-boards/Mini+Emery+Boards+Blessed.png",
       "/images/mini-emery-boards/Mini+Emery+Boards+Happy.png",
       "/images/mini-emery-boards/Mini+Emery+Boards+Lovely.png",
-      "/images/mini-emery-boards/Mini+Emery+Boards+Magic.png"
+      "/images/mini-emery-boards/Mini+Emery+Boards+Magic.png",
+      "/images/mini-emery-boards/02_Mini+Emery+Boards+Lovely.png",
+      "/images/mini-emery-boards/03_Mini+Emery+Boards+Magic.png",
+      "/images/mini-emery-boards/04_Mini+Emery+Boards+Blessed.png"
     ],
     "mini-manicure-coffret": [
       "/images/mini-manicure-coffret/01_Mavala+Mini+Manicure+Coffret+small.png",
@@ -1918,12 +1932,14 @@
       "/images/nail-polish-remover-pads/Nail-Polish-remover-pads.png"
     ],
     "nail-shield": [
-      "/images/nail-shield/Nail+Shield+2x5ml.png"
+      "/images/nail-shield/Nail+Shield+2x5ml.png",
+      "/images/nail-shield/02.jpg",
+      "/images/nail-shield/03.jpg"
     ],
     "nail-white-crayon": [
-      "/images/nail-white-crayon/9090615+Nail+White+Crayon.png",
-      "/images/nail-white-crayon/01_9090615+Nail+White+Crayon.png",
       "/images/nail-white-crayon/01.jpg",
+      "/images/nail-white-crayon/01_9090615+Nail+White+Crayon.png",
+      "/images/nail-white-crayon/9090615+Nail+White+Crayon.png",
       "/images/nail-white-crayon/03.jpg"
     ],
     "nail-with-longitudinal-grooves": [
@@ -1958,6 +1974,7 @@
     ],
     "neo-nudes": [
       "/images/neo-nudes/01_2.+Post+Neo+Nude+Collection+-+Post+2.jpg",
+      "/images/neo-nudes/10_480+Durban+-+RVB.png",
       "/images/neo-nudes/02_3.+Post+Neo+Nude+Collection+-+Post+3.jpg",
       "/images/neo-nudes/03_1.+Post+Neo+Nude+Collection+-+Post+1.jpg",
       "/images/neo-nudes/04_Neo+Nudes+Colors+Card+Banner.jpg",
@@ -1965,8 +1982,7 @@
       "/images/neo-nudes/06_476+Marbella+-+RVB.png",
       "/images/neo-nudes/07_477+Panama+-+RVB.png",
       "/images/neo-nudes/08_478+Safi+-+RVB.png",
-      "/images/neo-nudes/09_479+Djibouti+-+RVB.png",
-      "/images/neo-nudes/10_480+Durban+-+RVB.png"
+      "/images/neo-nudes/09_479+Djibouti+-+RVB.png"
     ],
     "new-look": [
       "/images/new-look/01_New+Look+Color's+Showcard.png",
@@ -1981,14 +1997,6 @@
     ],
     "nude-shades": [
       "/images/nude-shades/01_Nudes.png",
-      "/images/nude-shades/02_Nude+colours.png",
-      "/images/nude-shades/03_472+Santorini+-+RVB.png",
-      "/images/nude-shades/04_Cream+Orchid.png",
-      "/images/nude-shades/05_Vanilla.png",
-      "/images/nude-shades/06_091+Reno.png",
-      "/images/nude-shades/07_406+Salamanca.png",
-      "/images/nude-shades/08_980+-+Mykonos.png",
-      "/images/nude-shades/09_Glamour.png",
       "/images/nude-shades/10_464+Breeze+Field+-+RVB.png",
       "/images/nude-shades/11_Nicosia.png",
       "/images/nude-shades/12_Arosa.png",
@@ -2025,10 +2033,20 @@
       "/images/nude-shades/43_Tallin.png",
       "/images/nude-shades/44_Pokhara.png",
       "/images/nude-shades/45_478+Safi+-+RVB.png",
-      "/images/nude-shades/46_480+Durban+-+RVB.png"
+      "/images/nude-shades/46_480+Durban+-+RVB.png",
+      "/images/nude-shades/02_Nude+colours.png",
+      "/images/nude-shades/03_472+Santorini+-+RVB.png",
+      "/images/nude-shades/04_Cream+Orchid.png",
+      "/images/nude-shades/05_Vanilla.png",
+      "/images/nude-shades/06_091+Reno.png",
+      "/images/nude-shades/07_406+Salamanca.png",
+      "/images/nude-shades/08_980+-+Mykonos.png",
+      "/images/nude-shades/09_Glamour.png"
     ],
     "nutri-elixir-kit-e6dml": [
-      "/images/nutri-elixir-kit-e6dml/01_Anti-Age+Pro+Festive+Set.png"
+      "/images/nutri-elixir-kit-e6dml/01.webp",
+      "/images/nutri-elixir-kit-e6dml/02.webp",
+      "/images/nutri-elixir-kit-e6dml/03.webp"
     ],
     "nutrition-absolute-night-balm": [
       "/images/nutrition-absolute-night-balm/01_Nutri-Elixir+Balm+Boxed+Glosscar+Award.png",
@@ -2044,10 +2062,17 @@
       "/images/nutrition-ultimate-cream/03_Nutri+Elixir+Cream+Texture.png"
     ],
     "oil-seal-dryer": [
-      "/images/oil-seal-dryer/01_Oil+Seal+Dryer.png"
+      "/images/oil-seal-dryer/01_Oil+Seal+Dryer.png",
+      "/images/oil-seal-dryer/02.jpg",
+      "/images/oil-seal-dryer/03.jpg"
     ],
     "orange-shades": [
       "/images/orange-shades/01_Oranges.png",
+      "/images/orange-shades/10_Smily+Orange.png",
+      "/images/orange-shades/11_106+Orange+Fusion.png",
+      "/images/orange-shades/12_072+Nice.png",
+      "/images/orange-shades/13_445+Moab.png",
+      "/images/orange-shades/14_124+Salzburg.png",
       "/images/orange-shades/02_Orange+Sherbert.png",
       "/images/orange-shades/03_Mango+Orchid.png",
       "/images/orange-shades/04_Fresh+Melon.png",
@@ -2055,12 +2080,7 @@
       "/images/orange-shades/06_169+Waikiki+Orange.png",
       "/images/orange-shades/07_302+Jaipur.png",
       "/images/orange-shades/08_979+-+Phoenix.png",
-      "/images/orange-shades/09_230+Kingston.png",
-      "/images/orange-shades/10_Smily+Orange.png",
-      "/images/orange-shades/11_106+Orange+Fusion.png",
-      "/images/orange-shades/12_072+Nice.png",
-      "/images/orange-shades/13_445+Moab.png",
-      "/images/orange-shades/14_124+Salzburg.png"
+      "/images/orange-shades/09_230+Kingston.png"
     ],
     "overgrown-cuticles": [
       "/images/overgrown-cuticles/Cuticle_Cream.png",
@@ -2081,14 +2101,6 @@
     ],
     "pearl-colors": [
       "/images/pearl-colors/01_Pearl.png",
-      "/images/pearl-colors/02_IMG_5531.jpg",
-      "/images/pearl-colors/03_Lisboa+4.jpg",
-      "/images/pearl-colors/04_IMG_5771.jpg",
-      "/images/pearl-colors/05_399+Lotus.png",
-      "/images/pearl-colors/06_022+Geneve.png",
-      "/images/pearl-colors/07_Silver.png",
-      "/images/pearl-colors/08_051+Melbourne.png",
-      "/images/pearl-colors/09_137+Flannel+Grey.png",
       "/images/pearl-colors/10_102+Cyber+Yellow.png",
       "/images/pearl-colors/11_Gold.png",
       "/images/pearl-colors/12_106+Orange+Fusion.png",
@@ -2113,7 +2125,15 @@
       "/images/pearl-colors/31_032+Bangkok.png",
       "/images/pearl-colors/32_988+Santiago.png",
       "/images/pearl-colors/33_Denim+Blue.png",
-      "/images/pearl-colors/34_Deep+Blue.png"
+      "/images/pearl-colors/34_Deep+Blue.png",
+      "/images/pearl-colors/02_IMG_5531.jpg",
+      "/images/pearl-colors/03_Lisboa+4.jpg",
+      "/images/pearl-colors/04_IMG_5771.jpg",
+      "/images/pearl-colors/05_399+Lotus.png",
+      "/images/pearl-colors/06_022+Geneve.png",
+      "/images/pearl-colors/07_Silver.png",
+      "/images/pearl-colors/08_051+Melbourne.png",
+      "/images/pearl-colors/09_137+Flannel+Grey.png"
     ],
     "pedi-pads": [
       "/images/pedi-pads/01_Pedi-Pads.png",
@@ -2131,19 +2151,11 @@
     ],
     "pink-nail-polish-remover": [
       "/images/pink-nail-polish-remover/01_Nail+Polish+Remover+Pink+100ml.png",
-      "/images/pink-nail-polish-remover/02_Pink+Nail+Polish+Remover+50ml.png",
-      "/images/pink-nail-polish-remover/Nail+Polish+Remover+Pink+100ml.png"
+      "/images/pink-nail-polish-remover/Nail+Polish+Remover+Pink+100ml.png",
+      "/images/pink-nail-polish-remover/02_Pink+Nail+Polish+Remover+50ml.png"
     ],
     "pink-shades": [
       "/images/pink-shades/01_set-of-3-Pink-minis.png",
-      "/images/pink-shades/02_056+Riga.png",
-      "/images/pink-shades/03_157+Blush+Pink.png",
-      "/images/pink-shades/04_322-Hamptons.png",
-      "/images/pink-shades/05_459+Yummy+Pomelo+-+RVB.png",
-      "/images/pink-shades/06_Pink+Orchid.png",
-      "/images/pink-shades/07_Fiji.png",
-      "/images/pink-shades/08_Pink+City.png",
-      "/images/pink-shades/09_052+Toulouse.png",
       "/images/pink-shades/10_Big+Bubble.png",
       "/images/pink-shades/11_225+Rose+Nap.png",
       "/images/pink-shades/12_473+Sedona+-+RVB.png",
@@ -2182,10 +2194,19 @@
       "/images/pink-shades/45_Barcelona.png",
       "/images/pink-shades/46_Hanoi.png",
       "/images/pink-shades/47_Happy+Cherry.png",
-      "/images/pink-shades/48_994+Cyber+Pink.png"
+      "/images/pink-shades/48_994+Cyber+Pink.png",
+      "/images/pink-shades/02_056+Riga.png",
+      "/images/pink-shades/03_157+Blush+Pink.png",
+      "/images/pink-shades/04_322-Hamptons.png",
+      "/images/pink-shades/05_459+Yummy+Pomelo+-+RVB.png",
+      "/images/pink-shades/06_Pink+Orchid.png",
+      "/images/pink-shades/07_Fiji.png",
+      "/images/pink-shades/08_Pink+City.png",
+      "/images/pink-shades/09_052+Toulouse.png"
     ],
     "poolside": [
       "/images/poolside/01_Poolside+Color's+Glosscar+Award.jpg",
+      "/images/poolside/10_099+Las+Perlas.png",
       "/images/poolside/02_Poolside+by+the+beach.jpg",
       "/images/poolside/03_20210208_210410.jpg",
       "/images/poolside/04_20210208_210211.jpg",
@@ -2193,8 +2214,7 @@
       "/images/poolside/06_031+Mombasa.png",
       "/images/poolside/07_059+Phuket.png",
       "/images/poolside/08_079+Portofino.png",
-      "/images/poolside/09_096+Goa.png",
-      "/images/poolside/10_099+Las+Perlas.png"
+      "/images/poolside/09_096+Goa.png"
     ],
     "pop-wave": [
       "/images/pop-wave/01_Pop+Wave+Colors+Showcard.jpg",
@@ -2237,14 +2257,6 @@
     ],
     "purple-shades": [
       "/images/purple-shades/01_Purples.png",
-      "/images/purple-shades/02_Glasgow.png",
-      "/images/purple-shades/03_395-Rimini.png",
-      "/images/purple-shades/04_410+Precious+Lilac.png",
-      "/images/purple-shades/05_Reykjavik.png",
-      "/images/purple-shades/06_319-Brighton.png",
-      "/images/purple-shades/07_Iris+Orchid.png",
-      "/images/purple-shades/08_152+Mauve+Cendré.png",
-      "/images/purple-shades/09_Ginza.png",
       "/images/purple-shades/10_446+Bikaner.png",
       "/images/purple-shades/11_Milano.png",
       "/images/purple-shades/12_712+Indus.png",
@@ -2258,18 +2270,18 @@
       "/images/purple-shades/20_Nordic+Light.png",
       "/images/purple-shades/21_Mexico.png",
       "/images/purple-shades/22_024+Tokyo.png",
-      "/images/purple-shades/23_036+Karachi+copy.png"
+      "/images/purple-shades/23_036+Karachi+copy.png",
+      "/images/purple-shades/02_Glasgow.png",
+      "/images/purple-shades/03_395-Rimini.png",
+      "/images/purple-shades/04_410+Precious+Lilac.png",
+      "/images/purple-shades/05_Reykjavik.png",
+      "/images/purple-shades/06_319-Brighton.png",
+      "/images/purple-shades/07_Iris+Orchid.png",
+      "/images/purple-shades/08_152+Mauve+Cendré.png",
+      "/images/purple-shades/09_Ginza.png"
     ],
     "red-shades": [
       "/images/red-shades/01_Reds.png",
-      "/images/red-shades/02_976+-+Shiraz.png",
-      "/images/red-shades/03_007+Macao.png",
-      "/images/red-shades/04_702+Mississippi.png",
-      "/images/red-shades/05_462+Yummy+Diabolo+-+RVB.png",
-      "/images/red-shades/06_003+Paris.png",
-      "/images/red-shades/07_096+Goa.png",
-      "/images/red-shades/08_Madrid.png",
-      "/images/red-shades/09_Beirut.png",
       "/images/red-shades/10_351+Lugano.png",
       "/images/red-shades/11_Cadiz.png",
       "/images/red-shades/12_078+Tobago.png",
@@ -2298,7 +2310,15 @@
       "/images/red-shades/35_Singapore.png",
       "/images/red-shades/36_Samara.png",
       "/images/red-shades/37_989-Bergen.png",
-      "/images/red-shades/38_image-asset.png"
+      "/images/red-shades/38_image-asset.png",
+      "/images/red-shades/02_976+-+Shiraz.png",
+      "/images/red-shades/03_007+Macao.png",
+      "/images/red-shades/04_702+Mississippi.png",
+      "/images/red-shades/05_462+Yummy+Diabolo+-+RVB.png",
+      "/images/red-shades/06_003+Paris.png",
+      "/images/red-shades/07_096+Goa.png",
+      "/images/red-shades/08_Madrid.png",
+      "/images/red-shades/09_Beirut.png"
     ],
     "refreshing-foot-gel": [
       "/images/refreshing-foot-gel/01_9077201.png",
@@ -2333,7 +2353,9 @@
       "/images/revitalising-leg-emulsion/02_9078050+Emulsion+DeÌ_fatigante+prof.png"
     ],
     "ridge-filler": [
-      "/images/ridge-filler/Ridge+Filler+5ml.png"
+      "/images/ridge-filler/Ridge+Filler+5ml.png",
+      "/images/ridge-filler/02.jpg",
+      "/images/ridge-filler/03.jpg"
     ],
     "satin-eyelid-powder": [
       "/images/satin-eyelid-powder/01_small-Satin-Eyelid-Powder-A.png",
@@ -2362,6 +2384,11 @@
     ],
     "serum-foundation": [
       "/images/serum-foundation/01_SERUM+FOUNDATION+Award+Winner.png",
+      "/images/serum-foundation/10_SERUM+FOUNDATION+04+Medium.png",
+      "/images/serum-foundation/11_SERUM+FOUNDATION+05+Medium+Tan.png",
+      "/images/serum-foundation/12_SERUM+FOUNDATION+06+Tan.png",
+      "/images/serum-foundation/13_SERUM+FOUNDATION+07+Dark.png",
+      "/images/serum-foundation/14_SERUM+FOUNDATION+08+Very+Dark.png",
       "/images/serum-foundation/02_Serum+Foundation+1.jpg",
       "/images/serum-foundation/03_Serum+Foundation+2.jpg",
       "/images/serum-foundation/04_Serum+Foundation+4.png",
@@ -2369,12 +2396,7 @@
       "/images/serum-foundation/06_Serum+Foundation+3.jpg",
       "/images/serum-foundation/07_SERUM+FOUNDATION+01+Very+Light.png",
       "/images/serum-foundation/08_SERUM+FOUNDATION+02+Light.png",
-      "/images/serum-foundation/09_SERUM+FOUNDATION+03+Light+Medium.png",
-      "/images/serum-foundation/10_SERUM+FOUNDATION+04+Medium.png",
-      "/images/serum-foundation/11_SERUM+FOUNDATION+05+Medium+Tan.png",
-      "/images/serum-foundation/12_SERUM+FOUNDATION+06+Tan.png",
-      "/images/serum-foundation/13_SERUM+FOUNDATION+07+Dark.png",
-      "/images/serum-foundation/14_SERUM+FOUNDATION+08+Very+Dark.png"
+      "/images/serum-foundation/09_SERUM+FOUNDATION+03+Light+Medium.png"
     ],
     "silky-eye-shadow-waterproof": [
       "/images/silky-eye-shadow-waterproof/01_9093700+-+Silky+Eye+Shadows.png",
@@ -2456,14 +2478,6 @@
     ],
     "sparkly-shades": [
       "/images/sparkly-shades/01_set-of-3-Sparkle-minis.png",
-      "/images/sparkly-shades/02_409+Star+Palace.png",
-      "/images/sparkly-shades/03_Pure+Diamond.png",
-      "/images/sparkly-shades/04_199+Imagination.png",
-      "/images/sparkly-shades/05_Ice+Twist.png",
-      "/images/sparkly-shades/06_Gold+Cosmic.png",
-      "/images/sparkly-shades/07_407+Golden+clash.png",
-      "/images/sparkly-shades/08_Golden+Twist.png",
-      "/images/sparkly-shades/09_Copper+Twist.png",
       "/images/sparkly-shades/10_LET'S+DANCE.png",
       "/images/sparkly-shades/11_Red+Cosmic.png",
       "/images/sparkly-shades/12_Pink+Diamond.png",
@@ -2473,7 +2487,15 @@
       "/images/sparkly-shades/16_Violet+Cosmic.png",
       "/images/sparkly-shades/17_Blue+Twist.png",
       "/images/sparkly-shades/18_Black+Twist.png",
-      "/images/sparkly-shades/19_409+Star+Palace.png"
+      "/images/sparkly-shades/19_409+Star+Palace.png",
+      "/images/sparkly-shades/02_409+Star+Palace.png",
+      "/images/sparkly-shades/03_Pure+Diamond.png",
+      "/images/sparkly-shades/04_199+Imagination.png",
+      "/images/sparkly-shades/05_Ice+Twist.png",
+      "/images/sparkly-shades/06_Gold+Cosmic.png",
+      "/images/sparkly-shades/07_407+Golden+clash.png",
+      "/images/sparkly-shades/08_Golden+Twist.png",
+      "/images/sparkly-shades/09_Copper+Twist.png"
     ],
     "splitting-breaking-nail": [
       "/images/splitting-breaking-nail/Mava-Strong__reflection_-1.png",
@@ -2487,9 +2509,9 @@
     ],
     "straight-cuticle-scissors": [
       "/images/straight-cuticle-scissors/01_9071021+Cuticle+Scissors+Straight.png",
-      "/images/straight-cuticle-scissors/02_71031+Cuticle+Scissors+curved.png",
       "/images/straight-cuticle-scissors/71031+Cuticle+Scissors+curved.png",
-      "/images/straight-cuticle-scissors/9071021+Cuticle+Scissors+Straight.png"
+      "/images/straight-cuticle-scissors/9071021+Cuticle+Scissors+Straight.png",
+      "/images/straight-cuticle-scissors/02_71031+Cuticle+Scissors+curved.png"
     ],
     "straight-tweezers": [
       "/images/straight-tweezers/01_71721+Tweezers+claw+gold+tips+award.png",
@@ -2546,7 +2568,9 @@
       "/images/thin-nail/Thin_nail.png"
     ],
     "thinner-for-nail-polish": [
-      "/images/thinner-for-nail-polish/01_Thinner.png"
+      "/images/thinner-for-nail-polish/01_Thinner.png",
+      "/images/thinner-for-nail-polish/02.jpg",
+      "/images/thinner-for-nail-polish/03.jpg"
     ],
     "time-release-system": [
       "/images/time-release-system/01_9055501A.png",
@@ -2565,6 +2589,12 @@
     ],
     "tinted-lip-balm": [
       "/images/tinted-lip-balm/01_Tinted+Lip+Balm+4+shades.png",
+      "/images/tinted-lip-balm/10_Lip+Balm+Peach+shade.png",
+      "/images/tinted-lip-balm/11_Lip+Balm+Candy+shade.png",
+      "/images/tinted-lip-balm/12_Lip+Balm+Berry+shade.png",
+      "/images/tinted-lip-balm/13_Lip+Balm+Cherry+shade.png",
+      "/images/tinted-lip-balm/14_Lip+Balm+Chocolate+shade.png",
+      "/images/tinted-lip-balm/15_Mavala+cares.png",
       "/images/tinted-lip-balm/02_Tinted+Lip+Balm+21+Vanilla+Closed-Open.png",
       "/images/tinted-lip-balm/03_Tinted+Lip+Balm+22+Peach+Closed-Open.png",
       "/images/tinted-lip-balm/04_Tinted+Lip+Balm+23+Candy+Closed-Open.png",
@@ -2572,13 +2602,7 @@
       "/images/tinted-lip-balm/06_Tinted+Lip+Balm+25+Cherry+Closed-Open.png",
       "/images/tinted-lip-balm/07_Tinted+Lip+Balm+26+Chocolate+Closed-Open.png",
       "/images/tinted-lip-balm/08_IMG_5732.jpg",
-      "/images/tinted-lip-balm/09_Lip+Balm+Vanilla+shade.png",
-      "/images/tinted-lip-balm/10_Lip+Balm+Peach+shade.png",
-      "/images/tinted-lip-balm/11_Lip+Balm+Candy+shade.png",
-      "/images/tinted-lip-balm/12_Lip+Balm+Berry+shade.png",
-      "/images/tinted-lip-balm/13_Lip+Balm+Cherry+shade.png",
-      "/images/tinted-lip-balm/14_Lip+Balm+Chocolate+shade.png",
-      "/images/tinted-lip-balm/15_Mavala+cares.png"
+      "/images/tinted-lip-balm/09_Lip+Balm+Vanilla+shade.png"
     ],
     "toenail-nippers": [
       "/images/toenail-nippers/01_71301+Toenail+nippers.png",
@@ -2648,6 +2672,13 @@
     ],
     "white-shades": [
       "/images/white-shades/01_Whites.png",
+      "/images/white-shades/10_465+Blizzardville+-+RVB.png",
+      "/images/white-shades/11_461+Yummy+Coco+-+RVB.png",
+      "/images/white-shades/12_004+Abu+Dhabi+copy.png",
+      "/images/white-shades/13_318+Spitzberg+copy.png",
+      "/images/white-shades/14_440+Dots.png",
+      "/images/white-shades/15_Fairy+Light.png",
+      "/images/white-shades/16_image-asset.png",
       "/images/white-shades/02_White.png",
       "/images/white-shades/03_105+Antarctic.png",
       "/images/white-shades/04_White+Orchid.png",
@@ -2655,14 +2686,7 @@
       "/images/white-shades/06_047+Izmir.png",
       "/images/white-shades/07_399+Lotus.png",
       "/images/white-shades/08_324+Iceberg.png",
-      "/images/white-shades/09_411+Moon+Chic.png",
-      "/images/white-shades/10_465+Blizzardville+-+RVB.png",
-      "/images/white-shades/11_461+Yummy+Coco+-+RVB.png",
-      "/images/white-shades/12_004+Abu+Dhabi+copy.png",
-      "/images/white-shades/13_318+Spitzberg+copy.png",
-      "/images/white-shades/14_440+Dots.png",
-      "/images/white-shades/15_Fairy+Light.png",
-      "/images/white-shades/16_image-asset.png"
+      "/images/white-shades/09_411+Moon+Chic.png"
     ],
     "wrinkles": [
       "/images/wrinkles/9052301A.png",
@@ -3679,5 +3703,5 @@
       "/images/shades/993 WINDSOR/03.png"
     ]
   },
-  "generated": "2026-01-26T23:47:51.077Z"
+  "generated": "2026-01-27T19:51:26.869Z"
 }
