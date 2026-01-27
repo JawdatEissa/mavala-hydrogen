@@ -3,6 +3,9 @@ import { json } from "@remix-run/node";
 import { useLoaderData, Link } from "@remix-run/react";
 import faceConcernsData from "../data/face-concerns.json";
 import { loadScrapedProducts } from "../lib/scraped-products.server";
+import { isBestsellerSlug } from "../lib/bestsellers";
+import { BestsellerBadge } from "../components/BestsellerBadge";
+import { formatPriceToCad } from "../lib/currency";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { slug } = params;
@@ -24,16 +27,18 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     
     // Try to get product from database for additional info
     let productSlug = p.product_slug;
-    if (!productSlug.startsWith('all-products_')) {
-      productSlug = `all-products_${p.product_slug}`;
-    }
-    const product = allProducts.find(prod => prod.slug === productSlug || prod.slug === p.product_slug);
+    const product = allProducts.find(
+      prod => prod.slug === productSlug || 
+              prod.slug === `all-products_${productSlug}` ||
+              prod.slug.endsWith(`_${productSlug}`)
+    );
     
     return {
       name: p.name,
       slug: p.product_slug,
       images: images.length > 0 ? images : (product?.images || []),
-      price: product?.price || "",
+      price: product?.price || product?.price_from || "",
+      category: product?.categories?.[0] || "",
     };
   }) || [];
 
@@ -112,31 +117,43 @@ export default function FaceConcernPage() {
               <h3 className="font-['Archivo'] text-[16px] md:text-[18px] font-semibold text-gray-800 uppercase mb-8">
                 Recommended Products
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-                {concern.products.map((product) => (
-                  <Link
-                    key={product.product_slug || product.slug}
-                    to={`/products/${product.product_slug || product.slug}`}
-                    className="flex flex-col items-center group"
-                  >
-                    <div className="w-full aspect-square mb-3 bg-[#f5f5f5] rounded-[3px] flex items-center justify-center p-4 transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
-                      {product.images && product.images[0] ? (
-                        <img
-                          src={product.images[0]}
-                          alt={product.name}
-                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-[#f5f5f5] rounded-[3px] flex items-center justify-center">
-                          <span className="text-gray-400 text-xs">No image</span>
-                        </div>
-                      )}
-                    </div>
-                    <p className="font-['Archivo'] text-[12px] md:text-[13px] text-center text-gray-600 font-medium">
-                      {product.name}
-                    </p>
-                  </Link>
-                ))}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                {concern.products.map((product) => {
+                  const showBestsellerBadge = product.slug && isBestsellerSlug(product.slug);
+                  const displayPrice = product.price ? formatPriceToCad(product.price) : "";
+                  
+                  return (
+                    <Link
+                      key={product.slug}
+                      to={`/products/${product.slug}`}
+                      className="product-card group relative flex flex-col w-full"
+                    >
+                      <div className="relative overflow-hidden bg-[#f5f5f5] rounded-[3px] aspect-[4/5] flex items-center justify-center p-8 md:p-10 transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
+                        {showBestsellerBadge && <BestsellerBadge />}
+                        {product.images && product.images[0] ? (
+                          <img
+                            src={product.images[0]}
+                            alt={product.name}
+                            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center">
+                            <span className="text-gray-400 text-xs">No image</span>
+                          </div>
+                        )}
+                      </div>
+                      <div className="mt-4 text-left">
+                        <h3 className="font-['Archivo'] text-[15px] md:text-[17px] font-medium text-gray-900 leading-snug">{product.name}</h3>
+                        {product.category && (
+                          <p className="font-['Archivo'] text-[13px] md:text-[14px] text-gray-500 mt-1">{product.category}</p>
+                        )}
+                        {displayPrice && (
+                          <span className="font-['Archivo'] text-[14px] md:text-[16px] font-semibold text-[#ae1932] mt-1 block">{displayPrice}</span>
+                        )}
+                      </div>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           )}

@@ -4,18 +4,47 @@ import { useLoaderData } from "@remix-run/react";
 import nailConcernsData from "../data/nail-concerns.json";
 import { isBestsellerSlug } from "../lib/bestsellers";
 import { BestsellerBadge } from "../components/BestsellerBadge";
+import { loadScrapedProducts } from "../lib/scraped-products.server";
+import { formatPriceToCad } from "../lib/currency";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { slug } = params;
   
-  // Find the nail concern by slug
-  const concern = nailConcernsData.find((c: any) => c.slug === slug);
+  // Load all products for product mapping
+  const allProducts = loadScrapedProducts();
   
-  if (!concern) {
+  // Find the nail concern by slug
+  const concernData = nailConcernsData.find((c: any) => c.slug === slug);
+  
+  if (!concernData) {
     throw new Response("Nail concern not found", { status: 404 });
   }
   
-  return json({ concern });
+  // Map products to include full product data (price, category, etc.)
+  const products = concernData.products?.map((p: any) => {
+    // Try to find product in database
+    let productSlug = p.product_slug;
+    const product = allProducts.find(
+      (prod) => prod.slug === productSlug || 
+                prod.slug === `all-products_${productSlug}` ||
+                prod.slug.endsWith(`_${productSlug}`)
+    );
+    
+    return {
+      name: p.name,
+      slug: p.product_slug,
+      src: p.src,
+      price: product?.price || product?.price_from || "",
+      category: product?.categories?.[0] || "",
+    };
+  }) || [];
+  
+  return json({ 
+    concern: {
+      ...concernData,
+      products
+    }
+  });
 };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
@@ -74,19 +103,20 @@ export default function NailConcernPage() {
               SOLUTION
             </h2>
             
-            {/* Product Images - Grid matching nail-care styling */}
+            {/* Product Images - Larger grid for concern pages */}
             {concern.products && concern.products.length > 0 && (
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-10 max-w-3xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-10">
                 {concern.products.map((product: any, idx: number) => {
-                  const showBestsellerBadge = product.product_slug && isBestsellerSlug(product.product_slug);
+                  const showBestsellerBadge = product.slug && isBestsellerSlug(product.slug);
+                  const displayPrice = product.price ? formatPriceToCad(product.price) : "";
                   
-                  return product.product_slug ? (
+                  return product.slug ? (
                     <a
                       key={idx}
-                      href={`/products/${product.product_slug}`}
-                      className="flex flex-col group"
+                      href={`/products/${product.slug}`}
+                      className="product-card group relative flex flex-col w-full"
                     >
-                      <div className="relative overflow-hidden bg-[#f5f5f5] rounded-[3px] aspect-[4/5] flex items-center justify-center p-6 transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
+                      <div className="relative overflow-hidden bg-[#f5f5f5] rounded-[3px] aspect-[4/5] flex items-center justify-center p-8 md:p-10 transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
                         {showBestsellerBadge && <BestsellerBadge />}
                         <img
                           src={product.src}
@@ -94,22 +124,28 @@ export default function NailConcernPage() {
                           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
-                      <p className="font-['Archivo'] text-[14px] md:text-[15px] text-gray-800 text-left font-medium mt-3">
-                        {product.name}
-                      </p>
+                      <div className="mt-4 text-left">
+                        <h3 className="font-['Archivo'] text-[15px] md:text-[17px] font-medium text-gray-900 leading-snug">{product.name}</h3>
+                        {product.category && (
+                          <p className="font-['Archivo'] text-[13px] md:text-[14px] text-gray-500 mt-1">{product.category}</p>
+                        )}
+                        {displayPrice && (
+                          <span className="font-['Archivo'] text-[14px] md:text-[16px] font-semibold text-[#ae1932] mt-1 block">{displayPrice}</span>
+                        )}
+                      </div>
                     </a>
                   ) : (
                     <div key={idx} className="flex flex-col">
-                      <div className="relative overflow-hidden bg-[#f5f5f5] rounded-[3px] aspect-[4/5] flex items-center justify-center p-6">
+                      <div className="relative overflow-hidden bg-[#f5f5f5] rounded-[3px] aspect-[4/5] flex items-center justify-center p-8 md:p-10">
                         <img
                           src={product.src}
                           alt={product.name}
                           className="w-full h-full object-contain"
                         />
                       </div>
-                      <p className="font-['Archivo'] text-[14px] md:text-[15px] text-gray-800 text-left font-medium mt-3">
-                        {product.name}
-                      </p>
+                      <div className="mt-4 text-left">
+                        <h3 className="font-['Archivo'] text-[15px] md:text-[17px] font-medium text-gray-900 leading-snug">{product.name}</h3>
+                      </div>
                     </div>
                   );
                 })}
