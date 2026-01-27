@@ -70,10 +70,10 @@ export function Header() {
   // Scroll-hide header (disabled while mobile menu is open)
   useEffect(() => {
     // Tunables to reduce jitter while keeping the header feeling responsive
-    const HIDE_AFTER_PX = 100; // don't hide until user is past the hero/top area
+    const HIDE_AFTER_PX = 50; // don't hide until user is past the hero/top area (25% faster)
     const SHOW_NEAR_TOP_PX = 40; // always show when near the very top
-    const MIN_DIRECTION_TRAVEL_PX = 14; // hysteresis: ignore tiny direction changes
-    const RESPONSE_DELAY_MS = 140; // debounce: wait a bit before applying show/hide
+    const MIN_DIRECTION_TRAVEL_PX = 8; // hysteresis: ignore tiny direction changes (25% faster)
+    const RESPONSE_DELAY_MS = 90; // debounce: wait a bit before applying show/hide (25% faster)
 
     const clearPending = () => {
       if (scrollTimeoutRef.current != null) {
