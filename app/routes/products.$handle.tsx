@@ -416,8 +416,11 @@ function ImageGallery({
   // Background color: white for collection products and nail-white-crayon, grey for others
   const bgColor = (isCollectionProduct || isNailWhiteCrayon) ? "bg-white" : "bg-[#f5f5f5]";
   
+  // Shade collection products
+  const isShadeCollection = productSlug.endsWith("-shades") || productSlug.endsWith("-colors");
+  
   // Products that use the special 3-image grid layout (like mavala-stop)
-  const useSpecialGridLayout = isMavalaStop || isScientifique1 || isScientifiqueK || isNailactan;
+  const useSpecialGridLayout = isMavalaStop || isScientifique1 || isScientifiqueK || isNailactan || isShadeCollection;
 
   // Products with lifestyle images that should use object-cover for secondary images
   // Note: shade products (like nude-shades) use object-contain to show full images
@@ -708,11 +711,15 @@ function ImageGallery({
                   key={idx}
                   className="bg-white border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden"
                   onClick={() => openLightbox(idx + 1)}
+                  style={isShadeCollection ? { maxHeight: '589px' } : undefined}
                 >
                   <img
                     src={img}
                     alt={`${alt} - ${idx + 2}`}
-                    className="block w-full object-contain border-none outline-none"
+                    className={isShadeCollection 
+                      ? "block w-full h-full object-cover object-top border-none outline-none"
+                      : "block w-full object-contain border-none outline-none"
+                    }
                     loading="lazy"
                   />
                 </div>
