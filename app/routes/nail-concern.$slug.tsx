@@ -2,6 +2,8 @@ import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import nailConcernsData from "../data/nail-concerns.json";
+import { isBestsellerSlug } from "../lib/bestsellers";
+import { BestsellerBadge } from "../components/BestsellerBadge";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { slug } = params;
@@ -72,42 +74,45 @@ export default function NailConcernPage() {
               SOLUTION
             </h2>
             
-            {/* Product Images */}
+            {/* Product Images - Grid matching nail-care styling */}
             {concern.products && concern.products.length > 0 && (
-              <div className="flex justify-center gap-10 md:gap-12 mb-10 flex-wrap">
-                {concern.products.map((product: any, idx: number) => (
-                  product.product_slug ? (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-10 max-w-3xl mx-auto">
+                {concern.products.map((product: any, idx: number) => {
+                  const showBestsellerBadge = product.product_slug && isBestsellerSlug(product.product_slug);
+                  
+                  return product.product_slug ? (
                     <a
                       key={idx}
                       href={`/products/${product.product_slug}`}
-                      className="flex flex-col items-center group hover:opacity-80 transition-opacity duration-200"
+                      className="flex flex-col group"
                     >
-                      <div className="w-[260px] h-[260px] md:w-[300px] md:h-[300px] bg-[#f5f5f5] rounded-[3px] flex items-center justify-center mb-4 p-6 transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
+                      <div className="relative overflow-hidden bg-[#f5f5f5] rounded-[3px] aspect-[4/5] flex items-center justify-center p-6 transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
+                        {showBestsellerBadge && <BestsellerBadge />}
                         <img
                           src={product.src}
                           alt={product.name}
-                          className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-200"
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
-                      <p className="font-['Archivo'] text-[13px] md:text-[14px] text-gray-700 text-center font-medium max-w-[260px]">
+                      <p className="font-['Archivo'] text-[14px] md:text-[15px] text-gray-800 text-left font-medium mt-3">
                         {product.name}
                       </p>
                     </a>
                   ) : (
-                    <div key={idx} className="flex flex-col items-center">
-                      <div className="w-[260px] h-[260px] md:w-[300px] md:h-[300px] bg-[#f5f5f5] rounded-[3px] flex items-center justify-center mb-4 p-6">
+                    <div key={idx} className="flex flex-col">
+                      <div className="relative overflow-hidden bg-[#f5f5f5] rounded-[3px] aspect-[4/5] flex items-center justify-center p-6">
                         <img
                           src={product.src}
                           alt={product.name}
-                          className="max-w-full max-h-full object-contain"
+                          className="w-full h-full object-contain"
                         />
                       </div>
-                      <p className="font-['Archivo'] text-[13px] md:text-[14px] text-gray-700 text-center font-medium max-w-[260px]">
+                      <p className="font-['Archivo'] text-[14px] md:text-[15px] text-gray-800 text-left font-medium mt-3">
                         {product.name}
                       </p>
                     </div>
-                  )
-                ))}
+                  );
+                })}
               </div>
             )}
             
