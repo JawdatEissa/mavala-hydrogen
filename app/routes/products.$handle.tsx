@@ -428,7 +428,11 @@ function ImageGallery({
 
   const useObjectCover =
     lifestyleImageProducts.includes(productSlug) || isScientifique1;
-  // Always use grid-rows-2 for proper secondary image stacking
+  
+  // Products that need the stretched grid layout (lifestyle images that should fill containers)
+  const isDoubleLash = productSlug === "double-lash";
+  
+  // All products use grid-rows-2 and items-stretch for proper secondary image layout
   const bioGridRowsClass = "md:grid-rows-2 md:items-stretch";
   const bioFillHeightClass = "h-full";
   const mainImageClass = (isBioColors || isNailWhiteCrayon)
@@ -446,9 +450,14 @@ function ImageGallery({
     return "bg-white";
   };
 
-  // All secondary images use object-cover to fill container without gaps
+  // Secondary images styling - all use object-cover to fill container
   const getAdditionalImageClass = (imageIndex: number): string => {
     return "block w-full h-full object-cover border-none outline-none";
+  };
+  
+  // Container flex alignment
+  const getContainerFlexClass = (imageIndex: number): string => {
+    return "flex items-center justify-center";
   };
 
   const getThumbnailImageClass = (imageIndex: number): string => {
@@ -462,21 +471,13 @@ function ImageGallery({
 
   // Get image positioning for specific products
   const getImageStyle = (imageIndex: number): React.CSSProperties => {
-    const isDoubleLash = productSlug === "double-lash";
-    
-    // For double-lash, move the second image (index 1) down by 20%
-    if (isDoubleLash && imageIndex === 1) {
+    // For double-lash secondary images, shift the image down by 30%
+    if (isDoubleLash && imageIndex > 0) {
       return {
-        // `objectPosition` can be visually subtle depending on the source image;
-        // use translateY to physically move the image within the fixed grey box.
-
-        objectPosition: "center 75%",
-        transform: "scale(1.331) translateY(10%)",
-        transformOrigin: "center",
         imageRendering: "-webkit-optimize-contrast" as any,
+        objectPosition: "center 5%", // Shifts image down within container
       };
     }
-    
     return {
       imageRendering: "-webkit-optimize-contrast" as any,
     };
@@ -484,15 +485,7 @@ function ImageGallery({
 
   // Get container styling for specific products
   const getContainerStyle = (imageIndex: number): React.CSSProperties => {
-    const isDoubleLash = productSlug === "double-lash";
-    
-    // For double-lash, add padding to the top of the first additional image container
-    if (isDoubleLash && imageIndex === 1) {
-      return {
-        paddingTop: "20%",
-      };
-    }
-    
+    // No special container styling - grid controls the size
     return {};
   };
 
@@ -517,7 +510,7 @@ function ImageGallery({
     ? { aspectRatio: "4/3" } 
     : isNailWhiteCrayon 
       ? { maxHeight: '700px' } 
-      : { maxHeight: '700px' };  // Default max height for all other products
+      : { maxHeight: '700px' };  // Default max height for all products including double-lash
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isClosing, setIsClosing] = useState(false);
@@ -751,7 +744,7 @@ function ImageGallery({
                 key={idx}
                 className={`${getContainerBgColor(
                   idx + 1
-                )} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden ${bioFillHeightClass}`}
+                )} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden ${bioFillHeightClass} ${getContainerFlexClass(idx + 1)}`}
                 style={getContainerStyle(idx + 1)}
                 onClick={() => openLightbox(idx + 1)}
               >
