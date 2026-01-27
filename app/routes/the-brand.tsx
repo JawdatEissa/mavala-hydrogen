@@ -424,8 +424,7 @@ export default function TheBrand() {
             >
               <video
                 src={brandData.video_url}
-                className="absolute top-0 left-0 w-full h-full object-cover"
-                controls
+                className="absolute top-0 left-0 w-full h-full object-cover pointer-events-none"
                 autoPlay
                 muted
                 loop
