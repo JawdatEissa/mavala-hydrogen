@@ -72,20 +72,20 @@ export function Header() {
   useEffect(() => {
     // Tunables for smooth, deliberate scroll behavior
     // Different thresholds for hide vs show to prevent covering content
-    const HIDE_AFTER_PX = 80; // don't hide until user is well past the top
+    const HIDE_AFTER_PX = 30; // hide quickly once user starts scrolling down
     const SHOW_NEAR_TOP_PX = 50; // always show when near the very top
 
     // Hysteresis: require more distance when showing (scroll up) to prevent
     // the header from appearing too quickly and covering product titles
-    const MIN_TRAVEL_TO_HIDE_PX = 12; // distance to travel before hiding (scroll down)
+    const MIN_TRAVEL_TO_HIDE_PX = 6; // minimal distance to hide (fast response)
     const MIN_TRAVEL_TO_SHOW_PX = 35; // distance to travel before showing (scroll up) - more deliberate
 
     // Debounce delays: longer delay for showing to make it feel more intentional
-    const HIDE_DELAY_MS = 80; // quick response when hiding (user wants to see content)
+    const HIDE_DELAY_MS = 0; // immediate hide (no delay)
     const SHOW_DELAY_MS = 180; // longer delay when showing (prevents accidental reveals)
 
     // Velocity tracking for smoother response
-    const SCROLL_NOISE_THRESHOLD = 3; // ignore sub-pixel movements
+    const SCROLL_NOISE_THRESHOLD = 2; // more responsive to scroll input
 
     const clearPending = () => {
       if (scrollTimeoutRef.current != null) {
@@ -253,11 +253,9 @@ export function Header() {
       className="w-full fixed top-0 left-0 right-0 z-[9999] bg-white shadow-sm"
       style={{
         top: isHidden ? "-90px" : "0px",
-        // Smoother, more refined animation:
-        // - Slightly longer duration for elegance
-        // - Custom easing: gentle start, smooth middle, soft landing
+        // Asymmetric animation: fast hide, smooth show
         transition: isHidden
-          ? "top 0.4s cubic-bezier(0.4, 0, 0.2, 1)" // hiding: quick ease-out
+          ? "top 0.25s cubic-bezier(0.4, 0, 1, 1)" // hiding: fast, snappy
           : "top 0.5s cubic-bezier(0.0, 0, 0.2, 1)", // showing: slower, more deliberate ease-out
       }}
     >

@@ -1188,13 +1188,13 @@ export default function ProductPage() {
     let pendingTimeout: number | null = null;
 
     // Match Header.tsx thresholds
-    const HIDE_AFTER_PX = 80;
+    const HIDE_AFTER_PX = 30;
     const SHOW_NEAR_TOP_PX = 50;
-    const MIN_TRAVEL_TO_HIDE_PX = 12;
+    const MIN_TRAVEL_TO_HIDE_PX = 6;
     const MIN_TRAVEL_TO_SHOW_PX = 35;
-    const HIDE_DELAY_MS = 80;
+    const HIDE_DELAY_MS = 0;
     const SHOW_DELAY_MS = 180;
-    const SCROLL_NOISE_THRESHOLD = 3;
+    const SCROLL_NOISE_THRESHOLD = 2;
 
     const handleScroll = () => {
       if (!ticking) {
