@@ -257,6 +257,18 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     });
   }
 
+  // Load product gallery images from manifest (for non-shade products or as fallback)
+  // This ensures products like nail-white-crayon show their secondary images
+  if (handle && manifest.products[handle]) {
+    const manifestImages = manifest.products[handle];
+    if (manifestImages && manifestImages.length > 0) {
+      // Use manifest images as gallery_images if product doesn't have them or has fewer
+      if (!product.gallery_images || product.gallery_images.length < manifestImages.length) {
+        product.gallery_images = manifestImages;
+      }
+    }
+  }
+
   return json({
     product,
     relatedProducts,
@@ -341,6 +353,132 @@ function MobileShadeGallery({
       {/* Swipeable Image Container */}
       <div
         className="relative bg-[#f5f5f5] overflow-hidden"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
+        <div
+          className="flex"
+          style={{
+            transform: `translateX(calc(-${
+              currentIndex * 100
+            }% + ${dragOffset}px))`,
+            transition: isDragging ? "none" : "transform 0.3s ease-out",
+          }}
+        >
+          {images.map((img, idx) => (
+            <div
+              key={idx}
+              className="flex-shrink-0 w-full aspect-square flex items-center justify-center"
+              onClick={() => onImageClick(idx)}
+              style={
+                productSlug === "double-lash" && idx === 1
+                  ? { paddingTop: "20%" }
+                  : undefined
+              }
+            >
+              <img
+                src={img}
+                alt={`${alt} - ${idx + 1}`}
+                className="max-w-full max-h-full object-contain"
+                draggable={false}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Progress Bar - Like Mavala */}
+      {images.length > 1 && (
+        <div className="h-1 bg-gray-200">
+          <div
+            className="h-full bg-black transition-all duration-300"
+            style={{ width: `${progressWidth}%` }}
+          />
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Mobile Product Gallery - Generic swipeable gallery with progress bar for ALL products
+function MobileProductGallery({
+  images,
+  alt,
+  onImageClick,
+  productSlug = "",
+}: {
+  images: string[];
+  alt: string;
+  onImageClick: (index: number) => void;
+  productSlug?: string;
+}) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragOffset, setDragOffset] = useState(0);
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+    setIsDragging(true);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    if (!touchStart) return;
+    const currentTouch = e.targetTouches[0].clientX;
+    setTouchEnd(currentTouch);
+    const diff = currentTouch - touchStart;
+    if (
+      (currentIndex === 0 && diff > 0) ||
+      (currentIndex === images.length - 1 && diff < 0)
+    ) {
+      setDragOffset(diff * 0.3);
+    } else {
+      setDragOffset(diff);
+    }
+  };
+
+  const onTouchEnd = () => {
+    setIsDragging(false);
+    setDragOffset(0);
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > minSwipeDistance && currentIndex < images.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    } else if (distance < -minSwipeDistance && currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
+  // Calculate progress bar width
+  const progressWidth =
+    images.length > 1 ? ((currentIndex + 1) / images.length) * 100 : 100;
+
+  // Get background color based on product
+  const getBgColor = () => {
+    // Products that should have white background
+    const whiteBackgroundProducts = [
+      "pop-wave", "neo-nudes", "terra-topia", "yummy", "whisper", 
+      "timeless", "color-block", "digital-art", "bio-colors", "tandem",
+      "delight", "sofuture", "prismatic", "color-vibe", "iconic",
+      "bubble-gum", "cyber-chic", "blush-colors", "new-look", "cosmic",
+      "nail-white-crayon"
+    ];
+    const isWhiteBg = whiteBackgroundProducts.some(p => productSlug.includes(p));
+    return isWhiteBg ? "bg-white" : "bg-[#f5f5f5]";
+  };
+
+  return (
+    <div className="w-full">
+      {/* Swipeable Image Container */}
+      <div
+        className={`relative ${getBgColor()} overflow-hidden`}
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
@@ -1250,6 +1388,36 @@ export default function ProductPage() {
     return () => window.removeEventListener("popstate", handlePopState);
   }, [mobileLightboxOpen]);
 
+  // State for non-shade products mobile lightbox
+  const [nonShadeLightboxOpen, setNonShadeLightboxOpen] = useState(false);
+  const [nonShadeLightboxIndex, setNonShadeLightboxIndex] = useState(0);
+
+  const openNonShadeLightbox = (index: number) => {
+    setNonShadeLightboxIndex(index);
+    setNonShadeLightboxOpen(true);
+    document.body.style.overflow = "hidden";
+    window.history.pushState({ lightbox: true }, "");
+    window.dispatchEvent(new CustomEvent("shadeDrawerOpen"));
+  };
+
+  const closeNonShadeLightbox = (fromBackButton = false) => {
+    if (!fromBackButton) window.history.back();
+    window.dispatchEvent(new CustomEvent("shadeDrawerClose"));
+    setNonShadeLightboxOpen(false);
+    document.body.style.overflow = "";
+  };
+
+  // Handle back button for non-shade mobile lightbox
+  useEffect(() => {
+    const handlePopState = () => {
+      if (nonShadeLightboxOpen) {
+        closeNonShadeLightbox(true);
+      }
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, [nonShadeLightboxOpen]);
+
   return (
     <div className="pt-[104px] md:pt-[112px] font-['Archivo']">
       {/* ============ MOBILE LAYOUT FOR SHADE PRODUCTS ============ */}
@@ -1632,9 +1800,294 @@ export default function ProductPage() {
         </div>
       )}
 
-      {/* ============ DESKTOP LAYOUT & NON-SHADE PRODUCTS ============ */}
+      {/* ============ MOBILE LAYOUT FOR NON-SHADE PRODUCTS ============ */}
+      {shades.length === 0 && (
+        <div className="md:hidden">
+          {/* Mobile Product Title & Reviews - Above Image */}
+          <div className="px-4 py-3 bg-white">
+            <h1 className="product-page-title mb-1">
+              {formatTitle(product.title)}
+            </h1>
+            <div className="flex items-center justify-between">
+              <span className="product-page-volume">
+                {volumeLabel}
+              </span>
+              {product.store_reviews &&
+                typeof product.store_reviews === "object" &&
+                product.store_reviews.count && (
+                  <span className="product-page-volume">
+                    ★★★★★ {product.store_reviews.rating || "4.9"} -{" "}
+                    {product.store_reviews.count} Reviews
+                  </span>
+                )}
+            </div>
+          </div>
+
+          {/* Mobile Swipeable Image Gallery */}
+          <MobileProductGallery
+            images={images.length > 0 ? images : [getCurrentImage()]}
+            alt={product.title}
+            onImageClick={openNonShadeLightbox}
+            productSlug={product.slug}
+          />
+
+          {/* Mobile Product Content */}
+          <div className="px-4 py-5 bg-white">
+            {/* Mobile Add to Cart Section */}
+            <div className="mb-6">
+              <div className="flex items-center gap-4 mb-4">
+                <span className="font-['Archivo'] text-[0.79rem] text-[#5c666f]">
+                  Quantity:
+                </span>
+                <div className="flex items-center border border-gray-300 rounded">
+                  <button
+                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                    className="px-3 py-2 text-lg hover:bg-gray-100 transition-colors"
+                  >
+                    −
+                  </button>
+                  <span className="px-4 py-2 border-x border-gray-300 min-w-[3rem] text-center">
+                    {quantity}
+                  </span>
+                  <button
+                    onClick={() => setQuantity(quantity + 1)}
+                    className="px-3 py-2 text-lg hover:bg-gray-100 transition-colors"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              {/* Premium Add to Cart Button - French Mavala Style */}
+              <button className="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3">
+                <span className="text-white/90 font-extralight">•</span>
+                <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">ADD</span>
+                <span className="text-white/90 font-extralight">•</span>
+                <span className="text-white font-extralight text-[14px]">{displayPrice ? formatPriceToCad(displayPrice) : ''}</span>
+              </button>
+            </div>
+
+            {/* Mobile Product Description */}
+            <div className="pt-6 border-t border-gray-200">
+              {mainDescription && (
+                <p className="product-page-description mb-6">
+                  {mainDescription}
+                </p>
+              )}
+
+              {/* Key Features with vertical bar bullets - Mavala.fr style */}
+              {product.slug === "mavala-stop" ? (
+                <div className="mb-6 space-y-4">
+                  <div className="flex items-start">
+                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                    <span className="product-page-feature">
+                      Bitter nail polish for beautiful nails
+                    </span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                    <span className="product-page-feature">
+                      Dermatologically tested
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                <div className="mb-6 space-y-4">
+                  {product.key_benefits && Array.isArray(product.key_benefits) ? (
+                    product.key_benefits.map((benefit: string, idx: number) => (
+                      <div key={idx} className="flex items-start">
+                        <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                        <span className="product-page-feature">{benefit}</span>
+                      </div>
+                    ))
+                  ) : (
+                    <>
+                      <div className="flex items-start">
+                        <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                        <span className="product-page-feature">Swiss quality formula</span>
+                      </div>
+                      <div className="flex items-start">
+                        <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                        <span className="product-page-feature">
+                          Dermatologically tested
+                        </span>
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
+
+              {/* Mobile Accordion Sections */}
+              <div className="border-t border-gray-200">
+                {/* How To Use */}
+                <details className="group border-b border-gray-200">
+                  <summary className="flex items-center justify-between py-4 cursor-pointer list-none">
+                    <h3 className="product-page-heading">How to Use</h3>
+                    <span className="text-gray-400 transition-transform group-open:rotate-180">
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div className="pb-4 product-page-accordion-text">
+                    {product.how_to_use ? (
+                      <p className="whitespace-pre-line">
+                        {product.how_to_use}
+                      </p>
+                    ) : (
+                      <p>
+                        Apply as directed. See product packaging for detailed instructions.
+                      </p>
+                    )}
+                    
+                    {/* YouTube Tutorial Video - Mobile */}
+                    {product.youtube_video && (
+                      <div className="mt-6">
+                        <h4 className="font-['Archivo'] text-sm font-medium text-gray-800 mb-3">
+                          Tutorial Video
+                        </h4>
+                        <div className="aspect-video rounded-lg overflow-hidden bg-gray-100">
+                          <iframe
+                            src={product.youtube_video}
+                            title="Product Tutorial Video"
+                            className="w-full h-full"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </details>
+
+                {/* Key Ingredients */}
+                <details className="group border-b border-gray-200">
+                  <summary className="flex items-center justify-between py-4 cursor-pointer list-none">
+                    <h3 className="product-page-heading">Key Ingredients</h3>
+                    <span className="text-gray-400 transition-transform group-open:rotate-180">
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div className="pb-4 product-page-accordion-text">
+                    {product.key_ingredients ? (
+                      <p className="whitespace-pre-line">
+                        {product.key_ingredients}
+                      </p>
+                    ) : (
+                      <p>
+                        See product packaging for full ingredient list.
+                      </p>
+                    )}
+                  </div>
+                </details>
+
+                {/* Safety Directions */}
+                <details className="group border-b border-gray-200">
+                  <summary className="flex items-center justify-between py-4 cursor-pointer list-none">
+                    <h3 className="product-page-heading">Safety Directions</h3>
+                    <span className="text-gray-400 transition-transform group-open:rotate-180">
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div className="pb-4 product-page-accordion-text">
+                    {product.safety_directions ? (
+                      <p className="whitespace-pre-line">
+                        {product.safety_directions}
+                      </p>
+                    ) : (
+                      <p>
+                        For external use only. Keep out of reach of children. Avoid contact with eyes.
+                      </p>
+                    )}
+                    {product.first_aid && (
+                      <div className="mt-4">
+                        <h4 className="font-['Archivo'] font-medium text-gray-800 mb-2">
+                          First Aid
+                        </h4>
+                        <p className="whitespace-pre-line">
+                          {product.first_aid}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Lightbox for Non-Shade Products */}
+          {nonShadeLightboxOpen && (
+            <div
+              className="fixed inset-0 z-50 bg-[#f5f5f5]"
+              onClick={() => closeNonShadeLightbox()}
+            >
+              <button
+                className="absolute top-4 right-4 z-20 w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-lg text-black"
+                onClick={() => closeNonShadeLightbox()}
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+              <div className="h-full flex items-center justify-center p-4">
+                <img
+                  src={images[nonShadeLightboxIndex] || getCurrentImage()}
+                  alt={product.title}
+                  className="max-w-full max-h-full object-contain"
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* ============ DESKTOP LAYOUT (ALL PRODUCTS) ============ */}
       {/* Split-page sticky layout: Left column scrolls (gallery + accordions), Right column stays fixed */}
-      <div className={shades.length > 0 ? "hidden md:block" : ""}>
+      <div className="hidden md:block">
         {/* Product Section */}
         <div className="max-w-[2000px] mx-auto px-4 md:px-8 py-2 md:py-4">
           <div className="grid lg:grid-cols-[60%_40%] gap-4 lg:gap-8 items-start">
