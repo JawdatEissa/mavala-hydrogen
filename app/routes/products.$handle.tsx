@@ -1,7 +1,7 @@
 import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData, Link } from "@remix-run/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   loadScrapedProducts,
   getProductBySlug,
@@ -1181,6 +1181,34 @@ export default function ProductPage() {
   // Track header visibility for sticky positioning
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
 
+  // Mobile sticky Add to Cart bar - shows when inline button scrolls out of view
+  const [showStickyAddToCart, setShowStickyAddToCart] = useState(false);
+  const mobileAddToCartRef = useRef<HTMLDivElement>(null);
+
+  // Intersection Observer for mobile sticky Add to Cart
+  useEffect(() => {
+    const target = mobileAddToCartRef.current;
+    if (!target) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Show sticky bar when the inline button is NOT visible
+        setShowStickyAddToCart(!entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0,
+      },
+    );
+
+    observer.observe(target);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   // Listen for scroll direction to match header hide/show behavior
   // Uses the same thresholds as Header.tsx for consistent behavior
   useEffect(() => {
@@ -1638,7 +1666,7 @@ export default function ProductPage() {
             )}
 
             {/* Mobile Add to Cart Section - French Mavala Premium Style */}
-            <div className="mt-6">
+            <div className="mt-6" ref={mobileAddToCartRef}>
               <div className="flex items-center gap-4 mb-4">
                 <span className="font-['Archivo'] text-[0.79rem] text-[#5c666f]">
                   Quantity:
@@ -1943,7 +1971,7 @@ export default function ProductPage() {
           {/* Mobile Product Content */}
           <div className="px-4 py-5 bg-white">
             {/* Mobile Add to Cart Section */}
-            <div className="mb-6">
+            <div className="mb-6" ref={mobileAddToCartRef}>
               <div className="flex items-center gap-4 mb-4">
                 <span className="font-['Archivo'] text-[0.79rem] text-[#5c666f]">
                   Quantity:
@@ -3002,24 +3030,70 @@ export default function ProductPage() {
         )}
 
         {/* ALL SHADES Section - Removed, will be handled by "See all shades" button */}
+      </div>
 
-        {/* Related Products - Full Width Section (outside max-w-7xl for wider design) */}
-        {relatedProducts.length > 0 && (
-          <section className="mt-16 pt-14 pb-20 border-t border-gray-200 border-b bg-white px-4 md:px-6 lg:px-8">
-            <h2 className="font-['Archivo'] text-[22px] md:text-[26px] font-bold text-[#ae1932] uppercase tracking-[1px] text-center mb-10 md:mb-14">
-              You Might Also Like
-            </h2>
-            {/* Wide grid: 2 cols mobile, 3 tablet, 5 desktop - smaller gaps, larger cards */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
-              {relatedProducts.map((p) => (
-                <ProductCard
-                  key={p.slug}
-                  product={p as unknown as ScrapedProduct}
-                />
-              ))}
-            </div>
-          </section>
-        )}
+      {/* Related Products - Full Width Section (shared for mobile & desktop) */}
+      {relatedProducts.length > 0 && (
+        <section className="mt-10 md:mt-16 pt-10 md:pt-14 pb-16 md:pb-20 border-t border-gray-200 border-b bg-white px-4 md:px-6 lg:px-8">
+          <h2 className="font-['Archivo'] text-[20px] md:text-[26px] font-bold text-[#ae1932] uppercase tracking-[1px] text-center mb-8 md:mb-14">
+            You Might Also Like
+          </h2>
+          {/* Wide grid: 2 cols mobile, 3 tablet, 5 desktop - smaller gaps, larger cards */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+            {relatedProducts.map((p) => (
+              <ProductCard
+                key={p.slug}
+                product={p as unknown as ScrapedProduct}
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Mobile Sticky Add to Cart Bar - Shows when inline button is scrolled out of view */}
+      <div
+        className={`fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t border-gray-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] transition-transform duration-300 ease-out ${
+          showStickyAddToCart ? "translate-y-0" : "translate-y-full"
+        }`}
+      >
+        <div className="px-4 py-3 flex items-center gap-3">
+          {/* Price Display */}
+          <div className="flex-shrink-0">
+            <span className="font-['Archivo'] text-lg font-medium text-[#272724]">
+              {displayPrice ? formatPriceToCad(displayPrice) : ""}
+            </span>
+          </div>
+
+          {/* Compact Quantity Selector */}
+          <div className="flex items-center border border-gray-300 rounded flex-shrink-0">
+            <button
+              onClick={() => setQuantity(Math.max(1, quantity - 1))}
+              className="px-2.5 py-1.5 text-base hover:bg-gray-100 transition-colors"
+            >
+              −
+            </button>
+            <span className="px-3 py-1.5 border-x border-gray-300 min-w-[2.5rem] text-center text-sm">
+              {quantity}
+            </span>
+            <button
+              onClick={() => setQuantity(quantity + 1)}
+              className="px-2.5 py-1.5 text-base hover:bg-gray-100 transition-colors"
+            >
+              +
+            </button>
+          </div>
+
+          {/* Add to Cart Button */}
+          <button className="flex-1 py-3 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-2">
+            <span className="text-white/90 font-extralight text-sm">•</span>
+            <span className="text-white font-extralight text-[14px] uppercase tracking-[0.15em]">
+              ADD
+            </span>
+            <span className="text-white/90 font-extralight text-sm">•</span>
+          </button>
+        </div>
+        {/* Safe area padding for devices with home indicator */}
+        <div className="h-[env(safe-area-inset-bottom)]" />
       </div>
 
       {/* Shade Drawer - Slide out panel */}
