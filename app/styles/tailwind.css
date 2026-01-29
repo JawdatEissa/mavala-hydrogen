@@ -85,35 +85,35 @@
     --bs-meta-color: #B8B8B8;
 
     /* ===== Product Page Typography (Mavala.fr professional style) ===== */
-    /* Product page H1 - BOLD, LARGE, READABLE (reduced 10% for mobile comfort) */
-    --pp-title-size: 38px;
+    /* Product page H1 - BOLD, LARGE, READABLE (reduced 15% for mobile comfort) */
+    --pp-title-size: 36px;
     --pp-title-weight: 200;
     --pp-title-color: #000000;
     --pp-title-line-height: 1.25;
     
-    /* Volume/meta text - MATCHING BESTSELLER CATEGORY WEIGHT, DARK RED COLOR (reduced 10%) */
-    --pp-volume-size: 15px;
+    /* Volume/meta text - MATCHING BESTSELLER CATEGORY WEIGHT, DARK RED COLOR (reduced 15%) */
+    --pp-volume-size: 14px;
     --pp-volume-weight: 200;
     --pp-volume-color: #9e1b32;
     
-    /* Description body text - MATCHING BESTSELLER CATEGORY WEIGHT, DARK RED COLOR (reduced 10%) */
-    --pp-description-size: 15px;
+    /* Description body text - MATCHING BESTSELLER CATEGORY WEIGHT, DARK RED COLOR (reduced 15%) */
+    --pp-description-size: 14px;
     --pp-description-weight: 200;
     --pp-description-color: #9e1b32;
     --pp-description-line-height: 1.65;
     
-    /* Feature/bullet text - BOLD, CLEAR (reduced 10%) */
-    --pp-feature-size: 17px;
+    /* Feature/bullet text - BOLD, CLEAR (reduced 15%) */
+    --pp-feature-size: 16px;
     --pp-feature-weight: 400;
     --pp-feature-color: #000000;
     
-    /* Section headings (How to Use, Ingredients, etc.) - reduced 10% */
-    --pp-heading-size: 15px;
+    /* Section headings (How to Use, Ingredients, etc.) - reduced 15% */
+    --pp-heading-size: 14px;
     --pp-heading-weight: 400;
     --pp-heading-color: #000000;
     
-    /* Accordion body text - READABLE (reduced 10%) */
-    --pp-accordion-text-size: 14px;
+    /* Accordion body text - READABLE (reduced 15%) */
+    --pp-accordion-text-size: 13px;
     --pp-accordion-text-weight: 200;
     --pp-accordion-text-color: #333333;
     
