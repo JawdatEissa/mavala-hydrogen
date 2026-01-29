@@ -287,7 +287,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       otherProducts,
       shadeColors,
     },
-    { headers }
+    { headers },
   );
 };
 
@@ -305,7 +305,7 @@ export const meta: MetaFunction = () => {
 // Helper to get shade color from shade name
 function getShadeColor(
   shadeName: string,
-  shadeColors: Record<string, { hex: string; rgb: number[] }>
+  shadeColors: Record<string, { hex: string; rgb: number[] }>,
 ): string {
   // Try exact match first
   if (shadeColors[shadeName]) {
@@ -390,7 +390,7 @@ function ColorProductCard({
   const sampleColors = product.shades
     ?.slice(0, 3)
     .map((shade: { name: string }) =>
-      getShadeColor(shade.name, shadeColors)
+      getShadeColor(shade.name, shadeColors),
     ) || ["#ae1932", "#f5cdb6", "#5c666f"];
 
   return (
@@ -460,7 +460,7 @@ function CollectionCard({
   const sampleColors = product.shades
     ?.slice(0, 3)
     .map((shade: { name: string }) =>
-      getShadeColor(shade.name, shadeColors)
+      getShadeColor(shade.name, shadeColors),
     ) || ["#ae1932", "#f5cdb6", "#5c666f"];
 
   return (
@@ -711,7 +711,7 @@ export default function ColorPage() {
       <section className="pt-4 pb-0 md:py-4 px-4 md:px-8 lg:px-12 bg-white">
         <div className="w-full">
           {filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-16">
               {filteredProducts.map((product) => {
                 // Safety check - ensure product has required fields
                 if (!product?.slug || !product?.title) return null;
@@ -733,7 +733,7 @@ export default function ColorPage() {
                 } catch (error) {
                   console.error(
                     `Error rendering product ${product.slug}:`,
-                    error
+                    error,
                   );
                   return null;
                 }

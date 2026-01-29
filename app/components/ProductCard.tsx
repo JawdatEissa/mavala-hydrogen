@@ -50,9 +50,9 @@ export function ProductCard({
     const cleanSlug = slug.replace(/^all-products_/, "").replace(/^[^_]+_/, "");
     return formatTitle(
       cleanSlug
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ")
+        .split("-")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" "),
     );
   };
 
@@ -108,13 +108,16 @@ export function ProductCard({
       ? String((product as ScrapedProduct).categories![0])
       : "";
 
-  const compareAtPrice =
-    String((product as any).compare_at_price ?? (product as any).compareAtPrice ?? (product as any).original_price ?? "")
-      .trim();
+  const compareAtPrice = String(
+    (product as any).compare_at_price ??
+      (product as any).compareAtPrice ??
+      (product as any).original_price ??
+      "",
+  ).trim();
   const showCompareAt = Boolean(
     compareAtPrice &&
       compareAtPrice !== displayPrice &&
-      compareAtPrice !== (product as any).price
+      compareAtPrice !== (product as any).price,
   );
 
   const displayPriceCad = displayPrice ? formatPriceToCad(displayPrice) : "";
@@ -137,9 +140,13 @@ export function ProductCard({
         <div className="relative overflow-hidden bg-[#f5f5f5] rounded-[3px] aspect-[4/5] flex items-center justify-center p-6 border-none outline-none shadow-none transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
           {showBestsellerBadge ? <BestsellerBadge /> : null}
           {/* Wrapper div for position offset, so hover animation on img still works */}
-          <div 
+          <div
             className="w-full h-full flex items-center justify-center"
-            style={imageOffset ? { transform: `translateY(${imageOffset})` } : undefined}
+            style={
+              imageOffset
+                ? { transform: `translateY(${imageOffset})` }
+                : undefined
+            }
           >
             <img
               src={productImage}
@@ -166,9 +173,13 @@ export function ProductCard({
               style={{ marginLeft: "var(--bs-price-compare-margin-left)" }}
             >
               {compareAtCad ? (
-                <span className="product-card-price-compare">{compareAtCad}</span>
+                <span className="product-card-price-compare">
+                  {compareAtCad}
+                </span>
               ) : null}
-              <span className="product-card-price-current">{displayPriceCad}</span>
+              <span className="product-card-price-current">
+                {displayPriceCad}
+              </span>
               {listingMeta ? (
                 <span className="product-card-meta">{listingMeta}</span>
               ) : null}
@@ -189,7 +200,7 @@ export function ProductGrid({
   columns?: 3 | 4 | 5 | 6;
 }) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
       {products.map((product) => (
         <ProductCard key={product.slug || product.url} product={product} />
       ))}

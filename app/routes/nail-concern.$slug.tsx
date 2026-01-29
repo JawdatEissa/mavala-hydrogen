@@ -9,41 +9,43 @@ import { formatPriceToCad } from "../lib/currency";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { slug } = params;
-  
+
   // Load all products for product mapping
   const allProducts = loadScrapedProducts();
-  
+
   // Find the nail concern by slug
   const concernData = nailConcernsData.find((c: any) => c.slug === slug);
-  
+
   if (!concernData) {
     throw new Response("Nail concern not found", { status: 404 });
   }
-  
+
   // Map products to include full product data (price, category, etc.)
-  const products = concernData.products?.map((p: any) => {
-    // Try to find product in database
-    let productSlug = p.product_slug;
-    const product = allProducts.find(
-      (prod) => prod.slug === productSlug || 
-                prod.slug === `all-products_${productSlug}` ||
-                prod.slug.endsWith(`_${productSlug}`)
-    );
-    
-    return {
-      name: p.name,
-      slug: p.product_slug,
-      src: p.src,
-      price: product?.price || product?.price_from || "",
-      category: product?.categories?.[0] || "",
-    };
-  }) || [];
-  
-  return json({ 
+  const products =
+    concernData.products?.map((p: any) => {
+      // Try to find product in database
+      let productSlug = p.product_slug;
+      const product = allProducts.find(
+        (prod) =>
+          prod.slug === productSlug ||
+          prod.slug === `all-products_${productSlug}` ||
+          prod.slug.endsWith(`_${productSlug}`),
+      );
+
+      return {
+        name: p.name,
+        slug: p.product_slug,
+        src: p.src,
+        price: product?.price || product?.price_from || "",
+        category: product?.categories?.[0] || "",
+      };
+    }) || [];
+
+  return json({
     concern: {
       ...concernData,
-      products
-    }
+      products,
+    },
   });
 };
 
@@ -51,19 +53,21 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
   if (!data) {
     return [{ title: "Nail Concern Not Found" }];
   }
-  
+
   return [
     { title: `${data.concern.name} | Mavala Switzerland` },
     {
       name: "description",
-      content: data.concern.concern || "Learn about this nail concern and find the right products.",
+      content:
+        data.concern.concern ||
+        "Learn about this nail concern and find the right products.",
     },
   ];
 };
 
 export default function NailConcernPage() {
   const { concern } = useLoaderData<typeof loader>();
-  
+
   return (
     <div className="min-h-screen bg-white pt-[90px]">
       {/* Main Content */}
@@ -102,14 +106,17 @@ export default function NailConcernPage() {
             <h2 className="font-['Archivo'] text-[20px] md:text-[24px] font-bold text-gray-800 uppercase tracking-wide mb-8">
               SOLUTION
             </h2>
-            
+
             {/* Product Images - Larger grid for concern pages */}
             {concern.products && concern.products.length > 0 && (
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-10">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-10">
                 {concern.products.map((product: any, idx: number) => {
-                  const showBestsellerBadge = product.slug && isBestsellerSlug(product.slug);
-                  const displayPrice = product.price ? formatPriceToCad(product.price) : "";
-                  
+                  const showBestsellerBadge =
+                    product.slug && isBestsellerSlug(product.slug);
+                  const displayPrice = product.price
+                    ? formatPriceToCad(product.price)
+                    : "";
+
                   return product.slug ? (
                     <a
                       key={idx}
@@ -125,12 +132,18 @@ export default function NailConcernPage() {
                         />
                       </div>
                       <div className="mt-4 text-left">
-                        <h3 className="font-['Archivo'] text-[15px] md:text-[17px] font-medium text-gray-900 leading-snug">{product.name}</h3>
+                        <h3 className="font-['Archivo'] text-[15px] md:text-[17px] font-medium text-gray-900 leading-snug">
+                          {product.name}
+                        </h3>
                         {product.category && (
-                          <p className="font-['Archivo'] text-[13px] md:text-[14px] text-gray-500 mt-1">{product.category}</p>
+                          <p className="font-['Archivo'] text-[13px] md:text-[14px] text-gray-500 mt-1">
+                            {product.category}
+                          </p>
                         )}
                         {displayPrice && (
-                          <span className="font-['Archivo'] text-[14px] md:text-[16px] font-semibold text-[#ae1932] mt-1 block">{displayPrice}</span>
+                          <span className="font-['Archivo'] text-[14px] md:text-[16px] font-semibold text-[#ae1932] mt-1 block">
+                            {displayPrice}
+                          </span>
                         )}
                       </div>
                     </a>
@@ -144,14 +157,16 @@ export default function NailConcernPage() {
                         />
                       </div>
                       <div className="mt-4 text-left">
-                        <h3 className="font-['Archivo'] text-[15px] md:text-[17px] font-medium text-gray-900 leading-snug">{product.name}</h3>
+                        <h3 className="font-['Archivo'] text-[15px] md:text-[17px] font-medium text-gray-900 leading-snug">
+                          {product.name}
+                        </h3>
                       </div>
                     </div>
                   );
                 })}
               </div>
             )}
-            
+
             {/* Solution Text */}
             <p className="font-['Archivo'] text-[15px] md:text-[16px] leading-relaxed text-gray-800">
               {concern.solution}
@@ -172,4 +187,3 @@ export default function NailConcernPage() {
     </div>
   );
 }
-

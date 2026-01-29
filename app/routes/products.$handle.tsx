@@ -696,9 +696,9 @@ function ImageGallery({
   // Grid height constraint - reduced by 20% from default tall layout
   const bioGridStyle = isBioColors
     ? { aspectRatio: "4/3" }
-    : isNailWhiteCrayon
-    ? { maxHeight: "700px" }
-    : { maxHeight: "700px" }; // Default max height for all products including double-lash
+    : isNailWhiteCrayon || isDoubleLash
+    ? { maxHeight: "900px" } // Increased height for nail-white-crayon and double-lash
+    : { maxHeight: "700px" }; // Default max height for other products
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isClosing, setIsClosing] = useState(false);

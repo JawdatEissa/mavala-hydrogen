@@ -2,7 +2,10 @@ import { useState, useMemo } from "react";
 import { Link, useLoaderData } from "@remix-run/react";
 import type { MetaFunction, LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { loadScrapedProducts, type ScrapedProduct } from "../lib/scraped-products.server";
+import {
+  loadScrapedProducts,
+  type ScrapedProduct,
+} from "../lib/scraped-products.server";
 import { ProductCard } from "../components/ProductCard";
 
 // Import color mappings so shade numbers/names are searchable (e.g. "12" -> "12 BERLIN" -> Cream Colors)
@@ -104,7 +107,7 @@ const SHADE_NAMES_BY_SLUG: Record<string, string[]> = Object.fromEntries(
       ? mapping.shade_details.map((s) => String(s.name || "")).filter(Boolean)
       : [];
     return [slug, names];
-  })
+  }),
 );
 
 export const meta: MetaFunction = () => {
@@ -128,11 +131,11 @@ export default function Search() {
 
   // Extract readable title from slug
   const extractTitleFromSlug = (slug: string): string => {
-    let cleanSlug = slug.replace(/^all-products_/, '');
-    const words = cleanSlug.split('-');
+    let cleanSlug = slug.replace(/^all-products_/, "");
+    const words = cleanSlug.split("-");
     return words
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+      .join(" ");
   };
 
   // Comprehensive search function that searches across multiple fields
@@ -146,9 +149,10 @@ export default function Search() {
 
     return products.filter((product: ScrapedProduct) => {
       // Extract title from slug if title is empty or too long (like scraped HTML)
-      const displayTitle = (product.title && product.title.length < 200) 
-        ? product.title 
-        : extractTitleFromSlug(product.slug);
+      const displayTitle =
+        product.title && product.title.length < 200
+          ? product.title
+          : extractTitleFromSlug(product.slug);
 
       // Create a searchable text blob from all relevant fields
       const searchableFields = [
@@ -166,13 +170,15 @@ export default function Search() {
         // Make shade numbers/names searchable for color collections (e.g. "12" -> "12 BERLIN" -> Cream Colors)
         ...(SHADE_NAMES_BY_SLUG[product.slug] || []),
         // Add product type indicators from slug patterns
-        product.slug.includes('nail') ? 'nail care nail polish manicure' : '',
-        product.slug.includes('hand') ? 'hand care hand cream' : '',
-        product.slug.includes('foot') ? 'foot care pedicure' : '',
-        product.slug.includes('eye') ? 'eye care eye makeup' : '',
-        product.slug.includes('lip') ? 'lips lipstick lip color' : '',
-        product.slug.includes('skin') ? 'skincare skin care' : '',
-        product.slug.includes('color') || product.slug.includes('shades') ? 'nail polish color' : '',
+        product.slug.includes("nail") ? "nail care nail polish manicure" : "",
+        product.slug.includes("hand") ? "hand care hand cream" : "",
+        product.slug.includes("foot") ? "foot care pedicure" : "",
+        product.slug.includes("eye") ? "eye care eye makeup" : "",
+        product.slug.includes("lip") ? "lips lipstick lip color" : "",
+        product.slug.includes("skin") ? "skincare skin care" : "",
+        product.slug.includes("color") || product.slug.includes("shades")
+          ? "nail polish color"
+          : "",
       ]
         .join(" ")
         .toLowerCase()
@@ -243,7 +249,11 @@ export default function Search() {
                 <p className="font-['Archivo'] text-[16px] text-gray-600">
                   {searchResults.length > 0 ? (
                     <>
-                      Found <span className="font-semibold">{searchResults.length}</span> {searchResults.length === 1 ? 'product' : 'products'}
+                      Found{" "}
+                      <span className="font-semibold">
+                        {searchResults.length}
+                      </span>{" "}
+                      {searchResults.length === 1 ? "product" : "products"}
                     </>
                   ) : (
                     <>No products found</>
@@ -253,7 +263,7 @@ export default function Search() {
 
               {/* Products Grid */}
               {searchResults.length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-16">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-16">
                   {searchResults.map((product) => (
                     <ProductCard key={product.slug} product={product} />
                   ))}
@@ -313,4 +323,3 @@ export default function Search() {
     </div>
   );
 }
-

@@ -7,11 +7,11 @@ export function CategoryProductCard({ product }: { product: ScrapedProduct }) {
 }
 
 // Section Header Component
-export function CategorySectionHeader({ 
-  title, 
-  subtitle 
-}: { 
-  title: string; 
+export function CategorySectionHeader({
+  title,
+  subtitle,
+}: {
+  title: string;
   subtitle?: string;
 }) {
   return (
@@ -80,8 +80,8 @@ export function CategoryProductSection({
         {!hideHeader ? (
           <CategorySectionHeader title={title} subtitle={subtitle} />
         ) : null}
-        {/* 4-column grid on desktop, 2 on mobile - full width */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+        {/* Universal 5-column grid on desktop, 2 on mobile - matches product pages */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
           {products.map((product) => (
             <CategoryProductCard key={product.slug} product={product} />
           ))}
