@@ -631,10 +631,13 @@ function ImageGallery({
    * Background colors for images:
    * - Main image (index 0): grey background
    * - Secondary images (02, 03): white background (no grey) for all products
+   * - Exception: Mavadry Spray third image (index 2) gets grey background
    */
   const getContainerBgColor = (imageIndex: number): string => {
     if (imageIndex === 0) return bgColor;
-    // All secondary images get white background (user's lifestyle/product shots)
+    // Mavadry Spray: third image (bottom right) gets grey background
+    if (isMavadrySpray && imageIndex === 2) return "bg-[#f5f5f5]";
+    // All other secondary images get white background (user's lifestyle/product shots)
     return "bg-white";
   };
 
@@ -696,8 +699,8 @@ function ImageGallery({
   // Grid height constraint - reduced by 20% from default tall layout
   const bioGridStyle = isBioColors
     ? { aspectRatio: "4/3" }
-    : isNailWhiteCrayon || isDoubleLash
-    ? { maxHeight: "900px" } // Increased height for nail-white-crayon and double-lash
+    : isNailWhiteCrayon || isDoubleLash || isMavadrySpray
+    ? { maxHeight: "900px" } // Increased height for nail-white-crayon, double-lash, and mavadry-spray
     : { maxHeight: "700px" }; // Default max height for other products
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
