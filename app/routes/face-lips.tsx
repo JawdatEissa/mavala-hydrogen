@@ -266,7 +266,7 @@ export default function FaceLipsPage() {
                   type="button"
                   onClick={() => setActiveTabId(tab.id)}
                   className={`
-                    flex-1 min-w-0 px-3 py-3 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    flex-1 min-w-0 px-3 py-3 rounded-full font-['Archivo'] text-[9px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
                     ${
                       activeTabId === tab.id
                         ? "bg-[#ae1932] text-white"
@@ -285,7 +285,7 @@ export default function FaceLipsPage() {
                   type="button"
                   onClick={() => setActiveTabId(tab.id)}
                   className={`
-                    flex-1 min-w-0 px-3 py-3 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    flex-1 min-w-0 px-3 py-3 rounded-full font-['Archivo'] text-[9px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
                     ${
                       activeTabId === tab.id
                         ? "bg-[#ae1932] text-white"
