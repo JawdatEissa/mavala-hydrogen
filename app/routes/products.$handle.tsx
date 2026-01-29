@@ -1179,24 +1179,72 @@ export default function ProductPage() {
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
 
   // Listen for scroll direction to match header hide/show behavior
+  // Uses the same thresholds as Header.tsx for consistent behavior
   useEffect(() => {
     let lastScrollY = window.scrollY;
     let ticking = false;
+    let lastDirection: "up" | "down" | null = null;
+    let directionStartY = window.scrollY;
+    let pendingTimeout: number | null = null;
+
+    // Match Header.tsx thresholds
+    const HIDE_AFTER_PX = 80;
+    const SHOW_NEAR_TOP_PX = 50;
+    const MIN_TRAVEL_TO_HIDE_PX = 12;
+    const MIN_TRAVEL_TO_SHOW_PX = 35;
+    const HIDE_DELAY_MS = 80;
+    const SHOW_DELAY_MS = 180;
+    const SCROLL_NOISE_THRESHOLD = 3;
 
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
-          const scrollingDown = currentScrollY > lastScrollY;
+          const delta = currentScrollY - lastScrollY;
 
-          // Match header's hide logic: hide after 100px when scrolling down
-          // Show when scrolling up or near top
-          if (currentScrollY <= 40) {
+          // Always show near top
+          if (currentScrollY <= SHOW_NEAR_TOP_PX) {
+            if (pendingTimeout) clearTimeout(pendingTimeout);
             setIsHeaderHidden(false);
-          } else if (scrollingDown && currentScrollY > 100) {
-            setIsHeaderHidden(true);
-          } else if (!scrollingDown) {
-            setIsHeaderHidden(false);
+            lastScrollY = currentScrollY;
+            lastDirection = null;
+            directionStartY = currentScrollY;
+            ticking = false;
+            return;
+          }
+
+          // Ignore tiny scroll noise
+          if (Math.abs(delta) < SCROLL_NOISE_THRESHOLD) {
+            lastScrollY = currentScrollY;
+            ticking = false;
+            return;
+          }
+
+          const direction: "up" | "down" = delta > 0 ? "down" : "up";
+
+          // On direction change, reset tracking
+          if (lastDirection !== direction) {
+            lastDirection = direction;
+            directionStartY = currentScrollY;
+            if (pendingTimeout) clearTimeout(pendingTimeout);
+          }
+
+          // Require different travel distances for show vs hide
+          const traveled = Math.abs(currentScrollY - directionStartY);
+          const minTravelRequired =
+            direction === "down"
+              ? MIN_TRAVEL_TO_HIDE_PX
+              : MIN_TRAVEL_TO_SHOW_PX;
+
+          if (traveled >= minTravelRequired) {
+            const nextHidden =
+              direction === "down" ? currentScrollY > HIDE_AFTER_PX : false;
+            const delayMs = nextHidden ? HIDE_DELAY_MS : SHOW_DELAY_MS;
+
+            if (pendingTimeout) clearTimeout(pendingTimeout);
+            pendingTimeout = window.setTimeout(() => {
+              setIsHeaderHidden(nextHidden);
+            }, delayMs);
           }
 
           lastScrollY = currentScrollY;
@@ -1207,7 +1255,10 @@ export default function ProductPage() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (pendingTimeout) clearTimeout(pendingTimeout);
+    };
   }, []);
 
   // Get display price - prefer exact price, fallback to price_from but strip "from " prefix

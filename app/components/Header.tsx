@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import { categories } from "../lib/mock-data";
 
 // Mavala Logo Component - using official logo image from Squarespace CDN
-const LOGO_URL = "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/2145336d-78c4-4158-95e6-60f11fe8a5f8/MAVALA_Switzerland_logotype+Digital.png?format=1500w";
+const LOGO_URL =
+  "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/2145336d-78c4-4158-95e6-60f11fe8a5f8/MAVALA_Switzerland_logotype+Digital.png?format=1500w";
 
 function MavalaLogo({ width = 240 }: { width?: number }) {
   return (
@@ -11,10 +12,10 @@ function MavalaLogo({ width = 240 }: { width?: number }) {
       id="logoWrapper"
       className="title-logo-wrapper"
       style={{
-        display: 'block',
-        textAlign: 'center',
+        display: "block",
+        textAlign: "center",
         width: `${width}px`,
-        height: 'auto',
+        height: "auto",
         lineHeight: 1,
       }}
     >
@@ -24,7 +25,7 @@ function MavalaLogo({ width = 240 }: { width?: number }) {
         style={{
           margin: 0,
           fontSize: 0,
-          maxWidth: '100%',
+          maxWidth: "100%",
         }}
       >
         <Link to="/">
@@ -32,11 +33,11 @@ function MavalaLogo({ width = 240 }: { width?: number }) {
             src={LOGO_URL}
             alt="Mavala Switzerland"
             style={{
-              width: '100%',
-              height: 'auto',
-              maxWidth: '100%',
+              width: "100%",
+              height: "auto",
+              maxWidth: "100%",
               border: 0,
-              display: 'block',
+              display: "block",
             }}
           />
         </Link>
@@ -69,11 +70,22 @@ export function Header() {
 
   // Scroll-hide header (disabled while mobile menu is open)
   useEffect(() => {
-    // Tunables to reduce jitter while keeping the header feeling responsive
-    const HIDE_AFTER_PX = 50; // don't hide until user is past the hero/top area (25% faster)
-    const SHOW_NEAR_TOP_PX = 40; // always show when near the very top
-    const MIN_DIRECTION_TRAVEL_PX = 8; // hysteresis: ignore tiny direction changes (25% faster)
-    const RESPONSE_DELAY_MS = 90; // debounce: wait a bit before applying show/hide (25% faster)
+    // Tunables for smooth, deliberate scroll behavior
+    // Different thresholds for hide vs show to prevent covering content
+    const HIDE_AFTER_PX = 80; // don't hide until user is well past the top
+    const SHOW_NEAR_TOP_PX = 50; // always show when near the very top
+
+    // Hysteresis: require more distance when showing (scroll up) to prevent
+    // the header from appearing too quickly and covering product titles
+    const MIN_TRAVEL_TO_HIDE_PX = 12; // distance to travel before hiding (scroll down)
+    const MIN_TRAVEL_TO_SHOW_PX = 35; // distance to travel before showing (scroll up) - more deliberate
+
+    // Debounce delays: longer delay for showing to make it feel more intentional
+    const HIDE_DELAY_MS = 80; // quick response when hiding (user wants to see content)
+    const SHOW_DELAY_MS = 180; // longer delay when showing (prevents accidental reveals)
+
+    // Velocity tracking for smoother response
+    const SCROLL_NOISE_THRESHOLD = 3; // ignore sub-pixel movements
 
     const clearPending = () => {
       if (scrollTimeoutRef.current != null) {
@@ -97,8 +109,8 @@ export function Header() {
       }
 
       const delta = currentScrollY - lastScrollYRef.current;
-      // Ignore tiny scroll noise (trackpads / momentum)
-      if (Math.abs(delta) < 2) {
+      // Ignore tiny scroll noise (trackpads / momentum / sub-pixel)
+      if (Math.abs(delta) < SCROLL_NOISE_THRESHOLD) {
         lastScrollYRef.current = currentScrollY;
         return;
       }
@@ -112,9 +124,14 @@ export function Header() {
         clearPending();
       }
 
-      // Require a minimum distance traveled in the new direction before reacting
+      // Require different minimum distances based on direction
+      // This prevents the header from popping up and covering content when user
+      // makes small upward scrolls (e.g., reading product titles)
       const traveled = Math.abs(currentScrollY - directionStartYRef.current);
-      if (traveled < MIN_DIRECTION_TRAVEL_PX) {
+      const minTravelRequired =
+        direction === "down" ? MIN_TRAVEL_TO_HIDE_PX : MIN_TRAVEL_TO_SHOW_PX;
+
+      if (traveled < minTravelRequired) {
         lastScrollYRef.current = currentScrollY;
         return;
       }
@@ -127,12 +144,15 @@ export function Header() {
         return;
       }
 
+      // Different delays for show vs hide for a more intentional feel
+      const delayMs = nextHidden ? HIDE_DELAY_MS : SHOW_DELAY_MS;
+
       // Debounce applying show/hide so it doesn't jitter during small up/down motions
       clearPending();
       scrollTimeoutRef.current = window.setTimeout(() => {
         if (isMobileMenuOpenRef.current) return;
         if (nextHidden !== isHiddenRef.current) setIsHidden(nextHidden);
-      }, RESPONSE_DELAY_MS);
+      }, delayMs);
 
       lastScrollYRef.current = currentScrollY;
     };
@@ -146,13 +166,13 @@ export function Header() {
       clearPending();
       if (!isMobileMenuOpenRef.current) setIsHidden(false);
     };
-    
+
     // Listen for tab click event - keep header in current state
     let tabClickPauseUntil = 0;
     const handleTabClick = () => {
       tabClickPauseUntil = Date.now() + 300;
     };
-    
+
     // Wrap the scroll handler to check for tab click pause
     const wrappedHandleScroll = () => {
       if (Date.now() < tabClickPauseUntil) return;
@@ -210,7 +230,7 @@ export function Header() {
       typeof window !== "undefined" ? window.history.state : null;
     window.history.pushState(
       { ...(currentState ?? {}), mobileMenuOpen: true },
-      ""
+      "",
     );
 
     const onKeyDown = (e: KeyboardEvent) => {
@@ -229,22 +249,26 @@ export function Header() {
   }, [isMobileMenuOpen]);
 
   return (
-    <header 
+    <header
       className="w-full fixed top-0 left-0 right-0 z-[9999] bg-white shadow-sm"
       style={{
         top: isHidden ? "-90px" : "0px",
-        transition: "top 0.36s cubic-bezier(0.32, 0.72, 0, 1)",
+        // Smoother, more refined animation:
+        // - Slightly longer duration for elegance
+        // - Custom easing: gentle start, smooth middle, soft landing
+        transition: isHidden
+          ? "top 0.4s cubic-bezier(0.4, 0, 0.2, 1)" // hiding: quick ease-out
+          : "top 0.5s cubic-bezier(0.0, 0, 0.2, 1)", // showing: slower, more deliberate ease-out
       }}
     >
       <nav className="h-[90px] relative">
         {/* Desktop Navigation - Three column layout for perfect centering */}
         <div className="hidden lg:grid grid-cols-3 items-center h-full px-8">
-          
           {/* Left Group: SHOP, DIAGNOSIS, BLOG - pushed right towards logo */}
           <div className="flex flex-row items-center justify-end gap-6">
             {/* SHOP with CSS-only dropdown - group hover (non-clickable) */}
             <div className="relative group">
-              <span 
+              <span
                 className={`${navLinkClasses} relative z-[10001] cursor-default`}
               >
                 SHOP
@@ -255,22 +279,22 @@ export function Header() {
                 {/* Invisible bridge to prevent hover gap */}
                 <div className="h-2"></div>
                 <div className="bg-white shadow-xl py-4 flex flex-col border border-gray-100">
-                    {categories.map((cat) => (
-                      <a
-                        key={cat.slug}
-                        href={cat.url}
+                  {categories.map((cat) => (
+                    <a
+                      key={cat.slug}
+                      href={cat.url}
                       className="font-sans text-[12px] font-semibold text-black hover:text-red-700 hover:bg-gray-50 transition-colors py-3 px-6 uppercase tracking-[0.1em] text-left w-full"
-                      >
-                        {cat.name}
-                      </a>
-                    ))}
-                  </div>
+                    >
+                      {cat.name}
+                    </a>
+                  ))}
                 </div>
+              </div>
             </div>
 
             {/* DIAGNOSIS with dropdown */}
             <div className="relative group">
-              <span 
+              <span
                 className={`${navLinkClasses} relative z-[10001] cursor-pointer`}
               >
                 DIAGNOSIS
@@ -313,17 +337,11 @@ export function Header() {
               THE BRAND
             </a>
 
-            <Link 
-              to="/search" 
-              className={navLinkClasses}
-            >
+            <Link to="/search" className={navLinkClasses}>
               SEARCH
             </Link>
 
-            <Link 
-              to="/account" 
-              className={navLinkClasses}
-            >
+            <Link to="/account" className={navLinkClasses}>
               SIGN IN
             </Link>
           </div>
@@ -341,8 +359,18 @@ export function Header() {
             href="/cart"
             className="absolute top-[25px] right-4 p-3 z-[10001] bg-white rounded-md text-gray-800"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+              />
             </svg>
           </a>
         </div>
@@ -420,7 +448,7 @@ export function Header() {
                         if (window.history.state?.mobileMenuOpen) {
                           window.history.replaceState(
                             { ...window.history.state, mobileMenuOpen: false },
-                            ""
+                            "",
                           );
                         }
                       }}
@@ -446,7 +474,7 @@ export function Header() {
                       if (window.history.state?.mobileMenuOpen) {
                         window.history.replaceState(
                           { ...window.history.state, mobileMenuOpen: false },
-                          ""
+                          "",
                         );
                       }
                     }}
@@ -460,7 +488,7 @@ export function Header() {
                       if (window.history.state?.mobileMenuOpen) {
                         window.history.replaceState(
                           { ...window.history.state, mobileMenuOpen: false },
-                          ""
+                          "",
                         );
                       }
                     }}
@@ -477,7 +505,7 @@ export function Header() {
                   if (window.history.state?.mobileMenuOpen) {
                     window.history.replaceState(
                       { ...window.history.state, mobileMenuOpen: false },
-                      ""
+                      "",
                     );
                   }
                 }}
@@ -492,7 +520,7 @@ export function Header() {
                   if (window.history.state?.mobileMenuOpen) {
                     window.history.replaceState(
                       { ...window.history.state, mobileMenuOpen: false },
-                      ""
+                      "",
                     );
                   }
                 }}
@@ -507,7 +535,7 @@ export function Header() {
                   if (window.history.state?.mobileMenuOpen) {
                     window.history.replaceState(
                       { ...window.history.state, mobileMenuOpen: false },
-                      ""
+                      "",
                     );
                   }
                 }}
@@ -522,7 +550,7 @@ export function Header() {
                   if (window.history.state?.mobileMenuOpen) {
                     window.history.replaceState(
                       { ...window.history.state, mobileMenuOpen: false },
-                      ""
+                      "",
                     );
                   }
                 }}
