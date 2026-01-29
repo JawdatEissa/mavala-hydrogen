@@ -8,10 +8,11 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  
+
   /* Force scroll to stop at each snap point - prevents skipping on mobile */
   .snap-stop-always {
     scroll-snap-stop: always;
@@ -23,14 +24,19 @@
   html {
     scroll-behavior: smooth;
   }
-  
+
   body {
     /* Let Tailwind's `font-sans` (Archivo) win globally */
     @apply antialiased font-sans font-light;
     color: var(--color-dark, #272724);
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: inherit;
     font-weight: 300;
   }
@@ -38,14 +44,16 @@
   /* Global scale for product listing typography (non-bestseller cards) */
   :root {
     /* Increased again by ~15% vs the previous sizing */
-    --product-card-scale: 1.255; /* ~1.09 * 1.15 */
+    --product-card-scale: 1.255;
+    /* ~1.09 * 1.15 */
     /* Bestseller card uses its own fixed px values; scale those by ~15% too */
     --bestseller-text-scale: 1.15;
-    --product-page-title-scale: 0.75; /* -25% for product page H1 */
+    --product-page-title-scale: 0.75;
+    /* -25% for product page H1 */
 
     /* ===== Bestseller Typography Tokens (Mavala exact match) ===== */
     --bs-font-family: 'Archivo', sans-serif;
-    
+
     /* Product title - BLACK color, strongly aligned with gray box */
     --bs-title-size: 16px;
     --bs-title-weight: 200;
@@ -54,7 +62,7 @@
     --bs-title-color: #1A1A1A;
     --bs-title-margin-bottom: 0.5px;
     --bs-title-margin-left: 1px;
-    
+
     /* Category/subtitle labels - Light gray, same alignment as title */
     --bs-category-size: 13px;
     --bs-category-weight: 400;
@@ -62,23 +70,23 @@
     --bs-category-line-height: 1.4;
     --bs-category-margin-bottom: 4px;
     --bs-category-margin-left: 1px;
-    
+
     /* Prices - Refined sizing, same alignment as title and category */
     --bs-price-compare-size: 14px;
     --bs-price-compare-weight: 400;
     --bs-price-compare-color: #D4D4D4;
     --bs-price-compare-margin-right: 8px;
     --bs-price-compare-margin-left: 1px;
-    
+
     --bs-price-sale-size: 16px;
     --bs-price-sale-weight: 200;
     --bs-price-sale-color: #C71E3A;
     --bs-price-sale-margin-right: 6px;
-    
+
     --bs-price-regular-size: 18px;
     --bs-price-regular-weight: 500;
     --bs-price-regular-color: #C71E3A;
-    
+
     /* Meta (volume, shades) - Light gray */
     --bs-meta-size: 13px;
     --bs-meta-weight: 400;
@@ -86,37 +94,37 @@
 
     /* ===== Product Page Typography (Mavala.fr professional style) ===== */
     /* Product page H1 - BOLD, LARGE, READABLE (reduced 15% for mobile comfort) */
-    --pp-title-size: 36px;
+    --pp-title-size: 32px;
     --pp-title-weight: 200;
     --pp-title-color: #000000;
     --pp-title-line-height: 1.25;
-    
+
     /* Volume/meta text - MATCHING BESTSELLER CATEGORY WEIGHT, DARK RED COLOR (reduced 15%) */
     --pp-volume-size: 14px;
     --pp-volume-weight: 200;
     --pp-volume-color: #9e1b32;
-    
+
     /* Description body text - MATCHING BESTSELLER CATEGORY WEIGHT, DARK RED COLOR (reduced 15%) */
     --pp-description-size: 14px;
     --pp-description-weight: 200;
     --pp-description-color: #9e1b32;
     --pp-description-line-height: 1.65;
-    
+
     /* Feature/bullet text - BOLD, CLEAR (reduced 15%) */
     --pp-feature-size: 16px;
     --pp-feature-weight: 400;
     --pp-feature-color: #000000;
-    
+
     /* Section headings (How to Use, Ingredients, etc.) - reduced 15% */
     --pp-heading-size: 14px;
     --pp-heading-weight: 400;
     --pp-heading-color: #000000;
-    
+
     /* Accordion body text - READABLE (reduced 15%) */
     --pp-accordion-text-size: 13px;
     --pp-accordion-text-weight: 200;
     --pp-accordion-text-color: #333333;
-    
+
     /* Add to Cart button - compact but prominent */
     --pp-add-to-cart-size: 13px;
     --pp-add-to-cart-padding-x: 2rem;
@@ -125,6 +133,7 @@
 }
 
 @layer components {
+
   /* Section Titles - Pink/Red color */
   .section-title {
     @apply text-center uppercase tracking-[0.3em] text-lg md:text-xl font-light mb-8;
@@ -135,15 +144,15 @@
   .btn {
     @apply inline-flex items-center justify-center px-8 py-3 text-xs font-normal uppercase tracking-[0.2em] transition-all duration-300 border;
   }
-  
+
   .btn-primary {
     @apply btn border-[#E31837] text-[#E31837] bg-transparent hover:bg-[#E31837] hover:text-white;
   }
-  
+
   .btn-secondary {
     @apply btn border-gray-800 text-gray-800 bg-transparent hover:bg-gray-800 hover:text-white;
   }
-  
+
   .btn-white {
     @apply btn border-white text-white bg-transparent hover:bg-white hover:text-gray-800;
   }
@@ -153,15 +162,15 @@
     @apply relative text-left;
     font-family: var(--bs-font-family);
   }
-  
+
   .product-card-image {
     @apply relative overflow-hidden bg-[#f5f5f5] border-none outline-none shadow-none;
   }
-  
+
   .product-card-image img {
     @apply w-full h-auto object-contain border-none outline-none;
   }
-  
+
   .product-card-title {
     font-family: var(--bs-font-family);
     font-size: var(--bs-title-size);
@@ -220,7 +229,7 @@
     color: var(--bs-meta-color);
     display: inline;
   }
-  
+
   .product-card-price {
     @apply text-xs text-gray-500 mt-1;
   }
@@ -234,14 +243,15 @@
   .category-card {
     @apply relative overflow-hidden cursor-pointer;
   }
-  
+
   .category-card-title {
     @apply absolute inset-0 flex items-center justify-center text-white text-xl md:text-2xl font-light uppercase tracking-[0.15em];
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 }
 
 @layer components {
+
   /* Product Page Title (H1) - EXACT MATCH to Bestseller style */
   .product-page-title {
     font-family: var(--bs-font-family);
@@ -317,7 +327,8 @@
   /* Right column stays fixed while left content scrolls */
   .product-info-sticky {
     position: sticky;
-    top: 1rem; /* Small offset from top - header scrolls away */
+    top: 1rem;
+    /* Small offset from top - header scrolls away */
     align-self: flex-start;
     /* NO max-height or overflow - let it be natural height and truly sticky */
   }
@@ -328,27 +339,28 @@
   .text-mavala-pink {
     color: #E31837;
   }
-  
+
   .bg-mavala-pink {
     background-color: #E31837;
   }
-  
+
   .border-mavala-pink {
     border-color: #E31837;
   }
-  
+
   /* Fade-in animation */
   @keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(-10px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-  
+
   .animate-fadeIn {
     animation: fadeIn 0.3s ease-out;
   }
@@ -369,6 +381,7 @@ details summary::marker {
 
 /* Premium Product Page Styles - Matching mavala.com.au */
 @layer components {
+
   /* Product Gallery - Clean, spacious layout */
   .product-gallery-main {
     position: relative;
