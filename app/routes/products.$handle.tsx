@@ -141,30 +141,30 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
   // Get related products: hybrid approach (same category + best sellers)
   const allProducts = loadScrapedProducts();
-  
+
   // Get the current product's categories
   const productCategories = product.categories || [];
-  
+
   // Find products from the same category (excluding current product)
   const sameCategoryProducts = allProducts.filter((p) => {
     if (p.slug === product.slug) return false;
     if (!p.categories || !Array.isArray(p.categories)) return false;
-    return p.categories.some((cat) => 
-      productCategories.some((pCat) => 
-        cat.toLowerCase() === pCat.toLowerCase()
-      )
+    return p.categories.some((cat) =>
+      productCategories.some(
+        (pCat) => cat.toLowerCase() === pCat.toLowerCase(),
+      ),
     );
   });
-  
+
   // Get best sellers (excluding current product)
-  const bestSellers = allProducts.filter((p) => 
-    p.slug !== product.slug && isBestsellerSlug(p.slug)
+  const bestSellers = allProducts.filter(
+    (p) => p.slug !== product.slug && isBestsellerSlug(p.slug),
   );
-  
+
   // Build hybrid recommendations: 2-3 from same category + 2-3 best sellers
   const recommendedProducts: ScrapedProduct[] = [];
   const addedSlugs = new Set<string>();
-  
+
   // Add up to 3 from same category first
   for (const p of sameCategoryProducts.slice(0, 3)) {
     if (!addedSlugs.has(p.slug)) {
@@ -172,7 +172,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
       addedSlugs.add(p.slug);
     }
   }
-  
+
   // Fill remaining with best sellers (up to 5 total)
   for (const p of bestSellers) {
     if (recommendedProducts.length >= 5) break;
@@ -181,7 +181,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
       addedSlugs.add(p.slug);
     }
   }
-  
+
   // If still not enough, add random products to reach 5
   if (recommendedProducts.length < 5) {
     for (const p of allProducts) {
@@ -192,7 +192,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
       }
     }
   }
-  
+
   const relatedProducts = recommendedProducts;
 
   // Load color mapping for this product (contains shades and color groups)
@@ -263,7 +263,10 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     const manifestImages = manifest.products[handle];
     if (manifestImages && manifestImages.length > 0) {
       // Use manifest images as gallery_images if product doesn't have them or has fewer
-      if (!product.gallery_images || product.gallery_images.length < manifestImages.length) {
+      if (
+        !product.gallery_images ||
+        product.gallery_images.length < manifestImages.length
+      ) {
         product.gallery_images = manifestImages;
       }
     }
@@ -464,13 +467,31 @@ function MobileProductGallery({
   const getBgColor = () => {
     // Products that should have white background
     const whiteBackgroundProducts = [
-      "pop-wave", "neo-nudes", "terra-topia", "yummy", "whisper", 
-      "timeless", "color-block", "digital-art", "bio-colors", "tandem",
-      "delight", "sofuture", "prismatic", "color-vibe", "iconic",
-      "bubble-gum", "cyber-chic", "blush-colors", "new-look", "cosmic",
-      "nail-white-crayon"
+      "pop-wave",
+      "neo-nudes",
+      "terra-topia",
+      "yummy",
+      "whisper",
+      "timeless",
+      "color-block",
+      "digital-art",
+      "bio-colors",
+      "tandem",
+      "delight",
+      "sofuture",
+      "prismatic",
+      "color-vibe",
+      "iconic",
+      "bubble-gum",
+      "cyber-chic",
+      "blush-colors",
+      "new-look",
+      "cosmic",
+      "nail-white-crayon",
     ];
-    const isWhiteBg = whiteBackgroundProducts.some(p => productSlug.includes(p));
+    const isWhiteBg = whiteBackgroundProducts.some((p) =>
+      productSlug.includes(p),
+    );
     return isWhiteBg ? "bg-white" : "bg-[#f5f5f5]";
   };
 
@@ -478,7 +499,7 @@ function MobileProductGallery({
     <div className="w-full">
       {/* Swipeable Image Container */}
       <div
-        className={`relative ${getBgColor()} overflow-hidden`}
+        className="relative overflow-hidden"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
@@ -492,25 +513,46 @@ function MobileProductGallery({
             transition: isDragging ? "none" : "transform 0.3s ease-out",
           }}
         >
-          {images.map((img, idx) => (
-            <div
-              key={idx}
-              className="flex-shrink-0 w-full aspect-square flex items-center justify-center"
-              onClick={() => onImageClick(idx)}
-              style={
-                productSlug === "double-lash" && idx === 1
-                  ? { paddingTop: "20%" }
-                  : undefined
-              }
-            >
-              <img
-                src={img}
-                alt={`${alt} - ${idx + 1}`}
-                className="max-w-full max-h-full object-contain"
-                draggable={false}
-              />
-            </div>
-          ))}
+          {images.map((img, idx) => {
+            // Primary image (idx 0): grey bg, object-contain to show full product
+            // Secondary images (idx > 0): white bg, object-cover to fill container
+            const isPrimary = idx === 0;
+
+            // Special case: Nail White Crayon primary image needs object-cover (white bg)
+            const isNailWhiteCrayonPrimary =
+              productSlug === "nail-white-crayon" && isPrimary;
+
+            const imageBg = isNailWhiteCrayonPrimary
+              ? "bg-white"
+              : isPrimary
+              ? getBgColor()
+              : "bg-white";
+            const imageClass = isNailWhiteCrayonPrimary
+              ? "w-full h-full object-cover"
+              : isPrimary
+              ? "max-w-full max-h-full object-contain"
+              : "w-full h-full object-cover";
+
+            return (
+              <div
+                key={idx}
+                className={`flex-shrink-0 w-full aspect-square flex items-center justify-center ${imageBg}`}
+                onClick={() => onImageClick(idx)}
+                style={
+                  productSlug === "double-lash" && idx === 1
+                    ? { paddingTop: "20%" }
+                    : undefined
+                }
+              >
+                <img
+                  src={img}
+                  alt={`${alt} - ${idx + 1}`}
+                  className={imageClass}
+                  draggable={false}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
 
@@ -550,35 +592,40 @@ function ImageGallery({
   const isMavalaStop = productSlug === "mavala-stop";
   const isNailactan = productSlug === "nailactan-1";
   const isNailWhiteCrayon = productSlug === "nail-white-crayon";
-  
+
   // Background color: white for collection products and nail-white-crayon, grey for others
-  const bgColor = (isCollectionProduct || isNailWhiteCrayon) ? "bg-white" : "bg-[#f5f5f5]";
-  
+  const bgColor =
+    isCollectionProduct || isNailWhiteCrayon ? "bg-white" : "bg-[#f5f5f5]";
+
   // Shade collection products
-  const isShadeCollection = productSlug.endsWith("-shades") || productSlug.endsWith("-colors");
-  
+  const isShadeCollection =
+    productSlug.endsWith("-shades") || productSlug.endsWith("-colors");
+
   // Products that use the special 3-image grid layout (like mavala-stop)
-  const useSpecialGridLayout = isMavalaStop || isScientifique1 || isScientifiqueK || isNailactan || isShadeCollection;
+  const useSpecialGridLayout =
+    isMavalaStop ||
+    isScientifique1 ||
+    isScientifiqueK ||
+    isNailactan ||
+    isShadeCollection;
 
   // Products with lifestyle images that should use object-cover for secondary images
   // Note: shade products (like nude-shades) use object-contain to show full images
-  const lifestyleImageProducts = [
-    "cream-colors",
-    "pearl-colors",
-  ];
+  const lifestyleImageProducts = ["cream-colors", "pearl-colors"];
 
   const useObjectCover =
     lifestyleImageProducts.includes(productSlug) || isScientifique1;
-  
+
   // Products that need the stretched grid layout (lifestyle images that should fill containers)
   const isDoubleLash = productSlug === "double-lash";
-  
+
   // All products use grid-rows-2 and items-stretch for proper secondary image layout
   const bioGridRowsClass = "md:grid-rows-2 md:items-stretch";
   const bioFillHeightClass = "h-full";
-  const mainImageClass = (isBioColors || isNailWhiteCrayon)
-    ? "block w-full h-full object-cover border-none outline-none"
-    : "block w-full h-full object-contain border-none outline-none";
+  const mainImageClass =
+    isBioColors || isNailWhiteCrayon
+      ? "block w-full h-full object-cover border-none outline-none"
+      : "block w-full h-full object-contain border-none outline-none";
 
   /**
    * Background colors for images:
@@ -595,7 +642,7 @@ function ImageGallery({
   const getAdditionalImageClass = (imageIndex: number): string => {
     return "block w-full h-full object-cover border-none outline-none";
   };
-  
+
   // Container flex alignment
   const getContainerFlexClass = (imageIndex: number): string => {
     return "flex items-center justify-center";
@@ -633,7 +680,7 @@ function ImageGallery({
   // Get main image styling for specific products
   const getMainImageStyle = (): React.CSSProperties => {
     const isDoubleLash = productSlug === "double-lash";
-    
+
     // For double-lash, scale up by 10% and move up by 15%
     if (isDoubleLash) {
       return {
@@ -641,17 +688,17 @@ function ImageGallery({
         imageRendering: "-webkit-optimize-contrast" as any,
       };
     }
-    
+
     return {
       imageRendering: "-webkit-optimize-contrast" as any,
     };
   };
   // Grid height constraint - reduced by 20% from default tall layout
-  const bioGridStyle = isBioColors 
-    ? { aspectRatio: "4/3" } 
-    : isNailWhiteCrayon 
-      ? { maxHeight: '700px' } 
-      : { maxHeight: '700px' };  // Default max height for all products including double-lash
+  const bioGridStyle = isBioColors
+    ? { aspectRatio: "4/3" }
+    : isNailWhiteCrayon
+    ? { maxHeight: "700px" }
+    : { maxHeight: "700px" }; // Default max height for all products including double-lash
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isClosing, setIsClosing] = useState(false);
@@ -802,9 +849,9 @@ function ImageGallery({
             {allImages.map((img, idx) => (
               <div
                 key={idx}
-                className={`flex-1 min-w-0 aspect-square ${
-                  getContainerBgColor(idx)
-                } cursor-pointer active:opacity-80 transition-opacity`}
+                className={`flex-1 min-w-0 aspect-square ${getContainerBgColor(
+                  idx,
+                )} cursor-pointer active:opacity-80 transition-opacity`}
                 onClick={() => openLightbox(idx)}
               >
                 <img
@@ -834,10 +881,10 @@ function ImageGallery({
                 src={mainImage}
                 alt={alt}
                 className="block w-full object-contain border-none outline-none"
-                style={{ 
-                  imageRendering: "-webkit-optimize-contrast", 
-                  maxHeight: '775px',
-                  transform: isScientifiqueK ? 'scale(0.8)' : undefined
+                style={{
+                  imageRendering: "-webkit-optimize-contrast",
+                  maxHeight: "775px",
+                  transform: isScientifiqueK ? "scale(0.8)" : undefined,
                 }}
               />
             </div>
@@ -849,14 +896,15 @@ function ImageGallery({
                   key={idx}
                   className="bg-white border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden"
                   onClick={() => openLightbox(idx + 1)}
-                  style={isShadeCollection ? { maxHeight: '589px' } : undefined}
+                  style={isShadeCollection ? { maxHeight: "589px" } : undefined}
                 >
                   <img
                     src={img}
                     alt={`${alt} - ${idx + 2}`}
-                    className={isShadeCollection 
-                      ? "block w-full h-full object-cover object-top border-none outline-none"
-                      : "block w-full object-contain border-none outline-none"
+                    className={
+                      isShadeCollection
+                        ? "block w-full h-full object-cover object-top border-none outline-none"
+                        : "block w-full object-contain border-none outline-none"
                     }
                     loading="lazy"
                   />
@@ -888,8 +936,10 @@ function ImageGallery({
               <div
                 key={idx}
                 className={`${getContainerBgColor(
-                  idx + 1
-                )} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden ${bioFillHeightClass} ${getContainerFlexClass(idx + 1)}`}
+                  idx + 1,
+                )} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden ${bioFillHeightClass} ${getContainerFlexClass(
+                  idx + 1,
+                )}`}
                 style={getContainerStyle(idx + 1)}
                 onClick={() => openLightbox(idx + 1)}
               >
@@ -897,7 +947,6 @@ function ImageGallery({
                   src={img}
                   alt={`${alt} - ${idx + 2}`}
                   className={getAdditionalImageClass(idx + 1)}
-
                   style={getImageStyle(idx + 1)}
                   loading="lazy"
                 />
@@ -931,7 +980,7 @@ function ImageGallery({
           {/* Single Additional Image - Right - Clickable - Square */}
           <div
             className={`${getContainerBgColor(
-              1
+              1,
             )} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity`}
             onClick={() => openLightbox(1)}
           >
@@ -1118,12 +1167,14 @@ export default function ProductPage() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedMainColor, setSelectedMainColor] = useState<string | null>(
-    null
+    null,
   );
   const [selectedShade, setSelectedShade] = useState<string | null>(null);
   const [isShadeDrawerOpen, setIsShadeDrawerOpen] = useState(false);
   // Tab state for product details section (horizontal tabs like reference site)
-  const [activeProductTab, setActiveProductTab] = useState<"details" | "ingredients">("details");
+  const [activeProductTab, setActiveProductTab] = useState<
+    "details" | "ingredients"
+  >("details");
   // Track header visibility for sticky positioning
   const [isHeaderHidden, setIsHeaderHidden] = useState(false);
 
@@ -1131,13 +1182,13 @@ export default function ProductPage() {
   useEffect(() => {
     let lastScrollY = window.scrollY;
     let ticking = false;
-    
+
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const currentScrollY = window.scrollY;
           const scrollingDown = currentScrollY > lastScrollY;
-          
+
           // Match header's hide logic: hide after 100px when scrolling down
           // Show when scrolling up or near top
           if (currentScrollY <= 40) {
@@ -1147,20 +1198,22 @@ export default function ProductPage() {
           } else if (!scrollingDown) {
             setIsHeaderHidden(false);
           }
-          
+
           lastScrollY = currentScrollY;
           ticking = false;
         });
         ticking = true;
       }
     };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Get display price - prefer exact price, fallback to price_from but strip "from " prefix
-  const displayPrice = product.price || (product.price_from ? product.price_from.replace(/^from\s+/i, '') : "");
+  const displayPrice =
+    product.price ||
+    (product.price_from ? product.price_from.replace(/^from\s+/i, "") : "");
 
   // Get images array safely - prefer gallery_images for detailed products
   // Filter out certification/badge images (they contain words like "cares", "tested", "vegan", "animal")
@@ -1180,7 +1233,7 @@ export default function ProductPage() {
     return imgs.filter((img) => {
       const lowerImg = img.toLowerCase();
       return !certificationKeywords.some((keyword) =>
-        lowerImg.includes(keyword)
+        lowerImg.includes(keyword),
       );
     });
   };
@@ -1203,10 +1256,12 @@ export default function ProductPage() {
 
   // Clean up occasional bad scrape artifacts (e.g. popup JS injected into description)
   const rawMainDescription =
-    typeof product.main_description === "string" ? product.main_description : "";
+    typeof product.main_description === "string"
+      ? product.main_description
+      : "";
   const isPopupScriptDescription =
     /\bfunction\s+MakePopup\b|window\.createPopup|var\s+popupWindow\s*=/i.test(
-      rawMainDescription
+      rawMainDescription,
     );
   const mainDescription = isPopupScriptDescription
     ? product.slug === "mavadry-spray"
@@ -1246,7 +1301,7 @@ export default function ProductPage() {
     Object.keys(colorGroups).forEach((colorName) => {
       const shadeNames = colorGroups[colorName];
       shadesByColor[colorName] = shades.filter((shade) =>
-        shadeNames.includes(shade.name)
+        shadeNames.includes(shade.name),
       );
     });
 
@@ -1429,9 +1484,7 @@ export default function ProductPage() {
               {formatTitle(product.title)}
             </h1>
             <div className="flex items-center justify-between">
-              <span className="product-page-volume">
-                {volumeLabel}
-              </span>
+              <span className="product-page-volume">{volumeLabel}</span>
               {product.store_reviews &&
                 typeof product.store_reviews === "object" &&
                 product.store_reviews.count && (
@@ -1557,9 +1610,13 @@ export default function ProductPage() {
               {/* Premium Add to Cart Button - French Mavala Style */}
               <button className="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3">
                 <span className="text-white/90 font-extralight">•</span>
-                <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">ADD</span>
+                <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">
+                  ADD
+                </span>
                 <span className="text-white/90 font-extralight">•</span>
-                <span className="text-white font-extralight text-[14px]">{displayPrice ? formatPriceToCad(displayPrice) : ''}</span>
+                <span className="text-white font-extralight text-[14px]">
+                  {displayPrice ? formatPriceToCad(displayPrice) : ""}
+                </span>
               </button>
             </div>
 
@@ -1641,7 +1698,7 @@ export default function ProductPage() {
                         completely between coats.
                       </p>
                     )}
-                    
+
                     {/* YouTube Tutorial Video - Mobile */}
                     {product.youtube_video && (
                       <div className="mt-6">
@@ -1809,9 +1866,7 @@ export default function ProductPage() {
               {formatTitle(product.title)}
             </h1>
             <div className="flex items-center justify-between">
-              <span className="product-page-volume">
-                {volumeLabel}
-              </span>
+              <span className="product-page-volume">{volumeLabel}</span>
               {product.store_reviews &&
                 typeof product.store_reviews === "object" &&
                 product.store_reviews.count && (
@@ -1860,9 +1915,13 @@ export default function ProductPage() {
               {/* Premium Add to Cart Button - French Mavala Style */}
               <button className="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3">
                 <span className="text-white/90 font-extralight">•</span>
-                <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">ADD</span>
+                <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">
+                  ADD
+                </span>
                 <span className="text-white/90 font-extralight">•</span>
-                <span className="text-white font-extralight text-[14px]">{displayPrice ? formatPriceToCad(displayPrice) : ''}</span>
+                <span className="text-white font-extralight text-[14px]">
+                  {displayPrice ? formatPriceToCad(displayPrice) : ""}
+                </span>
               </button>
             </div>
 
@@ -1892,7 +1951,8 @@ export default function ProductPage() {
                 </div>
               ) : (
                 <div className="mb-6 space-y-4">
-                  {product.key_benefits && Array.isArray(product.key_benefits) ? (
+                  {product.key_benefits &&
+                  Array.isArray(product.key_benefits) ? (
                     product.key_benefits.map((benefit: string, idx: number) => (
                       <div key={idx} className="flex items-start">
                         <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
@@ -1903,7 +1963,9 @@ export default function ProductPage() {
                     <>
                       <div className="flex items-start">
                         <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
-                        <span className="product-page-feature">Swiss quality formula</span>
+                        <span className="product-page-feature">
+                          Swiss quality formula
+                        </span>
                       </div>
                       <div className="flex items-start">
                         <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
@@ -1945,10 +2007,11 @@ export default function ProductPage() {
                       </p>
                     ) : (
                       <p>
-                        Apply as directed. See product packaging for detailed instructions.
+                        Apply as directed. See product packaging for detailed
+                        instructions.
                       </p>
                     )}
-                    
+
                     {/* YouTube Tutorial Video - Mobile */}
                     {product.youtube_video && (
                       <div className="mt-6">
@@ -1995,9 +2058,7 @@ export default function ProductPage() {
                         {product.key_ingredients}
                       </p>
                     ) : (
-                      <p>
-                        See product packaging for full ingredient list.
-                      </p>
+                      <p>See product packaging for full ingredient list.</p>
                     )}
                   </div>
                 </details>
@@ -2029,7 +2090,8 @@ export default function ProductPage() {
                       </p>
                     ) : (
                       <p>
-                        For external use only. Keep out of reach of children. Avoid contact with eyes.
+                        For external use only. Keep out of reach of children.
+                        Avoid contact with eyes.
                       </p>
                     )}
                     {product.first_aid && (
@@ -2093,75 +2155,75 @@ export default function ProductPage() {
           <div className="grid lg:grid-cols-[60%_40%] gap-4 lg:gap-8 items-start">
             {/* ===== LEFT COLUMN: Gallery + Accordions (scrollable) ===== */}
             <div className="product-content-scrollable">
-            {/* Product Gallery */}
-            {additionalImages.length > 0 && selectedShade ? (
-              /* Shade selected - Universal gallery with lightbox */
-              <ImageGallery
-                mainImage={getCurrentImage()}
-                additionalImages={additionalImages}
-                alt={selectedShade || product.title}
-              />
-            ) : images.length > 1 ? (
-              /* Multiple product images - use gallery with lightbox */
-              <ImageGallery
-                mainImage={images[0]}
-                additionalImages={images.slice(1)}
-                alt={product.title}
-                productSlug={product.slug}
-                isCollectionProduct={
-                  product.slug.includes("pop-wave") ||
-                  product.slug.includes("neo-nudes") ||
-                  product.slug.includes("terra-topia") ||
-                  product.slug.includes("yummy") ||
-                  product.slug.includes("whisper") ||
-                  product.slug.includes("timeless") ||
-                  product.slug.includes("color-block") ||
-                  product.slug.includes("digital-art") ||
-                  product.slug.includes("bio-colors") ||
-                  product.slug.includes("tandem") ||
-                  product.slug.includes("delight") ||
-                  product.slug.includes("sofuture") ||
-                  product.slug.includes("prismatic") ||
-                  product.slug.includes("color-vibe") ||
-                  product.slug.includes("iconic") ||
-                  product.slug.includes("bubble-gum") ||
-                  product.slug.includes("cyber-chic") ||
-                  product.slug.includes("blush-colors") ||
-                  product.slug.includes("new-look") ||
-                  product.slug.includes("cosmic")
-                }
-                isBioColors={product.slug.includes("bio-colors")}
-              />
-            ) : (
-              /* Single image product - still clickable with lightbox */
-              <ImageGallery
-                mainImage={getCurrentImage()}
-                additionalImages={[]}
-                alt={product.title}
-                isCollectionProduct={
-                  product.slug.includes("pop-wave") ||
-                  product.slug.includes("neo-nudes") ||
-                  product.slug.includes("terra-topia") ||
-                  product.slug.includes("yummy") ||
-                  product.slug.includes("whisper") ||
-                  product.slug.includes("timeless") ||
-                  product.slug.includes("color-block") ||
-                  product.slug.includes("digital-art") ||
-                  product.slug.includes("bio-colors") ||
-                  product.slug.includes("tandem") ||
-                  product.slug.includes("delight") ||
-                  product.slug.includes("sofuture") ||
-                  product.slug.includes("prismatic") ||
-                  product.slug.includes("color-vibe") ||
-                  product.slug.includes("iconic") ||
-                  product.slug.includes("bubble-gum") ||
-                  product.slug.includes("cyber-chic") ||
-                  product.slug.includes("blush-colors") ||
-                  product.slug.includes("new-look") ||
-                  product.slug.includes("cosmic")
-                }
-              />
-            )}
+              {/* Product Gallery */}
+              {additionalImages.length > 0 && selectedShade ? (
+                /* Shade selected - Universal gallery with lightbox */
+                <ImageGallery
+                  mainImage={getCurrentImage()}
+                  additionalImages={additionalImages}
+                  alt={selectedShade || product.title}
+                />
+              ) : images.length > 1 ? (
+                /* Multiple product images - use gallery with lightbox */
+                <ImageGallery
+                  mainImage={images[0]}
+                  additionalImages={images.slice(1)}
+                  alt={product.title}
+                  productSlug={product.slug}
+                  isCollectionProduct={
+                    product.slug.includes("pop-wave") ||
+                    product.slug.includes("neo-nudes") ||
+                    product.slug.includes("terra-topia") ||
+                    product.slug.includes("yummy") ||
+                    product.slug.includes("whisper") ||
+                    product.slug.includes("timeless") ||
+                    product.slug.includes("color-block") ||
+                    product.slug.includes("digital-art") ||
+                    product.slug.includes("bio-colors") ||
+                    product.slug.includes("tandem") ||
+                    product.slug.includes("delight") ||
+                    product.slug.includes("sofuture") ||
+                    product.slug.includes("prismatic") ||
+                    product.slug.includes("color-vibe") ||
+                    product.slug.includes("iconic") ||
+                    product.slug.includes("bubble-gum") ||
+                    product.slug.includes("cyber-chic") ||
+                    product.slug.includes("blush-colors") ||
+                    product.slug.includes("new-look") ||
+                    product.slug.includes("cosmic")
+                  }
+                  isBioColors={product.slug.includes("bio-colors")}
+                />
+              ) : (
+                /* Single image product - still clickable with lightbox */
+                <ImageGallery
+                  mainImage={getCurrentImage()}
+                  additionalImages={[]}
+                  alt={product.title}
+                  isCollectionProduct={
+                    product.slug.includes("pop-wave") ||
+                    product.slug.includes("neo-nudes") ||
+                    product.slug.includes("terra-topia") ||
+                    product.slug.includes("yummy") ||
+                    product.slug.includes("whisper") ||
+                    product.slug.includes("timeless") ||
+                    product.slug.includes("color-block") ||
+                    product.slug.includes("digital-art") ||
+                    product.slug.includes("bio-colors") ||
+                    product.slug.includes("tandem") ||
+                    product.slug.includes("delight") ||
+                    product.slug.includes("sofuture") ||
+                    product.slug.includes("prismatic") ||
+                    product.slug.includes("color-vibe") ||
+                    product.slug.includes("iconic") ||
+                    product.slug.includes("bubble-gum") ||
+                    product.slug.includes("cyber-chic") ||
+                    product.slug.includes("blush-colors") ||
+                    product.slug.includes("new-look") ||
+                    product.slug.includes("cosmic")
+                  }
+                />
+              )}
 
               {/* ===== HORIZONTAL TABS (like reference site) - DESKTOP ONLY ===== */}
               <div className="hidden lg:block mt-12">
@@ -2310,13 +2372,13 @@ export default function ProductPage() {
             {/* ===== END LEFT COLUMN ===== */}
 
             {/* ===== RIGHT COLUMN: Product Info (sticky) ===== */}
-            <div 
+            <div
               className="lg:pl-6 pr-4 lg:pr-8"
               style={{
-                position: 'sticky',
-                top: isHeaderHidden ? '1rem' : '7.5rem',
-                alignSelf: 'flex-start',
-                transition: 'top 0.15s ease-out',
+                position: "sticky",
+                top: isHeaderHidden ? "1rem" : "7.5rem",
+                alignSelf: "flex-start",
+                transition: "top 0.15s ease-out",
               }}
             >
               {/* Store Reviews Link - Top */}
@@ -2334,21 +2396,31 @@ export default function ProductPage() {
                 )}
 
               {/* Title - Title case, black, not bold */}
-              <h1 className={`product-page-title ${shades.length > 0 ? 'mb-1' : 'mb-2'}`}>
+              <h1
+                className={`product-page-title ${
+                  shades.length > 0 ? "mb-1" : "mb-2"
+                }`}
+              >
                 {formatTitle(product.title)}
               </h1>
 
               {/* Size - Uses CSS variable */}
               {volumeLabel ? (
-                <p className={`product-page-volume ${shades.length > 0 ? 'mb-3' : 'mb-6'}`}>{volumeLabel}</p>
+                <p
+                  className={`product-page-volume ${
+                    shades.length > 0 ? "mb-3" : "mb-6"
+                  }`}
+                >
+                  {volumeLabel}
+                </p>
               ) : null}
 
               {/* Description - Truncated for shade products, full for others */}
-              {mainDescription && (
-                shades.length > 0 ? (
+              {mainDescription &&
+                (shades.length > 0 ? (
                   <div className="product-page-description mb-3 max-w-[53ch]">
                     <p className="mb-0 line-clamp-3">
-                      {mainDescription.replace(/\n/g, ' ')}
+                      {mainDescription.replace(/\n/g, " ")}
                     </p>
                   </div>
                 ) : (
@@ -2362,8 +2434,7 @@ export default function ProductPage() {
                         </p>
                       ))}
                   </div>
-                )
-              )}
+                ))}
 
               {/* Key Features - Compact for shade products, full for others */}
               {shades.length > 0 ? (
@@ -2391,41 +2462,43 @@ export default function ProductPage() {
                     </span>
                   </div>
                 )
+              ) : /* Full vertical style for non-shade products */
+              product.slug === "mavala-stop" ? (
+                <div className="mb-8 space-y-4">
+                  <div className="flex items-start">
+                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                    <span className="product-page-feature">
+                      Bitter nail polish for beautiful nails
+                    </span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                    <span className="product-page-feature">
+                      Dermatologically tested
+                    </span>
+                  </div>
+                </div>
               ) : (
-                /* Full vertical style for non-shade products */
-                product.slug === "mavala-stop" ? (
-                  <div className="mb-8 space-y-4">
-                    <div className="flex items-start">
-                      <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
-                      <span className="product-page-feature">
-                        Bitter nail polish for beautiful nails
-                      </span>
-                    </div>
-                    <div className="flex items-start">
-                      <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
-                      <span className="product-page-feature">
-                        Dermatologically tested
-                      </span>
-                    </div>
+                <div className="mb-8 space-y-4">
+                  <div className="flex items-start">
+                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                    <span className="product-page-feature">Vegan formula</span>
                   </div>
-                ) : (
-                  <div className="mb-8 space-y-4">
-                    <div className="flex items-start">
-                      <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
-                      <span className="product-page-feature">Vegan formula</span>
-                    </div>
-                    <div className="flex items-start">
-                      <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
-                      <span className="product-page-feature">
-                        Long-lasting hold and shine
-                      </span>
-                    </div>
+                  <div className="flex items-start">
+                    <span className="w-[5px] h-[18px] flex-shrink-0 mt-1 mr-2 bg-black rounded-full" />
+                    <span className="product-page-feature">
+                      Long-lasting hold and shine
+                    </span>
                   </div>
-                )
+                </div>
               )}
 
               {/* Horizontal Divider */}
-              <hr className={`border-t border-gray-200 ${shades.length > 0 ? 'mb-4' : 'mb-6'}`} />
+              <hr
+                className={`border-t border-gray-200 ${
+                  shades.length > 0 ? "mb-4" : "mb-6"
+                }`}
+              />
 
               {/* Shade Selection - Only for shade products (compact layout) */}
               {shades.length > 0 && (
@@ -2468,7 +2541,7 @@ export default function ProductPage() {
                                 setSelectedMainColor(
                                   selectedMainColor === color.name
                                     ? null
-                                    : color.name
+                                    : color.name,
                                 )
                               }
                               className={`px-3 py-1.5 text-xs font-['Archivo'] transition-all ${
@@ -2554,11 +2627,14 @@ export default function ProductPage() {
                   {/* SELECTED SHADE DISPLAY - Inline compact */}
                   {selectedShade && (
                     <div className="mt-3 flex items-center gap-2 p-2 bg-gray-50 rounded">
-                      <span className="font-['Archivo'] text-[10px] text-[#5c666f] uppercase">Selected:</span>
+                      <span className="font-['Archivo'] text-[10px] text-[#5c666f] uppercase">
+                        Selected:
+                      </span>
                       <div
                         className="w-5 h-5 rounded-full border border-black"
                         style={{
-                          backgroundColor: getShadeColor(selectedShade) || "#f5f5f5",
+                          backgroundColor:
+                            getShadeColor(selectedShade) || "#f5f5f5",
                         }}
                       />
                       <span className="font-['Archivo'] text-sm font-medium text-[#333]">
@@ -2590,9 +2666,13 @@ export default function ProductPage() {
                   {/* Premium Add to Cart Button - French Mavala Style */}
                   <button className="flex-1 py-3.5 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3">
                     <span className="text-white/90 font-extralight">•</span>
-                    <span className="text-white font-extralight text-[15px] uppercase tracking-[0.2em]">ADD</span>
+                    <span className="text-white font-extralight text-[15px] uppercase tracking-[0.2em]">
+                      ADD
+                    </span>
                     <span className="text-white/90 font-extralight">•</span>
-                    <span className="text-white font-extralight text-[13px]">{displayPrice ? formatPriceToCad(displayPrice) : ''}</span>
+                    <span className="text-white font-extralight text-[13px]">
+                      {displayPrice ? formatPriceToCad(displayPrice) : ""}
+                    </span>
                   </button>
                 </div>
               ) : (
@@ -2623,15 +2703,23 @@ export default function ProductPage() {
                   {/* Premium Add to Cart Button - French Mavala Style */}
                   <button className="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3 mb-6">
                     <span className="text-white/90 font-extralight">•</span>
-                    <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">ADD</span>
+                    <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">
+                      ADD
+                    </span>
                     <span className="text-white/90 font-extralight">•</span>
-                    <span className="text-white font-extralight text-[14px]">{displayPrice ? formatPriceToCad(displayPrice) : ''}</span>
+                    <span className="text-white font-extralight text-[14px]">
+                      {displayPrice ? formatPriceToCad(displayPrice) : ""}
+                    </span>
                   </button>
                 </>
               )}
 
               {/* Share */}
-              <button className={`font-['Archivo'] text-[#5c666f] hover:text-[#9e1b32] flex items-center gap-2 uppercase tracking-wider ${shades.length > 0 ? 'text-xs gap-1.5' : 'text-sm'}`}>
+              <button
+                className={`font-['Archivo'] text-[#5c666f] hover:text-[#9e1b32] flex items-center gap-2 uppercase tracking-wider ${
+                  shades.length > 0 ? "text-xs gap-1.5" : "text-sm"
+                }`}
+              >
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -2860,7 +2948,6 @@ export default function ProductPage() {
         )}
 
         {/* ALL SHADES Section - Removed, will be handled by "See all shades" button */}
-
 
         {/* Related Products - Full Width Section (outside max-w-7xl for wider design) */}
         {relatedProducts.length > 0 && (
