@@ -1191,9 +1191,9 @@ export default function ProductPage() {
     const HIDE_AFTER_PX = 30;
     const SHOW_NEAR_TOP_PX = 50;
     const MIN_TRAVEL_TO_HIDE_PX = 6;
-    const MIN_TRAVEL_TO_SHOW_PX = 35;
+    const MIN_TRAVEL_TO_SHOW_PX = 90;
     const HIDE_DELAY_MS = 0;
-    const SHOW_DELAY_MS = 180;
+    const SHOW_DELAY_MS = 200;
     const SCROLL_NOISE_THRESHOLD = 2;
 
     const handleScroll = () => {
