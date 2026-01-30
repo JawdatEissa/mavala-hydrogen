@@ -105,11 +105,16 @@ Your role:
 - Be friendly, professional, and helpful
 
 IMPORTANT Guidelines:
-- Use the provided context to answer questions. The context contains product information and recommendations.
+- Use the provided context to answer questions. The context contains product information, shade names, and recommendations.
 - ALWAYS include product recommendations when the question is about a concern or routine
 - When you see [Related Products: ...] in the context, mention those products by name in your answer
 - Keep responses helpful and actionable (use bullet points for steps or multiple products)
 - Mention product names in CAPS (e.g., MAVALA SCIENTIFIQUE, CUTICLE OIL)
+
+NAIL POLISH SHADE Questions:
+- When asked about nail polish colors/shades, LOOK for shade information in the context (e.g., "217 NEW YORK", "453 CHRISTIANA")
+- If the context contains specific shade names with hex codes, LIST THOSE SHADES by name in your response
+- Mavala offers 200+ nail polish shades in various colors - recommend specific shade names when available in the context
 
 Product Recommendation Format:
 - When recommending products, briefly explain WHY each product helps
@@ -130,17 +135,42 @@ Mavala Key Products:
 - FEATHERLIGHT CREAM: Multi-moisturizing cream for dry skin
 - MAVALA STOP: Bitter solution to stop nail biting
 - BARRIER-BASE COAT: Protects nails before polish application
+
+Mavala Nail Polish Shades by Color:
+- GREY/SILVER: 217 NEW YORK, 453 CHRISTIANA, 123 EDINBURGH, 151 MARRON GLACÉ, 402 DETROIT
+- RED: 2 MADRID, 3 PARIS, 50 TORONTO, 185 MOSCOW, 306 CUZCO
+- PINK: 168 SOUTH BEACH PINK, 172 VEGAS PINK, 157 BLUSH PINK, 303 BALI
+- NUDE/BEIGE: 12 BERLIN, 165 VANILLA, 366 GLAMOUR, 395 RIMINI
+- BLUE: 115 SKY BLUE, 158 SMOKY BLUE, 167 CYCLADES BLUE, 181 BLUE MINT
+- PURPLE: 239 BARCELONA, 467 WHISPERWOOD, 152 MAUVE CENDRÉ
 `;
+
+/**
+ * Check if question is about nail polish colors/shades
+ */
+function isShadeQuestion(question: string): boolean {
+  const lowerQ = question.toLowerCase();
+  return (
+    (lowerQ.includes('shade') || lowerQ.includes('color') || lowerQ.includes('colour')) &&
+    (lowerQ.includes('nail') || lowerQ.includes('polish'))
+  ) || lowerQ.includes('grey') || lowerQ.includes('gray') || lowerQ.includes('red nail') ||
+    lowerQ.includes('pink nail') || lowerQ.includes('blue nail') || lowerQ.includes('nude nail');
+}
 
 /**
  * Build the prompt with context
  */
 function buildPrompt(question: string, contextBlocks: string[]): string {
   // If we have context, use it; otherwise use fallback knowledge
-  const contextSection =
+  let contextSection =
     contextBlocks.length > 0
       ? contextBlocks.map((b, i) => `Context ${i + 1}:\n${b}`).join("\n\n")
       : `No specific product matches found. Use this general knowledge:\n${FALLBACK_KNOWLEDGE}`;
+  
+  // If it's a shade question and the context doesn't seem to have shade info, add fallback
+  if (isShadeQuestion(question) && !contextSection.toLowerCase().includes('shade')) {
+    contextSection += `\n\nAdditional shade information:\n${FALLBACK_KNOWLEDGE}`;
+  }
 
   return `### User Question
 ${question.trim()}

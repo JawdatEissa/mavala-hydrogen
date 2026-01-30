@@ -168,8 +168,8 @@ export const CHAT_CONSTANTS = {
   TEMPERATURE: 0.3,
 
   // Retrieval settings
-  MAX_CHUNKS: 6,
-  MIN_SIMILARITY: 0.20,  // Lower threshold to be less restrictive
+  MAX_CHUNKS: 10,  // Increased to get more diverse chunks
+  MIN_SIMILARITY: 0.15,  // Even lower threshold to catch more relevant content
   CACHE_HIT_THRESHOLD: 0.88,
   DUPLICATE_THRESHOLD: 0.98,
 
