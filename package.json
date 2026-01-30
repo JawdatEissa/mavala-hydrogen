@@ -13,7 +13,9 @@
     "start": "remix-serve ./build/server/index.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "ingest": "npx tsx scripts/ingest-content.ts",
-    "ingest:clear": "npx tsx scripts/ingest-content.ts --clear"
+    "ingest:clear": "npx tsx scripts/ingest-content.ts --clear",
+    "ingest:knowledge": "npx tsx scripts/generate-product-knowledge.ts && npx tsx scripts/ingest-content.ts --knowledge",
+    "ingest:all": "npx tsx scripts/generate-product-knowledge.ts && npx tsx scripts/ingest-content.ts --clear"
   },
   "engines": {
     "node": ">=18.0.0"

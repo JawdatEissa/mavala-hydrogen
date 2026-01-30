@@ -5,15 +5,17 @@
  * - Blog posts (app/data/blogs.json)
  * - Products (app/data/products/all_products_new.json)
  * - Quiz data (app/lib/quizData.ts)
+ * - Product knowledge base (app/data/product-knowledge.json)
  *
  * Usage:
  *   npx tsx scripts/ingest-content.ts
  *
  * Options:
- *   --clear    Clear existing chunks before ingesting
- *   --blogs    Only ingest blogs
- *   --products Only ingest products
- *   --quiz     Only ingest quiz data
+ *   --clear     Clear existing chunks before ingesting
+ *   --blogs     Only ingest blogs
+ *   --products  Only ingest products
+ *   --quiz      Only ingest quiz data
+ *   --knowledge Only ingest comprehensive product knowledge
  */
 
 import * as fs from "fs";
@@ -673,6 +675,88 @@ async function ingestQuizData(): Promise<number> {
 }
 
 // =========================================
+// Ingest Comprehensive Product Knowledge
+// =========================================
+
+interface ProductKnowledgeChunk {
+  source: string;
+  source_id: string;
+  section: string;
+  content: string;
+  relatedProducts: string[];
+}
+
+async function ingestProductKnowledge(): Promise<number> {
+  console.log("\n📚 Ingesting comprehensive product knowledge...");
+
+  const knowledgePath = path.join(
+    process.cwd(),
+    "app/data/product-knowledge.json"
+  );
+
+  if (!fs.existsSync(knowledgePath)) {
+    console.log("   ⚠️ product-knowledge.json not found. Run generate-product-knowledge.ts first.");
+    return 0;
+  }
+
+  const knowledgeChunks: ProductKnowledgeChunk[] = JSON.parse(
+    fs.readFileSync(knowledgePath, "utf-8")
+  );
+
+  console.log(`   Found ${knowledgeChunks.length} knowledge chunks`);
+
+  // Convert to ChunkData format
+  const allChunks: ChunkData[] = knowledgeChunks.map((chunk) => ({
+    source: chunk.source,
+    source_id: chunk.source_id,
+    section: chunk.section,
+    content: chunk.content,
+    metadata: {
+      relatedProducts: chunk.relatedProducts || [],
+    },
+  }));
+
+  // Generate embeddings in batches
+  console.log(`   Generating embeddings for ${allChunks.length} chunks...`);
+  const embeddings = await generateEmbeddings(allChunks.map((c) => c.content));
+
+  // Insert into database
+  const records = allChunks.map((chunk, i) => ({
+    source: chunk.source,
+    source_id: chunk.source_id,
+    section: chunk.section,
+    content: chunk.content,
+    embedding: embeddings[i],
+    metadata: chunk.metadata,
+  }));
+
+  const validRecords = records.filter((r) => r.embedding && r.embedding.length > 0);
+
+  if (validRecords.length > 0) {
+    // Insert in batches to avoid payload size limits
+    const BATCH_SIZE = 50;
+    let insertedCount = 0;
+
+    for (let i = 0; i < validRecords.length; i += BATCH_SIZE) {
+      const batch = validRecords.slice(i, i + BATCH_SIZE);
+      const { error } = await supabase.from("chunks").insert(batch);
+
+      if (error) {
+        console.error(`   ❌ Error inserting batch ${i / BATCH_SIZE + 1}:`, error);
+      } else {
+        insertedCount += batch.length;
+        console.log(`   Inserted batch ${i / BATCH_SIZE + 1} (${insertedCount}/${validRecords.length})`);
+      }
+    }
+
+    console.log(`   ✅ Inserted ${insertedCount} product knowledge chunks`);
+    return insertedCount;
+  }
+
+  return 0;
+}
+
+// =========================================
 // Main Execution
 // =========================================
 
@@ -699,7 +783,8 @@ async function main() {
   const onlyBlogs = args.includes("--blogs");
   const onlyProducts = args.includes("--products");
   const onlyQuiz = args.includes("--quiz");
-  const ingestAll = !onlyBlogs && !onlyProducts && !onlyQuiz;
+  const onlyKnowledge = args.includes("--knowledge");
+  const ingestAll = !onlyBlogs && !onlyProducts && !onlyQuiz && !onlyKnowledge;
 
   if (shouldClear) {
     await clearChunks();
@@ -717,6 +802,10 @@ async function main() {
 
   if (ingestAll || onlyQuiz) {
     totalChunks += await ingestQuizData();
+  }
+
+  if (ingestAll || onlyKnowledge) {
+    totalChunks += await ingestProductKnowledge();
   }
 
   // Verify

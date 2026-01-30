@@ -97,6 +97,7 @@ function checkRateLimit(identifier: string): boolean {
 
 // Key products with their details for recommendations
 const PRODUCT_CATALOG: Record<string, SuggestedProduct> = {
+  // === NAIL REPAIR ===
   "mavala-scientifique-1": {
     handle: "mavala-scientifique-1",
     title: "MAVALA SCIENTIFIQUE",
@@ -118,41 +119,6 @@ const PRODUCT_CATALOG: Record<string, SuggestedProduct> = {
     image: "/images/mava-flex-1/01_mava-flex.jpg",
     category: "Nail Repair",
   },
-  "cuticle-oil": {
-    handle: "cuticle-oil",
-    title: "CUTICLE OIL",
-    price: "$24.95",
-    image: "/images/cuticle-oil/01_cuticle-oil.jpg",
-    category: "Cuticle Care",
-  },
-  "cuticle-cream": {
-    handle: "cuticle-cream",
-    title: "CUTICLE CREAM",
-    price: "$24.95",
-    image: "/images/cuticle-cream/01_cuticle-cream.jpg",
-    category: "Cuticle Care",
-  },
-  "hand-cream": {
-    handle: "hand-cream",
-    title: "HAND CREAM",
-    price: "$24.95",
-    image: "/images/hand-cream/01_hand-cream.jpg",
-    category: "Hand care",
-  },
-  "healthy-glow-serum": {
-    handle: "healthy-glow-serum",
-    title: "VITALIZING HEALTHY GLOW SERUM",
-    price: "$79.95",
-    image: "/images/healthy-glow-serum/01_serum.jpg",
-    category: "Skincare",
-  },
-  "featherlight-cream": {
-    handle: "featherlight-cream",
-    title: "MULTI-MOISTURIZING FEATHERLIGHT CREAM",
-    price: "$59.95",
-    image: "/images/featherlight-cream/01_cream.jpg",
-    category: "Skincare",
-  },
   "mavala-stop": {
     handle: "mavala-stop",
     title: "MAVALA STOP",
@@ -167,19 +133,182 @@ const PRODUCT_CATALOG: Record<string, SuggestedProduct> = {
     image: "/images/mavaderma/01_mavaderma.jpg",
     category: "Nail Repair",
   },
-  "anti-spot-cream-for-hands": {
-    handle: "anti-spot-cream-for-hands",
-    title: "ANTI-SPOT CREAM FOR HANDS",
-    price: "$39.95",
-    image: "/images/anti-spot-cream-for-hands/01_cream.jpg",
-    category: "Hand care",
-  },
   "barrier-base-coat": {
     handle: "barrier-base-coat",
     title: "BARRIER-BASE COAT",
     price: "$19.95",
-    image: "/images/barrier-base-coat/01_base.jpg",
+    image: "/images/barrier-base-coat/01_barrier-base-coat.jpg",
     category: "Nail Repair",
+  },
+
+  // === NAIL POLISH REMOVERS ===
+  "blue-nail-polish-remover": {
+    handle: "blue-nail-polish-remover",
+    title: "BLUE NAIL POLISH REMOVER",
+    price: "$14.95",
+    image: "/images/blue-nail-polish-remover/01_blue-remover.jpg",
+    category: "Nail Polish Removers",
+  },
+  "crystal-nail-polish-remover": {
+    handle: "crystal-nail-polish-remover",
+    title: "CRYSTAL NAIL POLISH REMOVER",
+    price: "$14.95",
+    image: "/images/crystal-nail-polish-remover/01_crystal-remover.jpg",
+    category: "Nail Polish Removers",
+  },
+  "pink-nail-polish-remover": {
+    handle: "pink-nail-polish-remover",
+    title: "PINK NAIL POLISH REMOVER",
+    price: "$14.95",
+    image: "/images/pink-nail-polish-remover/01_pink-remover.jpg",
+    category: "Nail Polish Removers",
+  },
+  "nail-polish-remover-pads": {
+    handle: "nail-polish-remover-pads",
+    title: "NAIL POLISH REMOVER PADS",
+    price: "$9.95",
+    image: "/images/nail-polish-remover-pads/01_pads.jpg",
+    category: "Nail Polish Removers",
+  },
+
+  // === CUTICLE CARE ===
+  "cuticle-oil": {
+    handle: "cuticle-oil",
+    title: "CUTICLE OIL",
+    price: "$24.95",
+    image: "/images/cuticle-oil/01_cuticle-oil.jpg",
+    category: "Cuticle Care",
+  },
+  "cuticle-cream": {
+    handle: "cuticle-cream",
+    title: "CUTICLE CREAM",
+    price: "$24.95",
+    image: "/images/cuticle-cream/01_cuticle-cream.jpg",
+    category: "Cuticle Care",
+  },
+  "cuticle-remover": {
+    handle: "cuticle-remover",
+    title: "CUTICLE REMOVER",
+    price: "$19.95",
+    image: "/images/cuticle-remover/01_cuticle-remover.jpg",
+    category: "Cuticle Care",
+  },
+
+  // === HAND CARE ===
+  "hand-cream": {
+    handle: "hand-cream",
+    title: "HAND CREAM",
+    price: "$24.95",
+    image: "/images/hand-cream/01_hand-cream.jpg",
+    category: "Hand care",
+  },
+  "anti-spot-cream-for-hands": {
+    handle: "anti-spot-cream-for-hands",
+    title: "ANTI-SPOT CREAM FOR HANDS",
+    price: "$39.95",
+    image: "/images/anti-spot-cream-for-hands/01_anti-spot.jpg",
+    category: "Hand care",
+  },
+
+  // === SKINCARE ===
+  "healthy-glow-serum": {
+    handle: "healthy-glow-serum",
+    title: "VITALIZING HEALTHY GLOW SERUM",
+    price: "$79.95",
+    image: "/images/healthy-glow-serum/01_serum.jpg",
+    category: "Skincare",
+  },
+  "featherlight-cream": {
+    handle: "featherlight-cream",
+    title: "MULTI-MOISTURIZING FEATHERLIGHT CREAM",
+    price: "$59.95",
+    image: "/images/featherlight-cream/01_cream.jpg",
+    category: "Skincare",
+  },
+  "nourishing-cream": {
+    handle: "nourishing-cream",
+    title: "NOURISHING CREAM",
+    price: "$49.95",
+    image: "/images/nourishing-cream/01_cream.jpg",
+    category: "Skincare",
+  },
+
+  // === MAKEUP REMOVERS ===
+  "bi-phase-make-up-remover": {
+    handle: "bi-phase-make-up-remover",
+    title: "TOTAL BI-PHASE MAKEUP REMOVER",
+    price: "$29.95",
+    image: "/images/bi-phase-make-up-remover/01_remover.jpg",
+    category: "Makeup Removers",
+  },
+  "eye-make-up-remover-lotion": {
+    handle: "eye-make-up-remover-lotion",
+    title: "EYE MAKEUP REMOVER LOTION",
+    price: "$24.95",
+    image: "/images/eye-make-up-remover-lotion/01_lotion.jpg",
+    category: "Makeup Removers",
+  },
+  "remover-gel": {
+    handle: "remover-gel",
+    title: "REMOVER GEL",
+    price: "$24.95",
+    image: "/images/remover-gel/01_gel.jpg",
+    category: "Makeup Removers",
+  },
+  "remover-pads": {
+    handle: "remover-pads",
+    title: "EYE MAKEUP REMOVER PADS",
+    price: "$14.95",
+    image: "/images/remover-pads/01_pads.jpg",
+    category: "Makeup Removers",
+  },
+
+  // === NAIL POLISH ===
+  "5ml-bottles": {
+    handle: "5ml-bottles",
+    title: "MINI COLOR NAIL POLISH (5ML)",
+    price: "from $9.95",
+    image: "/images/5ml-bottles/01_mini.jpg",
+    category: "Nail Colour",
+  },
+  "10ml-bottles": {
+    handle: "10ml-bottles",
+    title: "NAIL POLISH (10ML)",
+    price: "from $13.95",
+    image: "/images/10ml-bottles/01_bottle.jpg",
+    category: "Nail Colour",
+  },
+
+  // === TOP & BASE COATS ===
+  "colorfix-1": {
+    handle: "colorfix-1",
+    title: "COLORFIX TOP COAT",
+    price: "$19.95",
+    image: "/images/colorfix-1/01_colorfix.jpg",
+    category: "Manicure Essentials",
+  },
+  "gel-finish-top-coat": {
+    handle: "gel-finish-top-coat",
+    title: "GEL FINISH TOP COAT",
+    price: "$19.95",
+    image: "/images/gel-finish-top-coat/01_gel-finish.jpg",
+    category: "Manicure Essentials",
+  },
+
+  // === FOOT CARE ===
+  "foot-bath-salts": {
+    handle: "foot-bath-salts",
+    title: "FOOT BATH SALTS",
+    price: "$24.95",
+    image: "/images/foot-bath-salts/01_salts.jpg",
+    category: "Foot Care",
+  },
+  "repairing-night-cream-for-feet": {
+    handle: "repairing-night-cream-for-feet",
+    title: "REPAIRING NIGHT CREAM FOR FEET",
+    price: "$29.95",
+    image: "/images/repairing-night-cream-for-feet/01_cream.jpg",
+    category: "Foot Care",
   },
 };
 
