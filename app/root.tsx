@@ -7,12 +7,13 @@ import {
   useLocation,
   useNavigationType,
 } from "@remix-run/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import type { LinksFunction } from "@remix-run/node";
 
 import "./styles/tailwind.css";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { ChatWidget } from "./components/chat";
 
 export const links: LinksFunction = () => [
   { rel: "icon", href: "/favicon.ico" },
@@ -32,6 +33,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
   const navigationType = useNavigationType();
 
+  // TODO: Replace with actual Shopify customer authentication check
+  // For now, default to true to show the chatbot (will be gated when auth is implemented)
+  const [isLoggedIn] = useState(true);
+
   // Scroll to top on route change - fixes mobile scroll restoration issues
   useEffect(() => {
     /**
@@ -43,6 +48,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
       window.scrollTo(0, 0);
     }
   }, [location.pathname, location.hash, navigationType]);
+
+  // Handler for login button click (placeholder until Shopify auth is implemented)
+  const handleLoginClick = () => {
+    // TODO: Implement Shopify customer login modal or redirect
+    console.log("Login clicked - implement Shopify auth");
+  };
 
   return (
     <html lang="en">
@@ -61,6 +72,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Header />
         <main>{children}</main>
         <Footer />
+
+        {/* AI Chatbot Widget */}
+        <ChatWidget isLoggedIn={isLoggedIn} onLoginClick={handleLoginClick} />
+
         <ScrollRestoration
           getKey={(location) => {
             // Use pathname as key to reset scroll on navigation

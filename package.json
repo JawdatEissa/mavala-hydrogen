@@ -11,7 +11,9 @@
     "build": "npx remix vite:build",
     "preview": "vite preview",
     "start": "remix-serve ./build/server/index.js",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "ingest": "npx tsx scripts/ingest-content.ts",
+    "ingest:clear": "npx tsx scripts/ingest-content.ts --clear"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -20,20 +22,27 @@
     "@remix-run/node": "^2.12.1",
     "@remix-run/react": "^2.12.1",
     "@remix-run/serve": "^2.12.1",
+    "@supabase/supabase-js": "^2.93.3",
     "@vercel/remix": "^2.16.7",
+    "dotenv": "^17.2.3",
     "framer-motion": "^12.23.26",
     "isbot": "^5.1.0",
+    "openai": "^6.17.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.12.1",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "@types/uuid": "^10.0.0",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.3",
+    "tiktoken": "^1.0.22",
+    "tsx": "^4.21.0",
     "typescript": "^5.4.0",
     "vite": "^5.2.0"
   }
