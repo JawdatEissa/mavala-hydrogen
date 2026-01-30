@@ -55,7 +55,7 @@ export default function BlogIndex() {
   const allTags = getAllTags(blogs as BlogPost[]);
 
   return (
-    <div className="pt-[104px] md:pt-[112px] min-h-screen bg-white">
+    <div className="pt-[104px] md:pt-[112px] min-h-screen bg-gray-50">
       {/* Hero Section with Featured Blog */}
       <section className="relative bg-gradient-to-b from-gray-50 to-white">
         <div className="mx-auto px-6 md:px-10 lg:px-16 max-w-[1800px] pt-6 md:pt-8 pb-12 md:pb-16">
