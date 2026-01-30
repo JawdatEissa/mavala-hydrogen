@@ -498,15 +498,42 @@ export async function action({ request }: ActionFunctionArgs) {
     const productHandles = getProductHandles();
     const responseProducts = extractProductHandles(answer, productHandles);
 
-    // Combine and deduplicate product handles
+    // Also check for products mentioned in the user's question
+    const questionProducts = extractProductHandles(question, productHandles);
+
+    // Prioritize: 1) Products in AI response, 2) Products in question, 3) Products from context
+    // This ensures the most relevant products appear first
     let allProductHandles = [
-      ...new Set([...contextProducts, ...responseProducts]),
+      ...new Set([
+        ...responseProducts,
+        ...questionProducts,
+        ...contextProducts,
+      ]),
     ].slice(0, 3);
 
     // If no products found, suggest defaults based on question topic
     if (allProductHandles.length === 0) {
       const questionLower = question.toLowerCase();
       if (
+        questionLower.includes("remover") ||
+        questionLower.includes("remove")
+      ) {
+        allProductHandles = [
+          "blue-nail-polish-remover",
+          "crystal-nail-polish-remover",
+          "nail-polish-remover-pads",
+        ];
+      } else if (
+        questionLower.includes("stop") ||
+        questionLower.includes("biting") ||
+        questionLower.includes("bite")
+      ) {
+        allProductHandles = [
+          "mavala-stop",
+          "mavala-scientifique-1",
+          "mava-strong",
+        ];
+      } else if (
         questionLower.includes("nail") ||
         questionLower.includes("brittle") ||
         questionLower.includes("weak") ||
@@ -532,6 +559,23 @@ export async function action({ request }: ActionFunctionArgs) {
         questionLower.includes("hand")
       ) {
         allProductHandles = ["cuticle-oil", "cuticle-cream", "hand-cream"];
+      } else if (
+        questionLower.includes("makeup") ||
+        questionLower.includes("eye")
+      ) {
+        allProductHandles = [
+          "bi-phase-make-up-remover",
+          "eye-make-up-remover-lotion",
+          "remover-pads",
+        ];
+      } else if (
+        questionLower.includes("foot") ||
+        questionLower.includes("feet")
+      ) {
+        allProductHandles = [
+          "foot-bath-salts",
+          "repairing-night-cream-for-feet",
+        ];
       } else {
         // General beauty - show popular products
         allProductHandles = [

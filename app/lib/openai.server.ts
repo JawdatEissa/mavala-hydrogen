@@ -217,6 +217,67 @@ export async function generateChatResponse(
 // Product Extraction
 // =========================================
 
+// Map of product names/titles to their handles for better matching
+const PRODUCT_NAME_TO_HANDLE: Record<string, string> = {
+  // Nail Repair
+  "mavala scientifique": "mavala-scientifique-1",
+  "scientifique": "mavala-scientifique-1",
+  "mava strong": "mava-strong",
+  "mava-strong": "mava-strong",
+  "mava flex": "mava-flex-1",
+  "mava-flex": "mava-flex-1",
+  "mavala stop": "mavala-stop",
+  "mavaderma": "mavaderma",
+  "barrier base coat": "barrier-base-coat",
+  
+  // Nail Polish Removers
+  "blue nail polish remover": "blue-nail-polish-remover",
+  "blue remover": "blue-nail-polish-remover",
+  "crystal nail polish remover": "crystal-nail-polish-remover",
+  "crystal remover": "crystal-nail-polish-remover",
+  "pink nail polish remover": "pink-nail-polish-remover",
+  "pink remover": "pink-nail-polish-remover",
+  "nail polish remover pads": "nail-polish-remover-pads",
+  "remover pads": "nail-polish-remover-pads",
+  
+  // Cuticle Care
+  "cuticle oil": "cuticle-oil",
+  "cuticle cream": "cuticle-cream",
+  "cuticle remover": "cuticle-remover",
+  
+  // Hand Care
+  "hand cream": "hand-cream",
+  "anti spot cream": "anti-spot-cream-for-hands",
+  "anti-spot cream": "anti-spot-cream-for-hands",
+  
+  // Skincare
+  "healthy glow serum": "healthy-glow-serum",
+  "featherlight cream": "featherlight-cream",
+  "nourishing cream": "nourishing-cream",
+  
+  // Makeup Removers
+  "bi phase makeup remover": "bi-phase-make-up-remover",
+  "bi-phase makeup remover": "bi-phase-make-up-remover",
+  "eye makeup remover lotion": "eye-make-up-remover-lotion",
+  "eye make up remover": "eye-make-up-remover-lotion",
+  "remover gel": "remover-gel",
+  "eye makeup remover pads": "remover-pads",
+  
+  // Nail Polish
+  "5ml bottles": "5ml-bottles",
+  "mini color": "5ml-bottles",
+  "10ml bottles": "10ml-bottles",
+  "nail polish": "10ml-bottles",
+  
+  // Top & Base Coats
+  "colorfix": "colorfix-1",
+  "gel finish top coat": "gel-finish-top-coat",
+  
+  // Foot Care
+  "foot bath salts": "foot-bath-salts",
+  "repairing night cream for feet": "repairing-night-cream-for-feet",
+};
+
 /**
  * Extract product handles mentioned in the response or context
  * This helps identify which products to suggest alongside the answer
@@ -230,6 +291,14 @@ export function extractProductHandles(
   // Normalize text for matching
   const normalizedText = text.toLowerCase();
 
+  // First, check for known product names and map to handles
+  for (const [name, handle] of Object.entries(PRODUCT_NAME_TO_HANDLE)) {
+    if (normalizedText.includes(name) && availableHandles.includes(handle)) {
+      found.push(handle);
+    }
+  }
+
+  // Then check for handle matches directly
   for (const handle of availableHandles) {
     // Check if handle appears in text (products often have handles like "serum-foundation")
     const handleWords = handle.split("-").join(" ");
@@ -237,10 +306,12 @@ export function extractProductHandles(
       normalizedText.includes(handle) ||
       normalizedText.includes(handleWords)
     ) {
-      found.push(handle);
+      if (!found.includes(handle)) {
+        found.push(handle);
+      }
     }
   }
 
-  // Return unique handles, max 3
-  return [...new Set(found)].slice(0, 3);
+  // Return unique handles, max 5 (we'll slice to 3 later after combining)
+  return [...new Set(found)].slice(0, 5);
 }
