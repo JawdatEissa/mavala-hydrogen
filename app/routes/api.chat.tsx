@@ -13,18 +13,6 @@
  */
 
 import { json, type ActionFunctionArgs } from "@remix-run/node";
-import {
-  embedText,
-  generateChatResponse,
-  extractProductHandles,
-} from "~/lib/openai.server";
-import {
-  retrieveChunks,
-  checkSemanticCache,
-  upsertCache,
-  incrementCacheHit,
-} from "~/lib/supabase.server";
-import { getCustomerSession, getRateLimitIdentifier } from "~/lib/auth.server";
 import type {
   ChatRequest,
   ChatResponse,
@@ -32,8 +20,43 @@ import type {
 } from "~/lib/chat.types";
 import { CHAT_CONSTANTS } from "~/lib/chat.types";
 
-// Import products data directly (works in serverless environments like Vercel)
-import productsData from "~/data/products/all_products_new.json";
+// Lazy imports to catch initialization errors
+let embedText: typeof import("~/lib/openai.server").embedText;
+let generateChatResponse: typeof import("~/lib/openai.server").generateChatResponse;
+let extractProductHandles: typeof import("~/lib/openai.server").extractProductHandles;
+let retrieveChunks: typeof import("~/lib/supabase.server").retrieveChunks;
+let checkSemanticCache: typeof import("~/lib/supabase.server").checkSemanticCache;
+let upsertCache: typeof import("~/lib/supabase.server").upsertCache;
+let incrementCacheHit: typeof import("~/lib/supabase.server").incrementCacheHit;
+let getCustomerSession: typeof import("~/lib/auth.server").getCustomerSession;
+let getRateLimitIdentifier: typeof import("~/lib/auth.server").getRateLimitIdentifier;
+
+let modulesLoaded = false;
+let moduleError: Error | null = null;
+
+async function loadModules() {
+  if (modulesLoaded) return;
+  try {
+    const openaiModule = await import("~/lib/openai.server");
+    const supabaseModule = await import("~/lib/supabase.server");
+    const authModule = await import("~/lib/auth.server");
+
+    embedText = openaiModule.embedText;
+    generateChatResponse = openaiModule.generateChatResponse;
+    extractProductHandles = openaiModule.extractProductHandles;
+    retrieveChunks = supabaseModule.retrieveChunks;
+    checkSemanticCache = supabaseModule.checkSemanticCache;
+    upsertCache = supabaseModule.upsertCache;
+    incrementCacheHit = supabaseModule.incrementCacheHit;
+    getCustomerSession = authModule.getCustomerSession;
+    getRateLimitIdentifier = authModule.getRateLimitIdentifier;
+
+    modulesLoaded = true;
+  } catch (err) {
+    moduleError = err as Error;
+    console.error("[api/chat] Failed to load modules:", err);
+  }
+}
 
 // =========================================
 // Configuration
@@ -68,24 +91,99 @@ function checkRateLimit(identifier: string): boolean {
 // Note: getClientIdentifier moved to auth.server.ts as getRateLimitIdentifier
 
 // =========================================
-// Product Lookup (using imported data - works in serverless)
+// Product Lookup (hardcoded for serverless reliability)
 // =========================================
 
-// Type for product data
-interface ProductData {
-  slug: string;
-  title: string;
-  price?: string;
-  price_from?: string;
-  local_images?: string[];
-  categories?: string[];
-}
+// Key products with their details for recommendations
+const PRODUCT_CATALOG: Record<string, SuggestedProduct> = {
+  "mavala-scientifique-1": {
+    handle: "mavala-scientifique-1",
+    title: "MAVALA SCIENTIFIQUE",
+    price: "$29.95",
+    image: "/images/mavala-scientifique-1/01_scientifique.jpg",
+    category: "Nail Repair",
+  },
+  "mava-strong": {
+    handle: "mava-strong",
+    title: "MAVA-STRONG",
+    price: "$29.95",
+    image: "/images/mava-strong/01_mava-strong.jpg",
+    category: "Nail Repair",
+  },
+  "mava-flex-1": {
+    handle: "mava-flex-1",
+    title: "MAVA-FLEX",
+    price: "$29.95",
+    image: "/images/mava-flex-1/01_mava-flex.jpg",
+    category: "Nail Repair",
+  },
+  "cuticle-oil": {
+    handle: "cuticle-oil",
+    title: "CUTICLE OIL",
+    price: "$24.95",
+    image: "/images/cuticle-oil/01_cuticle-oil.jpg",
+    category: "Cuticle Care",
+  },
+  "cuticle-cream": {
+    handle: "cuticle-cream",
+    title: "CUTICLE CREAM",
+    price: "$24.95",
+    image: "/images/cuticle-cream/01_cuticle-cream.jpg",
+    category: "Cuticle Care",
+  },
+  "hand-cream": {
+    handle: "hand-cream",
+    title: "HAND CREAM",
+    price: "$24.95",
+    image: "/images/hand-cream/01_hand-cream.jpg",
+    category: "Hand care",
+  },
+  "healthy-glow-serum": {
+    handle: "healthy-glow-serum",
+    title: "VITALIZING HEALTHY GLOW SERUM",
+    price: "$79.95",
+    image: "/images/healthy-glow-serum/01_serum.jpg",
+    category: "Skincare",
+  },
+  "featherlight-cream": {
+    handle: "featherlight-cream",
+    title: "MULTI-MOISTURIZING FEATHERLIGHT CREAM",
+    price: "$59.95",
+    image: "/images/featherlight-cream/01_cream.jpg",
+    category: "Skincare",
+  },
+  "mavala-stop": {
+    handle: "mavala-stop",
+    title: "MAVALA STOP",
+    price: "$24.95",
+    image: "/images/mavala-stop/01_stop.jpg",
+    category: "Nail Repair",
+  },
+  mavaderma: {
+    handle: "mavaderma",
+    title: "MAVADERMA",
+    price: "$29.95",
+    image: "/images/mavaderma/01_mavaderma.jpg",
+    category: "Nail Repair",
+  },
+  "anti-spot-cream-for-hands": {
+    handle: "anti-spot-cream-for-hands",
+    title: "ANTI-SPOT CREAM FOR HANDS",
+    price: "$39.95",
+    image: "/images/anti-spot-cream-for-hands/01_cream.jpg",
+    category: "Hand care",
+  },
+  "barrier-base-coat": {
+    handle: "barrier-base-coat",
+    title: "BARRIER-BASE COAT",
+    price: "$19.95",
+    image: "/images/barrier-base-coat/01_base.jpg",
+    category: "Nail Repair",
+  },
+};
 
-// Cast imported data to typed array
-const products = productsData as ProductData[];
-
-// Pre-compute product handles for fast lookup
-const productHandlesCache: string[] = products.map((p) => p.slug);
+// All product handles for matching
+const productHandlesCache: string[] = Object.keys(PRODUCT_CATALOG);
 
 function getProductHandles(): string[] {
   return productHandlesCache;
@@ -98,17 +196,9 @@ function getProductDetails(handles: string[]): SuggestedProduct[] {
   const suggestions: SuggestedProduct[] = [];
 
   for (const handle of handles.slice(0, 3)) {
-    const product = products.find((p) => p.slug === handle);
+    const product = PRODUCT_CATALOG[handle];
     if (product) {
-      suggestions.push({
-        handle: product.slug,
-        title: product.title,
-        price: product.price || product.price_from || "",
-        image: product.local_images?.[0]
-          ? `/images/${product.local_images[0].replace(/\\/g, "/")}`
-          : "",
-        category: product.categories?.[0] || "",
-      });
+      suggestions.push(product);
     }
   }
 
@@ -149,6 +239,17 @@ export async function action({ request }: ActionFunctionArgs) {
   }
 
   try {
+    // Load modules lazily (catches initialization errors)
+    await loadModules();
+
+    if (moduleError) {
+      console.error("[api/chat] Module initialization error:", moduleError);
+      return json(
+        { error: "Service temporarily unavailable. Please try again later." },
+        { status: 503 },
+      );
+    }
+
     // Authentication check
     const customerSession = await getCustomerSession(request);
 
