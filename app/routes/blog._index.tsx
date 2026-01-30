@@ -70,7 +70,7 @@ export default function BlogIndex() {
               Beauty & Wellness
             </h1>
             {/* Decorative divider - MOBILE: translate-x-[0em], DESKTOP: -translate-x-[1.7em] */}
-            <div className="flex items-center justify-center gap-2 md:gap-3 mb-4 md:mb-5 translate-x-[-0.7em] md:-translate-x-[1.7em]">
+            <div className="flex items-center justify-center gap-2 md:gap-3 mb-4 md:mb-5 translate-x-[0.5em] md:-translate-x-[1.7em]">
               <div className="w-8 md:w-12 h-px bg-[#E31837]/30" />
               <div className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-[#E31837]" />
               <div className="w-8 md:w-12 h-px bg-[#E31837]/30" />
