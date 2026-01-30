@@ -111,7 +111,7 @@ export default function Homepage() {
       const epsilon = 2;
       setCanScrollLeft(scrollLeft > epsilon);
       setCanScrollRight(
-        scrollLeft + container.clientWidth < container.scrollWidth - epsilon
+        scrollLeft + container.clientWidth < container.scrollWidth - epsilon,
       );
     };
 
@@ -138,7 +138,7 @@ export default function Homepage() {
       title: "Breaking Up with Synthetic Nails!",
       date: "OCT 3, 2025",
       image: "/blog-breaking-up-with-synthetics.jpg",
-      to: "/blog/breaking-up-with-synthetics",
+      to: "/blog/breaking-up-with-synthetic-nails",
     },
     {
       title: "The Art of Polka Dot Nails",
@@ -150,19 +150,19 @@ export default function Homepage() {
       title: "New season nail trends",
       date: "AUG 19, 2025",
       image: "/blog-nail-trends.jpg",
-      to: "/blog/new-season-nail-trends",
+      to: "/blog/nail-trends",
     },
     {
       title: "Old-school beauty rules",
       date: "AUG 7, 2025",
       image: "/blog-beauty-myths.jpg",
-      to: "/blog/old-school-beauty-rules",
+      to: "/blog/beauty-myths",
     },
     {
       title: "More than a manicure, it’s a moment for me",
       date: "JUL 3, 2025",
       image: "/blog-manicure-for-me.jpg",
-      to: "/blog/more-than-a-manicure",
+      to: "/blog/a-manicure-for-me",
     },
   ];
 
