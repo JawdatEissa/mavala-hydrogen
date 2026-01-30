@@ -64,7 +64,8 @@ async function loadModules() {
 
 // Set to true to require authentication in production
 // For development, authentication is bypassed
-const REQUIRE_AUTH_IN_PRODUCTION = true;
+// TODO: Set back to true once login is integrated
+const REQUIRE_AUTH_IN_PRODUCTION = false;
 
 // =========================================
 // Rate Limiting (In-Memory)
