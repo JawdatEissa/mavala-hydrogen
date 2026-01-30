@@ -118,13 +118,29 @@ Product Recommendation Format:
 If no relevant context is found, still try to give helpful general advice about nail care or skincare, and suggest the user browse the relevant product category.`;
 
 /**
+ * Default product knowledge fallback when database has no matches
+ */
+const FALLBACK_KNOWLEDGE = `
+Mavala Key Products:
+- MAVALA SCIENTIFIQUE: Penetrating nail hardener for weak, brittle nails
+- MAVA-STRONG: Fortifies soft, delicate nails  
+- CUTICLE OIL: Nourishes and softens cuticles
+- HAND CREAM: Moisturizes and protects hands
+- HEALTHY GLOW SERUM: Vitalizing serum for radiant skin
+- FEATHERLIGHT CREAM: Multi-moisturizing cream for dry skin
+- MAVALA STOP: Bitter solution to stop nail biting
+- BARRIER-BASE COAT: Protects nails before polish application
+`;
+
+/**
  * Build the prompt with context
  */
 function buildPrompt(question: string, contextBlocks: string[]): string {
+  // If we have context, use it; otherwise use fallback knowledge
   const contextSection =
     contextBlocks.length > 0
       ? contextBlocks.map((b, i) => `Context ${i + 1}:\n${b}`).join("\n\n")
-      : "(No specific context available)";
+      : `No specific product matches found. Use this general knowledge:\n${FALLBACK_KNOWLEDGE}`;
 
   return `### User Question
 ${question.trim()}
@@ -133,10 +149,12 @@ ${question.trim()}
 ${contextSection}
 
 ### Instructions
-- Answer the question using the context above
-- If recommending products, naturally integrate them into your response
-- Be helpful and concise
-- If the context doesn't contain relevant information, say so politely`;
+- Answer the question helpfully using the context above
+- ALWAYS recommend specific Mavala products when relevant
+- Mention product names in CAPS (e.g., MAVALA SCIENTIFIQUE)
+- Be friendly, helpful, and concise
+- For nail concerns: suggest nail treatments from the context
+- For skin concerns: suggest skincare products from the context`;
 }
 
 /**

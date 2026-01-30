@@ -276,29 +276,18 @@ export async function action({ request }: ActionFunctionArgs) {
       } chunks, best similarity: ${bestSimilarity.toFixed(3)}`,
     );
 
-    // Handle out-of-scope questions
-    if (!isRelevant) {
-      const outOfScopeAnswer =
-        "I'm Mavala's Beauty Assistant, here to help with nail care, skincare, and beauty questions. " +
-        "I don't have specific information about that topic, but I'd be happy to help with questions about " +
-        "our products, beauty routines, nail care tips, or skincare advice!";
-
-      // Cache the out-of-scope response
-      upsertCache(question, questionEmbedding, outOfScopeAnswer, []).catch(
-        () => {},
-      );
-
-      const response: ChatResponse = {
-        answer: outOfScopeAnswer,
-        cached: false,
-        suggestedProducts: [],
-      };
-
-      return json(response);
-    }
-
     // Build context blocks for the LLM
+    // Even if similarity is low, we still try to help with whatever context we have
     const contextBlocks = chunks.map((chunk) => chunk.content);
+
+    // Log for debugging
+    if (!isRelevant) {
+      console.log(
+        `[api/chat] Low similarity (${bestSimilarity.toFixed(
+          3,
+        )}) - will still try to help with ${chunks.length} chunks`,
+      );
+    }
 
     // Generate response
     const answer = await generateChatResponse(question, contextBlocks);
@@ -309,9 +298,52 @@ export async function action({ request }: ActionFunctionArgs) {
     const responseProducts = extractProductHandles(answer, productHandles);
 
     // Combine and deduplicate product handles
-    const allProductHandles = [
+    let allProductHandles = [
       ...new Set([...contextProducts, ...responseProducts]),
     ].slice(0, 3);
+
+    // If no products found, suggest defaults based on question topic
+    if (allProductHandles.length === 0) {
+      const questionLower = question.toLowerCase();
+      if (
+        questionLower.includes("nail") ||
+        questionLower.includes("brittle") ||
+        questionLower.includes("weak") ||
+        questionLower.includes("strengthen")
+      ) {
+        allProductHandles = [
+          "mavala-scientifique-1",
+          "mava-strong",
+          "cuticle-oil",
+        ];
+      } else if (
+        questionLower.includes("skin") ||
+        questionLower.includes("dry") ||
+        questionLower.includes("moistur")
+      ) {
+        allProductHandles = [
+          "featherlight-cream",
+          "healthy-glow-serum",
+          "hand-cream",
+        ];
+      } else if (
+        questionLower.includes("cuticle") ||
+        questionLower.includes("hand")
+      ) {
+        allProductHandles = ["cuticle-oil", "cuticle-cream", "hand-cream"];
+      } else {
+        // General beauty - show popular products
+        allProductHandles = [
+          "mavala-scientifique-1",
+          "hand-cream",
+          "healthy-glow-serum",
+        ];
+      }
+      console.log(
+        "[api/chat] Using default product suggestions:",
+        allProductHandles,
+      );
+    }
 
     // Get product details for suggestions
     const suggestedProducts = await getProductDetails(allProductHandles);
