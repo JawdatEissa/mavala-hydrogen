@@ -96,31 +96,21 @@ export async function embedTexts(texts: string[]): Promise<number[][]> {
 /**
  * System prompt for the Mavala beauty assistant
  */
-const SYSTEM_PROMPT = `You are Mavala's AI Beauty Assistant, an expert on nail care, skincare, and beauty products from Mavala Switzerland.
+const SYSTEM_PROMPT = `You are Mavala's AI Beauty Assistant. Be concise and helpful.
 
-Your role:
-- Answer questions about Mavala products, nail care, skincare routines, and beauty tips
-- ALWAYS recommend specific Mavala products when relevant to the question
-- Provide helpful, accurate information based on the provided context
-- Be friendly, professional, and helpful
+Guidelines:
+- Keep responses SHORT (2-4 sentences max for explanations, then bullet points)
+- When asked about nail polish colors, list 3-5 specific shade names (e.g., "217 NEW YORK", "453 CHRISTIANA")
+- For product questions, give 2-3 relevant recommendations max
+- Use bullet points for lists
+- Mention product names in CAPS
 
-IMPORTANT Guidelines:
-- Use the provided context to answer questions. The context contains product information, shade names, and recommendations.
-- ALWAYS include product recommendations when the question is about a concern or routine
-- When you see [Related Products: ...] in the context, mention those products by name in your answer
-- Keep responses helpful and actionable (use bullet points for steps or multiple products)
-- Mention product names in CAPS (e.g., MAVALA SCIENTIFIQUE, CUTICLE OIL)
+For nail polish shade questions:
+- List the specific shade names from the context (number + name format)
+- Keep it simple: "Here are some grey shades: [list]"
+- Don't over-explain - the user wants shade names, not tutorials
 
-NAIL POLISH SHADE Questions:
-- When asked about nail polish colors/shades, LOOK for shade information in the context (e.g., "217 NEW YORK", "453 CHRISTIANA")
-- If the context contains specific shade names with hex codes, LIST THOSE SHADES by name in your response
-- Mavala offers 200+ nail polish shades in various colors - recommend specific shade names when available in the context
-
-Product Recommendation Format:
-- When recommending products, briefly explain WHY each product helps
-- Example: "For weak nails, I recommend MAVALA SCIENTIFIQUE - it's a penetrating nail hardener that bonds nail layers together for stronger nails."
-
-If no relevant context is found, still try to give helpful general advice about nail care or skincare, and suggest the user browse the relevant product category.`;
+Be helpful but brief. No lengthy introductions or closings.`;
 
 /**
  * Default product knowledge fallback when database has no matches
@@ -310,6 +300,30 @@ const PRODUCT_NAME_TO_HANDLE: Record<string, string> = {
   "repairing night cream for feet": "repairing-night-cream-for-feet",
 };
 
+// Color to shade collection mapping
+const COLOR_TO_SHADE_COLLECTION: Record<string, string> = {
+  "grey": "grey-shades",
+  "gray": "grey-shades",
+  "silver": "grey-shades",
+  "red": "red-shades",
+  "pink": "pink-shades",
+  "nude": "nude-shades",
+  "beige": "nude-shades",
+  "blue": "blue-shades",
+  "purple": "purple-shades",
+  "violet": "purple-shades",
+  "mauve": "purple-shades",
+  "green": "green-shades",
+  "brown": "brown-shades",
+  "burgundy": "burgundy-shades",
+  "coral": "coral-shades",
+  "orange": "orange-shades",
+  "gold": "gold-shades",
+  "yellow": "yellow-shades",
+  "black": "black-shades",
+  "white": "white-shades",
+};
+
 // Known nail polish shade names (partial list for detection)
 const SHADE_NAMES = [
   "new york", "christiana", "edinburgh", "detroit", "marron glacé",
@@ -317,7 +331,8 @@ const SHADE_NAMES = [
   "south beach pink", "vegas pink", "blush pink", "bali", "berlin",
   "vanilla", "glamour", "rimini", "sky blue", "smoky blue", "cyclades blue",
   "blue mint", "barcelona", "whisperwood", "mauve cendré", "st tropez",
-  "hong kong", "cairo", "baghdad", "athens", "hanoi", "riyadh"
+  "hong kong", "cairo", "baghdad", "athens", "hanoi", "riyadh", "minsk",
+  "bruxelles", "inverness", "sirocco city", "tbilisi", "basel", "saigon"
 ];
 
 /**
@@ -333,7 +348,16 @@ export function extractProductHandles(
   // Normalize text for matching
   const normalizedText = text.toLowerCase();
 
-  // Check if text mentions nail polish shades - if so, prioritize nail polish products
+  // Check for color mentions and map to shade collections
+  for (const [color, collection] of Object.entries(COLOR_TO_SHADE_COLLECTION)) {
+    if (normalizedText.includes(color) && availableHandles.includes(collection)) {
+      if (!found.includes(collection)) {
+        found.push(collection);
+      }
+    }
+  }
+  
+  // Check if text mentions specific shade names
   let mentionsShades = false;
   for (const shade of SHADE_NAMES) {
     if (normalizedText.includes(shade)) {
@@ -342,19 +366,16 @@ export function extractProductHandles(
     }
   }
   
-  // Also check for shade number patterns like "217 NEW YORK" or just "217"
+  // Also check for shade number patterns like "217 NEW YORK"
   const shadeNumberPattern = /\b\d{1,3}\s+[A-Z]/i;
   if (shadeNumberPattern.test(text)) {
     mentionsShades = true;
   }
   
-  // If shades are mentioned, prioritize nail polish products
-  if (mentionsShades) {
+  // If shades are mentioned but no collection found yet, add generic nail polish
+  if (mentionsShades && found.length === 0) {
     if (availableHandles.includes("10ml-bottles")) {
       found.push("10ml-bottles");
-    }
-    if (availableHandles.includes("i-love-mini-colors")) {
-      found.push("i-love-mini-colors");
     }
   }
 

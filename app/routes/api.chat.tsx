@@ -263,12 +263,47 @@ const PRODUCT_CATALOG: Record<string, SuggestedProduct> = {
     category: "Makeup Removers",
   },
 
-  // === NAIL POLISH ===
-  "i-love-mini-colors": {
-    handle: "i-love-mini-colors",
-    title: "MINI COLOR'S (5ML)",
+  // === NAIL POLISH COLLECTIONS ===
+  "grey-shades": {
+    handle: "grey-shades",
+    title: "GREY SHADES",
     price: "from $9.95",
-    image: "/images/i-love-mini-colors/01_mini.jpg",
+    image: "/images/grey-shades/01_grey.jpg",
+    category: "Nail Colour",
+  },
+  "red-shades": {
+    handle: "red-shades",
+    title: "RED SHADES",
+    price: "from $9.95",
+    image: "/images/red-shades/01_red.jpg",
+    category: "Nail Colour",
+  },
+  "pink-shades": {
+    handle: "pink-shades",
+    title: "PINK SHADES",
+    price: "from $9.95",
+    image: "/images/pink-shades/01_pink.jpg",
+    category: "Nail Colour",
+  },
+  "nude-shades": {
+    handle: "nude-shades",
+    title: "NUDE SHADES",
+    price: "from $9.95",
+    image: "/images/nude-shades/01_nude.jpg",
+    category: "Nail Colour",
+  },
+  "blue-shades": {
+    handle: "blue-shades",
+    title: "BLUE SHADES",
+    price: "from $9.95",
+    image: "/images/blue-shades/01_blue.jpg",
+    category: "Nail Colour",
+  },
+  "purple-shades": {
+    handle: "purple-shades",
+    title: "PURPLE SHADES",
+    price: "from $9.95",
+    image: "/images/purple-shades/01_purple.jpg",
     category: "Nail Colour",
   },
   "10ml-bottles": {

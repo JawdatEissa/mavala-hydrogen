@@ -164,7 +164,7 @@ export const CHAT_CONSTANTS = {
   // Chat model
   CHAT_MODEL_PRIMARY: "gpt-4o-mini",
   CHAT_MODEL_FALLBACK: "gpt-4o-mini",
-  MAX_OUTPUT_TOKENS: 300,
+  MAX_OUTPUT_TOKENS: 250,  // Reduced for more concise responses
   TEMPERATURE: 0.3,
 
   // Retrieval settings
