@@ -19,6 +19,7 @@ import type {
   SuggestedProduct,
 } from "~/lib/chat.types";
 import { CHAT_CONSTANTS } from "~/lib/chat.types";
+import { findRelevantProducts } from "~/lib/product-mappings";
 
 // Lazy imports to catch initialization errors
 let embedText: typeof import("~/lib/openai.server").embedText;
@@ -333,7 +334,7 @@ const PRODUCT_CATALOG: Record<string, SuggestedProduct> = {
   // === FOOT CARE ===
   "foot-bath-salts": {
     handle: "foot-bath-salts",
-    title: "FOOT BATH SALTS",
+    title: "SOOTHING FOOT BATH SALTS",
     price: "$24.95",
     image: "/images/foot-bath-salts/01_salts.jpg",
     category: "Foot Care",
@@ -344,6 +345,117 @@ const PRODUCT_CATALOG: Record<string, SuggestedProduct> = {
     price: "$29.95",
     image: "/images/repairing-night-cream-for-feet/01_cream.jpg",
     category: "Foot Care",
+  },
+  "conditioning-foot-moisturiser": {
+    handle: "conditioning-foot-moisturiser",
+    title: "CONDITIONING MOISTURISER FOR FEET",
+    price: "$29.95",
+    image: "/images/conditioning-foot-moisturiser/01_moisturiser.jpg",
+    category: "Foot Care",
+  },
+
+  // === EYE BEAUTY ===
+  "double-lash": {
+    handle: "double-lash",
+    title: "DOUBLE-LASH",
+    price: "$39.95",
+    image: "/images/double-lash/01_double-lash.jpg",
+    category: "Eyebrows & Lashes",
+  },
+  "double-brow": {
+    handle: "double-brow",
+    title: "DOUBLE-BROW",
+    price: "$39.95",
+    image: "/images/double-brow/01_double-brow.jpg",
+    category: "Eyebrows & Lashes",
+  },
+  "creamy-mascara": {
+    handle: "creamy-mascara",
+    title: "CREAMY MASCARA",
+    price: "$29.95",
+    image: "/images/creamy-mascara/01_mascara.jpg",
+    category: "Eyebrows & Lashes",
+  },
+
+  // === LIP PRODUCTS ===
+  "lip-balm": {
+    handle: "lip-balm",
+    title: "LIP BALM",
+    price: "$14.95",
+    image: "/images/lip-balm/01_balm.jpg",
+    category: "Lip balm",
+  },
+  "mavala-lipstick": {
+    handle: "mavala-lipstick",
+    title: "MAVALA LIPSTICK",
+    price: "$29.95",
+    image: "/images/mavala-lipstick/01_lipstick.jpg",
+    category: "Lip Colour",
+  },
+
+  // === MORE SHADE COLLECTIONS ===
+  "brown-shades": {
+    handle: "brown-shades",
+    title: "BROWN SHADES",
+    price: "from $9.95",
+    image: "/images/brown-shades/01_brown.jpg",
+    category: "Nail Colour",
+  },
+  "coral-shades": {
+    handle: "coral-shades",
+    title: "CORAL SHADES",
+    price: "from $9.95",
+    image: "/images/coral-shades/01_coral.jpg",
+    category: "Nail Colour",
+  },
+  "burgundy-shades": {
+    handle: "burgundy-shades",
+    title: "BURGUNDY SHADES",
+    price: "from $9.95",
+    image: "/images/burgundy-shades/01_burgundy.jpg",
+    category: "Nail Colour",
+  },
+  "green-shades": {
+    handle: "green-shades",
+    title: "GREEN SHADES",
+    price: "from $9.95",
+    image: "/images/green-shades/01_green.jpg",
+    category: "Nail Colour",
+  },
+  "black-shades": {
+    handle: "black-shades",
+    title: "BLACK SHADES",
+    price: "from $9.95",
+    image: "/images/black-shades/01_black.jpg",
+    category: "Nail Colour",
+  },
+  "white-shades": {
+    handle: "white-shades",
+    title: "WHITE SHADES",
+    price: "from $9.95",
+    image: "/images/white-shades/01_white.jpg",
+    category: "Nail Colour",
+  },
+  "orange-shades": {
+    handle: "orange-shades",
+    title: "ORANGE SHADES",
+    price: "from $9.95",
+    image: "/images/orange-shades/01_orange.jpg",
+    category: "Nail Colour",
+  },
+  "gold-shades": {
+    handle: "gold-shades",
+    title: "GOLD SHADES",
+    price: "from $9.95",
+    image: "/images/gold-shades/01_gold.jpg",
+    category: "Nail Colour",
+  },
+  "yellow-shades": {
+    handle: "yellow-shades",
+    title: "YELLOW SHADES",
+    price: "from $9.95",
+    image: "/images/yellow-shades/01_yellow.jpg",
+    category: "Nail Colour",
   },
 };
 
@@ -546,83 +658,25 @@ export async function action({ request }: ActionFunctionArgs) {
       ]),
     ].slice(0, 3);
 
-    // If no products found, suggest defaults based on question topic
+    // If no products found, use smart keyword mapping
     if (allProductHandles.length === 0) {
-      const questionLower = question.toLowerCase();
-      if (
-        questionLower.includes("remover") ||
-        questionLower.includes("remove")
-      ) {
-        allProductHandles = [
-          "blue-nail-polish-remover",
-          "crystal-nail-polish-remover",
-          "nail-polish-remover-pads",
-        ];
-      } else if (
-        questionLower.includes("stop") ||
-        questionLower.includes("biting") ||
-        questionLower.includes("bite")
-      ) {
-        allProductHandles = [
-          "mavala-stop",
-          "mavala-scientifique-1",
-          "mava-strong",
-        ];
-      } else if (
-        questionLower.includes("nail") ||
-        questionLower.includes("brittle") ||
-        questionLower.includes("weak") ||
-        questionLower.includes("strengthen")
-      ) {
-        allProductHandles = [
-          "mavala-scientifique-1",
-          "mava-strong",
-          "cuticle-oil",
-        ];
-      } else if (
-        questionLower.includes("skin") ||
-        questionLower.includes("dry") ||
-        questionLower.includes("moistur")
-      ) {
-        allProductHandles = [
-          "featherlight-cream",
-          "healthy-glow-serum",
-          "hand-cream",
-        ];
-      } else if (
-        questionLower.includes("cuticle") ||
-        questionLower.includes("hand")
-      ) {
-        allProductHandles = ["cuticle-oil", "cuticle-cream", "hand-cream"];
-      } else if (
-        questionLower.includes("makeup") ||
-        questionLower.includes("eye")
-      ) {
-        allProductHandles = [
-          "bi-phase-make-up-remover",
-          "eye-make-up-remover-lotion",
-          "remover-pads",
-        ];
-      } else if (
-        questionLower.includes("foot") ||
-        questionLower.includes("feet")
-      ) {
-        allProductHandles = [
-          "foot-bath-salts",
-          "repairing-night-cream-for-feet",
-        ];
+      // Use the smart mapping system
+      const mappedProducts = findRelevantProducts(question);
+      if (mappedProducts.length > 0) {
+        allProductHandles = mappedProducts.slice(0, 3);
+        console.log(
+          "[api/chat] Using keyword-mapped products:",
+          allProductHandles,
+        );
       } else {
-        // General beauty - show popular products
+        // Fallback to general popular products
         allProductHandles = [
           "mavala-scientifique-1",
+          "cuticle-oil",
           "hand-cream",
-          "healthy-glow-serum",
         ];
+        console.log("[api/chat] Using fallback products:", allProductHandles);
       }
-      console.log(
-        "[api/chat] Using default product suggestions:",
-        allProductHandles,
-      );
     }
 
     // Get product details for suggestions
