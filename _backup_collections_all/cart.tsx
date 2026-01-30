@@ -1,8 +1,10 @@
-import type { MetaFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
+import type { MetaFunction } from '@remix-run/node';
+import { Link } from '@remix-run/react';
 
 export const meta: MetaFunction = () => {
-  return [{ title: "Shopping Cart | Mavala Switzerland" }];
+  return [
+    { title: 'Shopping Cart | Mavala Switzerland' },
+  ];
 };
 
 export default function CartPage() {
@@ -19,21 +21,11 @@ export default function CartPage() {
 
         {cartItems.length === 0 ? (
           <div className="text-center py-16">
-            <svg
-              className="w-16 h-16 mx-auto text-gray-300 mb-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-              />
+            <svg className="w-16 h-16 mx-auto text-gray-300 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
             </svg>
             <p className="text-mavala-gray mb-6">Your cart is empty</p>
-            <Link to="/" className="btn-primary">
+            <Link to="/collections/all" className="btn-primary">
               Continue Shopping
             </Link>
           </div>
@@ -49,7 +41,7 @@ export default function CartPage() {
                   <div className="col-span-2 text-right">Total</div>
                 </div>
               </div>
-
+              
               {/* Cart items would go here */}
             </div>
 
@@ -59,7 +51,7 @@ export default function CartPage() {
                 <h2 className="text-lg font-medium uppercase tracking-wider mb-6">
                   Order Summary
                 </h2>
-
+                
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between">
                     <span className="text-mavala-gray">Subtotal</span>
@@ -70,18 +62,18 @@ export default function CartPage() {
                     <span>Calculated at checkout</span>
                   </div>
                 </div>
-
+                
                 <div className="border-t border-gray-300 pt-4 mb-6">
                   <div className="flex justify-between text-lg font-medium">
                     <span>Total</span>
                     <span>${cartTotal.toFixed(2)} AUD</span>
                   </div>
                 </div>
-
+                
                 <button className="w-full btn-primary py-4">
                   Proceed to Checkout
                 </button>
-
+                
                 <p className="text-xs text-mavala-gray text-center mt-4">
                   Shipping & taxes calculated at checkout
                 </p>
@@ -93,3 +85,16 @@ export default function CartPage() {
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -2,27 +2,5 @@
  * Shared constants that can be used in both client and server code
  */
 
-/**
- * Category list matching the reference site
- */
-export const CATEGORIES = [
-  'All',
-  'Complexion',
-  'Cuticle Care',
-  'Eye Colour',
-  'Eyebrows & Lashes',
-  'Foot Care',
-  'Gift Sets',
-  'Hair & Body',
-  'Hand care',
-  'Lip balm',
-  'Lip Colour',
-  'Makeup Removers',
-  'Manicure Essentials',
-  'Nail Colour',
-  'Nail Polish Collections',
-  'Nail Polish Removers',
-  'Nail Repair',
-  'Skincare',
-];
-
+// Note: CATEGORIES array was removed as the /collections/all filter bar is no longer used.
+// Backup available in _backup_collections_all/constants.ts if needed.
