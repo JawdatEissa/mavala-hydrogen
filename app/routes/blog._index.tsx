@@ -60,19 +60,19 @@ export default function BlogIndex() {
       <section className="relative bg-gradient-to-b from-gray-50 to-white">
         <div className="mx-auto px-6 md:px-10 lg:px-16 max-w-[1800px] pt-6 md:pt-8 pb-12 md:pb-16">
           {/* Section Header */}
-          <div className="text-center mb-10 md:mb-14">
-            <p className="text-base md:text-lg uppercase tracking-[0.3em] text-[#E31837] mb-4">
+          <div className="text-center mb-10 md:mb-14 flex flex-col items-center">
+            <p className="text-base md:text-lg uppercase tracking-[0.3em] text-[#E31837] mb-4 pl-[0.3em] -translate-x-[0.5em]">
               The Mavala Journal
             </p>
             <h1 className="font-marcellus text-5xl md:text-6xl lg:text-7xl text-gray-900 mb-5">
               Beauty & Wellness
             </h1>
-            <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="flex items-center justify-center gap-3 mb-5 -translate-x-[1.7em]">
               <div className="w-12 h-px bg-[#E31837]/30" />
               <div className="w-2 h-2 rounded-full bg-[#E31837]" />
               <div className="w-12 h-px bg-[#E31837]/30" />
             </div>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
               Expert tips, tutorials, and insights from Mavala Switzerland
             </p>
           </div>
