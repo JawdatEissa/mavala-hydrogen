@@ -319,7 +319,7 @@ export default function AboutPage() {
                 Find MAVALA products online, in pharmacies and beauty salons
               </p>
               <Link
-                to="/all-products"
+                to="/where-to-buy"
                 className="font-['Archivo'] text-[14px] text-[#ae1932] font-normal underline underline-offset-4 hover:no-underline"
               >
                 Where to buy

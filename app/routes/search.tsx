@@ -310,12 +310,12 @@ export default function Search() {
               <p className="font-['Archivo'] text-[15px] text-gray-600 mb-6">
                 Find MAVALA products online, in pharmacies and beauty salons
               </p>
-              <a
-                href="#"
+              <Link
+                to="/where-to-buy"
                 className="inline-block font-['Archivo'] text-[14px] font-normal text-[#A71830] hover:text-[#8B1426] uppercase tracking-[0.8px] border-b border-[#A71830] hover:border-[#8B1426] transition-colors pb-1"
               >
                 Where to buy
-              </a>
+              </Link>
             </div>
           </div>
         </div>

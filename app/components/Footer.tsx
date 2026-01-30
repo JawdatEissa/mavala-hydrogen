@@ -27,12 +27,12 @@ export function Footer() {
             <p className="text-gray-700 text-[15px] font-light">
               Find MAVALA products online, in pharmacies and beauty salons.
             </p>
-            <a
-              href="#"
+            <Link
+              to="/where-to-buy"
               className="font-['Archivo'] text-[15px] text-[#ae1932] font-normal underline underline-offset-4"
             >
               Where to buy
-            </a>
+            </Link>
           </div>
         </div>
       </div>
