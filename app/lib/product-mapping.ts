@@ -7,48 +7,52 @@ export interface ProductMapping {
   title: string;
 }
 
-// Comprehensive product mapping
+// Comprehensive product mapping - keywords match alt text OR filename (concatenated, no spaces)
+// Uses correct product slugs from the store
 export const PRODUCT_MAPPINGS: ProductMapping[] = [
-  // Nail Polish Colors - White/Cream Shades
-  { keywords: ['white orchid', '257', 'orchid'], handle: 'white-shades', title: 'White Shades' },
-  { keywords: ['geneve', '22 geneve', '022'], handle: 'white-shades', title: 'White Shades' },
-  { keywords: ['izmir', '47 izmir', '047'], handle: 'white-shades', title: 'White Shades' },
-  { keywords: ['lotus', '399', '399 lotus'], handle: 'white-shades', title: 'White Shades' },
-  { keywords: ['windsor', '993'], handle: 'red-shades', title: 'Red Shades' },
+  // Nail Polish Colors - link to color page
+  { keywords: ['white orchid', '257', 'orchid', 'whiteorchid'], handle: 'color', title: 'Nail Colors' },
+  { keywords: ['geneve', '22 geneve', '022', '22geneve'], handle: 'color', title: 'Nail Colors' },
+  { keywords: ['izmir', '47 izmir', '047', '47izmir'], handle: 'color', title: 'Nail Colors' },
+  { keywords: ['lotus', '399', '399 lotus', '399lotus'], handle: 'color', title: 'Nail Colors' },
+  { keywords: ['windsor', '993', '993windsor'], handle: 'color', title: 'Nail Colors' },
   
   // Nail Care Products
-  { keywords: ['mava-strong', 'mava strong', 'mavastrong'], handle: 'mava-strong', title: 'Mava-Strong' },
-  { keywords: ['nailactan'], handle: 'nailactan', title: 'Nailactan' },
-  { keywords: ['scientifique', 'nail hardener'], handle: 'mavala-scientifique', title: 'Mavala Scientifique' },
-  { keywords: ['cuticle remover'], handle: 'cuticle-remover', title: 'Cuticle Remover' },
-  { keywords: ['cuticle oil'], handle: 'cuticle-oil', title: 'Cuticle Oil' },
-  { keywords: ['correcteur', 'correcteur pen'], handle: 'correcteur-pen', title: 'Correcteur Pen' },
-  { keywords: ['nail polish remover pink', 'pink remover', 'pink nail polish remover'], handle: 'pink-nail-polish-remover', title: 'Pink Nail Polish Remover' },
-  { keywords: ['nail polish remover blue', 'blue remover'], handle: 'blue-nail-polish-remover', title: 'Blue Nail Polish Remover' },
-  { keywords: ['crystal nail polish remover', 'crystal remover'], handle: 'crystal-nail-polish-remover', title: 'Crystal Nail Polish Remover' },
+  { keywords: ['mava-strong', 'mava strong', 'mavastrong', 'mava-strong-1'], handle: 'mava-strong', title: 'Mava-Strong' },
+  { keywords: ['nailactan'], handle: 'nailactan-1', title: 'Nailactan' },
+  { keywords: ['scientifique', 'nail hardener', 'mavalascientifique'], handle: 'mavala-scientifique-1', title: 'Mavala Scientifique' },
+  { keywords: ['cuticleremover', 'cuticle remover', 'mavalacuticleremover'], handle: 'cuticle-remover', title: 'Cuticle Remover' },
+  { keywords: ['cuticle oil', 'cuticleoil'], handle: 'cuticle-oil', title: 'Cuticle Oil' },
+  { keywords: ['correcteur', 'correcteurpen'], handle: 'correcteur-pen', title: 'Correcteur Pen' },
+  { keywords: ['nailpolishremoverpink', 'pink remover', 'pinkremover', 'removerpink'], handle: 'pink-nail-polish-remover', title: 'Pink Nail Polish Remover' },
+  { keywords: ['nailpolishremoverblue', 'blue remover', 'blueremover'], handle: 'blue-nail-polish-remover', title: 'Blue Nail Polish Remover' },
+  { keywords: ['crystalnailpolishremover', 'crystal remover'], handle: 'crystal-nail-polish-remover', title: 'Crystal Nail Polish Remover' },
   
   // Hand & Foot Care
-  { keywords: ['prebiotic hand cream', 'hand cream prebiotic'], handle: 'prebiotic-hand-cream', title: 'Prebiotic Hand Cream' },
-  { keywords: ['mava+ hand cream', 'mava hand cream', 'mava+ extreme', 'mava extreme'], handle: 'mava-hand-cream', title: 'Mava+ Hand Cream' },
-  { keywords: ['smoothing scrub cream for feet', 'scrub feet', 'foot scrub'], handle: 'smoothing-scrub-cream-for-feet', title: 'Smoothing Scrub Cream for Feet' },
+  { keywords: ['prebiotichandcream', 'prebiotic hand cream', 'prebiotichand'], handle: 'prebiotic-hand-cream', title: 'Prebiotic Hand Cream' },
+  { keywords: ['mava+extreme', 'mavaextreme', 'mava+ hand', 'mava+handcream', 'extremecareforhands'], handle: 'mava-hand-cream-1', title: 'Mava+ Hand Cream' },
+  { keywords: ['smoothingscrubcream', 'smoothing scrub', 'scrubcreamforfeet', 'footscrub'], handle: 'smoothing-foot-scrub', title: 'Smoothing Scrub Cream' },
   
   // Face Care Products
-  { keywords: ['serum foundation'], handle: 'serum-foundation', title: 'Serum Foundation' },
-  { keywords: ['perfect concealer', 'concealer'], handle: 'perfect-concealer', title: 'Perfect Concealer' },
-  { keywords: ['pore detox', 'purifying mask', 'pore detox purifying'], handle: 'pore-detox-purifying-mask', title: 'Pore Detox Purifying Mask' },
-  { keywords: ['hydra-mat', 'hydra mat fluid', 'pore detox hydra'], handle: 'perfecting-hydra-matt-fluid', title: 'Perfecting Hydra-Matt Fluid' },
-  { keywords: ['magic powder', 'kabuki'], handle: 'magic-powder', title: 'Magic Powder' },
-  { keywords: ['aqua plus', 'multi-moisturizing sleeping', 'sleeping mask', 'aq2b'], handle: 'aqua-plus-multi-moisturizing-sleeping-mask', title: 'Aqua Plus Multi-Moisturizing Sleeping Mask' },
+  { keywords: ['serumfoundation', 'serum foundation', 'serumfoundationaward'], handle: 'serum-foundation', title: 'Serum Foundation' },
+  { keywords: ['perfectconcealer', 'perfect concealer', 'concealer2'], handle: 'mavalia-concealer', title: 'Perfect Concealer' },
+  { keywords: ['poredetox', 'pore detox', 'purifyingmask', 'poredetoxpurifying'], handle: 'purifying-mask', title: 'Purifying Mask' },
+  { keywords: ['hydra-mat', 'hydramat', 'hydramatt', 'hydra-matt', 'usingporedetoxhydra'], handle: 'hydra-matt-fluid', title: 'Hydra-Matt Fluid' },
+  { keywords: ['magicpowder', 'magic powder', 'kabuki', 'kabukibrush'], handle: 'magic-powder', title: 'Magic Powder' },
+  { keywords: ['aquaplus', 'aqua plus', 'sleepingmask', 'aq2bsleepingmask', 'moisturizingsleeping'], handle: 'sleeping-mask', title: 'Sleeping Mask' },
   
   // Eye Care
-  { keywords: ['eye contour gel', 'eye gel'], handle: 'eye-contour-gel', title: 'Eye Contour Gel' },
-  { keywords: ['eye contour cream', 'eye cream', 'double cream'], handle: 'eye-contour-double-cream', title: 'Eye Contour Double Cream' },
-  { keywords: ['double-brow', 'double brow'], handle: 'double-brow', title: 'Double-Brow' },
-  { keywords: ['double-lash', 'double lash'], handle: 'double-lash', title: 'Double-Lash' },
+  { keywords: ['eyecontourgel', 'eye contour gel', 'eye gel'], handle: 'eye-contour-gel', title: 'Eye Contour Gel' },
+  { keywords: ['eyecontourcream', 'eye contour cream', 'doublecream'], handle: 'eye-contour-double-cream', title: 'Eye Contour Cream' },
+  { keywords: ['double-brow', 'doublebrow', 'double brow'], handle: 'double-brow', title: 'Double-Brow' },
+  { keywords: ['double-lash', 'doublelash', 'double lash'], handle: 'double-lash', title: 'Double-Lash' },
   
   // Eyelid/Eye Makeup
-  { keywords: ['satin eyelid powder', 'pearl undertones'], handle: 'satin-eyelid-powder', title: 'Satin Eyelid Powder' },
-  { keywords: ['khol kajal', 'kohl kajal', 'eye contour pencil'], handle: 'khol-kajal-eye-contour-pencil', title: 'Khol-Kajal Eye Contour Pencil' },
+  { keywords: ['satineyelid', 'satin eyelid', 'eyelidpowder'], handle: 'satin-eyelid-powder', title: 'Satin Eyelid Powder' },
+  { keywords: ['kholkajal', 'khol kajal', 'kohl kajal', 'kajal'], handle: 'khol-kajal-eye-contour-pencil', title: 'Khol-Kajal Pencil' },
+  
+  // Mini Colors / Nail Polish Collections
+  { keywords: ['minicolor', 'mini color', 'popwave', 'newcollection'], handle: 'i-love-mini-colors', title: 'Mini Colors' },
 ];
 
 /**

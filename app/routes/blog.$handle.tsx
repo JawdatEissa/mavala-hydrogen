@@ -235,15 +235,29 @@ function ImageBlock({
     return imageContent;
   }
 
-  // Content image - aligned with text
-  return (
-    <figure className="my-8">
-      <img
-        src={imageSrc}
-        alt={block.alt || ""}
-        className="w-full h-auto rounded-lg"
-        loading="lazy"
-      />
+  // Content image - aligned with text, with optional product link
+  const contentImage = (
+    <figure className={`my-8 ${productLink ? "group cursor-pointer" : ""}`}>
+      <div className="relative overflow-hidden rounded-lg">
+        <img
+          src={imageSrc}
+          alt={block.alt || ""}
+          className={`w-full h-auto ${
+            productLink
+              ? "group-hover:scale-[1.02] transition-transform duration-300"
+              : ""
+          }`}
+          loading="lazy"
+        />
+        {/* Product link indicator for content images */}
+        {productLink && (
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 flex items-end justify-start p-4">
+            <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 text-gray-800 text-xs uppercase tracking-wider px-4 py-2 rounded-lg shadow-sm">
+              Shop {productTitle || "Product"} →
+            </span>
+          </div>
+        )}
+      </div>
       {block.caption && (
         <figcaption className="mt-3 text-sm text-gray-500 italic">
           {block.caption}
@@ -251,6 +265,13 @@ function ImageBlock({
       )}
     </figure>
   );
+
+  // Wrap in link if product link exists
+  if (productLink) {
+    return <Link to={productLink}>{contentImage}</Link>;
+  }
+
+  return contentImage;
 }
 
 // List Block

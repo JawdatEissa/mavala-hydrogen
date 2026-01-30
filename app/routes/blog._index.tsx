@@ -58,7 +58,7 @@ export default function BlogIndex() {
     <div className="pt-[104px] md:pt-[112px] min-h-screen bg-white">
       {/* Hero Section with Featured Blog */}
       <section className="relative bg-gradient-to-b from-gray-50 to-white">
-        <div className="mx-auto px-6 md:px-10 lg:px-16 max-w-[1800px] py-12 md:py-16">
+        <div className="mx-auto px-6 md:px-10 lg:px-16 max-w-[1800px] pt-6 md:pt-8 pb-12 md:pb-16">
           {/* Section Header */}
           <div className="text-center mb-10 md:mb-14">
             <p className="text-base md:text-lg uppercase tracking-[0.3em] text-[#E31837] mb-4">
