@@ -7,29 +7,29 @@ export function Footer() {
       <div className="bg-white border-b border-gray-200 py-8 md:py-10">
         <div className="max-w-5xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
           <div className="flex flex-col items-center gap-2">
-            <h3 className="font-['Archivo'] text-[14px] font-semibold uppercase tracking-[1px] leading-[18.2px] text-[#5d676f]">
+            <h3 className="font-['Archivo'] text-[15px] font-semibold uppercase tracking-[1px] leading-[19px] text-[#5d676f]">
               Independent Swiss Laboratory
             </h3>
-            <p className="text-gray-700 text-sm font-light">
+            <p className="text-gray-700 text-[15px] font-light">
               Family business since 1959.
             </p>
             <Link
               to="/about"
-              className="font-['Archivo'] text-[14px] text-[#ae1932] font-normal underline underline-offset-4"
+              className="font-['Archivo'] text-[15px] text-[#ae1932] font-normal underline underline-offset-4"
             >
               Find out more
             </Link>
           </div>
           <div className="flex flex-col items-center gap-2">
-            <h3 className="font-['Archivo'] text-[14px] font-semibold uppercase tracking-[1px] leading-[18.2px] text-[#5d676f]">
+            <h3 className="font-['Archivo'] text-[15px] font-semibold uppercase tracking-[1px] leading-[19px] text-[#5d676f]">
               Available nationally
             </h3>
-            <p className="text-gray-700 text-sm font-light">
+            <p className="text-gray-700 text-[15px] font-light">
               Find MAVALA products online, in pharmacies and beauty salons.
             </p>
             <a
               href="#"
-              className="font-['Archivo'] text-[14px] text-[#ae1932] font-normal underline underline-offset-4"
+              className="font-['Archivo'] text-[15px] text-[#ae1932] font-normal underline underline-offset-4"
             >
               Where to buy
             </a>
@@ -39,7 +39,7 @@ export function Footer() {
 
       {/* Top nav row */}
       <div className="max-w-6xl mx-auto px-4 md:px-8 pt-10 md:pt-12">
-        <div className="flex flex-wrap justify-center gap-6 text-[15px] font-['Archivo'] font-normal tracking-[0.2px]">
+        <div className="flex flex-wrap justify-center gap-6 text-[16px] font-['Archivo'] font-normal tracking-[0.2px]">
           <Link to="/about" className="hover:text-[#ae1932]">
             About
           </Link>
@@ -64,7 +64,7 @@ export function Footer() {
       </div>
 
       {/* Contact line */}
-      <div className="max-w-6xl mx-auto px-4 md:px-8 mt-6 text-center text-[15px] font-['Archivo']">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 mt-6 text-center text-[16px] font-['Archivo']">
         Need help? Contact us on{" "}
         <a href="tel:+12362466090" className="text-[#ae1932] hover:underline">
           +1 236 246 6090
@@ -85,13 +85,13 @@ export function Footer() {
             <input
               type="email"
               placeholder="Email Address"
-              className="flex-1 border border-gray-300 bg-white text-sm px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#ae1932]"
+              className="flex-1 border border-gray-300 bg-white text-[15px] px-4 py-3 focus:outline-none focus:ring-1 focus:ring-[#ae1932]"
             />
-            <button className="px-6 py-3 border border-[#ae1932] text-[#ae1932] text-xs font-['Archivo'] uppercase tracking-[1px] hover:bg-[#ae1932] hover:text-white transition-colors">
+            <button className="px-6 py-3 border border-[#ae1932] text-[#ae1932] text-[13px] font-['Archivo'] uppercase tracking-[1px] hover:bg-[#ae1932] hover:text-white transition-colors">
               Join now
             </button>
           </div>
-          <div className="flex items-center gap-6 text-[#ae1932] text-xs font-['Archivo']">
+          <div className="flex items-center gap-6 text-[#ae1932] text-[13px] font-['Archivo']">
             <div className="flex flex-col items-center">
               <svg
                 className="w-10 h-10"
@@ -139,7 +139,7 @@ export function Footer() {
       </div>
 
       {/* Address & distributor */}
-      <div className="max-w-6xl mx-auto px-4 md:px-8 mt-10 pb-10 text-center text-[14px] font-['Archivo'] tracking-[0.2px]">
+      <div className="max-w-6xl mx-auto px-4 md:px-8 mt-10 pb-10 text-center text-[15px] font-['Archivo'] tracking-[0.2px]">
         <div className="flex flex-wrap justify-center gap-2 md:gap-4">
           <span>
             Mavala Canada, 7802 Express St, Burnaby BC, V5A 1T4, Canada
@@ -176,7 +176,7 @@ export function Footer() {
             MAVALA
           </a>
         </div>
-        <div className="mt-2 text-[13px] text-gray-700">
+        <div className="mt-2 text-[14px] text-gray-700">
           © 2026 Mavala Canada. All rights reserved.
         </div>
       </div>
