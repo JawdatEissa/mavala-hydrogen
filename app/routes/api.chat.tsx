@@ -264,18 +264,18 @@ const PRODUCT_CATALOG: Record<string, SuggestedProduct> = {
   },
 
   // === NAIL POLISH ===
-  "5ml-bottles": {
-    handle: "5ml-bottles",
-    title: "MINI COLOR NAIL POLISH (5ML)",
+  "i-love-mini-colors": {
+    handle: "i-love-mini-colors",
+    title: "MINI COLOR'S (5ML)",
     price: "from $9.95",
-    image: "/images/5ml-bottles/01_mini.jpg",
+    image: "/images/i-love-mini-colors/01_mini.jpg",
     category: "Nail Colour",
   },
   "10ml-bottles": {
     handle: "10ml-bottles",
     title: "NAIL POLISH (10ML)",
     price: "from $13.95",
-    image: "/images/10ml-bottles/01_bottle.jpg",
+    image: "/images/10ml-bottles/01_90927+Vernis+prof.jpg",
     category: "Nail Colour",
   },
 

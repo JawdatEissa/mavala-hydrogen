@@ -294,9 +294,11 @@ const PRODUCT_NAME_TO_HANDLE: Record<string, string> = {
   "eye makeup remover pads": "remover-pads",
   
   // Nail Polish
-  "5ml bottles": "5ml-bottles",
-  "mini color": "5ml-bottles",
+  "mini color": "i-love-mini-colors",
+  "mini colors": "i-love-mini-colors",
+  "5ml": "i-love-mini-colors",
   "10ml bottles": "10ml-bottles",
+  "10ml": "10ml-bottles",
   "nail polish": "10ml-bottles",
   
   // Top & Base Coats
@@ -351,8 +353,8 @@ export function extractProductHandles(
     if (availableHandles.includes("10ml-bottles")) {
       found.push("10ml-bottles");
     }
-    if (availableHandles.includes("5ml-bottles")) {
-      found.push("5ml-bottles");
+    if (availableHandles.includes("i-love-mini-colors")) {
+      found.push("i-love-mini-colors");
     }
   }
 
