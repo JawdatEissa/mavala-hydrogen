@@ -24,17 +24,16 @@ import {
   upsertCache,
   incrementCacheHit,
 } from "~/lib/supabase.server";
-import {
-  getCustomerSession,
-  getRateLimitIdentifier,
-  type CustomerSession,
-} from "~/lib/auth.server";
+import { getCustomerSession, getRateLimitIdentifier } from "~/lib/auth.server";
 import type {
   ChatRequest,
   ChatResponse,
   SuggestedProduct,
 } from "~/lib/chat.types";
 import { CHAT_CONSTANTS } from "~/lib/chat.types";
+
+// Import products data directly (works in serverless environments like Vercel)
+import productsData from "~/data/products/all_products_new.json";
 
 // =========================================
 // Configuration
@@ -69,80 +68,51 @@ function checkRateLimit(identifier: string): boolean {
 // Note: getClientIdentifier moved to auth.server.ts as getRateLimitIdentifier
 
 // =========================================
-// Product Lookup
+// Product Lookup (using imported data - works in serverless)
 // =========================================
 
-// Simple in-memory cache of product handles for matching
-let productHandlesCache: string[] | null = null;
-
-async function getProductHandles(): Promise<string[]> {
-  if (productHandlesCache) {
-    return productHandlesCache;
-  }
-
-  // Load product handles from the products file
-  try {
-    const fs = await import("fs/promises");
-    const path = await import("path");
-    const productsPath = path.join(
-      process.cwd(),
-      "app/data/products/all_products_new.json",
-    );
-    const data = await fs.readFile(productsPath, "utf-8");
-    const products = JSON.parse(data);
-    productHandlesCache = products.map((p: { slug: string }) => p.slug);
-    return productHandlesCache;
-  } catch {
-    console.warn("[getProductHandles] Could not load product handles");
-    return [];
-  }
+// Type for product data
+interface ProductData {
+  slug: string;
+  title: string;
+  price?: string;
+  price_from?: string;
+  local_images?: string[];
+  categories?: string[];
 }
 
-// Simple product data lookup for suggestions
-async function getProductDetails(
-  handles: string[],
-): Promise<SuggestedProduct[]> {
+// Cast imported data to typed array
+const products = productsData as ProductData[];
+
+// Pre-compute product handles for fast lookup
+const productHandlesCache: string[] = products.map((p) => p.slug);
+
+function getProductHandles(): string[] {
+  return productHandlesCache;
+}
+
+// Get product details for suggestions
+function getProductDetails(handles: string[]): SuggestedProduct[] {
   if (handles.length === 0) return [];
 
-  try {
-    const fs = await import("fs/promises");
-    const path = await import("path");
-    const productsPath = path.join(
-      process.cwd(),
-      "app/data/products/all_products_new.json",
-    );
-    const data = await fs.readFile(productsPath, "utf-8");
-    const products: Array<{
-      slug: string;
-      title: string;
-      price?: string;
-      price_from?: string;
-      local_images?: string[];
-      categories?: string[];
-    }> = JSON.parse(data);
+  const suggestions: SuggestedProduct[] = [];
 
-    const suggestions: SuggestedProduct[] = [];
-
-    for (const handle of handles.slice(0, 3)) {
-      const product = products.find((p) => p.slug === handle);
-      if (product) {
-        suggestions.push({
-          handle: product.slug,
-          title: product.title,
-          price: product.price || product.price_from || "",
-          image: product.local_images?.[0]
-            ? `/images/${product.local_images[0].replace(/\\/g, "/")}`
-            : "",
-          category: product.categories?.[0] || "",
-        });
-      }
+  for (const handle of handles.slice(0, 3)) {
+    const product = products.find((p) => p.slug === handle);
+    if (product) {
+      suggestions.push({
+        handle: product.slug,
+        title: product.title,
+        price: product.price || product.price_from || "",
+        image: product.local_images?.[0]
+          ? `/images/${product.local_images[0].replace(/\\/g, "/")}`
+          : "",
+        category: product.categories?.[0] || "",
+      });
     }
-
-    return suggestions;
-  } catch {
-    console.warn("[getProductDetails] Could not load product details");
-    return [];
   }
+
+  return suggestions;
 }
 
 // Extract product handles from context chunks
@@ -294,7 +264,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
     // Extract product recommendations
     const contextProducts = extractProductsFromContext(chunks);
-    const productHandles = await getProductHandles();
+    const productHandles = getProductHandles();
     const responseProducts = extractProductHandles(answer, productHandles);
 
     // Combine and deduplicate product handles
@@ -346,7 +316,7 @@ export async function action({ request }: ActionFunctionArgs) {
     }
 
     // Get product details for suggestions
-    const suggestedProducts = await getProductDetails(allProductHandles);
+    const suggestedProducts = getProductDetails(allProductHandles);
 
     // Cache the response (non-blocking)
     upsertCache(question, questionEmbedding, answer, suggestedProducts).catch(
