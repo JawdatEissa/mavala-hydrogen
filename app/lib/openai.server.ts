@@ -308,6 +308,16 @@ const PRODUCT_NAME_TO_HANDLE: Record<string, string> = {
   "repairing night cream for feet": "repairing-night-cream-for-feet",
 };
 
+// Known nail polish shade names (partial list for detection)
+const SHADE_NAMES = [
+  "new york", "christiana", "edinburgh", "detroit", "marron glacé",
+  "madrid", "paris", "toronto", "moscow", "cuzco", "ankara", "beijing",
+  "south beach pink", "vegas pink", "blush pink", "bali", "berlin",
+  "vanilla", "glamour", "rimini", "sky blue", "smoky blue", "cyclades blue",
+  "blue mint", "barcelona", "whisperwood", "mauve cendré", "st tropez",
+  "hong kong", "cairo", "baghdad", "athens", "hanoi", "riyadh"
+];
+
 /**
  * Extract product handles mentioned in the response or context
  * This helps identify which products to suggest alongside the answer
@@ -321,10 +331,37 @@ export function extractProductHandles(
   // Normalize text for matching
   const normalizedText = text.toLowerCase();
 
+  // Check if text mentions nail polish shades - if so, prioritize nail polish products
+  let mentionsShades = false;
+  for (const shade of SHADE_NAMES) {
+    if (normalizedText.includes(shade)) {
+      mentionsShades = true;
+      break;
+    }
+  }
+  
+  // Also check for shade number patterns like "217 NEW YORK" or just "217"
+  const shadeNumberPattern = /\b\d{1,3}\s+[A-Z]/i;
+  if (shadeNumberPattern.test(text)) {
+    mentionsShades = true;
+  }
+  
+  // If shades are mentioned, prioritize nail polish products
+  if (mentionsShades) {
+    if (availableHandles.includes("10ml-bottles")) {
+      found.push("10ml-bottles");
+    }
+    if (availableHandles.includes("5ml-bottles")) {
+      found.push("5ml-bottles");
+    }
+  }
+
   // First, check for known product names and map to handles
   for (const [name, handle] of Object.entries(PRODUCT_NAME_TO_HANDLE)) {
     if (normalizedText.includes(name) && availableHandles.includes(handle)) {
-      found.push(handle);
+      if (!found.includes(handle)) {
+        found.push(handle);
+      }
     }
   }
 
