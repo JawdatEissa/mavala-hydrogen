@@ -1,0 +1,3576 @@
+{
+  "total_blogs": 8,
+  "blogs": [
+    {
+      "url": "https://mavala.com.au/blog/pantone-color-of-the-year",
+      "slug": "pantone-color-of-the-year",
+      "scraped_at": "2026-01-29T15:17:50.955852",
+      "metadata": {
+        "title": "SOPHISTICATED. CALMING. QUIETLY ELEGANT. PANTONE COLOR OF THE YEAR",
+        "date": "DECEMBER 29, 2025",
+        "date_iso": "2025-12-29",
+        "author": "Mavala Australia",
+        "categories": [],
+        "tags": [
+          "FASHION",
+          "TRENDS",
+          "LIFESTYLE"
+        ],
+        "featured_image": "http://static1.squarespace.com/static/55432595e4b05903a7a1130b/57fb3d216a496306c8404cde/6951e605a841bd696ad06bda/1766977893725/Pantone+banner.jpg?format=1500w",
+        "excerpt": "It’s that exciting time of year the shade that will be driving the trends and overall sentiment for the new year is announced. The PANTONE Color of the Year 2026 is… PANTONE 11-4201 Cloud Dancer"
+      },
+      "featured_image_local": {
+        "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/23965322-2945-4c28-a9a3-e4175fcf2239/Geneve_1.webp",
+        "local_path": "blogs_v2\\images\\pantone-color-of-the-year\\geneve_1.webp",
+        "filename": "geneve_1.webp",
+        "size_bytes": 154792
+      },
+      "content_blocks": [
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/a702e9ad-e50f-4666-afb3-0b54f881c51b/Pantone+Color+of+the+year.webp",
+          "alt": "",
+          "caption": "Pic credit: Pantone",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/a702e9ad-e50f-4666-afb3-0b54f881c51b/Pantone+Color+of+the+year.webp",
+            "local_path": "blogs_v2\\images\\pantone-color-of-the-year\\pantonecoloroftheyear.webp",
+            "filename": "pantonecoloroftheyear.webp",
+            "size_bytes": 31522
+          },
+          "dimensions": {
+            "width": 1022,
+            "height": 1278
+          },
+          "styles": {
+            "width": "1198",
+            "height": "1498",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 0
+        },
+        {
+          "type": "paragraph",
+          "content": "Pic credit: Pantone",
+          "html": "Pic credit: <a href=\"https://www.instagram.com/pantone/\" target=\"_blank\">Pantone</a>",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "Pantone",
+              "href": "https://www.instagram.com/pantone/",
+              "target": "_blank"
+            }
+          ],
+          "styles": {
+            "fontSize": "11.55px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "19.404px",
+            "marginTop": "0px",
+            "marginBottom": "11.55px"
+          },
+          "order": 1
+        },
+        {
+          "type": "paragraph",
+          "content": "It’s that exciting time of year the shade that will be driving the trends and overall sentiment for the new year is announced. The PANTONE Color of the Year 2026 is… PANTONE 11-4201 Cloud Dancer, a lofty white neutral whose aerated presence acts as a whisper of calm and peace in a noisy world. It symbolises a calming influence in a society rediscovering the value of quiet reflection and elegant consideration. A billowy white imbued with serenity, it invites true relaxation and focus, allowing the mind to wander and creativity to breathe.",
+          "html": "It’s that exciting time of year the shade that will be driving the trends and overall sentiment for the new year is announced. The PANTONE Color of the Year 2026 is… PANTONE 11-4201 Cloud Dancer, a lofty white neutral whose aerated presence acts as a whisper of calm and peace in a noisy world. It symbolises a calming influence in a society rediscovering the value of quiet reflection and elegant consideration. A billowy white imbued with serenity, it invites true relaxation and focus, allowing the mind to wander and creativity to breathe.",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "0px"
+          },
+          "order": 2
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/23965322-2945-4c28-a9a3-e4175fcf2239/Geneve_1.webp",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/23965322-2945-4c28-a9a3-e4175fcf2239/Geneve_1.webp",
+            "local_path": "blogs_v2\\images\\pantone-color-of-the-year\\geneve_1.webp",
+            "filename": "geneve_1.webp",
+            "size_bytes": 154792
+          },
+          "dimensions": {
+            "width": 1194,
+            "height": 1791
+          },
+          "styles": {
+            "width": "1400",
+            "height": "2099",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "In the beauty world, Cloud Dancer signals a refined minimalism. Makeup trends move toward luminous skin, sheer textures and barely-there colour, allowing individuality to come through without excess. Soft white and pearl undertones are favoured while formulas focus on care, hydration and longevity. Nails are soft, discreet and feminine in delicate shades of white tones. Hair and fragrances follow suit, with clean finishes, gentle contrasts and scents that feel airy, comforting and emotionally restorative rather than overpowering.",
+          "html": "In the beauty world, Cloud Dancer signals a refined minimalism. Makeup trends move toward <a href=\"/all-products/serum-foundation\">luminous skin</a>, sheer textures and barely-there colour, allowing individuality to come through without excess. Soft white and <a href=\"/all-products/satin-eyelid-powder\">pearl undertones</a> are favoured while formulas focus on care, hydration and <a href=\"/all-products/khol-kajal-eye-contour-pencil\">longevity</a>. Nails are soft, discreet and feminine in delicate shades of <a href=\"/all-products/white-shades\">white tones</a>. <a href=\"https://color-soin.com.au/\" target=\"_blank\">Hair</a> and fragrances follow suit, with clean finishes, gentle contrasts and scents that feel airy, comforting and emotionally restorative rather than overpowering.",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "luminous skin",
+              "href": "https://mavala.com.au/all-products/serum-foundation",
+              "target": ""
+            },
+            {
+              "text": "pearl undertones",
+              "href": "https://mavala.com.au/all-products/satin-eyelid-powder",
+              "target": ""
+            },
+            {
+              "text": "longevity",
+              "href": "https://mavala.com.au/all-products/khol-kajal-eye-contour-pencil",
+              "target": ""
+            },
+            {
+              "text": "white tones",
+              "href": "https://mavala.com.au/all-products/white-shades",
+              "target": ""
+            },
+            {
+              "text": "Hair",
+              "href": "https://color-soin.com.au/",
+              "target": "_blank"
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "0px"
+          },
+          "order": 4
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1766976992935-THN06D9IU32ZD07XCYEB/257+White+Orchid.jpg?format=300w",
+          "alt": "257 WHITE ORCHID",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1766976992935-THN06D9IU32ZD07XCYEB/257+White+Orchid.jpg?format=300w",
+            "local_path": "blogs_v2\\images\\pantone-color-of-the-year\\257whiteorchid.jpg",
+            "filename": "257whiteorchid.jpg",
+            "size_bytes": 17512
+          },
+          "dimensions": {
+            "width": 300,
+            "height": 603
+          },
+          "styles": {
+            "width": "150.234px",
+            "height": "302px",
+            "objectFit": "fill",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 5
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1766977002009-DY6LFMIMWKOYIQJTHLI4/022+Geneve.jpg?format=300w",
+          "alt": "22 GENEVE",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1766977002009-DY6LFMIMWKOYIQJTHLI4/022+Geneve.jpg?format=300w",
+            "local_path": "blogs_v2\\images\\pantone-color-of-the-year\\022geneve.jpg",
+            "filename": "022geneve.jpg",
+            "size_bytes": 17228
+          },
+          "dimensions": {
+            "width": 300,
+            "height": 603
+          },
+          "styles": {
+            "width": "150.234px",
+            "height": "302px",
+            "objectFit": "fill",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 6
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1766977013985-MMW7KTEX5PM632YZY2L3/047+Izmir.jpg?format=300w",
+          "alt": "47 IZMIR",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1766977013985-MMW7KTEX5PM632YZY2L3/047+Izmir.jpg?format=300w",
+            "local_path": "blogs_v2\\images\\pantone-color-of-the-year\\047izmir.jpg",
+            "filename": "047izmir.jpg",
+            "size_bytes": 17086
+          },
+          "dimensions": {
+            "width": 300,
+            "height": 603
+          },
+          "styles": {
+            "width": "150.234px",
+            "height": "302px",
+            "objectFit": "fill",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 7
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1766977026712-J36MIHNC1NIJK120QAAU/399+Lotus.jpg?format=300w",
+          "alt": "399 LOTUS",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1766977026712-J36MIHNC1NIJK120QAAU/399+Lotus.jpg?format=300w",
+            "local_path": "blogs_v2\\images\\pantone-color-of-the-year\\399lotus.jpg",
+            "filename": "399lotus.jpg",
+            "size_bytes": 17962
+          },
+          "dimensions": {
+            "width": 300,
+            "height": 603
+          },
+          "styles": {
+            "width": "150.234px",
+            "height": "302px",
+            "objectFit": "fill",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 8
+        },
+        {
+          "type": "paragraph",
+          "content": "Within interiors, Cloud Dancer becomes a foundation rather than a statement. Used on walls, cabinetry and textiles, it enhances natural light and creates calm, adaptable environments. This white is warm and dimensional, pairing seamlessly with raw timber, stone, linen and ceramic surfaces. Homes evolve into sanctuaries—spaces that support rest, creativity and connection, while allowing personal objects and textures to shine.",
+          "html": "Within interiors, Cloud Dancer becomes a foundation rather than a statement. Used on walls, cabinetry and textiles, it enhances natural light and creates calm, adaptable environments. This white is warm and dimensional, pairing seamlessly with raw timber, stone, linen and ceramic surfaces. Homes evolve into sanctuaries—spaces that support rest, creativity and connection, while allowing personal objects and textures to shine.",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "0px"
+          },
+          "order": 9
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/9f9283f3-bdd0-46c5-b2ef-896a083ffb0e/Pantone+Air+buds.jpeg",
+          "alt": "",
+          "caption": "Pic credit: Pantone",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/9f9283f3-bdd0-46c5-b2ef-896a083ffb0e/Pantone+Air+buds.jpeg",
+            "local_path": "blogs_v2\\images\\pantone-color-of-the-year\\pantoneairbuds.jpeg",
+            "filename": "pantoneairbuds.jpeg",
+            "size_bytes": 47524
+          },
+          "dimensions": {
+            "width": 1125,
+            "height": 1279
+          },
+          "styles": {
+            "width": "1125",
+            "height": "1279",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 10
+        },
+        {
+          "type": "paragraph",
+          "content": "Pic credit: Pantone",
+          "html": "Pic credit: <a href=\"https://www.instagram.com/pantone/\" target=\"_blank\">Pantone</a>",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "Pantone",
+              "href": "https://www.instagram.com/pantone/",
+              "target": "_blank"
+            }
+          ],
+          "styles": {
+            "fontSize": "11.55px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "19.404px",
+            "marginTop": "0px",
+            "marginBottom": "11.55px"
+          },
+          "order": 11
+        },
+        {
+          "type": "paragraph",
+          "content": "In fashion, crisp whites and softened neutrals replace trend-heavy palettes, supporting capsule wardrobes and seasonless dressing. The colour aligns with a growing preference for quality over quantity, and for pieces that feel timeless, versatile and emotionally resonant. It reflects a desire to own less and invest in pieces that nod to quiet luxury over fast fashion.",
+          "html": "In fashion, crisp whites and softened neutrals replace trend-heavy palettes, supporting capsule wardrobes and seasonless dressing. The colour aligns with a growing preference for quality over quantity, and for pieces that feel timeless, versatile and emotionally resonant. It reflects a desire to own less and invest in pieces that nod to quiet luxury over fast fashion. ",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "0px"
+          },
+          "order": 12
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/20c16be7-6a65-4a68-8979-d47176c367cd/Pantone+Fashion.webp",
+          "alt": "",
+          "caption": "Pic credit: Perri Cutten",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/20c16be7-6a65-4a68-8979-d47176c367cd/Pantone+Fashion.webp",
+            "local_path": "blogs_v2\\images\\pantone-color-of-the-year\\pantonefashion.webp",
+            "filename": "pantonefashion.webp",
+            "size_bytes": 25510
+          },
+          "dimensions": {
+            "width": 1216,
+            "height": 1506
+          },
+          "styles": {
+            "width": "1216",
+            "height": "1506",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 13
+        },
+        {
+          "type": "paragraph",
+          "content": "Pic credit: Perri Cutten",
+          "html": "Pic credit: <a href=\"https://www.instagram.com/perricutten/\" target=\"_blank\">Perri Cutten</a>",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "Perri Cutten",
+              "href": "https://www.instagram.com/perricutten/",
+              "target": "_blank"
+            }
+          ],
+          "styles": {
+            "fontSize": "11.55px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "19.404px",
+            "marginTop": "0px",
+            "marginBottom": "11.55px"
+          },
+          "order": 14
+        },
+        {
+          "type": "paragraph",
+          "content": "Ultimately, Cloud Dancer represents more than a colour direction—it embodies a mindset. It speaks to clarity of purpose, gentler living and the confidence to slow down. Sophisticated. Calming. Quietly elegant. This soft white is all about fresh starts and minimalist chic.",
+          "html": "Ultimately, Cloud Dancer represents more than a colour direction—it embodies a mindset. It speaks to clarity of purpose, gentler living and the confidence to slow down. Sophisticated. Calming. Quietly elegant. This soft white is all about fresh starts and minimalist chic.",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "0px"
+          },
+          "order": 15
+        }
+      ],
+      "stats": {
+        "total_blocks": 16,
+        "paragraphs": 8,
+        "headings": 0,
+        "images": 8,
+        "lists": 0
+      }
+    },
+    {
+      "url": "https://mavala.com.au/blog/your-care-your-style",
+      "slug": "your-care-your-style",
+      "scraped_at": "2026-01-29T15:18:05.069878",
+      "metadata": {
+        "title": "YOUR CARE. YOUR STYLE. SINCE 1959.",
+        "date": "DECEMBER 24, 2025",
+        "date_iso": "2025-12-24",
+        "author": "Mavala Australia",
+        "categories": [],
+        "tags": [
+          "HERITAGE",
+          "SWITZERLAND",
+          "BEAUTY"
+        ],
+        "featured_image": "http://static1.squarespace.com/static/55432595e4b05903a7a1130b/57fb3d216a496306c8404cde/694b329bdbf66c6bc8c97052/1766540135515/Mavala+rebranding+banner.jpg?format=1500w",
+        "excerpt": "This year marks a significant moment as the beloved and award-winning Swiss beauty brand MAVALA unveils a bold new chapter for the future. With over six decades of beauty excellence, MAVALA remains committed to timeless values with a modern, refreshed focus moving forward."
+      },
+      "featured_image_local": null,
+      "content_blocks": [
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/ade3b67f-4936-4be6-9872-3f323f327d2d/MAVALA_GROUP.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/ade3b67f-4936-4be6-9872-3f323f327d2d/MAVALA_GROUP.jpg",
+            "local_path": "blogs_v2\\images\\your-care-your-style\\mavala_group.jpg",
+            "filename": "mavala_group.jpg",
+            "size_bytes": 866874
+          },
+          "dimensions": {
+            "width": 1280,
+            "height": 1577
+          },
+          "styles": {
+            "width": "5079",
+            "height": "6260",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 0
+        },
+        {
+          "type": "paragraph",
+          "content": "This year marks a significant moment as the beloved and award-winning Swiss beauty brand MAVALA unveils a bold new chapter for the future. With over six decades of beauty excellence, MAVALA remains committed to timeless values with a modern, refreshed focus moving forward.",
+          "html": "This year marks a significant moment as the beloved and award-winning Swiss beauty brand MAVALA unveils a bold new chapter for the future. With over six decades of beauty excellence, MAVALA remains committed to timeless values with a modern, refreshed focus moving forward.",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 1
+        },
+        {
+          "type": "paragraph",
+          "content": "MAVALA began in Geneva in 1959, founded by visionary beautician Madeleine Van Landeghem (MA-VA-LA) and the formulation talent of a chemist. Over the years, the brand has grown into a globally cherished and trusted name — still family-owned and proudly independent, with Swiss quality, efficacy and reliability at its heart, present in more than 100 countries worldwide.",
+          "html": "MAVALA began in Geneva in 1959, founded by visionary beautician <strong>Ma</strong>deleine <strong>Va</strong>n <strong>La</strong>ndeghem (MA-VA-LA) and the formulation talent of a chemist. Over the years, the brand has grown into a globally cherished and trusted name — still family-owned and proudly independent, with Swiss quality, efficacy and reliability at its heart, present in more than 100 countries worldwide. ",
+          "has_bold": true,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "14px",
+            "marginBottom": "14px"
+          },
+          "order": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "Beauty is time. The time to know it, to cultivate it, to nourish it.",
+          "html": "Beauty is time. The time to know it, to cultivate it, to nourish it.",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "14px",
+            "marginBottom": "0px"
+          },
+          "order": 3
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/fa43b7c9-02dc-4841-81b9-300fa3930659/Double-Brow-product.webp",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/fa43b7c9-02dc-4841-81b9-300fa3930659/Double-Brow-product.webp",
+            "local_path": "blogs_v2\\images\\your-care-your-style\\double-brow-product.webp",
+            "filename": "double-brow-product.webp",
+            "size_bytes": 62880
+          },
+          "dimensions": {
+            "width": 1024,
+            "height": 1024
+          },
+          "styles": {
+            "width": "1200",
+            "height": "1200",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 4
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Key moments in time!",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "0px",
+            "marginBottom": "4.5px"
+          },
+          "order": 5
+        },
+        {
+          "type": "paragraph",
+          "content": "1959 — MAVALA changed nail care forever with the launch of MAVALA Scientifique K+ nail hardener — a revolutionary treatment designed to penetrate and strengthen the nail plates, rather than just coating them. This product remains a best-seller today!",
+          "html": "<strong>1959 </strong>— MAVALA changed nail care forever with the launch of <a href=\"/all-products/mavala-scientifique-k\">MAVALA Scientifique K+</a> nail hardener — a revolutionary treatment designed to penetrate and strengthen the nail plates, rather than just coating them. This product remains a best-seller today! ",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "MAVALA Scientifique K+",
+              "href": "https://mavala.com.au/all-products/mavala-scientifique-k",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "14px",
+            "marginBottom": "0px"
+          },
+          "order": 6
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/55d3caf0-d1b2-4fdb-839b-57308cf34cfc/Applying+Mavala+Scientifique+Nail+Hardener.png",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/55d3caf0-d1b2-4fdb-839b-57308cf34cfc/Applying+Mavala+Scientifique+Nail+Hardener.png",
+            "local_path": "blogs_v2\\images\\your-care-your-style\\applyingmavalascientifiquenailhardener.png",
+            "filename": "applyingmavalascientifiquenailhardener.png",
+            "size_bytes": 1083520
+          },
+          "dimensions": {
+            "width": 1024,
+            "height": 1280
+          },
+          "styles": {
+            "width": "1200",
+            "height": "1500",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 7
+        },
+        {
+          "type": "paragraph",
+          "content": "1962 — MAVALA worry-free Mini Colors are born. Long before portable and sustainable beauty was a trend, MAVALA introduced mini nail polishes in petite 5ml bottles — efficient, eco-friendly, and adored globally. Now available in 360 shades, one for each day of the year!",
+          "html": "<strong>1962 </strong>— MAVALA worry-free <a href=\"/color\">Mini Colors</a> are born. Long before portable and sustainable beauty was a trend, MAVALA introduced mini nail polishes in petite 5ml bottles — efficient, eco-friendly, and adored globally. Now available in 360 shades, one for each day of the year!",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "Mini Colors",
+              "href": "https://mavala.com.au/color",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "0px"
+          },
+          "order": 8
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/5683d84f-33d5-4ebc-a2d8-29b0c5104ba5/New+Collection+pop+Wave.png",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/5683d84f-33d5-4ebc-a2d8-29b0c5104ba5/New+Collection+pop+Wave.png",
+            "local_path": "blogs_v2\\images\\your-care-your-style\\newcollectionpopwave.png",
+            "filename": "newcollectionpopwave.png",
+            "size_bytes": 788352
+          },
+          "dimensions": {
+            "width": 1269,
+            "height": 1269
+          },
+          "styles": {
+            "width": "1498",
+            "height": "1498",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 9
+        },
+        {
+          "type": "paragraph",
+          "content": "1964 + 1986 - MAVALA introduced daily hand care with specific repairing and targeted corrective care for smooth hands.",
+          "html": "<strong>1964 + 1986</strong> - MAVALA introduced <a href=\"https://mavala.com.au/hands\">daily hand care</a> with specific repairing and targeted corrective care for smooth hands. ",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "daily hand care",
+              "href": "https://mavala.com.au/hands",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "0px"
+          },
+          "order": 10
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/27b94670-4e64-4583-a53d-84382622ed3f/Prebiotic+Hand+Cream.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/27b94670-4e64-4583-a53d-84382622ed3f/Prebiotic+Hand+Cream.jpg",
+            "local_path": "blogs_v2\\images\\your-care-your-style\\prebiotichandcream.jpg",
+            "filename": "prebiotichandcream.jpg",
+            "size_bytes": 359740
+          },
+          "dimensions": {
+            "width": 1269,
+            "height": 1270
+          },
+          "styles": {
+            "width": "2000",
+            "height": "2002",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 11
+        },
+        {
+          "type": "paragraph",
+          "content": "1995 – MAVALA naturally stepped into foot care, health and wellbeing.",
+          "html": "<strong>1995</strong> – MAVALA naturally stepped into <a href=\"/foot-care\">foot care</a>, health and wellbeing. ",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "foot care",
+              "href": "https://mavala.com.au/foot-care",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "0px"
+          },
+          "order": 12
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/88ebddee-7159-4229-a314-32acab83cd16/Smoothing+Scrub+Cream+for+feet.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/88ebddee-7159-4229-a314-32acab83cd16/Smoothing+Scrub+Cream+for+feet.jpg",
+            "local_path": "blogs_v2\\images\\your-care-your-style\\smoothingscrubcreamforfeet.jpg",
+            "filename": "smoothingscrubcreamforfeet.jpg",
+            "size_bytes": 486620
+          },
+          "dimensions": {
+            "width": 1269,
+            "height": 1271
+          },
+          "styles": {
+            "width": "3477",
+            "height": "3483",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 13
+        },
+        {
+          "type": "paragraph",
+          "content": "1996 & beyond – MAVALA extends into facial beauty, representing so much more than colour but care, incorporating high quality ingredients to treat whilst beautifying.",
+          "html": "<strong>1996 &amp; beyond</strong> – MAVALA extends into <a href=\"/complexion\">facial beauty</a>, representing so much more than colour but care, incorporating high quality ingredients to treat whilst beautifying.",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "facial beauty",
+              "href": "https://mavala.com.au/complexion",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "0px"
+          },
+          "order": 14
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/b14a4c3a-caf8-4c81-b9db-fd8d4f5fb642/Serum+Foundation+Award.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/b14a4c3a-caf8-4c81-b9db-fd8d4f5fb642/Serum+Foundation+Award.jpg",
+            "local_path": "blogs_v2\\images\\your-care-your-style\\serumfoundationaward.jpg",
+            "filename": "serumfoundationaward.jpg",
+            "size_bytes": 92506
+          },
+          "dimensions": {
+            "width": 1125,
+            "height": 1400
+          },
+          "styles": {
+            "width": "1125",
+            "height": "1400",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 15
+        },
+        {
+          "type": "paragraph",
+          "content": "2017 – MAVALA introduces a targeted skincare line combining Alpine botanicals and advanced dermatological active ingredients.",
+          "html": "<strong>2017</strong> – MAVALA introduces a <a href=\"/skincare\">targeted skincare line</a> combining Alpine botanicals and advanced dermatological active ingredients.",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "targeted skincare line",
+              "href": "https://mavala.com.au/skincare",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "0px"
+          },
+          "order": 16
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/b2f62145-0f7a-44a4-8c2d-a2d9a6d3d5bb/Using+Pore+Detox+Hydra-Mat+Fluid.png",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/b2f62145-0f7a-44a4-8c2d-a2d9a6d3d5bb/Using+Pore+Detox+Hydra-Mat+Fluid.png",
+            "local_path": "blogs_v2\\images\\your-care-your-style\\usingporedetoxhydra-matfluid.png",
+            "filename": "usingporedetoxhydra-matfluid.png",
+            "size_bytes": 1549704
+          },
+          "dimensions": {
+            "width": 1269,
+            "height": 1269
+          },
+          "styles": {
+            "width": "1496",
+            "height": "1496",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 17
+        },
+        {
+          "type": "paragraph",
+          "content": "Follow us to see what’s coming next!",
+          "html": "<a href=\"https://www.instagram.com/mavalaaustralia/\" target=\"_blank\">Follow us</a> to see what’s coming next!",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "Follow us",
+              "href": "https://www.instagram.com/mavalaaustralia/",
+              "target": "_blank"
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "0px"
+          },
+          "order": 18
+        }
+      ],
+      "stats": {
+        "total_blocks": 19,
+        "paragraphs": 10,
+        "headings": 1,
+        "images": 8,
+        "lists": 0
+      }
+    },
+    {
+      "url": "https://mavala.com.au/blog/power-of-pink",
+      "slug": "power-of-pink",
+      "scraped_at": "2026-01-29T15:18:10.450275",
+      "metadata": {
+        "title": "THE POWER OF PINK CAMPAIGN… LET’S JOIN FORCES",
+        "date": "OCTOBER 21, 2025",
+        "date_iso": "2025-10-21",
+        "author": "Mavala Australia",
+        "categories": [],
+        "tags": [
+          "CHEMOTHERAPY",
+          "WELLNESS",
+          "CANCER"
+        ],
+        "featured_image": "http://static1.squarespace.com/static/55432595e4b05903a7a1130b/57fb3d216a496306c8404cde/68f6bbb05f3a85077a629e9b/1761001938799/Power+of+Pink.jpg?format=1500w",
+        "excerpt": "In the time between waking up this morning and going to sleep tonight, 58 Australians will be told they have breast cancer. The same will happen tomorrow and every day thereafter, making breast cancer the most common cancer affecting Australian women. Let’s join forces!"
+      },
+      "featured_image_local": null,
+      "content_blocks": [
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/6ce90423-93b8-4981-8a7e-25ee563729cb/IMG_0050.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/6ce90423-93b8-4981-8a7e-25ee563729cb/IMG_0050.jpg",
+            "local_path": "blogs_v2\\images\\power-of-pink\\img_0050.jpg",
+            "filename": "img_0050.jpg",
+            "size_bytes": 33444
+          },
+          "dimensions": {
+            "width": 960,
+            "height": 1193
+          },
+          "styles": {
+            "width": "1125",
+            "height": "1399",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 0
+        },
+        {
+          "type": "paragraph",
+          "content": "In the time between waking up this morning and going to sleep tonight, 58 Australians will be told they have breast cancer. The same will happen tomorrow and every day thereafter, making breast cancer the most common cancer affecting Australian women.",
+          "html": "In the time between waking up this morning and going to sleep tonight, 58 Australians will be told they have breast cancer. The same will happen tomorrow and every day thereafter, making breast cancer the most common cancer affecting Australian women. ",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 1
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Facts that matter",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "4.5px"
+          },
+          "order": 2
+        },
+        {
+          "type": "unordered_list",
+          "items": [
+            {
+              "text": "There are 20,000 new cases of breast cancer every year in Australia alone",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\">There are 20,000 new cases of breast cancer every year in Australia alone</p>"
+            },
+            {
+              "text": "80% of cases are women over 50",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\">80% of cases are women over 50</p>"
+            },
+            {
+              "text": "1 in 7 women will be diagnosed with breast cancer in their life",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\">1 in 7 women will be diagnosed with breast cancer in their life</p>"
+            },
+            {
+              "text": "More women than ever before are getting tested",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\">More women than ever before are getting tested</p>"
+            }
+          ],
+          "styles": {
+            "listStyleType": "disc",
+            "paddingLeft": "40px",
+            "marginTop": "14px",
+            "marginBottom": "0px"
+          },
+          "order": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "There are 20,000 new cases of breast cancer every year in Australia alone",
+          "html": "There are 20,000 new cases of breast cancer every year in Australia alone",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 4
+        },
+        {
+          "type": "paragraph",
+          "content": "80% of cases are women over 50",
+          "html": "80% of cases are women over 50",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 5
+        },
+        {
+          "type": "paragraph",
+          "content": "1 in 7 women will be diagnosed with breast cancer in their life",
+          "html": "1 in 7 women will be diagnosed with breast cancer in their life",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 6
+        },
+        {
+          "type": "paragraph",
+          "content": "More women than ever before are getting tested",
+          "html": "More women than ever before are getting tested",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 7
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/73dad215-e2e2-4e85-8770-32a96d10cae1/IMG_0051.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/73dad215-e2e2-4e85-8770-32a96d10cae1/IMG_0051.jpg",
+            "local_path": "blogs_v2\\images\\power-of-pink\\img_0051.jpg",
+            "filename": "img_0051.jpg",
+            "size_bytes": 39076
+          },
+          "dimensions": {
+            "width": 960,
+            "height": 960
+          },
+          "styles": {
+            "width": "1125",
+            "height": "1125",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 8
+        },
+        {
+          "type": "paragraph",
+          "content": "Mavala is proud to be renewing its commitment to Pink October this year by donating $3 to the National Breast Cancer Foundation with the sale of every product below. For more than 60 years, Mavala has supported women in their quest for beauty, self-care and wellbeing by offering dermatologically tested products adapted to the most sensitive skin types and conditions.",
+          "html": "Mavala is proud to be renewing its commitment to Pink October this year by donating $3 to the <a href=\"https://nbcf.org.au/\">National Breast Cancer Foundation</a> with the sale of every product below. For more than 60 years, Mavala has supported women in their quest for beauty, self-care and wellbeing by offering dermatologically tested products adapted to the most sensitive skin types and conditions. ",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "National Breast Cancer Foundation",
+              "href": "https://nbcf.org.au/",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 9
+        },
+        {
+          "type": "paragraph",
+          "content": "We invite you to join forces with us as we stand in solidarity with the women affected and raise the much-needed funds to give Australian women the best care possible.",
+          "html": "We invite you to join forces with us as we stand in solidarity with the women affected and raise the much-needed funds to give Australian women the best care possible. ",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "14px",
+            "marginBottom": "0px"
+          },
+          "order": 10
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1501128679195-ODN6ICEFG6A9EHH6UZTB/Mava-Strong-1.png?format=300w",
+          "alt": "Mava-Strong-1.png",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1501128679195-ODN6ICEFG6A9EHH6UZTB/Mava-Strong-1.png?format=300w",
+            "local_path": "blogs_v2\\images\\power-of-pink\\mava-strong-1.png",
+            "filename": "mava-strong-1.png",
+            "size_bytes": 69762
+          },
+          "dimensions": {
+            "width": 300,
+            "height": 400
+          },
+          "styles": {
+            "width": "237px",
+            "height": "316px",
+            "objectFit": "fill",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 11
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1470212772903-AN2V8FBUAMP1D9OKIPWK/Nail+Polish+Remover+Pink+100ml.jpg?format=300w",
+          "alt": "Nail Polish Remover Pink 100ml.jpg",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1470212772903-AN2V8FBUAMP1D9OKIPWK/Nail+Polish+Remover+Pink+100ml.jpg?format=300w",
+            "local_path": "blogs_v2\\images\\power-of-pink\\nailpolishremoverpink100ml.jpg",
+            "filename": "nailpolishremoverpink100ml.jpg",
+            "size_bytes": 12104
+          },
+          "dimensions": {
+            "width": 300,
+            "height": 526
+          },
+          "styles": {
+            "width": "237px",
+            "height": "415.531px",
+            "objectFit": "fill",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 12
+        },
+        {
+          "type": "paragraph",
+          "content": "Products are safe to use during cancer treatments.",
+          "html": "Products are safe to use during cancer treatments.",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "0px"
+          },
+          "order": 13
+        }
+      ],
+      "stats": {
+        "total_blocks": 14,
+        "paragraphs": 8,
+        "headings": 1,
+        "images": 4,
+        "lists": 1
+      }
+    },
+    {
+      "url": "https://mavala.com.au/blog/breaking-up-with-synthetic-nails",
+      "slug": "breaking-up-with-synthetic-nails",
+      "scraped_at": "2026-01-29T15:18:17.050267",
+      "metadata": {
+        "title": "BREAKING UP WITH SYNTHETIC NAILS!",
+        "date": "OCTOBER 3, 2025",
+        "date_iso": "2025-10-03",
+        "author": "Mavala Australia",
+        "categories": [],
+        "tags": [
+          "NAIL CARE",
+          "NAIL POLISH",
+          "TUTORIAL",
+          "TIPS"
+        ],
+        "featured_image": "http://static1.squarespace.com/static/55432595e4b05903a7a1130b/57fb3d216a496306c8404cde/68df37843a2113133f351697/1759463890692/Breaking+up+with+synthetics.jpg?format=1500w",
+        "excerpt": "Have synthetic nails been your go-to beauty staple? In light of the recent  EU gel poison polish ban  it’s time to consider breaking up with synthetic nails and embracing a healthier option… your natural nails!"
+      },
+      "featured_image_local": null,
+      "content_blocks": [
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/8767f658-560e-436d-8d80-b057db07a42e/Nailactan.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/8767f658-560e-436d-8d80-b057db07a42e/Nailactan.jpg",
+            "local_path": "blogs_v2\\images\\breaking-up-with-synthetic-nails\\nailactan.jpg",
+            "filename": "nailactan.jpg",
+            "size_bytes": 224466
+          },
+          "dimensions": {
+            "width": 1280,
+            "height": 1279
+          },
+          "styles": {
+            "width": "2000",
+            "height": "1998",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 0
+        },
+        {
+          "type": "paragraph",
+          "content": "Have synthetic nails been your go-to beauty staple? In light of the recent EU gel poison polish ban it’s time to consider breaking up with synthetic nails and embracing a healthier option… your natural nails. Prolonged use of acrylics and gels damages nail strength and quality.",
+          "html": "Have synthetic nails been your go-to beauty staple? In light of the recent<a href=\"https://www.marieclaire.com.au/beauty/gel-nail-polish-ban-is-it-coming-to-australia/\"> EU gel poison polish ban</a> it’s time to consider breaking up with synthetic nails and embracing a healthier option… your natural nails. Prolonged use of acrylics and gels damages nail strength and quality.",
+          "has_bold": false,
+          "links": [
+            {
+              "text": " EU gel poison polish ban",
+              "href": "https://www.marieclaire.com.au/beauty/gel-nail-polish-ban-is-it-coming-to-australia/",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 1
+        },
+        {
+          "type": "paragraph",
+          "content": "Whilst it can be daunting at first, pursuing a natural option is not only a fresh start but saves time, is a more low-maintenance and cost-saving alternative in the current economic climate.",
+          "html": "Whilst it can be daunting at first, pursuing a natural option is not only a fresh start but saves time, is a more low-maintenance and cost-saving alternative in the current economic climate. ",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "14px",
+            "marginBottom": "14px"
+          },
+          "order": 2
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 1: Remove safely",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "4.5px"
+          },
+          "order": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "Resist the urge to peel or pick! Improper removal can cause significant damage. The safest option is to let a professional nail technician remove properly.",
+          "html": "Resist the urge to peel or pick! Improper removal can cause significant damage. The safest option is to let a professional nail technician remove properly. ",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "14px",
+            "marginBottom": "14px"
+          },
+          "order": 4
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 2: Focus on nail recovery",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 5
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/55d3caf0-d1b2-4fdb-839b-57308cf34cfc/Applying+Mavala+Scientifique+Nail+Hardener.png",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/55d3caf0-d1b2-4fdb-839b-57308cf34cfc/Applying+Mavala+Scientifique+Nail+Hardener.png",
+            "local_path": "blogs_v2\\images\\breaking-up-with-synthetic-nails\\applyingmavalascientifiquenailhardener.png",
+            "filename": "applyingmavalascientifiquenailhardener.png",
+            "size_bytes": 1083520
+          },
+          "dimensions": {
+            "width": 1024,
+            "height": 1280
+          },
+          "styles": {
+            "width": "1200",
+            "height": "1500",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 6
+        },
+        {
+          "type": "paragraph",
+          "content": "Your nails will have deteriorated and are likely to be soft, weak, thinning and peeling or splitting.",
+          "html": "Your nails will have deteriorated and are likely to be soft, weak, thinning and peeling or splitting. &nbsp;",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 7
+        },
+        {
+          "type": "unordered_list",
+          "items": [
+            {
+              "text": "Strengthening treatments: apply an intensive, penetrative nail treatment to improve nail strength and resistance. Look for a nail shield topical treatment to support nail fragility.",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\"><strong>Strengthening treatments</strong>: apply an intensive, <a href=\"/all-products/mavala-scientifique-k\">penetrative nail treatment</a> to improve nail strength and resistance. Look for a <a href=\"/all-products/nail-shield\">nail shield topical treatment</a> to support nail fragility.</p>"
+            },
+            {
+              "text": "Cuticle Oil: hydrate cuticles daily with a cuticle oil or cream to nurture this sensitive area",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\"><strong>Cuticle Oil</strong>: hydrate cuticles daily with a <a href=\"/all-products/cuticle-oil\">cuticle oil</a> or <a href=\"/all-products/cuticle-cream\">cream</a> to nurture this sensitive area</p>"
+            },
+            {
+              "text": "Short Length: Keep nails trimmed and filed to prevent breaks while they regain strength.",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\"><strong>Short Length</strong>: Keep nails<a href=\"/all-products/scissors\"> trimmed</a> and <a href=\"/all-products/emery-boards\">filed</a> to prevent breaks while they regain strength.</p>"
+            }
+          ],
+          "styles": {
+            "listStyleType": "disc",
+            "paddingLeft": "40px",
+            "marginTop": "14px",
+            "marginBottom": "14px"
+          },
+          "order": 8
+        },
+        {
+          "type": "paragraph",
+          "content": "Strengthening treatments: apply an intensive, penetrative nail treatment to improve nail strength and resistance. Look for a nail shield topical treatment to support nail fragility.",
+          "html": "<strong>Strengthening treatments</strong>: apply an intensive, <a href=\"/all-products/mavala-scientifique-k\">penetrative nail treatment</a> to improve nail strength and resistance. Look for a <a href=\"/all-products/nail-shield\">nail shield topical treatment</a> to support nail fragility.",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "penetrative nail treatment",
+              "href": "https://mavala.com.au/all-products/mavala-scientifique-k",
+              "target": ""
+            },
+            {
+              "text": "nail shield topical treatment",
+              "href": "https://mavala.com.au/all-products/nail-shield",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 9
+        },
+        {
+          "type": "paragraph",
+          "content": "Cuticle Oil: hydrate cuticles daily with a cuticle oil or cream to nurture this sensitive area",
+          "html": "<strong>Cuticle Oil</strong>: hydrate cuticles daily with a <a href=\"/all-products/cuticle-oil\">cuticle oil</a> or <a href=\"/all-products/cuticle-cream\">cream</a> to nurture this sensitive area",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "cuticle oil",
+              "href": "https://mavala.com.au/all-products/cuticle-oil",
+              "target": ""
+            },
+            {
+              "text": "cream",
+              "href": "https://mavala.com.au/all-products/cuticle-cream",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 10
+        },
+        {
+          "type": "paragraph",
+          "content": "Short Length: Keep nails trimmed and filed to prevent breaks while they regain strength.",
+          "html": "<strong>Short Length</strong>: Keep nails<a href=\"/all-products/scissors\"> trimmed</a> and <a href=\"/all-products/emery-boards\">filed</a> to prevent breaks while they regain strength.",
+          "has_bold": true,
+          "links": [
+            {
+              "text": " trimmed",
+              "href": "https://mavala.com.au/all-products/scissors",
+              "target": ""
+            },
+            {
+              "text": "filed",
+              "href": "https://mavala.com.au/all-products/emery-boards",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 11
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 3: Embrace natural beauty",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 12
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/98ba0a3c-a821-4db5-8b46-10f5fe99013e/993_Windsor_M.jpg.webp",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/98ba0a3c-a821-4db5-8b46-10f5fe99013e/993_Windsor_M.jpg.webp",
+            "local_path": "blogs_v2\\images\\breaking-up-with-synthetic-nails\\993_windsor_mjpg.webp",
+            "filename": "993_windsor_mjpg.webp",
+            "size_bytes": 35950
+          },
+          "dimensions": {
+            "width": 1024,
+            "height": 1024
+          },
+          "styles": {
+            "width": "1200",
+            "height": "1200",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 13
+        },
+        {
+          "type": "paragraph",
+          "content": "Focus on more natural-looking options.",
+          "html": "Focus on more natural-looking options.",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 14
+        },
+        {
+          "type": "unordered_list",
+          "items": [
+            {
+              "text": "Nude & Sheer Polishes: Soft nude tones enhance your natural nails and offer a low maintenance option. Try an optical nail whitener, followed by glossy top coat to brighten nails.",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\"><strong>Nude &amp; Sheer Polishes</strong>: Soft <a href=\"/all-products/nude-shades\">nude tones</a> enhance your natural nails and offer a low maintenance option. Try an <a href=\"/all-products/mava-white\">optical nail whitener</a>, followed by <a href=\"/all-products/colorfix\">glossy top coat</a> to brighten nails.</p>"
+            },
+            {
+              "text": "Buff & Shine: Buffing not only provides an attractive lustre to the nails but also stimulates blood circulation at the base of the nail which encourages healthy growth.",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\"><strong>Buff &amp; Shine</strong>: <a href=\"/all-products/nail-buffer-kit\">Buffing</a> not only provides an attractive lustre to the nails but also stimulates blood circulation at the base of the nail which encourages healthy growth.</p>"
+            }
+          ],
+          "styles": {
+            "listStyleType": "disc",
+            "paddingLeft": "40px",
+            "marginTop": "14px",
+            "marginBottom": "14px"
+          },
+          "order": 15
+        },
+        {
+          "type": "paragraph",
+          "content": "Nude & Sheer Polishes: Soft nude tones enhance your natural nails and offer a low maintenance option. Try an optical nail whitener, followed by glossy top coat to brighten nails.",
+          "html": "<strong>Nude &amp; Sheer Polishes</strong>: Soft <a href=\"/all-products/nude-shades\">nude tones</a> enhance your natural nails and offer a low maintenance option. Try an <a href=\"/all-products/mava-white\">optical nail whitener</a>, followed by <a href=\"/all-products/colorfix\">glossy top coat</a> to brighten nails.",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "nude tones",
+              "href": "https://mavala.com.au/all-products/nude-shades",
+              "target": ""
+            },
+            {
+              "text": "optical nail whitener",
+              "href": "https://mavala.com.au/all-products/mava-white",
+              "target": ""
+            },
+            {
+              "text": "glossy top coat",
+              "href": "https://mavala.com.au/all-products/colorfix",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 16
+        },
+        {
+          "type": "paragraph",
+          "content": "Buff & Shine: Buffing not only provides an attractive lustre to the nails but also stimulates blood circulation at the base of the nail which encourages healthy growth.",
+          "html": "<strong>Buff &amp; Shine</strong>: <a href=\"/all-products/nail-buffer-kit\">Buffing</a> not only provides an attractive lustre to the nails but also stimulates blood circulation at the base of the nail which encourages healthy growth.",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "Buffing",
+              "href": "https://mavala.com.au/all-products/nail-buffer-kit",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 17
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 4: Be patient",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "4.5px"
+          },
+          "order": 18
+        },
+        {
+          "type": "paragraph",
+          "content": "Nails take 3–6 months to fully grow out, so consistency matters. Celebrate small milestones along the way.",
+          "html": "Nails take 3–6 months to fully grow out, so consistency matters. Celebrate small milestones along the way.",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "14px",
+            "marginBottom": "14px"
+          },
+          "order": 19
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 5: Redefine your nail routine",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 20
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/56a0a95c-8f73-4de2-96f1-30fb323344c0/Mava%2BExtreme+Care+for+hands.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/56a0a95c-8f73-4de2-96f1-30fb323344c0/Mava%2BExtreme+Care+for+hands.jpg",
+            "local_path": "blogs_v2\\images\\breaking-up-with-synthetic-nails\\mava2bextremecareforhands.jpg",
+            "filename": "mava2bextremecareforhands.jpg",
+            "size_bytes": 375522
+          },
+          "dimensions": {
+            "width": 1269,
+            "height": 1267
+          },
+          "styles": {
+            "width": "2000",
+            "height": "1997",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 21
+        },
+        {
+          "type": "paragraph",
+          "content": "Think of it as a beauty reset that will result in strong, healthy nails. When you are on the other side of the rehab journey, there is no going back! Keep nails well-conditioned and protected by;",
+          "html": "Think of it as a beauty reset that will result in strong, healthy nails. When you are on the other side of the rehab journey, there is no going back! Keep nails well-conditioned and protected by;",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 22
+        },
+        {
+          "type": "unordered_list",
+          "items": [
+            {
+              "text": "Regular hand cream + cuticle care",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\"><a href=\"/all-products/prebiotic-hand-cream\">Regular hand cream</a> + <a href=\"/all-products?category=Cuticle%20Care\">cuticle care</a></p>"
+            },
+            {
+              "text": "Using gentle nail tools",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\">Using <a href=\"/accessories\">gentle nail tools</a></p>"
+            },
+            {
+              "text": "Occasional salon visits on nail wellness",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\">Occasional salon visits on nail wellness</p>"
+            }
+          ],
+          "styles": {
+            "listStyleType": "disc",
+            "paddingLeft": "40px",
+            "marginTop": "14px",
+            "marginBottom": "0px"
+          },
+          "order": 23
+        },
+        {
+          "type": "paragraph",
+          "content": "Regular hand cream + cuticle care",
+          "html": "<a href=\"/all-products/prebiotic-hand-cream\">Regular hand cream</a> + <a href=\"/all-products?category=Cuticle%20Care\">cuticle care</a>",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "Regular hand cream",
+              "href": "https://mavala.com.au/all-products/prebiotic-hand-cream",
+              "target": ""
+            },
+            {
+              "text": "cuticle care",
+              "href": "https://mavala.com.au/all-products?category=Cuticle%20Care",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 24
+        },
+        {
+          "type": "paragraph",
+          "content": "Using gentle nail tools",
+          "html": "Using <a href=\"/accessories\">gentle nail tools</a>",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "gentle nail tools",
+              "href": "https://mavala.com.au/accessories",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 25
+        },
+        {
+          "type": "paragraph",
+          "content": "Occasional salon visits on nail wellness",
+          "html": "Occasional salon visits on nail wellness",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 26
+        }
+      ],
+      "stats": {
+        "total_blocks": 27,
+        "paragraphs": 15,
+        "headings": 5,
+        "images": 4,
+        "lists": 3
+      }
+    },
+    {
+      "url": "https://mavala.com.au/blog/polka-dot-nails",
+      "slug": "polka-dot-nails",
+      "scraped_at": "2026-01-29T15:18:24.235085",
+      "metadata": {
+        "title": "THE ART OF POLKA DOT NAILS",
+        "date": "SEPTEMBER 25, 2025",
+        "date_iso": "2025-09-25",
+        "author": "Mavala Australia",
+        "categories": [],
+        "tags": [
+          "NAIL POLISH",
+          "NAIL ART",
+          "TRENDS",
+          "TUTORIAL",
+          "TIPS"
+        ],
+        "featured_image": "http://static1.squarespace.com/static/55432595e4b05903a7a1130b/57fb3d216a496306c8404cde/68d4d82c94456d436e445111/1758785540405/Polka+Dots+Manicure.jpg?format=1500w",
+        "excerpt": "If you are new to nail art and wanting to experiment with this season’s latest trend, the polka dot nail is an ideal starting point. A timeless and playful style that can be as subtle or bold as you like. Play around with colours, patterns, and finishes to make this look truly your own."
+      },
+      "featured_image_local": null,
+      "content_blocks": [
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/4e028c43-d5c5-46ee-9f46-4c5ffb6e4887/Polka+Dots+Manicure.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/4e028c43-d5c5-46ee-9f46-4c5ffb6e4887/Polka+Dots+Manicure.jpg",
+            "local_path": "blogs_v2\\images\\polka-dot-nails\\polkadotsmanicure.jpg",
+            "filename": "polkadotsmanicure.jpg",
+            "size_bytes": 33870
+          },
+          "dimensions": {
+            "width": 960,
+            "height": 540
+          },
+          "styles": {
+            "width": "1125",
+            "height": "633",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 0
+        },
+        {
+          "type": "paragraph",
+          "content": "If you are new to nail art and wanting to experiment with this season’s latest trend, the polka dot nail is an ideal starting point. A timeless and playful style that can be as subtle or bold as you like. With a steady hand and a simple tool kit, this is a nail art style you can master at home. Play around with colours, patterns, and finishes to make this look truly your own.",
+          "html": "If you are new to nail art and wanting to experiment with this season’s latest trend, the polka dot nail is an ideal starting point. A timeless and playful style that can be as subtle or bold as you like. With a steady hand and a simple tool kit, this is a nail art style you can master at home. Play around with colours, patterns, and finishes to make this look truly your own.",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 1
+        },
+        {
+          "type": "paragraph",
+          "content": "Follow these simple steps for a professional finish:",
+          "html": "Follow these simple steps for a professional finish:",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "14px",
+            "marginBottom": "14px"
+          },
+          "order": 2
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 1: Prepare and protect",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "4.5px"
+          },
+          "order": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "Start with clean, dry nails. File and shape them to your preference, and gently push back your cuticles. Apply a thin layer of base coat to protect your nails and help the polish last longer.",
+          "html": "Start with clean, dry nails. <a href=\"/all-products/emery-boards\">File</a> and shape them to your preference, and gently <a href=\"/all-products/hoofstick\">push back</a> your cuticles. Apply a thin layer of <a href=\"/all-products/mavala-002-protective-base-coat\">base coat</a> to protect your nails and help the polish last longer.",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "File",
+              "href": "https://mavala.com.au/all-products/emery-boards",
+              "target": ""
+            },
+            {
+              "text": "push back",
+              "href": "https://mavala.com.au/all-products/hoofstick",
+              "target": ""
+            },
+            {
+              "text": "base coat",
+              "href": "https://mavala.com.au/all-products/mavala-002-protective-base-coat",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "14px",
+            "marginBottom": "14px"
+          },
+          "order": 4
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 2: Apply the base colour",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "4.5px"
+          },
+          "order": 5
+        },
+        {
+          "type": "paragraph",
+          "content": "Paint your nails with your chosen base shade. This could be a neutral like nude, white, or black, or something bright and bold. Let it dry completely before moving on.",
+          "html": "Paint your nails with your chosen base shade. This could be a neutral like <a href=\"/all-products/nude-shades\">nude</a>, <a href=\"/all-products/white-shades\">white</a>, or <a href=\"/all-products/black-shades\">black</a>, or something <a href=\"/all-products/bubble-gum\">bright and bold</a>. Let it dry completely before moving on.",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "nude",
+              "href": "https://mavala.com.au/all-products/nude-shades",
+              "target": ""
+            },
+            {
+              "text": "white",
+              "href": "https://mavala.com.au/all-products/white-shades",
+              "target": ""
+            },
+            {
+              "text": "black",
+              "href": "https://mavala.com.au/all-products/black-shades",
+              "target": ""
+            },
+            {
+              "text": "bright and bold",
+              "href": "https://mavala.com.au/all-products/bubble-gum",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "14px",
+            "marginBottom": "14px"
+          },
+          "order": 6
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 3: Create the dot design",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 7
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/36ff0e2f-3700-4457-9a0a-9f640457628f/Polka+Dots+Nails.jpg",
+          "alt": "",
+          "caption": "Pic credit: Samantha Cox",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/36ff0e2f-3700-4457-9a0a-9f640457628f/Polka+Dots+Nails.jpg",
+            "local_path": "blogs_v2\\images\\polka-dot-nails\\polkadotsnails.jpg",
+            "filename": "polkadotsnails.jpg",
+            "size_bytes": 154464
+          },
+          "dimensions": {
+            "width": 962,
+            "height": 1276
+          },
+          "styles": {
+            "width": "1128",
+            "height": "1496",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 8
+        },
+        {
+          "type": "paragraph",
+          "content": "Pic credit: Samantha Cox",
+          "html": "Pic credit: <a href=\"https://www.instagram.com/thedailynailofficial/\" target=\"_blank\">Samantha Cox</a>",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "Samantha Cox",
+              "href": "https://www.instagram.com/thedailynailofficial/",
+              "target": "_blank"
+            }
+          ],
+          "styles": {
+            "fontSize": "11.55px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "19.404px",
+            "marginTop": "0px",
+            "marginBottom": "11.55px"
+          },
+          "order": 9
+        },
+        {
+          "type": "paragraph",
+          "content": "Pour a small amount of your dot colour onto a piece of foil or a palette. Dip the tip of your dotting tool into the polish and gently press the tool onto your nail to create a dot. Repeat as desired across the nail. Be as playful as you desire by experimenting with dot size and placement. Allow your design to dry completely before applying a top coat to avoid smudging.",
+          "html": "Pour a small amount of your dot colour onto a piece of foil or a palette. Dip the tip of your dotting tool into the polish and gently press the tool onto your nail to create a dot. Repeat as desired across the nail. Be as playful as you desire by experimenting with dot size and placement. Allow your design to dry completely before applying a <a href=\"/all-products/colorfix\">top coat</a> to avoid smudging. ",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "top coat",
+              "href": "https://mavala.com.au/all-products/colorfix",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 10
+        },
+        {
+          "type": "paragraph",
+          "content": "Tips: practise on paper first to get the feel for how much polish you need on your tool. Keep clean-up kit close to hand for any mistakes",
+          "html": "Tips: practise on paper first to get the feel for how much polish you need on your tool. Keep clean-up kit close to hand for any mistakes",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "14px",
+            "marginBottom": "14px"
+          },
+          "order": 11
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 4: Seal with top coat",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "4.5px"
+          },
+          "order": 12
+        },
+        {
+          "type": "paragraph",
+          "content": "Seal and protect your work of art with a glossy, smoothing top coat. Reapply every 2 days to extend the life of your nail art.",
+          "html": "Seal and protect your work of art with a glossy, smoothing <a href=\"/all-products/colorfix\">top coat</a>. Reapply every 2 days to extend the life of your nail art.",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "top coat",
+              "href": "https://mavala.com.au/all-products/colorfix",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "14px",
+            "marginBottom": "14px"
+          },
+          "order": 13
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Polka Dot Nails Checklist",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "4.5px"
+          },
+          "order": 14
+        },
+        {
+          "type": "unordered_list",
+          "items": [
+            {
+              "text": "Base coat (to prepare and protect your nails)",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\"><a href=\"/all-products/mavala-002-protective-base-coat\"><strong>Base coat</strong></a> (to prepare and protect your nails)</p>"
+            },
+            {
+              "text": "Nail polish in at least two colours (one for the base, one for the dots)",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\"><a href=\"/color\"><strong>Nail polish</strong></a> in at least two colours (one for the base, one for the dots)</p>"
+            },
+            {
+              "text": "Dotting tool (a bobby pin, toothpick or specialised brush)",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\"><a href=\"https://sonailiciousboutique.com/collections/nail-art-brushes\"><strong>Dotting tool</strong></a> (a bobby pin, toothpick or specialised brush)</p>"
+            },
+            {
+              "text": "Top coat (to seal in your design)",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\"><a href=\"/all-products/colorfix\"><strong>Top coat</strong></a> (to seal in your design)</p>"
+            },
+            {
+              "text": "Nail polish correcteur pen (for clean-up)",
+              "html": "<p class=\"\" style=\"white-space:pre-wrap;\"><a href=\"/all-products/correcteur-pen\"><strong>Nail polish correcteur pen</strong></a> (for clean-up)</p>"
+            }
+          ],
+          "styles": {
+            "listStyleType": "disc",
+            "paddingLeft": "40px",
+            "marginTop": "14px",
+            "marginBottom": "0px"
+          },
+          "order": 15
+        },
+        {
+          "type": "paragraph",
+          "content": "Base coat (to prepare and protect your nails)",
+          "html": "<a href=\"/all-products/mavala-002-protective-base-coat\"><strong>Base coat</strong></a> (to prepare and protect your nails)",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "Base coat",
+              "href": "https://mavala.com.au/all-products/mavala-002-protective-base-coat",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 16
+        },
+        {
+          "type": "paragraph",
+          "content": "Nail polish in at least two colours (one for the base, one for the dots)",
+          "html": "<a href=\"/color\"><strong>Nail polish</strong></a> in at least two colours (one for the base, one for the dots)",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "Nail polish",
+              "href": "https://mavala.com.au/color",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 17
+        },
+        {
+          "type": "paragraph",
+          "content": "Dotting tool (a bobby pin, toothpick or specialised brush)",
+          "html": "<a href=\"https://sonailiciousboutique.com/collections/nail-art-brushes\"><strong>Dotting tool</strong></a> (a bobby pin, toothpick or specialised brush)",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "Dotting tool",
+              "href": "https://sonailiciousboutique.com/collections/nail-art-brushes",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 18
+        },
+        {
+          "type": "paragraph",
+          "content": "Top coat (to seal in your design)",
+          "html": "<a href=\"/all-products/colorfix\"><strong>Top coat</strong></a> (to seal in your design)",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "Top coat",
+              "href": "https://mavala.com.au/all-products/colorfix",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 19
+        },
+        {
+          "type": "paragraph",
+          "content": "Nail polish correcteur pen (for clean-up)",
+          "html": "<a href=\"/all-products/correcteur-pen\"><strong>Nail polish correcteur pen</strong></a> (for clean-up)",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "Nail polish correcteur pen",
+              "href": "https://mavala.com.au/all-products/correcteur-pen",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "7px",
+            "marginBottom": "7px"
+          },
+          "order": 20
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/821958c9-4b38-4401-bba5-219bb0c1ea28/Correcteur+Pen",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/821958c9-4b38-4401-bba5-219bb0c1ea28/Correcteur+Pen",
+            "local_path": "blogs_v2\\images\\polka-dot-nails\\correcteurpen.jpg",
+            "filename": "correcteurpen.jpg",
+            "size_bytes": 632040
+          },
+          "dimensions": {
+            "width": 1276,
+            "height": 1274
+          },
+          "styles": {
+            "width": "1496",
+            "height": "1494",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 21
+        }
+      ],
+      "stats": {
+        "total_blocks": 22,
+        "paragraphs": 13,
+        "headings": 5,
+        "images": 3,
+        "lists": 1
+      }
+    },
+    {
+      "url": "https://mavala.com.au/blog/nail-trends",
+      "slug": "nail-trends",
+      "scraped_at": "2026-01-29T15:18:33.077140",
+      "metadata": {
+        "title": "NEW SEASON NAIL TRENDS",
+        "date": "AUGUST 19, 2025",
+        "date_iso": "2025-08-19",
+        "author": "Mavala Australia",
+        "categories": [],
+        "tags": [
+          "NAIL POLISH",
+          "NEW PRODUCT",
+          "SPRING",
+          "TRENDS"
+        ],
+        "featured_image": "http://static1.squarespace.com/static/55432595e4b05903a7a1130b/57fb3d216a496306c8404cde/68a2a5ec45bf0a47adf2c432/1755581707310/Nail+trends.jpg?format=1500w",
+        "excerpt": "Nails are the ultimate accessory; adaptable, short-lived bursts of fun and quick to nail! Mavala’s Global Trainer, Lynn Mason, shares the latest trends to inspire you for the sunshine season ahead."
+      },
+      "featured_image_local": null,
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Nails are the ultimate accessory; adaptable, short-lived bursts of fun and quick to nail! Mavala’s Global Trainer, Lynn Mason, shares the latest trends to inspire you for the sunshine season ahead.",
+          "html": "Nails are the ultimate accessory; adaptable, short-lived bursts of fun and quick to nail! Mavala’s Global Trainer, Lynn Mason, shares the latest trends to inspire you for the sunshine season ahead.",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 0
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Less-is-more aesthetic",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 1
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/acbd0543-5cc5-46d1-8f3a-61ca16aba968/Post+1.+Cuticles+Care.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/acbd0543-5cc5-46d1-8f3a-61ca16aba968/Post+1.+Cuticles+Care.jpg",
+            "local_path": "blogs_v2\\images\\nail-trends\\post1cuticlescare.jpg",
+            "filename": "post1cuticlescare.jpg",
+            "size_bytes": 249292
+          },
+          "dimensions": {
+            "width": 1280,
+            "height": 1600
+          },
+          "styles": {
+            "width": "3240",
+            "height": "4050",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "Women are looking for low maintenance nails that still look elevated, without the fuss of synthetic nails (time and more importantly cost saving). A health-focused approach over insta-glam is trending, by rebuilding nail strength and natural radiance with colour correcting nudes.  Use a ridge-filler treatment to prime the nails and create a smooth canvas, followed by a nude base and high shine top coat for a juicy, plump natural finish. A nude base is like a CC serum in the way that it blurs out imperfections on the nails, creating a sheer finish to brighten the natural nail, elongating fingers in the process.",
+          "html": "Women are looking for low maintenance nails that still look elevated, without the fuss of synthetic nails (time and more importantly cost saving). A health-focused approach over insta-glam is trending, by rebuilding <a href=\"/all-products/mavala-scientifique-k\">nail strength</a> and natural radiance with colour correcting nudes.&nbsp; Use a <a href=\"/all-products/ridge-filler\">ridge-filler treatment</a> to prime the nails and create a smooth canvas, followed by a nude base and high shine top coat for a juicy, plump natural finish. A <a href=\"/all-products/mava-white\">nude base</a> is like a CC serum in the way that it blurs out imperfections on the nails, creating a sheer finish to brighten the natural nail, elongating fingers in the process.",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "nail strength",
+              "href": "https://mavala.com.au/all-products/mavala-scientifique-k",
+              "target": ""
+            },
+            {
+              "text": "ridge-filler treatment",
+              "href": "https://mavala.com.au/all-products/ridge-filler",
+              "target": ""
+            },
+            {
+              "text": "nude base",
+              "href": "https://mavala.com.au/all-products/mava-white",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 3
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Nude diversity",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 4
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/2135d7aa-fae2-43e6-a37c-62a80946bb3b/2.+Post+Neo+Nude+Collection+-+Post+2.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/2135d7aa-fae2-43e6-a37c-62a80946bb3b/2.+Post+Neo+Nude+Collection+-+Post+2.jpg",
+            "local_path": "blogs_v2\\images\\nail-trends\\2postneonudecollection-post2.jpg",
+            "filename": "2postneonudecollection-post2.jpg",
+            "size_bytes": 96318
+          },
+          "dimensions": {
+            "width": 1280,
+            "height": 1600
+          },
+          "styles": {
+            "width": "2160",
+            "height": "2700",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 5
+        },
+        {
+          "type": "paragraph",
+          "content": "Nude is anything but one-size-fits-all. Nudes are diverse, from cool beige to warm caramel, blush pink to deep cocoa, today’s nude nail shades celebrate every skin tone and style. Whether you’re after a barely-there veil of colour or a statement neutral with depth, there’s a nude to make your own. A simple, yet versatile nail polish choice.",
+          "html": "Nude is anything but one-size-fits-all. Nudes are diverse, from cool beige to warm caramel, blush pink to deep cocoa, today’s <a href=\"/all-products/neo-nudes\">nude nail shades</a> celebrate every skin tone and style. Whether you’re after a barely-there veil of colour or a statement neutral with depth, there’s a nude to make your own. A simple, yet versatile nail polish choice.",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "nude nail shades",
+              "href": "https://mavala.com.au/all-products/neo-nudes",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 6
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Milky and rosewater nails",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 7
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/0a9380a8-c044-4797-8c42-7c2a2a9dadb0/French+Manicure+Pink.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/0a9380a8-c044-4797-8c42-7c2a2a9dadb0/French+Manicure+Pink.jpg",
+            "local_path": "blogs_v2\\images\\nail-trends\\frenchmanicurepink.jpg",
+            "filename": "frenchmanicurepink.jpg",
+            "size_bytes": 256462
+          },
+          "dimensions": {
+            "width": 853,
+            "height": 855
+          },
+          "styles": {
+            "width": "1000",
+            "height": "1002",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 8
+        },
+        {
+          "type": "paragraph",
+          "content": "Milky nails have been having a moment for months. Semi-translucent, milky finishes - from almond milk to rosewater - give a soft, luxe feel and a dreamy, ethereal boost to your natural nail colour. Milky pedicures pop against a more tanned complexion. Soft pinks are the new neutrals, adapting to every fashion moment, rose’ and princess inspired nails are big news this summer… sheer, glossy and effortlessly chic. The royals have long adored this understated manicure moment.",
+          "html": "Milky nails have been having a moment for months. Semi-translucent, <a href=\"/all-products/nude-shades\">milky finishes</a> - from almond milk to rosewater - give a soft, luxe feel and a dreamy, ethereal boost to your natural nail colour. Milky pedicures pop against a more tanned complexion. Soft pinks are the new neutrals, adapting to every fashion moment, rose’ and princess inspired nails are big news this summer… sheer, glossy and effortlessly chic. The royals have long adored this understated manicure moment. ",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "milky finishes",
+              "href": "https://mavala.com.au/all-products/nude-shades",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 9
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Polka Dots",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 10
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/af5b35f5-a013-48f3-a024-bcc043fcf623/IMG_9962.jpg",
+          "alt": "",
+          "caption": "Pic credit: Andréa Barbet",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/af5b35f5-a013-48f3-a024-bcc043fcf623/IMG_9962.jpg",
+            "local_path": "blogs_v2\\images\\nail-trends\\img_9962.jpg",
+            "filename": "img_9962.jpg",
+            "size_bytes": 86538
+          },
+          "dimensions": {
+            "width": 1125,
+            "height": 1362
+          },
+          "styles": {
+            "width": "1125",
+            "height": "1362",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 11
+        },
+        {
+          "type": "paragraph",
+          "content": "Pic credit: Andréa Barbet",
+          "html": "Pic credit: <a href=\"https://www.instagram.com/m.o.n.a.j/\" target=\"_blank\">Andréa Barbet</a>",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "Andréa Barbet",
+              "href": "https://www.instagram.com/m.o.n.a.j/",
+              "target": "_blank"
+            }
+          ],
+          "styles": {
+            "fontSize": "11.55px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "19.404px",
+            "marginTop": "0px",
+            "marginBottom": "11.55px"
+          },
+          "order": 12
+        },
+        {
+          "type": "paragraph",
+          "content": "Thanks to Hailey Bieber, the polka dot nail effect has taken off this summer, more of a chic micro-dot rather than garish Mickey Mouse vibes. We’re seeing a lot of fine dot accents, retro combinations and mixed patterns this season. With just two colours you can create dozens of unique looks and it’s a nail trend that suits every nail length and shape. The good news is that you don’t need a full nail art kit to create polka dots. Everyday items like a toothpick and rounded end of a bobby pin can create the perfect micro dot!",
+          "html": "Thanks to Hailey Bieber, the polka dot nail effect has taken off this summer, more of a chic micro-dot rather than garish Mickey Mouse vibes. We’re seeing a lot of fine dot accents, retro combinations and mixed patterns this season. With just two colours you can create dozens of unique looks and it’s a nail trend that suits every nail length and shape. The good news is that you don’t need a full nail art kit to create polka dots. Everyday items like a toothpick and rounded end of a bobby pin can create the perfect micro dot!",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 13
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Unexpected Neons & Vivid Pops",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 14
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/9ae3290a-6404-4d55-ade1-bfe116b1a87b/Poolside+by+the+beach.jpg",
+          "alt": "",
+          "caption": "Pic credit: So Nailicious",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/9ae3290a-6404-4d55-ade1-bfe116b1a87b/Poolside+by+the+beach.jpg",
+            "local_path": "blogs_v2\\images\\nail-trends\\poolsidebythebeach.jpg",
+            "filename": "poolsidebythebeach.jpg",
+            "size_bytes": 120986
+          },
+          "dimensions": {
+            "width": 1125,
+            "height": 1402
+          },
+          "styles": {
+            "width": "1125",
+            "height": "1402",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 15
+        },
+        {
+          "type": "paragraph",
+          "content": "Pic credit: So Nailicious",
+          "html": "Pic credit: <a target=\"_blank\" href=\"https://sonailicious.com\">So Nailicious</a>",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "So Nailicious",
+              "href": "https://sonailicious.com/",
+              "target": "_blank"
+            }
+          ],
+          "styles": {
+            "fontSize": "11.55px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "19.404px",
+            "marginTop": "0px",
+            "marginBottom": "11.55px"
+          },
+          "order": 16
+        },
+        {
+          "type": "paragraph",
+          "content": "In stark contrast to simple, pared-back vibes are neon nails—think aqua blue, vibrant fuchsia and tangy yellow— injecting energy and summer boldness, pairing well with both natural and tanned skin. Whether applied to the hands or feet, these shades scream confidence, creativity and joy. Statement neon and pop shades are perfect for putting your feet in the spotlight whilst wearing sandals.",
+          "html": "In stark contrast to simple, pared-back vibes are <a href=\"/all-products/bubble-gum\">neon nails</a>—think <a href=\"/all-products/blue-shades\">aqua blue</a>, <a href=\"/all-products/pink-shades\">vibrant fuchsia</a> and <a href=\"/all-products/yellow-shades\">tangy yellow</a>— injecting energy and summer boldness, pairing well with both natural and tanned skin. Whether applied to the hands or feet, these shades scream confidence, creativity and joy. Statement neon and pop shades are perfect for putting your feet in the spotlight whilst wearing sandals. ",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "neon nails",
+              "href": "https://mavala.com.au/all-products/bubble-gum",
+              "target": ""
+            },
+            {
+              "text": "aqua blue",
+              "href": "https://mavala.com.au/all-products/blue-shades",
+              "target": ""
+            },
+            {
+              "text": "vibrant fuchsia",
+              "href": "https://mavala.com.au/all-products/pink-shades",
+              "target": ""
+            },
+            {
+              "text": "tangy yellow",
+              "href": "https://mavala.com.au/all-products/yellow-shades",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 17
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Short almond or medium coffin shaped",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 18
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/15ec3dd6-22d4-466c-9334-b610772d610a/Short+nails+are+in.jpg",
+          "alt": "",
+          "caption": "Pic credit: Diana-May",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/15ec3dd6-22d4-466c-9334-b610772d610a/Short+nails+are+in.jpg",
+            "local_path": "blogs_v2\\images\\nail-trends\\shortnailsarein.jpg",
+            "filename": "shortnailsarein.jpg",
+            "size_bytes": 73924
+          },
+          "dimensions": {
+            "width": 1150,
+            "height": 1300
+          },
+          "styles": {
+            "width": "1150",
+            "height": "1300",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 19
+        },
+        {
+          "type": "paragraph",
+          "content": "Pic credit: Diana-May",
+          "html": "Pic credit: <a target=\"_blank\" href=\"https://www.instagram.com/ladydianamay/\">Diana-May</a>",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "Diana-May",
+              "href": "https://www.instagram.com/ladydianamay/",
+              "target": "_blank"
+            }
+          ],
+          "styles": {
+            "fontSize": "11.55px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "19.404px",
+            "marginTop": "0px",
+            "marginBottom": "11.55px"
+          },
+          "order": 20
+        },
+        {
+          "type": "paragraph",
+          "content": "Short nails reign supreme for the new season, channelling a more understated and quietly luxurious approach. They are also comfortable, low maintenance and lean into the minimalist trend. Summer is a busy season of endless swimming, outdoor sports and travel, so short nails are easier to handle. Almond shape is flattering to the fingers or coffin de rigueur if your nails are slightly on the medium length.",
+          "html": "Short nails reign supreme for the new season, channelling a more understated and quietly luxurious approach. They are also comfortable, low maintenance and lean into the minimalist trend. Summer is a busy season of endless swimming, outdoor sports and travel, so short nails are easier to handle. Almond shape is flattering to the fingers or coffin de rigueur if your nails are slightly on the medium length. ",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 21
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Citrus burst",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 22
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/b9207014-4572-4b6d-bf1a-1a294eae0ba4/IMG_9963.jpg",
+          "alt": "",
+          "caption": "Pic credit: Trishna",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/b9207014-4572-4b6d-bf1a-1a294eae0ba4/IMG_9963.jpg",
+            "local_path": "blogs_v2\\images\\nail-trends\\img_9963.jpg",
+            "filename": "img_9963.jpg",
+            "size_bytes": 90088
+          },
+          "dimensions": {
+            "width": 1125,
+            "height": 1392
+          },
+          "styles": {
+            "width": "1125",
+            "height": "1392",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 23
+        },
+        {
+          "type": "paragraph",
+          "content": "Pic credit: Trishna",
+          "html": "Pic credit: <a target=\"_blank\" href=\"https://www.instagram.com/trishpolish/\">Trishna</a>",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "Trishna",
+              "href": "https://www.instagram.com/trishpolish/",
+              "target": "_blank"
+            }
+          ],
+          "styles": {
+            "fontSize": "11.55px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "19.404px",
+            "marginTop": "0px",
+            "marginBottom": "11.55px"
+          },
+          "order": 24
+        },
+        {
+          "type": "paragraph",
+          "content": "In the holiday spirit of Aperol Spritz, orange is a fun and quirky shade for the summer season that works particularly well with pedicures. Transition into a pink/orange shade for a classic coral summer vibe, albeit a more citrus, brighter version. The sunshine effect of yellow is another quintessential summer colour. Yellow, whether bright lemon or muted butter, is a happy and uplifting symbol throughout the day.",
+          "html": "In the holiday spirit of Aperol Spritz, <a href=\"/all-products/orange-shades\">orange</a> is a fun and quirky shade for the summer season that works particularly well with pedicures. Transition into a pink/orange shade for a <a href=\"/all-products/coral-shades\">classic coral summer vibe</a>, albeit a more citrus, brighter version. The sunshine effect of yellow is another quintessential summer colour. <a href=\"/all-products/yellow-shades\">Yellow</a>, whether bright lemon or muted butter, is a happy and uplifting symbol throughout the day.",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "orange",
+              "href": "https://mavala.com.au/all-products/orange-shades",
+              "target": ""
+            },
+            {
+              "text": "classic coral summer vibe",
+              "href": "https://mavala.com.au/all-products/coral-shades",
+              "target": ""
+            },
+            {
+              "text": "Yellow",
+              "href": "https://mavala.com.au/all-products/yellow-shades",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "0px"
+          },
+          "order": 25
+        }
+      ],
+      "stats": {
+        "total_blocks": 26,
+        "paragraphs": 12,
+        "headings": 7,
+        "images": 7,
+        "lists": 0
+      }
+    },
+    {
+      "url": "https://mavala.com.au/blog/beauty-myths",
+      "slug": "beauty-myths",
+      "scraped_at": "2026-01-29T15:18:45.284389",
+      "metadata": {
+        "title": "OLD-SCHOOL BEAUTY RULES",
+        "date": "AUGUST 7, 2025",
+        "date_iso": "2025-08-07",
+        "author": "Mavala Australia",
+        "categories": [],
+        "tags": [
+          "SKIN CARE",
+          "MAKE-UP",
+          "BEAUTY",
+          "TRENDS",
+          "TIPS"
+        ],
+        "featured_image": "http://static1.squarespace.com/static/55432595e4b05903a7a1130b/57fb3d216a496306c8404cde/689424e751982e45d75ff812/1754544516422/Beauty+myths.jpg?format=1500w",
+        "excerpt": "Beauty is ever-changing… shaped by newness, trends and evolving standards. In the spirit of renewal, it’s time to shake up the old-school beauty myths holding you back and step into a new approach!"
+      },
+      "featured_image_local": null,
+      "content_blocks": [
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1c13f201-ce47-4fd8-bc8c-cd21f378e398/AQ%2B+Sleeping+Mask.png",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1c13f201-ce47-4fd8-bc8c-cd21f378e398/AQ%2B+Sleeping+Mask.png",
+            "local_path": "blogs_v2\\images\\beauty-myths\\aq2bsleepingmask.png",
+            "filename": "aq2bsleepingmask.png",
+            "size_bytes": 1217798
+          },
+          "dimensions": {
+            "width": 950,
+            "height": 1280
+          },
+          "styles": {
+            "width": "1114",
+            "height": "1500",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 0
+        },
+        {
+          "type": "paragraph",
+          "content": "Beauty is ever-changing… shaped by newness, trends and evolving standards. In the spirit of renewal, it’s time to shake up the old-school beauty myths holding you back and step into a new approach!",
+          "html": "Beauty is ever-changing… shaped by newness, trends and evolving standards. In the spirit of renewal, it’s time to shake up the old-school beauty myths holding you back and step into a new approach! ",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 1
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Myth 1: Concealer should always be lighter than your foundation",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 2
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1292cbf3-4f06-4a46-b482-7a6fc4749c73/Perfect+Concealer+2.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1292cbf3-4f06-4a46-b482-7a6fc4749c73/Perfect+Concealer+2.jpg",
+            "local_path": "blogs_v2\\images\\beauty-myths\\perfectconcealer2.jpg",
+            "filename": "perfectconcealer2.jpg",
+            "size_bytes": 693218
+          },
+          "dimensions": {
+            "width": 1280,
+            "height": 1281
+          },
+          "styles": {
+            "width": "4000",
+            "height": "4006",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "Truth: This isn’t a hard rule. While a slightly lighter concealer can brighten the under-eye area, going too light can draw attention to puffiness or fine lines. For blemish coverage, choose a concealer that closely matches your foundation for a seamless blend.",
+          "html": "<strong>Truth:</strong> This isn’t a hard rule. While a slightly <a href=\"/all-products/mavalia-concealer\">lighter concealer</a> can brighten the under-eye area, going too light can draw attention to puffiness or fine lines. For blemish coverage, choose a concealer that closely matches your foundation for a seamless blend.",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "lighter concealer",
+              "href": "https://mavala.com.au/all-products/mavalia-concealer",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 4
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Myth 2: You don’t need SPF on cloudy days",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "4.5px"
+          },
+          "order": 5
+        },
+        {
+          "type": "paragraph",
+          "content": "Truth: UV rays cause 90% of visible skin ageing, penetrating clouds and glass. Daily SPF is non-negotiable, indoors or out. Opt for a broad-spectrum SPF 50 every day, and don’t rely solely on makeup with SFP, instead layer a dedicated sunscreen underneath year-round.",
+          "html": "<strong>Truth:</strong> UV rays cause 90% of visible skin ageing, penetrating clouds and glass. Daily SPF is non-negotiable, indoors or out. Opt for a broad-spectrum SPF 50 every day, and don’t rely solely on makeup with SFP, instead layer a dedicated sunscreen underneath year-round.",
+          "has_bold": true,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "14px",
+            "marginBottom": "14px"
+          },
+          "order": 6
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Myth 3: You can shrink your pores",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 7
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/f35034fc-2669-493b-81a6-6b7ec3b35601/Pore+Detox+Purifying+Mask.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/f35034fc-2669-493b-81a6-6b7ec3b35601/Pore+Detox+Purifying+Mask.jpg",
+            "local_path": "blogs_v2\\images\\beauty-myths\\poredetoxpurifyingmask.jpg",
+            "filename": "poredetoxpurifyingmask.jpg",
+            "size_bytes": 817186
+          },
+          "dimensions": {
+            "width": 1280,
+            "height": 1281
+          },
+          "styles": {
+            "width": "2000",
+            "height": "2002",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 8
+        },
+        {
+          "type": "paragraph",
+          "content": "Truth: Pore size is genetic and can’t be physically reduced, but their appearance can be visibly minimised. Use non-comedogenic (won’t clog pores) products alongside regular exfoliation to keep pores clear. Incorporate chemical exfoliants or book in-clinic peels with a professional to improve texture and clarity over time. Look for products that include high-tech ‘blurring technologies’ for an instant smoothing effect.",
+          "html": "<strong>Truth:</strong> Pore size is genetic and can’t be physically reduced, but their appearance can be visibly minimised. Use non-comedogenic (won’t clog pores) products alongside <a href=\"/all-products/micro-peel\">regular exfoliation</a> to keep pores clear. Incorporate chemical exfoliants or book in-clinic peels with a professional to improve texture and clarity over time. Look for products that include high-tech <a href=\"/all-products/hydra-matt-fluid\">‘blurring technologies’</a> for an instant smoothing effect. ",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "regular exfoliation",
+              "href": "https://mavala.com.au/all-products/micro-peel",
+              "target": ""
+            },
+            {
+              "text": "‘blurring technologies’",
+              "href": "https://mavala.com.au/all-products/hydra-matt-fluid",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 9
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Myth 4: Powder makes you look older",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 10
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/9a2fd0b1-4426-4e2a-9636-0b6f9a4c4fd2/Magic+Powder+%2B+Kabuki+brush.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/9a2fd0b1-4426-4e2a-9636-0b6f9a4c4fd2/Magic+Powder+%2B+Kabuki+brush.jpg",
+            "local_path": "blogs_v2\\images\\beauty-myths\\magicpowder2bkabukibrush.jpg",
+            "filename": "magicpowder2bkabukibrush.jpg",
+            "size_bytes": 246156
+          },
+          "dimensions": {
+            "width": 1269,
+            "height": 1271
+          },
+          "styles": {
+            "width": "4000",
+            "height": "4006",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 11
+        },
+        {
+          "type": "paragraph",
+          "content": "Truth: Too much powder in the wrong place can have an ageing effect, but when applied correctly, it can enhance your look and boost the lasting power of makeup.  Formulation really is key, delivering high quality ingredients and finely milled to ensure a smooth application, minimising product build up. Tools are crucial for a polished result – use a soft fluffy brush for a lighter, airbrushed effect.",
+          "html": "<strong>Truth:</strong> Too much powder in the wrong place can have an ageing effect, but when applied correctly, it can enhance your look and boost the lasting power of makeup. &nbsp;<a href=\"/all-products/magic-powder\">Formulation really is key</a>, delivering high quality ingredients and finely milled to ensure a smooth application, minimising product build up. Tools are crucial for a polished result – use a <a href=\"/all-products/kabuki-brush\">soft fluffy brush</a> for a lighter, airbrushed effect.<strong><em>&nbsp;</em></strong>",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "Formulation really is key",
+              "href": "https://mavala.com.au/all-products/magic-powder",
+              "target": ""
+            },
+            {
+              "text": "soft fluffy brush",
+              "href": "https://mavala.com.au/all-products/kabuki-brush",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 12
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Myth 5: You should stop wearing bold lipstick after 40",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 13
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/35b5e099-18eb-465a-9ed8-c21f1b2d29b9/MAVALA_STYLISH_WOMAN_ZOOM.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/35b5e099-18eb-465a-9ed8-c21f1b2d29b9/MAVALA_STYLISH_WOMAN_ZOOM.jpg",
+            "local_path": "blogs_v2\\images\\beauty-myths\\mavala_stylish_woman_zoom.jpg",
+            "filename": "mavala_stylish_woman_zoom.jpg",
+            "size_bytes": 562260
+          },
+          "dimensions": {
+            "width": 1269,
+            "height": 1334
+          },
+          "styles": {
+            "width": "2672",
+            "height": "2810",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 14
+        },
+        {
+          "type": "paragraph",
+          "content": "Truth: Quite the contrary… a vibrant, bold lipstick shade breathes life into your lips, making your complexion sparkle. It can be a signature confidence statement, creating a presence. Seek the private, 1:2:1 tuition of a makeup artist to discover your favourite shade and how to maximise lip beauty.",
+          "html": "<strong>Truth:</strong> Quite the contrary… a vibrant, bold lipstick shade breathes life into your lips, making your complexion sparkle. It can be a signature confidence statement, creating a presence. Seek the private, 1:2:1 tuition of a <a href=\"https://www.amandaramsay.com.au/\">makeup artist</a> to discover your favourite shade and how to maximise <a href=\"/lips-1\">lip beauty</a>.",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "makeup artist",
+              "href": "https://www.amandaramsay.com.au/",
+              "target": ""
+            },
+            {
+              "text": "lip beauty",
+              "href": "https://mavala.com.au/lips-1",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 15
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Myth 6: Masks are too much effort",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 16
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/01c8fd3b-0bec-4e19-88e9-68e28c0c5aa2/Aqua+Plus+Multi-Moisturizing+Sleeping+Mask.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/01c8fd3b-0bec-4e19-88e9-68e28c0c5aa2/Aqua+Plus+Multi-Moisturizing+Sleeping+Mask.jpg",
+            "local_path": "blogs_v2\\images\\beauty-myths\\aquaplusmulti-moisturizingsleepingmask.jpg",
+            "filename": "aquaplusmulti-moisturizingsleepingmask.jpg",
+            "size_bytes": 162230
+          },
+          "dimensions": {
+            "width": 999,
+            "height": 999
+          },
+          "styles": {
+            "width": "999",
+            "height": "999",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 17
+        },
+        {
+          "type": "paragraph",
+          "content": "Truth: Masks are an easy and effective way to boost your skin’s radiance. Incorporate weekly to maintain skin health or use before special occasions for an instant glow-up. Sheet masks can multitask with you, and overnight masks work while you sleep—there are no excuses!",
+          "html": "<strong>Truth:</strong> Masks are an easy and effective way to boost your skin’s radiance. Incorporate weekly to maintain skin health or use before special occasions for an instant glow-up. Sheet masks can multitask with you, and <a href=\"/all-products/sleeping-mask\">overnight masks</a> work while you sleep—there are no excuses!",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "overnight masks",
+              "href": "https://mavala.com.au/all-products/sleeping-mask",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 18
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Myth 7: You don’t need a separate eye cream",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "22.5px",
+            "marginBottom": "0px"
+          },
+          "order": 19
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/592f8bba-bbf3-40e2-9e04-559044e17338/Eye+Contour+Gel.jpg",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/592f8bba-bbf3-40e2-9e04-559044e17338/Eye+Contour+Gel.jpg",
+            "local_path": "blogs_v2\\images\\beauty-myths\\eyecontourgel.jpg",
+            "filename": "eyecontourgel.jpg",
+            "size_bytes": 206662
+          },
+          "dimensions": {
+            "width": 1269,
+            "height": 1269
+          },
+          "styles": {
+            "width": "2000",
+            "height": "2000",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 20
+        },
+        {
+          "type": "paragraph",
+          "content": "Truth: The skin around the eyes is thinner and more delicate than the rest of your face. Eye creams are formulated to target this area specifically—hydrating, de-puffing, soothing, and helping reduce dark circles. It’s a small, intentional and targeted step with big benefits.",
+          "html": "<strong>Truth:</strong> The skin around the eyes is thinner and more delicate than the rest of your face. <a href=\"/all-products/eye-contour-double-cream\">Eye creams</a> are formulated to target this area specifically—hydrating, de-puffing, soothing, and helping reduce dark circles. It’s a small, intentional and targeted step with big benefits.",
+          "has_bold": true,
+          "links": [
+            {
+              "text": "Eye creams",
+              "href": "https://mavala.com.au/all-products/eye-contour-double-cream",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "0px"
+          },
+          "order": 21
+        }
+      ],
+      "stats": {
+        "total_blocks": 22,
+        "paragraphs": 8,
+        "headings": 7,
+        "images": 7,
+        "lists": 0
+      }
+    },
+    {
+      "url": "https://mavala.com.au/blog/a-manicure-for-me",
+      "slug": "a-manicure-for-me",
+      "scraped_at": "2026-01-29T15:18:54.937667",
+      "metadata": {
+        "title": "MORE THAN A MANICURE, IT’S A MOMENT FOR ME",
+        "date": "JULY 3, 2025",
+        "date_iso": "2025-07-03",
+        "author": "Mavala Australia",
+        "categories": [],
+        "tags": [
+          "NAIL POLISH",
+          "NAIL CARE",
+          "GROOMING",
+          "PROFESSIONAL"
+        ],
+        "featured_image": "http://static1.squarespace.com/static/55432595e4b05903a7a1130b/57fb3d216a496306c8404cde/686612aae107a76211918f12/1751524988556/Manicure+for+me.jpg?format=1500w",
+        "excerpt": "In a world that glorifies hustle, speed, and doing more, there’s something quietly luxurious about the simple ritual of a manicure. Whether in salon or at home, it offers a rare invitation to pause — to be still and to reconnect with yourself."
+      },
+      "featured_image_local": {
+        "original_url": "http://static1.squarespace.com/static/55432595e4b05903a7a1130b/57fb3d216a496306c8404cde/686612aae107a76211918f12/1751524988556/Manicure+for+me.jpg?format=1500w",
+        "local_path": "blogs_v2\\images\\a-manicure-for-me\\manicureforme.jpg",
+        "filename": "manicureforme.jpg",
+        "size_bytes": 40236
+      },
+      "content_blocks": [
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/388f7dd3-3eaa-4236-b888-2bdfb3ee110b/Mavala+Pink+Manicure.png",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/388f7dd3-3eaa-4236-b888-2bdfb3ee110b/Mavala+Pink+Manicure.png",
+            "local_path": "blogs_v2\\images\\a-manicure-for-me\\mavalapinkmanicure.png",
+            "filename": "mavalapinkmanicure.png",
+            "size_bytes": 1053644
+          },
+          "dimensions": {
+            "width": 1024,
+            "height": 1280
+          },
+          "styles": {
+            "width": "1200",
+            "height": "1500",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 0
+        },
+        {
+          "type": "paragraph",
+          "content": "In a world that glorifies hustle, speed, and doing more, there’s something quietly luxurious about the simple ritual of a manicure. Whether in salon or at home, it offers a rare invitation to pause — to be still and to reconnect with yourself.",
+          "html": "In a world that glorifies hustle, speed, and doing more, there’s something quietly luxurious about the simple ritual of a manicure. Whether in salon or at home, it offers a rare invitation to pause — to be still and to reconnect with yourself.",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "14px"
+          },
+          "order": 1
+        },
+        {
+          "type": "paragraph",
+          "content": "Guided by the expertise of Mavala’s Global Trainer, Lynn Mason, this step-by-step routine will elevate not only the look of your nails, but your state of mind. Preparation is purposeful, application is patient, and results are radiant.",
+          "html": "Guided by the expertise of Mavala’s Global Trainer, Lynn Mason, this step-by-step routine will elevate not only the look of your nails, but your state of mind. Preparation is purposeful, application is patient, and results are radiant.",
+          "has_bold": false,
+          "links": [],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "14px",
+            "marginBottom": "14px"
+          },
+          "order": 2
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "content": "PREPARE: PREPARATION IS THE CORNERSTONE FOR AN ELEGANT-LOOKING MANICURE THAT LASTS THE DISTANCE.",
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "color": "rgb(92, 102, 111)",
+            "marginTop": "21px",
+            "marginBottom": "4.2px"
+          },
+          "order": 3
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 1 - Remove old nail polish and shape each nail with an emery board in long sweeping curves from side to centre. Don’t file back and forth in a sawing motion as this will heat the nail, fray edges and encourage flaking.",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "24px",
+            "marginBottom": "4.5px"
+          },
+          "order": 4
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 2 – Apply a small dot of cuticle cream to each nail and massage in. Dissolve a manicure pill in a bowl of warm water and soak hands (for a couple of minutes). Ordinary water transforms into an effervescent nourishing solution by adding the manicure pill.",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "24px",
+            "marginBottom": "4.5px"
+          },
+          "order": 5
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 3 – Dry hands and brush a light coat of cuticle remover on the contour of each nail, gently push back overgrown cuticles with a hoof stick to create a refined, clear nail plate. Finally, use nail polish remover to clear all traces of moisture from the nail.",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "24px",
+            "marginBottom": "0px"
+          },
+          "order": 6
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/e321ec6c-de87-42c6-a64b-020b73dfdaba/Mavala+Cuticle+Remover.png",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/e321ec6c-de87-42c6-a64b-020b73dfdaba/Mavala+Cuticle+Remover.png",
+            "local_path": "blogs_v2\\images\\a-manicure-for-me\\mavalacuticleremover.png",
+            "filename": "mavalacuticleremover.png",
+            "size_bytes": 928926
+          },
+          "dimensions": {
+            "width": 1012,
+            "height": 1280
+          },
+          "styles": {
+            "width": "1186",
+            "height": "1500",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 7
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "content": "PAINT: PATIENCE IS ESSENTIAL TO GET THE POLISHED RESULT PERFECT!",
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "color": "rgb(92, 102, 111)",
+            "marginTop": "0px",
+            "marginBottom": "4.2px"
+          },
+          "order": 8
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 4 – The tips of the nail are the most fragile and by using a penetrative nail hardener, your manicure will be less prone to chipping. Brush on to the free edge of the nails and leave for one minute to set.",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "24px",
+            "marginBottom": "4.5px"
+          },
+          "order": 9
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 5 – Apply a base coat as a screen between the nail plate and polish. Don’t shake the bottle too hard prior to applying, as this creates tiny air bubbles that compromise the result. Allow to dry completely.",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "24px",
+            "marginBottom": "4.5px"
+          },
+          "order": 10
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 6 – Apply two thin coats of desired nail polish, painting one finger at a time and painting all ten before you start applying the second coat. If you flood the nail with polish, it will not only appear blotchy but also be more prone to chipping.",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "24px",
+            "marginBottom": "4.5px"
+          },
+          "order": 11
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 7 – Seal your manicure with a quick-drying top coat for a speedy result. Apply a small amount under the free edge of the nail for extra protection. Reapply every two days for lasting impact.",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "24px",
+            "marginBottom": "0px"
+          },
+          "order": 12
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/55d3caf0-d1b2-4fdb-839b-57308cf34cfc/Applying+Mavala+Scientifique+Nail+Hardener.png",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/55d3caf0-d1b2-4fdb-839b-57308cf34cfc/Applying+Mavala+Scientifique+Nail+Hardener.png",
+            "local_path": "blogs_v2\\images\\a-manicure-for-me\\applyingmavalascientifiquenailhardener.png",
+            "filename": "applyingmavalascientifiquenailhardener.png",
+            "size_bytes": 1083520
+          },
+          "dimensions": {
+            "width": 1200,
+            "height": 1500
+          },
+          "styles": {
+            "width": "1200",
+            "height": "1500",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 13
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "content": "THE FINISHING TOUCH…",
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "600",
+            "color": "rgb(92, 102, 111)",
+            "marginTop": "0px",
+            "marginBottom": "4.2px"
+          },
+          "order": 14
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "content": "Step 8 – Once your manicure is completely dry, apply hand cream for a nourished, hydrated and radiant finish.",
+          "styles": {
+            "fontSize": "15px",
+            "fontWeight": "400",
+            "color": "rgb(28, 28, 28)",
+            "marginTop": "24px",
+            "marginBottom": "0px"
+          },
+          "order": 15
+        },
+        {
+          "type": "image",
+          "src": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/b5d9edeb-7316-41d8-a1d7-4bc3d7406c08/Mavala+Prebiotic+Hand+Cream.png",
+          "alt": "",
+          "caption": "",
+          "local_file": {
+            "original_url": "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/b5d9edeb-7316-41d8-a1d7-4bc3d7406c08/Mavala+Prebiotic+Hand+Cream.png",
+            "local_path": "blogs_v2\\images\\a-manicure-for-me\\mavalaprebiotichandcream.png",
+            "filename": "mavalaprebiotichandcream.png",
+            "size_bytes": 1509542
+          },
+          "dimensions": {
+            "width": 1200,
+            "height": 1500
+          },
+          "styles": {
+            "width": "1200",
+            "height": "1500",
+            "objectFit": "cover",
+            "objectPosition": "50% 50%",
+            "borderRadius": "0px"
+          },
+          "order": 16
+        },
+        {
+          "type": "paragraph",
+          "content": "🛒 Shop everything you need in one easy, portable option here!",
+          "html": "🛒 Shop everything you need in one easy, <a href=\"/all-products/professional-manicure-tray\">portable option here</a>!",
+          "has_bold": false,
+          "links": [
+            {
+              "text": "portable option here",
+              "href": "https://mavala.com.au/all-products/professional-manicure-tray",
+              "target": ""
+            }
+          ],
+          "styles": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "rgb(92, 102, 111)",
+            "lineHeight": "16.8px",
+            "marginTop": "0px",
+            "marginBottom": "0px"
+          },
+          "order": 17
+        }
+      ],
+      "stats": {
+        "total_blocks": 18,
+        "paragraphs": 3,
+        "headings": 11,
+        "images": 4,
+        "lists": 0
+      }
+    }
+  ]
+}
