@@ -235,17 +235,17 @@ function ImageBlock({
     return imageContent;
   }
 
-  // Full width content image - extends to fill container width
+  // Content image - aligned with text
   return (
-    <figure className="my-10 -mx-4 md:-mx-12 lg:-mx-20 xl:-mx-32 2xl:-mx-40">
+    <figure className="my-8">
       <img
         src={imageSrc}
         alt={block.alt || ""}
-        className="w-full h-auto max-w-none"
+        className="w-full h-auto rounded-lg"
         loading="lazy"
       />
       {block.caption && (
-        <figcaption className="mt-3 text-sm text-gray-500 italic text-center">
+        <figcaption className="mt-3 text-sm text-gray-500 italic">
           {block.caption}
         </figcaption>
       )}
@@ -305,11 +305,11 @@ export default function BlogPost() {
         </div>
       </header>
 
-      {/* Article Content - Wide layout for desktop */}
-      <article className="py-10 md:py-16 overflow-hidden">
-        <div className="mx-auto px-4 md:px-8 lg:px-12 xl:px-16 max-w-[1400px]">
+      {/* Article Content */}
+      <article className="py-10 md:py-14">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
           {/* Content Blocks */}
-          <div className="article-content max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto">
+          <div className="article-content max-w-4xl lg:max-w-5xl mx-auto">
             {blog.content_blocks
               .sort((a, b) => a.order - b.order)
               .map((block, idx) => (
@@ -322,7 +322,7 @@ export default function BlogPost() {
           </div>
 
           {/* Tags Footer */}
-          <div className="mt-16 pt-8 border-t border-gray-200 max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto">
+          <div className="mt-12 pt-8 border-t border-gray-200 max-w-4xl lg:max-w-5xl mx-auto">
             <div className="flex flex-wrap items-center gap-3">
               <span className="text-sm text-gray-500">Tagged:</span>
               {blog.metadata.tags.map((tag) => (
@@ -337,7 +337,7 @@ export default function BlogPost() {
           </div>
 
           {/* Navigation & Share */}
-          <div className="mt-8 flex items-center justify-between max-w-4xl lg:max-w-5xl xl:max-w-6xl mx-auto">
+          <div className="mt-8 flex items-center justify-between max-w-4xl lg:max-w-5xl mx-auto">
             <Link
               to="/blog"
               className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-[#E31837] transition-colors"
