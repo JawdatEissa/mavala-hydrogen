@@ -61,18 +61,22 @@ export default function BlogIndex() {
         <div className="mx-auto px-6 md:px-10 lg:px-16 max-w-[1800px] pt-6 md:pt-8 pb-12 md:pb-16">
           {/* Section Header */}
           <div className="text-center mb-10 md:mb-14 flex flex-col items-center">
-            <p className="text-sm md:text-lg uppercase tracking-[0.3em] text-[#E31837] mb-3 md:mb-4 pl-[0.3em] -translate-x-[0.5em]">
+            {/* "The Mavala Journal" - MOBILE: translate-x-[0em], DESKTOP: -translate-x-[0.5em] */}
+            <p className="text-sm md:text-lg uppercase tracking-[0.3em] text-[#E31837] mb-3 md:mb-4 pl-[0.3em] translate-x-[0em] md:-translate-x-[0.5em]">
               The Mavala Journal
             </p>
-            <h1 className="font-marcellus text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-gray-900 mb-4 md:mb-5">
+            {/* "Beauty & Wellness" - MOBILE: translate-x-[0em], DESKTOP: translate-x-[0em] */}
+            <h1 className="font-marcellus text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-gray-900 mb-4 md:mb-5 translate-x-[0em] md:translate-x-[0em]">
               Beauty & Wellness
             </h1>
-            <div className="flex items-center justify-center gap-2 md:gap-3 mb-4 md:mb-5 -translate-x-[1.7em]">
+            {/* Decorative divider - MOBILE: translate-x-[0em], DESKTOP: -translate-x-[1.7em] */}
+            <div className="flex items-center justify-center gap-2 md:gap-3 mb-4 md:mb-5 translate-x-[-0.7em] md:-translate-x-[1.7em]">
               <div className="w-8 md:w-12 h-px bg-[#E31837]/30" />
               <div className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-[#E31837]" />
               <div className="w-8 md:w-12 h-px bg-[#E31837]/30" />
             </div>
-            <p className="text-base md:text-xl text-gray-600 max-w-2xl leading-relaxed px-4 md:px-0">
+            {/* Subtitle - MOBILE: translate-x-[0em], DESKTOP: translate-x-[0em] */}
+            <p className="text-base md:text-xl text-gray-600 max-w-2xl leading-relaxed px-4 md:px-0 translate-x-[0em] md:translate-x-[0em]">
               Expert tips, tutorials, and insights from Mavala Switzerland
             </p>
           </div>
