@@ -693,17 +693,35 @@ async function ingestProductKnowledge(): Promise<number> {
     process.cwd(),
     "app/data/product-knowledge.json"
   );
+  
+  const shadePath = path.join(
+    process.cwd(),
+    "app/data/shade-knowledge.json"
+  );
 
-  if (!fs.existsSync(knowledgePath)) {
+  let knowledgeChunks: ProductKnowledgeChunk[] = [];
+  
+  if (fs.existsSync(knowledgePath)) {
+    knowledgeChunks = JSON.parse(fs.readFileSync(knowledgePath, "utf-8"));
+    console.log(`   Found ${knowledgeChunks.length} product knowledge chunks`);
+  } else {
     console.log("   ⚠️ product-knowledge.json not found. Run generate-product-knowledge.ts first.");
+  }
+  
+  // Also load shade knowledge if available
+  if (fs.existsSync(shadePath)) {
+    const shadeChunks: ProductKnowledgeChunk[] = JSON.parse(
+      fs.readFileSync(shadePath, "utf-8")
+    );
+    knowledgeChunks = [...knowledgeChunks, ...shadeChunks];
+    console.log(`   Found ${shadeChunks.length} shade knowledge chunks`);
+  }
+  
+  if (knowledgeChunks.length === 0) {
     return 0;
   }
 
-  const knowledgeChunks: ProductKnowledgeChunk[] = JSON.parse(
-    fs.readFileSync(knowledgePath, "utf-8")
-  );
-
-  console.log(`   Found ${knowledgeChunks.length} knowledge chunks`);
+  console.log(`   Total knowledge chunks to ingest: ${knowledgeChunks.length}`);
 
   // Convert to ChunkData format
   const allChunks: ChunkData[] = knowledgeChunks.map((chunk) => ({
