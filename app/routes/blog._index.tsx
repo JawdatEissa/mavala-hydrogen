@@ -61,18 +61,18 @@ export default function BlogIndex() {
         <div className="mx-auto px-6 md:px-10 lg:px-16 max-w-[1800px] pt-6 md:pt-8 pb-12 md:pb-16">
           {/* Section Header */}
           <div className="text-center mb-10 md:mb-14 flex flex-col items-center">
-            <p className="text-base md:text-lg uppercase tracking-[0.3em] text-[#E31837] mb-4 pl-[0.3em] -translate-x-[0.5em]">
+            <p className="text-sm md:text-lg uppercase tracking-[0.3em] text-[#E31837] mb-3 md:mb-4 pl-[0.3em] -translate-x-[0.5em]">
               The Mavala Journal
             </p>
-            <h1 className="font-marcellus text-5xl md:text-6xl lg:text-7xl text-gray-900 mb-5">
+            <h1 className="font-marcellus text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-gray-900 mb-4 md:mb-5">
               Beauty & Wellness
             </h1>
-            <div className="flex items-center justify-center gap-3 mb-5 -translate-x-[1.7em]">
-              <div className="w-12 h-px bg-[#E31837]/30" />
-              <div className="w-2 h-2 rounded-full bg-[#E31837]" />
-              <div className="w-12 h-px bg-[#E31837]/30" />
+            <div className="flex items-center justify-center gap-2 md:gap-3 mb-4 md:mb-5 -translate-x-[1.7em]">
+              <div className="w-8 md:w-12 h-px bg-[#E31837]/30" />
+              <div className="w-1.5 md:w-2 h-1.5 md:h-2 rounded-full bg-[#E31837]" />
+              <div className="w-8 md:w-12 h-px bg-[#E31837]/30" />
             </div>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
+            <p className="text-base md:text-xl text-gray-600 max-w-2xl leading-relaxed px-4 md:px-0">
               Expert tips, tutorials, and insights from Mavala Switzerland
             </p>
           </div>
@@ -167,11 +167,11 @@ export default function BlogIndex() {
 
       {/* Filter Tags */}
       <section className="border-b border-gray-100">
-        <div className="mx-auto px-6 md:px-10 lg:px-16 max-w-[1800px] py-5">
-          <div className="flex flex-wrap items-center justify-center gap-2.5">
+        <div className="mx-auto px-4 md:px-10 lg:px-16 max-w-[1800px] py-3 md:py-5">
+          <div className="flex flex-wrap items-center justify-center gap-1.5 md:gap-2.5">
             <button
               onClick={() => setSelectedTag(null)}
-              className={`px-5 py-2 text-xs uppercase tracking-wider rounded-full transition-all ${
+              className={`px-3 md:px-5 py-1.5 md:py-2 text-[10px] md:text-xs uppercase tracking-wider rounded-full transition-all ${
                 selectedTag === null
                   ? "bg-[#E31837] text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -183,7 +183,7 @@ export default function BlogIndex() {
               <button
                 key={tag}
                 onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
-                className={`px-5 py-2 text-xs uppercase tracking-wider rounded-full transition-all ${
+                className={`px-3 md:px-5 py-1.5 md:py-2 text-[10px] md:text-xs uppercase tracking-wider rounded-full transition-all ${
                   selectedTag === tag
                     ? "bg-[#E31837] text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
