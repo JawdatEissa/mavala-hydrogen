@@ -12,37 +12,38 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-// Categorized nail concerns - restructured to avoid sparse categories
+// Categorized nail concerns with 6 balanced categories
+// Each category represents a specific aspect of nail health
 const NAIL_CONDITIONS = [
   {
     name: "HEALTHY NAIL?",
     image: "/diagnosis/healthy-nail.png",
     slug: "healthy-nail",
-    categories: ["ALL", "Appearance", "Weak & Breaking", "Texture"],
+    categories: ["ALL"],
   },
   {
     name: "DRY NAIL?",
     image: "/diagnosis/dry-nail.png",
     slug: "dry-nail",
-    categories: ["ALL", "Texture"],
+    categories: ["ALL", "Flexibility"],
   },
   {
     name: "SOFT NAIL?",
     image: "/diagnosis/soft-nail.png",
     slug: "soft-nail",
-    categories: ["ALL", "Weak & Breaking"],
+    categories: ["ALL", "Flexibility"],
   },
   {
     name: "THIN NAIL?",
     image: "/diagnosis/thin-nail.png",
     slug: "thin-nail",
-    categories: ["ALL", "Weak & Breaking"],
+    categories: ["ALL", "Strength", "Growth"],
   },
   {
     name: "DAMAGED, BRITTLE NAIL?",
     image: "/diagnosis/damaged-brittle-nail.png",
     slug: "damaged-brittle-nail",
-    categories: ["ALL", "Weak & Breaking"],
+    categories: ["ALL", "Strength", "Growth"],
   },
   {
     name: "LIGHTLY RIDGED NAIL?",
@@ -54,43 +55,43 @@ const NAIL_CONDITIONS = [
     name: "SPLITTING, BREAKING NAIL?",
     image: "/diagnosis/splitting-breaking-nail.png",
     slug: "splitting-breaking-nail",
-    categories: ["ALL", "Weak & Breaking"],
+    categories: ["ALL", "Strength", "Cuticles"],
   },
   {
     name: "BITTEN NAIL?",
     image: "/diagnosis/bitten-nail.png",
     slug: "bitten-nail",
-    categories: ["ALL", "Weak & Breaking"],
+    categories: ["ALL", "Strength", "Cuticles"],
   },
   {
     name: "SLOW GROWING NAIL?",
     image: "/diagnosis/slow-growing-nail.png",
     slug: "slow-growing-nail",
-    categories: ["ALL", "Weak & Breaking"],
+    categories: ["ALL", "Growth"],
   },
   {
     name: "LIGHTLY STAINED OR YELLOW NAIL?",
     image: "/diagnosis/lightly-stained-or-yellow-nail.png",
     slug: "lightly-stained-or-yellow-nail",
-    categories: ["ALL", "Appearance"],
+    categories: ["ALL", "Colour"],
   },
   {
     name: "YELLOW, STAINED, DULL NAIL?",
     image: "/diagnosis/yellow-stained-dull-nail.png",
     slug: "yellow-stained-dull-nail",
-    categories: ["ALL", "Appearance"],
+    categories: ["ALL", "Colour"],
   },
   {
     name: "OVERGROWN CUTICLES?",
     image: "/diagnosis/overgrown-cuticles.png",
     slug: "overgrown-cuticles",
-    categories: ["ALL", "Weak & Breaking"],
+    categories: ["ALL", "Cuticles"],
   },
   {
     name: "THICK, INFLEXIBLE NAIL?",
     image: "/diagnosis/thick-inflexible-nail.png",
     slug: "thick-inflexible-nail",
-    categories: ["ALL", "Weak & Breaking"],
+    categories: ["ALL", "Flexibility"],
   },
   {
     name: "NAIL WITH LONGITUDINAL GROOVES?",
@@ -114,19 +115,19 @@ const NAIL_CONDITIONS = [
     name: "WHITE OR WHITE SPOTTED NAIL?",
     image: "/diagnosis/white-or-white-spotted-nail.png",
     slug: "white-or-white-spotted-nail",
-    categories: ["ALL", "Appearance"],
+    categories: ["ALL", "Colour"],
   },
   {
     name: "BLACK OR BROWN NAIL?",
     image: "/diagnosis/black-or-brown-nail.png",
     slug: "black-or-brown-nail",
-    categories: ["ALL", "Appearance"],
+    categories: ["ALL", "Colour"],
   },
   {
     name: "NAIL FUNGUS?",
     image: "/diagnosis/nail-fungus.png",
     slug: "nail-fungus",
-    categories: ["ALL", "Texture"],
+    categories: ["ALL", "Colour", "Texture"],
   },
 ];
 
@@ -140,35 +141,38 @@ export default function NailDiagnosisPage() {
     );
   }, [activeCategory]);
 
-  // Navigation categories - restructured to avoid sparse categories
-  // New structure: ALL (18), Appearance (4), Weak & Breaking (8), Texture (6)
+  // Navigation categories - 6 balanced categories based on nail health aspects
+  // Colour (4), Strength (4), Texture (4), Flexibility (3), Growth (3), Cuticles (3)
   const categories = [
     { id: "ALL", label: "All" },
-    { id: "Appearance", label: "Appearance" },
-    { id: "Weak & Breaking", label: "Weak & Breaking" },
+    { id: "Colour", label: "Colour" },
+    { id: "Strength", label: "Strength" },
     { id: "Texture", label: "Texture" },
+    { id: "Flexibility", label: "Flexibility" },
+    { id: "Growth", label: "Growth" },
+    { id: "Cuticles", label: "Cuticles" },
   ];
 
-  // Split categories for mobile 2-row layout
-  const topRowTabs = categories.slice(0, 2); // ALL, Appearance
-  const bottomRowTabs = categories.slice(2); // Weak & Breaking, Texture
+  // Split categories for mobile 2-row layout (4 + 3)
+  const topRowTabs = categories.slice(0, 4); // ALL, Colour, Strength, Texture
+  const bottomRowTabs = categories.slice(4); // Flexibility, Growth, Cuticles
 
   return (
     <div className="min-h-screen bg-white pt-[90px] font-sans font-extralight">
       {/* Navigation Bar Section */}
       <section className="pt-4 pb-4 md:pt-6 md:pb-6 px-4 md:px-8 bg-white">
         <div className="max-w-5xl mx-auto flex justify-center">
-          {/* Mobile: 2-row pill-style layout (matching color.tsx pattern) */}
-          <div className="md:hidden flex flex-col gap-2 w-full max-w-md">
+          {/* Mobile: 2-row pill-style layout */}
+          <div className="md:hidden flex flex-col gap-2 w-full max-w-lg">
             {/* First row: ALL, Colour, Strength, Texture */}
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex items-center justify-center gap-1.5">
               {topRowTabs.map((tab) => (
                 <button
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveCategory(tab.id)}
                   className={`
-                    flex-1 min-w-0 px-3 py-3 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    flex-1 min-w-0 px-2 py-2.5 rounded-full font-['Archivo'] text-[10px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
                     ${
                       activeCategory === tab.id
                         ? "bg-[#ae1932] text-white"
@@ -181,14 +185,14 @@ export default function NailDiagnosisPage() {
               ))}
             </div>
             {/* Second row: Flexibility, Growth, Cuticles */}
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex items-center justify-center gap-1.5">
               {bottomRowTabs.map((tab) => (
                 <button
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveCategory(tab.id)}
                   className={`
-                    flex-1 min-w-0 px-3 py-3 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    flex-1 min-w-0 px-2 py-2.5 rounded-full font-['Archivo'] text-[10px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
                     ${
                       activeCategory === tab.id
                         ? "bg-[#ae1932] text-white"
