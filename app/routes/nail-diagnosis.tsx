@@ -18,7 +18,7 @@ const NAIL_CONDITIONS = [
     name: "HEALTHY NAIL?",
     image: "/diagnosis/healthy-nail.png",
     slug: "healthy-nail",
-    categories: ["ALL"],
+    categories: ["ALL", "Appearance", "Weak & Breaking", "Texture"],
   },
   {
     name: "DRY NAIL?",
