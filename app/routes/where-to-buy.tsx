@@ -3,36 +3,46 @@ import { Link } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Where to Buy | Mavala Canada" },
+    { title: "Where to Buy | Mavala Switzerland" },
     {
       name: "description",
       content:
-        "Find MAVALA products online, in pharmacies and beauty salons across Canada. Discover your nearest Mavala stockist.",
+        "Shop MAVALA products internationally through our official online stores worldwide. Find authentic Swiss nail care and beauty products.",
     },
   ];
 };
 
-// Online retailers data
-const onlineRetailers = [
+// International Mavala websites
+const internationalSites = [
   {
-    name: "Amazon Canada",
-    url: "https://www.amazon.ca/stores/Mavala/page/F4F9C4F5-8C8E-4E5A-9C8E-4E5A9C8E4E5A",
-    description: "Wide selection of Mavala products with Prime shipping",
+    name: "Mavala Switzerland",
+    url: "https://www.mavala.com",
+    description: "Official global headquarters & Swiss online store",
+    flag: "🇨🇭",
   },
   {
-    name: "Well.ca",
-    url: "https://well.ca/searchresult.html?keyword=mavala",
-    description: "Natural health and beauty products retailer",
+    name: "Mavala USA",
+    url: "https://www.mavala.us",
+    description: "Official Mavala United States online store",
+    flag: "🇺🇸",
   },
   {
-    name: "London Drugs",
-    url: "https://www.londondrugs.com/search/?q=mavala",
-    description: "Pharmacy and general merchandise chain",
+    name: "Mavala Australia",
+    url: "https://www.mavala.com.au",
+    description: "Official Mavala Australia online store",
+    flag: "🇦🇺",
   },
   {
-    name: "Shoppers Drug Mart",
-    url: "https://www.shoppersdrugmart.ca",
-    description: "Canada's largest pharmacy chain",
+    name: "Mavala France",
+    url: "https://www.mavala.fr",
+    description: "Official Mavala France online store",
+    flag: "🇫🇷",
+  },
+  {
+    name: "Vanir Merchants",
+    url: "https://www.vanirmerchants.com",
+    description: "Authorized Canadian distributor of Mavala products",
+    flag: "🇨🇦",
   },
 ];
 
@@ -41,7 +51,7 @@ const stockistTypes = [
   {
     title: "Pharmacies",
     description:
-      "Find Mavala products at major pharmacy chains across Canada, including Shoppers Drug Mart, London Drugs, Rexall, and independent pharmacies.",
+      "Find Mavala products at major pharmacy chains and independent pharmacies worldwide. Ask your local pharmacist about Mavala availability.",
     icon: (
       <svg
         className="w-12 h-12"
@@ -61,7 +71,7 @@ const stockistTypes = [
   {
     title: "Beauty Salons",
     description:
-      "Professional beauty salons and spas across Canada stock Mavala professional products. Ask your beautician about Mavala treatments.",
+      "Professional beauty salons and spas worldwide stock Mavala professional products. Ask your beautician about Mavala treatments.",
     icon: (
       <svg
         className="w-12 h-12"
@@ -81,7 +91,7 @@ const stockistTypes = [
   {
     title: "Department Stores",
     description:
-      "Select department stores carry Mavala products in their beauty and cosmetics sections.",
+      "Select department stores carry Mavala products in their beauty and cosmetics sections internationally.",
     icon: (
       <svg
         className="w-12 h-12"
@@ -134,13 +144,12 @@ export default function WhereToBuyPage() {
             WHERE TO BUY
           </h1>
           <h2 className="font-['Archivo'] text-[20px] md:text-[24px] font-medium text-[#1c1c1c] mt-6 leading-relaxed">
-            Find your nearest Mavala stockist in Canada
+            Shop Mavala Products Worldwide
           </h2>
           <p className="font-['Archivo'] text-[16px] md:text-[17px] text-[#5c666f] mt-6 leading-[1.7]">
-            MAVALA products are available nationally across Canada in
-            pharmacies, beauty salons, and online stores. Whether you prefer
-            shopping online or visiting a physical store, we have options for
-            you.
+            MAVALA products are available internationally through our official
+            online stores and authorized distributors. Shop from the comfort of
+            your home with worldwide shipping options.
           </p>
         </div>
       </section>
@@ -149,18 +158,21 @@ export default function WhereToBuyPage() {
       <section className="py-12 md:py-16 bg-[#f6f3ef]">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="font-['Archivo'] text-[28px] md:text-[32px] font-semibold text-[#ae1932] uppercase tracking-[1px] text-center mb-4">
-            Purchase MAVALA Online
+            Shop MAVALA Internationally
           </h2>
           <p className="font-['Archivo'] text-[16px] md:text-[17px] text-[#5c666f] text-center mb-10 leading-[1.7]">
-            Shop Mavala products from the comfort of your home through our
-            official online store or these trusted retailers:
+            Purchase authentic Mavala products from our official online stores
+            around the world:
           </p>
 
           {/* Official Store CTA */}
-          <div className="bg-white p-8 md:p-10 rounded-lg shadow-sm text-center mb-10">
-            <h3 className="font-['Archivo'] text-[20px] font-semibold text-[#1c1c1c] mb-3">
-              Official Mavala Canada Online Store
-            </h3>
+          <div className="bg-white p-8 md:p-10 rounded-lg shadow-sm text-center mb-10 border-2 border-[#ae1932]">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <span className="text-3xl">🇨🇦</span>
+              <h3 className="font-['Archivo'] text-[20px] font-semibold text-[#1c1c1c]">
+                Official Mavala Canada Online Store
+              </h3>
+            </div>
             <p className="font-['Archivo'] text-[15px] text-[#5c666f] mb-6 leading-[1.7]">
               Shop our complete range of genuine Mavala products with free
               shipping over $50, free gift over $100, and buy now pay later
@@ -174,23 +186,31 @@ export default function WhereToBuyPage() {
             </Link>
           </div>
 
-          {/* Online Retailers Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {onlineRetailers.map((retailer) => (
+          {/* International Sites Grid */}
+          <h3 className="font-['Archivo'] text-[18px] font-semibold text-[#1c1c1c] text-center mb-6 uppercase tracking-[1px]">
+            International Mavala Stores
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {internationalSites.map((site) => (
               <a
-                key={retailer.name}
-                href={retailer.url}
+                key={site.name}
+                href={site.url}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-white p-6 md:p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow group"
+                className="bg-white p-5 md:p-6 rounded-lg shadow-sm hover:shadow-md transition-all hover:border-[#ae1932] border border-transparent group"
               >
-                <h3 className="font-['Archivo'] text-[18px] font-semibold text-[#1c1c1c] mb-2 group-hover:text-[#ae1932] transition-colors">
-                  {retailer.name}
-                  <span className="inline-block ml-2 text-[#ae1932]">→</span>
-                </h3>
-                <p className="font-['Archivo'] text-[15px] text-[#5c666f] leading-[1.7]">
-                  {retailer.description}
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-2xl">{site.flag}</span>
+                  <h3 className="font-['Archivo'] text-[16px] font-semibold text-[#1c1c1c] group-hover:text-[#ae1932] transition-colors">
+                    {site.name}
+                  </h3>
+                </div>
+                <p className="font-['Archivo'] text-[14px] text-[#5c666f] leading-[1.6]">
+                  {site.description}
                 </p>
+                <span className="inline-block mt-3 text-[#ae1932] text-[13px] font-['Archivo'] font-medium uppercase tracking-wide group-hover:underline">
+                  Visit Store →
+                </span>
               </a>
             ))}
           </div>
@@ -205,7 +225,7 @@ export default function WhereToBuyPage() {
           </h2>
           <p className="font-['Archivo'] text-[16px] md:text-[17px] text-[#5c666f] text-center mb-10 leading-[1.7]">
             MAVALA products are stocked in pharmacies, beauty salons, and select
-            retail stores across Canada.
+            retail stores worldwide.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

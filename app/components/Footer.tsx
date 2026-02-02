@@ -22,10 +22,10 @@ export function Footer() {
           </div>
           <div className="flex flex-col items-center gap-2">
             <h3 className="font-['Archivo'] text-[15px] font-semibold uppercase tracking-[1px] leading-[19px] text-[#5d676f]">
-              Available nationally
+              Available Internationally
             </h3>
             <p className="text-gray-700 text-[15px] font-light">
-              Find MAVALA products online, in pharmacies and beauty salons.
+              Find MAVALA products online through our worldwide stores.
             </p>
             <Link
               to="/where-to-buy"
