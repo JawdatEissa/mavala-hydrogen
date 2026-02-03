@@ -149,7 +149,7 @@ const NAIL_CONDITIONS = [
     image: "/diagnosis/nail-fungus.png",
     slug: "nail-fungus",
     categories: ["ALL", "Colour", "Texture"],
-    scale: 1,
+    scale: 1.17,
   },
 ];
 
