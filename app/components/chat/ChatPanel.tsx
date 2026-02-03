@@ -260,6 +260,8 @@ export default function ChatPanel({
                     "How to strengthen weak nails?",
                     "Best products for dry skin?",
                     "Nail polish application tips",
+                    "How to stop nail biting?",
+                    "Products for oily skin?",
                   ].map((suggestion) => (
                     <button
                       key={suggestion}
