@@ -133,14 +133,14 @@ const NAIL_CONDITIONS = [
     image: "/diagnosis/white-or-white-spotted-nail.png",
     slug: "white-or-white-spotted-nail",
     categories: ["ALL", "Colour"],
-    scale: 0.75, // Reduced by 25%
+    scale: 0.97, // Increased by 8%
   },
   {
     name: "BLACK OR BROWN NAIL?",
     image: "/diagnosis/black-or-brown-nail.png",
     slug: "black-or-brown-nail",
     categories: ["ALL", "Colour"],
-    scale: 0.75, // Reduced by 25%
+    scale: 0.97, // Increased by 8%
   },
   {
     name: "NAIL FUNGUS?",
@@ -273,10 +273,12 @@ export default function NailDiagnosisPage() {
                     className="max-w-full max-h-full object-contain object-bottom transition-transform duration-200"
                     style={{
                       transform: `scale(${condition.scale})`,
-                      transformOrigin: 'bottom center',
+                      transformOrigin: "bottom center",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = `scale(${condition.scale * 1.05})`;
+                      e.currentTarget.style.transform = `scale(${
+                        condition.scale * 1.05
+                      })`;
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.transform = `scale(${condition.scale})`;
