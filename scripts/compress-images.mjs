@@ -1,148 +1,108 @@
-/**
- * Compress secondary images (02.*, 03.*) that are larger than 600KB
- * Retains 85% quality to save file size
- */
-
 import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const projectRoot = path.resolve(__dirname, '..');
+const PUBLIC_DIR = './public';
+const MIN_SIZE_MB = 1;
+const QUALITY = 85;
 
-const imagesDir = path.join(projectRoot, 'public', 'images');
-const MIN_SIZE_BYTES = 600 * 1024; // 600KB
-const QUALITY = 85; // 85% quality
-
-console.log('🖼️  Compressing large secondary images (02.*, 03.*)...\n');
-
-// Find all secondary images (02.*, 03.*) recursively
-function findSecondaryImages(dir, results = []) {
-  const files = fs.readdirSync(dir, { withFileTypes: true });
+// Find all images recursively
+function findImages(dir, images = []) {
+  const files = fs.readdirSync(dir);
   
   for (const file of files) {
-    const fullPath = path.join(dir, file.name);
+    const fullPath = path.join(dir, file);
+    const stat = fs.statSync(fullPath);
     
-    if (file.isDirectory()) {
-      findSecondaryImages(fullPath, results);
-    } else if (file.isFile()) {
-      // Match 02.* or 03.* files (jpg, jpeg, png, webp)
-      if (/^0[2-9]\.(jpg|jpeg|png|webp)$/i.test(file.name)) {
-        const stats = fs.statSync(fullPath);
-        if (stats.size > MIN_SIZE_BYTES) {
-          results.push({
-            path: fullPath,
-            size: stats.size,
-            name: file.name
-          });
+    if (stat.isDirectory()) {
+      findImages(fullPath, images);
+    } else {
+      const ext = path.extname(file).toLowerCase();
+      if (['.jpg', '.jpeg', '.png', '.webp'].includes(ext)) {
+        const sizeMB = stat.size / (1024 * 1024);
+        if (sizeMB > MIN_SIZE_MB) {
+          images.push({ path: fullPath, sizeMB: sizeMB.toFixed(2), ext });
         }
       }
     }
   }
   
-  return results;
+  return images;
 }
 
-// Compress a single image using copy-compress-replace to avoid file locking
-async function compressImage(imagePath) {
-  const ext = path.extname(imagePath).toLowerCase();
+async function compressImage(imagePath, ext) {
   const originalSize = fs.statSync(imagePath).size;
   const tempPath = imagePath + '.tmp';
   
   try {
-    // Read file into buffer first to release the file handle
-    const inputBuffer = fs.readFileSync(imagePath);
-    let sharpInstance = sharp(inputBuffer);
-    let outputBuffer;
+    const image = sharp(imagePath);
+    const metadata = await image.metadata();
     
-    if (ext === '.jpg' || ext === '.jpeg') {
-      outputBuffer = await sharpInstance
-        .jpeg({ quality: QUALITY, mozjpeg: true })
-        .toBuffer();
-    } else if (ext === '.png') {
-      outputBuffer = await sharpInstance
+    // Configure output based on format
+    if (ext === '.png') {
+      await image
         .png({ quality: QUALITY, compressionLevel: 9 })
-        .toBuffer();
+        .toFile(tempPath);
+    } else if (ext === '.jpg' || ext === '.jpeg') {
+      await image
+        .jpeg({ quality: QUALITY, mozjpeg: true })
+        .toFile(tempPath);
     } else if (ext === '.webp') {
-      outputBuffer = await sharpInstance
+      await image
         .webp({ quality: QUALITY })
-        .toBuffer();
-    } else {
-      console.log(`  ⏭️  Skipping unsupported format: ${imagePath}`);
-      return null;
+        .toFile(tempPath);
     }
     
-    // Only save if we actually reduced the size
-    if (outputBuffer.length < originalSize) {
-      // Write to temp file first, then rename
-      fs.writeFileSync(tempPath, outputBuffer);
+    const newSize = fs.statSync(tempPath).size;
+    
+    // Only replace if new file is smaller
+    if (newSize < originalSize) {
+      fs.unlinkSync(imagePath);
       fs.renameSync(tempPath, imagePath);
-      return {
-        path: imagePath,
-        originalSize,
-        newSize: outputBuffer.length,
-        saved: originalSize - outputBuffer.length
+      return { 
+        success: true, 
+        originalMB: (originalSize / (1024 * 1024)).toFixed(2),
+        newMB: (newSize / (1024 * 1024)).toFixed(2),
+        saved: ((originalSize - newSize) / (1024 * 1024)).toFixed(2)
       };
     } else {
-      return {
-        path: imagePath,
-        originalSize,
-        newSize: originalSize,
-        saved: 0,
-        skipped: true
-      };
+      fs.unlinkSync(tempPath);
+      return { success: false, reason: 'No size reduction' };
     }
   } catch (error) {
-    // Clean up temp file if it exists
     if (fs.existsSync(tempPath)) {
-      try { fs.unlinkSync(tempPath); } catch {}
+      fs.unlinkSync(tempPath);
     }
-    console.error(`  ❌ Error compressing ${imagePath}:`, error.message);
-    return null;
+    return { success: false, reason: error.message };
   }
 }
 
-// Main execution
 async function main() {
-  const images = findSecondaryImages(imagesDir);
+  console.log(`Finding images larger than ${MIN_SIZE_MB}MB in ${PUBLIC_DIR}...\n`);
   
-  console.log(`Found ${images.length} secondary images larger than 600KB\n`);
-  
-  if (images.length === 0) {
-    console.log('✅ No images need compression!');
-    return;
-  }
+  const images = findImages(PUBLIC_DIR);
+  console.log(`Found ${images.length} images to compress\n`);
   
   let totalSaved = 0;
-  let compressed = 0;
-  let skipped = 0;
+  let successCount = 0;
   
-  for (const image of images) {
-    const relativePath = path.relative(imagesDir, image.path);
-    process.stdout.write(`  Compressing ${relativePath}...`);
+  for (const img of images) {
+    process.stdout.write(`Compressing: ${path.basename(img.path)} (${img.sizeMB}MB)... `);
     
-    const result = await compressImage(image.path);
+    const result = await compressImage(img.path, img.ext);
     
-    if (result) {
-      if (result.skipped) {
-        console.log(` already optimal`);
-        skipped++;
-      } else {
-        const savedKB = (result.saved / 1024).toFixed(1);
-        const newSizeKB = (result.newSize / 1024).toFixed(1);
-        console.log(` saved ${savedKB}KB (now ${newSizeKB}KB)`);
-        totalSaved += result.saved;
-        compressed++;
-      }
+    if (result.success) {
+      console.log(`✓ ${result.originalMB}MB → ${result.newMB}MB (saved ${result.saved}MB)`);
+      totalSaved += parseFloat(result.saved);
+      successCount++;
+    } else {
+      console.log(`✗ ${result.reason}`);
     }
   }
   
-  console.log('\n📊 Summary:');
-  console.log(`  ✅ Compressed: ${compressed} images`);
-  console.log(`  ⏭️  Skipped (already optimal): ${skipped} images`);
-  console.log(`  💾 Total saved: ${(totalSaved / 1024 / 1024).toFixed(2)} MB`);
+  console.log(`\n========================================`);
+  console.log(`Compressed: ${successCount}/${images.length} images`);
+  console.log(`Total saved: ${totalSaved.toFixed(2)}MB`);
 }
 
 main().catch(console.error);
