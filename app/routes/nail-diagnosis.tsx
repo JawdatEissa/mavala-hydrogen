@@ -265,28 +265,22 @@ export default function NailDiagnosisPage() {
                 href={`/nail-concern/${condition.slug}`}
                 className="flex flex-col items-center justify-start text-center cursor-pointer hover:opacity-80 transition-opacity duration-200 group w-full"
               >
-                {/* Fixed height container (+25% global increase) with individual scaling */}
-                <div
-                  className="w-full h-[125px] sm:h-[150px] md:h-[175px] lg:h-[188px] flex items-end justify-center bg-white"
-                  style={
-                    { "--img-scale": condition.scale } as React.CSSProperties
-                  }
-                >
+                {/* Fixed height container - images scale from bottom for consistent text gap */}
+                <div className="w-full h-[125px] sm:h-[150px] md:h-[175px] lg:h-[188px] flex items-end justify-center bg-white">
                   <img
                     src={condition.image}
                     alt={condition.name}
                     className="max-w-full max-h-full object-contain object-bottom transition-transform duration-200"
                     style={{
-                      transform: `scale(var(--img-scale, 1))`,
+                      transform: `scale(${condition.scale})`,
+                      transformOrigin: 'bottom center',
                     }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.transform = `scale(${
-                        condition.scale * 1.05
-                      })`)
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.transform = `scale(${condition.scale})`)
-                    }
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = `scale(${condition.scale * 1.05})`;
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = `scale(${condition.scale})`;
+                    }}
                     loading="lazy"
                     decoding="async"
                   />
