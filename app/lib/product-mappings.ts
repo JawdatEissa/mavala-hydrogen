@@ -36,8 +36,8 @@ export const CATEGORY_PRODUCTS: Record<string, string[]> = {
   
   // NAIL CARE - Nail Beauty / Base & Top Coats
   "base coat": ["barrier-base-coat", "002-base-coat", "protective-base-coat"],
-  "top coat": ["colorfix-1", "gel-finish-top-coat", "mavala-top-coat-1", "speed-dry-silicium-top-coat", "matte-top-coat"],
-  "nail shine": ["colorfix-1", "gel-finish-top-coat"],
+  "top coat": ["colorfix", "gel-finish-top-coat", "star-top-coat"],
+  "nail shine": ["colorfix", "gel-finish-top-coat", "star-top-coat"],
   "matte finish": ["matte-top-coat"],
   "quick dry": ["speed-dry-silicium-top-coat", "mavadry"],
   

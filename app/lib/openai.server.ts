@@ -141,7 +141,7 @@ const AVAILABLE_PRODUCT_HANDLES = [
   "brown-shades", "coral-shades", "burgundy-shades", "green-shades", 
   "black-shades", "white-shades", "orange-shades", "gold-shades", "yellow-shades",
   // Top & Base Coats
-  "colorfix-1", "gel-finish-top-coat",
+  "colorfix", "gel-finish-top-coat", "star-top-coat",
   // Foot Care
   "foot-bath-salts", "repairing-night-cream-for-feet", "conditioning-foot-moisturiser",
   // Eye Beauty
@@ -213,7 +213,7 @@ Hand Care: hand-cream, anti-spot-cream-for-hands
 Skincare: healthy-glow-serum, featherlight-cream, nourishing-cream, beauty-enhancing-micro-peel, sleeping-mask-baby-skin-radiance, chrono-biological-care, anti-age-nutrition-mask, clean-comfort, aqua-plus-multi-moisturizing
 Makeup Removers: bi-phase-make-up-remover, eye-make-up-remover-lotion, remover-gel, remover-pads
 Nail Polish: grey-shades, red-shades, pink-shades, nude-shades, blue-shades, purple-shades, brown-shades, coral-shades, burgundy-shades, green-shades, black-shades, white-shades, orange-shades, gold-shades, yellow-shades
-Top & Base Coats: colorfix-1, gel-finish-top-coat
+Top & Base Coats: colorfix, gel-finish-top-coat, star-top-coat
 Foot Care: foot-bath-salts, repairing-night-cream-for-feet, conditioning-foot-moisturiser
 Eye Beauty: double-lash, double-brow, creamy-mascara
 Lip Products: lip-balm, mavala-lipstick`;
@@ -422,7 +422,7 @@ const PRODUCT_NAME_TO_HANDLE: Record<string, string> = {
   "5ml": "i-love-mini-colors",
   
   // Top & Base Coats
-  "colorfix": "colorfix-1",
+  "colorfix": "colorfix",
   "gel finish top coat": "gel-finish-top-coat",
   
   // Foot Care

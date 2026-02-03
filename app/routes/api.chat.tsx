@@ -351,18 +351,25 @@ const PRODUCT_CATALOG: Record<string, SuggestedProduct> = {
   },
 
   // === TOP & BASE COATS ===
-  "colorfix-1": {
-    handle: "colorfix-1",
+  "colorfix": {
+    handle: "colorfix",
     title: "COLORFIX TOP COAT",
-    price: "$19.95",
-    image: "/images/colorfix-1/01_colorfix.jpg",
+    price: "$21.95",
+    image: "/images/colorfix/01_Colorfix.png",
     category: "Manicure Essentials",
   },
   "gel-finish-top-coat": {
     handle: "gel-finish-top-coat",
     title: "GEL FINISH TOP COAT",
-    price: "$19.95",
+    price: "$29.95",
     image: "/images/gel-finish-top-coat/01_gel-finish.jpg",
+    category: "Manicure Essentials",
+  },
+  "star-top-coat": {
+    handle: "star-top-coat",
+    title: "STAR TOP COAT",
+    price: "$29.95",
+    image: "/images/star-top-coat/Star+Top+Coat.png",
     category: "Manicure Essentials",
   },
 
