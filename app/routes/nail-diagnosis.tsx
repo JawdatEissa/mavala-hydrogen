@@ -91,7 +91,7 @@ const NAIL_CONDITIONS = [
     image: "/diagnosis/yellow-stained-dull-nail.png",
     slug: "yellow-stained-dull-nail",
     categories: ["ALL", "Colour"],
-    scale: 0.75, // Reduced by 25%
+    scale: 0.825, // Increased by 10%
   },
   {
     name: "OVERGROWN CUTICLES?",
@@ -105,7 +105,7 @@ const NAIL_CONDITIONS = [
     image: "/diagnosis/thick-inflexible-nail.png",
     slug: "thick-inflexible-nail",
     categories: ["ALL", "Flexibility"],
-    scale: 0.75, // Reduced by 25%
+    scale: 0.78, // Increased by 4%
   },
   {
     name: "NAIL WITH LONGITUDINAL GROOVES?",
@@ -119,7 +119,8 @@ const NAIL_CONDITIONS = [
     image: "/diagnosis/nail-with-transversal-grooves.png",
     slug: "nail-with-transversal-grooves",
     categories: ["ALL", "Texture"],
-    scale: 1,
+    scale: 1.03, // Increased by 3%
+    reducedGap: true, // Less gap between image and text
   },
   {
     name: "NAIL WITH SPOTTED EROSION?",
@@ -257,8 +258,8 @@ export default function NailDiagnosisPage() {
             NAIL CONCERNS
           </h1>
 
-          {/* Nail Conditions Grid - Full width, large images */}
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-9 gap-x-1 gap-y-6 sm:gap-x-2 md:gap-x-3 md:gap-y-8">
+          {/* Nail Conditions Grid - 2 cols on mobile, scales up on larger screens */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-9 gap-x-1 gap-y-6 sm:gap-x-2 md:gap-x-3 md:gap-y-8">
             {filteredConditions.map((condition, idx) => (
               <a
                 key={idx}
@@ -287,7 +288,7 @@ export default function NailDiagnosisPage() {
                     decoding="async"
                   />
                 </div>
-                <p className="font-['Archivo'] text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] uppercase text-gray-800 leading-tight font-medium mt-3">
+                <p className={`font-['Archivo'] text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] uppercase text-gray-800 leading-tight font-medium ${condition.reducedGap ? 'mt-1' : 'mt-3'}`}>
                   {condition.name}
                 </p>
               </a>
