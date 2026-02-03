@@ -105,7 +105,7 @@ const NAIL_CONDITIONS = [
     image: "/diagnosis/thick-inflexible-nail.png",
     slug: "thick-inflexible-nail",
     categories: ["ALL", "Flexibility"],
-    scale: 0.78, // Increased by 4%
+    scale: 0.85, // Increased by 4%
   },
   {
     name: "NAIL WITH LONGITUDINAL GROOVES?",
@@ -119,7 +119,7 @@ const NAIL_CONDITIONS = [
     image: "/diagnosis/nail-with-transversal-grooves.png",
     slug: "nail-with-transversal-grooves",
     categories: ["ALL", "Texture"],
-    scale: 1.06, // Increased by 3%
+    scale: 1.19, // Increased by 3%
     reducedGap: true, // Less gap between image and text
   },
   {
