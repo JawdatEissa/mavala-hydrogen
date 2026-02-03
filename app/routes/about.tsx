@@ -225,44 +225,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Bottom Info Boxes */}
-      <section className="py-12 md:py-16 bg-[#f6f3ef]">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
-            {/* Independent Swiss Laboratory */}
-            <div className="bg-white p-8 md:p-10 rounded-lg shadow-sm">
-              <h3 className="font-['Archivo'] text-[16px] font-semibold uppercase tracking-[1px] text-[#5c666f] mb-2">
-                Independent Swiss Laboratory
-              </h3>
-              <p className="font-['Archivo'] text-[15px] text-[#5c666f] mb-4">
-                Family business since 1959
-              </p>
-              <Link
-                to="/about"
-                className="font-['Archivo'] text-[14px] text-[#ae1932] font-normal underline underline-offset-4 hover:no-underline"
-              >
-                Find out more
-              </Link>
-            </div>
-
-            {/* Available nationally */}
-            <div className="bg-white p-8 md:p-10 rounded-lg shadow-sm">
-              <h3 className="font-['Archivo'] text-[16px] font-semibold uppercase tracking-[1px] text-[#5c666f] mb-2">
-                Available nationally
-              </h3>
-              <p className="font-['Archivo'] text-[15px] text-[#5c666f] mb-4">
-                Find MAVALA products online, in pharmacies and beauty salons
-              </p>
-              <Link
-                to="/where-to-buy"
-                className="font-['Archivo'] text-[14px] text-[#ae1932] font-normal underline underline-offset-4 hover:no-underline"
-              >
-                Where to buy
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

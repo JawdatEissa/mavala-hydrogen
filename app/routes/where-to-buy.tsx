@@ -299,45 +299,6 @@ export default function WhereToBuyPage() {
         </div>
       </section>
 
-      {/* Bottom Info Boxes */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
-            {/* Independent Swiss Laboratory */}
-            <div className="bg-[#f6f3ef] p-8 md:p-10 rounded-lg">
-              <h3 className="font-['Archivo'] text-[16px] font-semibold uppercase tracking-[1px] text-[#5c666f] mb-2">
-                Independent Swiss Laboratory
-              </h3>
-              <p className="font-['Archivo'] text-[15px] text-[#5c666f] mb-4">
-                Family business since 1959
-              </p>
-              <Link
-                to="/about"
-                className="font-['Archivo'] text-[14px] text-[#ae1932] font-normal underline underline-offset-4 hover:no-underline"
-              >
-                Find out more
-              </Link>
-            </div>
-
-            {/* Genuine Products */}
-            <div className="bg-[#f6f3ef] p-8 md:p-10 rounded-lg">
-              <h3 className="font-['Archivo'] text-[16px] font-semibold uppercase tracking-[1px] text-[#5c666f] mb-2">
-                100% Genuine Products
-              </h3>
-              <p className="font-['Archivo'] text-[15px] text-[#5c666f] mb-4">
-                All products from our store are certified genuine Mavala
-                products
-              </p>
-              <Link
-                to="/collections/all"
-                className="font-['Archivo'] text-[14px] text-[#ae1932] font-normal underline underline-offset-4 hover:no-underline"
-              >
-                Shop now
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
