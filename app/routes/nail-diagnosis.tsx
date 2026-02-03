@@ -119,7 +119,7 @@ const NAIL_CONDITIONS = [
     image: "/diagnosis/nail-with-transversal-grooves.png",
     slug: "nail-with-transversal-grooves",
     categories: ["ALL", "Texture"],
-    scale: 1.03, // Increased by 3%
+    scale: 1.06, // Increased by 3%
     reducedGap: true, // Less gap between image and text
   },
   {
@@ -298,16 +298,17 @@ export default function NailDiagnosisPage() {
       </section>
 
       {/* MAVALA CARES Section */}
-      <section className="bg-[#e8e4df] py-12 md:py-16 px-4 md:px-8">
+      <section className="bg-[#f6f3ef] py-12 md:py-16 px-4 md:px-8">
         <div className="max-w-5xl mx-auto">
           {/* Title */}
           <h2 className="font-['Archivo'] text-[32px] md:text-[38px] font-medium text-[#ae1932] uppercase text-center tracking-[1px] mb-4">
             MAVALA CARES
           </h2>
-          
+
           {/* Subtitle */}
           <p className="text-center text-gray-600 text-[14px] md:text-[15px] mb-10 max-w-3xl mx-auto">
-            We care about the planet. We aim to minimise our impact on the environment through the following measures:
+            We care about the planet. We aim to minimise our impact on the
+            environment through the following measures:
           </p>
 
           {/* Three Cards */}
@@ -318,7 +319,11 @@ export default function NailDiagnosisPage() {
                 Ingredients
               </h3>
               <p className="text-gray-600 text-[13px] leading-relaxed">
-                We source our ingredients and raw materials from the nearest suppliers in Switzerland to reduce our carbon footprint. We also increasingly use ingredients that are readily biodegradable. In particular, we do not use plastic microbeads nor cyclopentasiloxane (D5), which contribute to ocean pollution.
+                We source our ingredients and raw materials from the nearest
+                suppliers in Switzerland to reduce our carbon footprint. We also
+                increasingly use ingredients that are readily biodegradable. In
+                particular, we do not use plastic microbeads nor
+                cyclopentasiloxane (D5), which contribute to ocean pollution.
               </p>
             </div>
 
@@ -328,7 +333,11 @@ export default function NailDiagnosisPage() {
                 Packaging
               </h3>
               <p className="text-gray-600 text-[13px] leading-relaxed">
-                Whenever possible, we package our products without a box or cellophane and in recycled and recyclable materials (including plastic and glass) to reduce waste. We have also implemented clear labelling on product packaging to assist you in knowing which part of the packaging can be recycled and how.
+                Whenever possible, we package our products without a box or
+                cellophane and in recycled and recyclable materials (including
+                plastic and glass) to reduce waste. We have also implemented
+                clear labelling on product packaging to assist you in knowing
+                which part of the packaging can be recycled and how.
               </p>
             </div>
 
@@ -338,7 +347,11 @@ export default function NailDiagnosisPage() {
                 Manufacturing
               </h3>
               <p className="text-gray-600 text-[13px] leading-relaxed">
-                Whenever possible, we manufacture under cold conditions to reduce energy consumption. We are also implementing strict waste separation and recycling processes in our production site and warehouses, including that of our Canadian distributor in Burnaby.
+                Whenever possible, we manufacture under cold conditions to
+                reduce energy consumption. We are also implementing strict waste
+                separation and recycling processes in our production site and
+                warehouses, including that of our Canadian distributor in
+                Burnaby.
               </p>
             </div>
           </div>
@@ -346,7 +359,8 @@ export default function NailDiagnosisPage() {
           {/* Cruelty Free Statement */}
           <div className="bg-white rounded-lg p-6 shadow-sm max-w-3xl mx-auto">
             <p className="text-[#ae1932] text-[14px] md:text-[15px] text-center font-medium">
-              We are 100% cruelty free, we do not test any of our ingredients or products on animals.
+              We are 100% cruelty free, we do not test any of our ingredients or
+              products on animals.
             </p>
           </div>
         </div>
