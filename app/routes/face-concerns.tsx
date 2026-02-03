@@ -192,27 +192,34 @@ export default function FaceConcernsPage() {
         </div>
       </div>
 
-      {/* Face Concerns Grid - Full width on mobile */}
-      <div className="py-6 md:py-12 px-2 sm:px-4 md:px-8 pb-12 md:pb-20">
+      {/* Face Concerns Grid - Centered flex layout like nail-diagnosis */}
+      <div className="py-2 md:py-4 px-2 sm:px-4 md:px-6 lg:px-6 xl:px-4 pb-12 md:pb-20">
         <div className="max-w-[1600px] mx-auto">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-6 sm:gap-x-6 md:gap-x-8 md:gap-y-10 justify-items-center">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-8 sm:gap-x-6 md:gap-x-8 md:gap-y-10">
             {filteredConcerns.map((concern) => (
               <a
                 key={concern.id}
                 href={`/face-concern/${concern.id}`}
-                className="flex flex-col items-center group w-full max-w-[160px] sm:max-w-[130px] md:max-w-[140px]"
+                className="flex flex-col items-center justify-start text-center cursor-pointer transition-opacity duration-200 group w-[calc(50%-8px)] sm:w-[calc(25%-18px)] md:w-[calc(20%-26px)] lg:w-[calc(16.66%-27px)]"
               >
-                {/* Circular Image */}
-                <div className="w-full aspect-square mb-3 md:mb-4 overflow-hidden rounded-full">
+                {/* Circular Image Container - 15% larger */}
+                <div className="w-[184px] sm:w-[150px] md:w-[161px] lg:w-[175px] aspect-square mb-3 md:mb-4 overflow-hidden rounded-full mx-auto">
                   <img
                     src={concern.image}
                     alt={concern.label}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover transition-transform duration-200"
+                    style={{ transform: "scale(1)" }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "scale(1.05)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "scale(1)";
+                    }}
                   />
                 </div>
 
                 {/* Label */}
-                <p className="font-['Archivo'] text-[16px] sm:text-[13px] md:text-[14px] font-semibold uppercase text-center text-[#1a1a2e] leading-tight group-hover:text-[#ae1932] transition-colors">
+                <p className="font-['Archivo'] text-[14px] sm:text-[13px] md:text-[14px] lg:text-[15px] font-medium uppercase text-center text-gray-800 leading-tight group-hover:text-[#ae1932] transition-colors mt-1">
                   {concern.label}
                 </p>
               </a>
