@@ -177,14 +177,22 @@ export default function AboutPage() {
             department stores, cosmetic stores, perfumeries, pharmacies, beauty
             salons and spas.
           </p>
-          <a
-            href="https://www.mavala.com"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-block px-8 py-4 border-2 border-[#ae1932] bg-transparent text-[#ae1932] font-['Archivo'] text-[14px] font-normal uppercase tracking-[1px] hover:bg-[#ae1932] hover:text-white transition-colors duration-150"
-          >
-            Visit Mavala.com →
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/the-brand"
+              className="inline-block px-8 py-4 border-2 border-[#ae1932] bg-[#ae1932] text-white font-['Archivo'] text-[14px] font-normal uppercase tracking-[1px] hover:bg-transparent hover:text-[#ae1932] transition-colors duration-150"
+            >
+              Explore Our Brand Story →
+            </Link>
+            <a
+              href="https://www.mavala.com"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-block px-8 py-4 border-2 border-[#ae1932] bg-transparent text-[#ae1932] font-['Archivo'] text-[14px] font-normal uppercase tracking-[1px] hover:bg-[#ae1932] hover:text-white transition-colors duration-150"
+            >
+              Visit Mavala.com →
+            </a>
+          </div>
         </div>
       </section>
 

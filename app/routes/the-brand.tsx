@@ -715,6 +715,24 @@ export default function TheBrand() {
           </div>
         </section>
       )}
+
+      {/* Link to About Page */}
+      <section className="py-12 md:py-16 bg-[#f6f3ef]">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-2xl md:text-3xl font-light text-gray-900 mb-4">
+            Learn More About Mavala
+          </h2>
+          <p className="text-base md:text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            Discover more about our philosophy, product categories, and Mavala Canada.
+          </p>
+          <Link
+            to="/about"
+            className="inline-block px-8 py-4 border-2 border-[#ae1932] bg-[#ae1932] text-white font-['Archivo'] text-[14px] font-normal uppercase tracking-[1px] hover:bg-transparent hover:text-[#ae1932] transition-colors duration-150"
+          >
+            Visit About Us →
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
