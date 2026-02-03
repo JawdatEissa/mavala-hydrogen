@@ -14,120 +14,140 @@ export const meta: MetaFunction = () => {
 
 // Categorized nail concerns with 6 balanced categories
 // Each category represents a specific aspect of nail health
+// Custom scale: 0.75 = reduce by 25%, 1 = normal (will be globally scaled up by 25%)
 const NAIL_CONDITIONS = [
   {
     name: "HEALTHY NAIL?",
     image: "/diagnosis/healthy-nail.png",
     slug: "healthy-nail",
     categories: ["ALL"],
+    scale: 1,
   },
   {
     name: "DRY NAIL?",
     image: "/diagnosis/dry-nail.png",
     slug: "dry-nail",
     categories: ["ALL", "Flexibility"],
+    scale: 1,
   },
   {
     name: "SOFT NAIL?",
     image: "/diagnosis/soft-nail.png",
     slug: "soft-nail",
     categories: ["ALL", "Flexibility"],
+    scale: 1,
   },
   {
     name: "THIN NAIL?",
     image: "/diagnosis/thin-nail.png",
     slug: "thin-nail",
     categories: ["ALL", "Strength", "Growth"],
+    scale: 0.75, // Reduced by 25%
   },
   {
     name: "DAMAGED, BRITTLE NAIL?",
     image: "/diagnosis/damaged-brittle-nail.png",
     slug: "damaged-brittle-nail",
     categories: ["ALL", "Strength", "Growth"],
+    scale: 1,
   },
   {
     name: "LIGHTLY RIDGED NAIL?",
     image: "/diagnosis/lightly-ridged-nail.png",
     slug: "lightly-ridged-nail",
     categories: ["ALL", "Texture"],
+    scale: 1,
   },
   {
     name: "SPLITTING, BREAKING NAIL?",
     image: "/diagnosis/splitting-breaking-nail.png",
     slug: "splitting-breaking-nail",
     categories: ["ALL", "Strength", "Cuticles"],
+    scale: 1,
   },
   {
     name: "BITTEN NAIL?",
     image: "/diagnosis/bitten-nail.png",
     slug: "bitten-nail",
     categories: ["ALL", "Strength", "Cuticles"],
+    scale: 1,
   },
   {
     name: "SLOW GROWING NAIL?",
     image: "/diagnosis/slow-growing-nail.png",
     slug: "slow-growing-nail",
     categories: ["ALL", "Growth"],
+    scale: 1,
   },
   {
     name: "LIGHTLY STAINED OR YELLOW NAIL?",
     image: "/diagnosis/lightly-stained-or-yellow-nail.png",
     slug: "lightly-stained-or-yellow-nail",
     categories: ["ALL", "Colour"],
+    scale: 1,
   },
   {
     name: "YELLOW, STAINED, DULL NAIL?",
     image: "/diagnosis/yellow-stained-dull-nail.png",
     slug: "yellow-stained-dull-nail",
     categories: ["ALL", "Colour"],
+    scale: 0.75, // Reduced by 25%
   },
   {
     name: "OVERGROWN CUTICLES?",
     image: "/diagnosis/overgrown-cuticles.png",
     slug: "overgrown-cuticles",
     categories: ["ALL", "Cuticles"],
+    scale: 1,
   },
   {
     name: "THICK, INFLEXIBLE NAIL?",
     image: "/diagnosis/thick-inflexible-nail.png",
     slug: "thick-inflexible-nail",
     categories: ["ALL", "Flexibility"],
+    scale: 0.75, // Reduced by 25%
   },
   {
     name: "NAIL WITH LONGITUDINAL GROOVES?",
     image: "/diagnosis/nail-with-longitudinal-grooves.png",
     slug: "nail-with-longitudinal-grooves",
     categories: ["ALL", "Texture"],
+    scale: 1,
   },
   {
     name: "NAIL WITH TRANSVERSAL GROOVES?",
     image: "/diagnosis/nail-with-transversal-grooves.png",
     slug: "nail-with-transversal-grooves",
     categories: ["ALL", "Texture"],
+    scale: 1,
   },
   {
     name: "NAIL WITH SPOTTED EROSION?",
     image: "/diagnosis/nail-with-spotted-erosion.png",
     slug: "nail-with-spotted-erosion",
     categories: ["ALL", "Texture"],
+    scale: 1,
   },
   {
     name: "WHITE OR WHITE SPOTTED NAIL?",
     image: "/diagnosis/white-or-white-spotted-nail.png",
     slug: "white-or-white-spotted-nail",
     categories: ["ALL", "Colour"],
+    scale: 0.75, // Reduced by 25%
   },
   {
     name: "BLACK OR BROWN NAIL?",
     image: "/diagnosis/black-or-brown-nail.png",
     slug: "black-or-brown-nail",
     categories: ["ALL", "Colour"],
+    scale: 0.75, // Reduced by 25%
   },
   {
     name: "NAIL FUNGUS?",
     image: "/diagnosis/nail-fungus.png",
     slug: "nail-fungus",
     categories: ["ALL", "Colour", "Texture"],
+    scale: 1,
   },
 ];
 
@@ -245,11 +265,20 @@ export default function NailDiagnosisPage() {
                 href={`/nail-concern/${condition.slug}`}
                 className="flex flex-col items-center justify-start text-center cursor-pointer hover:opacity-80 transition-opacity duration-200 group w-full"
               >
-                <div className="w-full aspect-[2/3] flex items-center justify-center overflow-hidden">
+                {/* Fixed height container (+25% global increase) with individual scaling */}
+                <div 
+                  className="w-full h-[125px] sm:h-[150px] md:h-[175px] lg:h-[188px] flex items-end justify-center bg-white"
+                  style={{ '--img-scale': condition.scale } as React.CSSProperties}
+                >
                   <img
                     src={condition.image}
                     alt={condition.name}
-                    className="w-full h-full object-contain object-center scale-[1.3] sm:scale-[1.4] md:scale-[1.5] lg:scale-[1.6] transition-transform duration-200 group-hover:scale-[1.35] sm:group-hover:scale-[1.45] md:group-hover:scale-[1.55] lg:group-hover:scale-[1.65]"
+                    className="max-w-full max-h-full object-contain object-bottom transition-transform duration-200"
+                    style={{ 
+                      transform: `scale(var(--img-scale, 1))`,
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.transform = `scale(${condition.scale * 1.05})`}
+                    onMouseLeave={(e) => e.currentTarget.style.transform = `scale(${condition.scale})`}
                     loading="lazy"
                     decoding="async"
                   />
