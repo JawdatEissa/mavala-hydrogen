@@ -114,7 +114,7 @@ export default function FaceConcernsPage() {
   return (
     <div className="min-h-screen bg-white pt-[90px]">
       {/* Navigation Bar Section */}
-      <section className="pt-4 pb-4 md:pt-6 md:pb-6 px-4 md:px-8 bg-white">
+      <section className="pt-4 pb-2 md:pt-6 md:pb-3 px-4 md:px-8 bg-white">
         <div className="max-w-5xl mx-auto flex justify-center">
           {/* Mobile: 2-row pill-style layout (matching nail-diagnosis pattern) */}
           <div className="md:hidden flex flex-col gap-2 w-full max-w-md">
@@ -184,7 +184,7 @@ export default function FaceConcernsPage() {
       </section>
 
       {/* Main Title */}
-      <div className="py-4 md:py-6 px-2 sm:px-4 md:px-8">
+      <div className="py-2 md:py-3 px-2 sm:px-4 md:px-8">
         <div className="max-w-[1800px] mx-auto text-center">
           <h1 className="font-['Archivo'] text-[46px] md:text-[42px] font-bold text-[#ae1932] uppercase tracking-[1px]">
             FACE CONCERNS
@@ -193,7 +193,7 @@ export default function FaceConcernsPage() {
       </div>
 
       {/* Face Concerns Grid - Centered flex layout like nail-diagnosis */}
-      <div className="py-2 md:py-4 px-2 sm:px-4 md:px-6 lg:px-6 xl:px-4 pb-12 md:pb-20">
+      <div className="pt-1 md:pt-2 px-2 sm:px-4 md:px-6 lg:px-6 xl:px-4 pb-12 md:pb-20">
         <div className="max-w-[1600px] mx-auto">
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-8 sm:gap-x-6 md:gap-x-8 md:gap-y-10">
             {filteredConcerns.map((concern) => (
