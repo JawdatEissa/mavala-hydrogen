@@ -58,36 +58,28 @@ export function MavalaCares() {
           </div>
         </div>
 
-        {/* Certification Images - 2x2 Grid */}
-        <div className="grid grid-cols-2 gap-6 md:gap-8 max-w-2xl mx-auto">
-          <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm flex items-center justify-center aspect-square">
-            <img
-              src="/mavala-cares-images/Not tested on Animals.png"
-              alt="Not tested on animals"
-              className="max-w-full max-h-full object-contain"
-            />
-          </div>
-          <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm flex items-center justify-center aspect-square">
-            <img
-              src="/mavala-cares-images/Vegan.png"
-              alt="Vegan"
-              className="max-w-full max-h-full object-contain"
-            />
-          </div>
-          <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm flex items-center justify-center aspect-square">
-            <img
-              src="/mavala-cares-images/Natural Ingredients - White Background NON TRANSPARENT.png"
-              alt="Natural Ingredients"
-              className="max-w-full max-h-full object-contain"
-            />
-          </div>
-          <div className="bg-white rounded-lg p-6 md:p-8 shadow-sm flex items-center justify-center aspect-square">
-            <img
-              src="/mavala-cares-images/Mavala Cares FSC.png"
-              alt="FSC Certified"
-              className="max-w-full max-h-full object-contain"
-            />
-          </div>
+        {/* Certification Images - Horizontal row */}
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16 mt-4">
+          <img
+            src="/mavala-cares-images/Not tested on Animals.png"
+            alt="Not tested on animals"
+            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain"
+          />
+          <img
+            src="/mavala-cares-images/Vegan.png"
+            alt="Vegan"
+            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain"
+          />
+          <img
+            src="/mavala-cares-images/Natural Ingredients - White Background NON TRANSPARENT.png"
+            alt="Natural Ingredients"
+            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain"
+          />
+          <img
+            src="/mavala-cares-images/Mavala Cares FSC.png"
+            alt="FSC Certified"
+            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain"
+          />
         </div>
       </div>
     </section>
