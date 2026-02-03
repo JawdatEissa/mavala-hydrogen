@@ -91,7 +91,7 @@ const NAIL_CONDITIONS = [
     image: "/diagnosis/yellow-stained-dull-nail.png",
     slug: "yellow-stained-dull-nail",
     categories: ["ALL", "Colour"],
-    scale: 0.825, // Increased by 10%
+    scale: 0.89, // Increased by 10%
   },
   {
     name: "OVERGROWN CUTICLES?",
