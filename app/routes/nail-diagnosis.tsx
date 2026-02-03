@@ -42,7 +42,7 @@ const NAIL_CONDITIONS = [
     image: "/diagnosis/thin-nail.png",
     slug: "thin-nail",
     categories: ["ALL", "Strength", "Growth"],
-    scale: 1.04, // Increased by 15%
+    scale: 1.02, // Increased by 15%
   },
   {
     name: "DAMAGED, BRITTLE NAIL?",
