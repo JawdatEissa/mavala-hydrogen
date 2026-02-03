@@ -63,22 +63,22 @@ export function MavalaCares() {
           <img
             src="/mavala-cares-images/Not tested on Animals.png"
             alt="Not tested on animals"
-            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain"
+            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain mix-blend-multiply"
           />
           <img
             src="/mavala-cares-images/Vegan.png"
             alt="Vegan"
-            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain"
+            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain mix-blend-multiply"
           />
           <img
             src="/mavala-cares-images/Natural Ingredients - White Background NON TRANSPARENT.png"
             alt="Natural Ingredients"
-            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain"
+            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain mix-blend-multiply"
           />
           <img
             src="/mavala-cares-images/Mavala Cares FSC.png"
             alt="FSC Certified"
-            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain"
+            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain mix-blend-multiply"
           />
         </div>
       </div>

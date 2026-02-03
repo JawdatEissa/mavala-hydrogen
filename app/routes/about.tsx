@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import { HeroVideo } from "../components/HeroVideo";
+import { MavalaCares } from "../components/MavalaCares";
 
 export const meta: MetaFunction = () => {
   return [
@@ -40,81 +41,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* MAVALA Cares Section */}
-      <section className="py-12 md:py-16 bg-[#f6f3ef]">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="font-['Archivo'] text-[28px] md:text-[32px] font-semibold text-[#ae1932] uppercase tracking-[1px] text-center mb-4">
-            MAVALA cares
-          </h2>
-          <p className="font-['Archivo'] text-[16px] md:text-[17px] text-[#5c666f] text-center mb-10 leading-[1.7]">
-            We care about the planet. We aim to minimise our impact on the
-            environment through the following measures:
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {/* Ingredients */}
-            <div className="bg-white p-6 md:p-8 rounded-lg shadow-sm">
-              <h3 className="font-['Archivo'] text-[18px] font-semibold text-[#1c1c1c] mb-4">
-                Ingredients
-              </h3>
-              <p className="font-['Archivo'] text-[15px] text-[#5c666f] leading-[1.7]">
-                We source our ingredients and raw materials from the nearest
-                suppliers in Switzerland to reduce our carbon footprint. We also
-                increasingly use ingredients that are readily biodegradable. In
-                particular, we do not use plastic microbeads nor
-                cyclopentasiloxane (D5), which contribute to ocean pollution.
-              </p>
-            </div>
-
-            {/* Packaging */}
-            <div className="bg-white p-6 md:p-8 rounded-lg shadow-sm">
-              <h3 className="font-['Archivo'] text-[18px] font-semibold text-[#1c1c1c] mb-4">
-                Packaging
-              </h3>
-              <p className="font-['Archivo'] text-[15px] text-[#5c666f] leading-[1.7]">
-                Whenever possible, we package our products without a box or
-                cellophane and in recycled and recyclable materials (including
-                plastic and glass) to reduce waste. We have also implemented
-                clear labelling on product packaging to assist you in knowing
-                which part of the packaging can be recycled and how.
-              </p>
-            </div>
-
-            {/* Manufacturing */}
-            <div className="bg-white p-6 md:p-8 rounded-lg shadow-sm">
-              <h3 className="font-['Archivo'] text-[18px] font-semibold text-[#1c1c1c] mb-4">
-                Manufacturing
-              </h3>
-              <p className="font-['Archivo'] text-[15px] text-[#5c666f] leading-[1.7]">
-                Whenever possible, we manufacture under cold conditions to
-                reduce energy consumption. We are also implementing strict waste
-                separation and recycling processes in our production site and
-                warehouses, including that of our Canadian distributor in
-                Burnaby.
-              </p>
-            </div>
-          </div>
-
-          {/* Cruelty Free Statement */}
-          <div className="text-center bg-white p-6 md:p-8 rounded-lg shadow-sm max-w-2xl mx-auto">
-            <p className="font-['Archivo'] text-[17px] md:text-[18px] font-medium text-[#ae1932] leading-[1.7]">
-              We are 100% cruelty free, we do not test any of our ingredients or
-              products on animals.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Mavala Cares Image */}
-      <section className="py-0 bg-white">
-        <div className="w-full">
-          <img
-            src="https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1539994037869-KDW23CAFI5T9HQVCWEM5/Mavala+cares.jpg"
-            alt="Mavala cares - Our commitment to quality and sustainability"
-            className="w-full h-auto object-cover"
-          />
-        </div>
-      </section>
+      <MavalaCares />
 
       {/* Product Categories Section */}
       <section className="py-12 md:py-16 bg-white">
