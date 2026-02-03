@@ -110,7 +110,48 @@ For nail polish shade questions:
 - Keep it simple: "Here are some grey shades: [list]"
 - Don't over-explain - the user wants shade names, not tutorials
 
-Be helpful but brief. No lengthy introductions or closings.`;
+Be helpful but brief. No lengthy introductions or closings.
+
+IMPORTANT: At the END of your response, you MUST include a JSON array of recommended product handles.
+Format: <<<PRODUCTS:["handle1","handle2","handle3"]>>>
+- Include 3 products if possible (minimum 1, maximum 3)
+- Use ONLY handles from the Available Products list provided
+- Choose the most relevant products based on the user's question and your response
+- This array determines which products are shown to the user, so make sure it matches your recommendations`;
+
+/**
+ * Available product handles for LLM to recommend
+ * This list is provided to the LLM so it knows which products it can recommend
+ */
+const AVAILABLE_PRODUCT_HANDLES = [
+  // Nail Repair
+  "mavala-scientifique-1", "mava-strong", "mava-flex-1", "mavala-stop", "mavaderma", "barrier-base-coat",
+  // Nail Polish Removers
+  "blue-nail-polish-remover", "crystal-nail-polish-remover", "pink-nail-polish-remover", "nail-polish-remover-pads",
+  // Cuticle Care
+  "cuticle-oil", "cuticle-cream", "cuticle-remover",
+  // Hand Care
+  "hand-cream", "anti-spot-cream-for-hands",
+  // Skincare
+  "healthy-glow-serum", "featherlight-cream", "nourishing-cream",
+  // Makeup Removers
+  "bi-phase-make-up-remover", "eye-make-up-remover-lotion", "remover-gel", "remover-pads",
+  // Nail Polish Collections
+  "grey-shades", "red-shades", "pink-shades", "nude-shades", "blue-shades", "purple-shades", 
+  "10ml-bottles", "brown-shades", "coral-shades", "burgundy-shades", "green-shades", 
+  "black-shades", "white-shades", "orange-shades", "gold-shades", "yellow-shades",
+  // Top & Base Coats
+  "colorfix-1", "gel-finish-top-coat",
+  // Foot Care
+  "foot-bath-salts", "repairing-night-cream-for-feet", "conditioning-foot-moisturiser",
+  // Eye Beauty
+  "double-lash", "double-brow", "creamy-mascara",
+  // Lip Products
+  "lip-balm", "mavala-lipstick",
+  // Skincare (extended)
+  "beauty-enhancing-micro-peel", "sleeping-mask-baby-skin-radiance", "chrono-biological-care",
+  "anti-age-nutrition-mask", "clean-comfort", "aqua-plus-multi-moisturizing",
+];
 
 /**
  * Default product knowledge fallback when database has no matches
@@ -162,11 +203,27 @@ function buildPrompt(question: string, contextBlocks: string[]): string {
     contextSection += `\n\nAdditional shade information:\n${FALLBACK_KNOWLEDGE}`;
   }
 
+  // Create product handle reference for the LLM
+  const productHandleReference = `
+### Available Products (use these handles for recommendations)
+Nail Repair: mavala-scientifique-1, mava-strong, mava-flex-1, mavala-stop, mavaderma, barrier-base-coat
+Nail Polish Removers: blue-nail-polish-remover, crystal-nail-polish-remover, pink-nail-polish-remover, nail-polish-remover-pads
+Cuticle Care: cuticle-oil, cuticle-cream, cuticle-remover
+Hand Care: hand-cream, anti-spot-cream-for-hands
+Skincare: healthy-glow-serum, featherlight-cream, nourishing-cream, beauty-enhancing-micro-peel, sleeping-mask-baby-skin-radiance, chrono-biological-care, anti-age-nutrition-mask, clean-comfort, aqua-plus-multi-moisturizing
+Makeup Removers: bi-phase-make-up-remover, eye-make-up-remover-lotion, remover-gel, remover-pads
+Nail Polish: grey-shades, red-shades, pink-shades, nude-shades, blue-shades, purple-shades, 10ml-bottles, brown-shades, coral-shades, burgundy-shades, green-shades, black-shades, white-shades, orange-shades, gold-shades, yellow-shades
+Top & Base Coats: colorfix-1, gel-finish-top-coat
+Foot Care: foot-bath-salts, repairing-night-cream-for-feet, conditioning-foot-moisturiser
+Eye Beauty: double-lash, double-brow, creamy-mascara
+Lip Products: lip-balm, mavala-lipstick`;
+
   return `### User Question
 ${question.trim()}
 
 ### Available Context
 ${contextSection}
+${productHandleReference}
 
 ### Instructions
 - Answer the question helpfully using the context above
@@ -174,16 +231,60 @@ ${contextSection}
 - Mention product names in CAPS (e.g., MAVALA SCIENTIFIQUE)
 - Be friendly, helpful, and concise
 - For nail concerns: suggest nail treatments from the context
-- For skin concerns: suggest skincare products from the context`;
+- For skin concerns: suggest skincare products from the context
+- REMEMBER: End your response with <<<PRODUCTS:["handle1","handle2","handle3"]>>> using handles from the Available Products list above`;
 }
 
 /**
- * Generate a chat response
+ * Response type for chat generation with product recommendations
+ */
+export interface ChatGenerationResult {
+  answer: string;
+  llmRecommendedProducts: string[];
+}
+
+/**
+ * Parse LLM-recommended products from the response
+ * Extracts the <<<PRODUCTS:[...]>>> array from the end of the response
+ */
+function parseLLMRecommendedProducts(rawResponse: string): { cleanAnswer: string; products: string[] } {
+  // Match the products array pattern: <<<PRODUCTS:["handle1","handle2"]>>>
+  const productPattern = /<<<PRODUCTS:\s*(\[[^\]]*\])\s*>>>/;
+  const match = rawResponse.match(productPattern);
+  
+  let products: string[] = [];
+  let cleanAnswer = rawResponse;
+  
+  if (match) {
+    // Remove the products marker from the answer
+    cleanAnswer = rawResponse.replace(productPattern, '').trim();
+    
+    try {
+      const parsed = JSON.parse(match[1]);
+      if (Array.isArray(parsed)) {
+        // Validate that products are valid handles and limit to 3
+        products = parsed
+          .filter((p): p is string => typeof p === 'string' && p.length > 0)
+          .slice(0, 3);
+        console.log("[parseLLMRecommendedProducts] Extracted products:", products);
+      }
+    } catch (e) {
+      console.warn("[parseLLMRecommendedProducts] Failed to parse products JSON:", e);
+    }
+  } else {
+    console.log("[parseLLMRecommendedProducts] No products marker found in response");
+  }
+  
+  return { cleanAnswer, products };
+}
+
+/**
+ * Generate a chat response with product recommendations
  */
 export async function generateChatResponse(
   question: string,
   contextBlocks: string[]
-): Promise<string> {
+): Promise<ChatGenerationResult> {
   try {
     const prompt = buildPrompt(question, contextBlocks);
 
@@ -197,14 +298,23 @@ export async function generateChatResponse(
       temperature: CHAT_CONSTANTS.TEMPERATURE,
     });
 
-    const answer = response.choices[0]?.message?.content?.trim();
+    const rawAnswer = response.choices[0]?.message?.content?.trim();
 
-    if (!answer) {
+    if (!rawAnswer) {
       console.warn("[generateChatResponse] Empty response from model");
-      return "I apologize, but I couldn't generate a response. Please try rephrasing your question.";
+      return {
+        answer: "I apologize, but I couldn't generate a response. Please try rephrasing your question.",
+        llmRecommendedProducts: [],
+      };
     }
 
-    return answer;
+    // Parse the products from the response
+    const { cleanAnswer, products } = parseLLMRecommendedProducts(rawAnswer);
+
+    return {
+      answer: cleanAnswer,
+      llmRecommendedProducts: products,
+    };
   } catch (e) {
     console.error("[generateChatResponse] Error:", e);
 
@@ -222,10 +332,15 @@ export async function generateChatResponse(
         temperature: CHAT_CONSTANTS.TEMPERATURE,
       });
 
-      return (
-        response.choices[0]?.message?.content?.trim() ||
-        "I apologize, but I couldn't generate a response. Please try again."
-      );
+      const rawAnswer = response.choices[0]?.message?.content?.trim() ||
+        "I apologize, but I couldn't generate a response. Please try again.";
+      
+      const { cleanAnswer, products } = parseLLMRecommendedProducts(rawAnswer);
+
+      return {
+        answer: cleanAnswer,
+        llmRecommendedProducts: products,
+      };
     } catch (fallbackError) {
       console.error("[generateChatResponse] Fallback also failed:", fallbackError);
       throw new Error("AI service temporarily unavailable");
@@ -274,6 +389,24 @@ const PRODUCT_NAME_TO_HANDLE: Record<string, string> = {
   "healthy glow serum": "healthy-glow-serum",
   "featherlight cream": "featherlight-cream",
   "nourishing cream": "nourishing-cream",
+  "micro peel": "beauty-enhancing-micro-peel",
+  "micro-peel": "beauty-enhancing-micro-peel",
+  "beauty enhancing micro peel": "beauty-enhancing-micro-peel",
+  "beauty enhancing micro-peel": "beauty-enhancing-micro-peel",
+  "sleeping mask": "sleeping-mask-baby-skin-radiance",
+  "baby skin": "sleeping-mask-baby-skin-radiance",
+  "baby skin radiance": "sleeping-mask-baby-skin-radiance",
+  "chrono biological": "chrono-biological-care",
+  "chrono-biological": "chrono-biological-care",
+  "chrono biological care": "chrono-biological-care",
+  "anti age mask": "anti-age-nutrition-mask",
+  "anti-age mask": "anti-age-nutrition-mask",
+  "nutrition mask": "anti-age-nutrition-mask",
+  "anti age nutrition mask": "anti-age-nutrition-mask",
+  "clean comfort": "clean-comfort",
+  "clean & comfort": "clean-comfort",
+  "aqua plus": "aqua-plus-multi-moisturizing",
+  "multi moisturizing": "aqua-plus-multi-moisturizing",
   
   // Makeup Removers
   "bi phase makeup remover": "bi-phase-make-up-remover",

@@ -233,6 +233,48 @@ const PRODUCT_CATALOG: Record<string, SuggestedProduct> = {
     image: "/images/nourishing-cream/01_cream.jpg",
     category: "Skincare",
   },
+  "beauty-enhancing-micro-peel": {
+    handle: "beauty-enhancing-micro-peel",
+    title: "BEAUTY ENHANCING MICRO-PEEL",
+    price: "$49.95",
+    image: "/images/beauty-enhancing-micro-peel/01_micro-peel.jpg",
+    category: "Skincare",
+  },
+  "sleeping-mask-baby-skin-radiance": {
+    handle: "sleeping-mask-baby-skin-radiance",
+    title: "SLEEPING MASK 'BABY SKIN' RADIANCE",
+    price: "$59.95",
+    image: "/images/sleeping-mask-baby-skin-radiance/01_sleeping-mask.jpg",
+    category: "Skincare",
+  },
+  "chrono-biological-care": {
+    handle: "chrono-biological-care",
+    title: "CHRONO-BIOLOGICAL CARE",
+    price: "$89.95",
+    image: "/images/chrono-biological-care/01_chrono.jpg",
+    category: "Skincare",
+  },
+  "anti-age-nutrition-mask": {
+    handle: "anti-age-nutrition-mask",
+    title: "ANTI-AGE NUTRITION MASK",
+    price: "$59.95",
+    image: "/images/anti-age-nutrition-mask/01_mask.jpg",
+    category: "Skincare",
+  },
+  "clean-comfort": {
+    handle: "clean-comfort",
+    title: "CLEAN & COMFORT",
+    price: "$39.95",
+    image: "/images/clean-comfort/01_clean-comfort.jpg",
+    category: "Skincare",
+  },
+  "aqua-plus-multi-moisturizing": {
+    handle: "aqua-plus-multi-moisturizing",
+    title: "AQUA PLUS MULTI-MOISTURIZING",
+    price: "$49.95",
+    image: "/images/aqua-plus-multi-moisturizing/01_aqua-plus.jpg",
+    category: "Skincare",
+  },
 
   // === MAKEUP REMOVERS ===
   "bi-phase-make-up-remover": {
@@ -637,10 +679,10 @@ export async function action({ request }: ActionFunctionArgs) {
       );
     }
 
-    // Generate response
-    const answer = await generateChatResponse(question, contextBlocks);
+    // Generate response (now returns both answer and LLM-recommended products)
+    const { answer, llmRecommendedProducts } = await generateChatResponse(question, contextBlocks);
 
-    // Extract product recommendations
+    // Extract additional product recommendations as fallbacks
     const contextProducts = extractProductsFromContext(chunks);
     const productHandles = getProductHandles();
     const responseProducts = extractProductHandles(answer, productHandles);
@@ -648,17 +690,36 @@ export async function action({ request }: ActionFunctionArgs) {
     // Also check for products mentioned in the user's question
     const questionProducts = extractProductHandles(question, productHandles);
 
-    // Prioritize: 1) Products in AI response, 2) Products in question, 3) Products from context
-    // This ensures the most relevant products appear first
-    let allProductHandles = [
-      ...new Set([
-        ...responseProducts,
-        ...questionProducts,
-        ...contextProducts,
-      ]),
-    ].slice(0, 3);
+    // Prioritize: 1) LLM explicitly recommended, 2) Products in AI response, 3) Products in question, 4) Products from context
+    // The LLM's explicit recommendations take highest priority
+    let allProductHandles: string[] = [];
+    
+    // First, use LLM-recommended products (highest priority)
+    if (llmRecommendedProducts.length > 0) {
+      // Validate that the handles exist in our catalog
+      const validLLMProducts = llmRecommendedProducts.filter(handle => productHandles.includes(handle));
+      allProductHandles = validLLMProducts.slice(0, 3);
+      console.log("[api/chat] Using LLM-recommended products:", allProductHandles);
+    }
+    
+    // If LLM didn't provide enough, supplement with extracted products
+    if (allProductHandles.length < 3) {
+      const remainingSlots = 3 - allProductHandles.length;
+      const supplementalProducts = [
+        ...new Set([
+          ...responseProducts,
+          ...questionProducts,
+          ...contextProducts,
+        ]),
+      ].filter(handle => !allProductHandles.includes(handle));
+      
+      allProductHandles = [
+        ...allProductHandles,
+        ...supplementalProducts.slice(0, remainingSlots),
+      ];
+    }
 
-    // If no products found, use smart keyword mapping
+    // If still no products found, use smart keyword mapping
     if (allProductHandles.length === 0) {
       // Use the smart mapping system
       const mappedProducts = findRelevantProducts(question);
