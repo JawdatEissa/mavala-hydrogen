@@ -58,26 +58,26 @@ export function MavalaCares() {
         </div>
 
         {/* Certification Images - Horizontal row */}
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16 mt-4">
+        <div className="flex flex-wrap justify-center items-center gap-10 md:gap-14 lg:gap-20">
           <img
             src="/mavala-cares-images/Not tested on Animals.png"
             alt="Not tested on animals"
-            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain mix-blend-multiply"
+            className="h-[120px] md:h-[150px] lg:h-[180px] w-auto object-contain mix-blend-multiply"
           />
           <img
             src="/mavala-cares-images/Vegan.png"
             alt="Vegan"
-            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain mix-blend-multiply"
+            className="h-[120px] md:h-[150px] lg:h-[180px] w-auto object-contain mix-blend-multiply"
           />
           <img
             src="/mavala-cares-images/Natural Ingredients - White Background NON TRANSPARENT.png"
             alt="Natural Ingredients"
-            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain mix-blend-multiply"
+            className="h-[120px] md:h-[150px] lg:h-[180px] w-auto object-contain mix-blend-multiply"
           />
           <img
             src="/mavala-cares-images/Mavala Cares FSC.png"
             alt="FSC Certified"
-            className="h-[80px] md:h-[100px] lg:h-[120px] w-auto object-contain mix-blend-multiply"
+            className="h-[120px] md:h-[150px] lg:h-[180px] w-auto object-contain mix-blend-multiply"
           />
         </div>
       </div>
