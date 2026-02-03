@@ -42,7 +42,7 @@ const NAIL_CONDITIONS = [
     image: "/diagnosis/thin-nail.png",
     slug: "thin-nail",
     categories: ["ALL", "Strength", "Growth"],
-    scale: 0.75, // Reduced by 25%
+    scale: 1.04, // Increased by 15%
   },
   {
     name: "DAMAGED, BRITTLE NAIL?",
@@ -266,19 +266,27 @@ export default function NailDiagnosisPage() {
                 className="flex flex-col items-center justify-start text-center cursor-pointer hover:opacity-80 transition-opacity duration-200 group w-full"
               >
                 {/* Fixed height container (+25% global increase) with individual scaling */}
-                <div 
+                <div
                   className="w-full h-[125px] sm:h-[150px] md:h-[175px] lg:h-[188px] flex items-end justify-center bg-white"
-                  style={{ '--img-scale': condition.scale } as React.CSSProperties}
+                  style={
+                    { "--img-scale": condition.scale } as React.CSSProperties
+                  }
                 >
                   <img
                     src={condition.image}
                     alt={condition.name}
                     className="max-w-full max-h-full object-contain object-bottom transition-transform duration-200"
-                    style={{ 
+                    style={{
                       transform: `scale(var(--img-scale, 1))`,
                     }}
-                    onMouseEnter={(e) => e.currentTarget.style.transform = `scale(${condition.scale * 1.05})`}
-                    onMouseLeave={(e) => e.currentTarget.style.transform = `scale(${condition.scale})`}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.transform = `scale(${
+                        condition.scale * 1.05
+                      })`)
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.transform = `scale(${condition.scale})`)
+                    }
                     loading="lazy"
                     decoding="async"
                   />
