@@ -349,13 +349,6 @@ const PRODUCT_CATALOG: Record<string, SuggestedProduct> = {
     image: "/images/purple-shades/01_purple.jpg",
     category: "Nail Colour",
   },
-  "10ml-bottles": {
-    handle: "10ml-bottles",
-    title: "NAIL POLISH (10ML)",
-    price: "from $13.95",
-    image: "/images/10ml-bottles/01_90927+Vernis+prof.jpg",
-    category: "Nail Colour",
-  },
 
   // === TOP & BASE COATS ===
   "colorfix-1": {

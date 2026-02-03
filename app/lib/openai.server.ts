@@ -138,7 +138,7 @@ const AVAILABLE_PRODUCT_HANDLES = [
   "bi-phase-make-up-remover", "eye-make-up-remover-lotion", "remover-gel", "remover-pads",
   // Nail Polish Collections
   "grey-shades", "red-shades", "pink-shades", "nude-shades", "blue-shades", "purple-shades", 
-  "10ml-bottles", "brown-shades", "coral-shades", "burgundy-shades", "green-shades", 
+  "brown-shades", "coral-shades", "burgundy-shades", "green-shades", 
   "black-shades", "white-shades", "orange-shades", "gold-shades", "yellow-shades",
   // Top & Base Coats
   "colorfix-1", "gel-finish-top-coat",
@@ -212,7 +212,7 @@ Cuticle Care: cuticle-oil, cuticle-cream, cuticle-remover
 Hand Care: hand-cream, anti-spot-cream-for-hands
 Skincare: healthy-glow-serum, featherlight-cream, nourishing-cream, beauty-enhancing-micro-peel, sleeping-mask-baby-skin-radiance, chrono-biological-care, anti-age-nutrition-mask, clean-comfort, aqua-plus-multi-moisturizing
 Makeup Removers: bi-phase-make-up-remover, eye-make-up-remover-lotion, remover-gel, remover-pads
-Nail Polish: grey-shades, red-shades, pink-shades, nude-shades, blue-shades, purple-shades, 10ml-bottles, brown-shades, coral-shades, burgundy-shades, green-shades, black-shades, white-shades, orange-shades, gold-shades, yellow-shades
+Nail Polish: grey-shades, red-shades, pink-shades, nude-shades, blue-shades, purple-shades, brown-shades, coral-shades, burgundy-shades, green-shades, black-shades, white-shades, orange-shades, gold-shades, yellow-shades
 Top & Base Coats: colorfix-1, gel-finish-top-coat
 Foot Care: foot-bath-salts, repairing-night-cream-for-feet, conditioning-foot-moisturiser
 Eye Beauty: double-lash, double-brow, creamy-mascara
@@ -420,9 +420,6 @@ const PRODUCT_NAME_TO_HANDLE: Record<string, string> = {
   "mini color": "i-love-mini-colors",
   "mini colors": "i-love-mini-colors",
   "5ml": "i-love-mini-colors",
-  "10ml bottles": "10ml-bottles",
-  "10ml": "10ml-bottles",
-  "nail polish": "10ml-bottles",
   
   // Top & Base Coats
   "colorfix": "colorfix-1",
@@ -505,12 +502,8 @@ export function extractProductHandles(
     mentionsShades = true;
   }
   
-  // If shades are mentioned but no collection found yet, add generic nail polish
-  if (mentionsShades && found.length === 0) {
-    if (availableHandles.includes("10ml-bottles")) {
-      found.push("10ml-bottles");
-    }
-  }
+  // If shades are mentioned but no collection found yet, we'll let the
+  // LLM recommend specific shade collections based on the question
 
   // First, check for known product names and map to handles
   for (const [name, handle] of Object.entries(PRODUCT_NAME_TO_HANDLE)) {
