@@ -133,7 +133,8 @@ const AVAILABLE_PRODUCT_HANDLES = [
   // Hand Care
   "hand-cream", "anti-spot-cream-for-hands",
   // Skincare
-  "healthy-glow-serum", "featherlight-cream", "nourishing-cream",
+  "healthy-glow-serum", "featherlight-cream", "micro-peel", "sleeping-mask-baby-skin",
+  "chronobiological-cream", "nutrition-ultimate-cream", "multi-moisturizing-serum", "sleeping-mask",
   // Makeup Removers
   "bi-phase-make-up-remover", "eye-make-up-remover-lotion", "remover-gel", "remover-pads",
   // Nail Polish Collections
@@ -148,9 +149,6 @@ const AVAILABLE_PRODUCT_HANDLES = [
   "double-lash", "double-brow", "creamy-mascara",
   // Lip Products
   "lip-balm", "mavala-lipstick",
-  // Skincare (extended)
-  "beauty-enhancing-micro-peel", "sleeping-mask-baby-skin-radiance", "chrono-biological-care",
-  "anti-age-nutrition-mask", "clean-comfort", "aqua-plus-multi-moisturizing",
 ];
 
 /**
@@ -210,7 +208,7 @@ Nail Repair: mavala-scientifique-1, mava-strong, mava-flex-1, mavala-stop, mavad
 Nail Polish Removers: blue-nail-polish-remover, crystal-nail-polish-remover, pink-nail-polish-remover, nail-polish-remover-pads
 Cuticle Care: cuticle-oil, cuticle-cream, cuticle-remover
 Hand Care: hand-cream, anti-spot-cream-for-hands
-Skincare: healthy-glow-serum, featherlight-cream, nourishing-cream, beauty-enhancing-micro-peel, sleeping-mask-baby-skin-radiance, chrono-biological-care, anti-age-nutrition-mask, clean-comfort, aqua-plus-multi-moisturizing
+Skincare: healthy-glow-serum, featherlight-cream, micro-peel, sleeping-mask-baby-skin, chronobiological-cream, nutrition-ultimate-cream, multi-moisturizing-serum, sleeping-mask
 Makeup Removers: bi-phase-make-up-remover, eye-make-up-remover-lotion, remover-gel, remover-pads
 Nail Polish: grey-shades, red-shades, pink-shades, nude-shades, blue-shades, purple-shades, brown-shades, coral-shades, burgundy-shades, green-shades, black-shades, white-shades, orange-shades, gold-shades, yellow-shades
 Top & Base Coats: colorfix, gel-finish-top-coat, star-top-coat
@@ -387,26 +385,28 @@ const PRODUCT_NAME_TO_HANDLE: Record<string, string> = {
   
   // Skincare
   "healthy glow serum": "healthy-glow-serum",
+  "healthy glow": "healthy-glow-serum",
   "featherlight cream": "featherlight-cream",
-  "nourishing cream": "nourishing-cream",
-  "micro peel": "beauty-enhancing-micro-peel",
-  "micro-peel": "beauty-enhancing-micro-peel",
-  "beauty enhancing micro peel": "beauty-enhancing-micro-peel",
-  "beauty enhancing micro-peel": "beauty-enhancing-micro-peel",
-  "sleeping mask": "sleeping-mask-baby-skin-radiance",
-  "baby skin": "sleeping-mask-baby-skin-radiance",
-  "baby skin radiance": "sleeping-mask-baby-skin-radiance",
-  "chrono biological": "chrono-biological-care",
-  "chrono-biological": "chrono-biological-care",
-  "chrono biological care": "chrono-biological-care",
-  "anti age mask": "anti-age-nutrition-mask",
-  "anti-age mask": "anti-age-nutrition-mask",
-  "nutrition mask": "anti-age-nutrition-mask",
-  "anti age nutrition mask": "anti-age-nutrition-mask",
-  "clean comfort": "clean-comfort",
-  "clean & comfort": "clean-comfort",
-  "aqua plus": "aqua-plus-multi-moisturizing",
-  "multi moisturizing": "aqua-plus-multi-moisturizing",
+  "featherlight": "featherlight-cream",
+  "micro peel": "micro-peel",
+  "micro-peel": "micro-peel",
+  "beauty enhancing micro peel": "micro-peel",
+  "beauty enhancing micro-peel": "micro-peel",
+  "sleeping mask baby skin": "sleeping-mask-baby-skin",
+  "baby skin": "sleeping-mask-baby-skin",
+  "baby skin radiance": "sleeping-mask-baby-skin",
+  "sleeping mask": "sleeping-mask",
+  "multi moisturizing sleeping mask": "sleeping-mask",
+  "chrono biological": "chronobiological-cream",
+  "chrono-biological": "chronobiological-cream",
+  "chronobiological cream": "chronobiological-cream",
+  "chronobiological day cream": "chronobiological-cream",
+  "anti age nutrition": "nutrition-ultimate-cream",
+  "anti-age nutrition": "nutrition-ultimate-cream",
+  "nutrition ultimate cream": "nutrition-ultimate-cream",
+  "nutrition cream": "nutrition-ultimate-cream",
+  "multi moisturizing serum": "multi-moisturizing-serum",
+  "intensive serum": "multi-moisturizing-serum",
   
   // Makeup Removers
   "bi phase makeup remover": "bi-phase-make-up-remover",
