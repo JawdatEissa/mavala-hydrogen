@@ -14,13 +14,13 @@ export function MavalaCares() {
         </p>
 
         {/* Three Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 md:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-12 md:mb-16">
           {/* Ingredients Card */}
-          <div className="bg-white rounded-lg p-6 shadow-sm">
-            <h3 className="font-['Archivo'] text-[16px] font-semibold text-gray-800 mb-3">
+          <div className="bg-white rounded-lg p-8 md:p-10 shadow-sm">
+            <h3 className="font-['Archivo'] text-[18px] md:text-[20px] font-semibold text-gray-800 mb-4">
               Ingredients
             </h3>
-            <p className="text-gray-600 text-[13px] leading-relaxed">
+            <p className="text-gray-600 text-[14px] md:text-[15px] leading-relaxed">
               We source our ingredients and raw materials from the nearest
               suppliers in Switzerland to reduce our carbon footprint. We also
               increasingly use ingredients that are readily biodegradable. In
@@ -30,11 +30,11 @@ export function MavalaCares() {
           </div>
 
           {/* Packaging Card */}
-          <div className="bg-white rounded-lg p-6 shadow-sm">
-            <h3 className="font-['Archivo'] text-[16px] font-semibold text-gray-800 mb-3">
+          <div className="bg-white rounded-lg p-8 md:p-10 shadow-sm">
+            <h3 className="font-['Archivo'] text-[18px] md:text-[20px] font-semibold text-gray-800 mb-4">
               Packaging
             </h3>
-            <p className="text-gray-600 text-[13px] leading-relaxed">
+            <p className="text-gray-600 text-[14px] md:text-[15px] leading-relaxed">
               Whenever possible, we package our products without a box or
               cellophane and in recycled and recyclable materials (including
               plastic and glass) to reduce waste. We have also implemented
@@ -44,11 +44,11 @@ export function MavalaCares() {
           </div>
 
           {/* Manufacturing Card */}
-          <div className="bg-white rounded-lg p-6 shadow-sm">
-            <h3 className="font-['Archivo'] text-[16px] font-semibold text-gray-800 mb-3">
+          <div className="bg-white rounded-lg p-8 md:p-10 shadow-sm">
+            <h3 className="font-['Archivo'] text-[18px] md:text-[20px] font-semibold text-gray-800 mb-4">
               Manufacturing
             </h3>
-            <p className="text-gray-600 text-[13px] leading-relaxed">
+            <p className="text-gray-600 text-[14px] md:text-[15px] leading-relaxed">
               Whenever possible, we manufacture under cold conditions to
               reduce energy consumption. We are also implementing strict waste
               separation and recycling processes in our production site and
