@@ -1,26 +1,26 @@
 export function MavalaCares() {
   return (
-    <section className="bg-[#f6f3ef] py-12 md:py-16 px-4 md:px-8">
-      <div className="max-w-5xl mx-auto">
+    <section className="bg-[#f6f3ef] py-10 md:py-12 px-4 md:px-8">
+      <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <h2 className="font-['Archivo'] text-[32px] md:text-[38px] font-medium text-[#ae1932] uppercase text-center tracking-[1px] mb-4">
+        <h2 className="font-['Archivo'] text-[32px] md:text-[38px] font-medium text-[#ae1932] uppercase text-center tracking-[1px] mb-3">
           MAVALA CARES
         </h2>
 
         {/* Subtitle */}
-        <p className="text-center text-gray-600 text-[14px] md:text-[15px] mb-10 max-w-3xl mx-auto">
+        <p className="text-center text-gray-600 text-[14px] md:text-[15px] mb-6 md:mb-8 max-w-3xl mx-auto">
           We care about the planet. We aim to minimise our impact on the
           environment through the following measures:
         </p>
 
         {/* Three Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-12 md:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-8 md:mb-10">
           {/* Ingredients Card */}
-          <div className="bg-white rounded-lg p-8 md:p-10 shadow-sm">
-            <h3 className="font-['Archivo'] text-[18px] md:text-[20px] font-semibold text-gray-800 mb-4">
+          <div className="bg-white rounded-lg p-5 md:p-6 shadow-sm">
+            <h3 className="font-['Archivo'] text-[17px] md:text-[18px] font-semibold text-gray-800 mb-2">
               Ingredients
             </h3>
-            <p className="text-gray-600 text-[14px] md:text-[15px] leading-relaxed">
+            <p className="text-gray-600 text-[13px] md:text-[14px] leading-relaxed">
               We source our ingredients and raw materials from the nearest
               suppliers in Switzerland to reduce our carbon footprint. We also
               increasingly use ingredients that are readily biodegradable. In
@@ -30,30 +30,29 @@ export function MavalaCares() {
           </div>
 
           {/* Packaging Card */}
-          <div className="bg-white rounded-lg p-8 md:p-10 shadow-sm">
-            <h3 className="font-['Archivo'] text-[18px] md:text-[20px] font-semibold text-gray-800 mb-4">
+          <div className="bg-white rounded-lg p-5 md:p-6 shadow-sm">
+            <h3 className="font-['Archivo'] text-[17px] md:text-[18px] font-semibold text-gray-800 mb-2">
               Packaging
             </h3>
-            <p className="text-gray-600 text-[14px] md:text-[15px] leading-relaxed">
+            <p className="text-gray-600 text-[13px] md:text-[14px] leading-relaxed">
               Whenever possible, we package our products without a box or
               cellophane and in recycled and recyclable materials (including
-              plastic and glass) to reduce waste. We have also implemented
-              clear labelling on product packaging to assist you in knowing
-              which part of the packaging can be recycled and how.
+              plastic and glass) to reduce waste. We have also implemented clear
+              labelling on product packaging to assist you in knowing which part
+              of the packaging can be recycled and how.
             </p>
           </div>
 
           {/* Manufacturing Card */}
-          <div className="bg-white rounded-lg p-8 md:p-10 shadow-sm">
-            <h3 className="font-['Archivo'] text-[18px] md:text-[20px] font-semibold text-gray-800 mb-4">
+          <div className="bg-white rounded-lg p-5 md:p-6 shadow-sm">
+            <h3 className="font-['Archivo'] text-[17px] md:text-[18px] font-semibold text-gray-800 mb-2">
               Manufacturing
             </h3>
-            <p className="text-gray-600 text-[14px] md:text-[15px] leading-relaxed">
-              Whenever possible, we manufacture under cold conditions to
-              reduce energy consumption. We are also implementing strict waste
+            <p className="text-gray-600 text-[13px] md:text-[14px] leading-relaxed">
+              Whenever possible, we manufacture under cold conditions to reduce
+              energy consumption. We are also implementing strict waste
               separation and recycling processes in our production site and
-              warehouses, including that of our Canadian distributor in
-              Burnaby.
+              warehouses, including that of our Canadian distributor in Burnaby.
             </p>
           </div>
         </div>
