@@ -203,7 +203,7 @@ export default function FaceConcernsPage() {
                 className="flex flex-col items-center justify-start text-center cursor-pointer transition-opacity duration-200 group w-[calc(50%-8px)] sm:w-[calc(25%-18px)] md:w-[calc(20%-26px)] lg:w-[calc(16.66%-27px)]"
               >
                 {/* Circular Image Container - 15% larger */}
-                <div className="w-[184px] sm:w-[150px] md:w-[161px] lg:w-[175px] aspect-square mb-3 md:mb-4 overflow-hidden rounded-full mx-auto">
+                <div className="w-[184px] sm:w-[150px] md:w-[185px] lg:w-[210px] xl:w-[230px] aspect-square mb-3 md:mb-4 overflow-hidden rounded-full mx-auto">
                   <img
                     src={concern.image}
                     alt={concern.label}
