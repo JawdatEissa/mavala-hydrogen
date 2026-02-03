@@ -14,9 +14,9 @@ export function MavalaCares() {
         </p>
 
         {/* Three Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-8 md:mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-14 md:mb-18 max-w-[95%] mx-auto">
           {/* Ingredients Card */}
-          <div className="bg-white rounded-lg p-5 md:p-6 shadow-sm">
+          <div className="bg-white rounded-lg px-5 md:px-6 py-6 md:py-7 shadow-sm">
             <h3 className="font-['Archivo'] text-[17px] md:text-[18px] font-semibold text-gray-800 mb-2">
               Ingredients
             </h3>
@@ -30,7 +30,7 @@ export function MavalaCares() {
           </div>
 
           {/* Packaging Card */}
-          <div className="bg-white rounded-lg p-5 md:p-6 shadow-sm">
+          <div className="bg-white rounded-lg px-5 md:px-6 py-6 md:py-7 shadow-sm">
             <h3 className="font-['Archivo'] text-[17px] md:text-[18px] font-semibold text-gray-800 mb-2">
               Packaging
             </h3>
@@ -44,7 +44,7 @@ export function MavalaCares() {
           </div>
 
           {/* Manufacturing Card */}
-          <div className="bg-white rounded-lg p-5 md:p-6 shadow-sm">
+          <div className="bg-white rounded-lg px-5 md:px-6 py-6 md:py-7 shadow-sm">
             <h3 className="font-['Archivo'] text-[17px] md:text-[18px] font-semibold text-gray-800 mb-2">
               Manufacturing
             </h3>
