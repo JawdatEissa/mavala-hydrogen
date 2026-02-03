@@ -181,7 +181,7 @@ export default function NailDiagnosisPage() {
   return (
     <div className="min-h-screen bg-white pt-[90px] font-sans font-extralight">
       {/* Navigation Bar Section */}
-      <section className="pt-4 pb-4 md:pt-6 md:pb-6 px-4 md:px-8 bg-white">
+      <section className="pt-4 pb-2 md:pt-6 md:pb-3 px-4 md:px-8 bg-white">
         <div className="max-w-5xl mx-auto flex justify-center">
           {/* Mobile: 2-row pill-style layout */}
           <div className="md:hidden flex flex-col gap-2 w-full max-w-lg">
@@ -251,20 +251,20 @@ export default function NailDiagnosisPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-4 md:py-8 px-2 sm:px-4 md:px-6 lg:px-6 xl:px-4">
+      <section className="py-2 md:py-4 px-2 sm:px-4 md:px-6 lg:px-6 xl:px-4">
         <div className="max-w-[1600px] mx-auto">
           {/* Title */}
-          <h1 className="font-['Archivo'] text-[46px] md:text-[42px] font-medium text-[#ae1932] uppercase text-center tracking-[1px] mb-8 md:mb-12">
+          <h1 className="font-['Archivo'] text-[46px] md:text-[42px] font-medium text-[#ae1932] uppercase text-center tracking-[1px] mb-5 md:mb-8">
             NAIL CONCERNS
           </h1>
 
           {/* Nail Conditions Grid - 2 cols on mobile, scales up on larger screens */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-9 gap-x-1 gap-y-6 sm:gap-x-2 md:gap-x-3 md:gap-y-8">
+          <div className="flex flex-wrap justify-center gap-x-1 gap-y-6 sm:gap-x-2 md:gap-x-3 md:gap-y-8">
             {filteredConditions.map((condition, idx) => (
               <a
                 key={idx}
                 href={`/nail-concern/${condition.slug}`}
-                className="flex flex-col items-center justify-start text-center cursor-pointer hover:opacity-80 transition-opacity duration-200 group w-full"
+                className="flex flex-col items-center justify-start text-center cursor-pointer hover:opacity-80 transition-opacity duration-200 group w-[calc(50%-4px)] sm:w-[calc(25%-6px)] md:w-[calc(20%-10px)] lg:w-[calc(14.28%-10px)] xl:w-[calc(11.11%-10px)]"
               >
                 {/* Fixed height container - images scale from bottom for consistent text gap */}
                 <div className="w-full h-[125px] sm:h-[150px] md:h-[175px] lg:h-[188px] flex items-end justify-center bg-white">
@@ -288,7 +288,7 @@ export default function NailDiagnosisPage() {
                     decoding="async"
                   />
                 </div>
-                <p className={`font-['Archivo'] text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] uppercase text-gray-800 leading-tight font-medium ${condition.reducedGap ? 'mt-1' : 'mt-3'}`}>
+                <p className="font-['Archivo'] text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] uppercase text-gray-800 leading-tight font-medium mt-3">
                   {condition.name}
                 </p>
               </a>
