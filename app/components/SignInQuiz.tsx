@@ -247,20 +247,20 @@ export function SignInQuiz() {
   // Success/Complete Screen
   if (isComplete) {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="fixed inset-0 z-[99999] bg-white overflow-auto">
         <div className="flex flex-col md:flex-row min-h-screen">
           {/* Left Side - Success Message */}
-          <div className="w-full md:w-[40%] bg-white flex flex-col items-center justify-center px-6 md:px-12 py-12 md:py-20">
+          <div className="w-full md:w-[40%] bg-white flex flex-col items-center justify-center px-6 md:px-12 py-12 md:py-20 order-2 md:order-1">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="max-w-md text-center"
+              className="max-w-md text-center w-full"
             >
               {/* Success Icon */}
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-[#AE1932] flex items-center justify-center">
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 rounded-full bg-[#AE1932] flex items-center justify-center">
                 <svg
-                  className="w-10 h-10 text-white"
+                  className="w-8 h-8 md:w-10 md:h-10 text-white"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -274,43 +274,43 @@ export function SignInQuiz() {
                 </svg>
               </div>
 
-              <h1 className="font-['Archivo'] text-3xl md:text-4xl font-semibold text-[#AE1932] mb-4">
+              <h1 className="font-['Archivo'] text-2xl md:text-4xl font-semibold text-[#AE1932] mb-3 md:mb-4">
                 {language === 'en' ? 'Welcome to Mavala!' : 'Bienvenue chez Mavala!'}
               </h1>
 
-              <p className="font-['Archivo'] text-lg text-gray-600 mb-4">
+              <p className="font-['Archivo'] text-base md:text-lg text-gray-600 mb-3 md:mb-4">
                 {language === 'en'
                   ? `Hi ${answers[1] || 'there'}! Your account has been created.`
                   : `Bonjour ${answers[1] || ''}! Votre compte a été créé.`}
               </p>
 
-              <p className="font-['Archivo'] text-base text-gray-500 mb-8">
+              <p className="font-['Archivo'] text-sm md:text-base text-gray-500 mb-6 md:mb-8">
                 {language === 'en'
                   ? 'Get ready to discover personalized beauty recommendations just for you.'
                   : 'Préparez-vous à découvrir des recommandations beauté personnalisées rien que pour vous.'}
               </p>
 
               {/* Perks */}
-              <div className="bg-gray-50 rounded-xl p-6 mb-8 text-left">
-                <h3 className="font-['Archivo'] text-sm uppercase tracking-wider text-gray-500 mb-4">
+              <div className="bg-gray-50 rounded-xl p-4 md:p-6 mb-6 md:mb-8 text-left">
+                <h3 className="font-['Archivo'] text-xs md:text-sm uppercase tracking-wider text-gray-500 mb-3 md:mb-4">
                   {language === 'en' ? 'Your Member Benefits' : 'Vos Avantages Membre'}
                 </h3>
-                <ul className="space-y-3">
+                <ul className="space-y-2 md:space-y-3">
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-[#AE1932] rounded-full flex-shrink-0"></span>
-                    <span className="font-['Archivo'] text-gray-700">
+                    <span className="font-['Archivo'] text-sm md:text-base text-gray-700">
                       {language === 'en' ? 'Personalized product recommendations' : 'Recommandations produits personnalisées'}
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-[#AE1932] rounded-full flex-shrink-0"></span>
-                    <span className="font-['Archivo'] text-gray-700">
+                    <span className="font-['Archivo'] text-sm md:text-base text-gray-700">
                       {language === 'en' ? 'Exclusive member discounts' : 'Réductions membres exclusives'}
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-[#AE1932] rounded-full flex-shrink-0"></span>
-                    <span className="font-['Archivo'] text-gray-700">
+                    <span className="font-['Archivo'] text-sm md:text-base text-gray-700">
                       {language === 'en' ? 'Early access to new products' : 'Accès anticipé aux nouveaux produits'}
                     </span>
                   </li>
@@ -319,7 +319,7 @@ export function SignInQuiz() {
 
               <Link
                 to="/"
-                className="inline-block w-full px-8 py-4 bg-[#AE1932] text-white font-['Archivo'] text-sm font-semibold uppercase tracking-wider rounded-lg hover:bg-[#8d1428] transition-colors duration-200"
+                className="inline-block w-full px-6 md:px-8 py-3 md:py-4 bg-[#AE1932] text-white font-['Archivo'] text-sm font-semibold uppercase tracking-wider rounded-lg hover:bg-[#8d1428] transition-colors duration-200"
               >
                 {language === 'en' ? 'Start Exploring' : 'Commencer à Explorer'}
               </Link>
@@ -327,11 +327,11 @@ export function SignInQuiz() {
           </div>
 
           {/* Right Side - Image */}
-          <div className="w-full md:w-[60%] relative bg-gray-100 min-h-[400px] md:min-h-screen">
+          <div className="w-full md:w-[60%] relative bg-gray-100 h-[200px] md:h-auto md:min-h-screen order-1 md:order-2">
             <img
               src="/quiz/step9.jpg"
               alt="Welcome"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover object-top"
             />
           </div>
         </div>
@@ -340,9 +340,9 @@ export function SignInQuiz() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="fixed inset-0 z-[99999] bg-white overflow-auto">
       {/* Progress Bar */}
-      <div className="fixed top-0 left-0 right-0 h-1 bg-gray-100 z-50">
+      <div className="fixed top-0 left-0 right-0 h-1 bg-gray-100 z-[100000]">
         <motion.div
           className="h-full bg-[#AE1932]"
           initial={{ width: 0 }}
@@ -351,17 +351,17 @@ export function SignInQuiz() {
         />
       </div>
 
-      {/* Top Bar with Logo, Language Toggle, and Back */}
-      <div className="fixed top-4 left-4 right-4 z-50 flex justify-between items-center">
+      {/* Top Bar with Back and Language Toggle */}
+      <div className="fixed top-3 left-3 right-3 md:top-4 md:left-4 md:right-4 z-[100000] flex justify-between items-center">
         {/* Back to Home */}
         <Link
           to="/"
-          className="flex items-center gap-2 px-4 py-2 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg text-gray-600 hover:text-[#AE1932] hover:border-[#AE1932] transition-colors duration-200 shadow-sm"
+          className="flex items-center gap-1 md:gap-2 px-3 py-2 md:px-4 bg-white/95 backdrop-blur-sm border border-gray-200 rounded-lg text-gray-600 hover:text-[#AE1932] hover:border-[#AE1932] transition-colors duration-200 shadow-md"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          <span className="font-['Archivo'] text-sm font-medium">
+          <span className="font-['Archivo'] text-sm font-medium hidden sm:inline">
             {language === 'en' ? 'Back' : 'Retour'}
           </span>
         </Link>
@@ -369,30 +369,52 @@ export function SignInQuiz() {
         {/* Language Toggle */}
         <button
           onClick={toggleLanguage}
-          className="px-4 py-2 bg-white/90 backdrop-blur-sm border border-gray-200 text-gray-600 font-['Archivo'] text-sm font-semibold uppercase tracking-wider rounded-lg hover:border-[#AE1932] hover:text-[#AE1932] transition-colors duration-200 shadow-sm"
+          className="px-3 py-2 md:px-4 bg-white/95 backdrop-blur-sm border border-gray-200 text-gray-600 font-['Archivo'] text-sm font-semibold uppercase tracking-wider rounded-lg hover:border-[#AE1932] hover:text-[#AE1932] transition-colors duration-200 shadow-md"
         >
           {language === 'en' ? 'FR' : 'EN'}
         </button>
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col md:flex-row min-h-screen pt-1">
-        {/* Left Side - Questions (40% on desktop) */}
-        <div className="w-full md:w-[40%] bg-white flex flex-col justify-center px-6 md:px-12 py-20 md:py-20 relative">
+      <div className="flex flex-col md:flex-row min-h-screen">
+        {/* Mobile: Image at top */}
+        <div className="md:hidden w-full h-[35vh] relative bg-gray-100">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`mobile-${currentStep}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <img
+                src={step.imageSrc}
+                alt={`Step ${step.id}`}
+                className="w-full h-full object-cover object-top"
+              />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/50"></div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        {/* Left Side - Questions */}
+        <div className="w-full md:w-[40%] bg-white flex flex-col justify-start md:justify-center px-5 md:px-12 py-6 md:py-20 relative">
           <AnimatePresence mode="wait">
             <motion.div
               key={`${currentStep}-${language}`}
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
+              exit={{ opacity: 0, x: -30 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
-              className="max-w-md mx-auto w-full flex-1 flex flex-col justify-center"
+              className="max-w-md mx-auto w-full"
             >
               {/* Step Number Indicator and Navigation */}
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between mb-4 md:mb-6">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-[#AE1932] flex items-center justify-center">
-                    <span className="text-white font-['Archivo'] text-sm font-semibold">
+                  <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-[#AE1932] flex items-center justify-center">
+                    <span className="text-white font-['Archivo'] text-xs md:text-sm font-semibold">
                       {currentStep + 1}
                     </span>
                   </div>
@@ -406,11 +428,11 @@ export function SignInQuiz() {
                   <button
                     onClick={handlePrevious}
                     disabled={currentStep === 0}
-                    className="w-12 h-12 rounded-lg bg-white border-2 border-gray-300 hover:border-[#AE1932] hover:bg-red-50 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-gray-300 disabled:hover:bg-white flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#AE1932] shadow-md hover:shadow-lg"
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-white border-2 border-gray-300 hover:border-[#AE1932] hover:bg-red-50 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-gray-300 disabled:hover:bg-white flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#AE1932] shadow-md hover:shadow-lg"
                     aria-label="Previous step"
                   >
                     <svg
-                      className="w-6 h-6 text-gray-700"
+                      className="w-5 h-5 md:w-6 md:h-6 text-gray-700"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -426,11 +448,11 @@ export function SignInQuiz() {
                   <button
                     onClick={handleNext}
                     disabled={!hasAnswer}
-                    className="w-12 h-12 rounded-lg bg-[#AE1932] hover:bg-[#8d1428] disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#AE1932] shadow-md hover:shadow-lg"
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#AE1932] hover:bg-[#8d1428] disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#AE1932] shadow-md hover:shadow-lg"
                     aria-label="Next step"
                   >
                     <svg
-                      className="w-6 h-6 text-white"
+                      className="w-5 h-5 md:w-6 md:h-6 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -452,11 +474,11 @@ export function SignInQuiz() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
-                  className="mb-6"
+                  className="mb-3 md:mb-6"
                 >
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-[#AE1932]"></div>
-                    <p className="font-['Archivo'] text-base md:text-lg text-gray-700 font-medium">
+                    <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-[#AE1932]"></div>
+                    <p className="font-['Archivo'] text-sm md:text-lg text-gray-700 font-medium">
                       {stepTranslations.intro}
                     </p>
                   </div>
@@ -468,7 +490,7 @@ export function SignInQuiz() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15 }}
-                className="font-['Archivo'] text-2xl md:text-3xl font-semibold text-[#AE1932] mb-4"
+                className="font-['Archivo'] text-xl md:text-3xl font-semibold text-[#AE1932] mb-2 md:mb-4"
               >
                 {stepTranslations.question}
               </motion.h2>
@@ -479,7 +501,7 @@ export function SignInQuiz() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.2 }}
-                  className="font-['Archivo'] text-sm text-gray-600 mb-6"
+                  className="font-['Archivo'] text-xs md:text-sm text-gray-600 mb-4 md:mb-6"
                 >
                   {stepTranslations.subtext}
                 </motion.p>
@@ -491,7 +513,7 @@ export function SignInQuiz() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.25 }}
-                  className="space-y-3 mb-8"
+                  className="space-y-2 md:space-y-3 mb-4 md:mb-8"
                 >
                   {stepTranslations.options.map((option, index) => {
                     const letter = String.fromCharCode(65 + index);
@@ -500,7 +522,7 @@ export function SignInQuiz() {
                       <button
                         key={index}
                         onClick={() => handleChoiceSelect(option)}
-                        className={`w-full text-left px-6 py-4 border-2 rounded-lg font-['Archivo'] text-base transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#AE1932] focus:ring-offset-2 ${
+                        className={`w-full text-left px-4 py-3 md:px-6 md:py-4 border-2 rounded-lg font-['Archivo'] text-sm md:text-base transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#AE1932] focus:ring-offset-2 ${
                           isSelected
                             ? 'border-[#AE1932] bg-red-50'
                             : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
@@ -526,7 +548,7 @@ export function SignInQuiz() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.25 }}
-                  className="mb-8"
+                  className="mb-4 md:mb-8"
                 >
                   <div className="relative">
                     <input
@@ -539,7 +561,7 @@ export function SignInQuiz() {
                         }
                       }}
                       placeholder={stepTranslations.placeholder}
-                      className="w-full px-4 py-4 border-2 border-gray-200 focus:border-[#AE1932] rounded-lg focus:outline-none font-['Archivo'] text-base text-gray-900 placeholder-gray-400 transition-colors"
+                      className="w-full px-4 py-3 md:py-4 border-2 border-gray-200 focus:border-[#AE1932] rounded-lg focus:outline-none font-['Archivo'] text-sm md:text-base text-gray-900 placeholder-gray-400 transition-colors"
                       autoComplete={step.type === 'email' ? 'email' : step.type === 'password' ? 'new-password' : 'given-name'}
                     />
                     {step.type === 'password' && (
@@ -564,7 +586,7 @@ export function SignInQuiz() {
                   
                   {/* Validation hint for password */}
                   {step.type === 'password' && inputValue.length > 0 && inputValue.length < 8 && (
-                    <p className="mt-2 text-sm text-amber-600 font-['Archivo']">
+                    <p className="mt-2 text-xs md:text-sm text-amber-600 font-['Archivo']">
                       {language === 'en' 
                         ? `${8 - inputValue.length} more characters needed`
                         : `${8 - inputValue.length} caractères de plus nécessaires`}
@@ -574,7 +596,7 @@ export function SignInQuiz() {
                   <button
                     onClick={handleTextSubmit}
                     disabled={!hasAnswer}
-                    className="mt-6 w-full px-8 py-4 bg-[#AE1932] text-white font-['Archivo'] text-sm font-semibold uppercase tracking-wider rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#8d1428] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#AE1932] focus:ring-offset-2"
+                    className="mt-4 md:mt-6 w-full px-6 md:px-8 py-3 md:py-4 bg-[#AE1932] text-white font-['Archivo'] text-sm font-semibold uppercase tracking-wider rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#8d1428] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#AE1932] focus:ring-offset-2"
                   >
                     {language === 'en' ? 'Continue' : 'Continuer'}
                   </button>
@@ -587,7 +609,7 @@ export function SignInQuiz() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
-                  className="text-center font-['Archivo'] text-sm text-gray-500"
+                  className="text-center font-['Archivo'] text-xs md:text-sm text-gray-500 mt-2"
                 >
                   {language === 'en' ? 'Already have an account? ' : 'Vous avez déjà un compte? '}
                   <button className="text-[#AE1932] hover:underline font-medium">
@@ -599,11 +621,11 @@ export function SignInQuiz() {
           </AnimatePresence>
         </div>
 
-        {/* Right Side - Image (60% on desktop) */}
-        <div className="w-full md:w-[60%] relative bg-gray-100 min-h-[400px] md:min-h-screen">
+        {/* Right Side - Image (60% on desktop, hidden on mobile since we show it at top) */}
+        <div className="hidden md:block md:w-[60%] relative bg-gray-100 md:min-h-screen">
           <AnimatePresence mode="wait">
             <motion.div
-              key={currentStep}
+              key={`desktop-${currentStep}`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -619,8 +641,6 @@ export function SignInQuiz() {
                   (e.target as HTMLImageElement).style.display = 'none';
                 }}
               />
-              {/* Gradient overlay for better text readability on mobile */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent md:hidden"></div>
             </motion.div>
           </AnimatePresence>
         </div>
