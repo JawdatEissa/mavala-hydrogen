@@ -6,5 +6,6 @@ export * from './BlogCard';
 export * from './HeroVideo';
 export * from './CategoryGrid';
 export * from './SkinDiagnosis';
+export * from './SignInQuiz';
 export * from './OptimizedImage';
 
