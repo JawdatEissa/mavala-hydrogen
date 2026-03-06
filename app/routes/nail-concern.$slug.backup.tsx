@@ -24,7 +24,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
         (prod) =>
           prod.slug === productSlug ||
           prod.slug === `all-products_${productSlug}` ||
-          prod.slug.endsWith(`_${productSlug}`)
+          prod.slug.endsWith(`_${productSlug}`),
       );
 
       if (product) {
@@ -110,19 +110,18 @@ export default function NailConcernPage() {
               SOLUTION
             </h2>
 
-            {concern.solution && (
-              <p className="font-['Archivo'] text-[15px] md:text-[16px] leading-relaxed text-gray-800 mb-10">
-                {concern.solution}
-              </p>
-            )}
-
             {concern.products && concern.products.length > 0 && (
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-7">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 mb-10">
                 {concern.products.map((product: any) => (
                   <ProductCard key={product.slug} product={product} />
                 ))}
               </div>
             )}
+
+            {/* Solution Text */}
+            <p className="font-['Archivo'] text-[15px] md:text-[16px] leading-relaxed text-gray-800">
+              {concern.solution}
+            </p>
           </div>
 
           {/* Back to Nail Concerns */}

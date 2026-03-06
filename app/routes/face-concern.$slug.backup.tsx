@@ -24,7 +24,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
         (prod) =>
           prod.slug === productSlug ||
           prod.slug === `all-products_${productSlug}` ||
-          prod.slug.endsWith(`_${productSlug}`)
+          prod.slug.endsWith(`_${productSlug}`),
       );
 
       if (product) {
@@ -120,7 +120,7 @@ export default function FaceConcernPage() {
               <h3 className="font-['Archivo'] text-[16px] md:text-[18px] font-semibold text-gray-800 uppercase mb-8">
                 Recommended Products
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-7">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                 {concern.products.map((product: any) => (
                   <ProductCard key={product.slug} product={product} />
                 ))}
