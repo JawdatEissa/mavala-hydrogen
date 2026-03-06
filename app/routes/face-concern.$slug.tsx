@@ -1,34 +1,25 @@
 import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { useLoaderData, Link } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import faceConcernsData from "../data/face-concerns.json";
 import { loadScrapedProducts } from "../lib/scraped-products.server";
-import { isBestsellerSlug } from "../lib/bestsellers";
-import { BestsellerBadge } from "../components/BestsellerBadge";
 import { MavalaCares } from "../components/MavalaCares";
-import { formatPriceToCad } from "../lib/currency";
+import { ProductCard } from "../components/ProductCard";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const { slug } = params;
 
-  // Load all products for product mapping
   const allProducts = loadScrapedProducts();
 
-  // Find the face concern data
   const concernData = faceConcernsData.find((c) => c.slug === slug);
 
   if (!concernData) {
     throw new Response("Face concern not found", { status: 404 });
   }
 
-  // Map products to actual product data
   const products =
     concernData.products?.map((p) => {
-      // Use src from face-concerns.json directly, fallback to database if needed
-      const images = p.src ? [p.src] : [];
-
-      // Try to get product from database for additional info
-      let productSlug = p.product_slug;
+      const productSlug = p.product_slug;
       const product = allProducts.find(
         (prod) =>
           prod.slug === productSlug ||
@@ -36,12 +27,20 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
           prod.slug.endsWith(`_${productSlug}`),
       );
 
+      if (product) {
+        return {
+          ...product,
+          slug: productSlug,
+        };
+      }
+
       return {
-        name: p.name,
-        slug: p.product_slug,
-        images: images.length > 0 ? images : product?.images || [],
-        price: product?.price || product?.price_from || "",
-        category: product?.categories?.[0] || "",
+        url: `/products/${productSlug}`,
+        slug: productSlug,
+        title: p.name,
+        price: "",
+        images: p.src ? [p.src] : [],
+        categories: [],
       };
     }) || [];
 
@@ -116,60 +115,15 @@ export default function FaceConcernPage() {
             ))}
           </div>
 
-          {/* Display products AFTER solution text */}
           {concern.products && concern.products.length > 0 && (
             <div className="mt-12">
               <h3 className="font-['Archivo'] text-[16px] md:text-[18px] font-semibold text-gray-800 uppercase mb-8">
                 Recommended Products
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
-                {concern.products.map((product) => {
-                  const showBestsellerBadge =
-                    product.slug && isBestsellerSlug(product.slug);
-                  const displayPrice = product.price
-                    ? formatPriceToCad(product.price)
-                    : "";
-
-                  return (
-                    <Link
-                      key={product.slug}
-                      to={`/products/${product.slug}`}
-                      className="product-card group relative flex flex-col w-full"
-                    >
-                      <div className="relative overflow-hidden bg-[#f5f5f5] rounded-[3px] aspect-[4/5] flex items-center justify-center p-8 md:p-10 transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
-                        {showBestsellerBadge && <BestsellerBadge />}
-                        {product.images && product.images[0] ? (
-                          <img
-                            src={product.images[0]}
-                            alt={product.name}
-                            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center">
-                            <span className="text-gray-400 text-xs">
-                              No image
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                      <div className="mt-4 text-left">
-                        <h3 className="font-['Archivo'] text-[15px] md:text-[17px] font-medium text-gray-900 leading-snug">
-                          {product.name}
-                        </h3>
-                        {product.category && (
-                          <p className="font-['Archivo'] text-[13px] md:text-[14px] text-gray-500 mt-1">
-                            {product.category}
-                          </p>
-                        )}
-                        {displayPrice && (
-                          <span className="font-['Archivo'] text-[14px] md:text-[16px] font-semibold text-[#ae1932] mt-1 block">
-                            {displayPrice}
-                          </span>
-                        )}
-                      </div>
-                    </Link>
-                  );
-                })}
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                {concern.products.map((product: any) => (
+                  <ProductCard key={product.slug} product={product} />
+                ))}
               </div>
             </div>
           )}
