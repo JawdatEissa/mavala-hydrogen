@@ -262,6 +262,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       titleLower.includes("bio") &&
       (titleLower.includes("color") || titleLower.includes("nail"));
     const is002Base = titleLower.includes("002") && titleLower.includes("base");
+    const isMavaStrong = p.slug === "mava-strong";
 
     return (
       isBaseCoat ||
@@ -269,7 +270,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       isPolishDryer ||
       isRemover ||
       isBioColor ||
-      is002Base
+      is002Base ||
+      isMavaStrong
     );
   });
 
@@ -543,10 +545,11 @@ export default function ColorPage() {
     const slugLower = product.slug?.toLowerCase() || "";
     const categories: string[] = [];
 
-    // Base Coat - must have both "base" AND "coat" (or be 002)
+    // Base Coat - must have both "base" AND "coat" (or be 002, or be mava-strong)
     const isBaseCoat =
       (titleLower.includes("base") && titleLower.includes("coat")) ||
-      (titleLower.includes("002") && titleLower.includes("base"));
+      (titleLower.includes("002") && titleLower.includes("base")) ||
+      slugLower === "mava-strong";
     if (isBaseCoat) {
       categories.push("Base Coat");
       return categories; // Base coat products are ONLY base coats
