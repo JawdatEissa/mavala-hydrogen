@@ -590,7 +590,7 @@ function ImageGallery({
   const isScientifiqueK = productSlug === "mavala-scientifique-k";
   const isMavadrySpray = productSlug === "mavadry-spray";
   const isMavalaStop = productSlug === "mavala-stop";
-  const isNailactan = productSlug === "nailactan-1";
+  const isNailactan = productSlug === "nailactan-1" || productSlug === "nailactan-jar";
   const isNailWhiteCrayon = productSlug === "nail-white-crayon";
 
   // Background color: white for collection products and nail-white-crayon, grey for others

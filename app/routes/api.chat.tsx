@@ -672,6 +672,13 @@ const PRODUCT_CATALOG: Record<string, SuggestedProduct> = {
     image: "/images/nailactan-1/01.png",
     category: "Nail Repair",
   },
+  "nailactan-jar": {
+    handle: "nailactan-jar",
+    title: "NAILACTAN JAR",
+    price: "23.10 €",
+    image: "/images/nailactan-jar/01.png",
+    category: "Nail Repair",
+  },
   "bb-cream": {
     handle: "bb-cream",
     title: "BB CREAM",
