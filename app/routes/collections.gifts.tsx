@@ -2,10 +2,7 @@ import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { useState } from "react";
-import {
-  CategoryHero,
-  CategoryProductSection,
-} from "../components/CategoryPageTemplate";
+import { CategoryProductSection } from "../components/CategoryPageTemplate";
 import {
   loadScrapedProducts,
   getProductsByCategory,
@@ -143,11 +140,16 @@ export default function GiftSetsPage() {
   return (
     <div className="min-h-screen bg-white pt-[90px]">
       {/* Hero Section */}
-      <CategoryHero
-        imageSrc="/gift-sets-hero.png"
-        alt="Mavala Swiss beauty gift sets for every occasion"
-        heightClassName="h-[22vh] md:h-[36vh]"
-        objectPosition="50% 50%"
+      <div
+        className="w-full h-[22vh] md:h-[36vh]"
+        style={{
+          backgroundImage: "url('/gift-sets-hero.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "50% 55%",
+          backgroundRepeat: "no-repeat",
+        }}
+        role="img"
+        aria-label="Mavala Swiss beauty gift sets for every occasion"
       />
 
       {/* Filter Bar */}
