@@ -297,7 +297,7 @@ export default function FaceLipsPage() {
           </div>
 
           {/* Desktop: Single row (same values as Color page) */}
-          <div className="hidden md:flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-2xl p-2.5 shadow-sm w-full">
+          <div className="hidden md:flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-2xl p-2.5 shadow-sm w-fit">
             {normalizedSections.map((tab) => (
               <button
                 key={tab.id}
