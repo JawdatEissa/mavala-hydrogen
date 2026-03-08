@@ -15,7 +15,12 @@
           "description": "A daily care that moisturises and protects your hands.",
           "image": null,
           "url": "https://mavala.com.au/hand-cream"
-        },
+        }
+      ]
+    },
+    {
+      "title": "SPECIFIC HAND CARE",
+      "products": [
         {
           "name": "PREBIOTIC HAND CREAM",
           "slug": "prebiotic-hand-cream",
@@ -31,12 +36,7 @@
           "description": "Extreme hand care for very dry, very stressed hands.",
           "image": null,
           "url": "https://mavala.com.au/mava-hand-cream-1"
-        }
-      ]
-    },
-    {
-      "title": "SPECIFIC HAND CARE",
-      "products": [
+        },
         {
           "name": "ANTI-SPOT CREAM FOR HANDS",
           "slug": "anti-spot-cream-for-hands",

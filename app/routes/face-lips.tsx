@@ -137,18 +137,15 @@ export default function FaceLipsPage() {
         products: byTitle.get("COMPLEXION")?.products ?? [],
       },
       {
-        id: "wrinkles",
-        label: "Wrinkles",
-        title: "WRINKLES",
-        subtitle: byTitle.get("ANTI-AGE PRO")?.subtitle,
-        products: byTitle.get("ANTI-AGE PRO")?.products ?? [],
-      },
-      {
-        id: "anti-age-nutrition",
-        label: "Anti Age",
-        title: "ANTI AGE NUTRITION",
-        subtitle: byTitle.get("NUTRI-ELIXIR")?.subtitle,
-        products: byTitle.get("NUTRI-ELIXIR")?.products ?? [],
+        id: "anti-age",
+        label: "Anti-Age",
+        title: "ANTI-AGE",
+        subtitle:
+          "Complete anti-aging skincare to correct signs of ageing, improve skin density, glow and elasticity.",
+        products: [
+          ...(byTitle.get("ANTI-AGE PRO")?.products ?? []),
+          ...(byTitle.get("NUTRI-ELIXIR")?.products ?? []),
+        ],
       },
       {
         id: "hydration",
@@ -191,7 +188,7 @@ export default function FaceLipsPage() {
 
   const activeSection = normalizedSections.find((s) => s.id === activeTabId);
 
-  // Mobile: split into 2 rows (like Color page), 4 + 4 by default
+  // Mobile: split into 2 rows (like Color page), 4 + 3
   const topRowTabs = normalizedSections.slice(0, 4);
   const bottomRowTabs = normalizedSections.slice(4);
 

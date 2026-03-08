@@ -72,7 +72,7 @@ export default function EyeBeautyPage() {
       // Keep labels short so they fit cleanly in mobile pills (incl. large phones)
       const labelMap: Record<string, string> = {
         "EYE CARE": "EYE CARE",
-        "EYE CONTOUR": "EYE CONTOUR",
+        "EYE MAKE-UP": "EYE MAKE-UP",
         "EYE LASHES": "EYE LASHES",
         EYEBROWS: "EYEBROWS",
         "EYE LIDS": "EYELIDS",
