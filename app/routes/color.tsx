@@ -263,6 +263,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       (titleLower.includes("color") || titleLower.includes("nail"));
     const is002Base = titleLower.includes("002") && titleLower.includes("base");
     const isMavaStrong = p.slug === "mava-strong";
+    const isColorfix = p.slug === "colorfix";
 
     return (
       isBaseCoat ||
@@ -271,7 +272,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       isRemover ||
       isBioColor ||
       is002Base ||
-      isMavaStrong
+      isMavaStrong ||
+      isColorfix
     );
   });
 
@@ -555,8 +557,10 @@ export default function ColorPage() {
       return categories; // Base coat products are ONLY base coats
     }
 
-    // Top Coat - must have both "top" AND "coat"
-    const isTopCoat = titleLower.includes("top") && titleLower.includes("coat");
+    // Top Coat - must have both "top" AND "coat" (or be colorfix)
+    const isTopCoat =
+      (titleLower.includes("top") && titleLower.includes("coat")) ||
+      slugLower === "colorfix";
     if (isTopCoat) {
       categories.push("Top Coat");
       return categories; // Top coat products are ONLY top coats
