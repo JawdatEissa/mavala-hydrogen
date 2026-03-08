@@ -108,7 +108,7 @@ const COLOR_MAPPINGS: Record<
 // NOTE: Removed "10ml-bottles" (B2B only) and "french-manicure-kit" (single SKU, not needed)
 const CLASSICS_SLUGS = ["the-basics", "cream-colors", "pearl-colors"];
 
-// Mini Colours Collections - themed collections with multiple shades
+// Mini Color's Collections - themed collections with multiple shades
 const COLLECTIONS_SLUGS = [
   "pop-wave",
   "neo-nudes",
@@ -526,7 +526,7 @@ function SectionHeader({ title, id }: { title: string; id: string }) {
 export default function ColorPage() {
   const { classics, collections, shades, otherProducts, shadeColors } =
     useLoaderData<typeof loader>();
-  const [activeTab, setActiveTab] = useState<string>("Mini Colours");
+  const [activeTab, setActiveTab] = useState<string>("Mini Color's");
 
   // Combine all products and DEDUPLICATE by slug to prevent duplicates
   const allProducts = (() => {
@@ -590,14 +590,14 @@ export default function ColorPage() {
       // Bio products can also be in Collections
     }
 
-    // Mini Colours Collection - themed collections (pop-wave, neo-nudes, etc.)
+    // Mini Color's Collection - themed collections (pop-wave, neo-nudes, etc.)
     const isCollection = COLLECTIONS_SLUGS.includes(product.slug);
     if (isCollection) {
-      categories.push("Mini Colours Collection");
-      return categories; // Collections ONLY in Collections tab, not in Mini Colours
+      categories.push("Mini Color's Collection");
+      return categories; // Collections ONLY in Collections tab, not in Mini Color's
     }
 
-    // Mini Colours - for products in classics, shades arrays OR nail polishes (NOT collections)
+    // Mini Color's - for products in classics, shades arrays OR nail polishes (NOT collections)
     const isInClassicsOrShades =
       CLASSICS_SLUGS.includes(product.slug) ||
       SHADES_SLUGS.includes(product.slug);
@@ -608,7 +608,7 @@ export default function ColorPage() {
       titleLower.includes("shade");
 
     if (isInClassicsOrShades || isNailPolish) {
-      categories.push("Mini Colours");
+      categories.push("Mini Color's");
     }
 
     return categories;
@@ -622,8 +622,8 @@ export default function ColorPage() {
 
   // Tab categories - organized for 2-row mobile display
   const tabs = [
-    { id: "Mini Colours", label: "Mini Colours" },
-    { id: "Mini Colours Collection", label: "Collections" },
+    { id: "Mini Color's", label: "Mini Color's" },
+    { id: "Mini Color's Collection", label: "Collections" },
     { id: "Mini Bio", label: "Mini Bio" },
     { id: "Base Coat", label: "Base Coat" },
     { id: "Top Coat", label: "Top Coat" },
@@ -632,7 +632,7 @@ export default function ColorPage() {
   ];
 
   // Split tabs for 2-row mobile layout
-  const topRowTabs = tabs.slice(0, 3); // Mini Colours, Collections, Mini Bio
+  const topRowTabs = tabs.slice(0, 3); // Mini Color's, Collections, Mini Bio
   const bottomRowTabs = tabs.slice(3); // Base Coat, Top Coat, Polish Dryer, Remover
 
   return (
@@ -652,7 +652,7 @@ export default function ColorPage() {
         <div className="max-w-5xl mx-auto flex justify-center">
           {/* Mobile: 2-row pill-style layout */}
           <div className="md:hidden flex flex-col gap-2 w-full max-w-md">
-            {/* First row: Mini Colours, Collections, Mini Bio */}
+            {/* First row: Mini Color's, Collections, Mini Bio */}
             <div className="flex items-center justify-center gap-2">
               {topRowTabs.map((tab) => (
                 <button
