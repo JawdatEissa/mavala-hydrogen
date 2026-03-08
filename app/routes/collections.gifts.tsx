@@ -145,7 +145,7 @@ export default function GiftSetsPage() {
         style={{
           backgroundImage: "url('/gift-sets-hero.png')",
           backgroundSize: "cover",
-          backgroundPosition: "50% 55%",
+          backgroundPosition: "50% 50%",
           backgroundRepeat: "no-repeat",
         }}
         role="img"
