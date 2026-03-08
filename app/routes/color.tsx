@@ -587,7 +587,7 @@ export default function ColorPage() {
       slugLower.includes("bio-color");
     if (isBio) {
       categories.push("Mini Bio");
-      // Bio products can also be in Collections
+      return categories; // Bio products are ONLY in Mini Bio tab
     }
 
     // Mini Color's Collection - themed collections (pop-wave, neo-nudes, etc.)
