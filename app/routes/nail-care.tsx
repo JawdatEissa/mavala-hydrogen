@@ -41,9 +41,12 @@ const NAIL_CAMOUFLAGE_SLUGS = [
   "nail-shield",
   "ridge-filler",
   "mava-white",
+  "post-artificial-nails-kit",
+];
+
+const NAIL_ALERT_SLUGS = [
   "mavala-stop",
   "mavala-stop-pen",
-  "post-artificial-nails-kit",
 ];
 
 const NAIL_BEAUTY_SLUGS = [
@@ -136,6 +139,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   const penetratingCare = getProductsBySlug(PENETRATING_CARE_SLUGS);
   const cuticleCare = getProductsBySlug(CUTICLE_CARE_SLUGS);
   const nailCamouflage = getProductsBySlug(NAIL_CAMOUFLAGE_SLUGS);
+  const nailAlert = getProductsBySlug(NAIL_ALERT_SLUGS);
   const nailBeauty = getProductsBySlug(NAIL_BEAUTY_SLUGS);
   const manicureInstruments = getProductsBySlug(MANICURE_INSTRUMENTS_SLUGS);
   const nailPolishRemovers = getProductsBySlug(NAIL_POLISH_REMOVERS_SLUGS);
@@ -144,6 +148,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     penetratingCare,
     cuticleCare,
     nailCamouflage,
+    nailAlert,
     nailBeauty,
     manicureInstruments,
     nailPolishRemovers,
@@ -166,6 +171,7 @@ export default function NailCarePage() {
     penetratingCare,
     cuticleCare,
     nailCamouflage,
+    nailAlert,
     nailBeauty,
     manicureInstruments,
     nailPolishRemovers,
@@ -190,9 +196,16 @@ export default function NailCarePage() {
       {
         id: "nail-camouflage",
         label: "Nail Camouflage",
-        mobileLabel: "CAMOFLAUGE",
+        mobileLabel: "CAMOUFLAGE",
         title: "NAIL CAMOUFLAGE",
         products: nailCamouflage,
+      },
+      {
+        id: "nail-alert",
+        label: "Nail Alert",
+        mobileLabel: "ALERT",
+        title: "NAIL ALERT",
+        products: nailAlert,
       },
       {
         id: "nail-beauty",
@@ -222,13 +235,14 @@ export default function NailCarePage() {
     penetratingCare,
     cuticleCare,
     nailCamouflage,
+    nailAlert,
     nailBeauty,
     manicureInstruments,
     nailPolishRemovers,
   ]);
 
-  const topRowTabs = categories.slice(0, 3);
-  const bottomRowTabs = categories.slice(3);
+  const topRowTabs = categories.slice(0, 4);
+  const bottomRowTabs = categories.slice(4);
   const [activeCategoryId, setActiveCategoryId] = useState<string>(
     categories[0]?.id ?? "penetrating-care"
   );
@@ -357,25 +371,27 @@ export default function NailCarePage() {
             </div>
           </div>
 
-          {/* Desktop: Single row (same as /color) */}
-          <div className="hidden md:flex items-center justify-center gap-2 bg-white border border-gray-200 rounded-2xl p-[10.5px] shadow-sm w-fit max-w-full">
-            {categories.map((tab) => (
-              <button
-                key={tab.id}
-                type="button"
-                onClick={() => setActiveCategoryId(tab.id)}
-                className={`
-                  px-6 py-[14.7px] rounded-xl font-['Archivo'] text-[14px] font-medium uppercase tracking-wide transition-colors duration-150 whitespace-nowrap
-                  ${
-                    activeCategoryId === tab.id
-                      ? "bg-[#ae1932] text-white"
-                      : "bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]"
-                  }
-                `}
-              >
-                {tab.label}
-              </button>
-            ))}
+          {/* Desktop: Single scrollable row */}
+          <div className="hidden md:block w-full overflow-x-auto">
+            <div className="flex items-center gap-2 bg-white border border-gray-200 rounded-2xl p-2.5 shadow-sm w-max mx-auto">
+              {categories.map((tab) => (
+                <button
+                  key={tab.id}
+                  type="button"
+                  onClick={() => setActiveCategoryId(tab.id)}
+                  className={`
+                    px-5 py-3.5 rounded-xl font-['Archivo'] text-[13px] font-medium uppercase tracking-wide transition-colors duration-150 whitespace-nowrap
+                    ${
+                      activeCategoryId === tab.id
+                        ? "bg-[#ae1932] text-white"
+                        : "bg-transparent text-gray-600 hover:bg-gray-100 hover:text-[#ae1932]"
+                    }
+                  `}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>

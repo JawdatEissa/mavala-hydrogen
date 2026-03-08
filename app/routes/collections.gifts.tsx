@@ -68,7 +68,6 @@ const GIFT_SUBCATEGORIES: {
       "perfect-manicure",
       "cuticle-care",
       "post-artificial-kit",
-      "professional-manicure-tray",
       "extra-soft-foot-care",
     ],
   },

@@ -246,8 +246,17 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     ...COLLECTIONS_SLUGS,
     ...SHADES_SLUGS,
   ]);
+  // Eye-specific remover slugs — not nail products, must not appear in the Remover tab
+  const EYE_REMOVER_SLUGS = new Set([
+    "bi-phase-make-up-remover",
+    "eye-make-up-remover-lotion",
+    "remover-pads",
+    "remover-gel",
+  ]);
+
   const otherProducts = allProducts.filter((p) => {
     if (predefinedSlugs.has(p.slug)) return false;
+    if (EYE_REMOVER_SLUGS.has(p.slug)) return false;
 
     const titleLower = p.title?.toLowerCase() || "";
 

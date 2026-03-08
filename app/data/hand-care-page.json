@@ -9,14 +9,6 @@
       "title": "DAILY HAND CARE",
       "products": [
         {
-          "name": "MAVA-CLEAR",
-          "slug": "mava-clear",
-          "price": "from A$9.95",
-          "description": "Anti-Drying Lemon Scented Hand Sanitiser.",
-          "image": null,
-          "url": "https://mavala.com.au/mava-clear"
-        },
-        {
           "name": "HAND CREAM",
           "slug": "hand-cream",
           "price": "A$28.95",
