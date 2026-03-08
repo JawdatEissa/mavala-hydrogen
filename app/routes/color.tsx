@@ -300,7 +300,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       otherProducts,
       shadeColors,
     },
-    { headers },
+    { headers }
   );
 };
 
@@ -318,7 +318,7 @@ export const meta: MetaFunction = () => {
 // Helper to get shade color from shade name
 function getShadeColor(
   shadeName: string,
-  shadeColors: Record<string, { hex: string; rgb: number[] }>,
+  shadeColors: Record<string, { hex: string; rgb: number[] }>
 ): string {
   // Try exact match first
   if (shadeColors[shadeName]) {
@@ -403,7 +403,7 @@ function ColorProductCard({
   const sampleColors = product.shades
     ?.slice(0, 3)
     .map((shade: { name: string }) =>
-      getShadeColor(shade.name, shadeColors),
+      getShadeColor(shade.name, shadeColors)
     ) || ["#ae1932", "#f5cdb6", "#5c666f"];
 
   return (
@@ -473,7 +473,7 @@ function CollectionCard({
   const sampleColors = product.shades
     ?.slice(0, 3)
     .map((shade: { name: string }) =>
-      getShadeColor(shade.name, shadeColors),
+      getShadeColor(shade.name, shadeColors)
     ) || ["#ae1932", "#f5cdb6", "#5c666f"];
 
   return (
@@ -649,7 +649,7 @@ export default function ColorPage() {
       {/* Hero Section - Reduced height for better mobile/desktop balance */}
       <section className="relative w-full h-[22vh] md:h-[36vh] overflow-hidden">
         <img
-          src="/Gemini_Generated_Image_6ifo0k6ifo0k6ifo.png"
+          src="/color-hero.png"
           alt="Mavala Mini Color Nail Polishes"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: "50% 40%" }}
@@ -749,7 +749,7 @@ export default function ColorPage() {
                 } catch (error) {
                   console.error(
                     `Error rendering product ${product.slug}:`,
-                    error,
+                    error
                   );
                   return null;
                 }
