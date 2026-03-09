@@ -532,8 +532,8 @@
     ],
     "colorfix": [
       "/images/colorfix/01_Colorfix.png",
-      "/images/colorfix/02_Colorfix+5ml.png",
-      "/images/colorfix/Colorfix+5ml.jpg"
+      "/images/colorfix/Colorfix+5ml.jpg",
+      "/images/colorfix/02_Colorfix+5ml.png"
     ],
     "complexion": [
       "/images/complexion/dream-foundation.png",
@@ -782,7 +782,6 @@
     ],
     "cuticle-oil": [
       "/images/cuticle-oil/01_Cuticle+Oil.png",
-      "/images/cuticle-oil/02_Cuticle+Oil+5ml.jpg",
       "/images/cuticle-oil/02_Cuticle+Oil+5ml.png"
     ],
     "cuticle-remover": [
@@ -1439,9 +1438,9 @@
       "/images/mava-white/03.jpg"
     ],
     "mavaderma": [
-      "/images/mavaderma/01_Mavaderma.png",
-      "/images/mavaderma/mavaderma-02.jpg",
-      "/images/mavaderma/mavaderma-03.jpg"
+      "/images/mavaderma/01.png",
+      "/images/mavaderma/02.jpg",
+      "/images/mavaderma/03.jpg"
     ],
     "mavadry": [
       "/images/mavadry/01_Mava-Dry.png",
@@ -1569,6 +1568,16 @@
       "/images/mavala-scientifique-k/01.png",
       "/images/mavala-scientifique-k/02.png",
       "/images/mavala-scientifique-k/03.jpg"
+    ],
+    "mavala-scientifique-k-pen": [
+      "/images/mavala-scientifique-k-pen/01.webp",
+      "/images/mavala-scientifique-k-pen/02.jpg",
+      "/images/mavala-scientifique-k-pen/03.jpg"
+    ],
+    "mavala-scientifique-pen": [
+      "/images/mavala-scientifique-pen/01.webp",
+      "/images/mavala-scientifique-pen/02.jpg",
+      "/images/mavala-scientifique-pen/03.jpg"
     ],
     "mavala-stop": [
       "/images/mavala-stop/01.webp",
@@ -1972,7 +1981,8 @@
     "nailactan-jar": [
       "/images/nailactan-jar/01.png",
       "/images/nailactan-jar/02.jpg",
-      "/images/nailactan-jar/03.jpg"
+      "/images/nailactan-jar/03.jpg",
+      "/images/nailactan-jar/04.jpg"
     ],
     "neo-nudes": [
       "/images/neo-nudes/01_2.+Post+Neo+Nude+Collection+-+Post+2.jpg",
@@ -3705,5 +3715,5 @@
       "/images/shades/993 WINDSOR/03.png"
     ]
   },
-  "generated": "2026-01-30T08:19:03.943Z"
+  "generated": "2026-03-09T02:12:24.383Z"
 }

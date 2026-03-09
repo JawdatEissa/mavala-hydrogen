@@ -22,7 +22,9 @@ const NAIL_CONCERN_PREVIEWS = [
 // Product slugs for each category
 const PENETRATING_CARE_SLUGS = [
   "mavala-scientifique-k",
+  "mavala-scientifique-k-pen",
   "mavala-scientifique",
+  "mavala-scientifique-pen",
   "nailactan",
   "mava-flex",
   "mavaderma",
