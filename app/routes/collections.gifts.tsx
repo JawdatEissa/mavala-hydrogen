@@ -99,7 +99,8 @@ const GIFT_SUBCATEGORIES: {
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const allProducts = loadScrapedProducts();
-  const giftProducts = getProductsByCategory(allProducts, "Gift Sets");
+  const giftProducts = getProductsByCategory(allProducts, "Gift Sets")
+    .filter((p) => p.slug !== "professional-manicure-tray");
 
   const subcategories = GIFT_SUBCATEGORIES.map((sub) => ({
     ...sub,

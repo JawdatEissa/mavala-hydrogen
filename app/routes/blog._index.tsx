@@ -66,7 +66,7 @@ export default function BlogIndex() {
               The Mavala Journal
             </p>
             {/* "Beauty & Wellness" - MOBILE: translate-x-[0em], DESKTOP: translate-x-[0em] */}
-            <h1 className="font-marcellus text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-gray-900 mb-4 md:mb-5 translate-x-[0em] md:translate-x-[0em]">
+            <h1 className="font-['Archivo'] text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold text-gray-900 mb-4 md:mb-5 translate-x-[0em] md:translate-x-[0em]">
               Beauty & Wellness
             </h1>
             {/* Decorative divider - MOBILE: translate-x-[0em], DESKTOP: -translate-x-[1.7em] */}
