@@ -54,7 +54,7 @@ const NAIL_ALERT_SLUGS = [
 const NAIL_BEAUTY_SLUGS = [
   "mava-strong",
   "mavala-002-protective-base-coat",
-  "barrier-base-coat",
+  "hydra-base-coat",
   "colorfix",
   "gel-finish-top-coat",
   "star-top-coat",

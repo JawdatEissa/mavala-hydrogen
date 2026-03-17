@@ -195,7 +195,7 @@ const AVAILABLE_PRODUCT_HANDLES = [
   "straight-cuticle-scissors",
   "thinner-for-nail-polish",
   "toenail-nippers",
-  "barrier-base-coat",
+  "hydra-base-coat",
   "mava-flex-1",
   "mava-strong",
   "mava-white",
@@ -337,7 +337,7 @@ Mavala Key Products:
 - HEALTHY GLOW SERUM: Vitalizing serum for radiant skin
 - FEATHERLIGHT CREAM: Multi-moisturizing cream for dry skin
 - MAVALA STOP: Bitter solution to stop nail biting
-- BARRIER-BASE COAT: Protects nails before polish application
+- HYDRA-BASE COAT: Anti-drying base for dry, brittle and/or devitalized nails (Barrier-Base is now Hydra-Base)
 
 Mavala Nail Polish Shades by Color:
 - GREY/SILVER: 217 NEW YORK, 453 CHRISTIANA, 123 EDINBURGH, 151 MARRON GLACÉ, 402 DETROIT
@@ -378,7 +378,7 @@ function buildPrompt(question: string, contextBlocks: string[]): string {
   // Create product handle reference for the LLM
   const productHandleReference = `
 ### Available Products (use these handles for recommendations)
-Nail Repair: mavala-scientifique-1, mava-strong, mava-flex-1, mavala-stop, mavaderma, barrier-base-coat
+Nail Repair: mavala-scientifique-1, mava-strong, mava-flex-1, mavala-stop, mavaderma, hydra-base-coat
 Nail Polish Removers: blue-nail-polish-remover, crystal-nail-polish-remover, pink-nail-polish-remover, nail-polish-remover-pads
 Cuticle Care: cuticle-oil, cuticle-cream, cuticle-remover
 Hand Care: hand-cream, anti-spot-cream-for-hands
@@ -535,7 +535,9 @@ const PRODUCT_NAME_TO_HANDLE: Record<string, string> = {
   "mava-flex": "mava-flex-1",
   "mavala stop": "mavala-stop",
   "mavaderma": "mavaderma",
-  "barrier base coat": "barrier-base-coat",
+  "hydra base coat": "hydra-base-coat",
+  "hydra-base": "hydra-base-coat",
+  "barrier base coat": "hydra-base-coat",
   
   // Nail Polish Removers
   "blue nail polish remover": "blue-nail-polish-remover",

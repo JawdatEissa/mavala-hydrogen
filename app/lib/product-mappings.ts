@@ -11,8 +11,8 @@
 
 export const CATEGORY_PRODUCTS: Record<string, string[]> = {
   // NAIL CARE - Penetrating Nail Care
-  "nail strengthening": ["mavala-scientifique-1", "mava-strong", "mava-flex-1", "barrier-base-coat"],
-  "weak nails": ["mavala-scientifique-1", "mava-strong", "barrier-base-coat"],
+  "nail strengthening": ["mavala-scientifique-1", "mava-strong", "mava-flex-1", "hydra-base-coat"],
+  "weak nails": ["mavala-scientifique-1", "mava-strong", "hydra-base-coat"],
   "brittle nails": ["mava-flex-1", "mavala-scientifique-1", "cuticle-oil"],
   "soft nails": ["mava-strong", "mavala-scientifique-1"],
   "nail hardener": ["mavala-scientifique-1", "mava-strong"],
@@ -30,12 +30,12 @@ export const CATEGORY_PRODUCTS: Record<string, string[]> = {
   
   // NAIL CARE - Nail Camouflage
   "nail camouflage": ["mava-white", "mavala-scientifique-1"],
-  "yellow nails": ["mava-white", "barrier-base-coat"],
-  "stained nails": ["mava-white", "barrier-base-coat"],
+  "yellow nails": ["mava-white", "hydra-base-coat"],
+  "stained nails": ["mava-white", "hydra-base-coat"],
   "nail whitening": ["mava-white"],
   
   // NAIL CARE - Nail Beauty / Base & Top Coats
-  "base coat": ["barrier-base-coat", "002-base-coat", "protective-base-coat"],
+  "base coat": ["hydra-base-coat", "002-base-coat", "protective-base-coat"],
   "top coat": ["colorfix", "gel-finish-top-coat", "star-top-coat"],
   "nail shine": ["colorfix", "gel-finish-top-coat", "star-top-coat"],
   "matte finish": ["matte-top-coat"],

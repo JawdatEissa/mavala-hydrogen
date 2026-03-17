@@ -189,34 +189,36 @@
     "scraped_at": "2025-12-18T16:02:42.638547"
   },
   {
-    "url": "https://mavala.com.au/all-products/barrier-base-coat",
-    "slug": "barrier-base-coat",
-    "title": "BARRIER-BASE COAT",
+    "url": "/products/hydra-base-coat",
+    "slug": "hydra-base-coat",
+    "title": "HYDRA-BASE COAT",
     "price": "$34.95",
     "price_from": "",
     "rating": 4.454545454545454,
     "review_count": 11,
-    "tagline": "Caring base coat for delicate nails.",
-    "main_description": "Nails are sensitive to detergents, impacts and abrasions. Ingredients contained in some enamels can make nails dryer, thinner and more sensitive.",
-    "key_ingredients": "Proflex™ Complex (balanced blending of keratin, provitamin B5 and silk amino acids) to fight dehydration and flaking of nails, and to restore their flexibility and strength. Free from formaldehyde, phthalates and fragrance.",
-    "how_to_use": "Clean the nail surface to remove any oily film and apply one coat over the entire nail plate. Allow to dry before continuing with your manicure.",
-    "note": "",
+    "tagline": "Anti-drying base for dry, brittle and/or devitalized nails.",
+    "main_description": "A base coat is essential! Start your manicure with Hydra-Base Coat, specifically formulated for dry and delicate nails. This water-based base coat protects nails while maintaining their flexibility, preventing dryness, splitting, and breakage. Barrier-Base is now Hydra-Base!",
+    "key_ingredients": "Infused with the Proflex complex—a blend of pro-vitamin B5, silk amino acids, and keratin components—Hydra-Base Coat delivers hydration and strengthens the nail plate. It also forms a protective barrier against nail polish pigments, preventing yellowing and improving polish wear.",
+    "how_to_use": "1. Remove all traces of nail polish or oil from your nails. 2. Apply a thin layer of Hydra-Base Coat to clean nails. 3. Let it dry completely before applying nail polish (two thin coats) or a topcoat.",
+    "note": "Hydra-Base Coat cannot be worn alone; always pair it with nail polish or a topcoat.",
     "safety_directions": "",
     "first_aid": "",
-    "sizes": [],
+    "sizes": ["10ml"],
     "images": [
-      "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1501226181499-83KXVAEO8J7347C8I95Z/Barrier-Base.png?format=1500w",
-      "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/0941ec3c-7322-4687-be0e-238fb0349219/Mavala+cares.jpg"
+      "/images/hydra-base-coat/01.webp",
+      "/images/hydra-base-coat/02.webp",
+      "/images/hydra-base-coat/03.webp"
     ],
-    "youtube_video": "https://www.youtube.com/embed/UbRLL_hVBeE?rel=0&modestbranding=1&wmode=opaque&enablejsapi=1",
+    "youtube_video": "",
     "categories": [
       "Nail Repair"
     ],
     "local_images": [
-      "images\\barrier-base-coat\\01_Barrier-Base.png",
-      "images\\barrier-base-coat\\02_Mavala+cares.jpg"
+      "images\\hydra-base-coat\\01.webp",
+      "images\\hydra-base-coat\\02.webp",
+      "images\\hydra-base-coat\\03.webp"
     ],
-    "scraped_at": "2025-12-18T16:02:48.262658"
+    "scraped_at": "2026-03-17T00:00:00.000000"
   },
   {
     "url": "https://mavala.com.au/all-products/bb-cream",

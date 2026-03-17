@@ -12,28 +12,28 @@
     },
     "products": [
       {
-        "name": "Top Coat",
-        "src": "/images/nail-concern-products/76534b895cd8.png",
-        "product_slug": "colorfix",
-        "product_url": "https://mavala.com.au/all-products/colorfix"
-      },
-      {
         "name": "Base Coat",
         "src": "/images/nail-concern-products/c6a8923936f9.png",
         "product_slug": "mavala-002-protective-base-coat",
-        "product_url": "https://mavala.com.au/all-products/mavala-002-protective-base-coat"
+        "product_url": "/products/mavala-002-protective-base-coat"
+      },
+      {
+        "name": "Top Coat",
+        "src": "/images/nail-concern-products/76534b895cd8.png",
+        "product_slug": "colorfix",
+        "product_url": "/products/colorfix"
       },
       {
         "name": "Quick Dryer",
         "src": "/images/nail-concern-products/5c164bc3ca8f.png",
         "product_slug": "mavadry-spray",
-        "product_url": "https://mavala.com.au/all-products/mavadry-spray"
+        "product_url": "/products/mavadry-spray"
       },
       {
         "name": "Dry &amp; Care",
         "src": "/images/nail-concern-products/313c5969bf3d.png",
         "product_slug": "oil-seal-dryer",
-        "product_url": "https://mavala.com.au/all-products/oil-seal-dryer"
+        "product_url": "/products/oil-seal-dryer"
       }
     ]
   },
@@ -43,23 +43,35 @@
     "url": "https://mavala.com.au/dry-nail",
     "title": "DRY NAIL?",
     "concern": "A dry nail breaks and flakes. This type of nail has to be nourished and reinforced. The problem is frequently due to insufficient nutrients in the diet, but\u00a0can also be caused by contact with harsh substances such as detergents.",
-    "solution": "Dry, flaking nails require deep nourishment and a protective moisture barrier. Massage Nailactan nutritive cream into the nail base each night to deliver essential proteins and vitamins that restore flexibility and strength. Before applying nail polish, always use Barrier-Base Coat to seal in moisture and protect the nail plate from further dehydration caused by detergents and harsh substances.",
+    "solution": "Dry, flaking nails require deep nourishment and a protective moisture barrier. Massage Nailactan nutritive cream into the nail base each night to deliver essential proteins and vitamins that restore flexibility and strength. Before applying nail polish, use Hydra-Base Coat to seal in moisture and protect the nail plate from further dehydration caused by detergents and harsh substances. Apply Mava-Flex serum twice a week for deep hydration, and finish with Colorfix top coat for lasting protection.",
     "main_image": {
       "alt": "DRY NAIL?",
       "src": "/diagnosis/dry-nail.png"
     },
     "products": [
       {
-        "name": "Moisturising Base Coat",
-        "src": "/images/nail-concern-products/ffb91a344c38.png",
-        "product_slug": "barrier-base-coat",
-        "product_url": "https://mavala.com.au/all-products/barrier-base-coat"
+        "name": "Hydra Base Coat",
+        "src": "/images/hydra-base-coat/01.webp",
+        "product_slug": "hydra-base-coat",
+        "product_url": "/products/hydra-base-coat"
+      },
+      {
+        "name": "Moisturising Serum",
+        "src": "/images/nail-concern-products/c17ea0aac747.png",
+        "product_slug": "mava-flex-1",
+        "product_url": "/products/mava-flex-1"
+      },
+      {
+        "name": "Top Coat",
+        "src": "/images/nail-concern-products/76534b895cd8.png",
+        "product_slug": "colorfix",
+        "product_url": "/products/colorfix"
       },
       {
         "name": "Nutritive Cream",
         "src": "/images/nail-concern-products/467fb525a8cd.png",
         "product_slug": "nailactan-1",
-        "product_url": "https://mavala.com.au/all-products/nailactan-1"
+        "product_url": "/products/nailactan-1"
       }
     ]
   },
@@ -69,17 +81,29 @@
     "url": "https://mavala.com.au/soft-nail",
     "title": "SOFT NAIL?",
     "concern": "A soft nail bends and tears easily, and needs extra protection. The cause of this problem is often a lack of proper vitamins and minerals in the daily diet. It can also be caused by illness.",
-    "solution": "Soft nails that bend and tear easily need targeted nail strengthening treatment from within. Massage Nailactan nourishing cream into the nail base each night to stimulate the growth of stronger, healthier nails. Its rich formula delivers essential proteins and vitamins directly to the nail root, helping to restore firmness and resilience over time.",
+    "solution": "Soft nails that bend and tear easily need targeted nail strengthening treatment from within. Apply Mavala Scientifique K+ to the nail tips to harden and fortify the free edge. Use Mava-Strong fortifying base coat before your manicure to reinforce and protect the nail plate. Massage Nailactan nourishing cream into the nail base each night to stimulate the growth of stronger, healthier nails.",
     "main_image": {
       "alt": "SOFT NAIL?",
       "src": "/diagnosis/soft-nail.png"
     },
     "products": [
       {
+        "name": "Nail Hardener K+",
+        "src": "/images/mavala-scientifique-k/01.png",
+        "product_slug": "mavala-scientifique-k",
+        "product_url": "/products/mavala-scientifique-k"
+      },
+      {
+        "name": "Fortifying Base Coat",
+        "src": "/images/nail-concern-products/7e46279ef651.png",
+        "product_slug": "mava-strong",
+        "product_url": "/products/mava-strong"
+      },
+      {
         "name": "Nutritive Cream",
         "src": "/images/nail-concern-products/1e2cc94b08ee.png",
         "product_slug": "nailactan-1",
-        "product_url": "https://mavala.com.au/all-products/nailactan-1"
+        "product_url": "/products/nailactan-1"
       }
     ]
   },
@@ -89,17 +113,29 @@
     "url": "https://mavala.com.au/thin-nail",
     "title": "THIN NAIL?",
     "concern": "A thin nail is subject to breaking and splitting, and should be reinforced. It is usually caused by dietary deficiencies of calcium, minerals and vitamins, but also can be brought on by illness.",
-    "solution": "Thin nails prone to breaking and splitting need intensive nourishment to rebuild their strength. Apply Nailactan nutritive cream to the nail base each night to provide the essential proteins and vitamins required for healthy nail growth. Regular use promotes suppleness and elasticity, helping thin nails become stronger and more resistant to everyday wear.",
+    "solution": "Thin nails prone to breaking and splitting need intensive nourishment to rebuild their strength. Use Mava-Strong fortifying base coat before your manicure to reinforce the nail plate and protect against splitting. Apply Nailactan nutritive cream to the nail base each night to provide the essential proteins and vitamins required for healthy nail growth. Finish with Gel Finish Top Coat for a thicker, more protective layer that adds strength and shine.",
     "main_image": {
       "alt": "THIN NAIL?",
       "src": "/diagnosis/thin-nail.png"
     },
     "products": [
       {
+        "name": "Fortifying Base Coat",
+        "src": "/images/nail-concern-products/7e46279ef651.png",
+        "product_slug": "mava-strong",
+        "product_url": "/products/mava-strong"
+      },
+      {
         "name": "Nutritive Cream",
         "src": "/images/nail-concern-products/8b89a553f69c.png",
         "product_slug": "nailactan-1",
-        "product_url": "https://mavala.com.au/all-products/nailactan-1"
+        "product_url": "/products/nailactan-1"
+      },
+      {
+        "name": "Gel Finish Top Coat",
+        "src": "/images/gel-finish-top-coat/00.png",
+        "product_slug": "gel-finish-top-coat",
+        "product_url": "/products/gel-finish-top-coat"
       }
     ]
   },
@@ -109,23 +145,29 @@
     "url": "https://mavala.com.au/damaged-brittle-nail",
     "title": "Damaged, brittle nail?",
     "concern": "The nail lackes sheen, elasticity and resistance to impact. It is frequently due to insufficient nutrients in the diet, but also can be caused by contact with harsh substances such as detergents.",
-    "solution": "Brittle nails that lack elasticity and sheen require a combined nail repair approach. Massage Nailactan cream into the nail base each night to counteract dryness and restore suppleness by delivering essential nourishing elements to the nail roots. For daily protection during manicures, always apply Barrier-Base Coat as a moisturising base to shield damaged nails from further breakage.",
+    "solution": "Brittle nails that lack elasticity and sheen require a combined nail repair approach. Massage Nailactan cream into the nail base each night to counteract dryness and restore suppleness by delivering essential nourishing elements to the nail roots. For daily protection during manicures, apply Hydra-Base Coat as a moisturising base to shield damaged nails from further breakage, and finish with Colorfix top coat for added protection.",
     "main_image": {
       "alt": "Damaged, brittle nail?",
       "src": "/diagnosis/damaged-brittle-nail.png"
     },
     "products": [
       {
+        "name": "Hydra Base Coat",
+        "src": "/images/hydra-base-coat/01.webp",
+        "product_slug": "hydra-base-coat",
+        "product_url": "/products/hydra-base-coat"
+      },
+      {
+        "name": "Top Coat",
+        "src": "/images/nail-concern-products/76534b895cd8.png",
+        "product_slug": "colorfix",
+        "product_url": "/products/colorfix"
+      },
+      {
         "name": "Nutritive Cream",
         "src": "/images/nail-concern-products/886c8ff7abac.png",
         "product_slug": "nailactan-1",
-        "product_url": "https://mavala.com.au/all-products/nailactan-1"
-      },
-      {
-        "name": "Moisturising Base Coat",
-        "src": "/images/nail-concern-products/7312e88bdcb0.png",
-        "product_slug": "barrier-base-coat",
-        "product_url": "https://mavala.com.au/all-products/barrier-base-coat"
+        "product_url": "/products/nailactan-1"
       }
     ]
   },
@@ -155,23 +197,29 @@
     "url": "https://mavala.com.au/splitting-breaking-nail",
     "title": "Splitting, breaking nail?",
     "concern": "Nails with fragile tips can easily split or break off. It is often due to dietary deficiencies or overexposure to water and strong cleaning substances.",
-    "solution": "Nails with fragile tips that split or break easily need both strengthening and nourishment. Apply Mava-Strong fortifying base coat before your manicure to reinforce and protect the nail plate against splitting and breakage. Complement this with Nailactan nourishing cream, massaged into the nail base each night, to improve suppleness and elasticity from the root for lasting nail repair.",
+    "solution": "Nails with fragile tips that split or break easily need both strengthening and nourishment. Apply Mavala Scientifique K+ to the nail tips to harden and fortify the free edge. Use Mava-Strong fortifying base coat before your manicure to reinforce and protect the nail plate against splitting and breakage. Complement this with Nailactan nourishing cream, massaged into the nail base each night, to improve suppleness and elasticity from the root for lasting nail repair.",
     "main_image": {
       "alt": "Splitting, breaking nail?",
       "src": "/diagnosis/splitting-breaking-nail.png"
     },
     "products": [
       {
+        "name": "Nail Hardener K+",
+        "src": "/images/mavala-scientifique-k/01.png",
+        "product_slug": "mavala-scientifique-k",
+        "product_url": "/products/mavala-scientifique-k"
+      },
+      {
         "name": "Fortifying Base Coat",
         "src": "/images/nail-concern-products/7e46279ef651.png",
         "product_slug": "mava-strong",
-        "product_url": "https://mavala.com.au/all-products/mava-strong"
+        "product_url": "/products/mava-strong"
       },
       {
         "name": "Nutritive Cream",
         "src": "/images/nail-concern-products/bfd2f52994c7.png",
         "product_slug": "nailactan-1",
-        "product_url": "https://mavala.com.au/all-products/nailactan-1"
+        "product_url": "/products/nailactan-1"
       }
     ]
   },
@@ -181,7 +229,7 @@
     "url": "https://mavala.com.au/bitten-nail",
     "title": "Bitten nail?",
     "concern": "Nail biting is an uncontrollable reflex, frequently originating in childhood and is a reflection of nervousness. It usually occurs during a particular situation such as waiting at a red light,\u00a0talking on the phone, during a moment of reflexion, when looking for an answer, etc.",
-    "solution": "Breaking the nail biting habit starts with Mavala Stop, a bitter-tasting treatment applied to the nails that discourages biting through its unpleasant taste. Once nails begin to grow, apply Nail Shield to mechanically reinforce the nail with nylon fibres, creating a protective lattice that strengthens like a second nail. Use Mavala Scientifique K+ on the nail tips to harden and fortify new growth, helping bitten nails recover their natural length and strength.",
+    "solution": "Breaking the nail biting habit starts with Mavala Stop, a bitter-tasting treatment applied to the nails that discourages biting through its unpleasant taste. Once nails begin to grow, apply Nail Shield to mechanically reinforce the nail with nylon fibres, creating a protective lattice that strengthens like a second nail. Use Mavaderma nutritive oil on the nail base and cuticle area daily to stimulate blood circulation and promote healthy nail growth.",
     "main_image": {
       "alt": "Bitten nail?",
       "src": "/diagnosis/bitten-nail.png"
@@ -191,19 +239,19 @@
         "name": "Anti Nail-Biting Solution",
         "src": "/bestseller-stop.png",
         "product_slug": "mavala-stop",
-        "product_url": "https://mavala.com.au/all-products/mavala-stop"
+        "product_url": "/products/mavala-stop"
       },
       {
         "name": "Nail Shield",
         "src": "/images/nail-shield/Nail+Shield+2x5ml.png",
         "product_slug": "nail-shield",
-        "product_url": "https://mavala.com.au/all-products/nail-shield"
+        "product_url": "/products/nail-shield"
       },
       {
-        "name": "Nail Hardener K+",
-        "src": "/images/mavala-scientifique-k/01.png",
-        "product_slug": "mavala-scientifique-k",
-        "product_url": "https://mavala.com.au/all-products/mavala-scientifique-k"
+        "name": "Nutritive Oil",
+        "src": "/images/nail-concern-products/6c29a2d11d2b.png",
+        "product_slug": "mavaderma",
+        "product_url": "/products/mavaderma"
       }
     ]
   },
@@ -273,23 +321,29 @@
     "url": "https://mavala.com.au/overgrown-cuticles",
     "title": "overgrown cuticles?",
     "concern": "Overgrown cuticles detract from the neat outline of the nail, and can split to form annoying hangnails. Excessive growth of the cuticle can be systematic, but it is more frequently caused by a lack of attention to regular moisturizing and removal of excess tissue.",
-    "solution": "Overgrown cuticles can be softened and managed with a regular cuticle care routine. Apply Cuticle Cream to soften and loosen excess cuticle tissue, making it easy to gently push back without damage. Follow with Cuticle Oil to nourish and moisturise the cuticle area, preventing dryness and hangnails while keeping the nail contour neat and healthy.",
+    "solution": "Overgrown cuticles can be softened and managed with a regular cuticle care routine. Apply Cuticle Remover to dissolve excess cuticle tissue, making it easy to gently push back without damage. Follow with Cuticle Cream to soften and nourish, and Cuticle Oil to moisturise the cuticle area, preventing dryness and hangnails while keeping the nail contour neat and healthy.",
     "main_image": {
       "alt": "overgrown cuticles?",
       "src": "/diagnosis/overgrown-cuticles.png"
     },
     "products": [
       {
+        "name": "Cuticle Remover",
+        "src": "/images/cuticle-remover/Cuticle-remover-5ml.png",
+        "product_slug": "cuticle-remover",
+        "product_url": "/products/cuticle-remover"
+      },
+      {
         "name": "Cuticle Cream",
         "src": "/images/nail-concern-products/228fc073cd04.png",
         "product_slug": "cuticle-cream",
-        "product_url": "https://mavala.com.au/all-products/cuticle-cream"
+        "product_url": "/products/cuticle-cream"
       },
       {
         "name": "Cuticle Oil",
         "src": "/images/nail-concern-products/b930416e9c2f.png",
         "product_slug": "cuticle-oil",
-        "product_url": "https://mavala.com.au/all-products/cuticle-oil"
+        "product_url": "/products/cuticle-oil"
       }
     ]
   },
@@ -299,7 +353,7 @@
     "url": "https://mavala.com.au/thick-inflexible-nails",
     "title": "thick, inflexible nails?",
     "concern": "This condition occurs because the keratin has become impregnated with calcium or silicon. This type of nail is often associated with persons suffering from arteriosclerosis. Frequent hard manual labour can also produce excessive keratinization and thick nails.",
-    "solution": "Thick, inflexible nails with excessive keratinisation require targeted moisturising nail treatment. Brush Mava-Flex moisturising serum onto the entire nail surface twice a week, massage in, and leave to penetrate overnight for deep hydration. For your manicure routine, apply Mavala 002 Protective Base Coat to shield the nail plate and prolong your colour, and finish with Colorfix top coat for additional protection against flaking. Use Oil Seal Dryer to fast dry your manicure without adding extra thickness to already thick nails.",
+    "solution": "Thick, inflexible nails with excessive keratinisation require targeted moisturising nail treatment. Brush Mava-Flex moisturising serum onto the entire nail surface twice a week, massage in, and leave to penetrate overnight for deep hydration. For your manicure routine, apply Hydra-Base Coat to hydrate and protect the nail plate, and finish with Colorfix top coat for additional protection against flaking. Use Oil Seal Dryer to fast dry your manicure without adding extra thickness to already thick nails.",
     "main_image": {
       "alt": "thick, inflexible nails?",
       "src": "/diagnosis/thick-inflexible-nail.png"
@@ -309,25 +363,25 @@
         "name": "Moisturising Serum",
         "src": "/images/nail-concern-products/c17ea0aac747.png",
         "product_slug": "mava-flex-1",
-        "product_url": "https://mavala.com.au/all-products/mava-flex-1"
+        "product_url": "/products/mava-flex-1"
+      },
+      {
+        "name": "Hydra Base Coat",
+        "src": "/images/hydra-base-coat/01.webp",
+        "product_slug": "hydra-base-coat",
+        "product_url": "/products/hydra-base-coat"
       },
       {
         "name": "Flexible Top Coat",
         "src": "/images/nail-concern-products/d299363ad17e.png",
         "product_slug": "colorfix",
-        "product_url": "https://mavala.com.au/all-products/colorfix"
-      },
-      {
-        "name": "Protective Base Coat",
-        "src": "/images/nail-concern-products/7bdd826ea16e.png",
-        "product_slug": "mavala-002-protective-base-coat",
-        "product_url": "https://mavala.com.au/all-products/mavala-002-protective-base-coat"
+        "product_url": "/products/colorfix"
       },
       {
         "name": "Moisturising Quick Dryer",
         "src": "/images/nail-concern-products/d307ab358da9.png",
         "product_slug": "oil-seal-dryer",
-        "product_url": "https://mavala.com.au/all-products/oil-seal-dryer"
+        "product_url": "/products/oil-seal-dryer"
       }
     ]
   },
@@ -397,23 +451,29 @@
     "url": "https://mavala.com.au/white-or-white-spotted-nail",
     "title": "white or white spotted nails?",
     "concern": "Leuconychia (from the Greek leukos=white) can be due to a blow to the nail plate, heredity factors, or over-zealous manicures. Internal causes can be linked to menstruation or severe illness.",
-    "solution": "White spots on nails (leuconychia) can result from minor trauma to the nail plate and typically grow out with time. While cosmetic nail care products cannot treat the underlying cause, you can still enjoy a beautiful manicure. Apply Mavala 002 Protective Base Coat for nail protection, followed by your chosen nail colour, and finish with Colorfix top coat to extend the life of your manicure and add a lasting shine.",
+    "solution": "White spots on nails (leuconychia) can result from minor trauma to the nail plate and typically grow out with time. Massage Nailactan nutritive cream into the nail base each night to support healthy nail renewal. Apply Mavala 002 Protective Base Coat for nail protection, followed by your chosen nail colour, and finish with Colorfix top coat to extend the life of your manicure and add a lasting shine.",
     "main_image": {
       "alt": "white or white spotted nails?",
       "src": "/diagnosis/white-or-white-spotted-nail.png"
     },
     "products": [
       {
+        "name": "Nutritive Cream",
+        "src": "/images/nail-concern-products/467fb525a8cd.png",
+        "product_slug": "nailactan-1",
+        "product_url": "/products/nailactan-1"
+      },
+      {
         "name": "Protective Base Coat",
         "src": "/images/nail-concern-products/0ee2cef986ad.png",
         "product_slug": "mavala-002-protective-base-coat",
-        "product_url": "https://mavala.com.au/all-products/mavala-002-protective-base-coat"
+        "product_url": "/products/mavala-002-protective-base-coat"
       },
       {
         "name": "Flexible Top Coat",
         "src": "/images/nail-concern-products/4f665c3ddb7b.png",
         "product_slug": "colorfix",
-        "product_url": "https://mavala.com.au/all-products/colorfix"
+        "product_url": "/products/colorfix"
       }
     ]
   },

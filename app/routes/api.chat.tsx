@@ -595,11 +595,11 @@ const PRODUCT_CATALOG: Record<string, SuggestedProduct> = {
     image: "/images/toenail-nippers/01_71301+Toenail+nippers.png",
     category: "Manicure Essentials",
   },
-  "barrier-base-coat": {
-    handle: "barrier-base-coat",
-    title: "BARRIER-BASE COAT",
+  "hydra-base-coat": {
+    handle: "hydra-base-coat",
+    title: "HYDRA-BASE COAT",
     price: "$34.95",
-    image: "/images/barrier-base-coat/01_Barrier-Base.png",
+    image: "/images/hydra-base-coat/01.webp",
     category: "Nail Repair",
   },
   "mava-flex-1": {

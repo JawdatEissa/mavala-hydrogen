@@ -249,6 +249,11 @@
       "/images/barrier-base-coat/Mavala+cares.png",
       "/images/barrier-base-coat/02_Mavala+cares.png"
     ],
+    "hydra-base-coat": [
+      "/images/hydra-base-coat/01.webp",
+      "/images/hydra-base-coat/02.webp",
+      "/images/hydra-base-coat/03.webp"
+    ],
     "bb-cream": [
       "/images/bb-cream/01_90512A+(with+reflection).png",
       "/images/bb-cream/02_Porcelaine.png",

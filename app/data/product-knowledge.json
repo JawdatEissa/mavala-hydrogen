@@ -55,9 +55,9 @@
     "source": "product-catalog",
     "source_id": "category-nail-repair",
     "section": "Nail Repair",
-    "content": "MAVALA NAIL REPAIR PRODUCTS\n\nProducts to strengthen, harden, and repair damaged or weak nails.\n\nProducts in this category:\n- BARRIER-BASE COAT (barrier-base-coat): Caring base coat for delicate nails.\n- MAVA-FLEX (mava-flex-1): Moisturising serum for nails.\n- MAVA-STRONG (mava-strong): Fortifying and protective base coat.\n- MAVA-WHITE (mava-white): Optical nail whitener.\n- MAVADERMA (mavaderma): Nourishing massage oil for nails.\n- MAVALA SCIENTIFIQUE (mavala-scientifique-1): Penetrating nail hardener\n- MAVALA SCIENTIFIQUE K+ (mavala-scientifique-k): Penetrating nail hardener without formaldehyde.\n- MAVALA STOP (mavala-stop): Discourages nail biting and thumb sucking.\n- MAVALA STOP PEN (mavala-stop-pen): The applicator pen for bitten nails and cuticles.\n- NAIL SHIELD (nail-shield): Two phase system that reinforces, adds elasticity and supports soft, fragile nails\n- NAILACTAN (nailactan-1): Nutritive cream for brittle and damaged nails.\n- POST ARTIFICIAL NAILS KIT (post-artificial-kit): Nail care post acrylic and gel nails.\n\n[Related Products: barrier-base-coat, mava-flex-1, mava-strong, mava-white, mavaderma]",
+    "content": "MAVALA NAIL REPAIR PRODUCTS\n\nProducts to strengthen, harden, and repair damaged or weak nails.\n\nProducts in this category:\n- HYDRA-BASE COAT (hydra-base-coat): Anti-drying base for dry, brittle and/or devitalized nails. Barrier-Base is now Hydra-Base!\n- MAVA-FLEX (mava-flex-1): Moisturising serum for nails.\n- MAVA-STRONG (mava-strong): Fortifying and protective base coat.\n- MAVA-WHITE (mava-white): Optical nail whitener.\n- MAVADERMA (mavaderma): Nourishing massage oil for nails.\n- MAVALA SCIENTIFIQUE (mavala-scientifique-1): Penetrating nail hardener\n- MAVALA SCIENTIFIQUE K+ (mavala-scientifique-k): Penetrating nail hardener without formaldehyde.\n- MAVALA STOP (mavala-stop): Discourages nail biting and thumb sucking.\n- MAVALA STOP PEN (mavala-stop-pen): The applicator pen for bitten nails and cuticles.\n- NAIL SHIELD (nail-shield): Two phase system that reinforces, adds elasticity and supports soft, fragile nails\n- NAILACTAN (nailactan-1): Nutritive cream for brittle and damaged nails.\n- POST ARTIFICIAL NAILS KIT (post-artificial-kit): Nail care post acrylic and gel nails.\n\n[Related Products: hydra-base-coat, mava-flex-1, mava-strong, mava-white, mavaderma]",
     "relatedProducts": [
-      "barrier-base-coat",
+      "hydra-base-coat",
       "mava-flex-1",
       "mava-strong",
       "mava-white",
@@ -260,11 +260,12 @@
   },
   {
     "source": "product",
-    "source_id": "barrier-base-coat",
+    "source_id": "hydra-base-coat",
     "section": "Nail Repair",
-    "content": "PRODUCT: BARRIER-BASE COAT\nHandle: barrier-base-coat\nPrice: $34.95\nCategory: Nail Repair\n\nCaring base coat for delicate nails.\n\nDescription: Nails are sensitive to detergents, impacts and abrasions. Ingredients contained in some enamels can make nails dryer, thinner and more sensitive.\n\nKey Ingredients: Proflex™ Complex (balanced blending of keratin, provitamin B5 and silk amino acids) to fight dehydration and flaking of nails, and to restore their flexibility and strength. Free from formaldehyde, phthalates and fragrance.\n\nHow to Use: Clean the nail surface to remove any oily film and apply one coat over the entire nail plate. Allow to dry before continuing with your manicure.\n\n[Related Products: barrier-base-coat]",
+    "content": "PRODUCT: HYDRA-BASE COAT\nHandle: hydra-base-coat\nPrice: $34.95\nCategory: Nail Repair\n\nAnti-drying base for dry, brittle and/or devitalized nails. Barrier-Base is now Hydra-Base!\n\nDescription: A base coat is essential! Start your manicure with Hydra-Base Coat, specifically formulated for dry and delicate nails. This water-based base coat protects nails while maintaining their flexibility, preventing dryness, splitting, and breakage.\n\nKey Ingredients: Infused with the Proflex complex—a blend of pro-vitamin B5, silk amino acids, and keratin components—Hydra-Base Coat delivers hydration and strengthens the nail plate. It also forms a protective barrier against nail polish pigments, preventing yellowing and improving polish wear.\n\nHow to Use: 1. Remove all traces of nail polish or oil from your nails. 2. Apply a thin layer of Hydra-Base Coat to clean nails. 3. Let it dry completely before applying nail polish (two thin coats) or a topcoat.\n\nNote: Hydra-Base Coat cannot be worn alone; always pair it with nail polish or a topcoat.\n\n[Related Products: hydra-base-coat, colorfix]",
     "relatedProducts": [
-      "barrier-base-coat"
+      "hydra-base-coat",
+      "colorfix"
     ]
   },
   {
@@ -2026,12 +2027,12 @@
     "source": "problem-solution",
     "source_id": "weak_nails",
     "section": "Solutions",
-    "content": "SOLUTION FOR: weak nails, brittle nails, breaking nails, soft nails, strengthen nails, nail hardener\n\nRecommended Mavala Products:\n- MAVALA SCIENTIFIQUE (mavala-scientifique-1): Penetrating nail hardener\n- MAVA-STRONG (mava-strong): Fortifying and protective base coat.\n- MAVA-FLEX (mava-flex-1): Moisturising serum for nails.\n- BARRIER-BASE COAT (barrier-base-coat): Caring base coat for delicate nails.\n\n[Related Products: mavala-scientifique-1, mava-strong, mava-flex-1, barrier-base-coat]",
+    "content": "SOLUTION FOR: weak nails, brittle nails, breaking nails, soft nails, strengthen nails, nail hardener\n\nRecommended Mavala Products:\n- MAVALA SCIENTIFIQUE (mavala-scientifique-1): Penetrating nail hardener\n- MAVA-STRONG (mava-strong): Fortifying and protective base coat.\n- MAVA-FLEX (mava-flex-1): Moisturising serum for nails.\n- HYDRA-BASE COAT (hydra-base-coat): Anti-drying base for dry, brittle and/or devitalized nails.\n\n[Related Products: mavala-scientifique-1, mava-strong, mava-flex-1, hydra-base-coat]",
     "relatedProducts": [
       "mavala-scientifique-1",
       "mava-strong",
       "mava-flex-1",
-      "barrier-base-coat"
+      "hydra-base-coat"
     ]
   },
   {
@@ -2124,11 +2125,11 @@
     "source": "problem-solution",
     "source_id": "base_coat",
     "section": "Solutions",
-    "content": "SOLUTION FOR: base coat, nail base, protect nails\n\nRecommended Mavala Products:\n- BARRIER-BASE COAT (barrier-base-coat): Caring base coat for delicate nails.\n\n[Related Products: barrier-base-coat, colorfix-1, 002-base-coat]",
+    "content": "SOLUTION FOR: base coat, nail base, protect nails\n\nRecommended Mavala Products:\n- HYDRA-BASE COAT (hydra-base-coat): Anti-drying base for dry, brittle and/or devitalized nails.\n- MAVALA 002 PROTECTIVE BASE COAT (mavala-002-protective-base-coat): Protective base coat.\n\n[Related Products: hydra-base-coat, mavala-002-protective-base-coat, colorfix]",
     "relatedProducts": [
-      "barrier-base-coat",
-      "colorfix-1",
-      "002-base-coat"
+      "hydra-base-coat",
+      "mavala-002-protective-base-coat",
+      "colorfix"
     ]
   },
   {
@@ -2714,12 +2715,12 @@
     "source": "faq",
     "source_id": "faq-3",
     "section": "FAQ",
-    "content": "Q: What products help with weak or brittle nails?\n\nA: For weak or brittle nails, try: MAVALA SCIENTIFIQUE (penetrating nail hardener), MAVA-STRONG (for soft, delicate nails), MAVA-FLEX (for dry, brittle nails), and BARRIER-BASE COAT (protective base coat).\n\n[Related Products: mavala-scientifique-1, mava-strong, mava-flex-1, barrier-base-coat]",
+    "content": "Q: What products help with weak or brittle nails?\n\nA: For weak or brittle nails, try: MAVALA SCIENTIFIQUE (penetrating nail hardener), MAVA-STRONG (for soft, delicate nails), MAVA-FLEX (for dry, brittle nails), and HYDRA-BASE COAT (anti-drying base for dry, brittle nails).\n\n[Related Products: mavala-scientifique-1, mava-strong, mava-flex-1, hydra-base-coat]",
     "relatedProducts": [
       "mavala-scientifique-1",
       "mava-strong",
       "mava-flex-1",
-      "barrier-base-coat"
+      "hydra-base-coat"
     ]
   },
   {
