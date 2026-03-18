@@ -1733,7 +1733,7 @@
     "sizes": [],
     "images": [
       "/images/cuticle-cream/01.png",
-      "/images/cuticle-cream/02.jpg",
+      "/images/cuticle-cream/02.png",
       "/images/cuticle-cream/03.jpg"
     ],
     "youtube_video": "",
@@ -1742,7 +1742,7 @@
     ],
     "local_images": [
       "images\\cuticle-cream\\01.png",
-      "images\\cuticle-cream\\02.jpg",
+      "images\\cuticle-cream\\02.png",
       "images\\cuticle-cream\\03.jpg"
     ],
     "scraped_at": "2025-12-18T16:09:06.053411"
