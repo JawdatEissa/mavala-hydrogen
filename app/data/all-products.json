@@ -1732,16 +1732,18 @@
     "first_aid": "",
     "sizes": [],
     "images": [
-      "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1501217605026-ULLMN2NK40L7WR09H3DA/Cuticle+Cream.png?format=1500w",
-      "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/0941ec3c-7322-4687-be0e-238fb0349219/Mavala+cares.jpg"
+      "/images/cuticle-cream/01.png",
+      "/images/cuticle-cream/02.jpg",
+      "/images/cuticle-cream/03.jpg"
     ],
     "youtube_video": "",
     "categories": [
       "Cuticle Care"
     ],
     "local_images": [
-      "images\\cuticle-cream\\01_Cuticle+Cream.png",
-      "images\\cuticle-cream\\02_Mavala+cares.jpg"
+      "images\\cuticle-cream\\01.png",
+      "images\\cuticle-cream\\02.jpg",
+      "images\\cuticle-cream\\03.jpg"
     ],
     "scraped_at": "2025-12-18T16:09:06.053411"
   },
@@ -1793,16 +1795,18 @@
       "5ml bottle"
     ],
     "images": [
-      "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1501217670127-27M4GQN6E7VYN3Q6L7G6/Cuticle+Oil.png?format=1500w",
-      "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1573622682893-90765E9QRTB6F3FME9J3/Cuticle+Oil+5ml.jpg?format=1500w"
+      "/images/cuticle-oil/01.png",
+      "/images/cuticle-oil/02.webp",
+      "/images/cuticle-oil/03.jpg"
     ],
     "youtube_video": "",
     "categories": [
       "Cuticle Care"
     ],
     "local_images": [
-      "images\\cuticle-oil\\01_Cuticle+Oil.png",
-      "images\\cuticle-oil\\02_Cuticle+Oil+5ml.jpg"
+      "images\\cuticle-oil\\01.png",
+      "images\\cuticle-oil\\02.webp",
+      "images\\cuticle-oil\\03.jpg"
     ],
     "scraped_at": "2025-12-18T16:09:17.389163"
   },
@@ -1826,18 +1830,18 @@
       "5ml bottle"
     ],
     "images": [
-      "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1648452090211-RH0VSPQQMZ6CD77RXW2T/Eau+Emolliente+10ml+-+australie.jpg?format=1500w",
-      "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1648452249757-RH0ITULX5XA5W0HL2B2X/Cuticle-remover-5ml.jpg?format=1500w",
-      "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/0941ec3c-7322-4687-be0e-238fb0349219/Mavala+cares.jpg"
+      "/images/cuticle-remover/01.png",
+      "/images/cuticle-remover/02.jpg",
+      "/images/cuticle-remover/03.webp"
     ],
     "youtube_video": "",
     "categories": [
       "Cuticle Care"
     ],
     "local_images": [
-      "images\\cuticle-remover\\01_Eau+Emolliente+10ml+-+australie.jpg",
-      "images\\cuticle-remover\\02_Cuticle-remover-5ml.jpg",
-      "images\\cuticle-remover\\03_Mavala+cares.jpg"
+      "images\\cuticle-remover\\01.png",
+      "images\\cuticle-remover\\02.jpg",
+      "images\\cuticle-remover\\03.webp"
     ],
     "scraped_at": "2025-12-18T16:09:23.280533"
   },
