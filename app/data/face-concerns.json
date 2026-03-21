@@ -5,7 +5,7 @@
     "title": "WRINKLES?",
     "url": "https://mavala.com.au/wrinkles",
     "concern": "Lack of sleep, stress, pollution, or smoking can disrupt your skin's natural biorhythm. When weakened, the skin becomes dehydrated and wrinkles set in, losing its youthful glow.",
-    "solution": "Cleanse with Caress Cleansing Milk and Toning Lotion to prepare your skin. Apply ANTI-AGE PRO Day Serum in the morning to maximize skin's protective potential with chronopeptides and Alpine Rose stem cells, followed by ANTI-AGE PRO Day Cream for antioxidant protection. At night, use AQUA PLUS Multi-Moisturizing Sleeping Mask to restore water reserves. Spray SKIN VITALITY Alpine Micro-Mist throughout the day to hydrate and refresh.",
+    "solution": "Cleanse with Caress Cleansing Milk and Toning Lotion to prepare your skin. Apply ANTI-AGE PRO Day Serum in the morning to maximize skin's protective potential with chronopeptides and Alpine Rose stem cells, followed by ANTI-AGE PRO Day Cream for antioxidant protection. At night, use ANTI-AGE PRO Night Care to support skin renewal with its time-release formula and AQUA PLUS Multi-Moisturizing Sleeping Mask to restore water reserves. Spray SKIN VITALITY Alpine Micro-Mist throughout the day to hydrate and refresh.",
     "products": [
       {
         "name": "Toning Lotion",
@@ -32,6 +32,12 @@
         "images": []
       },
       {
+        "name": "Anti-Age Pro Night Care",
+        "product_slug": "time-release-system",
+        "src": "/images/time-release-system/01_9055501A.png",
+        "images": []
+      },
+      {
         "name": "Moisturising Night Mask",
         "product_slug": "sleeping-mask",
         "src": "/images/face-concern-products/c73b1959ef29.png",
@@ -51,7 +57,7 @@
     "title": "LACK OF RADIANCE?",
     "url": "https://mavala.com.au/lack-of-radiance",
     "concern": "After age 40, skin naturally loses radiance. External aggressions like sun and pollution, or internal factors, can affect cell renewal and exacerbate this loss of luminosity.",
-    "solution": "Cleanse with Caress Cleansing Milk and Toning Lotion. Apply ANTI-AGE PRO Day Serum each morning, followed by SKIN VITALITY Healthy Glow Day Cream enriched with Swiss Apricot extract. Use SKIN VITALITY Sleeping Mask \"Baby Skin\" Radiance overnight to detoxify and smooth skin. Eating beta-carotene rich foods and moderate exercise also help maintain a healthy glow.",
+    "solution": "Cleanse with Caress Cleansing Milk and Toning Lotion. Apply SKIN VITALITY Healthy Glow Serum each morning for instant radiance, followed by SKIN VITALITY Healthy Glow Day Cream enriched with Swiss Apricot extract. Use Beauty-Enhancing Micro-Peel weekly to remove dead cells and improve product penetration. Use SKIN VITALITY Sleeping Mask \"Baby Skin\" Radiance overnight to detoxify and smooth skin. Eating beta-carotene rich foods and moderate exercise also help maintain a healthy glow.",
     "products": [
       {
         "name": "Cleansing Milk",
@@ -66,15 +72,21 @@
         "images": []
       },
       {
-        "name": "Anti-Ageing Serum",
-        "product_slug": "chronobiological-serum",
-        "src": "/images/face-concern-products/001d20f56039.png",
+        "name": "Healthy Glow Serum",
+        "product_slug": "healthy-glow-serum",
+        "src": "/images/healthy-glow-serum/01_9053301A.png",
         "images": []
       },
       {
         "name": "Vitalizing Cream",
         "product_slug": "healthy-glow-cream",
         "src": "/images/face-concern-products/ba4aaa24a298.png",
+        "images": []
+      },
+      {
+        "name": "Beauty-Enhancing Micro-Peel",
+        "product_slug": "micro-peel",
+        "src": "/images/micro-peel/01_9053701A.png",
         "images": []
       },
       {
@@ -373,8 +385,20 @@
     "title": "CLEAR COMPLEXION?",
     "url": "https://mavala.com.au/clear-complexion",
     "concern": "A clear complexion reflects healthy, balanced skin. However, tiredness, inadequate protection, or wrong products can cause temporary loss of freshness and radiance.",
-    "solution": "Mavala Moisturizing Tinted Cream protects against environmental damage while maintaining ideal moisture and diminishing skin irregularities. Mavala Transparent Pressed Powder provides a uniform, matt, and velvety finish while regulating the skin's hydrolipidic balance. Both come in different shades to match your complexion. Use treatment products adapted to your skin type from the MAVALA face care range.",
+    "solution": "Mavala Moisturizing Tinted Cream protects against environmental damage while maintaining ideal moisture and diminishing skin irregularities. Mavala Transparent Pressed Powder provides a uniform, matt, and velvety finish while regulating the skin's hydrolipidic balance. For a flawless finish, use Magic Powder to set your makeup with a translucent, weightless layer. Mavala Serum Foundation combines skincare and coverage for a natural, luminous look. Use treatment products adapted to your skin type from the MAVALA face care range.",
     "products": [
+      {
+        "name": "Magic Powder",
+        "product_slug": "magic-powder",
+        "src": "/images/magic-powder/01_Magic+Powder+compact+open+RGB.png",
+        "images": []
+      },
+      {
+        "name": "Serum Foundation",
+        "product_slug": "serum-foundation",
+        "src": "/images/serum-foundation/01_SERUM+FOUNDATION+Award+Winner.png",
+        "images": []
+      },
       {
         "name": "Pressed Powder",
         "product_slug": "pressed-powder",
@@ -395,18 +419,36 @@
     "title": "DULL COMPLEXION?",
     "url": "https://mavala.com.au/dull-complexion",
     "concern": "A dull complexion lacks freshness and luminosity. Tiredness, health conditions, lack of proper care, or wrong products can make skin lose its radiance.",
-    "solution": "Mavala Moisturizing Tinted Cream protects against environmental damage and gives a healthy look with light, uniform application. Mavala Wet and Dry Powder provides a uniform, matt, and luminous complexion with exceptional comfort. Use with a dry or wet sponge to vary coverage. Both come in different shades. Use treatment products adapted to your skin type from the MAVALA face care range.",
+    "solution": "Revitalize a dull complexion with the SKIN VITALITY range. Apply SKIN VITALITY Healthy Glow Serum each morning for an instant boost of radiance, followed by SKIN VITALITY Healthy Glow Day Cream enriched with Swiss Apricot extract. Use Beauty-Enhancing Micro-Peel weekly to remove dead cells and reveal fresher skin. Spray SKIN VITALITY Alpine Micro-Mist throughout the day to hydrate and refresh. At night, use SKIN VITALITY Sleeping Mask \"Baby Skin\" Radiance to detoxify and smooth skin overnight.",
     "products": [
       {
-        "name": "Tinted Cream",
-        "product_slug": "tinted-cream",
-        "src": "/images/face-concern-products/8ada269bb72f.png",
+        "name": "Healthy Glow Serum",
+        "product_slug": "healthy-glow-serum",
+        "src": "/images/healthy-glow-serum/01_9053301A.png",
         "images": []
       },
       {
-        "name": "Wet and Dry Powder",
-        "product_slug": "wet-and-dry-powder",
-        "src": "/images/face-concern-products/db5120da8767.png",
+        "name": "Healthy Glow Cream",
+        "product_slug": "healthy-glow-cream",
+        "src": "/images/healthy-glow-cream/01_9053401A.png",
+        "images": []
+      },
+      {
+        "name": "Beauty-Enhancing Micro-Peel",
+        "product_slug": "micro-peel",
+        "src": "/images/micro-peel/01_9053701A.png",
+        "images": []
+      },
+      {
+        "name": "Alpine Micro-Mist",
+        "product_slug": "micro-mist",
+        "src": "/images/micro-mist/01_9053601+Skin+Vitality+Micro-Mist.png",
+        "images": []
+      },
+      {
+        "name": "Baby Skin Radiance Mask",
+        "product_slug": "sleeping-mask-baby-skin",
+        "src": "/images/sleeping-mask-baby-skin/01_9053501A.png",
         "images": []
       }
     ]
@@ -417,12 +459,42 @@
     "title": "BLOTCHY COMPLEXION?",
     "url": "https://mavala.com.au/blotchy-complexion",
     "concern": "A blotchy complexion is characteristic of oily or mixed skin. Excess sebum forms a shiny film and blackheads make the complexion unclear and yellowish or greyish.",
-    "solution": "Mavala Wet and Dry Powder makes the complexion more even and matt. Apply with a wet sponge for an impeccable, uniform result with excellent coverage. Available in different shades. Use treatment products adapted to your skin type from the MAVALA face care range.",
+    "solution": "Address a blotchy complexion with the PORE DETOX range to regulate excess sebum. Cleanse with PORE DETOX Perfecting Foaming Cleanser to purify without drying. Apply PORE DETOX Perfecting Toning Lotion to refine pores, and PORE DETOX Hydra-Matt Fluid daily to reduce shine while maintaining hydration. Use PORE DETOX Perfecting Purifying Mask weekly for a deep cleanse. For coverage, Magic Powder provides a translucent, mattifying finish, while Serum Foundation offers natural-looking coverage with skincare benefits.",
     "products": [
       {
-        "name": "Wet and Dry Powder",
-        "product_slug": "wet-and-dry-powder",
-        "src": "/images/face-concern-products/165acd335352.png",
+        "name": "Foaming Cleanser",
+        "product_slug": "foaming-cleanser",
+        "src": "/images/foaming-cleanser/01_9054201F-A.png",
+        "images": []
+      },
+      {
+        "name": "Perfecting Toning Lotion",
+        "product_slug": "perfecting-toning-lotion",
+        "src": "/images/perfecting-toning-lotion/01_9054401F-A.png",
+        "images": []
+      },
+      {
+        "name": "Hydra-Matt Fluid",
+        "product_slug": "hydra-matt-fluid",
+        "src": "/images/hydra-matt-fluid/01_9053901A.png",
+        "images": []
+      },
+      {
+        "name": "Purifying Mask",
+        "product_slug": "purifying-mask",
+        "src": "/images/purifying-mask/01_9054001A.png",
+        "images": []
+      },
+      {
+        "name": "Magic Powder",
+        "product_slug": "magic-powder",
+        "src": "/images/magic-powder/01_Magic+Powder+compact+open+RGB.png",
+        "images": []
+      },
+      {
+        "name": "Serum Foundation",
+        "product_slug": "serum-foundation",
+        "src": "/images/serum-foundation/01_SERUM+FOUNDATION+Award+Winner.png",
         "images": []
       }
     ]

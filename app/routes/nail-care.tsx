@@ -333,14 +333,14 @@ export default function NailCarePage() {
         <div className="max-w-5xl md:max-w-[80rem] mx-auto flex justify-center">
           {/* Mobile: 2-row pill-style layout (same as /color) */}
           <div className="md:hidden flex flex-col gap-2 w-full max-w-md">
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex items-center justify-center gap-1.5">
               {topRowTabs.map((tab) => (
                 <button
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveCategoryId(tab.id)}
                   className={`
-                    flex-1 min-w-0 px-3 py-3 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    flex-1 min-w-0 px-2 py-3 rounded-full font-['Archivo'] text-[10px] font-semibold uppercase tracking-wide transition-colors duration-150 text-center
                     ${
                       activeCategoryId === tab.id
                         ? "bg-[#ae1932] text-white"
@@ -348,18 +348,18 @@ export default function NailCarePage() {
                     }
                   `}
                 >
-                  <span className="block truncate">{tab.mobileLabel ?? tab.label}</span>
+                  {tab.mobileLabel ?? tab.label}
                 </button>
               ))}
             </div>
-            <div className="flex items-center justify-center gap-2">
+            <div className="flex items-center justify-center gap-1.5">
               {bottomRowTabs.map((tab) => (
                 <button
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveCategoryId(tab.id)}
                   className={`
-                    flex-1 min-w-0 px-3 py-3 rounded-full font-['Archivo'] text-[11px] font-semibold uppercase tracking-wider transition-colors duration-150 whitespace-nowrap text-center
+                    flex-1 min-w-0 px-2 py-3 rounded-full font-['Archivo'] text-[10px] font-semibold uppercase tracking-wide transition-colors duration-150 text-center
                     ${
                       activeCategoryId === tab.id
                         ? "bg-[#ae1932] text-white"
@@ -367,7 +367,7 @@ export default function NailCarePage() {
                     }
                   `}
                 >
-                  <span className="block truncate">{tab.mobileLabel ?? tab.label}</span>
+                  {tab.mobileLabel ?? tab.label}
                 </button>
               ))}
             </div>
