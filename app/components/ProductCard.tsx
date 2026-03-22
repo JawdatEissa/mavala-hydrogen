@@ -132,6 +132,7 @@ export function ProductCard({
     "blue-nail-polish-remover": "-10%", // Move up 15% to align with other bottles
   };
   const imageOffset = imageOffsetAdjustments[slug] || null;
+  const isOutOfStock = Boolean((product as ScrapedProduct).out_of_stock);
 
   return (
     <div className="product-card group relative flex flex-col w-full">
@@ -139,6 +140,11 @@ export function ProductCard({
         {/* Image Container - EXACT MATCH to Bestseller: rounded-[3px], grey bg, 4:5 aspect */}
         <div className="relative overflow-hidden bg-[#f5f5f5] rounded-[3px] aspect-[4/5] flex items-center justify-center p-6 border-none outline-none shadow-none transition-shadow duration-300 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
           {showBestsellerBadge ? <BestsellerBadge /> : null}
+          {isOutOfStock ? (
+            <div className="absolute top-2 left-2 z-10 bg-[#272724] text-white text-[10px] font-['Archivo'] font-semibold uppercase tracking-widest px-2 py-1 rounded-sm">
+              Out of Stock
+            </div>
+          ) : null}
           {/* Wrapper div for position offset, so hover animation on img still works */}
           <div
             className="w-full h-full flex items-center justify-center"

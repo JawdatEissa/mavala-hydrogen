@@ -923,6 +923,7 @@
       "images\\chronobiological-cream\\01_9056101A.jpg",
       "images\\chronobiological-cream\\02_Anti-Age+Pro+Cream+Texture.png"
     ],
+    "out_of_stock": true,
     "scraped_at": "2025-12-18T16:05:51.118487"
   },
   {
@@ -953,6 +954,7 @@
       "images\\chronobiological-serum\\01_9056001A.jpg",
       "images\\chronobiological-serum\\02_Anti-Age+Pro+Serum+Texture.png"
     ],
+    "out_of_stock": true,
     "scraped_at": "2025-12-18T16:05:57.314017"
   },
   {
@@ -6101,6 +6103,7 @@
     "local_images": [
       "images\\nutri-elixir-kit-e6dml\\01_Anti-Age+Pro+Festive+Set.jpg"
     ],
+    "out_of_stock": true,
     "scraped_at": "2025-12-18T16:25:00.721080"
   },
   {
@@ -8355,6 +8358,7 @@
       "images\\time-release-system\\02_Mavala+cares.jpg",
       "images\\time-release-system\\03_Anti-Age+Pro+Night+Care+Texture.png"
     ],
+    "out_of_stock": true,
     "scraped_at": "2025-12-18T16:33:22.482462"
   },
   {

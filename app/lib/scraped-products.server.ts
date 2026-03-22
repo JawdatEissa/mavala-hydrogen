@@ -33,6 +33,7 @@ export interface ScrapedProduct {
   youtube_video?: string;
   categories?: string[];
   local_images?: string[];
+  out_of_stock?: boolean;
   scraped_at?: string;
   [key: string]: any;
 }

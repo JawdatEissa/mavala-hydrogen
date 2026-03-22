@@ -1292,6 +1292,8 @@ export default function ProductPage() {
     };
   }, []);
 
+  const isOutOfStock = Boolean(product.out_of_stock);
+
   // Get display price - prefer exact price, fallback to price_from but strip "from " prefix
   const displayPrice =
     product.price ||
@@ -1667,39 +1669,51 @@ export default function ProductPage() {
 
             {/* Mobile Add to Cart Section - French Mavala Premium Style */}
             <div className="mt-6" ref={mobileAddToCartRef}>
-              <div className="flex items-center gap-4 mb-4">
-                <span className="font-['Archivo'] text-[0.79rem] text-[#5c666f]">
-                  Quantity:
-                </span>
-                <div className="flex items-center border border-gray-300 rounded">
-                  <button
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="px-3 py-2 text-lg hover:bg-gray-100 transition-colors"
-                  >
-                    −
-                  </button>
-                  <span className="px-4 py-2 border-x border-gray-300 min-w-[3rem] text-center">
-                    {quantity}
+              {!isOutOfStock && (
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="font-['Archivo'] text-[0.79rem] text-[#5c666f]">
+                    Quantity:
                   </span>
-                  <button
-                    onClick={() => setQuantity(quantity + 1)}
-                    className="px-3 py-2 text-lg hover:bg-gray-100 transition-colors"
-                  >
-                    +
-                  </button>
+                  <div className="flex items-center border border-gray-300 rounded">
+                    <button
+                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                      className="px-3 py-2 text-lg hover:bg-gray-100 transition-colors"
+                    >
+                      −
+                    </button>
+                    <span className="px-4 py-2 border-x border-gray-300 min-w-[3rem] text-center">
+                      {quantity}
+                    </span>
+                    <button
+                      onClick={() => setQuantity(quantity + 1)}
+                      className="px-3 py-2 text-lg hover:bg-gray-100 transition-colors"
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
-              </div>
-              {/* Premium Add to Cart Button - French Mavala Style */}
-              <button className="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3">
-                <span className="text-white/90 font-extralight">•</span>
-                <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">
-                  ADD
-                </span>
-                <span className="text-white/90 font-extralight">•</span>
-                <span className="text-white font-extralight text-[14px]">
-                  {displayPrice ? formatPriceToCad(displayPrice) : ""}
-                </span>
-              </button>
+              )}
+              {isOutOfStock ? (
+                <button
+                  disabled
+                  className="w-full py-4 bg-gray-200 rounded-md font-['Archivo'] flex items-center justify-center gap-3 cursor-not-allowed"
+                >
+                  <span className="text-gray-500 font-semibold text-[14px] uppercase tracking-[0.2em]">
+                    Out of Stock
+                  </span>
+                </button>
+              ) : (
+                <button className="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3">
+                  <span className="text-white/90 font-extralight">•</span>
+                  <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">
+                    ADD
+                  </span>
+                  <span className="text-white/90 font-extralight">•</span>
+                  <span className="text-white font-extralight text-[14px]">
+                    {displayPrice ? formatPriceToCad(displayPrice) : ""}
+                  </span>
+                </button>
+              )}
             </div>
 
             {/* Mobile Product Description */}
@@ -1972,39 +1986,51 @@ export default function ProductPage() {
           <div className="px-4 py-5 bg-white">
             {/* Mobile Add to Cart Section */}
             <div className="mb-6" ref={mobileAddToCartRef}>
-              <div className="flex items-center gap-4 mb-4">
-                <span className="font-['Archivo'] text-[0.79rem] text-[#5c666f]">
-                  Quantity:
-                </span>
-                <div className="flex items-center border border-gray-300 rounded">
-                  <button
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="px-3 py-2 text-lg hover:bg-gray-100 transition-colors"
-                  >
-                    −
-                  </button>
-                  <span className="px-4 py-2 border-x border-gray-300 min-w-[3rem] text-center">
-                    {quantity}
+              {!isOutOfStock && (
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="font-['Archivo'] text-[0.79rem] text-[#5c666f]">
+                    Quantity:
                   </span>
-                  <button
-                    onClick={() => setQuantity(quantity + 1)}
-                    className="px-3 py-2 text-lg hover:bg-gray-100 transition-colors"
-                  >
-                    +
-                  </button>
+                  <div className="flex items-center border border-gray-300 rounded">
+                    <button
+                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                      className="px-3 py-2 text-lg hover:bg-gray-100 transition-colors"
+                    >
+                      −
+                    </button>
+                    <span className="px-4 py-2 border-x border-gray-300 min-w-[3rem] text-center">
+                      {quantity}
+                    </span>
+                    <button
+                      onClick={() => setQuantity(quantity + 1)}
+                      className="px-3 py-2 text-lg hover:bg-gray-100 transition-colors"
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
-              </div>
-              {/* Premium Add to Cart Button - French Mavala Style */}
-              <button className="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3">
-                <span className="text-white/90 font-extralight">•</span>
-                <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">
-                  ADD
-                </span>
-                <span className="text-white/90 font-extralight">•</span>
-                <span className="text-white font-extralight text-[14px]">
-                  {displayPrice ? formatPriceToCad(displayPrice) : ""}
-                </span>
-              </button>
+              )}
+              {isOutOfStock ? (
+                <button
+                  disabled
+                  className="w-full py-4 bg-gray-200 rounded-md font-['Archivo'] flex items-center justify-center gap-3 cursor-not-allowed"
+                >
+                  <span className="text-gray-500 font-semibold text-[14px] uppercase tracking-[0.2em]">
+                    Out of Stock
+                  </span>
+                </button>
+              ) : (
+                <button className="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3">
+                  <span className="text-white/90 font-extralight">•</span>
+                  <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">
+                    ADD
+                  </span>
+                  <span className="text-white/90 font-extralight">•</span>
+                  <span className="text-white font-extralight text-[14px]">
+                    {displayPrice ? formatPriceToCad(displayPrice) : ""}
+                  </span>
+                </button>
+              )}
             </div>
 
             {/* Mobile Product Description */}
@@ -2728,7 +2754,16 @@ export default function ProductPage() {
               )}
 
               {/* Quantity + Add to Cart - French Mavala Premium Style */}
-              {shades.length > 0 ? (
+              {isOutOfStock ? (
+                <button
+                  disabled
+                  className="w-full py-4 bg-gray-200 rounded-md font-['Archivo'] flex items-center justify-center gap-3 cursor-not-allowed mb-6"
+                >
+                  <span className="text-gray-500 font-semibold text-[14px] uppercase tracking-[0.2em]">
+                    Out of Stock
+                  </span>
+                </button>
+              ) : shades.length > 0 ? (
                 /* Compact: Same line for shade products */
                 <div className="flex items-center gap-4 mb-4">
                   <div className="flex items-center gap-2">
@@ -3053,7 +3088,7 @@ export default function ProductPage() {
       {/* Mobile Sticky Add to Cart Bar - Shows when inline button is scrolled out of view */}
       <div
         className={`fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t border-gray-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] transition-transform duration-300 ease-out ${
-          showStickyAddToCart ? "translate-y-0" : "translate-y-full"
+          showStickyAddToCart && !isOutOfStock ? "translate-y-0" : "translate-y-full"
         }`}
       >
         <div className="px-4 py-3 flex items-center gap-3">
