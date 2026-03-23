@@ -260,9 +260,26 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
   // Load product gallery images from manifest (for non-shade products or as fallback)
   // This ensures products like nail-white-crayon show their secondary images
   if (handle && manifest.products[handle]) {
-    const manifestImages = manifest.products[handle];
-    if (manifestImages && manifestImages.length > 0) {
-      // Use manifest images as gallery_images if product doesn't have them or has fewer
+    let manifestImages = manifest.products[handle];
+
+    // For products with shades, filter out individual shade images from the gallery.
+    // Shade images (e.g. "06_701+Rio+Grande.png") should only appear when a shade is
+    // selected, not as product gallery images. Match by shade number prefix (e.g. "701").
+    if (Array.isArray(product.shades) && product.shades.length > 0) {
+      const shadeNumbers = product.shades.map((s: { name: string }) => {
+        const match = s.name.match(/^(\d+)/);
+        return match ? match[1] : null;
+      }).filter(Boolean) as string[];
+
+      if (shadeNumbers.length > 0) {
+        manifestImages = manifestImages.filter((imgPath) => {
+          const filename = imgPath.split("/").pop() || "";
+          return !shadeNumbers.some((num) => filename.includes(`_${num}+`) || filename.includes(`_${num} `));
+        });
+      }
+    }
+
+    if (manifestImages.length > 0) {
       if (
         !product.gallery_images ||
         product.gallery_images.length < manifestImages.length
