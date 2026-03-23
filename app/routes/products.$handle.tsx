@@ -374,11 +374,6 @@ function MobileShadeGallery({
               key={idx}
               className="flex-shrink-0 w-full aspect-square flex items-center justify-center"
               onClick={() => onImageClick(idx)}
-              style={
-                productSlug === "double-lash" && idx === 1
-                  ? { paddingTop: "20%" }
-                  : undefined
-              }
             >
               <img
                 src={img}
@@ -538,11 +533,6 @@ function MobileProductGallery({
                 key={idx}
                 className={`flex-shrink-0 w-full aspect-square flex items-center justify-center ${imageBg}`}
                 onClick={() => onImageClick(idx)}
-                style={
-                  productSlug === "double-lash" && idx === 1
-                    ? { paddingTop: "20%" }
-                    : undefined
-                }
               >
                 <img
                   src={img}
@@ -623,7 +613,7 @@ function ImageGallery({
   const bioGridRowsClass = "md:grid-rows-2 md:items-stretch";
   const bioFillHeightClass = "h-full";
   const mainImageClass =
-    isBioColors || isNailWhiteCrayon
+    isNailWhiteCrayon
       ? "block w-full h-full object-cover border-none outline-none"
       : "block w-full h-full object-contain border-none outline-none";
 
@@ -2264,7 +2254,7 @@ export default function ProductPage() {
             {/* ===== LEFT COLUMN: Gallery + Accordions (scrollable) ===== */}
             <div className="product-content-scrollable">
               {/* Product Gallery */}
-              {additionalImages.length > 0 && selectedShade ? (
+              {selectedShade ? (
                 /* Shade selected - Universal gallery with lightbox */
                 <ImageGallery
                   mainImage={getCurrentImage()}
