@@ -267,12 +267,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
         !product.gallery_images ||
         product.gallery_images.length < manifestImages.length
       ) {
-        // Sort by numeric filename prefix (e.g. "01_..." before "10_...")
-        product.gallery_images = [...manifestImages].sort((a, b) => {
-          const numA = parseInt(a.split("/").pop()?.match(/^(\d+)/)?.[1] || "999");
-          const numB = parseInt(b.split("/").pop()?.match(/^(\d+)/)?.[1] || "999");
-          return numA - numB;
-        });
+        product.gallery_images = manifestImages;
       }
     }
   }
@@ -379,6 +374,11 @@ function MobileShadeGallery({
               key={idx}
               className="flex-shrink-0 w-full aspect-square flex items-center justify-center"
               onClick={() => onImageClick(idx)}
+              style={
+                productSlug === "double-lash" && idx === 1
+                  ? { paddingTop: "20%" }
+                  : undefined
+              }
             >
               <img
                 src={img}
@@ -536,8 +536,13 @@ function MobileProductGallery({
             return (
               <div
                 key={idx}
-                className={`flex-shrink-0 w-full aspect-square flex items-center justify-center ${imageBg}`}
+                className={`flex-shrink-0 w-full aspect-square flex ${isPrimary ? 'items-start pt-3' : 'items-center'} justify-center ${imageBg}`}
                 onClick={() => onImageClick(idx)}
+                style={
+                  productSlug === "double-lash" && idx === 1
+                    ? { paddingTop: "20%" }
+                    : undefined
+                }
               >
                 <img
                   src={img}
@@ -695,8 +700,8 @@ function ImageGallery({
   const bioGridStyle = isBioColors
     ? { aspectRatio: "4/3" }
     : isNailWhiteCrayon || isDoubleLash || isMavadrySpray
-    ? { maxHeight: "900px" }
-    : { maxHeight: "700px" };
+    ? { maxHeight: "900px" } // Increased height for nail-white-crayon, double-lash, and mavadry-spray
+    : { maxHeight: "700px" }; // Default max height for other products
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isClosing, setIsClosing] = useState(false);
@@ -894,15 +899,13 @@ function ImageGallery({
                   key={idx}
                   className="bg-white border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden"
                   onClick={() => openLightbox(idx + 1)}
-                  style={isShadeCollection ? { maxHeight: "389px" } : undefined}
+                  style={isShadeCollection ? { maxHeight: "589px" } : undefined}
                 >
                   <img
                     src={img}
                     alt={`${alt} - ${idx + 2}`}
                     className={
-                      isBioColors
-                        ? "block w-full h-full object-contain border-none outline-none"
-                        : isShadeCollection
+                      isShadeCollection
                         ? "block w-full h-full object-cover object-top border-none outline-none"
                         : "block w-full object-contain border-none outline-none"
                     }
@@ -1326,18 +1329,8 @@ export default function ProductPage() {
       ? product.images
       : [];
 
-  // Sort local images by numeric filename prefix (e.g. 01_ before 10_)
-  const sortedRawImages =
-    rawImages.length > 0 && rawImages[0]?.startsWith("/images/")
-      ? [...rawImages].sort((a, b) => {
-          const getNum = (p: string) =>
-            parseInt(p.split("/").pop()?.match(/^(\d+)/)?.[1] || "999");
-          return getNum(a) - getNum(b);
-        })
-      : rawImages;
-
   // Filter out certification images from main gallery
-  const images = filterCertificationImages(sortedRawImages);
+  const images = filterCertificationImages(rawImages);
 
   // Get sizes array safely
   const sizes = Array.isArray(product.sizes) ? product.sizes : [];
@@ -2271,7 +2264,7 @@ export default function ProductPage() {
             {/* ===== LEFT COLUMN: Gallery + Accordions (scrollable) ===== */}
             <div className="product-content-scrollable">
               {/* Product Gallery */}
-              {selectedShade ? (
+              {additionalImages.length > 0 && selectedShade ? (
                 /* Shade selected - Universal gallery with lightbox */
                 <ImageGallery
                   mainImage={getCurrentImage()}
