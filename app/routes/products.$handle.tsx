@@ -536,7 +536,9 @@ function MobileProductGallery({
             return (
               <div
                 key={idx}
-                className={`flex-shrink-0 w-full aspect-square flex ${isPrimary ? 'items-start pt-3' : 'items-center'} justify-center ${imageBg}`}
+                className={`flex-shrink-0 w-full aspect-square flex ${
+                  isPrimary ? "items-start pt-3" : "items-center"
+                } justify-center ${imageBg}`}
                 onClick={() => onImageClick(idx)}
                 style={
                   productSlug === "double-lash" && idx === 1
@@ -590,7 +592,8 @@ function ImageGallery({
   const isScientifiqueK = productSlug === "mavala-scientifique-k";
   const isMavadrySpray = productSlug === "mavadry-spray";
   const isMavalaStop = productSlug === "mavala-stop";
-  const isNailactan = productSlug === "nailactan-1" || productSlug === "nailactan-jar";
+  const isNailactan =
+    productSlug === "nailactan-1" || productSlug === "nailactan-jar";
   const isNailWhiteCrayon = productSlug === "nail-white-crayon";
 
   // Background color: white for collection products and nail-white-crayon, grey for others
@@ -637,6 +640,8 @@ function ImageGallery({
     if (imageIndex === 0) return bgColor;
     // Mavadry Spray: third image (bottom right) gets grey background
     if (isMavadrySpray && imageIndex === 2) return "bg-[#f5f5f5]";
+    // Bio Colors: third image (bottom left, index 2) gets grey background
+    if (isBioColors && imageIndex === 2) return "bg-[#f5f5f5]";
     // All other secondary images get white background (user's lifestyle/product shots)
     return "bg-white";
   };
@@ -893,19 +898,34 @@ function ImageGallery({
             </div>
 
             {/* Additional Images Column - Right - Clickable */}
-            <div className="flex flex-col gap-2">
+            <div
+              className="flex flex-col gap-2"
+              style={isBioColors ? { maxHeight: "710px" } : undefined}
+            >
               {additionalImages.slice(0, 2).map((img, idx) => (
                 <div
                   key={idx}
-                  className="bg-white border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden"
+                  className={`${getContainerBgColor(
+                    idx + 1,
+                  )} border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden ${
+                    isBioColors ? "flex-1 min-h-0" : ""
+                  }`}
                   onClick={() => openLightbox(idx + 1)}
-                  style={isShadeCollection ? { maxHeight: "589px" } : undefined}
+                  style={
+                    isShadeCollection && !isBioColors
+                      ? { maxHeight: "589px" }
+                      : undefined
+                  }
                 >
                   <img
                     src={img}
                     alt={`${alt} - ${idx + 2}`}
                     className={
-                      isShadeCollection
+                      isBioColors && idx === 1
+                        ? "block w-full h-full object-contain border-none outline-none"
+                        : isBioColors
+                        ? "block w-full h-full object-cover object-top border-none outline-none"
+                        : isShadeCollection
                         ? "block w-full h-full object-cover object-top border-none outline-none"
                         : "block w-full object-contain border-none outline-none"
                     }
@@ -2264,8 +2284,8 @@ export default function ProductPage() {
             {/* ===== LEFT COLUMN: Gallery + Accordions (scrollable) ===== */}
             <div className="product-content-scrollable">
               {/* Product Gallery */}
-              {additionalImages.length > 0 && selectedShade ? (
-                /* Shade selected - Universal gallery with lightbox */
+              {selectedShade ? (
+                /* Shade selected - show shade image (with additional shade images if available) */
                 <ImageGallery
                   mainImage={getCurrentImage()}
                   additionalImages={additionalImages}
@@ -3088,7 +3108,9 @@ export default function ProductPage() {
       {/* Mobile Sticky Add to Cart Bar - Shows when inline button is scrolled out of view */}
       <div
         className={`fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t border-gray-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] transition-transform duration-300 ease-out ${
-          showStickyAddToCart && !isOutOfStock ? "translate-y-0" : "translate-y-full"
+          showStickyAddToCart && !isOutOfStock
+            ? "translate-y-0"
+            : "translate-y-full"
         }`}
       >
         <div className="px-4 py-3 flex items-center gap-3">

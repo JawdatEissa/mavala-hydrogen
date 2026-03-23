@@ -99,8 +99,33 @@ To change how much is cropped from the bottom:
 
 Current value: `589px`
 
+## CRITICAL RULE: Secondary Images Must Never Be Cropped
+
+Product secondary images (individual bottle/product shots) must **never** be cropped by
+`object-cover`. When a secondary image shows a standalone product (e.g. a nail polish
+bottle with its label), cropping cuts off the cap, label, or branding — this looks
+unprofessional.
+
+**Use `object-contain`** for secondary images that are individual product shots (like
+bio-colors bottles). `object-cover` is only acceptable for lifestyle/marketing images
+where cropping is intentional and the subject fills the frame.
+
+### Bio-Colors Exception
+
+Bio-colors stays in the **special grid layout** (same as White Shades and other shade
+collections). The ONLY difference: its secondary images use `object-contain` instead of
+`object-cover object-top`, because its individual bottle shots must not be cropped.
+
+Do NOT move bio-colors to the standard grid -- that makes the main image massive and
+breaks the layout completely.
+
+This is implemented in the special grid's secondary image className conditional:
+`isBioColors ? "object-contain" : isShadeCollection ? "object-cover object-top" : ...`
+
 ## Related Products
 
 This fix affects all products with slugs ending in:
 - `-shades` (e.g., `pink-shades`, `nude-shades`, `red-shades`, etc.)
 - `-colors` (e.g., `pearl-colors`, `cream-colors`, etc.)
+
+**Exception:** `bio-colors` uses `object-contain` for secondary images (no cropping).

@@ -274,14 +274,6 @@
     ],
     "bio-colors": [
       "/images/bio-colors/01_MINI+Bio-Color+Showcard+A.png",
-      "/images/bio-colors/10_705+Volta.png",
-      "/images/bio-colors/11_706+Thames.png",
-      "/images/bio-colors/12_707+Colorado.png",
-      "/images/bio-colors/13_708+Murray.png",
-      "/images/bio-colors/14_709+Amazonas.png",
-      "/images/bio-colors/15_710+Mekong.png",
-      "/images/bio-colors/16_711+Shannon.png",
-      "/images/bio-colors/17_712+Indus.png",
       "/images/bio-colors/02_Mini+Bio-Color's.jpg",
       "/images/bio-colors/03_MINI+Bio-Color+Corporate.png",
       "/images/bio-colors/04_Mini+Bio-Color's+1.png",
@@ -289,7 +281,15 @@
       "/images/bio-colors/06_701+Rio+Grande.png",
       "/images/bio-colors/07_702+Mississippi.png",
       "/images/bio-colors/08_703+Nile.png",
-      "/images/bio-colors/09_704+RhÃ´ne.png"
+      "/images/bio-colors/09_704+RhÃ´ne.png",
+      "/images/bio-colors/10_705+Volta.png",
+      "/images/bio-colors/11_706+Thames.png",
+      "/images/bio-colors/12_707+Colorado.png",
+      "/images/bio-colors/13_708+Murray.png",
+      "/images/bio-colors/14_709+Amazonas.png",
+      "/images/bio-colors/15_710+Mekong.png",
+      "/images/bio-colors/16_711+Shannon.png",
+      "/images/bio-colors/17_712+Indus.png"
     ],
     "bitten-nail": [
       "/images/bitten-nail/Bitten_nail.png",
