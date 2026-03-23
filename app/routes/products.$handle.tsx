@@ -16,7 +16,7 @@ import imageManifest from "~/data/image-manifest.json";
 // Import shade colors data directly
 import shadeColorsData from "~/data/shade_colors.json";
 
-// Import color mappings for shade data
+// Import color mappings for shade data push
 import colorMappingTheBasics from "../data/color_mapping_the-basics.json";
 import colorMappingCreamColors from "../data/color_mapping_cream-colors.json";
 import colorMappingPearlColors from "../data/color_mapping_pearl-colors.json";
