@@ -267,7 +267,12 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
         !product.gallery_images ||
         product.gallery_images.length < manifestImages.length
       ) {
-        product.gallery_images = manifestImages;
+        // Sort by numeric filename prefix (e.g. "01_..." before "10_...")
+        product.gallery_images = [...manifestImages].sort((a, b) => {
+          const numA = parseInt(a.split("/").pop()?.match(/^(\d+)/)?.[1] || "999");
+          const numB = parseInt(b.split("/").pop()?.match(/^(\d+)/)?.[1] || "999");
+          return numA - numB;
+        });
       }
     }
   }
@@ -613,7 +618,7 @@ function ImageGallery({
   const bioGridRowsClass = "md:grid-rows-2 md:items-stretch";
   const bioFillHeightClass = "h-full";
   const mainImageClass =
-    isNailWhiteCrayon
+    isBioColors || isNailWhiteCrayon
       ? "block w-full h-full object-cover border-none outline-none"
       : "block w-full h-full object-contain border-none outline-none";
 
@@ -690,8 +695,8 @@ function ImageGallery({
   const bioGridStyle = isBioColors
     ? { aspectRatio: "4/3" }
     : isNailWhiteCrayon || isDoubleLash || isMavadrySpray
-    ? { maxHeight: "900px" } // Increased height for nail-white-crayon, double-lash, and mavadry-spray
-    : { maxHeight: "700px" }; // Default max height for other products
+    ? { maxHeight: "900px" }
+    : { maxHeight: "700px" };
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isClosing, setIsClosing] = useState(false);
@@ -889,13 +894,15 @@ function ImageGallery({
                   key={idx}
                   className="bg-white border-none outline-none shadow-none cursor-pointer hover:opacity-95 transition-opacity overflow-hidden"
                   onClick={() => openLightbox(idx + 1)}
-                  style={isShadeCollection ? { maxHeight: "589px" } : undefined}
+                  style={isShadeCollection ? { maxHeight: "389px" } : undefined}
                 >
                   <img
                     src={img}
                     alt={`${alt} - ${idx + 2}`}
                     className={
-                      isShadeCollection
+                      isBioColors
+                        ? "block w-full h-full object-contain border-none outline-none"
+                        : isShadeCollection
                         ? "block w-full h-full object-cover object-top border-none outline-none"
                         : "block w-full object-contain border-none outline-none"
                     }
@@ -1319,8 +1326,18 @@ export default function ProductPage() {
       ? product.images
       : [];
 
+  // Sort local images by numeric filename prefix (e.g. 01_ before 10_)
+  const sortedRawImages =
+    rawImages.length > 0 && rawImages[0]?.startsWith("/images/")
+      ? [...rawImages].sort((a, b) => {
+          const getNum = (p: string) =>
+            parseInt(p.split("/").pop()?.match(/^(\d+)/)?.[1] || "999");
+          return getNum(a) - getNum(b);
+        })
+      : rawImages;
+
   // Filter out certification images from main gallery
-  const images = filterCertificationImages(rawImages);
+  const images = filterCertificationImages(sortedRawImages);
 
   // Get sizes array safely
   const sizes = Array.isArray(product.sizes) ? product.sizes : [];
