@@ -540,11 +540,6 @@ function MobileProductGallery({
                   isPrimary ? "items-start pt-3" : "items-center"
                 } justify-center ${imageBg}`}
                 onClick={() => onImageClick(idx)}
-                style={
-                  productSlug === "double-lash" && idx === 1
-                    ? { paddingTop: "20%" }
-                    : undefined
-                }
               >
                 <img
                   src={img}
