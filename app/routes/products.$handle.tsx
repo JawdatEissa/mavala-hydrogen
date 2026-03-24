@@ -266,15 +266,20 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     // Shade images (e.g. "06_701+Rio+Grande.png") should only appear when a shade is
     // selected, not as product gallery images. Match by shade number prefix (e.g. "701").
     if (Array.isArray(product.shades) && product.shades.length > 0) {
-      const shadeNumbers = product.shades.map((s: { name: string }) => {
-        const match = s.name.match(/^(\d+)/);
-        return match ? match[1] : null;
-      }).filter(Boolean) as string[];
+      const shadeNumbers = product.shades
+        .map((s: { name: string }) => {
+          const match = s.name.match(/^(\d+)/);
+          return match ? match[1] : null;
+        })
+        .filter(Boolean) as string[];
 
       if (shadeNumbers.length > 0) {
         manifestImages = manifestImages.filter((imgPath) => {
           const filename = imgPath.split("/").pop() || "";
-          return !shadeNumbers.some((num) => filename.includes(`_${num}+`) || filename.includes(`_${num} `));
+          return !shadeNumbers.some(
+            (num) =>
+              filename.includes(`_${num}+`) || filename.includes(`_${num} `),
+          );
         });
       }
     }
@@ -372,7 +377,7 @@ function MobileShadeGallery({
     <div className="w-full">
       {/* Swipeable Image Container */}
       <div
-        className="relative bg-[#f5f5f5] overflow-hidden"
+        className="relative overflow-hidden"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
@@ -386,25 +391,29 @@ function MobileShadeGallery({
             transition: isDragging ? "none" : "transform 0.3s ease-out",
           }}
         >
-          {images.map((img, idx) => (
+          {images.map((img, idx) => {
+            // Per-slide background: product promo images (from product folder) → white
+            // Shade selection images (from /shades/ folder) → grey
+            const isProductPromoImage = img.includes(`/images/${productSlug}/`);
+            const slideBg = isProductPromoImage ? "bg-white" : "bg-[#f5f5f5]";
+            const imgClass = isProductPromoImage
+              ? "w-full h-full object-cover"
+              : "max-w-full max-h-full object-contain";
+            return (
             <div
               key={idx}
-              className="flex-shrink-0 w-full aspect-square flex items-center justify-center"
+              className={`flex-shrink-0 w-full aspect-square flex items-center justify-center ${slideBg}`}
               onClick={() => onImageClick(idx)}
-              style={
-                productSlug === "double-lash" && idx === 1
-                  ? { paddingTop: "20%" }
-                  : undefined
-              }
             >
               <img
                 src={img}
                 alt={`${alt} - ${idx + 1}`}
-                className="max-w-full max-h-full object-contain"
+                className={imgClass}
                 draggable={false}
               />
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
