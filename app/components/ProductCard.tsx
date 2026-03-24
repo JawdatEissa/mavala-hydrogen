@@ -11,6 +11,8 @@ type ProductType = Product | ScrapedProduct;
 interface ProductCardProps {
   product: ProductType;
   showQuickAdd?: boolean;
+  /** Base scale applied to every product image (1.0 = default, 1.2 = 20% larger). */
+  imageScale?: number;
 }
 
 const formatTitle = (rawTitle?: string): string => {
@@ -28,6 +30,7 @@ const formatTitle = (rawTitle?: string): string => {
 export function ProductCard({
   product,
   showQuickAdd = false,
+  imageScale: baseImageScale,
 }: ProductCardProps) {
   // Extract slug from product
   const slug = product.slug || product.url.split("/").pop() || "";
@@ -138,9 +141,12 @@ export function ProductCard({
   const imageScaleAdjustments: Record<string, number> = {
     "mavala-stop": 1.38,
     "mavala-stop-pen": 1.21,
-    "blue-nail-polish-remover": 1.6,
+    "blue-nail-polish-remover": 1.132,
+    "double-lash": 1.4,
   };
-  const imageScale = imageScaleAdjustments[slug] || null;
+  const perProductScale = imageScaleAdjustments[slug] || null;
+  // Combine base scale (from prop) with per-product overrides
+  const imageScale = perProductScale ?? baseImageScale ?? null;
 
   // Products that should show a CSS reflection effect below the image
   const reflectionSlugs = new Set(["mavala-stop-pen"]);

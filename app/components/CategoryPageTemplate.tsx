@@ -2,8 +2,14 @@ import type { ScrapedProduct } from "../lib/scraped-products.server";
 import { ProductCard } from "./ProductCard";
 
 // Product Card Component for Category Pages - Standardized 4-column layout
-export function CategoryProductCard({ product }: { product: ScrapedProduct }) {
-  return <ProductCard product={product} />;
+export function CategoryProductCard({
+  product,
+  imageScale,
+}: {
+  product: ScrapedProduct;
+  imageScale?: number;
+}) {
+  return <ProductCard product={product} imageScale={imageScale} />;
 }
 
 // Section Header Component
@@ -64,12 +70,15 @@ export function CategoryProductSection({
   products,
   id,
   hideHeader = false,
+  imageScale,
 }: {
   title: string;
   subtitle?: string;
   products: ScrapedProduct[];
   id?: string;
   hideHeader?: boolean;
+  /** Base scale for product images (1.0 = default, 1.2 = 20% larger). */
+  imageScale?: number;
 }) {
   return (
     <section
@@ -83,7 +92,11 @@ export function CategoryProductSection({
         {/* Universal 5-column grid on desktop, 2 on mobile - matches product pages */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
           {products.map((product) => (
-            <CategoryProductCard key={product.slug} product={product} />
+            <CategoryProductCard
+              key={product.slug}
+              product={product}
+              imageScale={imageScale}
+            />
           ))}
         </div>
       </div>

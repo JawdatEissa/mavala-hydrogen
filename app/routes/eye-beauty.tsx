@@ -57,6 +57,12 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+// ─── IMAGE SIZE KNOB ───────────────────────────────────────────────
+// Change this number to scale every product image on the Eye Beauty page.
+// 1.0 = default (no change), 1.2 = 20% larger, 1.5 = 50% larger, etc.
+const EYE_BEAUTY_IMAGE_SCALE = 1.2;
+// ───────────────────────────────────────────────────────────────────
+
 export default function EyeBeautyPage() {
   const { sections } = useLoaderData<typeof loader>();
 
@@ -98,7 +104,7 @@ export default function EyeBeautyPage() {
   }, [sections]);
 
   const [activeTabId, setActiveTabId] = useState<string>(
-    normalizedSections[0]?.id ?? "eye-care"
+    normalizedSections[0]?.id ?? "eye-care",
   );
 
   const activeSection = normalizedSections.find((s) => s.id === activeTabId);
@@ -191,6 +197,7 @@ export default function EyeBeautyPage() {
           title={activeSection.title}
           products={activeSection.products}
           hideHeader
+          imageScale={EYE_BEAUTY_IMAGE_SCALE}
         />
       )}
 
