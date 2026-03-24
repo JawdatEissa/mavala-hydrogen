@@ -129,8 +129,8 @@ export function ProductCard({
 
   // Product-specific vertical position adjustments (negative = move up)
   const imageOffsetAdjustments: Record<string, string> = {
-    "blue-nail-polish-remover": "-10%",
     "mavala-stop-pen": "6.5%",
+    "blue-nail-polish-remover": "-6.5%",
   };
   const imageOffset = imageOffsetAdjustments[slug] || null;
 
@@ -138,6 +138,7 @@ export function ProductCard({
   const imageScaleAdjustments: Record<string, number> = {
     "mavala-stop": 1.38,
     "mavala-stop-pen": 1.21,
+    "blue-nail-polish-remover": 1.6,
   };
   const imageScale = imageScaleAdjustments[slug] || null;
 
@@ -162,14 +163,14 @@ export function ProductCard({
               reflectionSlugs.has(slug) ? " product-image-reflection" : ""
             }`}
             style={{
-              ...(imageOffset
-                ? { transform: `translateY(${imageOffset})` }
-                : {}),
-              ...(imageScale
+              ...(imageOffset || imageScale
                 ? {
-                    transform: `${
-                      imageOffset ? `translateY(${imageOffset}) ` : ""
-                    }scale(${imageScale})`,
+                    transform: [
+                      imageOffset ? `translateY(${imageOffset})` : "",
+                      imageScale ? `scale(${imageScale})` : "",
+                    ]
+                      .filter(Boolean)
+                      .join(" "),
                   }
                 : {}),
             }}

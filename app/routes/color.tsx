@@ -300,7 +300,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
       otherProducts,
       shadeColors,
     },
-    { headers }
+    { headers },
   );
 };
 
@@ -318,7 +318,7 @@ export const meta: MetaFunction = () => {
 // Helper to get shade color from shade name
 function getShadeColor(
   shadeName: string,
-  shadeColors: Record<string, { hex: string; rgb: number[] }>
+  shadeColors: Record<string, { hex: string; rgb: number[] }>,
 ): string {
   // Try exact match first
   if (shadeColors[shadeName]) {
@@ -395,6 +395,25 @@ function ColorProductCard({
       ? String(product.categories[0])
       : "";
   const displayTitle = formatTitle(product.title);
+  const slug = product.slug || "";
+
+  const imageOffsetAdjustments: Record<string, string> = {
+    "mavala-stop-pen": "6.5%",
+    "blue-nail-polish-remover": "-6.5%",
+  };
+  const imageScaleAdjustments: Record<string, number> = {
+    "mavala-stop": 1.38,
+    "mavala-stop-pen": 1.21,
+    "blue-nail-polish-remover": 1.132,
+  };
+  const imageOffset = imageOffsetAdjustments[slug] || null;
+  const imageScale = imageScaleAdjustments[slug] || null;
+  const imageTransform = [
+    imageOffset ? `translateY(${imageOffset})` : "",
+    imageScale ? `scale(${imageScale})` : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   // Get shade count from product data
   const shadeCount = product.shades?.length || 0;
@@ -403,7 +422,7 @@ function ColorProductCard({
   const sampleColors = product.shades
     ?.slice(0, 3)
     .map((shade: { name: string }) =>
-      getShadeColor(shade.name, shadeColors)
+      getShadeColor(shade.name, shadeColors),
     ) || ["#ae1932", "#f5cdb6", "#5c666f"];
 
   return (
@@ -417,6 +436,7 @@ function ColorProductCard({
             alt={displayTitle}
             className="absolute inset-0 w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
+            style={imageTransform ? { transform: imageTransform } : undefined}
           />
         )}
         {/* Shade count indicator - bottom left */}
@@ -473,7 +493,7 @@ function CollectionCard({
   const sampleColors = product.shades
     ?.slice(0, 3)
     .map((shade: { name: string }) =>
-      getShadeColor(shade.name, shadeColors)
+      getShadeColor(shade.name, shadeColors),
     ) || ["#ae1932", "#f5cdb6", "#5c666f"];
 
   return (
@@ -652,7 +672,7 @@ export default function ColorPage() {
           src="/color-hero.png"
           alt="Mavala Mini Color Nail Polishes"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "50% 40%" }}
+          style={{ objectPosition: "50% 20%" }}
         />
       </section>
 
@@ -749,7 +769,7 @@ export default function ColorPage() {
                 } catch (error) {
                   console.error(
                     `Error rendering product ${product.slug}:`,
-                    error
+                    error,
                   );
                   return null;
                 }
