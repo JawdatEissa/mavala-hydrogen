@@ -129,9 +129,20 @@ export function ProductCard({
 
   // Product-specific vertical position adjustments (negative = move up)
   const imageOffsetAdjustments: Record<string, string> = {
-    "blue-nail-polish-remover": "-10%", // Move up 15% to align with other bottles
+    "blue-nail-polish-remover": "-10%",
+    "mavala-stop-pen": "6.5%",
   };
   const imageOffset = imageOffsetAdjustments[slug] || null;
+
+  // Product-specific image scale adjustments (1.0 = default, 1.25 = 25% larger)
+  const imageScaleAdjustments: Record<string, number> = {
+    "mavala-stop": 1.38,
+    "mavala-stop-pen": 1.21,
+  };
+  const imageScale = imageScaleAdjustments[slug] || null;
+
+  // Products that should show a CSS reflection effect below the image
+  const reflectionSlugs = new Set(["mavala-stop-pen"]);
   const isOutOfStock = Boolean((product as ScrapedProduct).out_of_stock);
 
   return (
@@ -145,14 +156,23 @@ export function ProductCard({
               Out of Stock
             </div>
           ) : null}
-          {/* Wrapper div for position offset, so hover animation on img still works */}
+          {/* Wrapper div for position offset + scale, so hover animation on img still works */}
           <div
-            className="w-full h-full flex items-center justify-center"
-            style={
-              imageOffset
+            className={`w-full h-full flex items-center justify-center${
+              reflectionSlugs.has(slug) ? " product-image-reflection" : ""
+            }`}
+            style={{
+              ...(imageOffset
                 ? { transform: `translateY(${imageOffset})` }
-                : undefined
-            }
+                : {}),
+              ...(imageScale
+                ? {
+                    transform: `${
+                      imageOffset ? `translateY(${imageOffset}) ` : ""
+                    }scale(${imageScale})`,
+                  }
+                : {}),
+            }}
           >
             <img
               src={productImage}
