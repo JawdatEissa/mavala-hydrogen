@@ -1,7 +1,7 @@
 import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { useLoaderData, Link } from "@remix-run/react";
-import { useState, useEffect, useRef } from "react";
+import { useLoaderData, Link, useFetcher } from "@remix-run/react";
+import { useState, useEffect, useRef, type ReactNode } from "react";
 import {
   loadScrapedProducts,
   getProductBySlug,
@@ -1214,6 +1214,43 @@ function ImageGallery({
   );
 }
 
+type PdpCartActionData = { ok?: boolean; error?: string | null };
+
+function PdpAddToCartButton({
+  fetcher,
+  merchandiseId,
+  quantity,
+  formClassName,
+  buttonClassName,
+  children,
+}: {
+  fetcher: ReturnType<typeof useFetcher<PdpCartActionData>>;
+  merchandiseId: string;
+  quantity: number;
+  formClassName?: string;
+  buttonClassName: string;
+  children: ReactNode;
+}) {
+  return (
+    <fetcher.Form
+      method="post"
+      action="/cart"
+      className={formClassName ?? "w-full"}
+    >
+      <input type="hidden" name="intent" value="add" />
+      <input type="hidden" name="merchandiseId" value={merchandiseId} />
+      <input type="hidden" name="quantity" value={String(quantity)} />
+      <button
+        type="submit"
+        disabled={fetcher.state !== "idle"}
+        className={buttonClassName}
+      >
+        {children}
+      </button>
+    </fetcher.Form>
+  );
+}
+
 export default function ProductPage() {
   const {
     product,
@@ -1222,6 +1259,7 @@ export default function ProductPage() {
     shadeImagesMap,
     shadeColors,
   } = useLoaderData<typeof loader>();
+  const cartFetcher = useFetcher<PdpCartActionData>();
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedMainColor, setSelectedMainColor] = useState<string | null>(
@@ -1348,6 +1386,10 @@ export default function ProductPage() {
   }, []);
 
   const isOutOfStock = Boolean(product.out_of_stock);
+  const shopifyVariantGid =
+    (product as { shopify?: { defaultVariantGid?: string | null } }).shopify
+      ?.defaultVariantGid ?? "";
+  const canCheckoutOnShopify = Boolean(shopifyVariantGid);
 
   // Get display price - prefer exact price, fallback to price_from but strip "from " prefix
   const displayPrice =
@@ -1614,6 +1656,24 @@ export default function ProductPage() {
 
   return (
     <div className="pt-[104px] md:pt-[112px] font-['Archivo']">
+      <div className="sr-only" aria-live="polite">
+        {cartFetcher.data?.ok
+          ? "Added to cart. You can open your cart to review or checkout."
+          : ""}
+      </div>
+      {cartFetcher.data?.ok ? (
+        <div className="px-4 py-2 bg-[#f0fdf4] border-b border-green-200 text-center text-sm text-green-900">
+          Added to bag.{" "}
+          <Link to="/cart" className="underline font-medium">
+            View cart
+          </Link>
+        </div>
+      ) : null}
+      {cartFetcher.data && cartFetcher.data.ok === false && cartFetcher.data.error ? (
+        <div className="px-4 py-2 bg-red-50 border-b border-red-200 text-center text-sm text-red-800">
+          {cartFetcher.data.error}
+        </div>
+      ) : null}
       {/* ============ MOBILE LAYOUT FOR SHADE PRODUCTS ============ */}
       {shades.length > 0 && (
         <div className="md:hidden">
@@ -1757,8 +1817,17 @@ export default function ProductPage() {
                     Out of Stock
                   </span>
                 </button>
+              ) : !canCheckoutOnShopify ? (
+                <p className="w-full py-4 text-center text-sm text-mavala-gray font-['Archivo']">
+                  This item is not available for online checkout.
+                </p>
               ) : (
-                <button className="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3">
+                <PdpAddToCartButton
+                  fetcher={cartFetcher}
+                  merchandiseId={shopifyVariantGid}
+                  quantity={quantity}
+                  buttonClassName="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3 disabled:opacity-60"
+                >
                   <span className="text-white/90 font-extralight">•</span>
                   <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">
                     ADD
@@ -1767,7 +1836,7 @@ export default function ProductPage() {
                   <span className="text-white font-extralight text-[14px]">
                     {displayPrice ? formatPriceToCad(displayPrice) : ""}
                   </span>
-                </button>
+                </PdpAddToCartButton>
               )}
             </div>
 
@@ -2074,8 +2143,17 @@ export default function ProductPage() {
                     Out of Stock
                   </span>
                 </button>
+              ) : !canCheckoutOnShopify ? (
+                <p className="w-full py-4 text-center text-sm text-mavala-gray font-['Archivo']">
+                  This item is not available for online checkout.
+                </p>
               ) : (
-                <button className="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3">
+                <PdpAddToCartButton
+                  fetcher={cartFetcher}
+                  merchandiseId={shopifyVariantGid}
+                  quantity={quantity}
+                  buttonClassName="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3 disabled:opacity-60"
+                >
                   <span className="text-white/90 font-extralight">•</span>
                   <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">
                     ADD
@@ -2084,7 +2162,7 @@ export default function ProductPage() {
                   <span className="text-white font-extralight text-[14px]">
                     {displayPrice ? formatPriceToCad(displayPrice) : ""}
                   </span>
-                </button>
+                </PdpAddToCartButton>
               )}
             </div>
 
@@ -2818,6 +2896,10 @@ export default function ProductPage() {
                     Out of Stock
                   </span>
                 </button>
+              ) : !canCheckoutOnShopify ? (
+                <p className="w-full py-4 text-center text-sm text-mavala-gray font-['Archivo'] mb-6">
+                  This item is not available for online checkout.
+                </p>
               ) : shades.length > 0 ? (
                 /* Compact: Same line for shade products */
                 <div className="flex items-center gap-4 mb-4">
@@ -2835,8 +2917,13 @@ export default function ProductPage() {
                       className="font-['Archivo'] border border-gray-300 rounded px-2 py-1.5 w-16 text-center text-sm focus:outline-none focus:border-[#272724]"
                     />
                   </div>
-                  {/* Premium Add to Cart Button - French Mavala Style */}
-                  <button className="flex-1 py-3.5 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3">
+                  <PdpAddToCartButton
+                    fetcher={cartFetcher}
+                    merchandiseId={shopifyVariantGid}
+                    quantity={quantity}
+                    formClassName="flex-1 flex min-w-0"
+                    buttonClassName="flex-1 py-3.5 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3 disabled:opacity-60"
+                  >
                     <span className="text-white/90 font-extralight">•</span>
                     <span className="text-white font-extralight text-[15px] uppercase tracking-[0.2em]">
                       ADD
@@ -2845,7 +2932,7 @@ export default function ProductPage() {
                     <span className="text-white font-extralight text-[13px]">
                       {displayPrice ? formatPriceToCad(displayPrice) : ""}
                     </span>
-                  </button>
+                  </PdpAddToCartButton>
                 </div>
               ) : (
                 /* Full: Separate sections for non-shade products */
@@ -2872,8 +2959,12 @@ export default function ProductPage() {
                       </button>
                     </div>
                   </div>
-                  {/* Premium Add to Cart Button - French Mavala Style */}
-                  <button className="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3 mb-6">
+                  <PdpAddToCartButton
+                    fetcher={cartFetcher}
+                    merchandiseId={shopifyVariantGid}
+                    quantity={quantity}
+                    buttonClassName="w-full py-4 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-3 mb-6 disabled:opacity-60"
+                  >
                     <span className="text-white/90 font-extralight">•</span>
                     <span className="text-white font-extralight text-[16px] uppercase tracking-[0.2em]">
                       ADD
@@ -2882,7 +2973,7 @@ export default function ProductPage() {
                     <span className="text-white font-extralight text-[14px]">
                       {displayPrice ? formatPriceToCad(displayPrice) : ""}
                     </span>
-                  </button>
+                  </PdpAddToCartButton>
                 </>
               )}
 
@@ -3134,6 +3225,7 @@ export default function ProductPage() {
               <ProductCard
                 key={p.slug}
                 product={p as unknown as ScrapedProduct}
+                showQuickAdd
               />
             ))}
           </div>
@@ -3143,7 +3235,7 @@ export default function ProductPage() {
       {/* Mobile Sticky Add to Cart Bar - Shows when inline button is scrolled out of view */}
       <div
         className={`fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t border-gray-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] transition-transform duration-300 ease-out ${
-          showStickyAddToCart && !isOutOfStock
+          showStickyAddToCart && !isOutOfStock && canCheckoutOnShopify
             ? "translate-y-0"
             : "translate-y-full"
         }`}
@@ -3175,14 +3267,19 @@ export default function ProductPage() {
             </button>
           </div>
 
-          {/* Add to Cart Button */}
-          <button className="flex-1 py-3 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-2">
+          <PdpAddToCartButton
+            fetcher={cartFetcher}
+            merchandiseId={shopifyVariantGid}
+            quantity={quantity}
+            formClassName="flex-1 flex min-w-0"
+            buttonClassName="flex-1 py-3 bg-[#272724] hover:bg-[#1f1f1c] rounded-md font-['Archivo'] transition-all duration-200 flex items-center justify-center gap-2 disabled:opacity-60"
+          >
             <span className="text-white/90 font-extralight text-sm">•</span>
             <span className="text-white font-extralight text-[14px] uppercase tracking-[0.15em]">
               ADD
             </span>
             <span className="text-white/90 font-extralight text-sm">•</span>
-          </button>
+          </PdpAddToCartButton>
         </div>
         {/* Safe area padding for devices with home indicator */}
         <div className="h-[env(safe-area-inset-bottom)]" />

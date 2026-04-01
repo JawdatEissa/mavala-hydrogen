@@ -36,6 +36,17 @@ function firstLinePlain(text: string, maxLen = 200): string {
   return `${line.slice(0, maxLen)}…`;
 }
 
+/** First available variant, else first variant — same rule as add-to-cart. */
+export function getDefaultVariantGidFromStorefrontNode(
+  node: StorefrontProductNode,
+): string | null {
+  const firstAvailable = node.variants.edges.find(
+    (e) => e.node.availableForSale,
+  )?.node;
+  const v = firstAvailable ?? node.variants.edges[0]?.node ?? null;
+  return v?.id ?? null;
+}
+
 /**
  * Map a Storefront API Product node into ScrapedProduct for existing UI.
  */
@@ -72,11 +83,7 @@ export function mapStorefrontProductToScrapedProduct(
   const mainDescription =
     descPlain.length > tagline.length ? descPlain : stripHtml(node.descriptionHtml);
 
-  const firstAvailableVariant = node.variants.edges.find(
-    (e) => e.node.availableForSale,
-  )?.node;
-  const defaultVariant =
-    firstAvailableVariant ?? node.variants.edges[0]?.node ?? null;
+  const defaultVariantId = getDefaultVariantGidFromStorefrontNode(node);
 
   const mapped: ScrapedProduct = {
     url: `/products/${node.handle}`,
@@ -93,7 +100,7 @@ export function mapStorefrontProductToScrapedProduct(
 
   (mapped as ScrapedProduct & { shopify?: Record<string, unknown> }).shopify = {
     productGid: node.id,
-    defaultVariantGid: defaultVariant?.id ?? null,
+    defaultVariantGid: defaultVariantId,
     variantCount: node.variants.edges.length,
   };
 

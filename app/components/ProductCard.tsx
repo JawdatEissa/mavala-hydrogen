@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Link, useFetcher } from "@remix-run/react";
 import type { Product } from "../lib/mock-data";
 import type { ScrapedProduct } from "../lib/scraped-products.server";
 import { formatPriceToCad } from "../lib/currency";
@@ -27,11 +27,14 @@ const formatTitle = (rawTitle?: string): string => {
   return trimmed;
 };
 
+type CartQuickAddData = { ok?: boolean; error?: string | null };
+
 export function ProductCard({
   product,
   showQuickAdd = false,
   imageScale: baseImageScale,
 }: ProductCardProps) {
+  const cartFetcher = useFetcher<CartQuickAddData>();
   // Extract slug from product
   const slug = product.slug || product.url.split("/").pop() || "";
   const showBestsellerBadge = isBestsellerSlug(slug);
@@ -226,6 +229,35 @@ export function ProductCard({
           ) : null}
         </div>
       </Link>
+      {showQuickAdd && !isOutOfStock ? (
+        <div className="mt-2 px-0">
+          <cartFetcher.Form method="post" action="/cart" className="w-full">
+            <input type="hidden" name="intent" value="add" />
+            <input type="hidden" name="handle" value={slug} />
+            <input type="hidden" name="quantity" value="1" />
+            <button
+              type="submit"
+              disabled={cartFetcher.state !== "idle"}
+              className="w-full text-center text-[10px] font-['Archivo'] uppercase tracking-[0.2em] py-2 border border-[#272724] text-[#272724] hover:bg-[#272724] hover:text-white transition-colors disabled:opacity-50 rounded-[3px]"
+            >
+              {cartFetcher.state !== "idle" ? "Adding…" : "Quick add"}
+            </button>
+          </cartFetcher.Form>
+          {cartFetcher.data?.ok ? (
+            <p className="text-[10px] text-green-700 mt-1 text-center">
+              Added —{" "}
+              <Link to="/cart" className="underline">
+                view cart
+              </Link>
+            </p>
+          ) : null}
+          {cartFetcher.data?.ok === false && cartFetcher.data.error ? (
+            <p className="text-[10px] text-red-700 mt-1 text-center leading-tight">
+              {cartFetcher.data.error}
+            </p>
+          ) : null}
+        </div>
+      ) : null}
     </div>
   );
 }

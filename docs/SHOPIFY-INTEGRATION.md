@@ -71,9 +71,31 @@ Confirms Storefront and (if configured) Admin client credentials. After adding p
 
 `npm run build` runs `prebuild`, which may regenerate `app/data/image-manifest.json`. That is unrelated to Shopify API logic.
 
+## Phase 2 — Cart & checkout (implemented)
+
+### Behavior
+
+- **`app/lib/cart-cookie.server.ts`** — httpOnly cookie **`mavala_shopify_cart_id`** (`path: /`, `sameSite: lax`, `secure` in production, 14-day `maxAge`) stores the Storefront **Cart** GID. The private Storefront token is never sent to the browser.
+- **`app/lib/shopify-cart.server.ts`** — `fetchCartById`, `createCartWithLines`, `addCartLines`, `updateCartLines`, `removeCartLines`, `addLineToCart` (create-or-reuse cookie cart), `getMerchandiseIdForHandle` (resolves default purchasable variant for quick-add). All GraphQL was validated against the Storefront schema (Shopify Dev MCP / `validate_graphql_codeblocks`).
+- **`app/routes/cart.tsx`** — Loader reads the cart from Shopify; **`action`** supports `intent`: `add` (optional `merchandiseId` and/or `handle` + `quantity`), `update` (`lineId`, `quantity`; quantity `0` removes the line), `remove`, `checkout` (**redirect** to `cart.checkoutUrl`). **Proceed to Checkout** uses Shopify-hosted checkout only.
+- **`app/routes/products.$handle.tsx`** — PDP add controls post to `/cart` via `useFetcher` when `product.shopify.defaultVariantGid` exists; JSON-only products show *not available for online checkout* (no fake checkout).
+- **`app/components/ProductCard.tsx`** — Optional **`showQuickAdd`** posts `handle` for server-side variant resolution (used on *You Might Also Like*). If the handle has no live Shopify product, the action returns an error message.
+
+### Storefront access scopes (cart)
+
+Ensure the Headless / Storefront token includes **unauthenticated read/write checkout** scopes so the Cart object is available:
+
+- `unauthenticated_read_checkouts`
+- `unauthenticated_write_checkouts`
+
+See [Shopify access scopes — unauthenticated](https://shopify.dev/docs/api/usage/access-scopes#unauthenticated-access-scopes).
+
+### Verification
+
+Same as Phase 1: `npm run test:shopify`, then add a line item, open `/cart`, and use **Proceed to Checkout** to confirm the hosted checkout URL.
+
 ## Roadmap (later phases)
 
-- **Phase 2** — Cart: Storefront cart mutations, persist cart id (e.g. httpOnly cookie), wire `cart.tsx` and add-to-cart, redirect to `checkoutUrl`.
 - **Phase 3** — Customer Account API / OAuth for real sign-in.
 - **Phase 4** — Caching, rate limits, error handling; optional Storefront-backed collections/search with JSON fallback.
 
