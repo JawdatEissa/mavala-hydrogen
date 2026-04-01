@@ -7,6 +7,11 @@ import {
   getProductBySlug,
   type ScrapedProduct,
 } from "../lib/scraped-products.server";
+import { getStorefrontProductByHandle } from "../lib/shopify-storefront.server";
+import {
+  enrichShopifyProductFromJson,
+  mapStorefrontProductToScrapedProduct,
+} from "../lib/shopify-product-mapper.server";
 import { formatPriceToCad } from "../lib/currency";
 import { ShadeDrawer } from "../components/ShadeDrawer";
 import { ProductCard } from "../components/ProductCard";
@@ -131,8 +136,17 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     throw new Response("Not Found", { status: 404 });
   }
 
-  // Use getProductBySlug which loads detailed data with shades
-  const product = getProductBySlug(handle);
+  let product: ScrapedProduct | null = null;
+  const storefrontNode = await getStorefrontProductByHandle(handle);
+  if (storefrontNode) {
+    product = mapStorefrontProductToScrapedProduct(storefrontNode);
+    const jsonProduct = getProductBySlug(handle);
+    if (jsonProduct) {
+      enrichShopifyProductFromJson(product, jsonProduct);
+    }
+  } else {
+    product = getProductBySlug(handle);
+  }
 
   if (!product) {
     console.error(`Product not found: ${handle}`);

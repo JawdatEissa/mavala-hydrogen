@@ -15,7 +15,8 @@
     "ingest": "npx tsx scripts/ingest-content.ts",
     "ingest:clear": "npx tsx scripts/ingest-content.ts --clear",
     "ingest:knowledge": "npx tsx scripts/generate-product-knowledge.ts && npx tsx scripts/ingest-content.ts --knowledge",
-    "ingest:all": "npx tsx scripts/generate-product-knowledge.ts && npx tsx scripts/ingest-content.ts --clear"
+    "ingest:all": "npx tsx scripts/generate-product-knowledge.ts && npx tsx scripts/ingest-content.ts --clear",
+    "test:shopify": "node scripts/test-shopify-connection.mjs"
   },
   "engines": {
     "node": ">=18.0.0"

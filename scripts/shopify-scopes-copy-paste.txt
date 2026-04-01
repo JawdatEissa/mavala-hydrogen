@@ -1,0 +1,67 @@
+================================================================================
+Shopify Dev Dashboard - scopes for Mavala headless (Admin + Storefront token)
+================================================================================
+
+WHAT "UNAUTHENTICATED" MEANS
+----------------------------
+- Admin API scopes (read_products, write_orders, ...) = your app acting as the
+  merchant / backend. You already use these with client credentials.
+
+- Unauthenticated / Storefront API scopes (unauthenticated_read_...) = what a
+  CUSTOMER on the storefront can do via the Storefront API: see products,
+  build a cart, start checkout, etc. They are NOT listed under "Admin API"
+  only; the Dev Dashboard version editor has a separate Storefront API section
+  in many UIs (sometimes "Storefront API integration").
+
+The 403 "App must be extendable to create a storefront access token" means:
+your app install has NO Storefront (unauthenticated) scopes yet, so Shopify
+refuses to mint a public Storefront token.
+
+YOU DO NOT NEED A SECOND APP
+----------------------------
+Edit the SAME app (Mavala Dev): Versions -> create new version OR edit draft ->
+add ALL scopes below (Admin + unauthenticated) -> Release -> then in Shopify
+Admin open the app and APPROVE the new permissions (or uninstall + Install app
+again from Dev Dashboard Home).
+
+================================================================================
+ONE LINE - paste into "Scopes" / access_scopes if the UI accepts one field
+================================================================================
+
+read_products,write_products,read_collections,read_orders,read_customers,read_inventory,unauthenticated_read_product_listings,unauthenticated_read_product_tags,unauthenticated_read_product_inventory,unauthenticated_read_content,unauthenticated_read_metaobjects,unauthenticated_read_checkouts,unauthenticated_write_checkouts,unauthenticated_read_customers,unauthenticated_write_customers,unauthenticated_read_customer_tags,unauthenticated_read_selling_plans,unauthenticated_read_product_pickup_locations
+
+================================================================================
+MULTI-LINE - same scopes, easier to read / tick in checkboxes
+================================================================================
+
+read_products
+write_products
+read_collections
+read_orders
+read_customers
+read_inventory
+unauthenticated_read_product_listings
+unauthenticated_read_product_tags
+unauthenticated_read_product_inventory
+unauthenticated_read_content
+unauthenticated_read_metaobjects
+unauthenticated_read_checkouts
+unauthenticated_write_checkouts
+unauthenticated_read_customers
+unauthenticated_write_customers
+unauthenticated_read_customer_tags
+unauthenticated_read_selling_plans
+unauthenticated_read_product_pickup_locations
+
+================================================================================
+IF IT STILL SAYS "must be extendable" AFTER ADDING SCOPES
+================================================================================
+Some orgs also need the app to be a "sales channel" (Partner Dashboard legacy
+path). On Dev Dashboard-only apps, ensure the version explicitly includes
+Storefront API / unauthenticated scopes (not Admin-only), then reinstall.
+
+Last resort: build a minimal sales channel with Shopify CLI
+  shopify app generate extension --template channel_config
+See: https://shopify.dev/docs/apps/build/sales-channels/start-building
+
+================================================================================

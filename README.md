@@ -103,6 +103,7 @@ npm run lint     # Run ESLint
 
 ## 📚 Resources
 
+- [Shopify integration (Phase 1)](docs/SHOPIFY-INTEGRATION.md) — Storefront PDP + JSON fallback, env, roadmap
 - [Hydrogen Docs](https://shopify.dev/docs/custom-storefronts/hydrogen)
 - [Remix Docs](https://remix.run/docs)
 - [Tailwind CSS](https://tailwindcss.com/docs)

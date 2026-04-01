@@ -249,11 +249,6 @@
       "/images/barrier-base-coat/Mavala+cares.png",
       "/images/barrier-base-coat/02_Mavala+cares.png"
     ],
-    "hydra-base-coat": [
-      "/images/hydra-base-coat/01.webp",
-      "/images/hydra-base-coat/02.webp",
-      "/images/hydra-base-coat/03.webp"
-    ],
     "bb-cream": [
       "/images/bb-cream/01_90512A+(with+reflection).png",
       "/images/bb-cream/02_Porcelaine.png",
@@ -277,19 +272,7 @@
       "/images/bio-colors/02_Mini+Bio-Color's.jpg",
       "/images/bio-colors/03_MINI+Bio-Color+Corporate.png",
       "/images/bio-colors/04_Mini+Bio-Color's+1.png",
-      "/images/bio-colors/05_Mini+Bio-Color's+3.png",
-      "/images/bio-colors/06_701+Rio+Grande.png",
-      "/images/bio-colors/07_702+Mississippi.png",
-      "/images/bio-colors/08_703+Nile.png",
-      "/images/bio-colors/09_704+RhÃ´ne.png",
-      "/images/bio-colors/10_705+Volta.png",
-      "/images/bio-colors/11_706+Thames.png",
-      "/images/bio-colors/12_707+Colorado.png",
-      "/images/bio-colors/13_708+Murray.png",
-      "/images/bio-colors/14_709+Amazonas.png",
-      "/images/bio-colors/15_710+Mekong.png",
-      "/images/bio-colors/16_711+Shannon.png",
-      "/images/bio-colors/17_712+Indus.png"
+      "/images/bio-colors/05_Mini+Bio-Color's+3.png"
     ],
     "bitten-nail": [
       "/images/bitten-nail/Bitten_nail.png",
@@ -1214,6 +1197,11 @@
     "hoofstick": [
       "/images/hoofstick/01_90655+Hoofstick+copy.png",
       "/images/hoofstick/90655+Hoofstick+copy.png"
+    ],
+    "hydra-base-coat": [
+      "/images/hydra-base-coat/01.webp",
+      "/images/hydra-base-coat/02.webp",
+      "/images/hydra-base-coat/03.webp"
     ],
     "hydra-matt-fluid": [
       "/images/hydra-matt-fluid/01_9053901A.png",
@@ -3721,5 +3709,5 @@
       "/images/shades/993 WINDSOR/03.png"
     ]
   },
-  "generated": "2026-03-09T02:12:24.383Z"
+  "generated": "2026-04-01T22:41:15.941Z"
 }
