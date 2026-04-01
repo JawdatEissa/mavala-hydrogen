@@ -1,6 +1,16 @@
-﻿.vercel
-.env*.local
+# Dependencies
 node_modules
+
+# Build outputs
 build
 .cache
 dist
+.vercel
+
+# Environment secrets — NEVER commit any .env files with real values
+.env
+.env.*
+!.env.example
+
+# Cursor MCP config — may contain Shopify Admin API token or other secrets
+.cursor/mcp.json

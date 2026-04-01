@@ -134,6 +134,9 @@ export function ProductCard({
   const imageOffsetAdjustments: Record<string, string> = {
     "mavala-stop-pen": "6.5%",
     "blue-nail-polish-remover": "-6.5%",
+    "micellar-water": "2%",
+    "anti-spot-cream-for-hands": "5%",
+    "rejuvinating-mask": "9%",
   };
   const imageOffset = imageOffsetAdjustments[slug] || null;
 
@@ -143,6 +146,9 @@ export function ProductCard({
     "mavala-stop-pen": 1.21,
     "blue-nail-polish-remover": 1.132,
     "double-lash": 1.4,
+    "micellar-water": 1.35,
+    "anti-spot-cream-for-hands": 1.22,
+    "repairing-night-cream": 1.18,
   };
   const perProductScale = imageScaleAdjustments[slug] || null;
   // Combine base scale (from prop) with per-product overrides
