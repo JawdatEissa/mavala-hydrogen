@@ -1,4 +1,5 @@
-import { Link, useFetcher } from "@remix-run/react";
+import { Link, useFetcher, useRevalidator } from "@remix-run/react";
+import { useEffect } from "react";
 import type { Product } from "../lib/mock-data";
 import type { ScrapedProduct } from "../lib/scraped-products.server";
 import { formatPriceToCad } from "../lib/currency";
@@ -35,6 +36,14 @@ export function ProductCard({
   imageScale: baseImageScale,
 }: ProductCardProps) {
   const cartFetcher = useFetcher<CartQuickAddData>();
+  const revalidator = useRevalidator();
+
+  useEffect(() => {
+    if (cartFetcher.state === "idle" && cartFetcher.data?.ok) {
+      revalidator.revalidate();
+    }
+  }, [cartFetcher.state, cartFetcher.data?.ok, revalidator]);
+
   // Extract slug from product
   const slug = product.slug || product.url.split("/").pop() || "";
   const showBestsellerBadge = isBestsellerSlug(slug);
@@ -245,10 +254,7 @@ export function ProductCard({
           </cartFetcher.Form>
           {cartFetcher.data?.ok ? (
             <p className="text-[10px] text-green-700 mt-1 text-center">
-              Added —{" "}
-              <Link to="/cart" className="underline">
-                view cart
-              </Link>
+              Added to bag.
             </p>
           ) : null}
           {cartFetcher.data?.ok === false && cartFetcher.data.error ? (

@@ -16,7 +16,12 @@
     "ingest:clear": "npx tsx scripts/ingest-content.ts --clear",
     "ingest:knowledge": "npx tsx scripts/generate-product-knowledge.ts && npx tsx scripts/ingest-content.ts --knowledge",
     "ingest:all": "npx tsx scripts/generate-product-knowledge.ts && npx tsx scripts/ingest-content.ts --clear",
-    "test:shopify": "node scripts/test-shopify-connection.mjs"
+    "test:shopify": "node scripts/test-shopify-connection.mjs",
+    "verify:shopify-publications": "node scripts/verify-shopify-product-publications.mjs",
+    "test:shopify-checkout": "node scripts/test-shopify-checkout.mjs",
+    "sync:shopify": "node scripts/sync-catalog-to-shopify.mjs",
+    "sync:shopify-shades": "node scripts/sync-shades-to-shopify.mjs",
+    "ensure:shopify-shade-collection": "node scripts/ensure-shade-collection.mjs"
   },
   "engines": {
     "node": ">=18.0.0"

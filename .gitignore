@@ -14,3 +14,6 @@ dist
 
 # Cursor MCP config — may contain Shopify Admin API token or other secrets
 .cursor/mcp.json
+
+# Local hero video rips / inspection — often >100MB (GitHub block)
+downloads/hero-videos-inspect/

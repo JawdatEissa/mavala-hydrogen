@@ -1,6 +1,6 @@
 import type { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { useLoaderData, Link, useFetcher } from "@remix-run/react";
+import { useLoaderData, Link, useFetcher, useRevalidator } from "@remix-run/react";
 import { useState, useEffect, useRef, type ReactNode } from "react";
 import {
   loadScrapedProducts,
@@ -1260,6 +1260,7 @@ export default function ProductPage() {
     shadeColors,
   } = useLoaderData<typeof loader>();
   const cartFetcher = useFetcher<PdpCartActionData>();
+  const revalidator = useRevalidator();
   const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedMainColor, setSelectedMainColor] = useState<string | null>(
@@ -1277,6 +1278,13 @@ export default function ProductPage() {
   // Mobile sticky Add to Cart bar - shows when inline button scrolls out of view
   const [showStickyAddToCart, setShowStickyAddToCart] = useState(false);
   const mobileAddToCartRef = useRef<HTMLDivElement>(null);
+
+  // Refresh root loader cart count in header after add-to-cart (fetcher does not revalidate root by default)
+  useEffect(() => {
+    if (cartFetcher.state === "idle" && cartFetcher.data?.ok) {
+      revalidator.revalidate();
+    }
+  }, [cartFetcher.state, cartFetcher.data?.ok, revalidator]);
 
   // Intersection Observer for mobile sticky Add to Cart
   useEffect(() => {
@@ -1658,15 +1666,12 @@ export default function ProductPage() {
     <div className="pt-[104px] md:pt-[112px] font-['Archivo']">
       <div className="sr-only" aria-live="polite">
         {cartFetcher.data?.ok
-          ? "Added to cart. You can open your cart to review or checkout."
+          ? "Added to bag. Open the shopping bag in the header to review or checkout."
           : ""}
       </div>
       {cartFetcher.data?.ok ? (
         <div className="px-4 py-2 bg-[#f0fdf4] border-b border-green-200 text-center text-sm text-green-900">
-          Added to bag.{" "}
-          <Link to="/cart" className="underline font-medium">
-            View cart
-          </Link>
+          Added to bag.
         </div>
       ) : null}
       {cartFetcher.data && cartFetcher.data.ok === false && cartFetcher.data.error ? (

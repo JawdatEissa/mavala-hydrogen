@@ -2,6 +2,8 @@
 
 This project is a **Remix (Vite) + TypeScript** storefront—not the `@shopify/hydrogen` npm package. It integrates with Shopify using the **Storefront API** from server-side loaders and `*.server.ts` modules so tokens stay off the client.
 
+**Future option:** You can migrate hosting from **Vercel (or any Node host)** to **Shopify Hydrogen / Oxygen** later without automatically sacrificing domain or SEO, if URLs, canonicals, and redirects are handled deliberately — see **[FUTURE-VERCEL-TO-HYDROGEN-MIGRATION.md](./FUTURE-VERCEL-TO-HYDROGEN-MIGRATION.md)**.
+
 ## Phase 1 — Storefront product read + PDP fallback (implemented)
 
 Product detail pages (`/products/:handle`) try **live Shopify** first, then fall back to the **bundled JSON catalog** if the API returns no product or errors.
@@ -67,9 +69,31 @@ npm run test:shopify
 
 Confirms Storefront and (if configured) Admin client credentials. After adding products in Shopify with handles that match your routes, open `/products/{handle}` and confirm live title/price; JSON-only handles should still work when Shopify has no match.
 
+**Product publication vs sales channels**
+
+```bash
+npm run verify:shopify-publications
+```
+
+Uses the Admin API ([`publications`](https://shopify.dev/docs/api/admin-graphql/latest/queries/publications), [`Product.resourcePublications`](https://shopify.dev/docs/api/admin-graphql/latest/objects/ResourcePublication)) and compares to your Storefront token’s `products` query. Requires **`read_publications`** on the Dev Dashboard app for the full per-channel breakdown; without it, the script still lists **ACTIVE** products and compares **Storefront vs Admin** visibility (strong signal that the Headless channel is wired). Add `read_publications` to the scopes in [`scripts/shopify-scopes-copy-paste.txt`](../scripts/shopify-scopes-copy-paste.txt), release a new app version, and re-approve the app if Shopify prompts you.
+
+**Checkout, shipping, and test payment**
+
+```bash
+npm run test:shopify-checkout
+```
+
+Creates a Storefront cart with one **available** variant, prints **`checkoutUrl`**. Open the URL in a browser to confirm **shipping** options and complete payment with **Bogus gateway** (or your test provider). Treat checkout URLs as **single-use / sensitive**; run the script again for a fresh link.
+
 ### Build note
 
 `npm run build` runs `prebuild`, which may regenerate `app/data/image-manifest.json`. That is unrelated to Shopify API logic.
+
+### Bulk catalog sync (Admin scripts)
+
+To push **`all-products.json`** and **shade** data from `color_mapping_*.json` / `image-manifest.json` into Shopify (including staged local images), see **[SHOPIFY-CATALOG-SYNC-SCRIPTS.md](./SHOPIFY-CATALOG-SYNC-SCRIPTS.md)**. Typical full runs:
+
+`node scripts/sync-catalog-to-shopify.mjs --delay 500` and `node scripts/sync-shades-to-shopify.mjs --delay 500`. To create a **smart collection** that groups all synced shade products, run `node scripts/ensure-shade-collection.mjs` (or `npm run ensure:shopify-shade-collection`).
 
 ## Phase 2 — Cart & checkout (implemented)
 

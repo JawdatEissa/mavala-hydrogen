@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Link, useRouteLoaderData } from "@remix-run/react";
 import { useEffect, useRef, useState } from "react";
 import { categories } from "../lib/mock-data";
 
@@ -50,7 +50,31 @@ function MavalaLogo({ width = 240 }: { width?: number }) {
 const navLinkClasses =
   "block font-['Archivo'] text-[14px] font-normal leading-[14px] uppercase tracking-[0.92px] text-[rgba(167,24,48,0.996)] px-[14px] py-[10.5px] text-center transition-colors duration-100 ease-in-out";
 
+function BagIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+      />
+    </svg>
+  );
+}
+
+/** Root loader in `root.tsx` provides `cartItemCount` for live header badge. */
+type RootLoaderShape = { cartItemCount?: number };
+
 export function Header() {
+  const rootData = useRouteLoaderData("root") as RootLoaderShape | undefined;
+  const cartItemCount = rootData?.cartItemCount ?? 0;
   const [isHidden, setIsHidden] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const lastScrollYRef = useRef(0);
@@ -342,6 +366,25 @@ export function Header() {
             <Link to="/sign-in" className={navLinkClasses}>
               SIGN IN
             </Link>
+
+            <Link
+              to="/cart"
+              className={`${navLinkClasses} inline-flex items-center justify-center`}
+              aria-label={
+                cartItemCount > 0
+                  ? `Shopping bag, ${cartItemCount} items`
+                  : "Shopping bag"
+              }
+            >
+              <span className="relative inline-flex items-center justify-center">
+                <BagIcon className="w-[22px] h-[22px]" />
+                {cartItemCount > 0 ? (
+                  <span className="absolute -top-2 -right-3 min-w-[18px] h-[18px] px-0.5 rounded-full bg-[#a71830] text-white text-[10px] font-semibold leading-[18px] text-center tabular-nums">
+                    {cartItemCount > 99 ? "99+" : cartItemCount}
+                  </span>
+                ) : null}
+              </span>
+            </Link>
           </div>
         </div>
 
@@ -353,24 +396,24 @@ export function Header() {
           </div>
 
           {/* Mobile Cart */}
-          <a
-            href="/cart"
-            className="absolute top-[25px] right-4 p-3 z-[10001] bg-white rounded-md text-gray-800"
+          <Link
+            to="/cart"
+            className="absolute top-[22px] right-4 p-2 z-[10001] text-[rgba(167,24,48,0.996)]"
+            aria-label={
+              cartItemCount > 0
+                ? `Shopping bag, ${cartItemCount} items`
+                : "Shopping bag"
+            }
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-              />
-            </svg>
-          </a>
+            <span className="relative inline-flex">
+              <BagIcon className="w-7 h-7" />
+              {cartItemCount > 0 ? (
+                <span className="absolute -top-1 -right-2 min-w-[18px] h-[18px] px-0.5 rounded-full bg-[#a71830] text-white text-[10px] font-semibold leading-[18px] text-center tabular-nums">
+                  {cartItemCount > 99 ? "99+" : cartItemCount}
+                </span>
+              ) : null}
+            </span>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -555,6 +598,26 @@ export function Header() {
               >
                 Sign In
               </a>
+
+              <Link
+                to="/cart"
+                className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors inline-flex items-center justify-center gap-2"
+                onClick={() => {
+                  if (window.history.state?.mobileMenuOpen) {
+                    window.history.replaceState(
+                      { ...window.history.state, mobileMenuOpen: false },
+                      "",
+                    );
+                  }
+                }}
+              >
+                Bag
+                {cartItemCount > 0 ? (
+                  <span className="text-[18px] font-semibold tabular-nums bg-[#a71830] text-white rounded-full min-w-[28px] px-2 py-0.5">
+                    {cartItemCount > 99 ? "99+" : cartItemCount}
+                  </span>
+                ) : null}
+              </Link>
             </div>
           </div>
         </div>

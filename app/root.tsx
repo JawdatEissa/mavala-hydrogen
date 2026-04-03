@@ -8,12 +8,17 @@ import {
   useNavigationType,
 } from "@remix-run/react";
 import { useEffect, useState } from "react";
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
+import { json } from "@remix-run/node";
 
 import "./styles/tailwind.css";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { ChatWidget } from "./components/chat";
+import {
+  fetchCartById,
+  readCartIdFromRequest,
+} from "./lib/shopify-cart.server";
 
 export const links: LinksFunction = () => [
   { rel: "icon", href: "/favicon.ico" },
@@ -28,6 +33,22 @@ export const links: LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Archivo:wght@200;300;400;500;600;700&family=Inter:wght@400;500;600&family=Raleway:wght@400;500;600;700&family=Tenor+Sans&family=Marcellus&display=swap",
   },
 ];
+
+export async function loader({ request }: LoaderFunctionArgs) {
+  let cartItemCount = 0;
+  try {
+    const cartId = await readCartIdFromRequest(request);
+    if (cartId) {
+      const { cart } = await fetchCartById(cartId);
+      if (cart) {
+        cartItemCount = cart.totalQuantity;
+      }
+    }
+  } catch {
+    // Storefront misconfigured or transient error — header shows 0 items
+  }
+  return json({ cartItemCount });
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
