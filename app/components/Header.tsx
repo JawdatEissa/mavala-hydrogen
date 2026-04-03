@@ -69,12 +69,27 @@ function BagIcon({ className }: { className?: string }) {
   );
 }
 
-/** Root loader in `root.tsx` provides `cartItemCount` for live header badge. */
-type RootLoaderShape = { cartItemCount?: number };
+/** Root loader in `root.tsx` provides cart + customer session for the header. */
+type RootLoaderShape = {
+  cartItemCount?: number;
+  isLoggedIn?: boolean;
+  customerFirstName?: string | null;
+  customerEmail?: string | null;
+  customerAccountUrl?: string | null;
+};
 
 export function Header() {
   const rootData = useRouteLoaderData("root") as RootLoaderShape | undefined;
   const cartItemCount = rootData?.cartItemCount ?? 0;
+  const isLoggedIn = rootData?.isLoggedIn ?? false;
+  const customerFirstName = rootData?.customerFirstName?.trim() || null;
+  const customerEmail = rootData?.customerEmail?.trim() || null;
+  const customerAccountUrl = rootData?.customerAccountUrl ?? null;
+
+  const displayName =
+    customerFirstName ||
+    (customerEmail ? customerEmail.split("@")[0] : null) ||
+    "Account";
   const [isHidden, setIsHidden] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const lastScrollYRef = useRef(0);
@@ -363,9 +378,39 @@ export function Header() {
               SEARCH
             </Link>
 
-            <Link to="/login" className={navLinkClasses}>
-              SIGN IN
-            </Link>
+            {isLoggedIn ? (
+              <div className="flex flex-row items-center gap-1 xl:gap-2 shrink-0">
+                <span
+                  className="font-['Archivo'] text-[12px] xl:text-[13px] font-normal leading-tight uppercase tracking-[0.92px] text-[rgba(167,24,48,0.996)] px-2 xl:px-[10px] py-[10.5px] max-w-[72px] xl:max-w-[100px] 2xl:max-w-[130px] truncate text-center"
+                  title={
+                    customerEmail ||
+                    customerFirstName ||
+                    undefined
+                  }
+                >
+                  {customerFirstName
+                    ? customerFirstName.toUpperCase()
+                    : displayName.toUpperCase()}
+                </span>
+                {customerAccountUrl ? (
+                  <a
+                    href={customerAccountUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={navLinkClasses}
+                  >
+                    ACCOUNT
+                  </a>
+                ) : null}
+                <Link to="/logout" className={navLinkClasses}>
+                  SIGN OUT
+                </Link>
+              </div>
+            ) : (
+              <Link to="/login" className={navLinkClasses}>
+                SIGN IN
+              </Link>
+            )}
 
             <Link
               to="/cart"
@@ -584,20 +629,70 @@ export function Header() {
                 Search
               </a>
 
-              <a
-                href="/login"
-                className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors"
-                onClick={() => {
-                  if (window.history.state?.mobileMenuOpen) {
-                    window.history.replaceState(
-                      { ...window.history.state, mobileMenuOpen: false },
-                      "",
-                    );
-                  }
-                }}
-              >
-                Sign In
-              </a>
+              {isLoggedIn ? (
+                <div className="flex flex-col gap-3 w-full">
+                  <div className="text-[22px] font-['Archivo'] font-normal tracking-[0.5px] text-gray-900">
+                    <span className="block text-[14px] uppercase tracking-wider text-gray-500 mb-1">
+                      Signed in
+                    </span>
+                    <span className="block text-[28px] uppercase tracking-[0.5px]">
+                      {customerFirstName || displayName}
+                    </span>
+                    {customerEmail ? (
+                      <span className="block text-[15px] normal-case text-gray-600 mt-2 break-all">
+                        {customerEmail}
+                      </span>
+                    ) : null}
+                  </div>
+                  {customerAccountUrl ? (
+                    <a
+                      href={customerAccountUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors"
+                      onClick={() => {
+                        if (window.history.state?.mobileMenuOpen) {
+                          window.history.replaceState(
+                            { ...window.history.state, mobileMenuOpen: false },
+                            "",
+                          );
+                        }
+                      }}
+                    >
+                      My account
+                    </a>
+                  ) : null}
+                  <Link
+                    to="/logout"
+                    className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors"
+                    onClick={() => {
+                      if (window.history.state?.mobileMenuOpen) {
+                        window.history.replaceState(
+                          { ...window.history.state, mobileMenuOpen: false },
+                          "",
+                        );
+                      }
+                    }}
+                  >
+                    Sign out
+                  </Link>
+                </div>
+              ) : (
+                <a
+                  href="/login"
+                  className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors"
+                  onClick={() => {
+                    if (window.history.state?.mobileMenuOpen) {
+                      window.history.replaceState(
+                        { ...window.history.state, mobileMenuOpen: false },
+                        "",
+                      );
+                    }
+                  }}
+                >
+                  Sign In
+                </a>
+              )}
 
               <Link
                 to="/cart"

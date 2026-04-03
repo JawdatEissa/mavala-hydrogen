@@ -19,6 +19,7 @@ import {
   customerAccessTokenCookie,
   maxAgeFromExpiresAt,
 } from "~/lib/customer-session-cookie.server";
+import { getCustomerSession } from "~/lib/auth.server";
 import { storefrontCustomerAccessTokenCreate } from "~/lib/shopify-customer-storefront.server";
 
 export const meta: MetaFunction = () => [
@@ -29,7 +30,12 @@ export const meta: MetaFunction = () => [
   },
 ];
 
-export async function loader(_args: LoaderFunctionArgs) {
+export async function loader({ request }: LoaderFunctionArgs) {
+  const session = await getCustomerSession(request);
+  if (session) {
+    return redirect("/");
+  }
+
   const domain = (process.env.PUBLIC_STORE_DOMAIN || "")
     .replace(/^https?:\/\//, "")
     .trim();

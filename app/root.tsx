@@ -52,10 +52,19 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
   const session = await getCustomerSession(request);
 
+  const storeDomain = (process.env.PUBLIC_STORE_DOMAIN || "")
+    .replace(/^https?:\/\//, "")
+    .trim();
+  const customerAccountUrl = storeDomain
+    ? `https://${storeDomain}/account`
+    : null;
+
   return json({
     cartItemCount,
     isLoggedIn: !!session,
     customerFirstName: session?.firstName ?? null,
+    customerEmail: session?.email ?? null,
+    customerAccountUrl,
   });
 }
 
