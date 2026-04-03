@@ -19,10 +19,14 @@ import {
   type ChatAnonPayload,
 } from "~/lib/chat-anon-cookie.server";
 import {
-  getCustomerSession,
   getRateLimitIdentifier,
+  resolveCustomerSession,
   type CustomerSession,
 } from "~/lib/auth.server";
+import {
+  appendSetCookieFromHeaders,
+  mergeSetCookieHeaders,
+} from "~/lib/response-cookies.server";
 import type {
   ChatRequest,
   ChatResponse,
@@ -88,6 +92,23 @@ async function headersAfterAnonSuccess(
     await serializeChatAnonUses(anonUses.count + 1),
   );
   return h;
+}
+
+function chatJsonInit(
+  caCookies: string[],
+  options?: { status?: number; anonHeaders?: Headers },
+): ResponseInit | undefined {
+  const base: ResponseInit | undefined =
+    options?.status !== undefined ? { status: options.status } : undefined;
+  let merged = mergeSetCookieHeaders(base, caCookies);
+  if (options?.anonHeaders) {
+    merged = appendSetCookieFromHeaders(merged, options.anonHeaders) ?? merged;
+  }
+  const headerKeys = merged?.headers ? [...merged.headers.keys()] : [];
+  if (headerKeys.length === 0 && merged?.status === undefined) {
+    return undefined;
+  }
+  return merged;
 }
 
 // =========================================
@@ -1575,24 +1596,29 @@ function extractProductsFromContext(
 export async function action({ request }: ActionFunctionArgs) {
   // Only allow POST
   if (request.method !== "POST") {
-    return json({ error: "Method not allowed" }, { status: 405 });
+    const { setCookieHeaders } = await resolveCustomerSession(request);
+    return json(
+      { error: "Method not allowed" },
+      chatJsonInit(setCookieHeaders, { status: 405 }),
+    );
   }
 
   try {
     // Load modules lazily (catches initialization errors)
     await loadModules();
 
+    const { session: customerSession, setCookieHeaders: caRefreshCookies } =
+      await resolveCustomerSession(request);
+
     if (moduleError) {
       console.error("[api/chat] Module initialization error:", moduleError);
       return json(
         { error: "Service temporarily unavailable. Please try again later." },
-        { status: 503 },
+        chatJsonInit(caRefreshCookies, { status: 503 }),
       );
     }
 
     // Authentication check
-    const customerSession = await getCustomerSession(request);
-
     let anonUses: ChatAnonPayload | null = null;
     if (!customerSession) {
       anonUses = await parseChatAnonUses(request);
@@ -1603,7 +1629,7 @@ export async function action({ request }: ActionFunctionArgs) {
               "You've used your free messages. Sign in or create an account to continue.",
             code: "CHAT_LIMIT_REACHED",
           },
-          { status: 403 },
+          chatJsonInit(caRefreshCookies, { status: 403 }),
         );
       }
     }
@@ -1619,7 +1645,7 @@ export async function action({ request }: ActionFunctionArgs) {
           error: "Please sign in to use the Mavala Beauty Assistant.",
           code: "AUTH_REQUIRED",
         },
-        { status: 401 },
+        chatJsonInit(caRefreshCookies, { status: 401 }),
       );
     }
 
@@ -1628,7 +1654,7 @@ export async function action({ request }: ActionFunctionArgs) {
     if (checkRateLimit(rateLimitId)) {
       return json(
         { error: "Too many requests. Please wait a moment and try again." },
-        { status: 429 },
+        chatJsonInit(caRefreshCookies, { status: 429 }),
       );
     }
 
@@ -1637,19 +1663,25 @@ export async function action({ request }: ActionFunctionArgs) {
     try {
       body = await request.json();
     } catch {
-      return json({ error: "Invalid JSON body" }, { status: 400 });
+      return json(
+        { error: "Invalid JSON body" },
+        chatJsonInit(caRefreshCookies, { status: 400 }),
+      );
     }
 
     const question = body.question?.trim();
 
     if (!question) {
-      return json({ error: "Question is required" }, { status: 400 });
+      return json(
+        { error: "Question is required" },
+        chatJsonInit(caRefreshCookies, { status: 400 }),
+      );
     }
 
     if (question.length > 500) {
       return json(
         { error: "Question is too long (max 500 characters)" },
-        { status: 400 },
+        chatJsonInit(caRefreshCookies, { status: 400 }),
       );
     }
 
@@ -1664,7 +1696,7 @@ export async function action({ request }: ActionFunctionArgs) {
       console.error("[api/chat] Failed to generate embedding");
       return json(
         { error: "Failed to process your question. Please try again." },
-        { status: 500 },
+        chatJsonInit(caRefreshCookies, { status: 500 }),
       );
     }
 
@@ -1690,7 +1722,10 @@ export async function action({ request }: ActionFunctionArgs) {
         customerSession,
         anonUses,
       );
-      return json(response, anonHeaders ? { headers: anonHeaders } : undefined);
+      return json(
+        response,
+        chatJsonInit(caRefreshCookies, { anonHeaders }),
+      );
     }
 
     // Retrieve relevant context
@@ -1798,10 +1833,14 @@ export async function action({ request }: ActionFunctionArgs) {
       customerSession,
       anonUses,
     );
-    return json(response, anonHeaders ? { headers: anonHeaders } : undefined);
+    return json(
+      response,
+      chatJsonInit(caRefreshCookies, { anonHeaders }),
+    );
   } catch (error) {
     console.error("[api/chat] Unexpected error:", error);
 
+    const { setCookieHeaders } = await resolveCustomerSession(request);
     return json(
       {
         error:
@@ -1809,7 +1848,7 @@ export async function action({ request }: ActionFunctionArgs) {
             ? "Something went wrong. Please try again."
             : (error as Error)?.message || "Unknown error",
       },
-      { status: 500 },
+      chatJsonInit(setCookieHeaders, { status: 500 }),
     );
   }
 }

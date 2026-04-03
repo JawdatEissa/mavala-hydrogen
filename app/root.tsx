@@ -16,7 +16,8 @@ import "./styles/tailwind.css";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { ChatWidget } from "./components/chat";
-import { getCustomerSession } from "./lib/auth.server";
+import { resolveCustomerSession } from "./lib/auth.server";
+import { mergeSetCookieHeaders } from "./lib/response-cookies.server";
 import {
   fetchCartById,
   readCartIdFromRequest,
@@ -50,7 +51,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
     // Storefront misconfigured or transient error — header shows 0 items
   }
 
-  const session = await getCustomerSession(request);
+  const { session, setCookieHeaders } = await resolveCustomerSession(request);
 
   const storeDomain = (process.env.PUBLIC_STORE_DOMAIN || "")
     .replace(/^https?:\/\//, "")
@@ -59,13 +60,16 @@ export async function loader({ request }: LoaderFunctionArgs) {
     ? `https://${storeDomain}/account`
     : null;
 
-  return json({
-    cartItemCount,
-    isLoggedIn: !!session,
-    customerFirstName: session?.firstName ?? null,
-    customerEmail: session?.email ?? null,
-    customerAccountUrl,
-  });
+  return json(
+    {
+      cartItemCount,
+      isLoggedIn: !!session,
+      customerFirstName: session?.firstName ?? null,
+      customerEmail: session?.email ?? null,
+      customerAccountUrl,
+    },
+    mergeSetCookieHeaders(undefined, setCookieHeaders),
+  );
 }
 
 export function Layout({ children }: { children: React.ReactNode }) {

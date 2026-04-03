@@ -5,15 +5,8 @@ import {
 } from "@remix-run/node";
 import { SignInQuiz } from "~/components/SignInQuiz";
 import { isAuthRateLimited } from "~/lib/auth-rate-limit.server";
-import {
-  customerAccessTokenCookie,
-  maxAgeFromExpiresAt,
-} from "~/lib/customer-session-cookie.server";
 import { setCustomerQuizMetafields } from "~/lib/shopify-customer-metafields.server";
-import {
-  storefrontCustomerAccessTokenCreate,
-  storefrontCustomerCreate,
-} from "~/lib/shopify-customer-storefront.server";
+import { storefrontCustomerCreate } from "~/lib/shopify-customer-storefront.server";
 
 export const meta: MetaFunction = () => {
   return [
@@ -39,6 +32,11 @@ function mapSignupError(messages: string): string {
   return messages;
 }
 
+/**
+ * Provisions the customer via Storefront (same as before) and writes quiz metafields via Admin.
+ * Session is established only after Customer Account OAuth on /login (login_hint), so hosted
+ * /account shares Identity with the headless site. See docs/SHOPIFY-INTEGRATION.md.
+ */
 export async function action({ request }: ActionFunctionArgs) {
   if (request.method !== "POST") {
     return json(
@@ -96,24 +94,6 @@ export async function action({ request }: ActionFunctionArgs) {
     );
   }
 
-  const tokenResult = await storefrontCustomerAccessTokenCreate({
-    email,
-    password,
-  });
-
-  if (!tokenResult.ok) {
-    const msg = tokenResult.errors.map((e) => e.message).join(" ");
-    return json(
-      {
-        ok: false,
-        error:
-          msg ||
-          "Account was created but sign-in failed. Try logging in with your password.",
-      },
-      { status: 400 },
-    );
-  }
-
   if (gender && ageRange && interests) {
     await setCustomerQuizMetafields(created.customerId, {
       gender,
@@ -122,18 +102,7 @@ export async function action({ request }: ActionFunctionArgs) {
     });
   }
 
-  const maxAge = maxAgeFromExpiresAt(tokenResult.expiresAt);
-  const setCookie = await customerAccessTokenCookie.serialize(
-    tokenResult.accessToken,
-    { maxAge },
-  );
-
-  return json(
-    { ok: true as const },
-    {
-      headers: { "Set-Cookie": setCookie },
-    },
-  );
+  return json({ ok: true as const, loginHint: email });
 }
 
 export default function JoinPage() {

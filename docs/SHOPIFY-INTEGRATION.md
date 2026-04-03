@@ -133,55 +133,65 @@ If **`PUBLIC_STORE_DOMAIN`**, **`PUBLIC_STOREFRONT_API_VERSION`**, and **`PRIVAT
 
 Same as Phase 1: `npm run test:shopify`, then add a line item from a PDP or quick-add, confirm the **header bag** count updates, open **`/cart`**, and use **Proceed to Checkout** to confirm the hosted checkout URL.
 
-## Customer auth (Storefront) + quiz profile + chat limits (implemented)
+## Customer auth — Customer Account API (OAuth) + quiz + chat limits (implemented)
 
-This storefront uses **classic Storefront API customers** (`customerCreate`, `customerAccessTokenCreate`, `customer` query with access token)—not the **Customer Account API** OAuth flow. Migrating to new customer accounts later is optional; see [Customer Account API](https://shopify.dev/docs/api/customer).
+Primary sign-in uses the **Shopify Customer Account API** (OAuth 2.0 / OpenID) with a **confidential** server client: discovery on **`https://{PUBLIC_STORE_DOMAIN}/.well-known/openid-configuration`**, authorization code flow, tokens stored in **httpOnly** [`createCookieSessionStorage`](https://remix.run/docs/utils/cookies#createcookiesessionstorage) (`mavala_ca_sess`) plus a short-lived signed pending cookie (`mavala_ca_oauth_pending`) for `state` / `nonce`. **Refresh tokens never go to the client bundle.**
+
+Official guides: [Customer Account API](https://shopify.dev/docs/api/customer/latest), [Authenticate customers (headless)](https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/authenticate-customers).
 
 ### Routes
 
-- **`/login`** — Email + password sign-in; sets httpOnly cookie `mavala_customer_access_token`. Link to **Forgot password** points at `https://{PUBLIC_STORE_DOMAIN}/account/recover` when the store domain is configured.
-- **`/join`** — Multi-step signup quiz; creates the customer, obtains an access token, sets the same cookie, then writes quiz metafields via Admin (see below).
+- **`/login`** — If Customer Account env is configured, **POST** `intent=oauth` redirects to Shopify’s authorization endpoint (optional **`login_hint`** from query or hidden field after `/join`). Callback: **`/auth/customer/callback`**. **Forgot password** still links to `https://{PUBLIC_STORE_DOMAIN}/account/recover` when the store domain is set.
+- **Legacy fallback** — If **`PUBLIC_APP_URL`**, **`PUBLIC_CUSTOMER_ACCOUNT_API_CLIENT_ID`**, and **`CUSTOMER_ACCOUNT_API_CLIENT_SECRET`** are **not** all set, `/login` shows **classic** email + password and sets **`mavala_customer_access_token`** (Storefront) for local/dev only.
+- **`/join`** — Quiz creates the customer via Storefront **`customerCreate`**, writes quiz metafields via Admin, then returns **`loginHint`**; the client redirects to **`/login?login_hint=…`** so the user completes **one** Identity login (no classic session cookie on join).
 - **`/sign-in`** — Redirects to **`/join`** for legacy links.
-- **`/logout`** — Clears customer session cookie and anonymous chat usage cookie.
+- **`/logout`** — Clears **all** auth cookies: Customer Account session, OAuth pending, legacy `mavala_customer_access_token`, and **`mavala_chat_anon_uses`**. If an **`id_token`** was stored (size-limited), redirects to OpenID **`end_session_endpoint`** for Shopify logout when configured.
 
-Header **SIGN IN** points to **`/login`**.
+Header **SIGN IN** → **`/login`**. Header **ACCOUNT** → **`https://{PUBLIC_STORE_DOMAIN}/account`** (`customerAccountUrl` in [`app/root.tsx`](../app/root.tsx)); after Customer Account OAuth, the browser’s Identity session matches hosted `/account` (no surprise second login within normal token/session rules).
+
+### Session resolution
+
+[`resolveCustomerSession`](../app/lib/auth.server.ts) (and **`getCustomerSession`**, which wraps it without surfacing Set-Cookie) **prefers** Customer Account tokens, refreshes access tokens when expired, then falls back to a valid **legacy** `mavala_customer_access_token` if present. **`customerId`** for chat rate limits comes from the Customer Account API **`customer { id }`** when using OAuth.
+
+**Note:** Users with **only** a legacy cookie are still “logged in” on the headless site for header/chat, but **ACCOUNT** may prompt Identity until they complete OAuth once.
 
 ### Storefront API scopes (Headless token)
 
-In addition to cart scopes, the Storefront token needs:
-
-- `unauthenticated_read_customers`
-- `unauthenticated_write_customers`
-
-so signup and login mutations succeed.
+Keep **`unauthenticated_read_customers`** and **`unauthenticated_write_customers`** for **`/join`** provisioning. Cart/checkout unchanged (Storefront API).
 
 ### Admin API — quiz metafields
 
-After signup, the server calls Admin **`metafieldsSet`** on the new customer for:
+Unchanged: after **`customerCreate`**, Admin **`metafieldsSet`** on the customer (see table in previous revisions). Same metafield definitions and **`write_customers`** scope.
 
-| Namespace | Key             | Type                 |
-| --------- | --------------- | -------------------- |
-| `custom`  | `quiz_gender`   | Single line text     |
-| `custom`  | `quiz_age_range`| Single line text     |
-| `custom`  | `quiz_interests`| Single line text     |
+If your store is **New customer accounts** only and **`customerCreate`** fails or diverges from Identity, use Shopify-supported signup flows and adjust provisioning (document any change here).
 
-Create matching **Customer metafield definitions** in Shopify Admin (**Settings → Custom data → Customers**) so writes are accepted. The Dev Dashboard app needs **`write_customers`** (and **`read_customers`**) on the Admin API; see [`scripts/shopify-scopes-copy-paste.txt`](../scripts/shopify-scopes-copy-paste.txt).
+### Shopify Admin checklist (Customer accounts → API credentials)
 
-If Admin is misconfigured, signup still completes; metafield errors are logged server-side only.
+1. **Application type:** confidential (client secret on server).
+2. **Redirect URL(s):** `{PUBLIC_APP_URL}/auth/customer/callback` (exact match).
+3. **JavaScript origin(s):** origin of **`PUBLIC_APP_URL`** only (required for token endpoint **`Origin`** — 401 `invalid_token` if wrong).
+4. **Logout redirect URL(s):** your site origin (e.g. `{PUBLIC_APP_URL}/`) if you use federated logout.
+5. **`PUBLIC_STORE_DOMAIN`** must match the storefront host used for discovery (often `your-store.myshopify.com` or a primary domain that serves `/.well-known/...`).
 
 ### Environment variables
 
-- **`SESSION_SECRET`** — Signs the httpOnly **`mavala_chat_anon_uses`** cookie used to enforce **5 free assistant replies** for anonymous visitors on **`/api/chat`**. Set a strong random value in production (see `.env.example`).
-- **`MAVALA_AUTH_DEV_BYPASS=true`** — Optional; forces a fake logged-in session for local testing. Do not set in production.
-- Cookie **`mavala_dev_auth=true`** — Optional manual dev bypass (same as above).
+See [`.env.example`](../.env.example): **`PUBLIC_APP_URL`**, **`PUBLIC_CUSTOMER_ACCOUNT_API_CLIENT_ID`**, **`CUSTOMER_ACCOUNT_API_CLIENT_SECRET`**, **`PUBLIC_STORE_DOMAIN`**, **`SESSION_SECRET`**. **`SESSION_SECRET`** also signs OAuth pending + anon chat cookies.
+
+- **`MAVALA_AUTH_DEV_BYPASS=true`** — Optional fake session (never in production).
+- Cookie **`mavala_dev_auth=true`** — Optional manual dev bypass.
 
 ### Chat
 
-Logged-in customers (valid Storefront access token) are **not** subject to the 5-message anonymous cap. Anonymous users get a signed, tamper-resistant usage counter; after the limit, the API returns `403` with `code: "CHAT_LIMIT_REACHED"`.
+Logged-in customers (Customer Account session or legacy Storefront token) bypass the anonymous cap. **`/api/chat`** uses **`resolveCustomerSession`** and forwards **Set-Cookie** when tokens refresh. Anonymous behavior unchanged (`403` / **`CHAT_LIMIT_REACHED`**).
+
+### Breaking changes (vs classic-only auth)
+
+- Production sign-in is **OAuth**, not password on your domain (password UI only when Customer Account env is missing).
+- **`/join`** no longer sets **`mavala_customer_access_token`**; users must complete **`/login`** after signup.
+- Optional **dual-read** of legacy cookie remains for migration; remove once all users have OAuth sessions.
 
 ## Roadmap (later phases)
 
-- **Phase 3** — Optional migration to **Customer Account API** / OAuth (replace or complement Storefront customer access tokens).
 - **Phase 4** — Caching, rate limits, error handling; optional Storefront-backed collections/search with JSON fallback.
 
 ## References
@@ -189,3 +199,5 @@ Logged-in customers (valid Storefront access token) are **not** subject to the 5
 - [Storefront API](https://shopify.dev/docs/api/storefront)
 - [Admin GraphQL API](https://shopify.dev/docs/api/admin-graphql)
 - [Cart object / checkoutUrl](https://shopify.dev/docs/api/storefront/latest/objects/Cart)
+- [Customer Account API](https://shopify.dev/docs/api/customer)
+

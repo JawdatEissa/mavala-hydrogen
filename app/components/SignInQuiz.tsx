@@ -140,7 +140,9 @@ interface Answers {
   [key: number]: string;
 }
 
-type JoinActionData = { ok: true } | { ok: false; error: string };
+type JoinActionData =
+  | { ok: true; loginHint: string }
+  | { ok: false; error: string };
 
 export function SignInQuiz() {
   const fetcher = useFetcher<JoinActionData>();
@@ -153,9 +155,13 @@ export function SignInQuiz() {
 
   useEffect(() => {
     const data = fetcher.data;
-    if (data && data.ok === true) {
-      setIsComplete(true);
-    }
+    if (!data || data.ok !== true) return;
+    setIsComplete(true);
+    const hint = encodeURIComponent(data.loginHint);
+    const id = window.setTimeout(() => {
+      window.location.assign(`/login?login_hint=${hint}`);
+    }, 1200);
+    return () => window.clearTimeout(id);
   }, [fetcher.data]);
 
   const step = SIGN_IN_STEPS[currentStep];
@@ -302,8 +308,8 @@ export function SignInQuiz() {
 
               <p className="font-['Archivo'] text-sm md:text-base text-gray-500 mb-6 md:mb-8">
                 {language === 'en'
-                  ? 'Get ready to discover personalized beauty recommendations just for you.'
-                  : 'Préparez-vous à découvrir des recommandations beauté personnalisées rien que pour vous.'}
+                  ? 'Next, sign in once with your Mavala account to unlock chat and order history.'
+                  : 'Ensuite, connectez-vous une fois avec votre compte Mavala pour le chat et vos commandes.'}
               </p>
 
               {/* Perks */}
@@ -333,11 +339,16 @@ export function SignInQuiz() {
                 </ul>
               </div>
 
+              <p className="font-['Archivo'] text-xs text-gray-400 mb-2">
+                {language === 'en'
+                  ? 'Redirecting to sign in…'
+                  : 'Redirection vers la connexion…'}
+              </p>
               <Link
-                to="/"
+                to={`/login?login_hint=${encodeURIComponent(answers[2] || "")}`}
                 className="inline-block w-full px-6 md:px-8 py-3 md:py-4 bg-[#AE1932] text-white font-['Archivo'] text-sm font-semibold uppercase tracking-wider rounded-lg hover:bg-[#8d1428] transition-colors duration-200"
               >
-                {language === 'en' ? 'Start Exploring' : 'Commencer à Explorer'}
+                {language === "en" ? "Sign in now" : "Se connecter maintenant"}
               </Link>
             </motion.div>
           </div>
