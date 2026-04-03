@@ -44,7 +44,7 @@ All logic after that (related products from `loadScrapedProducts()`, `COLOR_MAPP
 ### Intentionally unchanged
 
 - `app/routes/color.tsx` and `app/data/color_mapping_*.json` behavior.
-- AI chat: `app/routes/api.chat.tsx`, `app/lib/openai.server.ts`, `app/lib/supabase.server.ts`.
+- AI chat: `app/routes/api.chat.tsx`, `app/lib/openai.server.ts`, `app/lib/supabase.server.ts` (no Storefront wiring there yet).
 - `app/lib/scraped-products.server.ts` — still the JSON catalog and `getProductBySlug`.
 - Collections and search routes (optional Storefront wiring can come later).
 
@@ -102,8 +102,10 @@ To push **`all-products.json`** and **shade** data from `color_mapping_*.json` /
 - **`app/lib/cart-cookie.server.ts`** — httpOnly cookie **`mavala_shopify_cart_id`** (`path: /`, `sameSite: lax`, `secure` in production, 14-day `maxAge`) stores the Storefront **Cart** GID. The private Storefront token is never sent to the browser.
 - **`app/lib/shopify-cart.server.ts`** — `fetchCartById`, `createCartWithLines`, `addCartLines`, `updateCartLines`, `removeCartLines`, `addLineToCart` (create-or-reuse cookie cart), `getMerchandiseIdForHandle` (resolves default purchasable variant for quick-add). All GraphQL was validated against the Storefront schema (Shopify Dev MCP / `validate_graphql_codeblocks`).
 - **`app/routes/cart.tsx`** — Loader reads the cart from Shopify; **`action`** supports `intent`: `add` (optional `merchandiseId` and/or `handle` + `quantity`), `update` (`lineId`, `quantity`; quantity `0` removes the line), `remove`, `checkout` (**redirect** to `cart.checkoutUrl`). **Proceed to Checkout** uses Shopify-hosted checkout only.
-- **`app/routes/products.$handle.tsx`** — PDP add controls post to `/cart` via `useFetcher` when `product.shopify.defaultVariantGid` exists; JSON-only products show *not available for online checkout* (no fake checkout).
-- **`app/components/ProductCard.tsx`** — Optional **`showQuickAdd`** posts `handle` for server-side variant resolution (used on *You Might Also Like*). If the handle has no live Shopify product, the action returns an error message.
+- **`app/root.tsx` (loader)** — Reads the cart id from the request cookie, calls **`fetchCartById`**, and returns **`cartItemCount`** (`cart.totalQuantity`, or `0` on missing cart / error). This keeps the **header bag** in sync on full page loads without duplicating cart fetches on every route.
+- **`app/components/Header.tsx`** — **Bag** control (desktop after **SIGN IN**, mobile bar + full-screen menu) links to **`/cart`**. When `cartItemCount > 0`, a small badge shows the count (capped display e.g. **99+**). This is the primary “view cart” entry point; PDP and cards do not duplicate a “View cart” link.
+- **`app/routes/products.$handle.tsx`** — PDP add controls post to `/cart` via `useFetcher` when `product.shopify.defaultVariantGid` exists; JSON-only products show *not available for online checkout* (no fake checkout). On successful add, **`useRevalidator()`** runs so the **root** loader refetches and the **header count updates** without a full navigation (fetcher submissions do not revalidate the root route by default). A slim green **“Added to bag.”** confirmation strip may appear; it intentionally does **not** link to `/cart` (the bag in the header does).
+- **`app/components/ProductCard.tsx`** — Optional **`showQuickAdd`** posts `handle` for server-side variant resolution (used on *You Might Also Like*). If the handle has no live Shopify product, the action returns an error message. On success, **`useRevalidator()`** updates the header count; inline copy is **“Added to bag.”** (no separate “view cart” link).
 
 ### Storefront access scopes (cart)
 
@@ -114,13 +116,72 @@ Ensure the Headless / Storefront token includes **unauthenticated read/write che
 
 See [Shopify access scopes — unauthenticated](https://shopify.dev/docs/api/usage/access-scopes#unauthenticated-access-scopes).
 
+### Hosted checkout URL (domains)
+
+**Proceed to Checkout** always **redirects** to Shopify’s hosted checkout (`checkoutUrl` from the Cart). That URL is not served by this Remix app; it is expected and required for PCI and Shopify Checkout.
+
+For a cohesive brand at go-live:
+
+- Point the **storefront** at your main site (e.g. **`mavala.ca`** on Vercel).
+- In **Shopify Admin**, configure a **checkout / shop domain** you control (e.g. **`checkout.mavala.ca`**) so customers do not stay on a raw `myshopify.com` hostname. That hostname still hits **Shopify’s** servers—it is not a Remix route like `/checkout` on Vercel.
+
+### Production / Vercel
+
+If **`PUBLIC_STORE_DOMAIN`**, **`PUBLIC_STOREFRONT_API_VERSION`**, and **`PRIVATE_STOREFRONT_API_TOKEN`** (or **`PUBLIC_STOREFRONT_API_TOKEN`**) are missing or wrong on the **Vercel** project, the PDP cannot resolve live variants and will behave like “not available for online checkout” for everything. Mirror **`.env.example`** into the Vercel environment for Production and Preview as needed.
+
 ### Verification
 
-Same as Phase 1: `npm run test:shopify`, then add a line item, open `/cart`, and use **Proceed to Checkout** to confirm the hosted checkout URL.
+Same as Phase 1: `npm run test:shopify`, then add a line item from a PDP or quick-add, confirm the **header bag** count updates, open **`/cart`**, and use **Proceed to Checkout** to confirm the hosted checkout URL.
+
+## Customer auth (Storefront) + quiz profile + chat limits (implemented)
+
+This storefront uses **classic Storefront API customers** (`customerCreate`, `customerAccessTokenCreate`, `customer` query with access token)—not the **Customer Account API** OAuth flow. Migrating to new customer accounts later is optional; see [Customer Account API](https://shopify.dev/docs/api/customer).
+
+### Routes
+
+- **`/login`** — Email + password sign-in; sets httpOnly cookie `mavala_customer_access_token`. Link to **Forgot password** points at `https://{PUBLIC_STORE_DOMAIN}/account/recover` when the store domain is configured.
+- **`/join`** — Multi-step signup quiz; creates the customer, obtains an access token, sets the same cookie, then writes quiz metafields via Admin (see below).
+- **`/sign-in`** — Redirects to **`/join`** for legacy links.
+- **`/logout`** — Clears customer session cookie and anonymous chat usage cookie.
+
+Header **SIGN IN** points to **`/login`**.
+
+### Storefront API scopes (Headless token)
+
+In addition to cart scopes, the Storefront token needs:
+
+- `unauthenticated_read_customers`
+- `unauthenticated_write_customers`
+
+so signup and login mutations succeed.
+
+### Admin API — quiz metafields
+
+After signup, the server calls Admin **`metafieldsSet`** on the new customer for:
+
+| Namespace | Key             | Type                 |
+| --------- | --------------- | -------------------- |
+| `custom`  | `quiz_gender`   | Single line text     |
+| `custom`  | `quiz_age_range`| Single line text     |
+| `custom`  | `quiz_interests`| Single line text     |
+
+Create matching **Customer metafield definitions** in Shopify Admin (**Settings → Custom data → Customers**) so writes are accepted. The Dev Dashboard app needs **`write_customers`** (and **`read_customers`**) on the Admin API; see [`scripts/shopify-scopes-copy-paste.txt`](../scripts/shopify-scopes-copy-paste.txt).
+
+If Admin is misconfigured, signup still completes; metafield errors are logged server-side only.
+
+### Environment variables
+
+- **`SESSION_SECRET`** — Signs the httpOnly **`mavala_chat_anon_uses`** cookie used to enforce **5 free assistant replies** for anonymous visitors on **`/api/chat`**. Set a strong random value in production (see `.env.example`).
+- **`MAVALA_AUTH_DEV_BYPASS=true`** — Optional; forces a fake logged-in session for local testing. Do not set in production.
+- Cookie **`mavala_dev_auth=true`** — Optional manual dev bypass (same as above).
+
+### Chat
+
+Logged-in customers (valid Storefront access token) are **not** subject to the 5-message anonymous cap. Anonymous users get a signed, tamper-resistant usage counter; after the limit, the API returns `403` with `code: "CHAT_LIMIT_REACHED"`.
 
 ## Roadmap (later phases)
 
-- **Phase 3** — Customer Account API / OAuth for real sign-in.
+- **Phase 3** — Optional migration to **Customer Account API** / OAuth (replace or complement Storefront customer access tokens).
 - **Phase 4** — Caching, rate limits, error handling; optional Storefront-backed collections/search with JSON fallback.
 
 ## References

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from '@remix-run/react';
+import { Link, useFetcher } from '@remix-run/react';
 
 // Types
 type QuestionType = 'text' | 'choice' | 'email' | 'password';
@@ -140,7 +140,10 @@ interface Answers {
   [key: number]: string;
 }
 
+type JoinActionData = { ok: true } | { ok: false; error: string };
+
 export function SignInQuiz() {
+  const fetcher = useFetcher<JoinActionData>();
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [inputValue, setInputValue] = useState('');
@@ -148,10 +151,18 @@ export function SignInQuiz() {
   const [isComplete, setIsComplete] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
+  useEffect(() => {
+    const data = fetcher.data;
+    if (data && data.ok === true) {
+      setIsComplete(true);
+    }
+  }, [fetcher.data]);
+
   const step = SIGN_IN_STEPS[currentStep];
   const stepTranslations = translations[language].steps[step.id];
   const progress = ((currentStep + 1) / SIGN_IN_STEPS.length) * 100;
   const isLastStep = currentStep === SIGN_IN_STEPS.length - 1;
+  const joinSubmitting = fetcher.state !== 'idle';
 
   // Update input value when step or language changes
   useEffect(() => {
@@ -196,9 +207,14 @@ export function SignInQuiz() {
   };
 
   const handleComplete = (finalAnswers: Answers) => {
-    console.log('Sign-up completed! Data:', finalAnswers);
-    setIsComplete(true);
-    // TODO: Send to API, create account, etc.
+    const fd = new FormData();
+    fd.append('firstName', finalAnswers[1] ?? '');
+    fd.append('email', finalAnswers[2] ?? '');
+    fd.append('password', finalAnswers[3] ?? '');
+    fd.append('gender', finalAnswers[4] ?? '');
+    fd.append('ageRange', finalAnswers[5] ?? '');
+    fd.append('interests', finalAnswers[6] ?? '');
+    fetcher.submit(fd, { method: 'post', action: '/join' });
   };
 
   const handlePrevious = () => {
@@ -351,6 +367,15 @@ export function SignInQuiz() {
         />
       </div>
 
+      {fetcher.data && fetcher.data.ok === false && (
+        <div
+          className="fixed top-4 left-1/2 -translate-x-1/2 z-[100001] max-w-md w-[calc(100%-2rem)] p-3 rounded-lg bg-red-50 text-red-800 text-sm font-['Archivo'] shadow-lg"
+          role="alert"
+        >
+          {fetcher.data.error}
+        </div>
+      )}
+
       {/* Top Bar with Back and Language Toggle */}
       <div className="fixed top-3 left-3 right-3 md:top-4 md:left-4 md:right-4 z-[100000] flex justify-between items-center">
         {/* Back to Home */}
@@ -426,8 +451,9 @@ export function SignInQuiz() {
                 {/* Navigation Arrows */}
                 <div className="flex flex-row gap-2">
                   <button
+                    type="button"
                     onClick={handlePrevious}
-                    disabled={currentStep === 0}
+                    disabled={currentStep === 0 || joinSubmitting}
                     className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-white border-2 border-gray-300 hover:border-[#AE1932] hover:bg-red-50 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:border-gray-300 disabled:hover:bg-white flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#AE1932] shadow-md hover:shadow-lg"
                     aria-label="Previous step"
                   >
@@ -446,8 +472,9 @@ export function SignInQuiz() {
                     </svg>
                   </button>
                   <button
+                    type="button"
                     onClick={handleNext}
-                    disabled={!hasAnswer}
+                    disabled={!hasAnswer || joinSubmitting}
                     className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-[#AE1932] hover:bg-[#8d1428] disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#AE1932] shadow-md hover:shadow-lg"
                     aria-label="Next step"
                   >
@@ -520,9 +547,11 @@ export function SignInQuiz() {
                     const isSelected = answers[step.id] === option;
                     return (
                       <button
+                        type="button"
                         key={index}
                         onClick={() => handleChoiceSelect(option)}
-                        className={`w-full text-left px-4 py-3 md:px-6 md:py-4 border-2 rounded-lg font-['Archivo'] text-sm md:text-base transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#AE1932] focus:ring-offset-2 ${
+                        disabled={joinSubmitting}
+                        className={`w-full text-left px-4 py-3 md:px-6 md:py-4 border-2 rounded-lg font-['Archivo'] text-sm md:text-base transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#AE1932] focus:ring-offset-2 disabled:opacity-50 ${
                           isSelected
                             ? 'border-[#AE1932] bg-red-50'
                             : 'border-gray-200 bg-white hover:border-gray-300 hover:bg-gray-50'
@@ -594,11 +623,18 @@ export function SignInQuiz() {
                   )}
 
                   <button
+                    type="button"
                     onClick={handleTextSubmit}
-                    disabled={!hasAnswer}
+                    disabled={!hasAnswer || joinSubmitting}
                     className="mt-4 md:mt-6 w-full px-6 md:px-8 py-3 md:py-4 bg-[#AE1932] text-white font-['Archivo'] text-sm font-semibold uppercase tracking-wider rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#8d1428] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#AE1932] focus:ring-offset-2"
                   >
-                    {language === 'en' ? 'Continue' : 'Continuer'}
+                    {joinSubmitting
+                      ? language === 'en'
+                        ? 'Please wait…'
+                        : 'Veuillez patienter…'
+                      : language === 'en'
+                        ? 'Continue'
+                        : 'Continuer'}
                   </button>
                 </motion.div>
               )}
@@ -612,9 +648,12 @@ export function SignInQuiz() {
                   className="text-center font-['Archivo'] text-xs md:text-sm text-gray-500 mt-2"
                 >
                   {language === 'en' ? 'Already have an account? ' : 'Vous avez déjà un compte? '}
-                  <button className="text-[#AE1932] hover:underline font-medium">
+                  <Link
+                    to="/login"
+                    className="text-[#AE1932] hover:underline font-medium"
+                  >
                     {language === 'en' ? 'Sign in' : 'Se connecter'}
-                  </button>
+                  </Link>
                 </motion.p>
               )}
             </motion.div>

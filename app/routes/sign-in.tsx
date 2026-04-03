@@ -1,17 +1,9 @@
-import type { MetaFunction } from '@remix-run/node';
-import { SignInQuiz } from '~/components/SignInQuiz';
+import { redirect, type LoaderFunctionArgs } from "@remix-run/node";
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: 'Join Mavala | Create Your Account' },
-    {
-      name: 'description',
-      content:
-        'Join the Mavala community and get personalized beauty recommendations. Sign up for exclusive offers and discover your perfect products.',
-    },
-  ];
-};
+export function loader(_args: LoaderFunctionArgs) {
+  return redirect("/join");
+}
 
-export default function SignInPage() {
-  return <SignInQuiz />;
+export default function SignInRedirect() {
+  return null;
 }

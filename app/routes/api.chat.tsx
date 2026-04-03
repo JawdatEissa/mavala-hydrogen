@@ -13,6 +13,16 @@
  */
 
 import { json, type ActionFunctionArgs } from "@remix-run/node";
+import {
+  parseChatAnonUses,
+  serializeChatAnonUses,
+  type ChatAnonPayload,
+} from "~/lib/chat-anon-cookie.server";
+import {
+  getCustomerSession,
+  getRateLimitIdentifier,
+  type CustomerSession,
+} from "~/lib/auth.server";
 import type {
   ChatRequest,
   ChatResponse,
@@ -29,8 +39,6 @@ let retrieveChunks: typeof import("~/lib/supabase.server").retrieveChunks;
 let checkSemanticCache: typeof import("~/lib/supabase.server").checkSemanticCache;
 let upsertCache: typeof import("~/lib/supabase.server").upsertCache;
 let incrementCacheHit: typeof import("~/lib/supabase.server").incrementCacheHit;
-let getCustomerSession: typeof import("~/lib/auth.server").getCustomerSession;
-let getRateLimitIdentifier: typeof import("~/lib/auth.server").getRateLimitIdentifier;
 
 let modulesLoaded = false;
 let moduleError: Error | null = null;
@@ -40,7 +48,6 @@ async function loadModules() {
   try {
     const openaiModule = await import("~/lib/openai.server");
     const supabaseModule = await import("~/lib/supabase.server");
-    const authModule = await import("~/lib/auth.server");
 
     embedText = openaiModule.embedText;
     generateChatResponse = openaiModule.generateChatResponse;
@@ -49,8 +56,6 @@ async function loadModules() {
     checkSemanticCache = supabaseModule.checkSemanticCache;
     upsertCache = supabaseModule.upsertCache;
     incrementCacheHit = supabaseModule.incrementCacheHit;
-    getCustomerSession = authModule.getCustomerSession;
-    getRateLimitIdentifier = authModule.getRateLimitIdentifier;
 
     modulesLoaded = true;
   } catch (err) {
@@ -67,6 +72,23 @@ async function loadModules() {
 // For development, authentication is bypassed
 // TODO: Set back to true once login is integrated
 const REQUIRE_AUTH_IN_PRODUCTION = false;
+
+const ANON_CHAT_MAX_TURNS = 5;
+
+async function headersAfterAnonSuccess(
+  customerSession: CustomerSession | null,
+  anonUses: ChatAnonPayload | null,
+): Promise<Headers | undefined> {
+  if (customerSession || anonUses === null) {
+    return undefined;
+  }
+  const h = new Headers();
+  h.append(
+    "Set-Cookie",
+    await serializeChatAnonUses(anonUses.count + 1),
+  );
+  return h;
+}
 
 // =========================================
 // Rate Limiting (In-Memory)
@@ -1571,6 +1593,21 @@ export async function action({ request }: ActionFunctionArgs) {
     // Authentication check
     const customerSession = await getCustomerSession(request);
 
+    let anonUses: ChatAnonPayload | null = null;
+    if (!customerSession) {
+      anonUses = await parseChatAnonUses(request);
+      if (anonUses.count >= ANON_CHAT_MAX_TURNS) {
+        return json(
+          {
+            error:
+              "You've used your free messages. Sign in or create an account to continue.",
+            code: "CHAT_LIMIT_REACHED",
+          },
+          { status: 403 },
+        );
+      }
+    }
+
     // In production, require authentication if configured
     if (
       REQUIRE_AUTH_IN_PRODUCTION &&
@@ -1649,7 +1686,11 @@ export async function action({ request }: ActionFunctionArgs) {
         suggestedProducts: cacheResult.products || [],
       };
 
-      return json(response);
+      const anonHeaders = await headersAfterAnonSuccess(
+        customerSession,
+        anonUses,
+      );
+      return json(response, anonHeaders ? { headers: anonHeaders } : undefined);
     }
 
     // Retrieve relevant context
@@ -1753,7 +1794,11 @@ export async function action({ request }: ActionFunctionArgs) {
       suggestedProducts,
     };
 
-    return json(response);
+    const anonHeaders = await headersAfterAnonSuccess(
+      customerSession,
+      anonUses,
+    );
+    return json(response, anonHeaders ? { headers: anonHeaders } : undefined);
   } catch (error) {
     console.error("[api/chat] Unexpected error:", error);
 

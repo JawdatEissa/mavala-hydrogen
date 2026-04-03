@@ -5,6 +5,7 @@
  */
 
 import { useState, useRef, useEffect, useCallback } from "react";
+import { Link } from "@remix-run/react";
 import { motion } from "framer-motion";
 import { v4 as uuidv4 } from "uuid";
 import type {
@@ -15,23 +16,27 @@ import type {
 import MessageList from "./MessageList";
 import InputBar from "./InputBar";
 import TypingDots from "./TypingDots";
-import LoginPrompt from "./LoginPrompt";
 
 interface ChatPanelProps {
   isLoggedIn?: boolean;
-  onLoginClick?: () => void;
   onClose: () => void;
 }
 
 export default function ChatPanel({
-  isLoggedIn = true,
-  onLoginClick,
+  isLoggedIn = false,
   onClose,
 }: ChatPanelProps) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [limitReached, setLimitReached] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      setLimitReached(false);
+    }
+  }, [isLoggedIn]);
 
   // Load chat history from sessionStorage on mount
   useEffect(() => {
@@ -63,84 +68,95 @@ export default function ChatPanel({
   }, [messages, isLoading]);
 
   // Send message
-  const sendMessage = useCallback(async (text: string) => {
-    const trimmed = text.trim();
-    if (!trimmed) return;
+  const sendMessage = useCallback(
+    async (text: string) => {
+      const trimmed = text.trim();
+      if (!trimmed || limitReached) return;
 
-    setError(null);
+      setError(null);
 
-    // Add user message
-    const userMessage: ChatMessage = {
-      id: uuidv4(),
-      role: "user",
-      content: trimmed,
-      timestamp: Date.now(),
-    };
-    setMessages((prev) => [...prev, userMessage]);
-    setIsLoading(true);
-
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 30000);
-
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: trimmed }),
-        signal: controller.signal,
-      });
-
-      clearTimeout(timeoutId);
-
-      if (!response.ok) {
-        const errorText = await response.text().catch(() => "");
-        throw new Error(errorText || `Error: ${response.status}`);
-      }
-
-      const data: ChatResponse = await response.json();
-
-      if (data.error) {
-        throw new Error(data.error);
-      }
-
-      // Add assistant message
-      const assistantMessage: ChatMessage = {
+      const userMessage: ChatMessage = {
         id: uuidv4(),
-        role: "assistant",
-        content: data.answer,
+        role: "user",
+        content: trimmed,
         timestamp: Date.now(),
-        meta: {
-          cached: data.cached,
-          products: data.suggestedProducts,
-        },
       };
-      setMessages((prev) => [...prev, assistantMessage]);
-    } catch (err) {
-      const message =
-        err instanceof Error
-          ? err.message
-          : "Something went wrong. Please try again.";
-      setError(message);
+      setMessages((prev) => [...prev, userMessage]);
+      setIsLoading(true);
 
-      // Add error message
-      const errorMessage: ChatMessage = {
-        id: uuidv4(),
-        role: "assistant",
-        content: "Sorry, I encountered an issue. Please try again.",
-        timestamp: Date.now(),
-        meta: { error: true },
-      };
-      setMessages((prev) => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 30000);
+
+        const response = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ question: trimmed }),
+          signal: controller.signal,
+        });
+
+        clearTimeout(timeoutId);
+
+        const data = (await response.json().catch(() => ({}))) as ChatResponse;
+
+        if (!response.ok) {
+          if (data.code === "CHAT_LIMIT_REACHED") {
+            setLimitReached(true);
+            setError(
+              data.error ||
+                "Sign in or create an account to continue chatting.",
+            );
+            return;
+          }
+          throw new Error(
+            data.error || `Error: ${response.status}`,
+          );
+        }
+
+        if (data.error) {
+          throw new Error(data.error);
+        }
+
+        const assistantMessage: ChatMessage = {
+          id: uuidv4(),
+          role: "assistant",
+          content: data.answer,
+          timestamp: Date.now(),
+          meta: {
+            cached: data.cached,
+            products: data.suggestedProducts,
+          },
+        };
+        setMessages((prev) => [...prev, assistantMessage]);
+      } catch (err) {
+        const message =
+          err instanceof Error
+            ? err.message
+            : "Something went wrong. Please try again.";
+        setError(message);
+
+        const errorMessage: ChatMessage = {
+          id: uuidv4(),
+          role: "assistant",
+          content: "Sorry, I encountered an issue. Please try again.",
+          timestamp: Date.now(),
+          meta: { error: true },
+        };
+        setMessages((prev) => [...prev, errorMessage]);
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [limitReached],
+  );
 
   // Clear chat
   const clearChat = useCallback(() => {
     setMessages([]);
     sessionStorage.removeItem("mavala-chat-session");
   }, []);
+
+  const inputDisabled = isLoading || limitReached;
 
   return (
     <motion.div
@@ -181,6 +197,7 @@ export default function ChatPanel({
         <div className="flex items-center gap-1">
           {messages.length > 0 && (
             <button
+              type="button"
               onClick={clearChat}
               className="p-2 hover:bg-white/10 rounded-lg transition-colors"
               title="Clear chat"
@@ -202,6 +219,7 @@ export default function ChatPanel({
             </button>
           )}
           <button
+            type="button"
             onClick={onClose}
             className="p-2 hover:bg-white/10 rounded-lg transition-colors"
             title="Close chat"
@@ -224,77 +242,99 @@ export default function ChatPanel({
         </div>
       </div>
 
-      {/* Content */}
-      {!isLoggedIn ? (
-        <LoginPrompt onLoginClick={onLoginClick} />
-      ) : (
-        <>
-          {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
-            {messages.length === 0 && !isLoading && (
-              <div className="flex flex-col items-center justify-center h-full text-center px-4">
-                <div className="w-16 h-16 rounded-full bg-[#E31837]/10 flex items-center justify-center mb-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-8 h-8 text-[#E31837]"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"
-                    />
-                  </svg>
-                </div>
-                <h4 className="font-['Archivo'] text-base font-medium text-gray-800 mb-2">
-                  Hello! How can I help?
-                </h4>
-                <p className="text-sm text-gray-500 mb-4">
-                  Ask me about nail care, skincare, or Mavala products.
-                </p>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {[
-                    "How to strengthen weak nails?",
-                    "Best products for dry skin?",
-                    "Nail polish application tips",
-                    "How to stop nail biting?",
-                    "Products for oily skin?",
-                  ].map((suggestion) => (
-                    <button
-                      key={suggestion}
-                      onClick={() => sendMessage(suggestion)}
-                      className="px-3 py-1.5 text-xs bg-white border border-gray-200 rounded-full hover:border-[#E31837] hover:text-[#E31837] transition-colors"
-                    >
-                      {suggestion}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <MessageList messages={messages} />
-
-            {isLoading && <TypingDots />}
-
-            <div ref={scrollRef} />
+      {limitReached && (
+        <div className="px-4 py-3 bg-amber-50 border-b border-amber-100 shrink-0">
+          <p className="text-sm text-gray-800 font-['Archivo'] mb-2">
+            Sign in or create an account to continue.
+          </p>
+          <div className="flex flex-wrap items-center gap-2 text-sm font-['Archivo']">
+            <Link
+              to="/login"
+              className="text-[#E31837] font-semibold hover:underline"
+            >
+              Sign in
+            </Link>
+            <span className="text-gray-300">|</span>
+            <Link
+              to="/join"
+              className="text-[#E31837] font-semibold hover:underline"
+            >
+              Create an account
+            </Link>
           </div>
-
-          {/* Error */}
-          {error && (
-            <div className="px-4 py-2 bg-red-50 border-t border-red-100">
-              <p className="text-xs text-red-600">{error}</p>
-            </div>
-          )}
-
-          {/* Input */}
-          <div className="border-t border-gray-200 bg-white p-3">
-            <InputBar onSend={sendMessage} disabled={isLoading} />
-          </div>
-        </>
+        </div>
       )}
+
+      {!isLoggedIn && !limitReached && (
+        <p className="px-4 py-2 text-[11px] text-gray-500 bg-gray-50 border-b border-gray-100 font-['Archivo']">
+          You have a few free questions — sign in for unlimited chat.
+        </p>
+      )}
+
+      {/* Messages */}
+      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 min-h-0">
+        {messages.length === 0 && !isLoading && (
+          <div className="flex flex-col items-center justify-center h-full text-center px-4">
+            <div className="w-16 h-16 rounded-full bg-[#E31837]/10 flex items-center justify-center mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-8 h-8 text-[#E31837]"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z"
+                />
+              </svg>
+            </div>
+            <h4 className="font-['Archivo'] text-base font-medium text-gray-800 mb-2">
+              Hello! How can I help?
+            </h4>
+            <p className="text-sm text-gray-500 mb-4">
+              Ask me about nail care, skincare, or Mavala products.
+            </p>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {[
+                "How to strengthen weak nails?",
+                "Best products for dry skin?",
+                "Nail polish application tips",
+                "How to stop nail biting?",
+                "Products for oily skin?",
+              ].map((suggestion) => (
+                <button
+                  type="button"
+                  key={suggestion}
+                  onClick={() => sendMessage(suggestion)}
+                  disabled={inputDisabled}
+                  className="px-3 py-1.5 text-xs bg-white border border-gray-200 rounded-full hover:border-[#E31837] hover:text-[#E31837] transition-colors disabled:opacity-40 disabled:pointer-events-none"
+                >
+                  {suggestion}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <MessageList messages={messages} />
+
+        {isLoading && <TypingDots />}
+
+        <div ref={scrollRef} />
+      </div>
+
+      {error && (
+        <div className="px-4 py-2 bg-red-50 border-t border-red-100 shrink-0">
+          <p className="text-xs text-red-600">{error}</p>
+        </div>
+      )}
+
+      <div className="border-t border-gray-200 bg-white p-3 shrink-0">
+        <InputBar onSend={sendMessage} disabled={inputDisabled} />
+      </div>
     </motion.div>
   );
 }

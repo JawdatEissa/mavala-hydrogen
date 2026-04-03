@@ -49,6 +49,9 @@ export interface ChatResponse {
   cached: boolean;
   suggestedProducts?: SuggestedProduct[];
   error?: string;
+  /** e.g. CHAT_LIMIT_REACHED */
+  code?: string;
+  remaining?: number;
 }
 
 // =========================================

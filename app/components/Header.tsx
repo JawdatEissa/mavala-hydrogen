@@ -363,7 +363,7 @@ export function Header() {
               SEARCH
             </Link>
 
-            <Link to="/sign-in" className={navLinkClasses}>
+            <Link to="/login" className={navLinkClasses}>
               SIGN IN
             </Link>
 
@@ -585,7 +585,7 @@ export function Header() {
               </a>
 
               <a
-                href="/sign-in"
+                href="/login"
                 className="text-[28px] font-['Archivo'] font-normal uppercase tracking-[0.5px] text-gray-900 hover:text-red-700 transition-colors"
                 onClick={() => {
                   if (window.history.state?.mobileMenuOpen) {

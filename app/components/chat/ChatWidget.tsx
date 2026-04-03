@@ -12,12 +12,10 @@ import ChatPanel from "./ChatPanel";
 
 interface ChatWidgetProps {
   isLoggedIn?: boolean;
-  onLoginClick?: () => void;
 }
 
 export default function ChatWidget({
-  isLoggedIn = true,
-  onLoginClick,
+  isLoggedIn = false,
 }: ChatWidgetProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -68,11 +66,7 @@ export default function ChatWidget({
       {/* Chat Panel */}
       <AnimatePresence>
         {isOpen && (
-          <ChatPanel
-            isLoggedIn={isLoggedIn}
-            onLoginClick={onLoginClick}
-            onClose={closeChat}
-          />
+          <ChatPanel isLoggedIn={isLoggedIn} onClose={closeChat} />
         )}
       </AnimatePresence>
     </>
