@@ -2,9 +2,8 @@ import { Link, useRouteLoaderData } from "@remix-run/react";
 import { useEffect, useRef, useState } from "react";
 import { categories } from "../lib/mock-data";
 
-// Mavala Logo Component - using official logo image from Squarespace CDN
-const LOGO_URL =
-  "https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/2145336d-78c4-4158-95e6-60f11fe8a5f8/MAVALA_Switzerland_logotype+Digital.png?format=1500w";
+// Served from /public/brand — not a third-party CDN (avoids distributor URL breakage)
+const LOGO_URL = "/brand/mavala-switzerland-logotype.webp";
 
 function MavalaLogo({ width = 240 }: { width?: number }) {
   return (

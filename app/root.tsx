@@ -24,7 +24,15 @@ import {
 } from "./lib/shopify-cart.server";
 
 export const links: LinksFunction = () => [
-  { rel: "icon", href: "/favicon.ico" },
+  {
+    rel: "icon",
+    href: "/brand/mavala-m-favicon-512.png",
+    type: "image/png",
+  },
+  {
+    rel: "apple-touch-icon",
+    href: "/brand/mavala-m-favicon-512.png",
+  },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
