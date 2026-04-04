@@ -13,7 +13,9 @@ function MavalaLogo({ width = 240 }: { width?: number }) {
       style={{
         display: "block",
         textAlign: "center",
-        width: `${width}px`,
+        width: "100%",
+        maxWidth: `${width}px`,
+        marginInline: "auto",
         height: "auto",
         lineHeight: 1,
       }}
@@ -299,9 +301,9 @@ export function Header() {
     >
       <nav className="h-[90px] relative">
         {/* Desktop Navigation - Three column layout for perfect centering */}
-        <div className="hidden lg:grid grid-cols-3 items-center h-full px-8">
+        <div className="hidden lg:grid grid-cols-3 items-center h-full min-w-0 px-4 xl:px-8">
           {/* Left Group: SHOP, DIAGNOSIS, BLOG - pushed right towards logo */}
-          <div className="flex flex-row items-center justify-end gap-6">
+          <div className="flex flex-row items-center justify-end gap-3 xl:gap-6 min-w-0">
             {/* SHOP with CSS-only dropdown - group hover (non-clickable) */}
             <div className="relative group">
               <span
@@ -362,13 +364,15 @@ export function Header() {
             </Link>
           </div>
 
-          {/* Center: Logo - perfectly centered with spacing */}
-          <div className="flex items-center justify-center mx-6">
-            <MavalaLogo width={240} />
+          {/* Center: Logo - slightly smaller on lg so side nav has room when logged in */}
+          <div className="flex items-center justify-center mx-3 xl:mx-6 min-w-0 w-full">
+            <div className="w-full max-w-[200px] xl:max-w-[240px]">
+              <MavalaLogo width={240} />
+            </div>
           </div>
 
           {/* Right Group: THE BRAND, SEARCH, SIGN IN - pushed left towards logo */}
-          <div className="flex flex-row items-center justify-start gap-6">
+          <div className="flex flex-row items-center justify-start gap-2 xl:gap-4 2xl:gap-6 min-w-0">
             <a href="/the-brand" className={navLinkClasses}>
               THE BRAND
             </a>
@@ -378,32 +382,48 @@ export function Header() {
             </Link>
 
             {isLoggedIn ? (
-              <div className="flex flex-row items-center gap-1 xl:gap-2 shrink-0">
+              <div
+                className="relative group shrink-0 outline-none"
+                tabIndex={0}
+              >
                 <span
-                  className="font-['Archivo'] text-[12px] xl:text-[13px] font-normal leading-tight uppercase tracking-[0.92px] text-[rgba(167,24,48,0.996)] px-2 xl:px-[10px] py-[10.5px] max-w-[72px] xl:max-w-[100px] 2xl:max-w-[130px] truncate text-center"
+                  className={`${navLinkClasses} relative z-[10001] cursor-default inline-flex max-w-[120px] sm:max-w-[140px] xl:max-w-[180px]`}
                   title={
                     customerEmail ||
                     customerFirstName ||
                     undefined
                   }
                 >
-                  {customerFirstName
-                    ? customerFirstName.toUpperCase()
-                    : displayName.toUpperCase()}
+                  <span className="truncate">
+                    {customerFirstName
+                      ? customerFirstName.toUpperCase()
+                      : displayName.toUpperCase()}
+                  </span>
+                  <span className="ml-1 text-[10px] opacity-70" aria-hidden>
+                    ▾
+                  </span>
                 </span>
-                {customerAccountUrl ? (
-                  <a
-                    href={customerAccountUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={navLinkClasses}
-                  >
-                    ACCOUNT
-                  </a>
-                ) : null}
-                <Link to="/logout" className={navLinkClasses}>
-                  SIGN OUT
-                </Link>
+                <div className="absolute top-full right-0 z-[10000] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200">
+                  <div className="h-2" />
+                  <div className="bg-white shadow-xl py-2 flex flex-col border border-gray-100 min-w-[200px]">
+                    {customerAccountUrl ? (
+                      <a
+                        href={customerAccountUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-sans text-[12px] font-semibold text-black hover:text-red-700 hover:bg-gray-50 transition-colors py-3 px-6 uppercase tracking-[0.1em] text-left w-full"
+                      >
+                        Account
+                      </a>
+                    ) : null}
+                    <Link
+                      to="/logout"
+                      className="font-sans text-[12px] font-semibold text-black hover:text-red-700 hover:bg-gray-50 transition-colors py-3 px-6 uppercase tracking-[0.1em] text-left w-full"
+                    >
+                      Sign out
+                    </Link>
+                  </div>
+                </div>
               </div>
             ) : (
               <Link to="/login" className={navLinkClasses}>
