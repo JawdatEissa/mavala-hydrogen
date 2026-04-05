@@ -196,7 +196,7 @@ export default function CartPage() {
 
   return (
     <div className="pt-[104px] md:pt-[112px]">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 pt-12 pb-24 md:py-12">
         <h1 className="text-3xl font-display font-light tracking-[0.15em] uppercase text-center mb-12">
           Shopping Cart
         </h1>
@@ -231,7 +231,7 @@ export default function CartPage() {
         ) : (
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
-              <div className="border-b border-gray-200 pb-4 mb-4">
+              <div className="hidden lg:block border-b border-gray-200 pb-4 mb-4">
                 <div className="grid grid-cols-12 gap-4 text-sm text-mavala-gray uppercase tracking-wider">
                   <div className="col-span-6">Product</div>
                   <div className="col-span-2 text-center">Price</div>
@@ -240,76 +240,184 @@ export default function CartPage() {
                 </div>
               </div>
 
-              <ul className="space-y-6">
+              <ul className="space-y-8 lg:space-y-6">
                 {cart.lines.map((line) => (
                   <li
                     key={line.id}
-                    className="grid grid-cols-12 gap-4 items-center border-b border-gray-100 pb-6"
+                    className="border-b border-gray-100 pb-6"
                   >
-                    <div className="col-span-6 flex gap-4">
-                      <Link
-                        to={`/products/${line.handle}`}
-                        className="shrink-0 w-20 h-24 bg-[#f5f5f5] rounded-[3px] overflow-hidden flex items-center justify-center"
-                      >
-                        {line.imageUrl ? (
-                          <img
-                            src={line.imageUrl}
-                            alt={line.imageAlt ?? line.productTitle}
-                            className="max-w-full max-h-full object-contain"
-                          />
-                        ) : null}
-                      </Link>
-                      <div>
+                    {/* Mobile / small: stacked card-style row */}
+                    <div className="flex flex-col gap-4 lg:hidden">
+                      <div className="flex gap-4">
                         <Link
                           to={`/products/${line.handle}`}
-                          className="font-medium text-[#272724] hover:underline"
+                          className="shrink-0 w-20 h-24 bg-[#f5f5f5] rounded-[3px] overflow-hidden flex items-center justify-center"
                         >
-                          {line.productTitle}
+                          {line.imageUrl ? (
+                            <img
+                              src={line.imageUrl}
+                              alt={line.imageAlt ?? line.productTitle}
+                              className="max-w-full max-h-full object-contain"
+                            />
+                          ) : null}
                         </Link>
-                        {line.variantTitle ? (
-                          <p className="text-sm text-mavala-gray mt-1">
-                            {line.variantTitle}
+                        <div className="min-w-0 flex-1">
+                          <Link
+                            to={`/products/${line.handle}`}
+                            className="font-medium text-[#272724] hover:underline"
+                          >
+                            {line.productTitle}
+                          </Link>
+                          {line.variantTitle ? (
+                            <p className="text-sm text-mavala-gray mt-1">
+                              {line.variantTitle}
+                            </p>
+                          ) : null}
+                          <Form method="post" className="mt-2">
+                            <input type="hidden" name="intent" value="remove" />
+                            <input
+                              type="hidden"
+                              name="lineId"
+                              value={line.id}
+                            />
+                            <button
+                              type="submit"
+                              disabled={busy}
+                              className="text-xs uppercase tracking-wider text-mavala-gray hover:text-red-700"
+                            >
+                              Remove
+                            </button>
+                          </Form>
+                        </div>
+                      </div>
+                      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:items-end">
+                        <div>
+                          <p className="text-xs text-mavala-gray uppercase tracking-wider mb-1">
+                            Price
                           </p>
-                        ) : null}
-                        <Form method="post" className="mt-2">
-                          <input type="hidden" name="intent" value="remove" />
+                          <p className="text-sm">
+                            {formatMoney(line.unitAmount, line.unitCurrency)}
+                          </p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-mavala-gray uppercase tracking-wider mb-1">
+                            Quantity
+                          </p>
+                          <Form
+                            method="post"
+                            className="flex flex-wrap items-center gap-2"
+                          >
+                            <input type="hidden" name="intent" value="update" />
+                            <input
+                              type="hidden"
+                              name="lineId"
+                              value={line.id}
+                            />
+                            <input
+                              name="quantity"
+                              type="number"
+                              min={1}
+                              max={99}
+                              defaultValue={line.quantity}
+                              className="w-16 min-w-0 border border-gray-200 rounded px-2 py-2 text-center text-sm"
+                            />
+                            <button
+                              type="submit"
+                              disabled={busy}
+                              className="shrink-0 text-xs uppercase tracking-wider px-3 py-2 border border-gray-300 rounded hover:bg-gray-50"
+                            >
+                              Update
+                            </button>
+                          </Form>
+                        </div>
+                        <div className="sm:text-right">
+                          <p className="text-xs text-mavala-gray uppercase tracking-wider mb-1">
+                            Total
+                          </p>
+                          <p className="text-sm font-medium">
+                            {formatMoney(
+                              line.lineTotalAmount,
+                              line.lineTotalCurrency,
+                            )}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Desktop: original 12-column table row */}
+                    <div className="hidden lg:grid lg:grid-cols-12 lg:gap-4 lg:items-center">
+                      <div className="col-span-6 flex gap-4">
+                        <Link
+                          to={`/products/${line.handle}`}
+                          className="shrink-0 w-20 h-24 bg-[#f5f5f5] rounded-[3px] overflow-hidden flex items-center justify-center"
+                        >
+                          {line.imageUrl ? (
+                            <img
+                              src={line.imageUrl}
+                              alt={line.imageAlt ?? line.productTitle}
+                              className="max-w-full max-h-full object-contain"
+                            />
+                          ) : null}
+                        </Link>
+                        <div>
+                          <Link
+                            to={`/products/${line.handle}`}
+                            className="font-medium text-[#272724] hover:underline"
+                          >
+                            {line.productTitle}
+                          </Link>
+                          {line.variantTitle ? (
+                            <p className="text-sm text-mavala-gray mt-1">
+                              {line.variantTitle}
+                            </p>
+                          ) : null}
+                          <Form method="post" className="mt-2">
+                            <input type="hidden" name="intent" value="remove" />
+                            <input
+                              type="hidden"
+                              name="lineId"
+                              value={line.id}
+                            />
+                            <button
+                              type="submit"
+                              disabled={busy}
+                              className="text-xs uppercase tracking-wider text-mavala-gray hover:text-red-700"
+                            >
+                              Remove
+                            </button>
+                          </Form>
+                        </div>
+                      </div>
+                      <div className="col-span-2 text-center text-sm">
+                        {formatMoney(line.unitAmount, line.unitCurrency)}
+                      </div>
+                      <div className="col-span-2 flex justify-center">
+                        <Form method="post" className="flex items-center gap-1">
+                          <input type="hidden" name="intent" value="update" />
                           <input type="hidden" name="lineId" value={line.id} />
+                          <input
+                            name="quantity"
+                            type="number"
+                            min={1}
+                            max={99}
+                            defaultValue={line.quantity}
+                            className="w-14 border border-gray-200 rounded px-2 py-1 text-center text-sm"
+                          />
                           <button
                             type="submit"
                             disabled={busy}
-                            className="text-xs uppercase tracking-wider text-mavala-gray hover:text-red-700"
+                            className="text-xs uppercase tracking-wider px-2 py-1 border border-gray-300 rounded hover:bg-gray-50"
                           >
-                            Remove
+                            Update
                           </button>
                         </Form>
                       </div>
-                    </div>
-                    <div className="col-span-2 text-center text-sm">
-                      {formatMoney(line.unitAmount, line.unitCurrency)}
-                    </div>
-                    <div className="col-span-2 flex justify-center">
-                      <Form method="post" className="flex items-center gap-1">
-                        <input type="hidden" name="intent" value="update" />
-                        <input type="hidden" name="lineId" value={line.id} />
-                        <input
-                          name="quantity"
-                          type="number"
-                          min={1}
-                          max={99}
-                          defaultValue={line.quantity}
-                          className="w-14 border border-gray-200 rounded px-2 py-1 text-center text-sm"
-                        />
-                        <button
-                          type="submit"
-                          disabled={busy}
-                          className="text-xs uppercase tracking-wider px-2 py-1 border border-gray-300 rounded hover:bg-gray-50"
-                        >
-                          Update
-                        </button>
-                      </Form>
-                    </div>
-                    <div className="col-span-2 text-right text-sm font-medium">
-                      {formatMoney(line.lineTotalAmount, line.lineTotalCurrency)}
+                      <div className="col-span-2 text-right text-sm font-medium">
+                        {formatMoney(
+                          line.lineTotalAmount,
+                          line.lineTotalCurrency,
+                        )}
+                      </div>
                     </div>
                   </li>
                 ))}
